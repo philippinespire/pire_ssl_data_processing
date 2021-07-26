@@ -1,4 +1,4 @@
-# Sgr Shotgun Data Processing Log -SSL data
+# Shotgun Data Processing Log -SSL data
 
 copy and paste this into a new species dir and fill in as steps are accomplished.
 
