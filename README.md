@@ -86,15 +86,14 @@ All 3 sequence sets are for the same individual: Sgr-CMvi_007_Ex1
 3. Run `fastqc`
     * review results with `multiqc` output
 
-Fastqc and Multiqc can be run simultaneously using the [Multi_FASTQC.sh]() script
+Fastqc and Multiqc can be run simultaneously using the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/Multi_FASTQC.sh) script in the `scripts` repo
 
-Move into the `scripts` dir and execute `Multi_FASTQC.sh` while providing in quotations, and in this order, 
+Execute `Multi_FASTQC.sh` while providing in quotations, and in this order, 
 (1) a suffix that will identify the files to be processed, and (2) the path to these files. 
 
 Example:
 ```sh
-cd scripts
-sbatch Multi_FASTQC.sh "fq.gz" "../spratelloides_gracilis/shotgun_raw_fq"  
+sbatch ./scripts/Multi_FASTQC.sh "fq.gz" "spratelloides_gracilis/shotgun_raw_fq"  
 ```
 
 If you get a message about not finding "crun" then load the containers in your current session and run `Multi_FASTQC.sh` again
@@ -104,8 +103,10 @@ enable_lmod
 module load parallel
 module load container_env multiqc
 module load container_env fastqc
-sbatch Multi_FASTQC.sh "fq.gz" "../spratelloides_gracilis/shotgun_raw_fq"
+sbatch ./scripts/Multi_FASTQC.sh "fq.gz" "spratelloides_gracilis/shotgun_raw_fq"
 ```
+
+
 
 3. Trim, deduplicate, and decontaminate the raw `fq.gz` files
     * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
