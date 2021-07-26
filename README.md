@@ -1,10 +1,10 @@
-# CAPTURE SHOTGUN DATA PROCESSING & ANALYSIS
+# SHOTGUN DATA PROCESSING & ANALYSIS
 
 ---
 
-The purpose of this repo is to document the processing and analysis of shotgun data for probe development which then will be process according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) 
+The purpose of this repo is to document the processing and analysis of `Shutgun Sequencing Libraries - SSL data` for probe development which then will be processed according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) 
 
-Eeach species will get it's own directory within this repo.  Try to avoing putting dirs inside dirs inside dirs. 
+Each species will get it's own directory within this repo.  Try to avoing putting dirs inside dirs inside dirs. 
 
 The Sgr dir will serve as the example to follow in terms of both directory structure and documentation of progress in `README.md`.
 
@@ -12,10 +12,13 @@ The Sgr dir will serve as the example to follow in terms of both directory struc
 
 ## Use Git/GitHub to Track Progress
 
-To process a species, begin by cloning this repo to your dir.
+To process a species, begin by cloning this repo to your working dir. I recomend setting up a `shotgun_PIRE` sub-dir in your home dir if you have not done something similar already
 
+Example: `/home/e1garcia/shotgun_PIRE`
+
+Clone the 
 ```
-git clone <insert url here>
+git clone https://github.com/philippinespire/pire_ssl_data_processing.git
 ```
 
 The data will be processed and analyzed in the repo.  There is a `.gitignore` file that lists files and directories to be ignored by git.  It includes large files that git cannot handle (fq.gz, bam, etc) and other repos that might be downloaded into this repo. 
@@ -37,6 +40,13 @@ git pull
 git push
 ```
 
+This code has been compiled into the script `runGIT.bash` thus you can just run this script BEFORE and AFTER you do anything in your species repo.
+You will need to provide the message of your commit when running:
+```sh
+bash runGIT.bash "initiate Sgr repo"
+```
+You will need to enter your git credentials multiple times each time you run this script
+
 If you should be met with a conflict screen, you are in the archane `vim` editor.  You can look up instructions on how to interface with it. I typically do the following:
 
 * hit escape key twice
@@ -49,9 +59,29 @@ ___
 
 1. Clone this repo to your working dir
 
-2. Run [`fastqc`]()
+2.- Create your species dir and transfer you raw data
+
+```sh
+cd 
+mkdir spratelloides_gracilis 
+mkdir spratelloides_gracilis/shotgun_raw_fq
+cp <source of files> spratelloides_gracilis/shotgun_raw_fq
+```
+
+3. Run `fastqc`
     * review results with `multiqc` output
-  
+
+Fastqc and Multiqc can be run simultaneously using the [Multi_FASTQC.sh]() script
+
+Move into the `scripts` dir and execute `Multi_FASTQC.sh` while providing in quatations, and in this order, 
+(1) a suffix that will identify the files to be processed, and (2) the path to these files. 
+
+Example:
+```sh
+cd scripts
+sbatch Multi_FASTQC.sh "fq.gz" "../spratelloides_gracilis/shotgun_raw_fq  
+```
+
 3. Trim, deduplicate, and decontaminate the raw `fq.gz` files
     * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
     * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
