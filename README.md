@@ -30,7 +30,7 @@ Because large data files will not be saved to github, they will reside in an ind
 
 ## Maintaining Git Repo
 
-You must pull down the lated version of the repo everytime you sit down to work and push the changes you made everytime you walk away from the terminal.  The following order of operations when you sync the repo will minimize problems.
+You must pull down the latest version of the repo everytime you sit down to work and push the changes you made everytime you walk away from the terminal.  The following order of operations when you sync the repo will minimize problems.
 
 ```
 git pull
@@ -57,24 +57,28 @@ ___
 
 ## Data Processing Roadmap
 
-1. Clone this repo to your working dir
+1. Clone this repo to your working dir (already done above)
 
-2. Create your species dir and transfer you raw data
+2. Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`. Transfer your raw data into `shotgun_raw_fq`
 
 ```sh
 cd pire_ssl_data_processing
 mkdir spratelloides_gracilis 
+mkdir spratelloides_gracilis/logs
 mkdir spratelloides_gracilis/shotgun_raw_fq
 cp <source of files> spratelloides_gracilis/shotgun_raw_fq  # scp | cp | mv
 ```
 
-Also create a `README` with the full path to the original copies of the raw files and decoding info to find out which individuals the sequences come from
+Also create a `README` in the `shotgun_raw_fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out for which individual(s) these sequence files belong to.
+
+
 This information is usually provied by Sharon Magnuson in species [slack](https://app.slack.com/client/TMJJ06SH0/CMPKY5C81/thread/CQ9GAAYGY-1627263374.002300) channel
 
 ```sh
 cd spratelloides_gracilis/shotgun_raw_fq
 nano README
 ```
+
 Example:
 ```sh
 TAMUCC to ODU
@@ -88,12 +92,12 @@ All 3 sequence sets are for the same individual: Sgr-CMvi_007_Ex1
 
 Fastqc and Multiqc can be run simultaneously using the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/Multi_FASTQC.sh) script in the `scripts` repo
 
-Execute `Multi_FASTQC.sh` while providing in quotations, and in this order, 
-(1) a suffix that will identify the files to be processed, and (2) the path to these files. 
+Execute `Multi_FASTQC.sh` while providing, in quotations and in this order, 
+(1) a suffix that will identify the files to be processed, and (2) the FULL path to these files. 
 
 Example:
 ```sh
-sbatch ./scripts/Multi_FASTQC.sh "fq.gz" "spratelloides_gracilis/shotgun_raw_fq"  
+sbatch ../../scripts/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq"  
 ```
 
 If you get a message about not finding "crun" then load the containers in your current session and run `Multi_FASTQC.sh` again
@@ -103,9 +107,8 @@ enable_lmod
 module load parallel
 module load container_env multiqc
 module load container_env fastqc
-sbatch ./scripts/Multi_FASTQC.sh "fq.gz" "spratelloides_gracilis/shotgun_raw_fq"
+sbatch ../../scripts/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq"
 ```
-
 
 
 3. Trim, deduplicate, and decontaminate the raw `fq.gz` files

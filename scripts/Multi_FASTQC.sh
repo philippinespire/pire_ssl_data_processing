@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=SfaMulti_fastqc
-#SBATCH -o SfaMulti_fastqc-%j.out
+#SBATCH --job-name=Multi_fastqc
+#SBATCH -o Multi_fastqc-%j.out
 #SBATCH -p main
 #SBATCH -c 4
 #SBATCH --mail-user=e1garcia@odu.edu
@@ -54,8 +54,10 @@ cd $2
 ls *$1 | parallel "crun fastqc {}" &&
 
 # run multiqc with specific report and subdirectory names
-crun multiqc . -n multiqc_report_$1.html -o Multi_FASTQC &&
+crun multiqc . -n ../multiqc_report_$1.html -o ../Multi_FASTQC &&
 
 # move fastqc files to new subdirectory
-ls *fastqc.html | parallel "mv {} ./Multi_FASTQC" &&
-ls *fastqc.zip | parallel "mv {} ./Multi_FASTQC"
+ls *fastqc.html | parallel "mv {} ../Multi_FASTQC" &&
+ls *fastqc.zip | parallel "mv {} ../Multi_FASTQC"
+mv multiqc_report* ../Multi_FASTQC
+mv *out ../logs
