@@ -12,7 +12,7 @@ The Sgr dir will serve as the example to follow in terms of both directory struc
 
 ## Use Git/GitHub to Track Progress
 
-To process a species, begin by cloning this repo to your working dir. I recomend setting up a `shotgun_PIRE` sub-dir in your home dir if you have not done something similar already
+To process a species, begin by cloning this repo to your working dir. I recommend setting up a `shotgun_PIRE` sub-dir in your home dir if you have not done something similar already
 
 Example: `/home/e1garcia/shotgun_PIRE`
 
@@ -59,13 +59,28 @@ ___
 
 1. Clone this repo to your working dir
 
-2.- Create your species dir and transfer you raw data
+2. Create your species dir and transfer you raw data
 
 ```sh
-cd 
+cd pire_ssl_data_processing
 mkdir spratelloides_gracilis 
 mkdir spratelloides_gracilis/shotgun_raw_fq
-cp <source of files> spratelloides_gracilis/shotgun_raw_fq
+cp <source of files> spratelloides_gracilis/shotgun_raw_fq  # scp | cp | mv
+```
+
+Also create a `README` with the full path to the original copies of the raw files and decoding info to find out which individuals the sequences come from
+This information is usually provied by Sharon Magnuson in species [slack](https://app.slack.com/client/TMJJ06SH0/CMPKY5C81/thread/CQ9GAAYGY-1627263374.002300) channel
+
+```sh
+cd spratelloides_gracilis/shotgun_raw_fq
+nano README
+```
+Example:
+```sh
+TAMUCC to ODU
+scp /work/hobi/GCL/20210719_PIRE-Sgr-shotgun/ e1garcia@turing.hpc.odu.edu:/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
+
+All 3 sequence sets are for the same individual: Sgr-CMvi_007_Ex1
 ```
 
 3. Run `fastqc`
@@ -73,13 +88,23 @@ cp <source of files> spratelloides_gracilis/shotgun_raw_fq
 
 Fastqc and Multiqc can be run simultaneously using the [Multi_FASTQC.sh]() script
 
-Move into the `scripts` dir and execute `Multi_FASTQC.sh` while providing in quatations, and in this order, 
+Move into the `scripts` dir and execute `Multi_FASTQC.sh` while providing in quotations, and in this order, 
 (1) a suffix that will identify the files to be processed, and (2) the path to these files. 
 
 Example:
 ```sh
 cd scripts
-sbatch Multi_FASTQC.sh "fq.gz" "../spratelloides_gracilis/shotgun_raw_fq  
+sbatch Multi_FASTQC.sh "fq.gz" "../spratelloides_gracilis/shotgun_raw_fq"  
+```
+
+If you get a message about not finding "crun" then load the containers in your current session and run `Multi_FASTQC.sh` again
+
+```sh
+enable_lmod
+module load parallel
+module load container_env multiqc
+module load container_env fastqc
+sbatch Multi_FASTQC.sh "fq.gz" "../spratelloides_gracilis/shotgun_raw_fq"
 ```
 
 3. Trim, deduplicate, and decontaminate the raw `fq.gz` files
