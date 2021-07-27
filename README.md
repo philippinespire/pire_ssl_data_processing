@@ -87,14 +87,15 @@ scp /work/hobi/GCL/20210719_PIRE-Sgr-shotgun/ e1garcia@turing.hpc.odu.edu:/home/
 All 3 sequence sets are for the same individual: Sgr-CMvi_007_Ex1
 ```
 
-***I like to update my git repo regularly, especially before and after lengthly steps. This keeps a nice record of the commits and prevents loss of data/effor. Feel free to repeat this at any step***
+**I like to update my git repo regularly, especially before and after lengthly steps. This keeps a nice record of the commits and prevents loss of data/effor. Feel free to repeat this at any step**
 
 ```sh
 bash ../../runGIT.bash
 ```
 
 
-3. Run `fastqc` ***(about 2 hours for 6 files totaling 128GB)***
+
+3. Run `fastqc`  **(about 2 hours for 6 files totaling 128GB)**
     * review results with `multiqc` output
 
 Fastqc and Multiqc can be run simultaneously using the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/Multi_FASTQC.sh) script in the `scripts` repo
