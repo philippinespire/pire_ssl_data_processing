@@ -59,9 +59,11 @@ ___
 
 ### Pre-Process
 
-1. Clone this repo to your working dir (already done above)
+1. Clone this repo to your working dir
+*(already done above)*
 
-2. Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`. Transfer your raw data into `shotgun_raw_fq` *(can take several hours)*
+2. Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`. Transfer your raw data into `shotgun_raw_fq` 
+*(can take several hours)*
 
 ```sh
 cd pire_ssl_data_processing
@@ -97,7 +99,8 @@ bash ../../runGIT.bash
 
 
 
-3. Run `fastqc`  *(about 2 hours for each. Total data size for all 6 Sgr files ~128GB)*
+3. Run `fastqc` 
+*(about 2 hours for each. Total data size for all 6 Sgr files ~128GB)*
     * review results with `multiqc` output
 
 Fastqc and Multiqc can be run simultaneously using the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/Multi_FASTQC.sh) script in the `scripts` repo
@@ -121,7 +124,8 @@ sbatch ../../scripts/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_s
 ```
 
 
-4. Trim, deduplicate, decontaminate, and repair the raw `fq.gz` files *(few hours for each of the 2 trims and deduplication, decontamination can take 1-2 days; reparing is done in 1-2 hrs)*
+4. Trim, deduplicate, decontaminate, and repair the raw `fq.gz` files
+*(few hours for each of the 2 trims and deduplication, decontamination can take 1-2 days; reparing is done in 1-2 hrs)*
 
 Follow the stepts in:	
     * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
@@ -131,9 +135,13 @@ Follow the stepts in:
 
 ### Assembly
 
-5. Fetch the genome properties for your specie
+5. Fetch the genome properties for your species
 	* from the literature or other sources
 	* estimate properties with *jellyfish* and *genomescope*
+
+
+6. Assemble the genome
+*
 
 
 5. Rename files to follow the `ddocent` naming convention
