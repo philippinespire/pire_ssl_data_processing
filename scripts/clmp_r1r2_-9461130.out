@@ -1,0 +1,53 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/20.11
+
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 514661
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 50000
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 40960
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+java -ea -Xmx120g -Xms120g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r1.fq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r2.fq.gz out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch-lustre/r1robert dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx120g
+Executing clump.Clumpify [in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r2.fq.gz, out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r1.fq.gz, out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r2.fq.gz, groups=14514, overwrite=t, usetmpdir=t, tmpdir=/scratch-lustre/r1robert, dedupe=t, addcount=t, subs=2, containment=t, consensus=f, -Xmx120g]
+Version 38.90
+
+Executing clump.KmerSplit [in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r2.fq.gz, out=/scratch-lustre/r1robert/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r1_clumpify_p1_temp%_44146a592931456b.fq.gz, out2=, groups=14514, ecco=false, addname=f, shortname=f, unpair=false, repair=f, namesort=f, ow=true, dedupe=t, consensus=f]
+
+Reset INTERLEAVED to false because paired input files were specified.
+Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+Exception in thread "main" java.lang.RuntimeException: java.io.FileNotFoundException: /scratch-lustre/r1robert/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r1_clumpify_p1_temp0_44146a592931456b.fq.gz (Permission denied)
+	at fileIO.ReadWrite.getRawOutputStream(ReadWrite.java:437)
+	at fileIO.ReadWrite.getGZipOutputStream(ReadWrite.java:539)
+	at fileIO.ReadWrite.getOutputStream(ReadWrite.java:382)
+	at fileIO.ReadWrite.getOutputStream(ReadWrite.java:344)
+	at stream.ReadStreamWriter.<init>(ReadStreamWriter.java:71)
+	at stream.ReadStreamByteWriter.<init>(ReadStreamByteWriter.java:18)
+	at stream.ConcurrentGenericReadOutputStream.<init>(ConcurrentGenericReadOutputStream.java:38)
+	at stream.ConcurrentReadOutputStream.getStream(ConcurrentReadOutputStream.java:71)
+	at stream.ConcurrentReadOutputStream.getStream(ConcurrentReadOutputStream.java:35)
+	at clump.KmerSplit.process(KmerSplit.java:301)
+	at clump.KmerSplit.main(KmerSplit.java:52)
+	at clump.Clumpify.runOnePass_v2(Clumpify.java:403)
+	at clump.Clumpify.process(Clumpify.java:275)
+	at clump.Clumpify.main(Clumpify.java:47)
+Caused by: java.io.FileNotFoundException: /scratch-lustre/r1robert/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r1_clumpify_p1_temp0_44146a592931456b.fq.gz (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:158)
+	at fileIO.ReadWrite.getRawOutputStream(ReadWrite.java:435)
+	... 13 more
+slurmstepd: error: *** JOB 9461130 ON coreV3-23-029 CANCELLED AT 2021-07-27T16:56:54 ***

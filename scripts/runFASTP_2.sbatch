@@ -14,13 +14,13 @@ module load container_env pire_genome_assembly/2021.07.01
 
 export SINGULARITY_BIND=/home/e1garcia
 
-INDIR=$1   #/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_clmp
-OUTDIR=$2  #/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_clmp_fp2
-FQPATTERN=*r1.fq.gz  #determines files to be trimmed
-EXTPATTERN=r[12]\.fq\.gz  # pattern match to fq extensions
+INDIR=$1   			#/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_clmp
+OUTDIR=$2  			#/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_clmp_fp2
+FQPATTERN=*r1.fq.gz  		#determines files to be trimmed
+EXTPATTERN=r[12]\.fq\.gz  	# pattern match to fq extensions
 FWDEXT=r1.fq.gz
 REVEXT=r2.fq.gz
-THREADS=20 #1/2 of total threads avail
+THREADS=20 			#1/2 of total threads avail
 
 mkdir $OUTDIR $OUTDIR/failed
 
@@ -40,7 +40,7 @@ ls $INDIR/$FQPATTERN | \
 		-h $OUTDIR/{}r1r2_fastp.html \
 		-j $OUTDIR/{}r1r2_fastp.json \
 		--detect_adapter_for_pe \
-		--length_required 33 \
+		--length_required 140 \
 		--cut_front \
 		--cut_front_window_size 1 \
 		--cut_front_mean_quality 20 \

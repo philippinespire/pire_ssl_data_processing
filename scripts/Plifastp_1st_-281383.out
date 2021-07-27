@@ -1,0 +1,160 @@
+Read1 before filtering:
+total reads: 156039783
+total bases: 23405967450
+Q20 bases: 22699253047(96.9806%)
+Q30 bases: 21755567618(92.9488%)
+
+Read2 before filtering:
+total reads: 156039783
+total bases: 23405967450
+Q20 bases: 22370395124(95.5756%)
+Q30 bases: 20987766268(89.6684%)
+
+Read1 after filtering:
+total reads: 143043334
+total bases: 21438622296
+Q20 bases: 20961777932(97.7758%)
+Q30 bases: 20159924185(94.0355%)
+
+Read2 aftering filtering:
+total reads: 143043334
+total bases: 21434043477
+Q20 bases: 20793301882(97.0106%)
+Q30 bases: 19682043697(91.8261%)
+
+Filtering result:
+reads passed filter: 286086668
+reads failed due to low quality: 6141920
+reads failed due to too many N: 47382
+reads failed due to too short: 19748334
+reads failed due to low complexity: 55262
+reads with adapter trimmed: 12385602
+bases trimmed due to adapters: 507088060
+reads with polyX in 3' end: 5262378
+bases trimmed in polyX tail: 71092613
+
+Duplication rate: 20.1821%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/shotgun_raw_fq/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/shotgun_raw_fq/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/failed/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351D_CKDL210013395-1a-AK9143-7UDI286_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 140 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3109 seconds
+Read1 before filtering:
+total reads: 220383266
+total bases: 33057489900
+Q20 bases: 32088366112(97.0684%)
+Q30 bases: 30760292401(93.0509%)
+
+Read2 before filtering:
+total reads: 220383266
+total bases: 33057489900
+Q20 bases: 31571531704(95.5049%)
+Q30 bases: 29606744358(89.5614%)
+
+Read1 after filtering:
+total reads: 198643724
+total bases: 29770209246
+Q20 bases: 29088922100(97.7115%)
+Q30 bases: 27952579466(93.8945%)
+
+Read2 aftering filtering:
+total reads: 198643724
+total bases: 29764598970
+Q20 bases: 28895139387(97.0789%)
+Q30 bases: 27386766113(92.0112%)
+
+Filtering result:
+reads passed filter: 397287448
+reads failed due to low quality: 9640752
+reads failed due to too many N: 65334
+reads failed due to too short: 33695390
+reads failed due to low complexity: 77608
+reads with adapter trimmed: 22463129
+bases trimmed due to adapters: 919959923
+reads with polyX in 3' end: 8060510
+bases trimmed in polyX tail: 105301623
+
+Duplication rate: 25.7614%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/shotgun_raw_fq/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/shotgun_raw_fq/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/failed/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351E_CKDL210013395-1a-5UDI225-AK7533_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 140 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4522 seconds
+Read1 before filtering:
+total reads: 268974410
+total bases: 40346161500
+Q20 bases: 39207684663(97.1782%)
+Q30 bases: 37633664855(93.2769%)
+
+Read2 before filtering:
+total reads: 268974410
+total bases: 40346161500
+Q20 bases: 38585489968(95.6361%)
+Q30 bases: 36187192702(89.6918%)
+
+Read1 after filtering:
+total reads: 248989056
+total bases: 37317487286
+Q20 bases: 36500645444(97.8111%)
+Q30 bases: 35120808779(94.1135%)
+
+Read2 aftering filtering:
+total reads: 248989056
+total bases: 37308907575
+Q20 bases: 36151566359(96.8979%)
+Q30 bases: 34156587777(91.5508%)
+
+Filtering result:
+reads passed filter: 497978112
+reads failed due to low quality: 9587616
+reads failed due to too many N: 82226
+reads failed due to too short: 30206452
+reads failed due to low complexity: 94414
+reads with adapter trimmed: 18342450
+bases trimmed due to adapters: 771119366
+reads with polyX in 3' end: 7719167
+bases trimmed in polyX tail: 107337410
+
+Duplication rate: 30.6975%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/shotgun_raw_fq/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/shotgun_raw_fq/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/failed/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 140 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 5598 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.10.1
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1
+Traceback (most recent call last):
+  File "/opt/conda/bin/multiqc", line 6, in <module>
+    from multiqc.__main__ import multiqc
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/__main__.py", line 53, in <module>
+    multiqc.run_cli(prog_name="multiqc")
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1137, in __call__
+    return self.main(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1062, in main
+    rv = self.invoke(ctx)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 763, in invoke
+    return __callback(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 261, in run_cli
+    kwargs=kwargs,
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 562, in run
+    template_mod = config.avail_templates[config.template].load()
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2446, in load
+    self.require(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2469, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 775, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (idna 3.2 (/opt/conda/lib/python3.7/site-packages), Requirement.parse('idna<3,>=2.5'), {'requests'})

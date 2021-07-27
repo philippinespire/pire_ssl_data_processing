@@ -1,0 +1,160 @@
+Read1 before filtering:
+total reads: 170899401
+total bases: 25634910150
+Q20 bases: 24769326309(96.6234%)
+Q30 bases: 23722067146(92.5381%)
+
+Read2 before filtering:
+total reads: 170899401
+total bases: 25634910150
+Q20 bases: 24533141358(95.7021%)
+Q30 bases: 23077772002(90.0248%)
+
+Read1 after filtering:
+total reads: 150207702
+total bases: 22508342964
+Q20 bases: 22011634025(97.7932%)
+Q30 bases: 21173561403(94.0698%)
+
+Read2 aftering filtering:
+total reads: 150207702
+total bases: 22504426035
+Q20 bases: 21883961189(97.2429%)
+Q30 bases: 20784031556(92.3553%)
+
+Filtering result:
+reads passed filter: 300415404
+reads failed due to low quality: 6574780
+reads failed due to too many N: 50238
+reads failed due to too short: 34715148
+reads failed due to low complexity: 43232
+reads with adapter trimmed: 28576900
+bases trimmed due to adapters: 1267982503
+reads with polyX in 3' end: 6035803
+bases trimmed in polyX tail: 76391035
+
+Duplication rate: 16.4634%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/shotgun_raw_fq/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/shotgun_raw_fq/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/failed/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281H_CKDL210013395-1a-5UDI245-GD07_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 140 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3658 seconds
+Read1 before filtering:
+total reads: 208701252
+total bases: 31305187800
+Q20 bases: 30297556902(96.7813%)
+Q30 bases: 29019475999(92.6986%)
+
+Read2 before filtering:
+total reads: 208701252
+total bases: 31305187800
+Q20 bases: 29894730017(95.4945%)
+Q30 bases: 28036950414(89.5601%)
+
+Read1 after filtering:
+total reads: 186694885
+total bases: 27978941216
+Q20 bases: 27367233113(97.8137%)
+Q30 bases: 26325717096(94.0912%)
+
+Read2 aftering filtering:
+total reads: 186694885
+total bases: 27973431202
+Q20 bases: 27161256752(97.0966%)
+Q30 bases: 25735199848(91.9987%)
+
+Filtering result:
+reads passed filter: 373389770
+reads failed due to low quality: 8412724
+reads failed due to too many N: 61882
+reads failed due to too short: 35484504
+reads failed due to low complexity: 53624
+reads with adapter trimmed: 26584631
+bases trimmed due to adapters: 1185223107
+reads with polyX in 3' end: 7218773
+bases trimmed in polyX tail: 91287669
+
+Duplication rate: 20.4615%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/shotgun_raw_fq/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/shotgun_raw_fq/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/failed/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0281G_CKDL210013395-1a-AK3911-AK845_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 140 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4397 seconds
+Read1 before filtering:
+total reads: 261683170
+total bases: 39252475500
+Q20 bases: 38039242798(96.9092%)
+Q30 bases: 36448575286(92.8568%)
+
+Read2 before filtering:
+total reads: 261683170
+total bases: 39252475500
+Q20 bases: 37624769700(95.8532%)
+Q30 bases: 35404451737(90.1967%)
+
+Read1 after filtering:
+total reads: 237709253
+total bases: 35623278701
+Q20 bases: 34831872211(97.7784%)
+Q30 bases: 33495581864(94.0272%)
+
+Read2 aftering filtering:
+total reads: 237709253
+total bases: 35616397600
+Q20 bases: 34580410139(97.0913%)
+Q30 bases: 32753834702(91.9628%)
+
+Filtering result:
+reads passed filter: 475418506
+reads failed due to low quality: 8008602
+reads failed due to too many N: 79784
+reads failed due to too short: 39803568
+reads failed due to low complexity: 55880
+reads with adapter trimmed: 31287224
+bases trimmed due to adapters: 1435134740
+reads with polyX in 3' end: 7270749
+bases trimmed in polyX tail: 95523967
+
+Duplication rate: 22.6349%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/shotgun_raw_fq/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/shotgun_raw_fq/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/failed/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1/SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 140 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 5733 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.10.1
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1
+Traceback (most recent call last):
+  File "/opt/conda/bin/multiqc", line 6, in <module>
+    from multiqc.__main__ import multiqc
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/__main__.py", line 53, in <module>
+    multiqc.run_cli(prog_name="multiqc")
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1137, in __call__
+    return self.main(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1062, in main
+    rv = self.invoke(ctx)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 763, in invoke
+    return __callback(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 261, in run_cli
+    kwargs=kwargs,
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 562, in run
+    template_mod = config.avail_templates[config.template].load()
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2446, in load
+    self.require(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2469, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 775, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (idna 3.2 (/opt/conda/lib/python3.7/site-packages), Requirement.parse('idna<3,>=2.5'), {'requests'})

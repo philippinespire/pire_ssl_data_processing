@@ -7,22 +7,24 @@
 #SBATCH --job-name=fastp
 #SBATCH -o fastp_1st_-%j.out
 #SBATCH --time=00:00:00
-#SBATCH --cpus-per-task=40	# 40 for Wahab, 32 for Turing
+#SBATCH --cpus-per-task=40
 
 enable_lmod
 module load container_env pire_genome_assembly/2021.07.01
 
 export SINGULARITY_BIND=/home/e1garcia
 
-INDIR=$1                 #/home/e1garcia/shotgun_PIRE/Lle/fq_raw
-OUTDIR=$2                #/home/e1garcia/shotgun_PIRE/fq_fp1
-FQPATTERN=*.fq.gz        #determines files to be trimmed
-EXTPATTERN=[12]\.fq\.gz  # pattern match to fq extensions
+INDIR=$1			#Example - /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus/shotgun_raw_fq
+OUTDIR=$2			#Example - /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus/fq_fp1
+FQPATTERN=*.fq.gz  		#determines files to be trimmed
+EXTPATTERN=[12]\.fq\.gz  	#pattern match to fq extensions
 FWDEXT=1.fq.gz
 REVEXT=2.fq.gz
-THREADS=20 #1/2 of total threads avail?
+THREADS=20 			#1/2 of total threads avail?
 
 mkdir $OUTDIR $OUTDIR/failed
+
+#crun parallel --record-env
 
 ls $INDIR/$FQPATTERN | \
 	sed -e "s/$EXTPATTERN//" -e 's/.*\///g' | \
@@ -33,14 +35,14 @@ ls $INDIR/$FQPATTERN | \
 		--in2 $INDIR/{}$REVEXT \
 		--out1 $OUTDIR/{}r1.fq.gz \
 		--out2 $OUTDIR/{}r2.fq.gz \
-		--unpaired1 $OUTDIR/failed/{}unprd.fq.gz \
-		--unpaired2 $OUTDIR/failed/{}unprd.fq.gz \
+		--unpaired1 $OUTDIR/{}unprd.fq.gz \
+		--unpaired2 $OUTDIR/{}unprd.fq.gz \
 		--failed_out $OUTDIR/failed/{}fail.fq.gz \
 		-h $OUTDIR/{}fastp.html \
 		-j $OUTDIR/{}fastp.json \
 		--qualified_quality_phred 20 \
 		--unqualified_percent_limit 40 \
-		--length_required 33 \
+		--length_required 140 \
 		--low_complexity_filter \
 		--complexity_threshold 30 \
 		--detect_adapter_for_pe \
@@ -52,7 +54,7 @@ ls $INDIR/$FQPATTERN | \
 		--trim_poly_g \
 		--poly_g_min_len 10 \
 		--trim_poly_x \
-		--report_title "First Trim 4 De Novo" 
+		--report_title "First Trim 4 De Novo"
 
 #add multiqc line when it's updated
 crun multiqc $OUTDIR -n $OUTDIR/1st_fastp_report

@@ -127,10 +127,35 @@ sbatch ../../scripts/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_s
 4. Trim, deduplicate, decontaminate, and repair the raw `fq.gz` files
 *(few hours for each of the 2 trims and deduplication, decontamination can take 1-2 days; reparing is done in 1-2 hrs)*
 
-Follow the stepts in:	
+	The stepts are listed in:	
         * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
 	        * open scripts for usage instructions    
 	        * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
+
+5. Fetch the genome properties for your species
+        * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
+	        * open scripts for usage instructions and setting up variables and directories
+			* runFASTP_1st_trim.sbatch
+                        * cumplify.sbatch
+                        * runFASTP_2st_trim.sbatch
+                        * fastqscrn.sbatch
+                        * repair.sbatch
+                * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
+
+All scripts are located in `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts`
+
+Execute after you have update scripts with your species directories
+```sh
+sbatch ../../scripts/runFASTP_1st_trim.sbatch/
+```
+
+Move your log file into the `logs` dir
+```sh
+mv *out ../../logs
+```
+
+Repeat this for each script AFTER the previous has finished
+
 
 
 ### Assembly
