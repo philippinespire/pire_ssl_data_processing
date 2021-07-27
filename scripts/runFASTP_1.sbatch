@@ -7,7 +7,7 @@
 #SBATCH --job-name=fastp
 #SBATCH -o fastp_1st_-%j.out
 #SBATCH --time=00:00:00
-#SBATCH --cpus-per-task=40
+#SBATCH --cpus-per-task=40	# 40 for Wahab, 32 for Turing
 
 enable_lmod
 module load container_env pire_genome_assembly/2021.07.01
