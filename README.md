@@ -128,9 +128,9 @@ sbatch ../../scripts/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_s
 *(few hours for each of the 2 trims and deduplication, decontamination can take 1-2 days; reparing is done in 1-2 hrs)*
 
 Follow the stepts in:	
-    * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
-	 * open scripts for usage instructions    
-	 * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
+        * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
+	        * open scripts for usage instructions    
+	        * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
 
 
 ### Assembly
