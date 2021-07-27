@@ -1,0 +1,61 @@
+/home/r1robert/.profile: line 5: /home/r1robert/.turing_profile: No such file or directory
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/20.11
+
+
+The following have been reloaded with a version change:
+  1) git/2.12.1 => git/2.25
+
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 514661
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 50000
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 40960
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+java -ea -Xmx120g -Xms120g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r1.fq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r2.fq.gz out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch-lustre/r1robert dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx120g
+Executing clump.Clumpify [in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r2.fq.gz, out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r1.fq.gz, out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r2.fq.gz, groups=14514, overwrite=t, usetmpdir=t, tmpdir=/scratch-lustre/r1robert, dedupe=t, addcount=t, subs=2, containment=t, consensus=f, -Xmx120g]
+Version 38.90
+
+Executing clump.KmerSplit [in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r2.fq.gz, out=/scratch-lustre/r1robert/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r1_clumpify_p1_temp%_2aa0e6aea923dd76.fq.gz, out2=, groups=14514, ecco=false, addname=f, shortname=f, unpair=false, repair=f, namesort=f, ow=true, dedupe=t, consensus=f]
+
+Reset INTERLEAVED to false because paired input files were specified.
+Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+Made a comparator with k=31, seed=1, border=1, hashes=4
+/opt/conda/bin/clumpify.sh: line 231: 111541 Killed                  java -ea -Xmx120g -Xms120g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r1.fq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r2.fq.gz out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp_r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch-lustre/r1robert dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx120g
+java -ea -Xmx120g -Xms120g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r1.fq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r2.fq.gz out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp_r1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp_r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch-lustre/r1robert dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx120g
+Executing clump.Clumpify [in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r2.fq.gz, out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp_r1.fq.gz, out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp_r2.fq.gz, groups=14514, overwrite=t, usetmpdir=t, tmpdir=/scratch-lustre/r1robert, dedupe=t, addcount=t, subs=2, containment=t, consensus=f, -Xmx120g]
+Version 38.90
+
+Executing clump.KmerSplit [in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r2.fq.gz, out=/scratch-lustre/r1robert/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp_r1_clumpify_p1_temp%_1f726f6b75dc0c61.fq.gz, out2=, groups=14514, ecco=false, addname=f, shortname=f, unpair=false, repair=f, namesort=f, ow=true, dedupe=t, consensus=f]
+
+Reset INTERLEAVED to false because paired input files were specified.
+Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+Made a comparator with k=31, seed=1, border=1, hashes=4
+/opt/conda/bin/clumpify.sh: line 231: 126210 Killed                  java -ea -Xmx120g -Xms120g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r1.fq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r2.fq.gz out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp_r1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp_r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch-lustre/r1robert dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx120g
+java -ea -Xmx120g -Xms120g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r1.fq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r2.fq.gz out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp_r1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp_r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch-lustre/r1robert dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx120g
+Executing clump.Clumpify [in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r2.fq.gz, out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp_r1.fq.gz, out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp_r2.fq.gz, groups=14514, overwrite=t, usetmpdir=t, tmpdir=/scratch-lustre/r1robert, dedupe=t, addcount=t, subs=2, containment=t, consensus=f, -Xmx120g]
+Version 38.90
+
+Executing clump.KmerSplit [in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r2.fq.gz, out=/scratch-lustre/r1robert/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp_r1_clumpify_p1_temp%_150ecd8851fa1261.fq.gz, out2=, groups=14514, ecco=false, addname=f, shortname=f, unpair=false, repair=f, namesort=f, ow=true, dedupe=t, consensus=f]
+
+Reset INTERLEAVED to false because paired input files were specified.
+Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+Made a comparator with k=31, seed=1, border=1, hashes=4
+/opt/conda/bin/clumpify.sh: line 231: 140906 Killed                  java -ea -Xmx120g -Xms120g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r1.fq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r2.fq.gz out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp_r1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp_r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch-lustre/r1robert dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx120g
