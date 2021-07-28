@@ -19,12 +19,12 @@ export SINGULARITY_BIND=/home/e1garcia
 
 ## The TEMPDIR must be updated to the users own directory or the script wont run
 ## For Turing /scratch-lustre/USER, for Wahab /scratch/USER
-TEMPDIR=$3    #/scratch-lustre/r1robert
-INDIR=$1      #/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_wga_c
-OUTDIR=$2     #/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_wga_clmp_c
-THREADS=1   #clumpify uses a ton of ram, be conservative
-GROUPS=auto   #controls how much ram is used, refer to manual
-RAMPERTHREAD=120g   #have had to set as high as 233g with groups=1
+TEMPDIR=$3    		#/scratch-lustre/r1robert
+INDIR=$1      		#/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_wga_c
+OUTDIR=$2     		#/home/e1garcia/shotgun_PIRE/fq_4denovo_fp1_wga_clmp_c
+THREADS=1   		#clumpify uses a ton of ram, be conservative
+GROUPS=auto   		#controls how much ram is used, refer to manual
+RAMPERTHREAD=120g   	#have had to set as high as 233g with groups=1
 
 ulimit -u 40960
 ulimit -a

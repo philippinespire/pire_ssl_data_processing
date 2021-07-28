@@ -1,0 +1,28 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 1542051
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 40960
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 767879
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_
+java -ea -Xmx180g -Xms180g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r1.fq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r2.fq.gz out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=20 dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx180g
+Executing clump.Clumpify [in=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r2.fq.gz, out=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1.fq.gz, out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r2.fq.gz, groups=14514, overwrite=t, usetmpdir=t, tmpdir=20, dedupe=t, addcount=t, subs=2, containment=t, consensus=f, -Xmx180g]
+Version 38.90
+
+Executing clump.KmerSplit [in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r1.fq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r2.fq.gz, out=20/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1_clumpify_p1_temp%_392ad3e5a49703be.fq.gz, out2=, groups=14514, ecco=false, addname=f, shortname=f, unpair=false, repair=f, namesort=f, ow=true, dedupe=t, consensus=f]
+
+Reset INTERLEAVED to false because paired input files were specified.
+Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+slurmstepd: error: *** JOB 328071 ON d6-w6420b-06 CANCELLED AT 2021-07-28T12:47:50 ***
