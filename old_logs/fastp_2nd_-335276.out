@@ -1,0 +1,175 @@
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 58006393
+total bases: 8689020988
+Q20 bases: 8272022805(95.2009%)
+Q30 bases: 7788919627(89.6409%)
+
+Read2 before filtering:
+total reads: 58006393
+total bases: 8685894280
+Q20 bases: 8136958002(93.6801%)
+Q30 bases: 7497701966(86.3204%)
+
+Read1 after filtering:
+total reads: 49152428
+total bases: 7364505167
+Q20 bases: 7135364351(96.8886%)
+Q30 bases: 6781828634(92.088%)
+
+Read2 aftering filtering:
+total reads: 49152428
+total bases: 7363296057
+Q20 bases: 7052475903(95.7788%)
+Q30 bases: 6568805860(89.2101%)
+
+Filtering result:
+reads passed filter: 98304856
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 17707930
+reads with adapter trimmed: 141300
+bases trimmed due to adapters: 6842581
+reads corrected by overlap analysis: 3893779
+bases corrected by overlap analysis: 9962796
+
+Duplication rate: 38.0342%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.r1r2_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.r1r2_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.r1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.r2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/failed/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/failed/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/failed/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.r1r2_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.r1r2_fastp.json --detect_adapter_for_pe --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 786 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 91923152
+total bases: 13776017356
+Q20 bases: 13415097944(97.3801%)
+Q30 bases: 12872710425(93.4429%)
+
+Read2 before filtering:
+total reads: 91923152
+total bases: 13772406140
+Q20 bases: 13235030295(96.0982%)
+Q30 bases: 12417329137(90.1609%)
+
+Read1 after filtering:
+total reads: 85250268
+total bases: 12777544173
+Q20 bases: 12555120637(98.2593%)
+Q30 bases: 12109517085(94.7719%)
+
+Read2 aftering filtering:
+total reads: 85250268
+total bases: 12775377321
+Q20 bases: 12419980451(97.2181%)
+Q30 bases: 11721460533(91.7504%)
+
+Filtering result:
+reads passed filter: 170500536
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 13345768
+reads with adapter trimmed: 107250
+bases trimmed due to adapters: 5192647
+reads corrected by overlap analysis: 3654999
+bases corrected by overlap analysis: 8827687
+
+Duplication rate: 12.3751%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.r1r2_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.r1r2_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.r1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.r2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/failed/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/failed/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/failed/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.r1r2_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.r1r2_fastp.json --detect_adapter_for_pe --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1325 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 101108567
+total bases: 15152481361
+Q20 bases: 14759845992(97.4088%)
+Q30 bases: 14168447908(93.5058%)
+
+Read2 before filtering:
+total reads: 101108567
+total bases: 15148785740
+Q20 bases: 14576626473(96.2231%)
+Q30 bases: 13699858520(90.4354%)
+
+Read1 after filtering:
+total reads: 93900346
+total bases: 14073949937
+Q20 bases: 13833323394(98.2903%)
+Q30 bases: 13347329239(94.8371%)
+
+Read2 aftering filtering:
+total reads: 93900346
+total bases: 14071829619
+Q20 bases: 13696067936(97.3297%)
+Q30 bases: 12947476726(92.0099%)
+
+Filtering result:
+reads passed filter: 187800692
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 14416442
+reads with adapter trimmed: 119026
+bases trimmed due to adapters: 5709194
+reads corrected by overlap analysis: 4017120
+bases corrected by overlap analysis: 9583104
+
+Duplication rate: 11.6446%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.r1r2_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.r1r2_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.r1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.r2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/failed/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/failed/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/failed/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.r1r2_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.r1r2_fastp.json --detect_adapter_for_pe --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1505 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.10.1
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/fq_fp1_clmp_fp2
+Traceback (most recent call last):
+  File "/opt/conda/bin/multiqc", line 6, in <module>
+    from multiqc.__main__ import multiqc
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/__main__.py", line 53, in <module>
+    multiqc.run_cli(prog_name="multiqc")
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1137, in __call__
+    return self.main(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1062, in main
+    rv = self.invoke(ctx)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 763, in invoke
+    return __callback(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 261, in run_cli
+    kwargs=kwargs,
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 562, in run
+    template_mod = config.avail_templates[config.template].load()
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2446, in load
+    self.require(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2469, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 775, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (idna 3.2 (/opt/conda/lib/python3.7/site-packages), Requirement.parse('idna<3,>=2.5'), {'requests'})

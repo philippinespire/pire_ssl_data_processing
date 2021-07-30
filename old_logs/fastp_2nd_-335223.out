@@ -1,0 +1,175 @@
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 118258972
+total bases: 17718603124
+Q20 bases: 17107461673(96.5508%)
+Q30 bases: 16332506749(92.1772%)
+
+Read2 before filtering:
+total reads: 118258972
+total bases: 17712175816
+Q20 bases: 16837383142(95.0611%)
+Q30 bases: 15706536647(88.6765%)
+
+Read1 after filtering:
+total reads: 102837208
+total bases: 15412986146
+Q20 bases: 15109627288(98.0318%)
+Q30 bases: 14545154555(94.3695%)
+
+Read2 aftering filtering:
+total reads: 102837208
+total bases: 15410624494
+Q20 bases: 14939749501(96.9445%)
+Q30 bases: 14068992262(91.2941%)
+
+Filtering result:
+reads passed filter: 205674416
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 30843528
+reads with adapter trimmed: 203058
+bases trimmed due to adapters: 9333748
+reads corrected by overlap analysis: 6012624
+bases corrected by overlap analysis: 14714760
+
+Duplication rate: 14.5939%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r1r2_fastp.json
+HTML report: ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r1r2_fastp.html
+
+fastp --in1 ../spratelloides_gracilis/fq_fp1_clmp//SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r1.fq.gz --in2 ../spratelloides_gracilis/fq_fp1_clmp//SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r2.fq.gz --out1 ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz --out2 ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r2.fq.gz --unpaired1 ../spratelloides_gracilis/fq_fp1_clmp_fp2/failed/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --unpaired2 ../spratelloides_gracilis/fq_fp1_clmp_fp2/failed/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --failed_out ../spratelloides_gracilis/fq_fp1_clmp_fp2/failed/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_fail.fq.gz -h ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r1r2_fastp.html -j ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r1r2_fastp.json --detect_adapter_for_pe --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1747 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 121060036
+total bases: 18140011146
+Q20 bases: 17607717475(97.0656%)
+Q30 bases: 16873785049(93.0197%)
+
+Read2 before filtering:
+total reads: 121060036
+total bases: 18135016368
+Q20 bases: 17406768271(95.9843%)
+Q30 bases: 16355659414(90.1883%)
+
+Read1 after filtering:
+total reads: 108989152
+total bases: 16335223043
+Q20 bases: 16050577138(98.2575%)
+Q30 bases: 15484685466(94.7932%)
+
+Read2 aftering filtering:
+total reads: 108989152
+total bases: 16333064225
+Q20 bases: 15910522343(97.413%)
+Q30 bases: 15057331395(92.1893%)
+
+Filtering result:
+reads passed filter: 217978304
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 24141768
+reads with adapter trimmed: 181118
+bases trimmed due to adapters: 8030486
+reads corrected by overlap analysis: 5400276
+bases corrected by overlap analysis: 12844273
+
+Duplication rate: 8.49396%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1r2_fastp.json
+HTML report: ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1r2_fastp.html
+
+fastp --in1 ../spratelloides_gracilis/fq_fp1_clmp//SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1.fq.gz --in2 ../spratelloides_gracilis/fq_fp1_clmp//SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r2.fq.gz --out1 ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r1.fq.gz --out2 ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r2.fq.gz --unpaired1 ../spratelloides_gracilis/fq_fp1_clmp_fp2/failed/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --unpaired2 ../spratelloides_gracilis/fq_fp1_clmp_fp2/failed/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --failed_out ../spratelloides_gracilis/fq_fp1_clmp_fp2/failed/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_fail.fq.gz -h ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1r2_fastp.html -j ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1r2_fastp.json --detect_adapter_for_pe --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1788 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 127324621
+total bases: 19077414861
+Q20 bases: 18432213029(96.618%)
+Q30 bases: 17607954058(92.2974%)
+
+Read2 before filtering:
+total reads: 127324621
+total bases: 19071579557
+Q20 bases: 18197223053(95.4154%)
+Q30 bases: 17037754696(89.3358%)
+
+Read1 after filtering:
+total reads: 111677566
+total bases: 16738178775
+Q20 bases: 16413678619(98.0613%)
+Q30 bases: 15805917836(94.4303%)
+
+Read2 aftering filtering:
+total reads: 111677566
+total bases: 16736203694
+Q20 bases: 16261663736(97.1646%)
+Q30 bases: 15359913137(91.7766%)
+
+Filtering result:
+reads passed filter: 223355132
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 31294110
+reads with adapter trimmed: 214062
+bases trimmed due to adapters: 9827564
+reads corrected by overlap analysis: 6190538
+bases corrected by overlap analysis: 15078106
+
+Duplication rate: 13.502%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r1r2_fastp.json
+HTML report: ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r1r2_fastp.html
+
+fastp --in1 ../spratelloides_gracilis/fq_fp1_clmp//SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r1.fq.gz --in2 ../spratelloides_gracilis/fq_fp1_clmp//SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r2.fq.gz --out1 ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r1.fq.gz --out2 ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r2.fq.gz --unpaired1 ../spratelloides_gracilis/fq_fp1_clmp_fp2/failed/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --unpaired2 ../spratelloides_gracilis/fq_fp1_clmp_fp2/failed/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz --failed_out ../spratelloides_gracilis/fq_fp1_clmp_fp2/failed/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_fail.fq.gz -h ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r1r2_fastp.html -j ../spratelloides_gracilis/fq_fp1_clmp_fp2/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r1r2_fastp.json --detect_adapter_for_pe --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1864 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.10.1
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmp_fp2
+Traceback (most recent call last):
+  File "/opt/conda/bin/multiqc", line 6, in <module>
+    from multiqc.__main__ import multiqc
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/__main__.py", line 53, in <module>
+    multiqc.run_cli(prog_name="multiqc")
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1137, in __call__
+    return self.main(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1062, in main
+    rv = self.invoke(ctx)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 763, in invoke
+    return __callback(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 261, in run_cli
+    kwargs=kwargs,
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 562, in run
+    template_mod = config.avail_templates[config.template].load()
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2446, in load
+    self.require(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2469, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 775, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (idna 3.2 (/opt/conda/lib/python3.7/site-packages), Requirement.parse('idna<3,>=2.5'), {'requests'})
