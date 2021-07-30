@@ -103,14 +103,14 @@ This includes running FASTQC, FASTP(twice), CLUMPLIFY, FASTQ SCREEN, and file re
 
 Execute FASTQC
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" ".."
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "."
 ```
 
-Review the Multiqc report for issues
+Download and review the Multiqc report for issues
 
 Execute FASTP1
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." ".."
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
 
 
