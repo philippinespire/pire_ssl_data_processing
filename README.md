@@ -113,8 +113,10 @@ Execute FASTP1
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
 
-
-
+Move the `.out` files into the `logs` dir
+```sh
+mv *out ../logs
+```
 
 
 4. Trim, deduplicate, decontaminate, and repair the raw `fq.gz` files
