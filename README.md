@@ -97,31 +97,24 @@ All 3 sequence sets are for the same individual: Sgr-CMvi_007_Ex1
 bash ../../runGIT.bash
 ```
 
+3. Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo
 
+This includes running FASTQC, FASTP(twice), CLUMPLIFY, FASTQ SCREEN, and file repair
 
-3. Run `fastqc` 
-*(about 2 hours for each. Total data size for all 6 Sgr files ~128GB)*
-    * review results with `multiqc` output
-
-Fastqc and Multiqc can be run simultaneously using the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/Multi_FASTQC.sh) script in the `scripts` repo
-
-Execute `Multi_FASTQC.sh` while providing, in quotations and in this order, 
-(1) a suffix that will identify the files to be processed, and (2) the FULL path to these files. 
-
-Example:
+Execute FASTQC
 ```sh
-sbatch ../../scripts/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq"  
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" ".."
 ```
 
-If you get a message about not finding "crun" then load the containers in your current session and run `Multi_FASTQC.sh` again
+Review the Multiqc report for issues
 
+Execute FASTP1
 ```sh
-enable_lmod
-module load parallel
-module load container_env multiqc
-module load container_env fastqc
-sbatch ../../scripts/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." ".."
 ```
+
+
+
 
 
 4. Trim, deduplicate, decontaminate, and repair the raw `fq.gz` files
