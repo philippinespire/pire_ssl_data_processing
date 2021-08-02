@@ -107,11 +107,12 @@ All 3 sequence sets are for the same individual: Sgr-CMvi_007_Ex1
 bash ../../runGIT.bash
 ```
 
-3. Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo
+***You are ready to start processing files***
+	* Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo
 
-This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair
+		* This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair
 
-Execute FASTQC
+3. Execute FASTQC
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "."
 ```
@@ -126,11 +127,11 @@ nano ../README.md
 
 You can use the Sgr [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/spratelloides_gracilis) as a template and fill in as steps are accomplished for your species `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/README.md`
 
-	* Update your species README, i.e. provide a link to the report and list the highlights.
-	* Update this README and the slack species channel after every step
+* Update your species README, i.e. provide a link to the report and list the highlights.
+* Update this README and the slack species channel after every step
 
 
-Execute FASTP1
+4. Execute FASTP1
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
@@ -142,7 +143,7 @@ mv *out ../logs
 Repeat this AFTER each step is completed
 
 
-Execute `runCLUMPIFY_r1r2_array.bash` on Wahab.  
+5. Execute `runCLUMPIFY_r1r2_array.bash` on Wahab.  
 
 The `max # of nodes to use at once` should not exceed the number of pair of r1-r2 files to be processed. If you have many sets of files, you could also limit the number of nodes to the number of nodes in `idle` in the main partiton i.e. run sinfo and look for `idle`
 
@@ -158,7 +159,6 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 ```
 
 After completion, run `checkClumpify_EG.R` to see if any files failed
-# look for this error "OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00007fc08c000000, 204010946560, 0) failed; error='Not enough space' (errno=12)"
 ```
 enable_lmod
 module load container_env mapdamage2
@@ -167,6 +167,10 @@ crun R < ../../pire_fq_gz_processing/checkClumpify_EG.R --no-save
 If all files were successful, `checkClumpify_EG.R` will return "Clumpify Successfully worked on all samples". 
 
 If some failed, the script will also let you know. Try raising "-c 20" to "-c 40" in `runCLUMPIFY_r1r2_array.bash` and run clumplify again
+
+Also look for this error "OpenJDK 64-Bit Server VM warning:
+INFO: os::commit_memory(0x00007fc08c000000, 204010946560, 0) failed; error='Not enough space' (errno=12)"
+
 
 When completed, move your log files into the `logs` dir
 ```sh
