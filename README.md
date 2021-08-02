@@ -116,7 +116,8 @@ Execute FASTQC
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "."
 ```
 
-Download and review the Multiqc report for issues
+Download and review the Multiqc report for issues. 
+
 
 Create a species specific README.md to track the species progress
 ```sh
@@ -125,6 +126,7 @@ nano ../README.md
 
 You can use the Sgr [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/spratelloides_gracilis) as a template and fill in as steps are accomplished for your species `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/README.md`
 
+Update your species README, i.e. provide a link to the report and list the highlights. Update this README and the slack species channel after every step
 
 
 Execute FASTP1
@@ -136,8 +138,21 @@ Move the `.out` files into the `logs` dir
 ```sh
 mv *out ../logs
 ```
+Repeat this AFTER each step is completed
 
 
+Execute `runCLUMPIFY_r1r2_array.bash` on Wahab.  
+
+The `max # of nodes to use at once` should not exceed the number of files to be processed. You could also limit$
+```sh
+#runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir> <max # of nodes to use at once>
+# do not use trailing / in paths. Example
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash ../fq_fp1 ../fq_fp1_clmparray /scratch/e1garcia 6
+#after completion, run checkClumpify.R to see if any files failed
+# look for this error "OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00007fc08c000000, 20401094$
+nough space' (errno=12)"
+# if some fail, try this: Then just raise "-c 20" to "-c 40".
+``` 
 4. Trim, deduplicate, decontaminate, and repair the raw `fq.gz` files
 *(few hours for each of the 2 trims and deduplication, decontamination can take 1-2 days; reparing is done in 1-2 hrs)*
 

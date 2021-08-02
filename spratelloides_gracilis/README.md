@@ -1,12 +1,50 @@
-# Shotgun Data Processing Log -SSL data
+# Sgr Shotgun Data Processing Log -SSL data
 
 copy and paste this into a new species dir and fill in as steps are accomplished.
 
 ---
 
+Following the [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) roadmap 
+
+and [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing)
+
+## Step 1. Fastqc
+
+Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/Multi_FASTQC/multiqc_report_fq.gz.html) Download to view
+
+Potential issues:  
+* % duplication - not bad
+  * 30s-40s
+* gc content - reasonable
+  * 46-48%
+* quality - good
+  * sequence quality and per sequence qual both good
+* % adapter - good and low
+  * >2s
+* number of reads - good
+  * ~200M
+
+
+
 ## Step 1.  1st fastp
 
-Locate data location in slack channel for this species to get the indir.  The outdir should be `/home/YOURUSERNAME/pire_cssl_data_processing/SPECIESDIR`
+Used [runFASTP_1st_trim.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch)
+to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/spratelloides_gracilis/fq_fp1)
+
+Potential issues:  
+* % duplication - not bad 
+  * 31-46%
+* gc content - reasonable
+  * ~44%
+  * more variable in pos 1-72 than in 73-150 
+* passing filter - good
+  * ~91%
+* % adapter - not too bad 
+  * 6-7.5%
+* number of reads - good
+  * ~340-414M
+
+
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
