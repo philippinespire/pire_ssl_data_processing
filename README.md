@@ -109,7 +109,7 @@ bash ../../runGIT.bash
 
 3. Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo
 
-This includes running FASTQC, FASTP(twice), CLUMPLIFY, FASTQ SCREEN, and file repair
+This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair
 
 Execute FASTQC
 ```sh
@@ -126,7 +126,8 @@ nano ../README.md
 
 You can use the Sgr [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/spratelloides_gracilis) as a template and fill in as steps are accomplished for your species `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/README.md`
 
-Update your species README, i.e. provide a link to the report and list the highlights. Update this README and the slack species channel after every step
+	* Update your species README, i.e. provide a link to the report and list the highlights.
+	* Update this README and the slack species channel after every step
 
 
 Execute FASTP1
@@ -143,47 +144,27 @@ Repeat this AFTER each step is completed
 
 Execute `runCLUMPIFY_r1r2_array.bash` on Wahab.  
 
-The `max # of nodes to use at once` should not exceed the number of files to be processed. You could also limit$
+The `max # of nodes to use at once` should not exceed the number of pair of r1-r2 files to be processed. If you have many sets of files, you could also limit the number of nodes to the number of nodes in `idle` in the main partiton i.e. run sinfo and look for `idle`
+
+For Sgr, I had 6 r1 and 6 r2 files, or 3 sets of pairs so I used 3 nodes for clumpify
 ```sh
+# Navigate to your species home dir
+cd ..
+
+# Execute with:
 #runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir> <max # of nodes to use at once>
 # do not use trailing / in paths. Example
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash ../fq_fp1 ../fq_fp1_clmparray /scratch/e1garcia 6
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/e1garcia 3
 #after completion, run checkClumpify.R to see if any files failed
-# look for this error "OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00007fc08c000000, 20401094$
-nough space' (errno=12)"
+# look for this error "OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00007fc08c000000, 204010946560, 0) failed; error='Not enough space' (errno=12)"
 # if some fail, try this: Then just raise "-c 20" to "-c 40".
-``` 
-4. Trim, deduplicate, decontaminate, and repair the raw `fq.gz` files
-*(few hours for each of the 2 trims and deduplication, decontamination can take 1-2 days; reparing is done in 1-2 hrs)*
-
-	The stepts are listed in:	
-        * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
-	        * open scripts for usage instructions    
-	        * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
-
-5. Fetch the genome properties for your species
-        * [`denovo_genome_assembly/pre-assembly_processing`](https://github.com/philippinespire/denovo_genome_assembly/tree/main/pre-assembly_processing)
-	        * open scripts for usage instructions and setting up variables and directories
-			* runFASTP_1st_trim.sbatch
-                        * cumplify.sbatch
-                        * runFASTP_2st_trim.sbatch
-                        * fastqscrn.sbatch
-                        * repair.sbatch
-                * review the outputs from `fastp` and `fastq_screen` with `multiqc` output
-
-All scripts are located in `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts`
-
-Execute after you have update scripts with your species directories
-```sh
-sbatch ../../scripts/runFASTP_1st_trim.sbatch/
 ```
 
-Move your log file into the `logs` dir
+Move your log files into the `logs` dir
 ```sh
-mv *out ../../logs
+mv *out logs
 ```
 
-Repeat this for each script AFTER the previous has finished
 
 
 
