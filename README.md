@@ -155,12 +155,20 @@ cd ..
 #runCLUMPIFY_r1r2_array.bash <indir> <outdir> <tempdir> <max # of nodes to use at once>
 # do not use trailing / in paths. Example
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/e1garcia 3
-#after completion, run checkClumpify.R to see if any files failed
-# look for this error "OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00007fc08c000000, 204010946560, 0) failed; error='Not enough space' (errno=12)"
-# if some fail, try this: Then just raise "-c 20" to "-c 40".
 ```
 
-Move your log files into the `logs` dir
+After completion, run `checkClumpify_EG.R` to see if any files failed
+# look for this error "OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00007fc08c000000, 204010946560, 0) failed; error='Not enough space' (errno=12)"
+```
+enable_lmod
+module load container_env mapdamage2
+crun R < ../../pire_fq_gz_processing/checkClumpify_EG.R --no-save
+```
+If all files were successful, `checkClumpify_EG.R` will return "Clumpify Successfully worked on all samples". 
+
+If some failed, the script will also let you know. Try raising "-c 20" to "-c 40" in `runCLUMPIFY_r1r2_array.bash` and run clumplify again
+
+When completed, move your log files into the `logs` dir
 ```sh
 mv *out logs
 ```

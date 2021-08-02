@@ -75,7 +75,22 @@ Ran [runCLUMPIFY_r1r2_array.bash](https://github.com/philippinespire/pire_fq_gz_
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/e1garcia 3
 ```
 
+Checked the output with `checkClumpify_EG.R`
+```
+enable_lmod
+module load container_env mapdamage2
+crun R < ../../pire_fq_gz_processing/checkClumpify_EG.R --no-save
+```
+
+*I couldn't pass the arguments from the terminal to R correcty so I commented out few lines in checkClumpify.R to bypass this*
+
+Clumpify work succesfully!
+
 Out files were moved to the `logs` dir
+```
+mv *out logs
+```
+
 
 ---
 
