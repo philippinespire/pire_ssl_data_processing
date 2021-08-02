@@ -59,6 +59,16 @@ ___
 
 ### Pre-Process
 
+0. Make a copy of your raw files in the longterm carpenter RC dir
+```sh
+cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
+mkdir <species_name>
+mkdir <species_name>/shotgun_raw_fq
+cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<species_name>/shotgun_raw_fq
+```
+*The RC drive is only available from the login node (you won't find it after getting a working node, i.e. `salloc`*
+
+
 1. Clone this repo to your working dir
 *(already done above)*
 
@@ -107,6 +117,15 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz"
 ```
 
 Download and review the Multiqc report for issues
+
+Create a species specific README.md to track the species progress
+```sh
+nano ../README.md
+```
+
+You can use the Sgr [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/spratelloides_gracilis) as a template and fill in as steps are accomplished for your species `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/README.md`
+
+
 
 Execute FASTP1
 ```sh
