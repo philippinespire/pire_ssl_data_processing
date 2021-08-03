@@ -109,8 +109,8 @@ bash ../../runGIT.bash
 ```
 
 ***You are ready to start processing files***
-* Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo
-	* This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair
+Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo
+* This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair
 
 1. Execute FASTQC
 ```sh
@@ -128,7 +128,7 @@ nano ../README.md
 You can use the Sgr [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/spratelloides_gracilis) as a template and fill in as steps are accomplished for your species `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/README.md`
 
 * Update your species README, i.e. provide a link to the report and list the highlights.
-* Update this README and the slack species channel after every step
+* Update the species  README and the slack species channel after every step
 
 
 2. Execute FASTP1
@@ -162,7 +162,7 @@ After completion, run `checkClumpify_EG.R` to see if any files failed
 ```
 enable_lmod
 module load container_env mapdamage2
-crun R < ../../pire_fq_gz_processing/checkClumpify_EG.R --no-save
+crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
 ```
 If all files were successful, `checkClumpify_EG.R` will return "Clumpify Successfully worked on all samples". 
 
@@ -177,11 +177,17 @@ When completed, move your log files into the `logs` dir
 mv *out logs
 ```
 
-4. Execute `runFASTP_2.sbatch`
+4. Execute `runFASTP_2_ssl.sbatch`
 ```
 #runFASTP_2.sbatch <indir> <outdir> 
 # do not use trailing / in paths
-sbatch ../../pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
+```
+* Update your species README, i.e. provide a link to the report and list the highlights
+
+Move your out file
+```
+mv *out logs
 ```
 
 ### Assembly

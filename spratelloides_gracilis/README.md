@@ -79,12 +79,12 @@ Checked the output with `checkClumpify_EG.R`
 ```
 enable_lmod
 module load container_env mapdamage2
-crun R < ../../pire_fq_gz_processing/checkClumpify_EG.R --no-save
+crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
 ```
 
 *I couldn't pass the arguments from the terminal to R correcty so I commented out few lines in checkClumpify.R to bypass this*
 
-Clumpify work succesfully!
+Clumpify worked succesfully!
 
 Out files were moved to the `logs` dir
 ```
@@ -96,26 +96,24 @@ mv *out logs
 
 ## Step 4. Run fastp2
 
-Executed `runFASTP_2.sbatch` to generate this [report]()
+Executed `runFASTP_2.sbatch` to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/fq_fp1_clmparray_fp2/2nd_fastp_report.html)
 ```
 #runFASTP_2.sbatch <indir> <outdir> 
 # do not use trailing / in paths
-sbatch ../../pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
 
 Potential issues:  
-* % duplication - good  
-  * alb:20s, contemp: 20s
+* % duplication - low
+  * 8-14%
 * gc content - reasonable
-  * alb: 40s, contemp: 40s 
+  * 44s 
 * passing filter - good
-  * alb: 90s, contemp: 90s 
-* % adapter - good
-  * alb: 2s, contemp: 2s
+  * 83-85%s 
+* % adapter - virtually noned
+  * 0.1%
 * number of reads - lost alot for albatross
-  * generally more for albatross than contemp, as we attempted to do
-  * alb: 7 mil, contemp: YY mil
-
+  * 205-213M
 
 ---
 
