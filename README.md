@@ -112,7 +112,7 @@ bash ../../runGIT.bash
 Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo
 * This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair
 
-1. Execute FASTQC
+#### 1. Execute FASTQC
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "."
 ```
@@ -131,7 +131,7 @@ You can use the Sgr [README.md](https://github.com/philippinespire/pire_ssl_data
 * Update the species  README and the slack species channel after every step
 
 
-2. Execute FASTP1
+#### 2. Execute FASTP1
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
@@ -143,7 +143,7 @@ mv *out ../logs
 Repeat this AFTER each step is completed
 
 
-3. Execute `runCLUMPIFY_r1r2_array.bash` on Wahab.  
+#### 3. Execute `runCLUMPIFY_r1r2_array.bash` on Wahab.  
 
 The `max # of nodes to use at once` should not exceed the number of pair of r1-r2 files to be processed. If you have many sets of files, you could also limit the number of nodes to the number of nodes in `idle` in the main partiton i.e. run sinfo and look for `idle`
 
@@ -177,7 +177,7 @@ When completed, move your log files into the `logs` dir
 mv *out logs
 ```
 
-4. Execute `runFASTP_2_ssl.sbatch`
+#### 4. Execute `runFASTP_2_ssl.sbatch`
 ```
 #runFASTP_2.sbatch <indir> <outdir> 
 # do not use trailing / in paths
@@ -190,7 +190,7 @@ Move your out file
 mv *out logs
 ```
 
-5. Execute `runFQSCRN_6.bash`
+#### 5. Execute `runFQSCRN_6.bash`
 
 Check the number of available nodes with `sinfo` (i.e. nodes in idle in the main partition).
  Try running one node per fq.gz file if possilbe or how many nodes are available.
@@ -220,7 +220,7 @@ mv *out logs
 
 * Update your species README, i.e. provide a link to the report and list the highlights. Update Slack
 
-6. Execute [runREPAIR.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch)
+#### 6. Execute [runREPAIR.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch)
 
 ```
 #runREPAIR.sbatch <indir> <outdir> <threads>
