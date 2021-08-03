@@ -62,7 +62,7 @@ ___
 Clone this repo to your working dir
 *(already done above)*
 
-0. Set up directories and data
+#### 0. Set up directories and data
 
 Make a copy of your raw files in the longterm carpenter RC dir
 ```sh
