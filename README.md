@@ -190,6 +190,33 @@ Move your out file
 mv *out logs
 ```
 
+5. Execute `runFQSCRN_6.bash`
+
+Check the number of available nodes with `sinfo` (i.e. nodes in idle in the main partition).
+ Try running one node per fq.gz file if possilbe or how many nodes are available.
+ Yet, the number of nodes running simultaneously should not exceed that number of fq.gz files.
+```sh 
+#runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
+# do not use trailing / in paths. Example:
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 6
+
+#confirm that all files were successfully completed
+# this will return any out files that had a problem, replace JOBID with your jobid
+grep 'error' slurm-fqscrn.JOBID*out
+grep 'No reads in' slurm-fqscrn.JOBID*out
+# if you see missing indiviudals or categories in the multiqc output, there was likely a ram error.  I'm not sure if the "error" search term catches it.
+
+# run the files that failed again.  This seems to work in most cases
+#runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously> <fq file pattern to process>
+bash runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 1 LlA01010*r1.fq.gz
+...
+bash runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01005*r2.fq.gz
+```
+
+
+
+
+
 ### Assembly
 
 5. Fetch the genome properties for your species
