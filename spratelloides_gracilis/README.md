@@ -10,7 +10,7 @@ and [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_proces
 
 ## Step 1. Fastqc
 
-Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/Multi_FASTQC/multiqc_report_fq.gz.html) Download to view
+Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/Multi_FASTQC/multiqc_report_fq.gz.html) (copy and paste into a text editor locally) Save and open in your browser to view
 
 Potential issues:  
 * % duplication - not bad
@@ -44,28 +44,10 @@ Potential issues:
 * number of reads - good
   * ~340-414M
 
+```
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash ../fq_fp1 ../fq_fp1_clmparray /scratch/e1garcia 6
-
-```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-#runFASTP_1.sbatch <indir> <outdir>
-# do not use trailing / in paths
-sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Lle/fq_raw fq_fp1
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
-
-Potential issues:  
-* % duplication - high for albatross, 
-  * alb:70s, contemp: 50s
-* gc content - reasonable
-* passing filter - good
-* % adapter - high, but that was expected, 
-  * alb: 80s, contemp: 40s
-* number of reads - decent
-  * generally more for albatross than contemp, as we attempted to do
-  * alb: 30mil, contemp: 8 mil
- 
 ---
 
 ## Step 3. Clumpify
@@ -96,9 +78,9 @@ mv *out logs
 
 ## Step 4. Run fastp2
 
-Executed `runFASTP_2.sbatch` to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/fq_fp1_clmparray_fp2/2nd_fastp_report.html)
+Executed `runFASTP_2_ssl.sbatch` to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/fq_fp1_clmparray_fp2/2nd_fastp_report.html)
 ```
-#runFASTP_2.sbatch <indir> <outdir> 
+#runFASTP_2_ssl.sbatch <indir> <outdir> 
 # do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
@@ -116,6 +98,7 @@ Potential issues:
   * 205-213M
 
 ---
+
 
 ## Step 4. Run fastq_screen
 
