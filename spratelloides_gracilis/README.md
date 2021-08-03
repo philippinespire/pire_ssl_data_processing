@@ -100,23 +100,24 @@ Potential issues:
 ---
 
 
-## Step 4. Run fastq_screen
+## Step 5. Run fastq_screen
 
-I edited runFQSCRN_6* to run on wahab.
+Executed `runFQSCRN_6.bash` to generate this [report]()
 
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
 # do not use trailing / in paths
-bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 6
+``
 
-# check output for errors
+Checked output for errors
+``
 grep 'error' slurm-fqscrn.266713*out | less -S
 grep 'No reads in' slurm-fqscrn.266713*out | less -S
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn/fqscrn_report_1.html), download and open in web browser
+No errors!
+
 
 Potential issues:
 * job 9 failed
@@ -128,13 +129,11 @@ Potential issues:
 Fix errors: all I had to do was run the files again that returned the "No reads in" error and they worked fine
 
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously> <fq file pattern to process>
 # do not use trailing / in paths
-bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01010*r1.fq.gz
-bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01005*r2.fq.gz
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01010*r1.fq.gz
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01005*r2.fq.gz
 ```
-
 
 Cleanup logs
 ```
@@ -144,15 +143,14 @@ mv *out logs
 
 ---
 
-## Step 5. Repair fastq_screen paired end files
+## Step 6. Repair fastq_screen paired end files
+
+```sh
+#runREPAIR.sbatch <indir> <outdir> <threads>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
+```
 
 This went smoothly.
-
-```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-# runREPAIR.sbatch <indir> <outdir> <threads>
-sbatch ../scripts/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
-```
 
 ---
 
