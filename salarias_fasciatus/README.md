@@ -1,4 +1,4 @@
-# Sgr Shotgun Data Processing Log -SSL data
+# Sfa Shotgun Data Processing Log -SSL data
 
 copy and paste this into a new species dir and fill in as steps are accomplished.
 
@@ -10,26 +10,24 @@ and [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_proces
 
 ## Step 1. Fastqc
 
-Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/Multi_FASTQC/multiqc_report_fq.gz.html) Download to view
+Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/salarias_fasciatus/Multi_FASTQC/multiqc_report_fq.gz.html) Download to view
 
 Potential issues:  
-* % duplication - not bad
-  * 30s-40s
+* % duplication - low
+  * 20s-26s
 * gc content - reasonable
-  * 46-48%
+  * 45-47%
 * quality - good
   * sequence quality and per sequence qual both good
 * % adapter - good and low
-  * ~2s
+  * ~4s
 * number of reads - good
-  * ~200M
-
-
+  * ~216M
 
 ## Step 2.  1st fastp
 
 Used [runFASTP_1st_trim.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch)
-to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/fq_fp1/1st_fastp_report.html)
+to generate this [report](INSERT REPORT HERE)
 
 Potential issues:  
 * % duplication - not bad 

@@ -1,4 +1,4 @@
-# Sgr Shotgun Data Processing Log -SSL data
+# Hqu Shotgun Data Processing Log -SSL data
 
 copy and paste this into a new species dir and fill in as steps are accomplished.
 
@@ -10,20 +10,19 @@ and [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_proces
 
 ## Step 1. Fastqc
 
-Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/Multi_FASTQC/multiqc_report_fq.gz.html) Download to view
+Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/herklotsichthys_quadrimaculatus/Multi_FASTQC/multiqc_report_fq.gz.html) Download to view
 
 Potential issues:  
 * % duplication - not bad
-  * 30s-40s
+  * 29s-38s
 * gc content - reasonable
-  * 46-48%
+  * 46-51%
 * quality - good
   * sequence quality and per sequence qual both good
 * % adapter - good and low
   * ~2s
 * number of reads - good
-  * ~200M
-
+  * ~216M
 
 
 ## Step 2.  1st fastp

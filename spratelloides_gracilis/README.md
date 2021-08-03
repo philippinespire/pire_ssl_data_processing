@@ -96,15 +96,12 @@ mv *out logs
 
 ## Step 4. Run fastp2
 
-
+Executed `runFASTP_2.sbatch` to generate this [report]()
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFASTP_2.sbatch <indir> <outdir> 
 # do not use trailing / in paths
-sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+sbatch ../../pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
-
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2/2nd_fastp_report_2.html), download and open in web browser
 
 Potential issues:  
 * % duplication - good  

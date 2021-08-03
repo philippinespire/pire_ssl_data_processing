@@ -59,7 +59,12 @@ ___
 
 ### Pre-Process
 
-0. Make a copy of your raw files in the longterm carpenter RC dir
+Clone this repo to your working dir
+*(already done above)*
+
+0. Set up directories and data
+
+Make a copy of your raw files in the longterm carpenter RC dir
 ```sh
 cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
 mkdir <species_name>
@@ -68,11 +73,7 @@ cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_pr
 ```
 *The RC drive is only available from the login node (you won't find it after getting a working node, i.e. `salloc`*
 
-
-1. Clone this repo to your working dir
-*(already done above)*
-
-2. Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`. Transfer your raw data into `shotgun_raw_fq` 
+Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`. Transfer your raw data into `shotgun_raw_fq` 
 *(can take several hours)*
 
 ```sh
@@ -112,7 +113,7 @@ bash ../../runGIT.bash
 
 		* This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair
 
-3. Execute FASTQC
+1. Execute FASTQC
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "."
 ```
@@ -131,7 +132,7 @@ You can use the Sgr [README.md](https://github.com/philippinespire/pire_ssl_data
 * Update this README and the slack species channel after every step
 
 
-4. Execute FASTP1
+2. Execute FASTP1
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
@@ -143,7 +144,7 @@ mv *out ../logs
 Repeat this AFTER each step is completed
 
 
-5. Execute `runCLUMPIFY_r1r2_array.bash` on Wahab.  
+3. Execute `runCLUMPIFY_r1r2_array.bash` on Wahab.  
 
 The `max # of nodes to use at once` should not exceed the number of pair of r1-r2 files to be processed. If you have many sets of files, you could also limit the number of nodes to the number of nodes in `idle` in the main partiton i.e. run sinfo and look for `idle`
 
@@ -177,8 +178,12 @@ When completed, move your log files into the `logs` dir
 mv *out logs
 ```
 
-
-
+4. Execute `runFASTP_2.sbatch`
+```
+#runFASTP_2.sbatch <indir> <outdir> 
+# do not use trailing / in paths
+sbatch ../../pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
+```
 
 ### Assembly
 
