@@ -2,6 +2,7 @@
     "report_data_sources": {
         "FastQ Screen": {
             "all_sections": {
+                "SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r1_screen": "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r1_screen.txt",
                 "SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r2_screen": "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r2_screen.txt",
                 "SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1_screen": "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1_screen.txt",
                 "SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r2_screen": "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r2_screen.txt",
@@ -12,7 +13,7 @@
     },
     "report_general_stats_data": [],
     "report_general_stats_headers": [],
-    "report_multiqc_command": "/opt/conda/bin/multiqc fq_fp1_clmparray_fp2_fqscrn -n fq_fp1_clmparray_fp2_fqscrn/fqscrn_report",
+    "report_multiqc_command": "/opt/conda/bin/multiqc . -n ./fastqc_screen_report",
     "report_plot_data": {},
     "report_saved_raw_data": {
         "multiqc_fastq_screen": {
@@ -132,6 +133,35 @@
                 "No hits counts": 100520958,
                 "No hits percentage": 92.23
             },
+            "SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r1_screen": {
+                "total_reads": 111678048,
+                "Human counts": 8762676.0,
+                "Human percentage": 7.84,
+                "Ecoli counts": 182.0,
+                "Ecoli percentage": 0.0,
+                "PhiX counts": 0.0,
+                "PhiX percentage": 0.0,
+                "Contamnts_Adaptrs counts": 8.0,
+                "Contamnts_Adaptrs percentage": 0.0,
+                "Vectors counts": 4257826.0,
+                "Vectors percentage": 3.8099999999999996,
+                "Bacteria_24k counts": 6598686.0,
+                "Bacteria_24k percentage": 5.91,
+                "Protists_1k counts": 9986439.0,
+                "Protists_1k percentage": 8.94,
+                "Viruses counts": 6728971.0,
+                "Viruses percentage": 6.0200000000000005,
+                "Fungi_RefSeq_release counts": 8436341.0,
+                "Fungi_RefSeq_release percentage": 7.55,
+                "Coral counts": 6991066.0,
+                "Coral percentage": 6.26,
+                "Bird counts": 7554015.0,
+                "Bird percentage": 6.76,
+                "Plant counts": 7437254.0,
+                "Plant percentage": 6.66,
+                "No hits counts": 101202647,
+                "No hits percentage": 90.62
+            },
             "SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r2_screen": {
                 "total_reads": 111678048,
                 "Human counts": 8063213.0,
@@ -146,18 +176,18 @@
                 "Vectors percentage": 3.15,
                 "Bacteria_24k counts": 5841930.0,
                 "Bacteria_24k percentage": 5.23,
-                "Protists_1k counts": 9345600.0,
-                "Protists_1k percentage": 8.37,
-                "Viruses counts": 5984405.0,
-                "Viruses percentage": 5.3500000000000005,
-                "Fungi_RefSeq_release counts": 7741373.0,
-                "Fungi_RefSeq_release percentage": 6.93,
-                "Coral counts": 3923406.0,
-                "Coral percentage": 3.52,
-                "Bird counts": 6827938.0,
-                "Bird percentage": 6.11,
-                "Plant counts": 6707895.0,
-                "Plant percentage": 6.0,
+                "Protists_1k counts": 5327787.0,
+                "Protists_1k percentage": 4.76,
+                "Viruses counts": 0.0,
+                "Viruses percentage": 0.0,
+                "Fungi_RefSeq_release counts": 0.0,
+                "Fungi_RefSeq_release percentage": 0.0,
+                "Coral counts": 0.0,
+                "Coral percentage": 0.0,
+                "Bird counts": 0.0,
+                "Bird percentage": 0.0,
+                "Plant counts": 0.0,
+                "Plant percentage": 0.0,
                 "No hits counts": 101861547,
                 "No hits percentage": 91.21
             }
@@ -167,16 +197,16 @@
         "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn"
     ],
     "config_analysis_dir": [
-        "fq_fp1_clmparray_fp2_fqscrn"
+        "."
     ],
-    "config_creation_date": "2021-08-03, 20:19",
+    "config_creation_date": "2021-08-04, 15:29",
     "config_git_hash": null,
     "config_intro_text": null,
     "config_report_comment": null,
     "config_report_header_info": null,
     "config_script_path": "/opt/conda/lib/python3.7/site-packages/multiqc/utils",
-    "config_short_version": "1.10.1",
+    "config_short_version": "1.9",
     "config_subtitle": null,
     "config_title": null,
-    "config_version": "1.10.1"
+    "config_version": "1.9"
 }

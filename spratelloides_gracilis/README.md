@@ -112,14 +112,27 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_c
 
 Checked output for errors
 ``
-grep 'error' slurm-fqscrn.266713*out | less -S
-grep 'No reads in' slurm-fqscrn.266713*out | less -S
+ls fq_fp1_clmparray_fp2_fqscrn/*tagged.fastq.gz | wc -l
+ls fq_fp1_clmparray_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l 
+ls fq_fp1_clmparray_fp2_fqscrn/*screen.txt | wc -l
+ls fq_fp1_clmparray_fp2_fqscrn/*screen.png | wc -l
+ls fq_fp1_clmparray_fp2_fqscrn/*screen.html | wc -l
+
+# all returned 6
+
+#checked for errors in all out files at once
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+
+# No errors!
 ```
 
-No errors!
+However, `runFQSCRN_6.bash` was running multiqc several times generating reports with not all the files and making many outputs. I deleted all of this and re-run multiqc with `runMULTIQC.sbatch`
+
+I modified `runFQSCRN_6.bash` by commenting out the original execution of multiqc and added the format we are running in the trims
 
 
-Potential issues:
+Potential issues from report:
 * job 9 failed
   * [out file](./logs/LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz)
   * "No reads in LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz, skipping" 
