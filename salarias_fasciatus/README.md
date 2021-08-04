@@ -49,30 +49,29 @@ cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/shotg
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
+Multiqc was ran seperately bc it was not working as set up in the runFASTP_1st_trim.sbatch.
+ Other users, except for Eric, were automatically loading different versions of dependencies.
 
-Potential issues:  
-* % duplication - high for albatross, 
-  * alb:70s, contemp: 50s
-* gc content - reasonable
-* passing filter - good
-* % adapter - high, but that was expected, 
-  * alb: 80s, contemp: 40s
-* number of reads - decent
-  * generally more for albatross than contemp, as we attempted to do
-  * alb: 30mil, contemp: 8 mil
- 
+log for multiqc: mqc_fastp1-JOBID.out
+
+Long-term solution:
+added `module load multiqc` and run multiqc with `srun crun multiqc ....` in the runFASTP_1st_trim.sbatch script
+
 ---
 
 ## Step 3. Clumpify
 
 Ran [runCLUMPIFY_r1r2_array.bash](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash) in a 3 node array in Wahab
+
 ```
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/e1garcia 3
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/jbald004 3
 ```
 
 Out files were moved to the `logs` dir
 
+
+Jem stopped here 8/4/2021
 ---
 
 ## Step 4. Run fastp2

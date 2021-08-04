@@ -33,6 +33,8 @@ Potential issues:
 Used [runFASTP_1st_trim.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch)
 to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/taeniamia_zosterophora/fq_fp1/1st_fastp_report.html)
 
+Jem cannot generate MultiQC report
+
 Potential issues:  
 * % duplication - not bad 
   * 31-46%
@@ -46,35 +48,31 @@ Potential issues:
 * number of reads - good
   * ~340-414M
 
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash ../fq_fp1 ../fq_fp1_clmparray /scratch/e1garcia 6
-
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/shotgun_raw_fq
 #runFASTP_1.sbatch <indir> <outdir>
 # do not use trailing / in paths
-sbatch ../scripts/runFASTP_1.sbatch /home/e1garcia/shotgun_PIRE/Lle/fq_raw fq_fp1
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1/1st_fastp_report.html), download and open in web browser. You can either scp it to your local computer or copy the raw file, paste it into notepad++ and save as html.  
+Multiqc was ran seperately bc it was not working as set up in the runFASTP_1st_trim.sbatch.
+ Other users, except for Eric, were automatically loading different versions of dependencies.
 
-Potential issues:  
-* % duplication - high for albatross, 
-  * alb:70s, contemp: 50s
-* gc content - reasonable
-* passing filter - good
-* % adapter - high, but that was expected, 
-  * alb: 80s, contemp: 40s
-* number of reads - decent
-  * generally more for albatross than contemp, as we attempted to do
-  * alb: 30mil, contemp: 8 mil
- 
+log for multiqc: mqc_fastp1-JOBID.out
+
+Long-term solution:
+added `module load multiqc` and run multiqc with `srun crun multiqc ....` in the runFASTP_1st_trim.sbatch script
+
+
 ---
 
 ## Step 3. Clumpify
 
 Ran [runCLUMPIFY_r1r2_array.bash](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash) in a 3 node array in Wahab
+
 ```
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/e1garcia 3
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/jbald004 3
 ```
 
 Out files were moved to the `logs` dir
