@@ -27,20 +27,20 @@ Potential issues:
 ## Step 2.  1st fastp
 
 Used [runFASTP_1st_trim.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch)
-to generate this [report](INSERT REPORT HERE)
+to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/salarias_fasciatus/fq_fp1/1st_fastp_report.html)
 
 Potential issues:  
-* % duplication - not bad 
-  * 31-46%
+* % duplication - low
+  * 17-23%
 * gc content - reasonable
-  * ~44%
-  * more variable in pos 1-72 than in 73-150 
+  * ~45%
+  * more variable at pos 1-70 than in 70-150 
 * passing filter - good
-  * ~91%
-* % adapter - not too bad 
-  * 6-7.5%
+  * ~95-96%
+* % adapter - not too bad
+  * 6-8.5%
 * number of reads - good
-  * ~340-414M
+  * ~324-504M
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/shotgun_raw_fq
@@ -52,7 +52,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatc
 Multiqc was ran seperately bc it was not working as set up in the runFASTP_1st_trim.sbatch.
  Other users, except for Eric, were automatically loading different versions of dependencies.
 
-log for multiqc: mqc_fastp1-JOBID.out
+log for multiqc: mqc_fastp1-345231.out
 
 Long-term solution:
 added `module load multiqc` and run multiqc with `srun crun multiqc ....` in the runFASTP_1st_trim.sbatch script
@@ -70,8 +70,8 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 
 Out files were moved to the `logs` dir
 
+Ran checkClumpify.R to see if any files failed
 
-Jem stopped here 8/4/2021
 ---
 
 ## Step 4. Run fastp2

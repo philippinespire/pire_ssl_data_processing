@@ -160,8 +160,18 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 
 After completion, run `checkClumpify_EG.R` to see if any files failed
 ```
+# load the container with R
 enable_lmod
 module load container_env mapdamage2
+
+# If you have not previously install tidyverse do the following:
+crun R				# you have entered R
+install.packages('tidyverse')	# intall tidyverse. Can take several minutes
+quit()
+# R:save session?
+yes
+
+# If you already have tidyverse do this:
 crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
 ```
 If all files were successful, `checkClumpify_EG.R` will return "Clumpify Successfully worked on all samples". 
@@ -199,21 +209,42 @@ Check the number of available nodes with `sinfo` (i.e. nodes in idle in the main
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 # do not use trailing / in paths. Example:
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 6
+```
 
-#confirm that all files were successfully completed
-# this will return any out files that had a problem, replace JOBID with your jobid
+Confirm that all files were successfully completed
+```sh
+# Fastqc Screen generates 5 files (*tagged.fastq.gz, *tagged_filter.fastq.gz, *screen.txt, *screen.png, *screen.html) for each input fq.gz file
+#check that all 5 files were created for each file: 
+ls fq_fp1_clmparray_fp2_fqscrn/*tagged.fastq.gz | wc -l
+ls fq_fp1_clmparray_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l 
+ls fq_fp1_clmparray_fp2_fqscrn/*screen.txt | wc -l
+ls fq_fp1_clmparray_fp2_fqscrn/*screen.png | wc -l
+ls fq_fp1_clmparray_fp2_fqscrn/*screen.html | wc -l
+
+# for each, you should have the same number as the number of input files
+
+#You should also check for errors in the *out files:
+# this will return any out files that had a problem
+
+#do all out files at once
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+
+# or check individuals files <replace JOBID with your actual job ID>
 grep 'error' slurm-fqscrn.JOBID*out
 grep 'No reads in' slurm-fqscrn.JOBID*out
-# if you see missing indiviudals or categories in the multiqc output, there was likely a ram error.  I'm not sure if the "error" search term catches it.
+```
+If you see missing indiviudals or categories in the multiqc output, there was likely a ram error.  I'm not sure if the "error" search term catches it.
 
-# run the files that failed again.  This seems to work in most cases
+Run the files that failed again.  This seems to work in most cases
+```sh
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously> <fq file pattern to process>
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 1 LlA01010*r1.fq.gz
 ...
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01005*r2.fq.gz
 ```
 
-Move your out files
+After confirming that all files worked. Move your out files
 ```
 mv *out logs
 ```
