@@ -25,25 +25,23 @@ Potential issues:
 * number of reads - good
   * ~212M
 
-
-
 ## Step 2.  1st fastp
 
 Used [runFASTP_1st_trim.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch)
-to generate this [report](Jem cannot generate report)
+to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/plotosus_lineatus/fq_fp1/1st_fastp_report.html)
 
 Potential issues:  
 * % duplication - not bad 
-  * 31-46%
+  * 20-31%
 * gc content - reasonable
-  * ~44%
-  * more variable in pos 1-72 than in 73-150 
+  * ~42%
+  * more variable in pos 1-70 than in 70-150 
 * passing filter - good
-  * ~91%
+  * ~94-96%
 * % adapter - not too bad 
-  * 6-7.5%
+  * 3.4-5.1%
 * number of reads - good
-  * ~340-414M
+  * ~296-515M
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/shotgun_raw_fq
@@ -52,14 +50,6 @@ cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/shotgu
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
 
-Multiqc was ran seperately bc it was not working as set up in the runFASTP_1st_trim.sbatch.
- Other users, except for Eric, were automatically loading different versions of dependencies.
-
-log for multiqc: mqc_fastp1-JOBID.out
-
-Long-term solution:
-added `module load multiqc` and run multiqc with `srun crun multiqc ....` in the runFASTP_1st_trim.sbatch script
- 
 ---
 
 ## Step 3. Clumpify
@@ -67,26 +57,37 @@ added `module load multiqc` and run multiqc with `srun crun multiqc ....` in the
 Ran [runCLUMPIFY_r1r2_array.bash](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash) in a 3 node array in Wahab
 
 ```
+#navigate to species' home dir
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/jbald004 3
 ```
 
 Out files were moved to the `logs` dir
 
-Jem stopped here 8/4/2021
+Ran [checkClumpify_EG.R] (https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any files failed.
+
+```
+#navigate to out dir for clumpify
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1_clmparray
+enable_lmod
+module load container_env mapdamage2
+crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+```
+
+All files were successful!
 ---
 
 ## Step 4. Run fastp2
 
 
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-#runFASTP_2.sbatch <indir> <outdir> 
+#runFASTP_2.sbatch <indir> <outdir>
 # do not use trailing / in paths
-sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+#navigate to species dir
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2/2nd_fastp_report_2.html), download and open in web browser
+[Report](), download and open in web browser
 
 Potential issues:  
 * % duplication - good  

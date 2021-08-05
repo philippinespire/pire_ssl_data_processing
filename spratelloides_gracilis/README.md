@@ -42,7 +42,7 @@ Potential issues:
 * % adapter - not too bad 
   * 6-7.5%
 * number of reads - good
-  * ~340-414M
+  * ~340-414M (per pair of r1-r2 files)
 
 ```
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash ../fq_fp1 ../fq_fp1_clmparray /scratch/e1garcia 6
@@ -95,14 +95,14 @@ Potential issues:
 * % adapter - virtually noned
   * 0.1%
 * number of reads - lost alot for albatross
-  * 205-213M
+  * 205-213M (per pair of r1-r2 files)
 
 ---
 
 
 ## Step 5. Run fastq_screen
 
-Executed `runFQSCRN_6.bash` to generate this [report]()
+Executed `runFQSCRN_6.bash` to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn/fastqc_screen_report.html)
 
 ```
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
@@ -132,21 +132,9 @@ However, `runFQSCRN_6.bash` was running multiqc several times generating reports
 I modified `runFQSCRN_6.bash` by commenting out the original execution of multiqc and added the format we are running in the trims
 
 
-Potential issues from report:
-* job 9 failed
-  * [out file](./logs/LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz)
-  * "No reads in LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz, skipping" 
-  * I checked this file, there are plenty of reads
+Highlights from report:
+* about 90% of reads were retained
 
-
-Fix errors: all I had to do was run the files again that returned the "No reads in" error and they worked fine
-
-```
-#runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously> <fq file pattern to process>
-# do not use trailing / in paths
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01010*r1.fq.gz
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01005*r2.fq.gz
-```
 
 Cleanup logs
 ```

@@ -64,27 +64,36 @@ added `module load multiqc` and run multiqc with `srun crun multiqc ....` in the
 Ran [runCLUMPIFY_r1r2_array.bash](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash) in a 3 node array in Wahab
 
 ```
+#navigate to species' home dir 
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/jbald004 3
 ```
 
 Out files were moved to the `logs` dir
 
-Ran checkClumpify.R to see if any files failed
+Ran [checkClumpify_EG.R] (https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any files failed.
 
+```
+#navigate to out dir for clumpify
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/fq_fp1_clmparray
+enable_lmod
+module load container_env mapdamage2
+crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+```
+
+All files were successful!
 ---
 
 ## Step 4. Run fastp2
 
-
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 #runFASTP_2.sbatch <indir> <outdir> 
 # do not use trailing / in paths
-sbatch ../scripts/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+#navigate to species dir
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2/2nd_fastp_report_2.html), download and open in web browser
+[Report](), download and open in web browser
 
 Potential issues:  
 * % duplication - good  
