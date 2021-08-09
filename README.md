@@ -254,7 +254,7 @@ mv *out logs
 Since we are running Fastq Screen as an array. I have set Multiqc to be ran seperately for this step.
 
 
-Get the multiqc report
+**Get the multiqc report**
 ```sh
 #runMULTIQC.sbatch <INDIR> <Report name>
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
@@ -271,6 +271,22 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.s
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
 ```
 
+** Calculate the percent of reads lost in each step**
+
+Execute [read_calculator_ssl.sh]()
+```sh
+#read_calculator_ssl.sh <Species home dir> 
+# do not use trailing / in paths
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
+
+`read_calculator_ssl.sh` counts the number of reads before and after each step in the pre-process of ssl data and creates the dir `reprocess_read_change` with the following 2 tables:
+1. `readLoss_table.tsv` which reporsts the step-specific percent of read loss and final accumulative read loss
+2. `readsRemaining_table.tsv` which reports the step-specific percent of read loss and final accumulative read loss
+
+Inspect these tables and revisit steps if too much data was lost
+
+
 ### Assembly
 
 #### 7. Genome Properties
@@ -285,7 +301,7 @@ Fetch the genome properties for your species
 **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runJellyfish.sbatch) using decontaminated files**
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir> 
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
 ```
 
 Jellyfish will create a histogram file (.hito) with kmer frequencies. 
@@ -295,7 +311,7 @@ Download this file into your local computer and upload it in [genomesize.com](ht
 * Leave Max kmer coverage = 1000 
 * Submit (takes only few minutes)
  
-Complete the following table in your Species README. You'll have to calculate the average
+Complete the following table in your Species README. You can copy and paste this table straight into your README (no need to enclose it with quotes, i.e. a code block) and just substitute values. You'll have to calculate the average
 ```sh
 Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
 stat	|min	|max	|average	
