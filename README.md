@@ -191,7 +191,7 @@ mv *out logs
 ```
 #runFASTP_2.sbatch <indir> <outdir> 
 # do not use trailing / in paths
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray fq_fp1_clmparray_fp2
 ```
 * Update your species README, i.e. provide a link to the report and list the highlights
 
@@ -262,13 +262,43 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1
 
 ### Assembly
 
-5. Fetch the genome properties for your species
-	* from the literature or other sources
-	* estimate properties with *jellyfish* and *genomescope*
+#### 7. Genome Properties
+
+Fetch the genome properties for your species
+* From the literature or other sources
+	* [genomesize.com](https://www.genomesize.com/)
+	* search the literature
+* Estimate properties with `jellyfish` and `genomescope`
+	* More details [heree](https://github.com/philippinespire/denovo_genome_assembly/blob/main/jellyfish/JellyfishGenomescope_procedure.md)
+
+**Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runJellyfish.sbatch) using decontaminated files**
+```sh
+#runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir> 
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
+```
+
+Jellyfish will create a histogram file (.hito) with kmer frequencies. 
+Download this file into your local computer and upload it in [genomesize.com](https://www.genomesize.com/)
+* Add a proper description to your run. Example "Sgr_ssl_decontam"
+* Adjust the read lenght to that of in the Fastp2 trimming, 140 (unless you had to modify this in Fastp2)
+* Leave Max kmer coverage = 1000 
+* Submit (takes only few minutes)
+ 
+Complete the following table in your Species README. You'll have to calculate the average
+```sh
+Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
+stat	|min	|max	|average	
+------	|------	|------	|------	
+Heterozygosity	|1.10243%	|1.10633%	|1.10438%	
+Genome Haploid Length	|524,384,095 bp	|524,590,385 bp	|524,487,240 bp	
+Model Fit	|97.6162%	|98.7154%	|98.1658 %	
+```
 
 
-6. Assemble the genome
-*
+Note the genome size (or estimate) in your species README. You will use this info later
+
+
+#### 8. Assemble the genome
 
 
 5. Rename files to follow the `ddocent` naming convention
