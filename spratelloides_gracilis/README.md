@@ -155,3 +155,29 @@ This went smoothly.
 
 ---
 
+### Assembly section
+
+## Step 7. Genome properties
+
+I could not find Sgr in the [genomesize.com](https://www.genomesize.com/) database,
+ thus I estimated the genome size of Sgr using jellyfish
+
+From species home directory: Executed runJellyfish.sbatch using decontaminated files
+```sh
+#runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
+```
+
+Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
+stat    |min    |max    |average
+------  |------ |------ |------
+Heterozygosity  |1.10243%       |1.10633%       |1.10438%
+Genome Haploid Length   |524,384,095 bp |524,590,385 bp |524,487,240 bp
+Model Fit       |97.6162%       |98.7154%       |98.1658 %
+
+## Step 7. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
+
+In our previous tests, contaminated data has produced the best assemblies for nDNA but decontaminated assemblies were better for mtDNA. The effect of using merged files remains unclear
+
+Thus, I ran 4 assembly treatments: Contam with and without merged files and the same for Decontam.  
+

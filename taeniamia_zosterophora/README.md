@@ -88,70 +88,74 @@ All files were successful!
 
 ## Step 4. Run fastp2
 
+Ran on Wahab 
+
 ```
-#runFASTP_2.sbatch <indir> <outdir>
+#runFASTP_2_ssl.sbatch <indir> <outdir>
 # do not use trailing / in paths
 #navigate to species dir
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
 
 [Report](), download and open in web browser
 
 Potential issues:  
-* % duplication - good  
-  * alb:20s, contemp: 20s
+* % duplication - good for 2
+  * 12-13% for 2, 38% for 1
 * gc content - reasonable
-  * alb: 40s, contemp: 40s 
+  *  40%
 * passing filter - good
-  * alb: 90s, contemp: 90s 
+  *  80-89%
 * % adapter - good
-  * alb: 2s, contemp: 2s
-* number of reads - lost alot for albatross
-  * generally more for albatross than contemp, as we attempted to do
-  * alb: 7 mil, contemp: YY mil
-
+  * 0.1-0.2%
+* number of reads
+  * 98-187M
 
 ---
 
 ## Step 4. Run fastq_screen
 
-I edited runFQSCRN_6* to run on wahab.
-
+Ran on Wahab
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing//herklotsichthys_quadrimaculatus/
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
 # do not use trailing / in paths
-bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
-
-# check output for errors
-grep 'error' slurm-fqscrn.266713*out | less -S
-grep 'No reads in' slurm-fqscrn.266713*out | less -S
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 6
 ```
 
-[Report](https://github.com/philippinespire/pire_cssl_data_processing/blob/main/leiognathus_leuciscus/fq_fp1_clmp_fp2_fqscrn/fqscrn_report_1.html), download and open in web browser
+Confirmed that all files were completed
+
+```
+# check output for errors
+# Fastqc Screen generates 5 files (*tagged.fastq.gz, *tagged_filter.fastq.gz, *screen.txt, *screen.png, *screen.html) for each input fq.gz file
+#check that all 5 files were created for each file: 
+ls fq_fp1_clmparray_fp2_fqscrn/*tagged.fastq.gz | wc -l
+ls fq_fp1_clmparray_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l 
+ls fq_fp1_clmparray_fp2_fqscrn/*screen.txt | wc -l
+ls fq_fp1_clmparray_fp2_fqscrn/*screen.png | wc -l
+ls fq_fp1_clmparray_fp2_fqscrn/*screen.html | wc -l
+
+#You should also check for errors in the *out files:
+# this will return any out files that had a problem
+
+#do all out files at once
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+
+# or check individuals files <replace JOBID with your actual job ID>
+grep 'error' slurm-fqscrn.JOBID*out
+grep 'No reads in' slurm-fqscrn.JOBID*out
+```
+
+[Report](), download and open in web browser
 
 Potential issues:
-* job 9 failed
-  * [out file](./logs/LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz)
-  * "No reads in LlA01005_CKDL210012719-1a-AK6260-7UDI308_HF5TCDSX2_L1_clmp_fp2_r2.fq.gz, skipping" 
-  * I checked this file, there are plenty of reads
-
-
-Fix errors: all I had to do was run the files again that returned the "No reads in" error and they worked fine
-
-```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-#runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously> <fq file pattern to process>
-# do not use trailing / in paths
-bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01010*r1.fq.gz
-bash ../scripts/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 LlA01005*r2.fq.gz
-```
+* No jobs failed 
 
 
 Cleanup logs
 ```
-mkdir logs
 mv *out logs
 ```
 
@@ -159,13 +163,11 @@ mv *out logs
 
 ## Step 5. Repair fastq_screen paired end files
 
-This went smoothly.
+Nonen
 
 ```
 cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
 # runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch ../scripts/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
-
----
 
