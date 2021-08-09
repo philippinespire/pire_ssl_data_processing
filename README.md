@@ -251,7 +251,18 @@ After confirming that all files worked. Move your out files
 mv *out logs
 ```
 
-* Update your species README, i.e. provide a link to the report and list the highlights. Update Slack
+Since we are running Fastq Screen as an array. I have set Multiqc to be ran seperately for this step.
+
+
+Get the multiqc report
+```sh
+#runMULTIQC.sbatch <INDIR> <Report name>
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+```
+
+* Update your species README, i.e. provide a link to the report and list the highlights. 
+* Update Slack
+
 
 #### 6. Execute [runREPAIR.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch)
 
