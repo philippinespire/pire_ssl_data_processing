@@ -131,8 +131,12 @@ However, `runFQSCRN_6.bash` was running multiqc several times generating reports
 
 I modified `runFQSCRN_6.bash` by commenting out the original execution of multiqc and added the format we are running in the trims
 
+```sh
+#runMULTIQC.sbatch <INDIR> <Report name>
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+```
 
-Highlights from report:
+Highlights from [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn/fastqc_screen_report.html):
 * about 90% of reads were retained
 
 
@@ -167,6 +171,8 @@ From species home directory: Executed runJellyfish.sbatch using decontaminated f
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
 ```
+This jellyfish kmer-frequency [hitogram file](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/jellyfish_out/Sgr_all_reads.histo) 
+was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://genomescope.org/analysis.php?code=Bm6XRZmRpQ2dNxEo8fHs). Highlights:
 
 Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
 stat    |min    |max    |average
