@@ -159,6 +159,24 @@ This went smoothly.
 
 ---
 
+
+**Calculated the percent of reads lost in each step**
+
+Executed [read_calculator_ssl.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_ssl.sh)
+to generate the [percent read loss]() and
+ [percent reads remaining]() tables
+
+```sh
+#read_calculator_ssl.sh <Species home dir> 
+# do not use trailing / in paths
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
+
+
+Inspect these tables and revisit steps if too much data was lost
+
+---
+
 ### Assembly section
 
 ## Step 7. Genome properties
