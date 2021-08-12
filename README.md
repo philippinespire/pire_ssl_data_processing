@@ -331,7 +331,7 @@ Note the genome size (or estimate) in your species README. You will use this inf
 Congrats! You are now ready to assembly the genome of your species!
 
 After de novo assembler comparisons,  we decided to move forward using SPADES (isolate and covcutoff flags off). 
-If BUSCO values are too low, it might be worth to turn on the covcutoff.
+If BUSCO values are too low, it might be worth to try the `covcutoff auto`.
 
 
 In addition, we also noted that assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA. 
@@ -342,9 +342,9 @@ Thus, run one assembly using your contaminated data and one with the decontamina
 
 **Execute [runSPADEShimem_R1R2_noisolate.sbatch]()***
 ```sh
-#readrunSPADEShimem_R1R2_noisolate.sbatch <your user ID> <species dir> <contam | decontam> <genome size in bp>
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
 # do not use trailing / in paths. Example running contaminated data:
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "contam" "694000000"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "contam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
 Repeat running the decontaminated data

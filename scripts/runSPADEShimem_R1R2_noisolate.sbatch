@@ -13,9 +13,10 @@ module load container_env pire_genome_assembly/2021.03.25
 #module load quast/5.0.2
 
 USERID=$1
-PROJDIR=$2
+SPECIESID=$2
 DATATYPE=$3
 GENSIZE=$4
+PROJDIR=$5
 
 if [[ "$DATATYPE" == "contam" ]]; then
         FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
@@ -62,6 +63,11 @@ crun spades.py \
 	
 crun quast.py $quastINFILE1 -o $quastOUTDIR1 --est-ref-size $GENSIZE -s --eukaryote --large
 crun quast.py $quastINFILE2 -o $quastOUTDIR2 --est-ref-size $GENSIZE -s --eukaryote --large
+
+mkdir $PROJDIR/quast-reports
+cp $quastOUTDIR1/transposed_report.tsv $PROJDIR/quast-reports/quast-report_contigs_${SPECIESID}_spades_${DATATYPE}_R1R2_21-99_isolate-off.tsv
+cp $quastOUTDIR2/transposed_report.tsv $PROJDIR/quast-reports/quast-report_scaffolds_${SPECIESID}_spades_${DATATYPE}_R1R2_21-99_isolate-off.tsv
+
 
 # save resource usage stats
 sacct -j $SLURM_JOBID --long --units=M > $OUTDIR/resource_usage_m.tsv
