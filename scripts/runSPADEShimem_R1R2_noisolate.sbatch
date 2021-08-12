@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=Mersp8s
-#SBATCH -o sp8s_MerContSgr-%j.out
+#SBATCH --job-name=Sp8s_cont
+#SBATCH -o sp8s_cont-%j.out
 #SBATCH --time=00:00:00
 #SBATCH --exclusive
 #SBATCH --ntasks=32
@@ -14,10 +14,23 @@ module load container_env pire_genome_assembly/2021.03.25
 
 USERID=$1
 PROJDIR=$2
-FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
+DATATYPE=$3
+GENSIZE=$4
+
+if [[ "$DATATYPE" == "contam" ]]; then
+        FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
+	OUTDIR=${PROJDIR}/SPAdes_contam_R1R2_noIsolate
+elif [[ "$DATATYPE" == "decontam" ]]; then
+        FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2_fqscrn_repaired
+	OUTDIR=${PROJDIR}/SPAdes_decontam_R1R2_noIsolate
+else
+    	echo "Please enter contam or decontam as DATATYPE"
+fi
+
+#FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
 INDIR=${PROJDIR}
 TEMPDIR=/scratch-lustre/${USERID}
-OUTDIR=SPAdes_contam_R1R2_noIsolate
+#OUTDIR=SPAdes_contam_R1R2_noIsolate
 FQPATTERN=*  #determines libraries to be assembled
 THREADS=32
 
@@ -37,21 +50,18 @@ crun spades.py \
 -k 21,33,55,77,99 \
 --pe1-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n1) \
 --pe1-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n1) \
---pe1-m $(ls $FQDIR/${FQPATTERN}mrgd*.fq.gz | head -n1) \
 --pe2-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n2 | tail -n1) \
 --pe2-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n2 | tail -n1) \
---pe2-m $(ls $FQDIR/${FQPATTERN}mrgd*.fq.gz | head -n2 | tail -n1) \
 --pe3-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n3 | tail -n1) \
 --pe3-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n3 | tail -n1) \
---pe3-m $(ls $FQDIR/${FQPATTERN}mrgd*.fq.gz | head -n3 | tail -n1) \
 --threads $THREADS \
 --memory 750 \
 --tmp-dir $TEMPDIR \
 --cov-cutoff off \
 -o $INDIR/$OUTDIR
 	
-crun quast.py $quastINFILE1 -o $quastOUTDIR1 --est-ref-size 694000000 -s --eukaryote --large
-crun quast.py $quastINFILE2 -o $quastOUTDIR2 --est-ref-size 694000000 -s --eukaryote --large
+crun quast.py $quastINFILE1 -o $quastOUTDIR1 --est-ref-size $GENSIZE -s --eukaryote --large
+crun quast.py $quastINFILE2 -o $quastOUTDIR2 --est-ref-size $GENSIZE -s --eukaryote --large
 
 # save resource usage stats
 sacct -j $SLURM_JOBID --long --units=M > $OUTDIR/resource_usage_m.tsv
@@ -59,3 +69,23 @@ sacct -j $SLURM_JOBID --long --units=M > $OUTDIR/resource_usage_m.tsv
 sacct -j $SLURM_JOBID --long --units=G > $OUTDIR/resource_usage_g.tsv
 # save resource usage stats
 sacct -j $SLURM_JOBID --long --units=K > $OUTDIR/resource_usage_k.tsv
+
+
+
+# If have files with merged reads (*mrgd.fq.gz)
+#crun spades.py \
+#-k 21,33,55,77,99 \
+#--pe1-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n1) \
+#--pe1-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n1) \
+#--pe1-m $(ls $FQDIR/${FQPATTERN}mrgd*.fq.gz | head -n1) \
+#--pe2-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n2 | tail -n1) \
+#--pe2-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n2 | tail -n1) \
+#--pe2-m $(ls $FQDIR/${FQPATTERN}mrgd*.fq.gz | head -n2 | tail -n1) \
+#--pe3-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n3 | tail -n1) \
+#--pe3-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n3 | tail -n1) \
+#--pe3-m $(ls $FQDIR/${FQPATTERN}mrgd*.fq.gz | head -n3 | tail -n1) \
+#--threads $THREADS \
+#--memory 750 \
+#--tmp-dir $TEMPDIR \
+#--cov-cutoff off \
+#-o $INDIR/$OUTDIR
