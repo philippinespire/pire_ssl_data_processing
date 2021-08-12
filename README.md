@@ -340,7 +340,7 @@ Thus, run one assembly using your contaminated data and one with the decontamina
 1. You need to be in Turing for this step. SPAdes requires high memory nodes (only avail in Turing)
 2. Get the genome size of your species, or Jellyfish estimate, in bp from the previous step. Jellyfish gives an min an max: I have been using the average of both of these.
 
-**Execute [runSPADEShimem_R1R2_noisolate.sbatch]()***
+**Execute [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch)***
 ```sh
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
 # do not use trailing / in paths. Example running contaminated data:
