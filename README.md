@@ -271,7 +271,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.s
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
 ```
 
-** Calculate the percent of reads lost in each step**
+**Calculate the percent of reads lost in each step**
 
 Execute [read_calculator_ssl.sh]()
 ```sh
@@ -301,7 +301,7 @@ Fetch the genome properties for your species
 **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runJellyfish.sbatch) using decontaminated files**
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir> 
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish"
 ```
 
 Jellyfish will create a histogram file (.hito) with kmer frequencies. 
