@@ -109,7 +109,7 @@ Potential issues:
 
 ---
 
-## Step 4. Run fastq_screen
+## Step 5. Run fastq_screen
 
 Ran on Turing.
 
@@ -160,29 +160,79 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_c
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 1 SfC0282A_CKDL210013395-1a-AK8593-7UDI304_HF33GDSX2_L4_clmp.fp2_r2.fq.gz
 ```
 
+All files went through. 
+
+Ran MultiQC separately:
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+```
+
 [Report](), download and open in web browser
 
 Potential issues:
-* job  failed
-  * 
+  * One hit, one genome ~96%
 
 Cleanup logs
 ```
-mkdir logs
 mv *out logs
 ```
 
----
+## Step 6. Repair fastq_screen paired end files
 
-## Step 5. Repair fastq_screen paired end files
-
-This went smoothly.
-
+Went through
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-# runREPAIR.sbatch <indir> <outdir> <threads>
-sbatch ../scripts/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
+#runREPAIR.sbatch <indir> <outdir> <threads>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
 ```
 
+**Calculate the percent of reads lost in each step**
+
+Execute [read_calculator_ssl.sh]()
+```sh
+#read_calculator_ssl.sh <Species home dir>
+# do not use trailing / in paths
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
+```
+
+Based on the 2 files:
+1. `readLoss_table.tsv` which reporsts the step-specific percent of read loss and final accumulative read loss
+2. `readsRemaining_table.tsv` which reports the step-specific percent of read loss and final accumulative read loss
+
+Reads lost:
+* Reads lost per step were between 3 to 19%
+* Highest % lost was between 14-19% during clumpify step
+* Overall, total read lost was between 34-36%
+
+Reads remaining:
+* Per step: 81%-97%
+* Total reads remaining: 63-66%
+
 ---
+### Assembly section
+
+## Step 7. Genome properties
+
+I found the genome size of Sfa in the [genomesize.com](https://www.genomesize.com/) database. It can be found [here] (https://www.genomesize.com/result_species.php?id=2683)
+
+```sh
+#runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sfa" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
+```
+This jellyfish kmer-frequency [histogram file]() was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=zwj01qbRCNCZ9oF2N8RV)
+
+Description: Sfa_ssl_decontam
+Kmer length: 21
+Read length: 140
+Max kmer coverage: 1000
+
+Genome stats for Sfa from Jellyfish/GenomeScope v1.0 k=21
+stat    |min    |max    |average
+------  |------ |------ |------
+Heterozygosity  |1.05362%       |1.08527%       |1.069445%
+Genome Haploid Length   |577,799,589 bp    |579,898,449 bp | 578,849,019 bp
+Model Fit       |90.9818%       |92.2968%       |91.6393%
+
+---
+## Step 8. Assemble the genome using SPAdes
 

@@ -148,10 +148,16 @@ grep 'error' slurm-fqscrn.JOBID*out
 grep 'No reads in' slurm-fqscrn.JOBID*out
 ```
 
+Ran MultiQC separately:
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+```
+
 [Report](), download and open in web browser
 
 Potential issues:
-* No jobs failed 
+* 96-97% alignment "One Hit, One Genome" 
 
 
 Cleanup logs
@@ -163,11 +169,61 @@ mv *out logs
 
 ## Step 5. Repair fastq_screen paired end files
 
-Nonen
+```
+#runREPAIR.sbatch <indir> <outdir> <threads>
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
+```
 
+**Calculate the percent of reads lost in each step**
+
+Execute [read_calculator_ssl.sh]()
+```sh
+#read_calculator_ssl.sh <Species home dir>
+# do not use trailing / in paths
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
 ```
-cd /home/cbird/pire_cssl_data_processing/leiognathus_leuciscus
-# runREPAIR.sbatch <indir> <outdir> <threads>
-sbatch ../scripts/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
+
+Based on the 2 files:
+1. `readLoss_table.tsv` which reporsts the step-specific percent of read loss and final accumulative read loss
+2. `readsRemaining_table.tsv` which reports the step-specific percent of read loss and final accumulative read loss
+
+Reads lost:
+* Varying percentage of reads lost per step
+* Individual TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4 had significantly lost ~78% of reads vs the 2 other individuals that only lost ~49% of reads
+* The biggest read loss for TzC0402F was in the clumpify step ~70% vs 36% for 2 individuals
+* At fp2 stage, 20% were lost for TzC0402F vs 10% for the 2 other individuals
+
+Reads remaining:
+* Conversely, reads remaining per step were generally 80-97%, except for the clumpify step where TzC0402F only retained 30% of its reads
+* Total reads remaining: 21% for TzC0402F and 51% for the 2 other individuals
+
+---
+### Assembly section
+
+## Step 6. Genome properties
+
+I could not find Tzo in the [genomesize.com](https://www.genomesize.com/) database, thus I estimated the genome size of Sgr using jellyfish
+
+From species home directory: Executed runJellyfish.sbatch using decontaminated files
+```sh
+#runJellyfish.sbatch <Species 2-letter ID> <indir> <outdir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Tzo" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
 ```
+This jellyfish kmer-frequency [histogram file]() was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=KfPRFUXJmbrA0rouEvNx). Highlights:
+
+Description: Tzo_ssl_decontam
+Kmer length: 21
+Read length: 140
+Max kmer coverage: 1000
+
+Genome stats for Tzo from Jellyfish/GenomeScope v1.0 k=21
+stat    |min    |max    |average
+------  |------ |------ |------
+Heterozygosity  |0.915939%       |0.920206%       |0.9180725%
+Genome Haploid Length   |817,498,230 bp    |818,019,292 bp |817,758,761 bp
+Model Fit       |97.6439%       |99.4735%       |98.5587%
+
+---
+## Step 7. Assemble the genome using SPAdes
+
 

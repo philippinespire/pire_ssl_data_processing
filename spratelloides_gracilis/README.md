@@ -160,7 +160,7 @@ This went smoothly.
 ---
 
 
-**Calculated the percent of reads lost in each step**
+## Calculated the percent of reads lost in each step
 
 Executed [read_calculator_ssl.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_ssl.sh)
 to generate the [percent read loss](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/preprocess_read_change/readLoss_table.tsv) and

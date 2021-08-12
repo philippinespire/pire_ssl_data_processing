@@ -1,0 +1,42 @@
+java -ea -Xmx161117m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmparray_fp2_fqscrn/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmparray_fp2_fqscrn/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmparray_fp2_fqscrn/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmparray_fp2_fqscrn/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/TzC0402F_CKDL210013395-1a-AK7758-GD07_HF33GDSX2_L4_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	93932028 reads 		14073258470 bases.
+Result:                 	93932028 reads (100.00%) 	14073258470 bases (100.00%)
+Pairs:                  	90513366 reads (96.36%) 	13560979690 bases (96.36%)
+Singletons:             	3418662 reads (3.64%) 	512278780 bases (3.64%)
+
+Time:                         	362.164 seconds.
+Reads Processed:      93932k 	259.36k reads/sec
+Bases Processed:      14073m 	38.86m bases/sec
+java -ea -Xmx161117m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmparray_fp2_fqscrn/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmparray_fp2_fqscrn/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmparray_fp2_fqscrn/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmparray_fp2_fqscrn/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/TzC0402E_CKDL210013395-1a-5UDI301-AK7549_HF33GDSX2_L4_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	164698837 reads 		24684039288 bases.
+Result:                 	164698837 reads (100.00%) 	24684039288 bases (100.00%)
+Pairs:                  	160056580 reads (97.18%) 	23988286336 bases (97.18%)
+Singletons:             	4642257 reads (2.82%) 	695752952 bases (2.82%)
+
+Time:                         	533.152 seconds.
+Reads Processed:        164m 	308.92k reads/sec
+Bases Processed:      24684m 	46.30m bases/sec
+java -ea -Xmx161117m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmparray_fp2_fqscrn/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmparray_fp2_fqscrn/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmparray_fp2_fqscrn/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmparray_fp2_fqscrn/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmparray_fp2_fqscrn_repaired/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/TzC0402G_CKDL210013395-1a-AK7078-AK845_HF33GDSX2_L4_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	181590544 reads 		27215694322 bases.
+Result:                 	181590544 reads (100.00%) 	27215694322 bases (100.00%)
+Pairs:                  	176669700 reads (97.29%) 	26478187273 bases (97.29%)
+Singletons:             	4920844 reads (2.71%) 	737507049 bases (2.71%)
+
+Time:                         	609.834 seconds.
+Reads Processed:        181m 	297.77k reads/sec
+Bases Processed:      27215m 	44.63m bases/sec
