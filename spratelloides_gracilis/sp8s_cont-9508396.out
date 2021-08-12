@@ -1,0 +1,31 @@
+ls: cannot access '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired/*r1.fq.gz': No such file or directory
+ls: cannot access '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired/*r2.fq.gz': No such file or directory
+ls: cannot access '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired/*r1.fq.gz': No such file or directory
+ls: cannot access '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired/*r2.fq.gz': No such file or directory
+ls: cannot access '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired/*r1.fq.gz': No such file or directory
+ls: cannot access '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired/*r2.fq.gz': No such file or directory
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+SPAdes genome assembler v3.15.2
+
+Usage: spades.py [options] -o <output_dir>
+spades.py: error: argument --pe1-1: expected 1 argument
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis//home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO/contigs.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis//home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO/scaffolds.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+mkdir: cannot create directory ‘/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/quast-reports’: File exists
+cp: cannot stat '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis//home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis//home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO/quast_scaffolds_report/transposed_report.tsv': No such file or directory
+/var/spool/slurmd/job9508396/slurm_script: line 83: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO/resource_usage_m.tsv: No such file or directory
+/var/spool/slurmd/job9508396/slurm_script: line 85: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO/resource_usage_g.tsv: No such file or directory
+/var/spool/slurmd/job9508396/slurm_script: line 87: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO/resource_usage_k.tsv: No such file or directory

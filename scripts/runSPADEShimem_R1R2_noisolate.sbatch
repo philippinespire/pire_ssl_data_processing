@@ -20,19 +20,19 @@ PROJDIR=$5
 
 if [[ "$DATATYPE" == "contam" ]]; then
         FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
-	OUTDIR=${PROJDIR}/SPAdes_contam_R1R2_noIsolate
+	OUTDIR=SPAdes_contam_R1R2_noIsolate
 	COVCUTOFF=off
 elif [[ "$DATATYPE" == "decontam" ]]; then
         FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2_fqscrn_repaired
-	OUTDIR=${PROJDIR}/SPAdes_decontam_R1R2_noIsolate
+	OUTDIR=SPAdes_decontam_R1R2_noIsolate
 	COVCUTOFF=off
 elif [[ "$DATATYPE" == "contam_covAUTO" ]]; then
         FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
-        OUTDIR=${PROJDIR}/SPAdes_contam_R1R2_noIsolate_covAUTO
+        OUTDIR=SPAdes_contam_R1R2_noIsolate_covAUTO
 	COVCUTOFF=auto
 elif [[ "$DATATYPE" == "decontam_covAUTO" ]]; then
         FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2_fqscrn_repaired
-        OUTDIR=${PROJDIR}/SPAdes_decontam_R1R2_noIsolate_covAUTO
+        OUTDIR=SPAdes_decontam_R1R2_noIsolate_covAUTO
 	COVCUTOFF=auto
 else
     	echo "Please enter DATATYPE. Options:  contam | decontam |contam_covAUTO | decontam_covAUTO "
@@ -60,12 +60,12 @@ mkdir $quastOUTDIR2
 
 crun spades.py \
 -k 21,33,55,77,99 \
---pe1-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n1) \
---pe1-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n1) \
---pe2-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n2 | tail -n1) \
---pe2-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n2 | tail -n1) \
---pe3-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n3 | tail -n1) \
---pe3-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n3 | tail -n1) \
+--pe1-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n1) \
+--pe1-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n1) \
+--pe2-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n2 | tail -n1) \
+--pe2-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n2 | tail -n1) \
+--pe3-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n3 | tail -n1) \
+--pe3-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n3 | tail -n1) \
 --threads $THREADS \
 --memory 750 \
 --tmp-dir $TEMPDIR \
