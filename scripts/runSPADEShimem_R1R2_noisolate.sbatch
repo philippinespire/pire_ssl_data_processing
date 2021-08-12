@@ -21,12 +21,23 @@ PROJDIR=$5
 if [[ "$DATATYPE" == "contam" ]]; then
         FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
 	OUTDIR=${PROJDIR}/SPAdes_contam_R1R2_noIsolate
+	COVCUTOFF=off
 elif [[ "$DATATYPE" == "decontam" ]]; then
         FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2_fqscrn_repaired
 	OUTDIR=${PROJDIR}/SPAdes_decontam_R1R2_noIsolate
+	COVCUTOFF=off
+elif [[ "$DATATYPE" == "contam_covAUTO" ]]; then
+        FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
+        OUTDIR=${PROJDIR}/SPAdes_contam_R1R2_noIsolate_covAUTO
+	COVCUTOFF=auto
+elif [[ "$DATATYPE" == "decontam_covAUTO" ]]; then
+        FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2_fqscrn_repaired
+        OUTDIR=${PROJDIR}/SPAdes_decontam_R1R2_noIsolate_covAUTO
+	COVCUTOFF=auto
 else
-    	echo "Please enter contam or decontam as DATATYPE"
+    	echo "Please enter DATATYPE. Options:  contam | decontam |contam_covAUTO | decontam_covAUTO "
 fi
+
 
 #FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
 INDIR=${PROJDIR}
@@ -58,16 +69,15 @@ crun spades.py \
 --threads $THREADS \
 --memory 750 \
 --tmp-dir $TEMPDIR \
---cov-cutoff off \
+--cov-cutoff $COVCUTOFF \
 -o $INDIR/$OUTDIR
 	
 crun quast.py $quastINFILE1 -o $quastOUTDIR1 --est-ref-size $GENSIZE -s --eukaryote --large
 crun quast.py $quastINFILE2 -o $quastOUTDIR2 --est-ref-size $GENSIZE -s --eukaryote --large
 
 mkdir $PROJDIR/quast-reports
-cp $quastOUTDIR1/transposed_report.tsv $PROJDIR/quast-reports/quast-report_contigs_${SPECIESID}_spades_${DATATYPE}_R1R2_21-99_isolate-off.tsv
-cp $quastOUTDIR2/transposed_report.tsv $PROJDIR/quast-reports/quast-report_scaffolds_${SPECIESID}_spades_${DATATYPE}_R1R2_21-99_isolate-off.tsv
-
+cp $quastOUTDIR1/transposed_report.tsv $PROJDIR/quast-reports/quast-report_contigs_${SPECIESID}_spades_${DATATYPE}_R1R2_21-99_isolateoff-cov${COVCUTOFF}.tsv
+cp $quastOUTDIR2/transposed_report.tsv $PROJDIR/quast-reports/quast-report_scaffolds_${SPECIESID}_spades_${DATATYPE}_R1R2_21-99_isolateoff-cov${COVCUTOFF}.tsv
 
 # save resource usage stats
 sacct -j $SLURM_JOBID --long --units=M > $OUTDIR/resource_usage_m.tsv
@@ -75,7 +85,6 @@ sacct -j $SLURM_JOBID --long --units=M > $OUTDIR/resource_usage_m.tsv
 sacct -j $SLURM_JOBID --long --units=G > $OUTDIR/resource_usage_g.tsv
 # save resource usage stats
 sacct -j $SLURM_JOBID --long --units=K > $OUTDIR/resource_usage_k.tsv
-
 
 
 # If have files with merged reads (*mrgd.fq.gz)
@@ -93,5 +102,5 @@ sacct -j $SLURM_JOBID --long --units=K > $OUTDIR/resource_usage_k.tsv
 #--threads $THREADS \
 #--memory 750 \
 #--tmp-dir $TEMPDIR \
-#--cov-cutoff off \
+#--cov-cutoff $COVCUTOFF \
 #-o $INDIR/$OUTDIR

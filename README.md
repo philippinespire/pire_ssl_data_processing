@@ -331,7 +331,7 @@ Note the genome size (or estimate) in your species README. You will use this inf
 Congrats! You are now ready to assembly the genome of your species!
 
 After de novo assembler comparisons,  we decided to move forward using SPADES (isolate and covcutoff flags off). 
-If BUSCO values are too low, it might be worth to try the `covcutoff auto` (last variable in the command below).
+If BUSCO values are too low, it might be worth to try the `covcutoff auto` (by changing the datatype variato to contam_covAUTO or decontam_covAUTO).
 
 
 In addition, we also noted that assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA. 
@@ -349,3 +349,4 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 Repeat running the decontaminated data
 
+If BUSCO values are too low try <contam_AUTO | decontam_covAUTO>
