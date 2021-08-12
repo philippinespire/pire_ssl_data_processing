@@ -163,8 +163,8 @@ This went smoothly.
 **Calculated the percent of reads lost in each step**
 
 Executed [read_calculator_ssl.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_ssl.sh)
-to generate the [percent read loss]() and
- [percent reads remaining]() tables
+to generate the [percent read loss](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/preprocess_read_change/readLoss_table.tsv) and
+ [percent reads remaining](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/preprocess_read_change/readsRemaining_table.tsv) tables
 
 ```sh
 #read_calculator_ssl.sh <Species home dir> 
@@ -172,8 +172,11 @@ to generate the [percent read loss]() and
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
+Highlights:
+* 25-38% of reads were duplicates and were dropped by clumpify
+* fastp2 dropped 14-17% of the reads after deduplication (lower min read lenght?)
+* Total accumulative read loss is 50-60%, which results in 86-94 M reads still remaining (loss seems pretty high but we still ~90M read left!)
 
-Inspect these tables and revisit steps if too much data was lost
 
 ---
 
