@@ -302,15 +302,16 @@ Fetch the genome properties for your species
 **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runJellyfish.sbatch) using decontaminated files**
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir> 
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
 ```
 
 Jellyfish will create a histogram file (.hito) with kmer frequencies. 
-Download this file into your local computer and upload it in [genomesize.com](https://www.genomesize.com/)
+Download this file into your local computer and upload it in [GenomeScope v1.0](http://qb.cshl.edu/genomescope/)
 * Add a proper description to your run. Example "Sgr_ssl_decontam"
 * Adjust the read lenght to that of in the Fastp2 trimming, 140 (unless you had to modify this in Fastp2)
 * Leave Max kmer coverage = 1000 
 * Submit (takes only few minutes)
+* *Note that GenomeScope v2.0 is also available and can "acount for different ploidy levels". However, when used with Sgr and others, the model performed very poorly. Explore v2.0 If you know or suspect your species is not diploid, otherwise is likely safe to stick to v1.0 
  
 Complete the following table in your Species README. You can copy and paste this table straight into your README (no need to enclose it with quotes, i.e. a code block) and just substitute values. You'll have to calculate the average
 ```sh
@@ -338,7 +339,7 @@ In addition, we also noted that assembling contaminated data produced better res
 
 Thus, run one assembly using your contaminated data and one with the decontaminated files.
 1. You need to be in Turing for this step. SPAdes requires high memory nodes (only avail in Turing)
-2. Get the genome size of your species, or Jellyfish estimate, in bp from the previous step. Jellyfish gives an min an max: I have been using the average of both of these.
+2. Get the genome size of your species, or Jellyfish estimate, in bp from the previous step. Jellyfish gives an min an max: I have been using the average of both of these (rounding to the nearest million)
 
 **Execute [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch)***
 ```sh
@@ -350,3 +351,35 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 Repeat running the decontaminated data
 
 If BUSCO values are too low try <contam_AUTO | decontam_covAUTO>
+
+
+#### 8. Determine the best assembly
+
+`QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and note the (1) total lenght of assembly, (2) N50, and (3) L50 for each of your assemblies 
+
+Those are basic assembly statistics but we still need to know how many expected (highly conserved) genes were recovered by the assembly. 
+
+**Execute [runBUCSO.sh]() on the `contigs` and `scaffolds` files**
+```sh
+#runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
+# do not use trailing / in paths. Example using contigs:
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate_covAUTO" "contigs"
+```
+
+Repeat the comand using scaffolds.
+
+`runBUSCO.sh` will generate a dir per run. Look for the `short_summary.txt` file and note the percentage of `Complete and single-copy BUSCOs` genes
+
+
+Fill in this table with your values in your species README.
+
+```sh
+Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ 
+Sgr  |contam       |contigs       |off       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
+Sgr  |contam       |scaffolds       |off       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
+Sgr  |decontam       |contgs       |off       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
+Sgr  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
+Sgr  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
+Sgr  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
+```
