@@ -12,6 +12,8 @@ module load container_env pire_genome_assembly/2021.03.25
 #module load spades/gcc7/3.15.2
 #module load quast/5.0.2
 
+export SINGULARITY_BIND=/home/e1garcia
+
 USERID=$1
 SPECIESID=$2
 DATATYPE=$3
