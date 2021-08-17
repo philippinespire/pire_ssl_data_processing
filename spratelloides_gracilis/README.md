@@ -190,21 +190,64 @@ I could not find Sgr in the [genomesize.com](https://www.genomesize.com/) databa
 From species home directory: Executed runJellyfish.sbatch using decontaminated files
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
 ```
 This jellyfish kmer-frequency [hitogram file](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/jellyfish_out/Sgr_all_reads.histo) 
-was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://genomescope.org/analysis.php?code=Bm6XRZmRpQ2dNxEo8fHs). Highlights:
+was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this 
+[report](http://genomescope.org/analysis.php?code=Bm6XRZmRpQ2dNxEo8fHs). Highlights:
 
 Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
 stat    |min    |max    |average
 ------  |------ |------ |------
-Heterozygosity  |1.10243%       |1.10633%       |1.10438%
-Genome Haploid Length   |524,384,095 bp |524,590,385 bp |524,487,240 bp
+Heterozygosity  |1.32565%       |1.34149%       |1.33357%
+Genome Haploid Length   |693,553,516 bp |695,211,827 bp |694,382,672 bp
 Model Fit       |97.6162%       |98.7154%       |98.1658 %
 
 ## Step 7. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
 
 In our previous tests, contaminated data has produced the best assemblies for nDNA but decontaminated assemblies were better for mtDNA. The effect of using merged files remains unclear
 
-Thus, I ran 4 assembly treatments: Contam with and without merged files and the same for Decontam.  
+Thus, I ran 4 assembly treatments: Contam with and without merged files and the same for Decontam. See [SPADES_Test_info](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/SPADES_Test_info) for more info
+
+***CONCLUSION***
+***Recommending running contam and decontam but skipping MRDG all together***
+
+LOG:
+Executed [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch). *Do this for other species*
+```sh
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
+# do not use trailing / in paths. Example running contaminated data:
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "contam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
+
+Testing the merging reads option. *Not needed to repeat this for other spp"
+[runSPADEShimem_Onlymrgd_cont_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_Onlymrgd_cont_noisolate.sbatch)
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_Onlymrgd_cont_noisolate.sbatch "e1garcia" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pire_ssl_data_processing/blob/main/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_Onlymrgd_cont_noisolate.sbatch
+```
+
+Also testing the effect of `--cov-cutoff auto`. *Do this in other species if BUSCO values are too low with `--cov-cutoff off`*
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "contam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "decontam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
+
+This SPAdes scripts automatically runs `QUAST` but running `BUSCO` separately 
+
+
+
+### Summary of QUAST and BUSCO Results
+
+Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ 
+Sgr  |contam       |contigs       |off       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
+Sgr  |contam       |scaffolds       |off       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
+Sgr  |contam       |contigs       |auto       |2220821  |309779       |489827781       |70.6%       |5800       |28040       |30%
+Sgr  |contam       |scaffolds       |auto       |2204948  |309779       |516942564       |74.5%       |5800       |28041       |32.2%
+Sgr  |decontam       |contgs       |off       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
+Sgr  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
+Sgr  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
+Sgr  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
 
