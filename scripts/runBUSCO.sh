@@ -7,6 +7,8 @@ enable_lmod
 module load container_env/0.1
 module load busco/5.0.0
 
+export SINGULARITY_BIND=/home/e1garcia
+
 SPDIR=$1
 SPAdesDIR=$2
 SCAFFIG=$3

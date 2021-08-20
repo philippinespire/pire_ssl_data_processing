@@ -81,6 +81,7 @@ mkdir $quastOUTDIR2
 if [[ "LIBRARY" == "all" ]]; then
 	crun spades.py \
 	-k 21,33,55,77,99 \
+	--only-assembler \
 	--pe1-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n1) \
 	--pe1-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n1) \
 	--pe2-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n2 | tail -n1) \
@@ -95,6 +96,7 @@ if [[ "LIBRARY" == "all" ]]; then
 elif [[ "LIBRARY" == "1" ]]; then
 	crun spades.py \
 	-k 21,33,55,77,99 \
+	--only-assembler \
 	--pe1-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n1) \
 	--pe1-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n1) \
 	--threads $THREADS \
@@ -105,6 +107,7 @@ elif [[ "LIBRARY" == "1" ]]; then
 elif [[ "LIBRARY" == "2" ]]; then
 	crun spades.py \
 	-k 21,33,55,77,99 \
+	--only-assembler \
 	--pe1-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n2 | tail -n1) \
 	--pe1-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n2 | tail -n1) \
 	--threads $THREADS \
@@ -115,6 +118,7 @@ elif [[ "LIBRARY" == "2" ]]; then
 elif [[ "LIBRARY" == "3" ]]; then
 	crun spades.py \
 	-k 21,33,55,77,99 \
+	--only-assembler \
 	--pe1-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n3 | tail -n1) \
 	--pe1-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n3 | tail -n1) \
 	--threads $THREADS \
