@@ -352,14 +352,24 @@ Repeat running the decontaminated data
 
 If BUSCO values are too low try <contam_AUTO | decontam_covAUTO>
 
+Example:
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "contam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
 
 #### 8. Determine the best assembly
 
-`QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and note the (1) total lenght of assembly, (2) N50, and (3) L50 for each of your assemblies 
+`QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and note the (1) total number of contigs, (2) the size of the largest contig, (3) total lenght of assembly, (4) N50, and (5) L50 for each of your assemblies. This info will be entered in the table bellow. 
+
+*Tip: you can align the columns of any .tsv for easy viewing with the comand `column` in bash. Example:
+```sh
+bash
+cat quast-reports/quast-report_scaffolds_Sgr_spades_contam_R1R2_21-99_isolate-off.tsv | column -ts $'\t' | less -S
+```
 
 Those are basic assembly statistics but we still need to know how many expected (highly conserved) genes were recovered by the assembly. 
 
-**Execute [runBUCSO.sh]() on the `contigs` and `scaffolds` files**
+**Execute [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files**
 ```sh
 #runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
 # do not use trailing / in paths. Example using contigs:
@@ -378,6 +388,8 @@ Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest con
 ------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ 
 Sgr  |contam       |contigs       |off       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
 Sgr  |contam       |scaffolds       |off       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
+Sgr  |contam       |contigs       |auto       |2220821  |309779       |489827781       |70.6%       |5800       |28040       |30%
+Sgr  |contam       |scaffolds       |auto       |2204948  |309779       |516942564       |74.5%       |5800       |28041       |32.2%
 Sgr  |decontam       |contgs       |off       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
 Sgr  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
 Sgr  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
