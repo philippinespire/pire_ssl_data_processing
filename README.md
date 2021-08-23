@@ -339,6 +339,7 @@ Thus, use the contaminated files to run one assembly for each of your libraries 
 1. You need to be in Turing for this step. SPAdes requires high memory nodes (only avail in Turing)
 2. Get the genome size of your species, or Jellyfish estimate, in bp from the previous step. Jellyfish gives an min an max: I have been using the average of both of these (rounding to the nearest million)
 
+
 We produced 3 libraries (from the same individual) for the last 5 spp  with ssl data resulting in 3 sets of files. Sgr example:
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
