@@ -265,8 +265,8 @@ Sgr  |allLibs  |decontam       |contgs       |off       |2316449  |197090       
 Sgr  |allLibs  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
 Sgr  |allLibs  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
 Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
-Sgr  |SgC0072B  |contam       |contgs       |off       |
-Sgr  |SgC0072B  |contam       |scaffolds       |off       |
+Sgr  |SgC0072B  |contam       |contgs       |off       |3375654  |68606       |441333876       |63.6%       |5405       |26613       |29.2%
+Sgr  |SgC0072B  |contam       |scaffolds       |off       |3358197  |68606       |460942092       |66.4%       |5587       |26490       |31.3%
 Sgr  |SgC0072C  |contam       |contgs       |off       |
 Sgr  |SgC0072C  |contam       |scaffolds       |off       |
 Sgr  |SgC0072D  |contam       |contgs       |off       |
