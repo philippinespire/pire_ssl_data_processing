@@ -213,7 +213,7 @@ I found the genome size of Sfa in the [genomesize.com](https://www.genomesize.co
 From species home directory: Executed runJellyfish.sbatch using decontaminated files
 ```sh
 #runJellyfish.sbatch <Species 2-letter ID> <indir> <outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Pli" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Pli" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish__decontam"
 ```
 This jellyfish kmer-frequency [histogram file]() was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=URnqm6DaJIVyouKPOCOI)
 
@@ -222,10 +222,74 @@ Kmer length: 21
 Read length: 140
 Max kmer coverage: 1000
 
-Genome stats for Tzo from Jellyfish/GenomeScope v1.0 k=21
+Genome stats for Pli from Jellyfish/GenomeScope v1.0 k=21
 stat    |min    |max    |average
 ------  |------ |------ |------
 Heterozygosity  |0.702616%         |0.7111730.9%       |0.7068945%
 Genome Haploid Length   |737,279,443 bp    |738,434,396 bp     |737,856,920 bp
 Model Fit       |95.7689%       |97.9334%       |96.85115%
+
+---
+## Step 8. Assemble the genome using SPAdes
+
+Assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA.
+
+Thus, run one assembly using your contaminated data and one with the decontaminated files.
+
+This step was run in Turing. SPAdes requires high memory nodes (only avail in Turing)
+Based on the min & max genome size of Pli estimated by Jellyfish, in bp from the previous step, average was determined.
+
+Execute runSPADEShimem_R1R2_noisolate.sbatch*
+```
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
+# do not use trailing / in paths. Example running contaminated data:
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pli" "contam" "737856920" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus"
+```
+Repeat running the decontaminated data:
+```
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pli" "decontam" "737856920" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus"
+
+---
+
+## Step 9. Determine the best assembly
+
+This SPAdes scripts automatically runs `QUAST` but runs `BUSCO` separately
+
+**Executed [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files**
+```sh
+#runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
+# do not use trailing / in paths:
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus" "SPAdes_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus" "SPAdes_contam_R1R2_noIsolate" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus" "SPAdes_decontam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus" "SPAdes_decontam_R1R2_noIsolate" "scaffolds"
+```
+
+Look for the quast_results dir and note the (1) total number of contigs, (2) the size of the largest contig, (3) total length of assembly, (4) N50, and (5) L50 for eac$
+
+To get summary for No. of contigs, largest contig, total length, % genome size completeness (GC), N50 & L50, do the following:
+```
+bash
+cat quast-reports/quast-report_contigs_Pli_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Pli_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Pli_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Pli_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+```
+
+Then, to fill in the BUSCO single copy column, open the following files & look for S%:
+Contam, contigs:
+Contam, scaffolds:
+Decontam, contigs:
+Decontam, scaffolds:
+
+Summary of QUAST & BUSCO Results
+
+Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single co$
+------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
+Pli  |contam       |contigs       |off       |126462  |1070312       |952740157       |41.11%       |8730       |34786       |%
+Pli  |contam       |scaffolds       |off       |125095  |1070312       |960099166       |41.11%       |8957       |34066       |%
+Pli  |decontam       |contigs       |off       |126080  |66692       |813845906       |41.15%       |7085       |37545       |%
+Pli  |decontam       |scaffolds       |off       |125228  |94589       |840397753       |41.15%       |7471       |36480       |%
+
 

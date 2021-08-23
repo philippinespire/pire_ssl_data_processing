@@ -1,0 +1,24 @@
+#                                                                                                      --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                                  accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#                          ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_25000_length_8556_cov_60.258129:3605-5815 -            693 33026at7898          -            585         0 1022.2  12.4   1   1         0         0 1019.7  12.4     5   585    53   693    49   693 0.92 -
+NODE_740_length_22362_cov_4.620132:15286-16824 -            513 33026at7898          -            585  1.3e-131  438.4   4.7   1   1    3e-134  1.7e-131  438.0   4.7    87   573     6   496     2   510 0.89 -
+NODE_35343_length_7301_cov_38.715218:396-5580  -            520 33026at7898          -            585     1e-11   42.6   0.2   1   1   2.8e-14   1.6e-11   41.9   0.2    93   320    20   281     9   294 0.73 -
+NODE_627_length_23109_cov_4.668579:14846-16198 -            451 33026at7898          -            585   2.8e-09   34.5   0.3   1   1   1.7e-11   9.7e-09   32.7   0.3   137   203    72   138     2   150 0.88 -
+NODE_7354_length_13094_cov_4.847480:4080-4811  -            244 33026at7898          -            585   3.7e-06   24.2   0.5   1   2      0.18     1e+02   -0.4   0.0   165   203    13    51     7    60 0.73 -
+NODE_7354_length_13094_cov_4.847480:4080-4811  -            244 33026at7898          -            585   3.7e-06   24.2   0.5   2   2     2e-08   1.1e-05   22.6   0.1    74   206    88   231    65   242 0.75 -
+NODE_107_length_32168_cov_7.932926:9891-11165  -            425 33026at7898          -            585   1.7e-05   22.0   0.0   1   1   5.6e-08   3.2e-05   21.1   0.0   139   247   105   216    90   233 0.81 -
+NODE_15373_length_10386_cov_60.397006:510-9845 -            443 33026at7898          -            585   4.1e-05   20.8   0.0   1   1   9.6e-08   5.6e-05   20.3   0.0   174   300     2   120     1   129 0.83 -
+NODE_19375_length_9508_cov_29.563503:8358-8837 -            160 33026at7898          -            585   0.00084   16.4   0.0   1   1   1.5e-06   0.00087   16.4   0.0   137   211    46   125     4   157 0.72 -
+NODE_193721_length_1727_cov_27.446560:912-1382 -            157 33026at7898          -            585   0.00086   16.4   0.0   1   1   1.5e-06    0.0009   16.3   0.0   136   205    43   119     2   132 0.77 -
+NODE_5269_length_14350_cov_40.205389:683-13726 -            364 33026at7898          -            585     0.015   12.3   0.0   1   1   4.2e-05     0.024   11.6   0.0    84   206    13   150     8   162 0.72 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/33026at7898.hmm
+# Target file:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_contigs_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/contigs.modified.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_contigs_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/hmmer_output/initial_run_results/33026at7898.out --cpu 1 /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/33026at7898.hmm /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_contigs_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/contigs.modified.fasta.modified.fas 
+# Current dir:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus
+# Date:            Fri Aug 20 13:22:38 2021
+# [ok]

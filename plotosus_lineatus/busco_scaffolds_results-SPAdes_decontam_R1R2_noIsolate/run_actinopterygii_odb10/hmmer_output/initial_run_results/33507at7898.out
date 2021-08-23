@@ -1,0 +1,24 @@
+#                                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#                            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_101628_length_3708_cov_36.643392:1073-2923  -            135 33507at7898          -            801   1.2e-08   32.2  12.3   1   1   1.9e-11   1.2e-08   32.2  12.3   243   322    34   114    30   124 0.81 -
+NODE_11580_length_11999_cov_44.894874:8749-9441  -            231 33507at7898          -            801   0.00092   16.0   3.5   1   1   2.1e-06    0.0014   15.5   3.5   249   299     8    67     3    71 0.78 -
+NODE_126936_length_2955_cov_38.649160:601-1740   -            380 33507at7898          -            801    0.0012   15.7   4.9   1   2    0.0053       3.5    4.2   0.9   249   274    84   111    76   144 0.74 -
+NODE_126936_length_2955_cov_38.649160:601-1740   -            380 33507at7898          -            801    0.0012   15.7   4.9   2   2     1e-05    0.0066   13.2   0.2   249   283   182   214   175   223 0.82 -
+NODE_76325_length_4715_cov_28.780546:3077-4114   -            346 33507at7898          -            801    0.0029   14.4   6.9   1   1   6.7e-06    0.0044   13.8   6.9   248   300   113   174   106   179 0.80 -
+NODE_9947_length_12600_cov_39.491161:10348-11824 -            354 33507at7898          -            801     0.011   12.5   2.2   1   1   2.7e-05     0.017   11.8   2.2   274   324   142   207   137   221 0.71 -
+NODE_73813_length_4838_cov_33.744039:2016-2936   -            307 33507at7898          -            801     0.016   11.9  11.1   1   2   1.1e-05    0.0074   13.0   5.7   250   299    58   116    51   151 0.77 -
+NODE_73813_length_4838_cov_33.744039:2016-2936   -            307 33507at7898          -            801     0.016   11.9  11.1   2   2      0.11        69   -0.1   0.2   249   270   180   202   170   211 0.73 -
+NODE_23624_length_9178_cov_30.710871:2651-3559   -            303 33507at7898          -            801     0.017   11.9   3.7   1   1     4e-05     0.026   11.2   3.7   249   299     8    67     3    72 0.63 -
+NODE_8690_length_13152_cov_71.954800:8696-9523   -            276 33507at7898          -            801     0.027   11.2   3.4   1   1   6.3e-05     0.041   10.6   3.4   249   299    22    81    13    85 0.69 -
+NODE_161752_length_2173_cov_20.762295:927-1844   -            306 33507at7898          -            801      0.06   10.0   2.3   1   1   0.00013     0.087    9.5   2.3   248   300    86   147    78   154 0.67 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/33507at7898.hmm
+# Target file:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/scaffolds.modified.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/hmmer_output/initial_run_results/33507at7898.out --cpu 1 /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/33507at7898.hmm /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/scaffolds.modified.fasta.modified.fas 
+# Current dir:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus
+# Date:            Fri Aug 20 13:24:31 2021
+# [ok]

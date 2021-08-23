@@ -1,0 +1,450 @@
+Tmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp folder does not exist or is not a directory.
+Create dir /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp
+easy-predict --threads 32 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_decontam_R1R2_noIsolate/scaffolds.fasta /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/refseq_db.faa /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/scaffolds.fasta /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp --max-intron 130000 --max-seq-len 160000 --min-exon-aa 15 --max-overlap 15 --min-intron 5 --overlap 1 
+
+MMseqs Version:                                             	4.a0f584d
+Substitution matrix                                         	nucl:nucleotide.out,aa:blosum62.out
+Add backtrace                                               	false
+Alignment mode                                              	2
+Allow wrapped scoring                                       	false
+E-value threshold                                           	100
+Seq. id. threshold                                          	0
+Min alignment length                                        	0
+Seq. id. mode                                               	0
+Alternative alignments                                      	0
+Coverage threshold                                          	0
+Coverage mode                                               	0
+Max sequence length                                         	160000
+Compositional bias                                          	1
+Max reject                                                  	2147483647
+Max accept                                                  	2147483647
+Include identical seq. id.                                  	false
+Preload mode                                                	0
+Pseudo count a                                              	1
+Pseudo count b                                              	1.5
+Score bias                                                  	0
+Realign hits                                                	false
+Realign score bias                                          	-0.2
+Realign max seqs                                            	2147483647
+Gap open cost                                               	nucl:5,aa:11
+Gap extension cost                                          	nucl:2,aa:1
+Zdrop                                                       	40
+Threads                                                     	32
+Compressed                                                  	0
+Verbosity                                                   	3
+Seed substitution matrix                                    	nucl:nucleotide.out,aa:VTML80.out
+Sensitivity                                                 	4
+k-mer length                                                	0
+k-score                                                     	2147483647
+Alphabet size                                               	nucl:5,aa:21
+Max results per query                                       	300
+Split database                                              	0
+Split mode                                                  	2
+Split memory limit                                          	0
+Diagonal scoring                                            	true
+Exact k-mer matching                                        	0
+Mask residues                                               	1
+Mask lower case residues                                    	0
+Minimum diagonal score                                      	15
+Spaced k-mers                                               	1
+Spaced k-mer pattern                                        	
+Local temporary path                                        	
+Rescore mode                                                	0
+Remove hits by seq. id. and coverage                        	false
+Sort results                                                	0
+Mask profile                                                	1
+Profile E-value threshold                                   	0.001
+Global sequence weighting                                   	false
+Allow deletions                                             	false
+Filter MSA                                                  	1
+Maximum seq. id. threshold                                  	0.9
+Minimum seq. id.                                            	0
+Minimum score per column                                    	-20
+Minimum coverage                                            	0
+Select N most diverse seqs                                  	1000
+Min codons in orf                                           	15
+Max codons in length                                        	32734
+Max orf gaps                                                	2147483647
+Contig start mode                                           	2
+Contig end mode                                             	2
+Orf start mode                                              	1
+Forward frames                                              	1,2,3
+Reverse frames                                              	1,2,3
+Translation table                                           	1
+Translate orf                                               	0
+Use all table starts                                        	false
+Offset of numeric ids                                       	0
+Create lookup                                               	0
+Add orf stop                                                	false
+Chain overlapping alignments                                	0
+Merge query                                                 	1
+Search type                                                 	0
+Search iterations                                           	1
+Start sensitivity                                           	4
+Search steps                                                	1
+Slice search mode                                           	false
+Strand selection                                            	1
+LCA search mode                                             	false
+Disk space limit                                            	0
+MPI runner                                                  	
+Force restart with latest tmp                               	false
+Remove temporary files                                      	false
+maximal combined evalue of an optimal set                   	0.001
+minimal length ratio between combined optimal set and target	0.5
+Maximal intron length                                       	130000
+Minimal intron length                                       	5
+Minimal exon length aa                                      	15
+Maximal overlap of exons                                    	15
+Gap open penalty                                            	-1
+Gap extend penalty                                          	-1
+allow same-strand overlaps                                  	1
+translate codons to AAs                                     	0
+write target key instead of accession                       	0
+Reverse AA Fragments                                        	0
+
+createdb /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_decontam_R1R2_noIsolate/scaffolds.fasta /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/contigs --dbtype 2 --compressed 0 -v 3 
+
+Converting sequences
+[===================================================================================================	1 Mio. sequences processed
+===================================================================
+Time for merging to contigs_h: 0h 0m 3s 19ms
+Time for merging to contigs: 0h 0m 24s 406ms
+Database type: Nucleotide
+Time for processing: 0h 0m 45s 468ms
+createdb /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/refseq_db.faa /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/targets --dbtype 1 --compressed 0 -v 3 
+
+Converting sequences
+[===
+Time for merging to targets_h: 0h 0m 0s 216ms
+Time for merging to targets: 0h 0m 0s 369ms
+Database type: Aminoacid
+Time for processing: 0h 0m 1s 555ms
+Tmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict folder does not exist or is not a directory.
+Create dir /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict
+predictexons /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/contigs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/MetaEuk_calls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 2 --wrapped-scoring 0 -e 100 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 160000 --comp-bias-corr 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --gap-open nucl:5,aa:11 --gap-extend nucl:2,aa:1 --zdrop 40 --threads 32 --compressed 0 -v 3 --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -s 4 -k 0 --k-score 2147483647 --alph-size nucl:5,aa:21 --max-seqs 300 --split 0 --split-mode 2 --split-memory-limit 0 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-lower-case 0 --min-ungapped-score 15 --spaced-kmer-mode 1 --rescore-mode 0 --filter-hits 0 --sort-results 0 --mask-profile 1 --e-profile 0.001 --wg 0 --allow-deletion 0 --filter-msa 1 --max-seq-id 0.9 --qid 0 --qsc -20 --cov 0 --diff 1000 --min-length 15 --max-length 32734 --max-gaps 2147483647 --contig-start-mode 2 --contig-end-mode 2 --orf-start-mode 1 --forward-frames 1,2,3 --reverse-frames 1,2,3 --translation-table 1 --translate 0 --use-all-table-starts 0 --id-offset 0 --create-lookup 0 --add-orf-stop 0 --chain-alignments 0 --merge-query 1 --search-type 0 --num-iterations 1 --start-sens 4 --sens-steps 1 --slice-search 0 --strand 1 --orf-filter 0 --orf-filter-e 100 --orf-filter-s 2 --lca-search 0 --disk-space-limit 0 --force-reuse 0 --remove-tmp-files 0 --metaeuk-eval 0.001 --metaeuk-tcov 0.5 --max-intron 130000 --min-intron 5 --min-exon-aa 15 --max-overlap 15 --set-gap-open -1 --set-gap-extend -1 --reverse-fragments 0 
+
+extractorfs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/contigs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/nucl_6f --min-length 15 --max-length 32734 --max-gaps 2147483647 --contig-start-mode 2 --contig-end-mode 2 --orf-start-mode 1 --forward-frames 1,2,3 --reverse-frames 1,2,3 --translation-table 1 --translate 0 --use-all-table-starts 0 --id-offset 0 --create-lookup 0 --threads 32 --compressed 0 -v 3 
+
+[=================================================================] 1.67M 12s 171ms
+Time for merging to nucl_6f_h: 0h 2m 0s 330ms
+Time for merging to nucl_6f: 0h 2m 41s 150ms
+Time for processing: 0h 6m 13s 974ms
+translatenucs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/nucl_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/aa_6f --translation-table 1 --add-orf-stop 0 -v 3 --compressed 0 --threads 32 
+
+[=================================================================] 58.51M 1m 11s 862ms
+Time for merging to aa_6f: 0h 1m 39s 248ms
+Time for processing: 0h 3m 13s 730ms
+Tmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/tmp_search folder does not exist or is not a directory.
+Create dir /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/tmp_search
+search /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/aa_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/search_res /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/tmp_search --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 2 --wrapped-scoring 0 -e 100 --min-seq-id 0 --min-aln-len 15 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 160000 --comp-bias-corr 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --gap-open nucl:5,aa:11 --gap-extend nucl:2,aa:1 --zdrop 40 --threads 32 --compressed 0 -v 3 --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -s 4 -k 0 --k-score 2147483647 --alph-size nucl:5,aa:21 --max-seqs 300 --split 0 --split-mode 2 --split-memory-limit 0 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-lower-case 0 --min-ungapped-score 15 --spaced-kmer-mode 1 --rescore-mode 0 --filter-hits 0 --sort-results 0 --mask-profile 1 --e-profile 0.001 --wg 0 --allow-deletion 0 --filter-msa 1 --max-seq-id 0.9 --qid 0 --qsc -20 --cov 0 --diff 1000 --min-length 15 --max-length 32734 --max-gaps 2147483647 --contig-start-mode 2 --contig-end-mode 2 --orf-start-mode 1 --forward-frames 1,2,3 --reverse-frames 1,2,3 --translation-table 1 --translate 0 --use-all-table-starts 0 --id-offset 0 --create-lookup 0 --add-orf-stop 0 --chain-alignments 0 --merge-query 1 --search-type 0 --num-iterations 1 --start-sens 4 --sens-steps 1 --slice-search 0 --strand 1 --orf-filter 0 --orf-filter-e 100 --orf-filter-s 2 --lca-search 0 --disk-space-limit 0 --force-reuse 0 --remove-tmp-files 0 
+
+prefilter /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/aa_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/tmp_search/421762214371705121/pref_0 --sub-mat nucl:nucleotide.out,aa:blosum62.out --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -k 0 --k-score 2147483647 --alph-size nucl:5,aa:21 --max-seq-len 160000 --max-seqs 300 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca 1 --pcb 1.5 --threads 32 --compressed 0 -v 3 -s 4.0 
+
+Query database size: 58508701 type: Aminoacid
+Estimated memory consumption: 1G
+Target database size: 37556 type: Aminoacid
+Index table k-mer threshold: 127 at k-mer size 6 
+Index table: counting k-mers
+[=================================================================] 37.56K 0s 381ms
+Index table: Masked residues: 485152
+Index table: fill
+[=================================================================] 37.56K 0s 229ms
+Index statistics
+Entries:          19981075
+DB size:          602 MB
+Avg k-mer size:   0.312204
+Top 10 k-mers
+    IHDKNI	113
+    LLGPGK	112
+    QVFNAK	96
+    LSNLLP	95
+    DVSGLW	94
+    TQKWNR	86
+    IGGFVY	79
+    QVIFRR	72
+    QVVFRR	70
+    SSSSDS	68
+Time for index table init: 0h 0m 1s 30ms
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 127
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 58508701
+Target db start 1 to 37556
+[=================================================================] 58.51M 3m 58s 869ms
+
+55.467404 k-mers per position
+375 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2 sequences passed prefiltering per query sequence
+1 median result list length
+25030021 sequences with 0 size result lists
+Time for merging to pref_0: 0h 1m 0s 687ms
+Time for processing: 0h 6m 15s 291ms
+align /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/aa_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/tmp_search/421762214371705121/pref_0 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/search_res --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 2 --wrapped-scoring 0 -e 100 --min-seq-id 0 --min-aln-len 15 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 160000 --comp-bias-corr 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --gap-open nucl:5,aa:11 --gap-extend nucl:2,aa:1 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Compute score and coverage
+Query database size: 58508701 type: Aminoacid
+Target database size: 37556 type: Aminoacid
+Calculation of alignments
+[=================================================================] 58.51M 1m 45s 551ms
+Time for merging to search_res: 0h 0m 57s 11ms
+121180031 alignments calculated
+10826804 sequence pairs passed the thresholds (0.089345 of overall calculated)
+0.185046 hits per query sequence
+Time for processing: 0h 3m 7s 548ms
+resultspercontig /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/contigs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/nucl_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/search_res /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/search_res_by_contig --threads 32 --compressed 0 -v 3 
+
+Computing ORF lookup
+Computing contig offsets
+Computing contig lookup
+Time for contig lookup: 0h 0m 8s 469ms
+[=================================================================] 1.67M 6s 93ms
+Time for merging to search_res_by_contig: 0h 0m 1s 450ms
+Time for processing: 0h 0m 55s 0ms
+collectoptimalset /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/search_res_by_contig /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/dp_predictions --metaeuk-eval 0.001 --metaeuk-tcov 0.5 --max-intron 130000 --min-intron 5 --min-exon-aa 15 --max-overlap 15 --set-gap-open -1 --set-gap-extend -1 --score-bias 0 --threads 32 --compressed 0 -v 3 
+
+[=================================================================] 1.67M 8s 787ms
+Time for merging to dp_predictions: 0h 0m 1s 232ms
+Time for processing: 0h 0m 11s 238ms
+mvdb /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/tmp_predict/5995512377532955005/dp_predictions /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/MetaEuk_calls 
+
+Time for processing: 0h 0m 0s 67ms
+reduceredundancy /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/MetaEuk_calls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/MetaEuk_preds /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/MetaEuk_preds_clust --overlap 1 --threads 32 --compressed 0 -v 3 
+
+[=================================================================] 1.67M 0s 462ms
+Time for merging to MetaEuk_preds_clust: 0h 0m 1s 184ms
+Time for merging to MetaEuk_preds: 0h 0m 1s 175ms
+Time for processing: 0h 0m 4s 220ms
+unitesetstofasta /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/contigs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/18223413745791032457/MetaEuk_preds /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/scaffolds.fasta --protein 0 --translation-table 1 --target-key 0 --threads 32 --compressed 0 -v 3 
+
+[=================================================================] 1.67M 0s 281ms
+Time for merging to scaffolds.fasta.fas: 0h 0m 0s 208ms
+Time for merging to scaffolds.fasta.codon.fas: 0h 0m 0s 241ms
+Time for merging to scaffolds.fasta.headersMap.tsv: 0h 0m 0s 164ms
+Time for processing: 0h 0m 1s 991ms
+easy-predict --threads 32 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_decontam_R1R2_noIsolate/scaffolds.fasta /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/refseq_db_rerun.faa /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/rerun_results/scaffolds.fasta /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp --max-intron 130000 --max-seq-len 160000 --min-exon-aa 5 --max-overlap 5 --min-intron 1 --overlap 1 -s 6 
+
+MMseqs Version:                                             	4.a0f584d
+Substitution matrix                                         	nucl:nucleotide.out,aa:blosum62.out
+Add backtrace                                               	false
+Alignment mode                                              	2
+Allow wrapped scoring                                       	false
+E-value threshold                                           	100
+Seq. id. threshold                                          	0
+Min alignment length                                        	0
+Seq. id. mode                                               	0
+Alternative alignments                                      	0
+Coverage threshold                                          	0
+Coverage mode                                               	0
+Max sequence length                                         	160000
+Compositional bias                                          	1
+Max reject                                                  	2147483647
+Max accept                                                  	2147483647
+Include identical seq. id.                                  	false
+Preload mode                                                	0
+Pseudo count a                                              	1
+Pseudo count b                                              	1.5
+Score bias                                                  	0
+Realign hits                                                	false
+Realign score bias                                          	-0.2
+Realign max seqs                                            	2147483647
+Gap open cost                                               	nucl:5,aa:11
+Gap extension cost                                          	nucl:2,aa:1
+Zdrop                                                       	40
+Threads                                                     	32
+Compressed                                                  	0
+Verbosity                                                   	3
+Seed substitution matrix                                    	nucl:nucleotide.out,aa:VTML80.out
+Sensitivity                                                 	6
+k-mer length                                                	0
+k-score                                                     	2147483647
+Alphabet size                                               	nucl:5,aa:21
+Max results per query                                       	300
+Split database                                              	0
+Split mode                                                  	2
+Split memory limit                                          	0
+Diagonal scoring                                            	true
+Exact k-mer matching                                        	0
+Mask residues                                               	1
+Mask lower case residues                                    	0
+Minimum diagonal score                                      	15
+Spaced k-mers                                               	1
+Spaced k-mer pattern                                        	
+Local temporary path                                        	
+Rescore mode                                                	0
+Remove hits by seq. id. and coverage                        	false
+Sort results                                                	0
+Mask profile                                                	1
+Profile E-value threshold                                   	0.001
+Global sequence weighting                                   	false
+Allow deletions                                             	false
+Filter MSA                                                  	1
+Maximum seq. id. threshold                                  	0.9
+Minimum seq. id.                                            	0
+Minimum score per column                                    	-20
+Minimum coverage                                            	0
+Select N most diverse seqs                                  	1000
+Min codons in orf                                           	15
+Max codons in length                                        	32734
+Max orf gaps                                                	2147483647
+Contig start mode                                           	2
+Contig end mode                                             	2
+Orf start mode                                              	1
+Forward frames                                              	1,2,3
+Reverse frames                                              	1,2,3
+Translation table                                           	1
+Translate orf                                               	0
+Use all table starts                                        	false
+Offset of numeric ids                                       	0
+Create lookup                                               	0
+Add orf stop                                                	false
+Chain overlapping alignments                                	0
+Merge query                                                 	1
+Search type                                                 	0
+Search iterations                                           	1
+Start sensitivity                                           	4
+Search steps                                                	1
+Slice search mode                                           	false
+Strand selection                                            	1
+LCA search mode                                             	false
+Disk space limit                                            	0
+MPI runner                                                  	
+Force restart with latest tmp                               	false
+Remove temporary files                                      	false
+maximal combined evalue of an optimal set                   	0.001
+minimal length ratio between combined optimal set and target	0.5
+Maximal intron length                                       	130000
+Minimal intron length                                       	1
+Minimal exon length aa                                      	5
+Maximal overlap of exons                                    	5
+Gap open penalty                                            	-1
+Gap extend penalty                                          	-1
+allow same-strand overlaps                                  	1
+translate codons to AAs                                     	0
+write target key instead of accession                       	0
+Reverse AA Fragments                                        	0
+
+createdb /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_decontam_R1R2_noIsolate/scaffolds.fasta /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/contigs --dbtype 2 --compressed 0 -v 3 
+
+Converting sequences
+[===================================================================================================	1 Mio. sequences processed
+===================================================================
+Time for merging to contigs_h: 0h 0m 1s 728ms
+Time for merging to contigs: 0h 0m 24s 563ms
+Database type: Nucleotide
+Time for processing: 0h 0m 46s 932ms
+createdb /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/refseq_db_rerun.faa /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/targets --dbtype 1 --compressed 0 -v 3 
+
+Converting sequences
+[==
+Time for merging to targets_h: 0h 0m 0s 201ms
+Time for merging to targets: 0h 0m 0s 362ms
+Database type: Aminoacid
+Time for processing: 0h 0m 1s 417ms
+Tmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict folder does not exist or is not a directory.
+Create dir /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict
+predictexons /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/contigs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/MetaEuk_calls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 2 --wrapped-scoring 0 -e 100 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 160000 --comp-bias-corr 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --gap-open nucl:5,aa:11 --gap-extend nucl:2,aa:1 --zdrop 40 --threads 32 --compressed 0 -v 3 --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -s 6 -k 0 --k-score 2147483647 --alph-size nucl:5,aa:21 --max-seqs 300 --split 0 --split-mode 2 --split-memory-limit 0 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-lower-case 0 --min-ungapped-score 15 --spaced-kmer-mode 1 --rescore-mode 0 --filter-hits 0 --sort-results 0 --mask-profile 1 --e-profile 0.001 --wg 0 --allow-deletion 0 --filter-msa 1 --max-seq-id 0.9 --qid 0 --qsc -20 --cov 0 --diff 1000 --min-length 15 --max-length 32734 --max-gaps 2147483647 --contig-start-mode 2 --contig-end-mode 2 --orf-start-mode 1 --forward-frames 1,2,3 --reverse-frames 1,2,3 --translation-table 1 --translate 0 --use-all-table-starts 0 --id-offset 0 --create-lookup 0 --add-orf-stop 0 --chain-alignments 0 --merge-query 1 --search-type 0 --num-iterations 1 --start-sens 4 --sens-steps 1 --slice-search 0 --strand 1 --orf-filter 0 --orf-filter-e 100 --orf-filter-s 2 --lca-search 0 --disk-space-limit 0 --force-reuse 0 --remove-tmp-files 0 --metaeuk-eval 0.001 --metaeuk-tcov 0.5 --max-intron 130000 --min-intron 1 --min-exon-aa 5 --max-overlap 5 --set-gap-open -1 --set-gap-extend -1 --reverse-fragments 0 
+
+extractorfs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/contigs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/nucl_6f --min-length 15 --max-length 32734 --max-gaps 2147483647 --contig-start-mode 2 --contig-end-mode 2 --orf-start-mode 1 --forward-frames 1,2,3 --reverse-frames 1,2,3 --translation-table 1 --translate 0 --use-all-table-starts 0 --id-offset 0 --create-lookup 0 --threads 32 --compressed 0 -v 3 
+
+[=================================================================] 1.67M 11s 836ms
+Time for merging to nucl_6f_h: 0h 2m 1s 711ms
+Time for merging to nucl_6f: 0h 2m 39s 24ms
+Time for processing: 0h 6m 12s 813ms
+translatenucs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/nucl_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/aa_6f --translation-table 1 --add-orf-stop 0 -v 3 --compressed 0 --threads 32 
+
+[=================================================================] 58.51M 1m 7s 320ms
+Time for merging to aa_6f: 0h 1m 38s 916ms
+Time for processing: 0h 3m 13s 688ms
+Tmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/tmp_search folder does not exist or is not a directory.
+Create dir /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/tmp_search
+search /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/aa_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/search_res /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/tmp_search --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 2 --wrapped-scoring 0 -e 100 --min-seq-id 0 --min-aln-len 5 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 160000 --comp-bias-corr 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --gap-open nucl:5,aa:11 --gap-extend nucl:2,aa:1 --zdrop 40 --threads 32 --compressed 0 -v 3 --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -s 6 -k 0 --k-score 2147483647 --alph-size nucl:5,aa:21 --max-seqs 300 --split 0 --split-mode 2 --split-memory-limit 0 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-lower-case 0 --min-ungapped-score 15 --spaced-kmer-mode 1 --rescore-mode 0 --filter-hits 0 --sort-results 0 --mask-profile 1 --e-profile 0.001 --wg 0 --allow-deletion 0 --filter-msa 1 --max-seq-id 0.9 --qid 0 --qsc -20 --cov 0 --diff 1000 --min-length 15 --max-length 32734 --max-gaps 2147483647 --contig-start-mode 2 --contig-end-mode 2 --orf-start-mode 1 --forward-frames 1,2,3 --reverse-frames 1,2,3 --translation-table 1 --translate 0 --use-all-table-starts 0 --id-offset 0 --create-lookup 0 --add-orf-stop 0 --chain-alignments 0 --merge-query 1 --search-type 0 --num-iterations 1 --start-sens 4 --sens-steps 1 --slice-search 0 --strand 1 --orf-filter 0 --orf-filter-e 100 --orf-filter-s 2 --lca-search 0 --disk-space-limit 0 --force-reuse 0 --remove-tmp-files 0 
+
+prefilter /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/aa_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/tmp_search/17502173179970224034/pref_0 --sub-mat nucl:nucleotide.out,aa:blosum62.out --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -k 0 --k-score 2147483647 --alph-size nucl:5,aa:21 --max-seq-len 160000 --max-seqs 300 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca 1 --pcb 1.5 --threads 32 --compressed 0 -v 3 -s 6.0 
+
+Query database size: 58508701 type: Aminoacid
+Estimated memory consumption: 1G
+Target database size: 25411 type: Aminoacid
+Index table k-mer threshold: 109 at k-mer size 6 
+Index table: counting k-mers
+[=================================================================] 25.41K 0s 244ms
+Index table: Masked residues: 351698
+Index table: fill
+[=================================================================] 25.41K 0s 140ms
+Index statistics
+Entries:          14881946
+DB size:          573 MB
+Avg k-mer size:   0.232530
+Top 10 k-mers
+    TNATTI	105
+    DVSGLW	92
+    RDARLL	82
+    QVVFRR	70
+    IGGFVY	68
+    TQKWNR	64
+    ARQWNR	64
+    SYCCGY	62
+    WFNRWR	54
+    DSSSSS	52
+Time for index table init: 0h 0m 0s 757ms
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 109
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 58508701
+Target db start 1 to 25411
+[=================================================================] 58.51M 19m 0s 921ms
+
+360.119730 k-mers per position
+2153 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+17 sequences passed prefiltering per query sequence
+9 median result list length
+6949678 sequences with 0 size result lists
+Time for merging to pref_0: 0h 1m 5s 991ms
+Time for processing: 0h 22m 13s 180ms
+align /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/aa_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/tmp_search/17502173179970224034/pref_0 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/search_res --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 2 --wrapped-scoring 0 -e 100 --min-seq-id 0 --min-aln-len 5 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 160000 --comp-bias-corr 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --gap-open nucl:5,aa:11 --gap-extend nucl:2,aa:1 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Compute score and coverage
+Query database size: 58508701 type: Aminoacid
+Target database size: 25411 type: Aminoacid
+Calculation of alignments
+[=================================================================] 58.51M 13m 49s 801ms
+Time for merging to search_res: 0h 1m 5s 295ms
+1003230091 alignments calculated
+161696507 sequence pairs passed the thresholds (0.161176 of overall calculated)
+2.763632 hits per query sequence
+Time for processing: 0h 15m 24s 435ms
+resultspercontig /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/contigs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/nucl_6f /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/search_res /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/search_res_by_contig --threads 32 --compressed 0 -v 3 
+
+Computing ORF lookup
+Computing contig offsets
+Computing contig lookup
+Time for contig lookup: 0h 0m 8s 527ms
+[=================================================================] 1.67M 1m 19s 265ms
+Time for merging to search_res_by_contig: 0h 0m 1s 661ms
+Time for processing: 0h 3m 57s 513ms
+collectoptimalset /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/search_res_by_contig /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/dp_predictions --metaeuk-eval 0.001 --metaeuk-tcov 0.5 --max-intron 130000 --min-intron 1 --min-exon-aa 5 --max-overlap 5 --set-gap-open -1 --set-gap-extend -1 --score-bias 0 --threads 32 --compressed 0 -v 3 
+
+[=================================================================] 1.67M 2m 9s 693ms
+Time for merging to dp_predictions: 0h 0m 1s 225ms
+Time for processing: 0h 2m 12s 741ms
+mvdb /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/tmp_predict/15434252289426756687/dp_predictions /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/MetaEuk_calls 
+
+Time for processing: 0h 0m 0s 74ms
+reduceredundancy /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/MetaEuk_calls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/MetaEuk_preds /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/MetaEuk_preds_clust --overlap 1 --threads 32 --compressed 0 -v 3 
+
+[=================================================================] 1.67M 0s 433ms
+Time for merging to MetaEuk_preds_clust: 0h 0m 1s 233ms
+Time for merging to MetaEuk_preds: 0h 0m 1s 188ms
+Time for processing: 0h 0m 4s 302ms
+unitesetstofasta /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/contigs /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/targets /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/tmp/5022942965617524676/MetaEuk_preds /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/rerun_results/scaffolds.fasta --protein 0 --translation-table 1 --target-key 0 --threads 32 --compressed 0 -v 3 
+
+[=================================================================] 1.67M 0s 138ms
+Time for merging to scaffolds.fasta.fas: 0h 0m 0s 189ms
+Time for merging to scaffolds.fasta.codon.fas: 0h 0m 0s 222ms
+Time for merging to scaffolds.fasta.headersMap.tsv: 0h 0m 0s 181ms
+Time for processing: 0h 0m 1s 866ms

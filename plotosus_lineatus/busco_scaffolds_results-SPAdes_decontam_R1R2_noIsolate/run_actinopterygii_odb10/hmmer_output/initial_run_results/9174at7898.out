@@ -1,0 +1,32 @@
+#                                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#                            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_29405_length_8297_cov_33.329349:1982-7868   -            850 9174at7898           -           1113         0 1247.4  18.3   1   2     1e-99   6.7e-97  323.8   7.6     1   213     5   250     5   253 0.90 -
+NODE_29405_length_8297_cov_33.329349:1982-7868   -            850 9174at7898           -           1113         0 1247.4  18.3   2   2  1.3e-282  8.7e-280  929.4   2.9   225   719   318   849   310   850 0.94 -
+NODE_521_length_25815_cov_39.739112:5349-22201   -           1168 9174at7898           -           1113  3.8e-258  857.7  35.4   1   2     1e-25   6.7e-23   78.7   3.9    68   211    39   193    36   197 0.86 -
+NODE_521_length_25815_cov_39.739112:5349-22201   -           1168 9174at7898           -           1113  3.8e-258  857.7  35.4   2   2  1.7e-238  1.1e-235  783.4  23.7   253  1103   299  1168   271  1168 0.87 -
+NODE_5237_length_15178_cov_38.427681:6081-7469   -            124 9174at7898           -           1113     7e-69  231.0   5.7   1   1   1.2e-71   7.8e-69  230.8   5.7   890  1013     1   124     1   124 1.00 -
+NODE_107666_length_3512_cov_27.829476:778-2319   -            514 9174at7898           -           1113   8.9e-33  111.4  20.7   1   3   4.7e-12   3.1e-09   33.5   0.0   585   689     2   103     1   112 0.89 -
+NODE_107666_length_3512_cov_27.829476:778-2319   -            514 9174at7898           -           1113   8.9e-33  111.4  20.7   2   3   6.1e-06     0.004   13.3   0.1   700   775   140   221   128   278 0.76 -
+NODE_107666_length_3512_cov_27.829476:778-2319   -            514 9174at7898           -           1113   8.9e-33  111.4  20.7   3   3   6.2e-22   4.1e-19   66.2  15.6   912  1104   313   505   290   511 0.83 -
+NODE_6814_length_14121_cov_37.797105:7047-8540   -            498 9174at7898           -           1113   1.3e-27   94.4  28.5   1   2   2.3e-12   1.5e-09   34.5   4.0   585   771     2   216     1   223 0.76 -
+NODE_6814_length_14121_cov_37.797105:7047-8540   -            498 9174at7898           -           1113   1.3e-27   94.4  28.5   2   2   4.2e-20   2.7e-17   60.2  16.6   919  1101   317   498   287   498 0.82 -
+NODE_21146_length_9626_cov_26.442637:7658-9307   -            550 9174at7898           -           1113   1.1e-10   38.3   7.7   1   2      0.14        91   -1.2   0.4   614   690    26   106     8   113 0.69 -
+NODE_21146_length_9626_cov_26.442637:7658-9307   -            550 9174at7898           -           1113   1.1e-10   38.3   7.7   2   2   1.7e-13   1.1e-10   38.3   7.7   908  1107   315   513   299   517 0.80 -
+NODE_18251_length_10218_cov_49.565372:1034-7187  -           1207 9174at7898           -           1113   1.1e-09   35.0  23.8   1   2   6.2e-08     4e-05   19.9   8.3   549   676   218   365   197   419 0.75 -
+NODE_18251_length_10218_cov_49.565372:1034-7187  -           1207 9174at7898           -           1113   1.1e-09   35.0  23.8   2   2     3e-08     2e-05   20.9   7.5   900  1076   631   810   618   839 0.78 -
+NODE_17408_length_10403_cov_23.918090:6728-8377  -            550 9174at7898           -           1113   3.2e-07   26.8   2.9   1   3     0.021        14    1.5   0.0   613   687    25   104     8   120 0.70 -
+NODE_17408_length_10403_cov_23.918090:6728-8377  -            550 9174at7898           -           1113   3.2e-07   26.8   2.9   2   3     0.015       9.7    2.0   1.9   695   765   143   218   137   234 0.71 -
+NODE_17408_length_10403_cov_23.918090:6728-8377  -            550 9174at7898           -           1113   3.2e-07   26.8   2.9   3   3   4.9e-10   3.2e-07   26.8   2.9   909  1108   320   518   304   520 0.77 -
+NODE_1158_length_21793_cov_34.441689:12631-20600 -           1448 9174at7898           -           1113   4.7e-06   22.9  18.2   1   2   1.5e-06   0.00096   15.3   3.6   542   662   485   607   476   627 0.81 -
+NODE_1158_length_21793_cov_34.441689:12631-20600 -           1448 9174at7898           -           1113   4.7e-06   22.9  18.2   2   2   6.2e-06     0.004   13.2   6.7   989  1108   995  1115   939  1120 0.70 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/9174at7898.hmm
+# Target file:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/scaffolds.modified.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/hmmer_output/initial_run_results/9174at7898.out --cpu 1 /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/9174at7898.hmm /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/scaffolds.modified.fasta.modified.fas 
+# Current dir:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus
+# Date:            Fri Aug 20 13:34:28 2021
+# [ok]

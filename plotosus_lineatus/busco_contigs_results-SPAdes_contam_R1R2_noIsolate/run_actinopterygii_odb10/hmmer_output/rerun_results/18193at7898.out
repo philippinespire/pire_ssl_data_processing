@@ -1,0 +1,26 @@
+#                                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#                            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_42678_length_7780_cov_44.132795:4668-5900   -            220 18193at7898          -            743   5.4e-60  201.2   0.4   1   1   7.6e-63     6e-60  201.1   0.4    20   225     1   220     1   220 0.89 -
+NODE_34211_length_8807_cov_36.073381:1325-2608   -            428 18193at7898          -            743   1.8e-34  116.8  23.0   1   4   1.3e-06    0.0011   15.1   0.2   489   536    23    68     3    84 0.69 -
+NODE_34211_length_8807_cov_36.073381:1325-2608   -            428 18193at7898          -            743   1.8e-34  116.8  23.0   2   4     8e-15   6.4e-12   42.3   3.2   482   607    94   209    79   216 0.90 -
+NODE_34211_length_8807_cov_36.073381:1325-2608   -            428 18193at7898          -            743   1.8e-34  116.8  23.0   3   4   9.1e-14   7.2e-11   38.8   1.0   468   597   198   315   197   323 0.80 -
+NODE_34211_length_8807_cov_36.073381:1325-2608   -            428 18193at7898          -            743   1.8e-34  116.8  23.0   4   4   6.9e-13   5.5e-10   35.9   1.1   468   588   314   425   311   427 0.84 -
+NODE_39446_length_8145_cov_31.080164:1681-4830   -            272 18193at7898          -            743   1.2e-11   41.3   1.8   1   2   1.9e-07   0.00015   17.9   0.2   468   524     4    59     2    65 0.93 -
+NODE_39446_length_8145_cov_31.080164:1681-4830   -            272 18193at7898          -            743   1.2e-11   41.3   1.8   2   2   5.4e-09   4.3e-06   23.0   0.1   467   531   170   234   160   258 0.88 -
+NODE_1166_length_25842_cov_33.451035:18058-18774 -            239 18193at7898          -            743   2.7e-07   27.0   0.0   1   1   4.3e-10   3.4e-07   26.6   0.0   356   446    16   114     2   136 0.76 -
+NODE_29548_length_9500_cov_45.824061:212-6345    -            815 18193at7898          -            743   2.7e-05   20.4   5.0   1   3   1.1e-06   0.00091   15.3   0.0   489   523    23    57    14    63 0.90 -
+NODE_29548_length_9500_cov_45.824061:212-6345    -            815 18193at7898          -            743   2.7e-05   20.4   5.0   2   3   0.00036      0.29    7.0   0.1   491   525   380   414   359   427 0.88 -
+NODE_29548_length_9500_cov_45.824061:212-6345    -            815 18193at7898          -            743   2.7e-05   20.4   5.0   3   3       0.5     4e+02   -3.4   0.3   161   183   496   516   476   518 0.56 -
+NODE_59857_length_6222_cov_32.063531:790-5796    -            189 18193at7898          -            743   3.1e-05   20.2   0.0   1   2   7.6e-08     6e-05   19.2   0.1   466   525    42   101    17   109 0.89 -
+NODE_59857_length_6222_cov_32.063531:790-5796    -            189 18193at7898          -            743   3.1e-05   20.2   0.0   2   2      0.33   2.7e+02   -2.8   0.0   338   370   136   168   126   171 0.71 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/18193at7898.hmm
+# Target file:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_contigs_results-SPAdes_contam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/rerun_results/contigs.modified.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_contigs_results-SPAdes_contam_R1R2_noIsolate/run_actinopterygii_odb10/hmmer_output/rerun_results/18193at7898.out --cpu 1 /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/18193at7898.hmm /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_contigs_results-SPAdes_contam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/rerun_results/contigs.modified.fasta.modified.fas 
+# Current dir:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus
+# Date:            Fri Aug 20 14:41:05 2021
+# [ok]

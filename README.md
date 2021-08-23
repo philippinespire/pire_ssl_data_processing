@@ -332,34 +332,60 @@ Note the genome size (or estimate) in your species README. You will use this inf
 Congrats! You are now ready to assembly the genome of your species!
 
 After de novo assembler comparisons,  we decided to move forward using SPADES (isolate and covcutoff flags off). 
-If BUSCO values are too low, it might be worth to try the `covcutoff auto` (by changing the datatype variable to contam_covAUTO or decontam_covAUTO).
-
-
+For the most part, we obtained better assemblies using single libraries but in few instances using all the libraries was better.
 In addition, we also noted that assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA. 
 
-Thus, run one assembly using your contaminated data and one with the decontaminated files.
+Thus, use the contaminated files to run one assembly for each of your libraries independently and then one combining all.
 1. You need to be in Turing for this step. SPAdes requires high memory nodes (only avail in Turing)
 2. Get the genome size of your species, or Jellyfish estimate, in bp from the previous step. Jellyfish gives an min an max: I have been using the average of both of these (rounding to the nearest million)
 
-**Execute [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch)***
+We produced 3 libraries (from the same individual) for the last 5 spp  with ssl data resulting in 3 sets of files. Sgr example:
 ```sh
-#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
+ls
+SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
+SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_2.fq.gz
+SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_1.fq.gz
+SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_2.fq.gz
+SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_1.fq.gz
+SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_2.fq.gz
+```
+Thus, the following SPAdes script is optimized to run all and up to the first 3 libraries independently. 
+If your species has 4 or more libraries, you will need to modify the script to run the 4th,5th,.. library and so on (you'll only need to add the necessary libraries to the SPAdes command)
+
+No changes necessary for running the first, second, thrid, or all the libraries together.  
+
+**Use the contaminated files to run one assembly for each of your libraries independently and then one combining all**
+
+**Execute [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch). Example using the 1st library***
+```sh
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <library: all | 1 | 2 | 3> <contam | decontam> <genome size in bp> <species dir>
 # do not use trailing / in paths. Example running contaminated data:
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "contam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
-Repeat running the decontaminated data
+Run 3 more assemblies with the contaminated data for the second, third, and all libraries together (i.e. replace "1", with "2", "3", and "all")
 
-If BUSCO values are too low try <contam_AUTO | decontam_covAUTO>
+After assessing the best library (you'll need to complete number 8 below), it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO") if BUSCO values are too low try
 
 Example:
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "contam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
+
+Finally, run one more assembly using the decontaminated data from the same library(or all together) that produced the best assembly (with or without the covcutoff flag) with the contaminated files. Sgr example:
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "3" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
 #### 8. Determine the best assembly
 
-`QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and note the (1) total number of contigs, (2) the size of the largest contig, (3) total lenght of assembly, (4) N50, and (5) L50 for each of your assemblies. This info will be entered in the table bellow. 
+`QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and for each of your assemblies note the: 
+1. total number of contigs
+2. the size of the largest contig
+3. total lenght of assembly
+4. N50
+5. L50 
 
 *Tip: you can align the columns of any .tsv for easy viewing with the comand `column` in bash. Example:
 ```sh
@@ -367,31 +393,32 @@ bash
 cat quast-reports/quast-report_scaffolds_Sgr_spades_contam_R1R2_21-99_isolate-off.tsv | column -ts $'\t' | less -S
 ```
 
-Those are basic assembly statistics but we still need to know how many expected (highly conserved) genes were recovered by the assembly. 
+Enter your stats in the table below
 
-**Execute [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files**
+Those are basic assembly statistics but we still need to know how many expected (i.e. highly conserved) genes were recovered by the assembly. 
+
+**Execute [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files for each assembly**
 ```sh
 #runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
 # do not use trailing / in paths. Example using contigs:
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate_covAUTO" "contigs"
 ```
-
 Repeat the comand using scaffolds.
 
-`runBUSCO.sh` will generate a dir per run. Look for the `short_summary.txt` file and note the percentage of `Complete and single-copy BUSCOs` genes
+`runBUSCO.sh` will generate a new dir per run. Look for the `short_summary.txt` file and note the percentage of `Complete and single-copy BUSCOs` genes
 
 
 Fill in this table with your values in your species README.
 
 ```sh
-Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
-------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ 
-Sgr  |contam       |contigs       |off       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
-Sgr  |contam       |scaffolds       |off       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
-Sgr  |contam       |contigs       |auto       |2220821  |309779       |489827781       |70.6%       |5800       |28040       |30%
-Sgr  |contam       |scaffolds       |auto       |2204948  |309779       |516942564       |74.5%       |5800       |28041       |32.2%
-Sgr  |decontam       |contgs       |off       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
-Sgr  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
-Sgr  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
-Sgr  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ 
+Sgr  |allLibs  |contam       |contigs       |off       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
+Sgr  |allLibs  |contam       |scaffolds       |off       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
+Sgr  |allLibs  |contam       |contigs       |auto       |2220821  |309779       |489827781       |70.6%       |5800       |28040       |30%
+Sgr  |allLibs  |contam       |scaffolds       |auto       |2204948  |309779       |516942564       |74.5%       |5800       |28041       |32.2%
+Sgr  |allLibs  |decontam       |contgs       |off       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
+Sgr  |allLibs  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
+Sgr  |allLibs  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
+Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
 ```

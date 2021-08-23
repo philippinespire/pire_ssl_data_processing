@@ -207,10 +207,9 @@ Model Fit       |97.6162%       |98.7154%       |98.1658 %
 
 In our previous tests, contaminated data has produced the best assemblies for nDNA but decontaminated assemblies were better for mtDNA. The effect of using merged files remains unclear
 
-Thus, I ran 4 assembly treatments: Contam with and without merged files and the same for Decontam. See [SPADES_Test_info](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/SPADES_Test_info) for more info
+Thus, I ran 4 assembly treatments: Contam with and without merged files and the same for Decontam. See [SPADES_Test_info](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/SPADES_Test_info) for full details
 
-***CONCLUSION***
-***Recommending running contam and decontam but skipping MRDG all together***
+	* ***CONCLUSION: Recommending running contam and decontam but skipping MRDG all together***
 
 LOG:
 Executed [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch). *Do this for other species*
@@ -221,8 +220,9 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
-Testing the merging reads option. *Not needed to repeat this for other spp"
-[runSPADEShimem_Onlymrgd_cont_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_Onlymrgd_cont_noisolate.sbatch)
+Testing the merging reads option. *Not needed to repeat this for other spp*
+
+Executed [runSPADEShimem_Onlymrgd_cont_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_Onlymrgd_cont_noisolate.sbatch)
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_Onlymrgd_cont_noisolate.sbatch "e1garcia" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pire_ssl_data_processing/blob/main/spratelloides_gracilis"
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_Onlymrgd_cont_noisolate.sbatch
@@ -237,17 +237,38 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 This SPAdes scripts automatically runs `QUAST` but running `BUSCO` separately 
 
 
+**Executed [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files**
+```sh
+#runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
+# do not use trailing / in paths. Example using contigs:
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_contam_R1R2_noIsolate_NOmrgd" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_contam_R1R2_noIsolate_NOmrgd" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_contam_R1R2_noIsolate_covAUTO" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_contam_R1R2_noIsolate_covAUTO" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate_covAUTO" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate_covAUTO" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072B_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072B_contam_R1R2_noIsolate" "scaffolds"
+```
+
 
 ### Summary of QUAST and BUSCO Results
 
-Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
-------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ 
-Sgr  |contam       |contigs       |off       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
-Sgr  |contam       |scaffolds       |off       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
-Sgr  |contam       |contigs       |auto       |2220821  |309779       |489827781       |70.6%       |5800       |28040       |30%
-Sgr  |contam       |scaffolds       |auto       |2204948  |309779       |516942564       |74.5%       |5800       |28041       |32.2%
-Sgr  |decontam       |contgs       |off       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
-Sgr  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
-Sgr  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
-Sgr  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
-
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ 
+Sgr  |allLibs  |contam       |contigs       |off       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
+Sgr  |allLibs  |contam       |scaffolds       |off       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
+Sgr  |allLibs  |contam       |contigs       |auto       |2220821  |309779       |489827781       |70.6%       |5800       |28040       |30%
+Sgr  |allLibs  |contam       |scaffolds       |auto       |2204948  |309779       |516942564       |74.5%       |5800       |28041       |32.2%
+Sgr  |allLibs  |decontam       |contgs       |off       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
+Sgr  |allLibs  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
+Sgr  |allLibs  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
+Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
+Sgr  |SgC0072B  |contam       |contgs       |off       |
+Sgr  |SgC0072B  |contam       |scaffolds       |off       |
+Sgr  |SgC0072C  |contam       |contgs       |off       |
+Sgr  |SgC0072C  |contam       |scaffolds       |off       |
+Sgr  |SgC0072D  |contam       |contgs       |off       |
+Sgr  |SgC0072D  |contam       |scaffolds       |off       |

@@ -1,0 +1,19 @@
+#                                                                                                       --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                                   accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#                           ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_18543_length_9662_cov_35.647496:5785-6444  -            220 21198at7898          -            753   8.9e-18   62.4   0.0   1   1     1e-20     1e-17   62.2   0.0    10   102     1   101     1   132 0.88 -
+NODE_147_length_30585_cov_3.763629:20668-21744  -            359 21198at7898          -            753   2.6e-14   50.9   0.0   1   1   3.1e-17     3e-14   50.7   0.0   328   629    24   312    14   359 0.75 -
+NODE_2189_length_17800_cov_4.705610:16687-17718 -            344 21198at7898          -            753   8.4e-14   49.3   0.0   1   1   1.3e-16   1.3e-13   48.7   0.0   332   596    46   294    30   313 0.77 -
+NODE_184_length_29193_cov_4.927648:3888-4835    -            316 21198at7898          -            753   4.5e-12   43.5   0.0   1   1     2e-14   1.9e-11   41.5   0.0   335   564    24   238    16   249 0.74 -
+NODE_2764_length_16883_cov_4.603551:14610-15665 -            352 21198at7898          -            753   3.3e-09   34.0   0.0   1   1   6.4e-12   6.2e-09   33.2   0.0   331   613    30   297    24   320 0.78 -
+NODE_10_length_48125_cov_4.317724:33538-34227   -            230 21198at7898          -            753     6e-05   20.0   0.1   1   1   7.3e-08   7.1e-05   19.7   0.1   384   578    22   195     3   218 0.79 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/21198at7898.hmm
+# Target file:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_contigs_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/contigs.modified.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_contigs_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/hmmer_output/initial_run_results/21198at7898.out --cpu 1 /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/21198at7898.hmm /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_contigs_results-SPAdes_decontam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/contigs.modified.fasta.modified.fas 
+# Current dir:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus
+# Date:            Fri Aug 20 13:17:19 2021
+# [ok]

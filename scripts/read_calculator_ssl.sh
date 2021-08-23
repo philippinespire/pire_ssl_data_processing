@@ -3,7 +3,7 @@
 #SBATCH --job-name=readCal
 #SBATCH --output=readCal-%j.out
 #SBATCH -c 32
-#SBATCH --mail-user=e1garcia@odu.edu
+#SBATCH --mail-user=youremail
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=END
 

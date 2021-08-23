@@ -1,0 +1,23 @@
+#                                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#                            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_2849_length_21586_cov_36.368548:3808-7837   -            573 51210at7898          -            366    2e-228  755.9   4.4   1   2  1.4e-204  9.9e-202  668.1   0.7     2   318   122   441   121   450 0.98 -
+NODE_2849_length_21586_cov_36.368548:3808-7837   -            573 51210at7898          -            366    2e-228  755.9   4.4   2   2   1.1e-28   7.8e-26   89.4   0.2   310   366   516   572   501   572 0.92 -
+NODE_1_length_1070312_cov_4.967607:449004-449507 -            168 51210at7898          -            366   1.3e-25   88.7   0.0   1   1     2e-28   1.5e-25   88.5   0.0   117   285     1   167     1   168 0.93 -
+NODE_3_length_276070_cov_4.893833:21559-22104    -            182 51210at7898          -            366   7.5e-23   79.6   0.0   1   1   1.2e-25   8.6e-23   79.4   0.0   116   284     1   182     1   182 0.87 -
+NODE_311642_length_385_cov_0.891608:2-364        -            121 51210at7898          -            366   6.9e-21   73.1   0.0   1   1   1.1e-23   7.6e-21   73.0   0.0   165   283     1   121     1   121 0.94 -
+NODE_265070_length_512_cov_0.738499:82-444       -            121 51210at7898          -            366   4.2e-19   67.3   0.3   1   1   6.4e-22   4.6e-19   67.1   0.3   164   285     1   121     1   121 0.95 -
+NODE_3022_length_21292_cov_36.126315:4618-18075  -            383 51210at7898          -            366   6.3e-18   63.4   0.3   1   1   1.2e-19   8.5e-17   59.7   0.3    82   285    75   311    56   331 0.71 -
+NODE_297203_length_417_cov_1.283019:1-333        -            111 51210at7898          -            366   2.8e-14   51.4   0.1   1   1   4.3e-17   3.1e-14   51.3   0.1   162   267     2   111     1   111 0.91 -
+NODE_247376_length_603_cov_0.607143:217-594      -            126 51210at7898          -            366   5.7e-10   37.2   0.0   1   1   1.1e-12     8e-10   36.7   0.0   118   240     1   126     1   126 0.81 -
+NODE_290240_length_434_cov_1.217910:96-431       -            112 51210at7898          -            366   1.7e-09   35.6   0.0   1   1   2.8e-12     2e-09   35.4   0.0   164   269     1   112     1   112 0.84 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/51210at7898.hmm
+# Target file:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_contam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/scaffolds.modified.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_contam_R1R2_noIsolate/run_actinopterygii_odb10/hmmer_output/initial_run_results/51210at7898.out --cpu 1 /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10/hmms/51210at7898.hmm /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/busco_scaffolds_results-SPAdes_contam_R1R2_noIsolate/run_actinopterygii_odb10/metaeuk_output/initial_results/scaffolds.modified.fasta.modified.fas 
+# Current dir:     /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus
+# Date:            Fri Aug 20 13:25:21 2021
+# [ok]
