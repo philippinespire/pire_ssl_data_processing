@@ -22,16 +22,16 @@ GENSIZE=$5
 PROJDIR=$6
 
 # Get the Library code
-if [[ "LIBRARY" == "all" ]]; then
+if [[ "$LIBRARY" == "all" ]]; then
 	LIBCODE=allLibs
-elif [[ "LIBRARY" == "1" ]]; then
+elif [[ "$LIBRARY" == "1" ]]; then
 	LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n1 | sed -e 's/.*\///' -e 's/_.*//')
-elif [[ "LIBRARY" == "2" ]]; then
+elif [[ "$LIBRARY" == "2" ]]; then
         LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n2 | tail -n1 | sed -e 's/.*\///' -e 's/_.*//')
-elif [[ "LIBRARY" == "3" ]]; then
+elif [[ "$LIBRARY" == "3" ]]; then
         LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n3 | tail -n1 | sed -e 's/.*\///' -e 's/_.*//')
 else
-	echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\n\nPlease enter which library(s) to process. Options: all | 1 | 2 | 3 " 
+	echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\nPlease enter which library(s) to process. Options: all | 1 | 2 | 3 \n"
 fi
 
 # Set the output dir according to the input data
@@ -78,7 +78,7 @@ mkdir $quastOUTDIR2
 
 # run SPAdes accordint to the library
 
-if [[ "LIBRARY" == "all" ]]; then
+if [[ "$LIBRARY" == "all" ]]; then
 	crun spades.py \
 	-k 21,33,55,77,99 \
 	--only-assembler \
@@ -93,7 +93,7 @@ if [[ "LIBRARY" == "all" ]]; then
 	--tmp-dir $TEMPDIR \
 	--cov-cutoff $COVCUTOFF \
 	-o $INDIR/$OUTDIR
-elif [[ "LIBRARY" == "1" ]]; then
+elif [[ "$LIBRARY" == "1" ]]; then
 	crun spades.py \
 	-k 21,33,55,77,99 \
 	--only-assembler \
@@ -104,7 +104,7 @@ elif [[ "LIBRARY" == "1" ]]; then
 	--tmp-dir $TEMPDIR \
 	--cov-cutoff $COVCUTOFF \
 	-o $INDIR/$OUTDIR
-elif [[ "LIBRARY" == "2" ]]; then
+elif [[ "$LIBRARY" == "2" ]]; then
 	crun spades.py \
 	-k 21,33,55,77,99 \
 	--only-assembler \
@@ -115,7 +115,7 @@ elif [[ "LIBRARY" == "2" ]]; then
 	--tmp-dir $TEMPDIR \
 	--cov-cutoff $COVCUTOFF \
 	-o $INDIR/$OUTDIR
-elif [[ "LIBRARY" == "3" ]]; then
+elif [[ "$LIBRARY" == "3" ]]; then
 	crun spades.py \
 	-k 21,33,55,77,99 \
 	--only-assembler \
@@ -127,7 +127,7 @@ elif [[ "LIBRARY" == "3" ]]; then
 	--cov-cutoff $COVCUTOFF \
 	-o $INDIR/$OUTDIR
 else
-        echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\n\nPlease enter which library(s) to $
+        echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\nPlease enter which library(s) to process. Options: all | 1 | 2 | 3 \n"
 fi
 
 # Run QUAST
