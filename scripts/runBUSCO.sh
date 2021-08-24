@@ -31,6 +31,9 @@ else
         echo "Please enter type of assembly. Options:  contigs | scaffolds "
 fi
 
+# Copy summaries into busco-results dir
+cp busco_*_results-${SPAdesDIR}/short* busco-results
+
 
 #crun busco -i $INDIR/final_assembly.fa \
 #           -o busco \
