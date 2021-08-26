@@ -234,6 +234,19 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "decontam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
+Using merged files and applying `--cov-cutoff auto` did not make a big difference, see table below (merged results not shown but available at /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis)
+
+**Running the 3 libraries independently**
+
+I modified the SPAdes script to provide the option of running libraries together or independently up to 3 libraries <library: all | 1 | 2 | 3> given that all ssl dataset (5 spp as in August) have 3 libraries sequenced. Everything before this point was using all the libraries together. Running independently now using only the contaminated data. After determining which is the best library for assembly, I will run the decontaminated files as well.
+```sh
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <library: all | 1 | 2 | 3> <contam | decontam> <genome size in bp> <species dir>
+# do not use trailing / in paths.
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "2" "contam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "3" "contam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
+
 This SPAdes scripts automatically runs `QUAST` but running `BUSCO` separately 
 
 
@@ -251,6 +264,10 @@ sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_process
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate_covAUTO" "scaffolds"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072B_contam_R1R2_noIsolate" "contigs"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072B_contam_R1R2_noIsolate" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072C_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072C_contam_R1R2_noIsolate" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072D_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072D_contam_R1R2_noIsolate" "scaffolds"
 ```
 
 ### Summary of QUAST and BUSCO Results
@@ -267,7 +284,23 @@ Sgr  |allLibs  |decontam       |contgs       |auto       |2290268  |197090      
 Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
 Sgr  |SgC0072B  |contam       |contgs       |off       |3375654  |68606       |441333876       |63.6%       |5405       |26613       |29.2%
 Sgr  |SgC0072B  |contam       |scaffolds       |off       |3358197  |68606       |460942092       |66.4%       |5587       |26490       |31.3%
-Sgr  |SgC0072C  |contam       |contgs       |off       |
-Sgr  |SgC0072C  |contam       |scaffolds       |off       |
-Sgr  |SgC0072D  |contam       |contgs       |off       |
-Sgr  |SgC0072D  |contam       |scaffolds       |off       |
+Sgr  |SgC0072C  |contam       |contgs       |off       |502823  |105644       |531230550       |76.5%       |6597       |24512       |37.9%
+Sgr  |SgC0072C  |contam       |scaffolds       |off       |496944  |105644       |536090329       |77.2%       |6662      |24355       |38.4%
+Sgr  |SgC0072D  |contam       |contgs       |off       |3534280  |68563       |441118097       |63.6%       |5352      |26844       |29.7%
+Sgr  |SgC0072D  |contam       |scaffolds       |off       |3515909  |120121       |462780087       |66.7%       |5570      |26612       |31.5%
+Sgr  |SgC0072C  |contam       |contgs       |auto       |13018  |29230       |5972351       |1%       |7942	|242       |%
+Sgr  |SgC0072C  |contam       |scaffolds       |auto	  |13125  |29230	 |5849289	  |1%       |7942	  |240       |%
+Sgr  |SgC0072C  |decontam       |contgs       |off       |502823  |105644       |531230550       |76.5%       |6597	|24512       |37.9%
+Sgr  |SgC0072C  |decontam       |scaffolds       |off	  |496944  |105644	 |536090329	  |77.2%       |6662	  |24355       |38.4%
+
+
+SgC0072C contam created the best assembly. BUSCO values are somewhat low so running `--cov-cutoff auto`
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "2" "contam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
+
+Running `--cov-cutoff auto` did not create a good library at all (see the table above). Moving forward and running decontaminated files for SgC0072C and `--cov-cutoff off`
+
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "2" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
