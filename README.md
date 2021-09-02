@@ -22,7 +22,7 @@ git clone https://github.com/philippinespire/pire_ssl_data_processing.git
 ```
 
 The data will be processed and analyzed in the repo.  There is a `.gitignore` file that lists files and directories to be ignored by git.  It includes large files that git cannot handle (fq.gz, bam, etc) and other repos that might be downloaded into this repo. 
-***list actual example*** For example, the dir `dDocentHPC` contains the [dDocentHPC](https://github.com/cbirdlab/dDocentHPC) repo which you will be using, but we don't need to save that to this repo, so `dDocentHPC/` occurs in  `.gitignore` so that it is not uploaded to github in this repo.
+For example, the BUSCO outdir contains several large files that will cause problems for git  so `Busco-R/` occurs in  `.gitignore` so that it is not uploaded to github in this repo.
 
 Because large data files will not be saved to github, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermedate files produced by fastp, clumpify, fastq_screen.
 
@@ -41,9 +41,9 @@ git push
 ```
 
 This code has been compiled into the script `runGIT.bash` thus you can just run this script BEFORE and AFTER you do anything in your species repo.
-You will need to provide the message of your commit when running:
+You will need to provide the message of your commit inside the script before running:
 ```sh
-bash runGIT.bash "initiate Sgr repo"
+bash runGIT.bash
 ```
 You will need to enter your git credentials multiple times each time you run this script
 
@@ -71,7 +71,7 @@ mkdir <species_name>
 mkdir <species_name>/shotgun_raw_fq
 cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<species_name>/shotgun_raw_fq
 ```
-*The RC drive is only available from the login node (you won't find it after getting a working node, i.e. `salloc`*
+*The RC drive is only available from the login node (you won't find it after getting a working node, i.e. `salloc`)*
 
 Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`. Transfer your raw data into `shotgun_raw_fq` 
 *(can take several hours)*
