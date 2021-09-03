@@ -78,7 +78,7 @@ Clone this repo to your working dir
 
 #### 0. Set up directories and data
 
-Make a copy of your raw files in the longterm carpenter RC dir
+Make a copy of your raw files in the longterm carpenter RC dir **ONLY** if one doesn't exits already (if you copied your data from the RC, a long-term copy already exists)
 ```sh
 cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
 mkdir <species_name>
@@ -87,7 +87,7 @@ cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_pr
 ```
 *The RC drive is only available from the login node (you won't find it after getting a working node, i.e. `salloc`)*
 
-Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`. Transfer your raw data into `shotgun_raw_fq` 
+Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`. Transfer your raw data into `shotgun_raw_fq`  (your data will most likely be avaliable in the RC)
 *(can take several hours)*
 
 ```sh
@@ -110,8 +110,8 @@ nano README
 
 Example:
 ```sh
-TAMUCC to ODU
-scp /work/hobi/GCL/20210719_PIRE-Sgr-shotgun/ e1garcia@turing.hpc.odu.edu:/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
+RC to e1garcia
+scp <source of files> /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
 
 All 3 sequence sets are for the same individual: Sgr-CMvi_007_Ex1
 ```
@@ -119,7 +119,7 @@ All 3 sequence sets are for the same individual: Sgr-CMvi_007_Ex1
 *I like to update my git repo regularly, especially before and after lengthly steps. This keeps a nice record of the commits and prevents loss of data/effor. Feel free to repeat this at any step*
 
 ```sh
-bash ../../runGIT.bash
+bash ../../runGIT.bash "README of raw data"
 ```
 
 ***You are ready to start processing files***
