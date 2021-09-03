@@ -218,7 +218,7 @@ I found the genome size of Hqu in the [genomesize.com](https://www.genomesize.co
 
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Hqu" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Hqu" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish__decontam"
 ```
 This jellyfish kmer-frequency [histogram file]() was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=tHzBW2RjBK00gQMUSfl4)
 
@@ -237,5 +237,111 @@ Model Fit       |95.034%       |97.832%       |96.433%
 ---
 ## Step 8. Assemble the genome using SPAdes
 
+Assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA.
 
+Thus, run one assembly using your contaminated data and one with the decontaminated files.
+
+This step was run in Turing. SPAdes requires high memory nodes (only avail in Turing)
+Based on the min & max genome size of Hqu estimated by Jellyfish, in bp from the previous step, average was determined.
+
+Execute runSPADEShimem_R1R2_noisolate.sbatch*
+```
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
+# do not use trailing / in paths. Example running contaminated data:
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "contam" "844721205" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
+```
+Repeat running the decontaminated data:
+```
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "decontam" "844721205" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
+
+Ran invidual libararies through these:
+```
+#1st library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "1" "contam" "817758761" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ta$
+#2nd library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "2" "contam" "844721205" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
+#3rd library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "3" "contam" "844721205" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
+```
+---
+
+## Step 9. Determine the best assembly
+
+Look for the quast_results dir and note the (1) total number of contigs, (2) the size of the largest contig, (3) total len$
+
+To get summary for No. of contigs, largest contig, total length, % genome size completeness (GC), N50 & L50, do the follow$
+```
+bash
+cat quast-reports/quast-report_contigs_Hqu_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Hqu_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Hqu_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Hqu_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+```
+
+To get summary for individual libraries, I did the ff:
+```
+bash
+#1st library only
+cat quast-report_contigs_Hqu_spades_HqC0021A_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-report_scaffolds_Hqu_spades_HqC0021A_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+#2nd library only
+cat quast-report_contigs_Hqu_spades_HqC0021B_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-report_scaffolds_Hqu_spades_HqC0021B_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+#3rd library only
+cat quast-report_contigs_Hqu_spades_HqC0021C_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-report_scaffolds_Hqu_spades_HqC0021C_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+```
+
+This SPAdes scripts automatically runs `QUAST` but runs `BUSCO` separately
+
+**Executed [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files**
+```sh
+#runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
+# do not use trailing / in paths:
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_contam_R1R2_noIsolate" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_decontam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_decontam_R1R2_noIsolate" "scaffolds"
+```
+
+For the individual libraries, I did the following to run BUSCO:
+```
+#runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
+# do not use trailing / in paths:
+#1st library
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_HqC0021A_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_HqC0021A_contam_R1R2_noIsolate" "scaffolds"
+#2nd library
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_HqC0021B_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_HqC0021B_contam_R1R2_noIsolate" "scaffolds"
+#3rd library
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_HqC0021C_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus" "SPAdes_HqC0021C_contam_R1R2_noIsolate" "scaffolds"
+```
+
+Then, to fill in the BUSCO single copy column, open the following files & look for S%:
+Contam, contigs:
+Contam, scaffolds:
+Decontam, contigs:
+Decontam, scaffolds:
+
+Summary of QUAST & BUSCO Results
+
+EDIT THIS:
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
+Hqu  |allLibs    |contam       |contigs       |off	 |126462  |1070312       |952740157       |41.11%       |8730	|34786       |%
+Hqu  |allLibs    |contam       |scaffolds     |off	 |125095  |1070312       |960099166	|41.11%       |8957	  |34066       |%
+
+
+Hqu  |HqC0021A   |contam       |contigs       |off	 |65176  |227579       |830651102	|39.20%       |18737    |11972         |%
+Hqu  |HqC0021A   |contam       |scaffolds     |off	 |64301  |340415       |832616461	|39.20%       |19199    |11686       |%
+Hqu  |HqC0021B   |contam       |contigs       |off	 |84668  |48595        |466349924	|39.35%       |5684     |27045
+Hqu  |HqC0021B   |contam       |scaffolds     |off	 |86989  |69417        |506992391	|39.33%       |6119	  |26533         |%
+Hqu  |HqC0021C   |contam       |contigs       |off	 |64326  |252063       |833348334	|39.20%        |19230       |11742         |%
+Hqu  |HqC0021C   |contam       |scaffolds     |off	 |63527  |252063       |834945222	|39.21%        |19682       |11491         |%
+
+Hqu  |allLibs    |decontam	 |contigs	|off	   |94520  |126080  |66692       |813845906       |41.15%       |7085	|37545       |%
+Hqu  |allLibs    |decontam	 |scaffolds	|off	   |125228  |94589       |840397753	|41.15%       |7471	  |36480       |%
 

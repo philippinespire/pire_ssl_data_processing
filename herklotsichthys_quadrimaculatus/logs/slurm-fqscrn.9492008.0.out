@@ -1,0 +1,38 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/20.11
+
+INDIR=fq_fp1_clmparray_fp2
+OUTDIR=fq_fp1_clmparray_fp2_fqscrn
+CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf
+PATTERN=*.fq.gz
+PARALLELISM=
+THREADS=32
+SUBSET=0
+FILTER=000000000000
+INFILES:
+fq_fp1_clmparray_fp2/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_clmp.fp2_r1.fq.gz
+
+Fri Aug 6 14:05:25 EDT 2021 RUNNING FASTQ_SCREEN TO FILTER FQ FILES AND GENERATE REPORTS, NO SUBSETTING
+Using fastq_screen v0.14.0
+Reading configuration from '/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf'
+Adding database Human
+Adding database Ecoli
+Adding database PhiX
+Adding database Contamnts_Adaptrs
+Adding database Vectors
+Adding database Bacteria_24k
+Adding database Protists_1k
+Adding database Viruses
+Adding database Fungi_RefSeq_release
+Adding database Coral
+Adding database Bird
+Adding database Plant
+Using 32 threads for searches
+Option --subset set to 0: processing all reads in FASTQ files
+Processing HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_clmp.fp2_r1.fq.gz
+Not making data subset
+Can't write temp subset file: Input/output error at /opt/conda/bin/fastq_screen line 1630, <IN_SUBSET> line 424634188.
+Use of uninitialized value $readsprocessed in numeric eq (==) at /opt/conda/bin/fastq_screen line 456, <IN_SUBSET> line 424634188.
+No reads in HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_clmp.fp2_r1.fq.gz, skipping
+Processing complete
