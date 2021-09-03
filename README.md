@@ -491,7 +491,7 @@ This will create:
 3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
 
 Execute the second script
-``sh
+```sh
 #WGprobe_annotation.sb <assembly base name> 
 sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
 ```
@@ -543,7 +543,7 @@ Share the following files with Arbor Bio to aid in probe creation:
 4. The bed file (.bed)
 5. The text file with links to available genomes from the 5 most closely-related species.
 
-**Finito!!!**
+#### **Finito!!!**
 
-**Contrats! You have finished the ssl processing pipeline. Go ahead, give yourself a pat on the back!
+#### **Contrats! You have finished the ssl processing pipeline. Go ahead, give yourself a pat on the back!**
 
