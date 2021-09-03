@@ -197,13 +197,14 @@ was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generat
 [report](http://genomescope.org/analysis.php?code=Bm6XRZmRpQ2dNxEo8fHs). Highlights:
 
 Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
+
 stat    |min    |max    |average
 ------  |------ |------ |------
 Heterozygosity  |1.32565%       |1.34149%       |1.33357%
 Genome Haploid Length   |693,553,516 bp |695,211,827 bp |694,382,672 bp
 Model Fit       |97.6162%       |98.7154%       |98.1658 %
 
-## Step 7. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
+## Step 8. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
 
 In our previous tests, contaminated data has produced the best assemblies for nDNA but decontaminated assemblies were better for mtDNA. The effect of using merged files remains unclear
 
@@ -249,6 +250,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 This SPAdes scripts automatically runs `QUAST` but running `BUSCO` separately 
 
+## Step 9. Assessing the best assembly
 
 **Executed [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files**
 ```sh
@@ -304,3 +306,51 @@ Running `--cov-cutoff auto` did not create a good library at all (see the table 
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "2" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
+
+## Step 10. Probe design - regions for probe development
+
+From species directory. Made probe dir, rename assembly and copied scripts
+```sh
+mkdir probe_design
+cp SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+# list the busco dirs
+ls -d busco_*
+# identify the busco dir of best assembly, copy the treatments (starting with the library)
+# Example,the busco dir for the best assembly for Sgr is `busco_scaffolds_results-SPAdes_SgC0072C_contam_R1R2_noIsolate`
+# I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_" 
+cd probe_design
+mv scaffolds.fasta Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta
+```
+
+Execute the first script
+```sh
+#WGprobe_annotation.sb <assembly name> 
+sbatch WGprobe_annotation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta"
+```
+
+Execute the second script
+```sh
+#WGprobe_annotation.sb <assembly base name> 
+sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
+```
+
+## step 11. Fetching genomes for closest relatives
+
+```sh
+nano closest_relative_genomes_Spratelloides_gracilis.txt
+
+1.- Clupea harengus
+https://www.ncbi.nlm.nih.gov/genome/15477
+2.- Sardina pilchardus
+https://www.ncbi.nlm.nih.gov/genome/8239
+3.- Tenualosa ilisha
+https://www.ncbi.nlm.nih.gov/genome/12362
+4.- Coilia nasus
+https://www.ncbi.nlm.nih.gov/genome/2646
+5.- Denticeps clupeoides
+https://www.ncbi.nlm.nih.gov/genome/7889
+```
+
+following Betancur et al. 2017 and Lavoué_etal_2007 (see the Spratelloides delicatulus slack channel for papers) 
