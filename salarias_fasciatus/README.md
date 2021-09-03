@@ -217,7 +217,7 @@ I found the genome size of Sfa in the [genomesize.com](https://www.genomesize.co
 
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sfa" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellfish_out"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sfa" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish__decontam"
 ```
 This jellyfish kmer-frequency [histogram file]() was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=zwj01qbRCNCZ9oF2N8RV)
 
@@ -235,4 +235,66 @@ Model Fit       |90.9818%       |92.2968%       |91.6393%
 
 ---
 ## Step 8. Assemble the genome using SPAdes
+
+Assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA.
+
+Thus, run one assembly using your contaminated data and one with the decontaminated files.
+
+This step was run in Turing. SPAdes requires high memory nodes (only avail in Turing)
+Based on the min & max genome size of Sfa estimated by Jellyfish, in bp from the previous step, average was determined.
+
+Execute runSPADEShimem_R1R2_noisolate.sbatch*
+```
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
+# do not use trailing / in paths. Example running contaminated data:
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "contam" "578849019" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "contam" "578849019" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
+```
+
+Repeat running the decontaminated data:
+```
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "decontam" "578849019" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
+```
+---
+## Step 9. Determine the best assembly
+
+This SPAdes scripts automatically runs `QUAST` but runs `BUSCO` separately
+
+**Executed [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files**
+```sh
+#runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
+# do not use trailing / in paths:
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_contam_R1R2_noIsolate" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_decontam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_decontam_R1R2_noIsolate" "scaffolds"
+```
+
+Look for the quast_results dir and note the (1) total number of contigs, (2) the size of the largest contig, (3) total length of assembly, (4) N50, and (5) L50 for eac$
+
+To get summary for No. of contigs, largest contig, total length, % genome size completeness (GC), N50 & L50, do the following:
+```
+bash
+cat quast-reports/quast-report_contigs_Sfa_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Sfa_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Sfa_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Sfa_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+```
+
+Then, to fill in the BUSCO single copy column, open the following files & look for S%:
+Contam, contigs:
+Contam, scaffolds:
+Decontam, contigs:
+Decontam, scaffolds:
+
+Summary of QUAST & BUSCO Results
+
+Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single co$
+------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
+Sfa  |contam       |contigs       |off       |96125  |236270       |745725175       |39.43%       |9041       |24287       |50.7%
+Sfa  |contam       |scaffolds       |off       |74846  |320496       |812404903       |39.43%       |14515       |15479       |64.7%
+Sfa  |decontam       |contigs       |off       |94520  |100990       |657658468       |39.44%       |7749       |24786       |47.9%
+Sfa  |decontam       |scaffolds       |off       |80472  |144523       |739361830       |39.40%       |11593       |17523       |61.4%
+
+
 
