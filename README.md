@@ -393,7 +393,7 @@ Finally, run one more assembly using the decontaminated data from the same libra
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "3" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
-#### 8. Determine the best assembly
+#### 9 Determine the best assembly
 
 `QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and for each of your assemblies note the: 
 1. total number of contigs
@@ -437,3 +437,113 @@ Sgr  |allLibs  |decontam       |scaffolds       |off       |2295872  |197090    
 Sgr  |allLibs  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
 Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
 ```
+
+---
+
+### Probe Design
+
+In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
+
+You will create the followin 4 files:
+1. *.fasta.masked: The masked fasta file 
+2. *.fasta.masked.gff: The gff file created from repeat masking (identifies regions of genome that were masked)
+3. *_augustus.gff: The gff file created from gene prediction (identifies putative coding regions)
+4. *_per10000_all.bed: The bed file with target regions (1 set of 2 probes per target region).
+
+This instructions have been modified from Rene's [de novo assembly probe repo](https://github.com/philippinespire/denovo_genome_assembly/tree/main/WGprobe_creation) 
+to best fit this repo
+
+#### 10 Identifying regions for probe development 
+
+From your species directory, make a new dir the the probe design
+```sh
+mkdir probe_design
+```
+
+Copy the best assembly (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly previous to run the decontaminated data) as well as necessary scripts
+
+Example:
+```sh
+cp SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+```
+
+Rename the assembly to reflect the species and parameters used. You can just copy and paste from the `busco_scaffolds_results-SPAdes_*` dir
+```sh
+# list the busco dirs
+ls -d busco_*
+# identify the busco dir of best assembly, copy the treatments (starting with the library)
+# Example,the busco dir for the best assembly for Sgr is `busco_scaffolds_results-SPAdes_SgC0072C_contam_R1R2_noIsolate`
+# I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_" 
+cd probe_design
+mv scaffolds.fasta Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta
+
+Execute the first script
+```sh
+#WGprobe_annotation.sb <assembly name> 
+sbatch WGprobe_annotation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta"
+```
+
+This will create: 
+1. a repeat-masked fasta and gff file (.fasta.masked & .fasta.masked.gff)
+2. a gff file with predicted gene regions (augustus.gff), and 
+3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
+
+Execute the second script
+``sh
+#WGprobe_annotation.sb <assembly base name> 
+sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
+```
+
+This will create a .bed file that will be sent for probe creation.
+ The bed file identifies 5,000 bp regions (spaced every 10,000 bp apart) in scaffolds > 10,000 bp long.
+
+
+#### 11 Closest relatives with available genomes
+
+The last thing to do is to create a text file with links to available genomes from the 5 most closely-related species.
+
+Most likely there won't be genomes available for your targeted species or even genus thus, the easiest way to search is probably to start with the family.
+Go to the [NCBI Genome repository](https://www.ncbi.nlm.nih.gov/genome/) and search for the family of your species. If you get more than 5 genomes then search for the genus, but if  you don't, search higher classifications till you get them (i.e. order, class, etc)
+
+Once you get at least 5 genomes, you'll need to figure out the phylogenetic relationships to lists the genomes in order from closest to farthest. 
+
+Seach for phylogenies especific to your group. 
+I have uploaded the phylogenies from Betancur et al. BMC Evolutionary Biology (2017) 17:162 for [fish phyla](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/Betancur2017_phyla.pdf)
+ and [fish families](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/Betancur2017_families.pdf)
+ in the scripts repo for your convenience.
+These are an excellent resource for high taxonomic groups but only a few species per family are represented. 
+Thus, you should also seach for phylogenies especific to your group. If these are not available, use Betancur 
+
+
+Once your list is ready, create a file. Example for Sgr:
+```sh
+nano closest_relative_genomes_Spratelloides_gracilis.txt
+
+1.- Clupea harengus
+https://www.ncbi.nlm.nih.gov/genome/15477
+2.- Sardina pilchardus
+https://www.ncbi.nlm.nih.gov/genome/8239
+3.- Tenualosa ilisha
+https://www.ncbi.nlm.nih.gov/genome/12362
+4.- Coilia nasus
+https://www.ncbi.nlm.nih.gov/genome/2646
+5.- Denticeps clupeoides
+https://www.ncbi.nlm.nih.gov/genome/7889
+```
+
+## Files to Send
+
+Share the following files with Arbor Bio to aid in probe creation:
+
+1. The repeat-masked fasta file (.fasta.masked)
+2. The gff file with repeat-masked regions (.masked.gff)
+3. The gff file with predicted gene regions (.augustus.gff)
+4. The bed file (.bed)
+5. The text file with links to available genomes from the 5 most closely-related species.
+
+**Finito!!!**
+
+**Contrats! You have finished the ssl processing pipeline. Go ahead, give yourself a pat on the back!
+
