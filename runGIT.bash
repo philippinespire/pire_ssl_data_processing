@@ -1,6 +1,6 @@
 #!/bin/bash
+
 git pull
-git add --all
-git commit -m "clupify Sgr"
-git pull
-git push
+git add ./*
+git commit -m "$1"
+git push -u origin main
