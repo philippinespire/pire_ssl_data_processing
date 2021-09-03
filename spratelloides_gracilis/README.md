@@ -307,6 +307,13 @@ Running `--cov-cutoff auto` did not create a good library at all (see the table 
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "2" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
+#### Updating the main assembly stats table with your species
+
+Added a new record for Sgr SgC0072C contam to the [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv)
+```sh
+nano ../best_ssl_assembly_per_sp.tsv
+```
+
 ## Step 10. Probe design - regions for probe development
 
 From species directory. Made probe dir, rename assembly and copied scripts

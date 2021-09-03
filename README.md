@@ -440,6 +440,15 @@ Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090   
 
 ---
 
+#### Update the main assembly stats table with your species
+
+Add a new record for your species/assembly to the [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
+```sh
+# add your info in a new row
+nano ../best_ssl_assembly_per_sp.tsv
+```
+
+---
 ### Probe Design
 
 In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
