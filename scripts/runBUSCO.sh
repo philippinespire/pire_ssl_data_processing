@@ -32,6 +32,7 @@ else
 fi
 
 # Copy summaries into busco-results dir
+mkdir -p busco-results
 cp busco_*_results-${SPAdesDIR}/short* busco-results
 
 

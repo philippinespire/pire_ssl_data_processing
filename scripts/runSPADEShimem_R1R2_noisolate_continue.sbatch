@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=Sp8s
-#SBATCH -o sp8s-%j.out
+#SBATCH --job-name=Sp8s_cont
+#SBATCH -o sp8s_cont-%j.out
 #SBATCH --time=00:00:00
 #SBATCH --exclusive
 #SBATCH --ntasks=32
@@ -24,16 +24,16 @@ GENSIZE=$5
 PROJDIR=$6
 
 # Get the Library code
-if [[ "$LIBRARY" == "all" ]]; then
+if [[ "$LIBRARY" == "all" || "$LIBRARY" == "all_continue" ]]; then
 	LIBCODE=allLibs
-elif [[ "$LIBRARY" == "1" ]]; then
+elif [[ "$LIBRARY" == "1" || "$LIBRARY" == "1_continue" ]]; then
 	LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n1 | sed -e 's/.*\///' -e 's/_.*//')
-elif [[ "$LIBRARY" == "2" ]]; then
+elif [[ "$LIBRARY" == "2" || "$LIBRARY" == "2_continue" ]]; then
         LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n2 | tail -n1 | sed -e 's/.*\///' -e 's/_.*//')
-elif [[ "$LIBRARY" == "3" ]]; then
+elif [[ "$LIBRARY" == "3" || "$LIBRARY" == "3_continue" ]]; then
         LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n3 | tail -n1 | sed -e 's/.*\///' -e 's/_.*//')
 else
-	echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\nPlease enter which library(s) to process. Options: all | 1 | 2 | 3 \n" 
+	echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\nPlease enter which library(s) to process. Options: all | 1 | 2 | 3 or if you are rerunning SPAdes on the same library: all | 1_continue | 2_continue | 3_continue \n" 
 fi
 
 # Set the output dir according to the input data
@@ -70,12 +70,12 @@ quastINFILE2=$INDIR/$OUTDIR/scaffolds.fasta
 quastOUTDIR1=$INDIR/$OUTDIR/quast_contigs_report
 quastOUTDIR2=$INDIR/$OUTDIR/quast_scaffolds_report
 
-rm -rf $INDIR/$OUTDIR $INDIR/$quastOUTDIR1 $INDIR/$quastOUTDIR2
+rm -rf $quastOUTDIR1 $quastOUTDIR2
 
 # mkdir $TEMPDIR 
-mkdir $INDIR/$OUTDIR
-mkdir $quastOUTDIR1
-mkdir $quastOUTDIR2
+mkdir -p $INDIR/$OUTDIR
+mkdir -p $quastOUTDIR1
+mkdir -p $quastOUTDIR2
 
 
 # run SPAdes accordint to the library
@@ -124,12 +124,12 @@ elif [[ "$LIBRARY" == "3" ]]; then
 	--tmp-dir $TEMPDIR \
 	--cov-cutoff $COVCUTOFF \
 	-o $INDIR/$OUTDIR
-elif [[ "$LIBRARY" == "continue" ]]; then
+elif [[ "$LIBRARY" == "all_continue" || "$LIBRARY" == "1_continue" || "$LIBRARY" == "2_continue" || "$LIBRARY" == "3_continue"  ]]; then
 	crun spades.py \
-	--continue
-	-o .
+	--continue \
+	-o $INDIR/$OUTDIR
 else
-        echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\nPlease enter which library(s) to process. Options: all | 1 | 2 | 3 \n"
+        echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\nPlease enter which library(s) to process. Options: all | 1 | 2 | 3 or if you are rerunning SPAdes on the same library: all | 1_continue | 2_continue | 3_continue \n"
 fi
 
 echo -e "\nRunning QUAST Now\n"

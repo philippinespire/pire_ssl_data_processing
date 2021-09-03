@@ -288,10 +288,10 @@ Sgr  |SgC0072C  |contam       |contgs       |off       |502823  |105644       |5
 Sgr  |SgC0072C  |contam       |scaffolds       |off       |496944  |105644       |536090329       |77.2%       |6662      |24355       |38.4%
 Sgr  |SgC0072D  |contam       |contgs       |off       |3534280  |68563       |441118097       |63.6%       |5352      |26844       |29.7%
 Sgr  |SgC0072D  |contam       |scaffolds       |off       |3515909  |120121       |462780087       |66.7%       |5570      |26612       |31.5%
-Sgr  |SgC0072C  |contam       |contgs       |auto       |13018  |29230       |5972351       |1%       |7942	|242       |%
-Sgr  |SgC0072C  |contam       |scaffolds       |auto	  |13125  |29230	 |5849289	  |1%       |7942	  |240       |%
-Sgr  |SgC0072C  |decontam       |contgs       |off       |502823  |105644       |531230550       |76.5%       |6597	|24512       |37.9%
-Sgr  |SgC0072C  |decontam       |scaffolds       |off	  |496944  |105644	 |536090329	  |77.2%       |6662	  |24355       |38.4%
+Sgr  |SgC0072C  |contam       |contgs       |auto       |13018  |29230       |5972351       |1%       |7942	|242       |0.1%
+Sgr  |SgC0072C  |contam       |scaffolds       |auto	  |13125  |29230	 |5849289	  |1%       |7942	  |240       |0.1%
+Sgr  |SgC0072C  |decontam       |contgs       |off       |502823  |105644       |531230550       |76.5%       |6597	|24512       |32.2%
+Sgr  |SgC0072C  |decontam       |scaffolds       |off	  |496944  |105644	 |536090329	  |77.2%       |6662	  |24355       |33.2%
 
 
 SgC0072C contam created the best assembly. BUSCO values are somewhat low so running `--cov-cutoff auto`
