@@ -2,11 +2,13 @@
 
 ---
 
-The purpose of this repo is to document the processing and analysis of `Shutgun Sequencing Libraries - SSL data` for probe development which then will be processed according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) 
+The purpose of this repo is to document the processing and analysis of `Shotgun Sequencing Libraries - SSL data` for probe development which then will be processed according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) 
 
 Each species will get it's own directory within this repo.  Try to avoing putting dirs inside dirs inside dirs. 
 
 The Sgr dir will serve as the example to follow in terms of both directory structure and documentation of progress in `README.md`.
+
+If this is your first time working on wahab/turing or want to check out some tips see the [Working on ODU's HPC repo](https://github.com/philippinespire/denovo_genome_assembly/tree/main/working_in_Turing-Wahab)
 
 ---
 
@@ -32,18 +34,18 @@ Because large data files will not be saved to github, they will reside in an ind
 
 You must pull down the latest version of the repo everytime you sit down to work and push the changes you made everytime you walk away from the terminal.  The following order of operations when you sync the repo will minimize problems.
 
+From your species directory, execute these commands manually or run the `runGit.sh` script (see bellow) 
 ```
 git pull
-git add --all
-git commit -m "insert message"
-git pull
-git push
+git add ./*
+git commit -m "$1"
+git push -u origin main
 ```
 
 This code has been compiled into the script `runGIT.bash` thus you can just run this script BEFORE and AFTER you do anything in your species repo.
-You will need to provide the message of your commit inside the script before running:
+You will need to provide the message of your commit in the command line. Example:
 ```sh
-bash runGIT.bash
+bash ../runGIT.bash "initiated Sgr repo"
 ```
 You will need to enter your git credentials multiple times each time you run this script
 
@@ -52,7 +54,19 @@ If you should be met with a conflict screen, you are in the archane `vim` editor
 * hit escape key twice
 * type the following
   `:quit!`
-  
+ 
+If you had to delete files for whatever reason, 
+these deletions occurred in your local directory but these files will remain in the git memory if they had already enter the system.
+
+If you are in this situation, run these git commands manually, AFTER running the runGIT.bash as describe above.
+
+`git add -u .` will stage your deleled files, then you can commit and push
+
+```sh
+git add -u .
+git commit -m "update deletions"
+git push -u origin main
+```
 ___
 
 ## Data Processing Roadmap
