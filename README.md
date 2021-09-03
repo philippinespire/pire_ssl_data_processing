@@ -22,7 +22,7 @@ git clone https://github.com/philippinespire/pire_ssl_data_processing.git
 ```
 
 The data will be processed and analyzed in the repo.  There is a `.gitignore` file that lists files and directories to be ignored by git.  It includes large files that git cannot handle (fq.gz, bam, etc) and other repos that might be downloaded into this repo. 
-For example, the BUSCO outdir contains several large files that will cause problems for git so `bbusco_*/` occurs in  `.gitignore` so that it is not uploaded to github in this repo.
+For example, the BUSCO outdir contains several large files that will cause problems for git so `busco_*/` occurs in  `.gitignore` so that it is not uploaded to github in this repo.
 
 Because large data files will not be saved to github, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermedate files produced by fastp, clumpify, fastq_screen.
 
