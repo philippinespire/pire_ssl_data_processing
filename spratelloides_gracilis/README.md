@@ -209,8 +209,11 @@ Model Fit       |97.6162%       |98.7154%       |98.1658 %
 In our previous tests, contaminated data has produced the best assemblies for nDNA but decontaminated assemblies were better for mtDNA. The effect of using merged files remains unclear
 
 Thus, I ran 4 assembly treatments: Contam with and without merged files and the same for Decontam. See [SPADES_Test_info](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/SPADES_Test_info) for full details
+```sh
+CONCLUSION: Recommending running contam and decontam but skipping MRDG all together
+```
 
-	* ***CONCLUSION: Recommending running contam and decontam but skipping MRDG all together***
+***UPDATE SEE BELOW: Recommending running contam for each library independently and one run using all the libraries. Then run the decontaminated data for the best assembly only***
 
 LOG:
 Executed [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch). *Do this for other species*
