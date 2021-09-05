@@ -488,7 +488,7 @@ ls -d busco_*
 cd probe_design
 mv scaffolds.fasta Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta
 
-Execute the first script
+Execute the first script. Example for Sgr:
 ```sh
 #WGprobe_annotation.sb <assembly name> 
 sbatch WGprobe_annotation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta"
@@ -499,7 +499,7 @@ This will create:
 2. a gff file with predicted gene regions (augustus.gff), and 
 3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
 
-Execute the second script
+Execute the second script. Example for Sgr:
 ```sh
 #WGprobe_annotation.sb <assembly base name> 
 sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
