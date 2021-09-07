@@ -13,3 +13,7 @@ cp /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/gerres_oy
 
 Run from /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/
 sbatch Multi_FASTQC.sh "fq.gz" "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq"
+
+Run from /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/
+sbatch runFASTP_1st_trim.sbatch /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1
+Need to mv /fq_fp1 to gerres_oyena
