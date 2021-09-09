@@ -11,9 +11,26 @@ cp /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/gerres_oy
 ##Preprocessing##
 #9/7/21#
 
+#Multi_FASTQC.sh
 Run from /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/
 sbatch Multi_FASTQC.sh "fq.gz" "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq"
 
+#runFASTP_1st_trim.sbatch
 Run from /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/
 sbatch runFASTP_1st_trim.sbatch /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1
 Need to mv /fq_fp1 to gerres_oyena
+
+#9/8/21#
+#runCLUMPIFY_r1r2_array.bash
+Run from /home/jwhal/002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena
+bash /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/jwhal002 2
+
+#9/9/21#
+#checkClumpify_EG.R
+crun R < /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+"ClumpifySuccessfully worked on all samples"
+
+#runFASTP_2_ssl.sbatch
+Run from /gerres_oyena/
+sbatch /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray fq_fp1_clmparray_fp2
+report in /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/logs
