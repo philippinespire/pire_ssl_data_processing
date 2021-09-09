@@ -34,3 +34,13 @@ crun R < /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --
 Run from /gerres_oyena/
 sbatch /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray fq_fp1_clmparray_fp2
 report in /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/logs
+
+#runFQSCRN_6.bash
+Run from /gerres_oyena/
+bash /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 4
+Error message in slurm-fqscrn.395231.0.out, and all other .out files
+"ls: cannot access 'fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_1.fq.gz': No such file or directory"
+There are no *L1_1.fq.gz files in fq_fp1_clmparray_fp2/
+Reran w/
+bash /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash . fq_fp1_clmparray_fp2_fqscrn 4
+2 .out files ended quickly, the others have been running for ~20 min
