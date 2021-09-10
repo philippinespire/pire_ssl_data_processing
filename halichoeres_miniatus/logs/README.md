@@ -73,3 +73,19 @@ I ran the following commands:
 sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/ilope002/shotgun_PIRE/halichoeres_miniatus/shotgun_raw_fq"
 ```
 The job ran.
+The job completed.
+I pushed the changes to the repository to GitHub.  I opened the MultiQC report, however, I am not trained to interpret the data. The data displayed by the report and the data requested do not coincide literraly.  I updated the main README.MD as per the instructions.
+I read the instructions to sbatch runFASTP_1st_trim.sbatch.
+Imodified the script as follows:
+```sh
+#SBATCH -o ../logs/fastp_1st_-%j.out
+#SBATCH --mail-user=ilopez@odu.edu
+#SBATCH --mail-type=ALL
+```
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/shotgun_raw_fq
+sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
+```
+The job ran,
+

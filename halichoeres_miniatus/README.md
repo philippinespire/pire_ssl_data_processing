@@ -9,5 +9,23 @@ All work is done for the [Philippines PIRE Project](https://sites.wp.odu.edu/PIR
 
 See documentation for the Old Dominion University [High Performance Computing](https://www.odu.edu/facultystaff/research/resources/computing/high-performance-computing/user-documentation).
 
-A complete log of all work can be found in the [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/logs) of this repository's subdirectory logs.
+A complete log of all command line work can be found in the [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/logs) of this repository's subdirectory logs.
 ***
+
+## Step 1. Fastqc
+
+Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/Multi_FASTQC/multiqc_report_fq.gz.html) (copy and paste into a text editor locally) Save and open in your browser to view
+
+Potential issues:
+* % duplication - 
+  * 37.1%-48.2%s
+* gc content - 
+  * 49-58%
+* quality - 
+  * sequence quality and per sequence qual 
+* % adapter - 
+  * ~
+* number of reads - 
+  * 
+
+

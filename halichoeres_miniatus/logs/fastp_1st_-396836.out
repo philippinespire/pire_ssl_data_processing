@@ -1,0 +1,99 @@
+Error to read gzip file
+ERROR: file './HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_2.fq.gz' doesn't exist, quit now
+Read1 before filtering:
+total reads: 184666541
+total bases: 27699981150
+Q20 bases: 26383674742(95.248%)
+Q30 bases: 24768430158(89.4168%)
+
+Read2 before filtering:
+total reads: 184666541
+total bases: 27699981150
+Q20 bases: 25308243676(91.3656%)
+Q30 bases: 22296738872(80.4937%)
+
+Read1 after filtering:
+total reads: 137824461
+total bases: 19837211254
+Q20 bases: 19257974874(97.0801%)
+Q30 bases: 18297490430(92.2382%)
+
+Read2 aftering filtering:
+total reads: 137824461
+total bases: 19829761871
+Q20 bases: 18824755427(94.9318%)
+Q30 bases: 17257805826(87.0298%)
+
+Filtering result:
+reads passed filter: 275648922
+reads failed due to low quality: 12040464
+reads failed due to too many N: 52258
+reads failed due to too short: 69232192
+reads failed due to low complexity: 12359246
+reads with adapter trimmed: 74359401
+bases trimmed due to adapters: 2891030060
+reads with polyX in 3' end: 6014099
+bases trimmed in polyX tail: 120669382
+
+Duplication rate: 12.004%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: ../fq_fp1/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_fastp.json
+HTML report: ../fq_fp1/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_fastp.html
+
+fastp --in1 ./HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_1.fq.gz --in2 ./HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_2.fq.gz --out1 ../fq_fp1/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_r1.fq.gz --out2 ../fq_fp1/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_r2.fq.gz --unpaired1 ../fq_fp1/failed/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_unprd.fq.gz --unpaired2 ../fq_fp1/failed/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_unprd.fq.gz --failed_out ../fq_fp1/failed/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_fail.fq.gz -h ../fq_fp1/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_fastp.html -j ../fq_fp1/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3287 seconds
+Read1 before filtering:
+total reads: 286547543
+total bases: 42982131450
+Q20 bases: 40940198439(95.2493%)
+Q30 bases: 38414388278(89.3729%)
+
+Read2 before filtering:
+total reads: 286547543
+total bases: 42982131450
+Q20 bases: 39041231578(90.8313%)
+Q30 bases: 34189504899(79.5435%)
+
+Read1 after filtering:
+total reads: 197109413
+total bases: 28490592066
+Q20 bases: 27674118088(97.1342%)
+Q30 bases: 26312232628(92.3541%)
+
+Read2 aftering filtering:
+total reads: 197109413
+total bases: 28478226855
+Q20 bases: 26960365927(94.6701%)
+Q30 bases: 24633467659(86.4993%)
+
+Filtering result:
+reads passed filter: 394218826
+reads failed due to low quality: 19551206
+reads failed due to too many N: 75222
+reads failed due to too short: 133255514
+reads failed due to low complexity: 25994318
+reads with adapter trimmed: 124962335
+bases trimmed due to adapters: 4631183949
+reads with polyX in 3' end: 10265710
+bases trimmed in polyX tail: 221759723
+
+Duplication rate: 13.3981%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: ../fq_fp1/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_fastp.json
+HTML report: ../fq_fp1/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_fastp.html
+
+fastp --in1 ./HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_1.fq.gz --in2 ./HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_2.fq.gz --out1 ../fq_fp1/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_r1.fq.gz --out2 ../fq_fp1/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_r2.fq.gz --unpaired1 ../fq_fp1/failed/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_unprd.fq.gz --unpaired2 ../fq_fp1/failed/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_unprd.fq.gz --failed_out ../fq_fp1/failed/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_fail.fq.gz -h ../fq_fp1/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_fastp.html -j ../fq_fp1/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 5188 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1
+[INFO   ]           fastp : Found 2 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : ../fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : ../fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete
