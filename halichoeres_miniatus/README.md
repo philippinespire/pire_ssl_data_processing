@@ -28,4 +28,22 @@ Potential issues:
 * number of reads - 
   * 
 
+## Step 2.  1st fastp
+
+Used [runFASTP_1st_trim.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch)
+to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1/1st_fastp_report.html)
+
+Potential issues:
+* % duplication -
+  * 12-13.4%
+* gc content -
+  * ~42.5%
+  * more variable in pos 1-14 than in 15-150 
+* passing filter -
+  * 
+* % adapter -
+  *
+* number of reads -
+  *
+
 

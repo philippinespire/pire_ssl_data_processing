@@ -72,6 +72,7 @@ I ran the following commands:
 ```sh
 sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/ilope002/shotgun_PIRE/halichoeres_miniatus/shotgun_raw_fq"
 ```
+
 The job ran.
 The job completed.
 I pushed the changes to the repository to GitHub.  I opened the MultiQC report, however, I am not trained to interpret the data. The data displayed by the report and the data requested do not coincide literraly.  I updated the main README.MD as per the instructions.
@@ -82,10 +83,32 @@ Imodified the script as follows:
 #SBATCH --mail-user=ilopez@odu.edu
 #SBATCH --mail-type=ALL
 ```
+
 I ran the following commands:
 ```sh
 cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/shotgun_raw_fq
 sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
-The job ran,
+
+The job ran.
+The job completed.
+I pushed the changes to the repository to GitHub.  I opened the 1st_fastp_report, however, I am not trained to interpret the data. The data displayed by the report and the data requested do not coincide literraly.  I updated the main README.MD as per the instructions.
+I read the instructions to sbatch runCLUMPIFY_r1r2_array.bash
+Imodified the script as follows:
+```sh
+#SBATCH --job-name=CLUMPIFY
+#SBATCH -o ./logs/Clumpify_r1r2-%j.out
+#SBATCH --mail-user=ilopez@odu.edu
+#SBATCH --mail-type=ALL
+```
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+salloc
+bash /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/ilope002 3
+```
+
+The job ran.
+
 
