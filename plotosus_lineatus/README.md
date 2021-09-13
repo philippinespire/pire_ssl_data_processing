@@ -158,7 +158,7 @@ Ran MultiQC separately:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
 ```
 
-[Report](), download and open in web browser
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/plotosus_lineatus/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report.html), download and open in web browser
 
 Potential issues:
 * 96-9% alignment "One Hit, One Genome"
@@ -183,7 +183,7 @@ sbatch ../scripts/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn
 
 **Calculate the percent of reads lost in each step**
 
-Execute [read_calculator_ssl.sh]()
+Execute [read_calculator_ssl.sh]
 ```sh
 #read_calculator_ssl.sh <Species home dir>
 # do not use trailing / in paths
@@ -275,6 +275,12 @@ cat quast-reports/quast-report_contigs_Pli_spades_contam_R1R2_21-99_isolateoff-c
 cat quast-reports/quast-report_scaffolds_Pli_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_contigs_Pli_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_scaffolds_Pli_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Pli_spades_PlC0351D_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Pli_spades_PlC0351D_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Pli_spades_PlC0351E_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Pli_spades_PlC0351E_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Pli_spades_PlC0351F_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Pli_spades_PlC0351F_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 ```
 
 Then, to fill in the BUSCO single copy column, open the following files & look for S%:
@@ -285,11 +291,17 @@ Decontam, scaffolds:
 
 Summary of QUAST & BUSCO Results
 
-Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single co$
-------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Pli  |contam       |contigs       |off       |126462  |1070312       |952740157       |41.11%       |8730       |34786       |%
-Pli  |contam       |scaffolds       |off       |125095  |1070312       |960099166       |41.11%       |8957       |34066       |%
-Pli  |decontam       |contigs       |off       |126080  |66692       |813845906       |41.15%       |7085       |37545       |%
-Pli  |decontam       |scaffolds       |off       |125228  |94589       |840397753       |41.15%       |7471       |36480       |%
+Species    |Library     |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
+Pli  |allLibs    |contam       |contigs       |off       |126462  |1070312       |952740157       |41.11%       |8730       |34786       |36.9%
+Pli  |allLibs    |contam       |scaffolds       |off       |125095  |1070312       |960099166       |41.11%       |8957       |34066       |37.9%
+Pli  |allLibs    |decontam       |contigs       |off       |126080  |66692       |813845906       |41.15%       |7085       |37545       |30.9%
+Pli  |allLibs    |decontam       |scaffolds       |off       |125228  |94589       |840397753       |41.15%       |7471       |36480       |32.3%
+Pli  |PlC0351D    |contam       |contigs       |off       |129516  |55006       |865312588	|41.16%  |7437  |37993  |33.2%
+Pli  |PlC0351D    |contam       |scaffolds       |off       |128482   |59925	|880535043	|41.16%    |7686  |37111       |34.5%   
+Pli  |PlC0351E    |contam       |contigs       |off       |128940  |60088         |898481094     |41.14%   |7879   |36969       |34.5%   
+Pli  |PlC0351E    |contam       |scaffolds       |off       |127572  |60088        |911334858	|41.14%    |8145       |36065       |35.5%   
+Pli  |PlC0351F    |contam       |contigs       |off       |130752  |55486       |880614509	|41.14%   |7515       |38296       |32.8%   
+Pli  |PlC0351F    |contam       |scaffolds       |off       |129035  |55486       |900730518	|41.14%   |7886       |37100       |34.6%   
 
 
