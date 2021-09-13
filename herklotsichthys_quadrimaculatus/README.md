@@ -95,7 +95,7 @@ All files were successful!
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
 
-[Report](), download and open in web browser
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/herklotsichthys_quadrimaculatus/fq_fp1_clmparray_fp2/2nd_fastp_report.html), download and open in web browser
 
 Potential issues:  
 * % duplication - good  
@@ -145,7 +145,7 @@ grep 'error' slurm-fqscrn.JOBID*out
 grep 'No reads in' slurm-fqscrn.JOBID*out
 ```
 
-[Report](), download and open in web browser
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/herklotsichthys_quadrimaculatus/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report.html), download and open in web browser
 
 Potential issues:
 * 2 missing files
@@ -331,17 +331,14 @@ Summary of QUAST & BUSCO Results
 EDIT THIS:
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Hqu  |allLibs    |contam       |contigs       |off	 |126462  |1070312       |952740157       |41.11%       |8730	|34786       |%
-Hqu  |allLibs    |contam       |scaffolds     |off	 |125095  |1070312       |960099166	|41.11%       |8957	  |34066       |%
-
-
-Hqu  |HqC0021A   |contam       |contigs       |off	 |65176  |227579       |830651102	|39.20%       |18737    |11972         |%
-Hqu  |HqC0021A   |contam       |scaffolds     |off	 |64301  |340415       |832616461	|39.20%       |19199    |11686       |%
-Hqu  |HqC0021B   |contam       |contigs       |off	 |84668  |48595        |466349924	|39.35%       |5684     |27045
-Hqu  |HqC0021B   |contam       |scaffolds     |off	 |86989  |69417        |506992391	|39.33%       |6119	  |26533         |%
-Hqu  |HqC0021C   |contam       |contigs       |off	 |64326  |252063       |833348334	|39.20%        |19230       |11742         |%
-Hqu  |HqC0021C   |contam       |scaffolds     |off	 |63527  |252063       |834945222	|39.21%        |19682       |11491         |%
-
+Hqu  |allLibs    |contam       |contigs       |off	 |126462  |1070312       |952740157       |41.11%       |8730	|34786       |36.3%
+Hqu  |allLibs    |contam       |scaffolds     |off	 |125095  |1070312       |960099166	|41.11%       |8957	  |34066       |48.8%
+Hqu  |HqC0021A   |contam       |contigs       |off	 |65176  |227579       |830651102	|39.20%       |18737    |11972         |34.2%
+Hqu  |HqC0021A   |contam       |scaffolds     |off	 |64301  |340415       |832616461	|39.20%       |19199    |11686       |43.4%
+Hqu  |HqC0021B   |contam       |contigs       |off	 |84668  |48595        |466349924	|39.35%       |5684     |27045       |33.7%
+Hqu  |HqC0021B   |contam       |scaffolds     |off	 |86989  |69417        |506992391	|39.33%       |6119	  |26533         |43.9%
+Hqu  |HqC0021C   |contam       |contigs       |off	 |64326  |252063       |833348334	|39.20%        |19230       |11742         |33.0%
+Hqu  |HqC0021C   |contam       |scaffolds     |off	 |63527  |252063       |834945222	|39.21%        |19682       |11491         |42.7%
 Hqu  |allLibs    |decontam	 |contigs	|off	   |94520  |126080  |66692       |813845906       |41.15%       |7085	|37545       |%
 Hqu  |allLibs    |decontam	 |scaffolds	|off	   |125228  |94589       |840397753	|41.15%       |7471	  |36480       |%
 

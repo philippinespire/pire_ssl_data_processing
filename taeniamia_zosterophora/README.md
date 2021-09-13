@@ -98,7 +98,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora/
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
 
-[Report](), download and open in web browser
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/taeniamia_zosterophora/fq_fp1_clmparray_fp2/2nd_fastp_report.html), download and open in web browser
 
 Potential issues:  
 * % duplication - good for 2
@@ -154,11 +154,10 @@ Ran MultiQC separately:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
 ```
 
-[Report](), download and open in web browser
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/taeniamia_zosterophora/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report.html), download and open in web browser
 
 Potential issues:
 * 96-97% alignment "One Hit, One Genome" 
-
 
 Cleanup logs
 ```
@@ -335,5 +334,7 @@ Tzo  |TzC0402F   |contam       |contigs       |off	 |84668  |48595        |46634
 Tzo  |TzC0402F   |contam       |scaffolds     |off	 |86989  |69417        |506992391       |39.33%       |6119       |26533         |39.0%
 Tzo  |TzC0402G   |contam       |contigs       |off	 |64326  |252063       |833348334       |39.20%        |19230       |11742         |70.8%
 Tzo  |TzC0402G   |contam       |scaffolds     |off	 |63527  |252063       |834945222       |39.21%        |19682       |11491         |71.1%
-
-Tzo  |allLibs    |decontam	 |contigs	|off	   |94520  |100990	 |657658468	  |39.44%	|7749       |24786	 |47.9%
+Tzo  |TzC0402G   |decontam     |contigs       |off	 |74000  |170219       |787350440       |39.19%        |14381       |15216         |66.3%
+Tzo  |TzC0402G   |decontam     |scaffolds     |off	 |74000  |170219       |787350440	|39.19%        |14381       |15216         |67.6%
+Tzo  |allLibs    |decontam     |scaffolds     |off	 |71206  |170219       |794560568 	|39.20%        |15481       |14123         |
+Tzo  |allLibs    |decontam     |contigs	      |off	 |94520  |100990       |657658468       |39.44%	       |7749        |24786	   |
