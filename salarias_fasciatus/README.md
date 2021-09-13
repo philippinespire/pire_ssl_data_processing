@@ -268,6 +268,16 @@ sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_process
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_contam_R1R2_noIsolate" "scaffolds"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_decontam_R1R2_noIsolate" "contigs"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_decontam_R1R2_noIsolate" "scaffolds"
+#1st lib
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0281G_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0281G_contam_R1R2_noIsolate" "scaffolds"
+#2nd lib
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0281H_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0281H_contam_R1R2_noIsolate" "scaffolds"
+#3rd lib
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0282A_contam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0282A_contam_R1R2_noIsolate" "scaffolds"
+
 ```
 
 Look for the quast_results dir and note the (1) total number of contigs, (2) the size of the largest contig, (3) total length of assembly, (4) N50, and (5) L50 for eac$
@@ -279,6 +289,13 @@ cat quast-reports/quast-report_contigs_Sfa_spades_contam_R1R2_21-99_isolateoff-c
 cat quast-reports/quast-report_scaffolds_Sfa_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_contigs_Sfa_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_scaffolds_Sfa_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+#for individual libraries:
+cat quast-reports/quast-report_contigs_Sfa_spades_SfC0281G_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Sfa_spades_SfC0281G_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Sfa_spades_SfC0281H_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Sfa_spades_SfC0281H_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Sfa_spades_SfC0282A_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Sfa_spades_SfC0282A_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 ```
 
 Then, to fill in the BUSCO single copy column, open the following files & look for S%:
@@ -291,10 +308,16 @@ Summary of QUAST & BUSCO Results
 
 Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single co$
 ------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Sfa  |contam       |contigs       |off       |96125  |236270       |745725175       |39.43%       |9041       |24287       |50.7%
-Sfa  |contam       |scaffolds       |off       |74846  |320496       |812404903       |39.43%       |14515       |15479       |64.7%
-Sfa  |decontam       |contigs       |off       |94520  |100990       |657658468       |39.44%       |7749       |24786       |47.9%
-Sfa  |decontam       |scaffolds       |off       |80472  |144523       |739361830       |39.40%       |11593       |17523       |61.4%
-
-
-
+Sfa  |allLibs    |contam       |contigs       |off       |96125  |236270       |745725175       |39.43%       |9041       |24287       |50.7%
+Sfa  |allLibs    |contam       |scaffolds       |off       |74846  |320496       |812404903       |39.43%       |14515       |15479       |64.7%
+Sfa  |allLibs    |decontam       |contigs       |off       |94520  |100990       |657658468       |39.44%       |7749       |24786       |47.9%
+Sfa  |allLibs    |decontam       |scaffolds       |off       |80472  |144523       |739361830       |39.40%       |11593       |17523       |61.4%
+Sfa  |SfC0281G   |contam      |contigs        |off       |66551  |87063      |484209845        |43.87%      |8351      |17065      |52.6%
+Sfa  |SfC0281G   |contam      |scaffolds      |off       |47251  |206689     |549666344        |44.00%	    |17292     |8582  	   |70.3%
+Sfa  |SfC0281H   |contam      |contigs        |off       |64803  |119618     |510341019        |43.85%	    |9378      |15757  	   |57.0%
+Sfa  |SfC0281H   |contam      |scaffolds      |off       |45792  |356588     |563766158        |43.98%      |18875     |8063	   |73.0%
+Sfa  |SfC0282A   |contam      |contigs        |off       |66229  |97374      |490610142        |43.91%      |8579      |16761  	   |53.8%
+Sfa  |SfC0282A   |contam      |scaffolds      |off	 |46311  |221552     |555041474        |44.03%      |18095     |8177	   |71.2%
+EDIT:
+Sfa  |SfC0282A   |decontam      |contigs        |off	 |66229  |97374      |490610142        |43.91%      |8579      |16761	   |53.8%
+Sfa  |SfC0282A   |decontam      |contigs        |off	 |66229  |97374      |490610142        |43.91%      |8579      |16761	   |53.8%
