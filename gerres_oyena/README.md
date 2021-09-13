@@ -53,3 +53,20 @@ The bash script when run from my directory (jwhal002) references the sbatch scri
 The 4 output files are currently running.
 Previous slurm-fqscrn.#####.#.out files were deleted.
 
+5 files for each input *.fq.gz file for a total of 20 files.
+grep 'error' slurm-fqscrn.*out
+grep: No match
+grep 'No reads in' slurm-fqscrn.*out
+grep: No match
+No files failed
+mv *out logs
+
+#Get the multiqc report
+run from gerres_oyena/ using:
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+I can't find the "fqsrn_report". Is this the output file? It doesn't provide much info. 
+
+#runREPAIR.sbatch
+run from gerres_oyena/ using:
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
+
