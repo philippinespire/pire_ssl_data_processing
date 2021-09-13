@@ -44,3 +44,12 @@ There are no *L1_1.fq.gz files in fq_fp1_clmparray_fp2/
 Reran w/
 bash /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash . fq_fp1_clmparray_fp2_fqscrn 4
 2 .out files ended quickly, the others have been running for ~20 min
+Only worked for 1 file
+
+#9/13/21
+reran from gerres_oyena/ using:
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 4
+The bash script when run from my directory (jwhal002) references the sbatch script from e1garcia, so an issue was created when finding the input directory and the input files. 
+The 4 output files are currently running.
+Previous slurm-fqscrn.#####.#.out files were deleted.
+
