@@ -110,5 +110,15 @@ bash /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 ```
 
 The job ran.
+The job completed.
+I pushed the changes to the repository to GitHub.
+I read the outfile and observed runCLUMPIFY failed.
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+salloc
+bash /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/ilope002 3
+```
 
+The job ran.
 
