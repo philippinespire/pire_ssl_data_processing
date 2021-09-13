@@ -167,7 +167,7 @@ Ran MultiQC separately:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
 ```
 
-[Report](), download and open in web browser
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/herklotsichthys_quadrimaculatus/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report.html), download and open in web browser
 
 Potential errors:
 * ~86% alignment to "One hit, one genome
@@ -189,7 +189,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1
 ```
 **Calculate the percent of reads lost in each step**
 
-Execute [read_calculator_ssl.sh]()
+Execute [read_calculator_ssl.sh]
 ```sh
 #read_calculator_ssl.sh <Species home dir>
 # do not use trailing / in paths
@@ -268,7 +268,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ## Step 9. Determine the best assembly
 
-Look for the quast_results dir and note the (1) total number of contigs, (2) the size of the largest contig, (3) total len$
+Look for the quast_results dir and note the (1) total number of contigs, (2) the size of the largest contig, (3) total length of assembly, (4) N50, and (5) L50 for each of your assemblies. This info will be entered in the table below.
 
 To get summary for No. of contigs, largest contig, total length, % genome size completeness (GC), N50 & L50, do the follow$
 ```
@@ -339,6 +339,6 @@ Hqu  |HqC0021B   |contam       |contigs       |off	 |84668  |48595        |46634
 Hqu  |HqC0021B   |contam       |scaffolds     |off	 |86989  |69417        |506992391	|39.33%       |6119	  |26533         |43.9%
 Hqu  |HqC0021C   |contam       |contigs       |off	 |64326  |252063       |833348334	|39.20%        |19230       |11742         |33.0%
 Hqu  |HqC0021C   |contam       |scaffolds     |off	 |63527  |252063       |834945222	|39.21%        |19682       |11491         |42.7%
-Hqu  |allLibs    |decontam	 |contigs	|off	   |94520  |126080  |66692       |813845906       |41.15%       |7085	|37545       |%
-Hqu  |allLibs    |decontam	 |scaffolds	|off	   |125228  |94589       |840397753	|41.15%       |7471	  |36480       |%
+Hqu  |allLibs    |decontam	 |contigs	|off	   |94520  |126080  |66692       |813845906       |41.15%       |7085	|37545       |33.7%
+Hqu  |allLibs    |decontam	 |scaffolds	|off	   |125228  |94589       |840397753	|41.15%       |7471	  |36480       |42.7%
 
