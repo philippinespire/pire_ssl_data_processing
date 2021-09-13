@@ -328,7 +328,6 @@ Decontam, scaffolds:
 
 Summary of QUAST & BUSCO Results
 
-EDIT THIS:
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
 Hqu  |allLibs    |contam       |contigs       |off	 |126462  |1070312       |952740157       |41.11%       |8730	|34786       |36.3%
