@@ -121,4 +121,109 @@ bash /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 ```
 
 The job ran.
+The job completed.
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+salloc
+crun R
+install.packages('tidyverse')
+yes
+yes
+82
+```
+
+The install returned the following message:
+```sh
+Warning message:
+In doTryCatch(return(expr), name, parentenv, handler) :
+  unable to load shared object '/opt/mapdamage2/lib/R/modules//R_X11.so':
+  libXt.so.6: cannot open shared object file: No such file or directory
+```
+
+I ran the following commands:
+```sh
+q()
+y
+crun R < \/home/ilope002/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+```
+
+Clumpify Successfully worked on all samples.
+I moved to *out files to ./logs
+I pushed the changes to the repository to GitHub.
+
+I read the instructions to sbatch runFASTP_2_ssl.sbatch
+I modified the script as follows:
+```sh
+#SBATCH -o ../logsfastp_2nd_-%j.out
+#SBATCH --mail-user=ilopez@odu.edu
+#SBATCH --mail-type=ALL
+```
+
+I deleted the line:
+```sh
+export SINGULARITY_BIND=/home/e1garcia
+```
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray fq_fp1_clmparray_fp2 
+```
+
+The job ran.
+The job completed.
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+bash /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 4
+```
+
+On the script if $4 = *.fq.gz do not type anyhting.  Only enter $4 when the end of file pattern is not *.fq.gz
+The job ran.
+The job completed.
+I verified 5 files for the 4 files analyzed as per the instructions.
+I ran the following commands:
+```sh
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+```
+
+Nothing was returned.  All files ran correctly.  I moved all out files to logs/
+I read the instruction to get the multiqc report.  I noted that it may work better to have all scripts for this pipeline in one directory vs having them in multiple directories.
+
+I modified the script as follows:
+```sh
+#SBATCH -o ./logs/mqc_-%j.out
+#SBATCH --mail-user=ilopez@odu.edu
+#SBATCH --mail-type=ALL
+```
+
+I deleted the line:
+```sh
+export SINGULARITY_BIND=/home/e1garcia
+```
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+sbatch /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+```
+The script failed.
+
+I ran the following commands:
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+```
+
+The script generated an out file with a warning that a new version of MultiQC is available and a list of python errors.  No out dir was generated.  The script failed.
+
+I ran the following commands:
+```sh
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch .
+less runMULTIQC.sbatch
+rm runMULTIQC.sbatch
+```
+
+I verified the script was the same.  The .out file makes the following reports:  There is a new version of MultiQC.  There are several python 3.7 errors in the MultiQC program.
+
+I pushed the changes to the repository to GitHub.
 
