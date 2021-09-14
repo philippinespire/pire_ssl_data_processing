@@ -53,3 +53,73 @@ The bash script when run from my directory (jwhal002) references the sbatch scri
 The 4 output files are currently running.
 Previous slurm-fqscrn.#####.#.out files were deleted.
 
+5 files for each input *.fq.gz file for a total of 20 files.
+grep 'error' slurm-fqscrn.*out
+grep: No match
+grep 'No reads in' slurm-fqscrn.*out
+grep: No match
+No files failed
+mv *out logs
+
+#Get the multiqc report
+run from gerres_oyena/ using:
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+I can't find the "fqsrn_report". Is this the output file? It doesn't provide much info. 
+
+#runREPAIR.sbatch
+run from gerres_oyena/ using:
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
+
+run from gerres_oyena/ using:
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena"
+
+Percent total read loss:
+*D*L1_1.fq.gz 42.6037%
+*D*L1_2.fq.gz 42.6037%
+*E*L1_1.fq.gz 40.7463%
+*E*L1_2.fq.gz 40.7463%
+
+How much is too much data lost?
+
+#9/14/21
+###Assembly###
+
+#genomesize.com
+No Gerres oyena
+Within the Genus Gerres, there are two species: Gerres subfasciatus & Gerres oblongus
+Pretty sure G. subfasciatus is more closely related to G. oyena than G. oblongus (Iwatsuki et al 2006)
+
+Gerres subfasciatus
+https://www.genomesize.com/result_species.php?id=2820
+
+C-value (pg): 0.61
+
+Method: Feulgen Image Analysis Densitometry
+
+Cell Type: Red blood cells
+
+Standard Species: Betta splendens = 0.64pg, Gallus domesticus = 1.25pg, Oncorhynchus mykiss = 2.60pg, Rana pipiens = 6.70pg
+
+References:
+Hardie, D.C. and P.D.N. Hebert (2003). The nucleotypic effects of cellular DNA content in cartilaginous and ray-finned fishes. Genome 46: 683-706.
+
+Hardie, D.C. and P.D.N. Hebert (2004). Genome-size evolution in fishes. Canadian Journal of Fisheries and Aquatic Sciences 61: 1636-1646.
+
+
+Gerres oblongus
+https://www.genomesize.com/result_species.php?id=2819
+
+C-value (pg): 0.70
+
+Chromosome Number (2n): 50
+
+Method: Flow Cytometry
+
+Cell Type: Red blood cells
+
+Standard Species: Mus musculus = 3.30pg
+
+References:
+Ojima, Y. and K. Yamamoto (1990). Cellular DNA contents of fishes determined by flow cytometry. La Kromosomo II 57: 1871-1888.
+
+
