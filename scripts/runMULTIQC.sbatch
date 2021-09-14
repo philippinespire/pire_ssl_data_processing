@@ -9,6 +9,7 @@
 
 enable_lmod
 module load container_env pire_genome_assembly/2021.07.01
+module load multiqc
 
 export SINGULARITY_BIND=/home/e1garcia
 
