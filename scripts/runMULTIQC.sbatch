@@ -12,6 +12,11 @@
 enable_lmod
 module load container_env pire_genome_assembly/2021.07.01
 module load multiqc
+<<<<<<< HEAD
+=======
+
+export SINGULARITY_BIND=/home/e1garcia
+>>>>>>> 80e69e7782512ec74304616bfa2a70afacc8e183
 
 DIR=$1
 REPORTNAME=$2
