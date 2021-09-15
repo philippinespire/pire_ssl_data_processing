@@ -338,3 +338,70 @@ Tzo  |TzC0402G   |decontam     |contigs       |off	 |74000  |170219       |78735
 Tzo  |TzC0402G   |decontam     |scaffolds     |off	 |74000  |170219       |787350440	|39.19%        |14381       |15216         |67.6%
 Tzo  |allLibs    |decontam     |scaffolds     |off	 |71206  |170219       |794560568 	|39.20%        |15481       |14123         |
 Tzo  |allLibs    |decontam     |contigs	      |off	 |94520  |100990       |657658468       |39.44%	       |7749        |24786	   |
+
+---
+The best library was TzC0402G scaffolds.
+#### Main assembly stats
+
+New record of Tzo added to [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
+```sh
+# add your info in a new row
+nano ../best_ssl_assembly_per_sp.tsv
+```
+
+---
+### Probe Design
+
+In this section I identified contigs and regions within contigs to be used as candidate regions to develop the probes from.
+
+The following 4 files were created at the end of this step:
+1. *.fasta.masked: The masked fasta file
+2. *.fasta.out.gff: The gff file created from repeat masking (identifies regions of genome that were masked)
+3. *_augustus.gff: The gff file created from gene prediction (identifies putative coding regions)
+4. *_per10000_all.bed: The bed file with target regions (1 set of 2 probes per target region).
+
+#### 10 Identifying regions for probe development
+
+From the species directory, a new dir was made for the probe design
+```sh
+mkdir probe_design
+```
+Necessary scripts and the best assembly were copied (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly previously to run the decontaminated data)
+
+Example:
+```sh
+cp SPAdes_TzC0402G_contam_R1R2_noIsolate/scaffolds.fasta probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+```
+
+I renamed the assembly to reflect the species and parameters used. I copy and pasted the parameter info from the busco directory
+```sh
+# list the busco dirs by entering
+ls -d busco_*
+# identify the busco dir of the best assembly, copy the treatments (starting with the library)
+# Since the busco dir for the best assembly for Tzo is `busco_scaffolds_results-SPAdes_TzC0402G_contam_R1R2_noIsolate`
+# I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_"
+cd probe_design
+mv scaffolds.fasta Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta
+```
+
+Execute the first script:
+```sh
+#WGprobe_annotation.sb <assembly name>
+sbatch WGprobe_annotation.sb "Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta"
+```
+
+This will create:
+1. a repeat-masked fasta and gff file (.fasta.masked & .fasta.out.gff)
+2. a gff file with predicted gene regions (augustus.gff), and
+3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
+
+Execute the second script. Example for Tzo:
+```sh
+#WGprobe_annotation.sb <assembly base name>
+sbatch WGprobe_bedcreation.sb "Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta"
+```
+
+This will create a .bed file that will be sent for probe creation.
+ The bed file identifies 5,000 bp regions (spaced every 10,000 bp apart) in scaffolds > 10,000 bp long.
