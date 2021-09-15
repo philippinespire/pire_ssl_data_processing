@@ -81,6 +81,7 @@ Percent total read loss:
 
 How much is too much data lost?
 
+
 #9/14/21
 ###Assembly###
 
@@ -123,3 +124,12 @@ References:
 Ojima, Y. and K. Yamamoto (1990). Cellular DNA contents of fishes determined by flow cytometry. La Kromosomo II 57: 1871-1888.
 
 
+#9/15/21
+
+
+Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
+stat	|min	|max	|average	
+------	|------	|------	|------	
+Heterozygosity	|0.869466%	|0.877487%	|0.873476%	
+Genome Haploid Length	|532,667,711 bp	|533,247,245 bp	|532,957,478 bp	
+Model Fit	|96.5314%	|97.1227%	|96.82705 %	

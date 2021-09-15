@@ -1,0 +1,28 @@
+java -ea -Xmx160984m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_r1.tagged_filter.fastq.gz in2=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_r2.tagged_filter.fastq.gz out1=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_repr.R1.fq.gz out2=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_repr.R2.fq.gz outs=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_r1.tagged_filter.fastq.gz, in2=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_r2.tagged_filter.fastq.gz, out1=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_repr.R1.fq.gz, out2=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_repr.R2.fq.gz, outs=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/HmC0451B_CKDL210018111-1a-AK7758-AK7096_HH72GDSX2_L1_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	195123219 reads 		29227473837 bases.
+Result:                 	195123219 reads (100.00%) 	29227473837 bases (100.00%)
+Pairs:                  	190086504 reads (97.42%) 	28472990705 bases (97.42%)
+Singletons:             	5036715 reads (2.58%) 	754483132 bases (2.58%)
+
+Time:                         	540.034 seconds.
+Reads Processed:        195m 	361.32k reads/sec
+Bases Processed:      29227m 	54.12m bases/sec
+java -ea -Xmx160984m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_r1.tagged_filter.fastq.gz in2=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_r2.tagged_filter.fastq.gz out1=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_repr.R1.fq.gz out2=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_repr.R2.fq.gz outs=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_r1.tagged_filter.fastq.gz, in2=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_r2.tagged_filter.fastq.gz, out1=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_repr.R1.fq.gz, out2=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_repr.R2.fq.gz, outs=/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired/orphans/HmC0451C_CKDL210018111-1a-AK7078-7UDI286_HH72GDSX2_L1_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	278635992 reads 		41736668944 bases.
+Result:                 	278635992 reads (100.00%) 	41736668944 bases (100.00%)
+Pairs:                  	271710248 reads (97.51%) 	40699200610 bases (97.51%)
+Singletons:             	6925744 reads (2.49%) 	1037468334 bases (2.49%)
+
+Time:                         	761.015 seconds.
+Reads Processed:        278m 	366.14k reads/sec
+Bases Processed:      41736m 	54.84m bases/sec

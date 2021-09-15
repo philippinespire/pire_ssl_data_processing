@@ -155,7 +155,7 @@ I pushed the changes to the repository to GitHub.
 I read the instructions to sbatch runFASTP_2_ssl.sbatch
 I modified the script as follows:
 ```sh
-#SBATCH -o ../logsfastp_2nd_-%j.out
+#SBATCH -o ../logs/fastp_2nd_-%j.out
 #SBATCH --mail-user=ilopez@odu.edu
 #SBATCH --mail-type=ALL
 ```
@@ -226,4 +226,68 @@ rm runMULTIQC.sbatch
 I verified the script was the same.  The .out file makes the following reports:  There is a new version of MultiQC.  There are several python 3.7 errors in the MultiQC program.
 
 I pushed the changes to the repository to GitHub.
+Eric corrected the runMULTIQC.sbatch script by adding the line:
+```sh
+module load multiqc
+```
+
+The report worked.
+I pushed the changes to the repository to GitHub.
+
+I read the instructions to sbatch runREPAIR.sbatch
+I modified the script as follows:
+```sh
+#SBATCH -o ../logs/repr-%j.out
+#SBATCH --mail-user=ilopez@odu.edu
+#SBATCH --mail-type=ALL
+```
+
+I deleted the line:
+```sh
+export SINGULARITY_BIND=/home/e1garcia
+```
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
+```
+
+The job failed right away.
+I ran the following commands:
+```sh
+cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch .
+nano runREPAIR.sbatch
+```
+
+The scripts was the same as the one I used.
+I ran the following commands:
+```sh
+sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired 40
+```
+
+The script failed.
+
+I ran the following commands:
+```sh
+sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired
+```
+
+The job failed.
+
+I ran the following commands:
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn_repaired 40
+```
+
+The job ran.
+The job completed.
+I ran the following commands:
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+
+The job ran.
+The job completed.
+I pushed the changes to the repository to GitHub.
+
 
