@@ -58,27 +58,25 @@ Clumpify worked succesfully.
 
 Executed `runFQSCRN_6.bash` to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/fastqc_screen_report.html)
 
-```
-#runFQSCRN_6.bash <indir> <outdir> <number of nodes to run simultaneously>
-# do not use trailing / in paths
-bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 6
-``
-
 Checked output for errors
-``
+
 ls fq_fp1_clmparray_fp2_fqscrn/*tagged.fastq.gz | wc -l
 ls fq_fp1_clmparray_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l 
 ls fq_fp1_clmparray_fp2_fqscrn/*screen.txt | wc -l
 ls fq_fp1_clmparray_fp2_fqscrn/*screen.png | wc -l
 ls fq_fp1_clmparray_fp2_fqscrn/*screen.html | wc -l
 
-# all returned 5
+all returned 5
 
-#checked for errors in all out files at once
+checked for errors in all out files at once
 grep 'error' slurm-fqscrn.*out
 grep 'No reads in' slurm-fqscrn.*out
 
-# No errors!
-```
+No errors!
 
 MultiQC failed due to python errors in the program.  No report was generated.  Please see the outfile in this repo's logs dir.
+The script was corrected and the MultiQC report was generated.
+Highlights from [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/fastqc_screen_report.html):
+* about 96% of reads were retained
+
+## Step 6. Repair fastq_screen paired end files
