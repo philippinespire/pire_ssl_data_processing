@@ -1,0 +1,127 @@
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r1.fq.gz	--pe1-2	/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r2.fq.gz	--pe2-1	/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r1.fq.gz	--pe2-2	/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/jwhal002	--cov-cutoff	off	-o	/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/SPAdes_allLibs_contam_R1R2_noIsolate	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.9
+  OS: Linux-4.4.262-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two
+
+Output dir: /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/SPAdes_allLibs_contam_R1R2_noIsolate
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+    Library number: 2, library type: paired-end
+      orientation: fr
+      left reads: ['/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77, 99]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /scratch-lustre/jwhal002
+  Threads: 32
+  Memory limit (in Gb): 750
+
+
+======= SPAdes pipeline started. Log can be found here: /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/SPAdes_allLibs_contam_R1R2_noIsolate/spades.log
+
+/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r1.fq.gz: max reads length: 150
+/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r2.fq.gz: max reads length: 150
+/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r1.fq.gz: max reads length: 150
+/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r2.fq.gz: max reads length: 150
+
+Reads length: 150
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /opt/conda/bin/spades-hammer /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/SPAdes_allLibs_contam_R1R2_noIsolate/corrected/configs/config.info
+
+  0:00:00.000     1M / 13M   INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.031     1M / 13M   INFO    General                 (main.cpp                  :  76)   Loading config from /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/SPAdes_allLibs_contam_R1R2_noIsolate/corrected/configs/config.info
+  0:00:00.044     1M / 13M   INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 32
+  0:00:00.047     1M / 13M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 750 Gb
+  0:00:00.050     1M / 13M   INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.054     1M / 13M   INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.057     1M / 13M   INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.061     1M / 13M   INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.067     1M / 13M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 16 files using 32 threads. This might take a while.
+  0:00:00.071     1M / 13M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 50000
+  0:00:00.079     1M / 13M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 7.8125 Gb
+  0:00:00.082     1M / 13M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 4194304
+  0:00:00.325    19G / 19G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r1.fq.gz
+  0:00:58.595    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 7720343 reads
+  0:01:54.750    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 15591273 reads
+  0:02:49.166    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 23287093 reads
+  0:03:43.843    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 30989073 reads
+  0:04:39.511    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 38780810 reads
+  0:05:33.566    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 46392822 reads
+  0:06:28.326    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 54180503 reads
+  0:07:23.059    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 61923647 reads
+  0:08:18.453    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 69666762 reads
+  0:09:13.400    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 77411018 reads
+  0:09:22.709    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 78746646 reads
+  0:09:22.712    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r2.fq.gz
+  0:10:32.067    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 86577802 reads
+  0:18:37.021    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 141073195 reads
+  0:21:06.836    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r1.fq.gz
+  0:29:08.835    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r2.fq.gz
+  0:36:16.793    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 270489117 reads
+  0:39:29.127    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 112)   Total 290029576 reads processed
+  0:39:29.144     1M / 31G   INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  0:43:14.058     1M / 172G  INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 4448819742 kmers in total.
+  0:43:14.077     1M / 172G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:46:22.604  3146M / 172G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 4448819742 kmers, 3213235040 bytes occupied (5.77813 bits per kmer).
+  0:46:22.607  3146M / 172G  INFO   K-mer Counting           (kmer_data.cpp             : 354)   Arranging kmers in hash map order
+  0:49:03.134    70G / 172G  INFO    General                 (main.cpp                  : 148)   Clustering Hamming graph.
+  1:17:00.004    70G / 172G  INFO    General                 (main.cpp                  : 155)   Extracting clusters:
+  1:17:00.004    70G / 172G  INFO    General                 (concurrent_dsu.cpp        :  18)   Connecting to root
+  1:17:06.932    70G / 172G  INFO    General                 (concurrent_dsu.cpp        :  34)   Calculating counts
+  1:23:50.228   104G / 172G  INFO    General                 (concurrent_dsu.cpp        :  63)   Writing down entries
+  1:44:40.582    70G / 172G  INFO    General                 (main.cpp                  : 167)   Clustering done. Total clusters: 1394539989
+  1:44:40.685    37G / 172G  INFO   K-mer Counting           (kmer_data.cpp             : 371)   Collecting K-mer information, this takes a while.
+  1:45:12.181   136G / 172G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r1.fq.gz
+  1:51:40.855   136G / 172G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_clmp.fp2_r2.fq.gz
+  1:58:30.139   136G / 172G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r1.fq.gz
+  2:03:57.711   136G / 172G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_fp1_clmparray_fp2/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_clmp.fp2_r2.fq.gz
+  2:09:40.383   136G / 172G  INFO   K-mer Counting           (kmer_data.cpp             : 384)   Collection done, postprocessing.
+  2:09:59.415   136G / 172G  INFO   K-mer Counting           (kmer_data.cpp             : 397)   There are 4448819742 kmers in total. Among them 2987615298 (67.1552%) are singletons.
+  2:09:59.415   136G / 172G  INFO    General                 (main.cpp                  : 173)   Subclustering Hamming graph
