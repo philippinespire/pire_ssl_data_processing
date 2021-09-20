@@ -515,7 +515,7 @@ This will create a .bed file that will be sent for probe creation.
 
 **Check Upper Limit**
 
-Open your out file and check that the upper limit was set correctly. Record the longest contig and uppper limit in your species README. 
+Open your out file and check that the upper limit was set correctly. Record the longest contig, uppper limit used in loop, and the number of identified regions and scaffolds  in your species README. 
 
 The upper limit should be XX7500 (just under longest scaffold length). Ex: if longest scaffold is 88,888, then the upper limit should be 87,500; if longest scaffold is 87,499, then the upper limit should be 77,500.  
 
@@ -527,6 +527,11 @@ cat BEDprobes-415039.out
 The longest scaffold is 105644
 The uppper limit used in loop is 97500
 A total of 13063 regions have been identified from 10259 scaffolds
+```
+
+Move out files into your species logs dir
+```sh
+mv *out ../logs
 ```
 
 #### 11 Closest relatives with available genomes

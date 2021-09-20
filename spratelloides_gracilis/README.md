@@ -346,12 +346,17 @@ Execute the second script
 sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
 ```
 
-`The longest scaffold is 105644`
+The longest scaffold is 105644
 
-`The uppper limit used in loop is 97500`
+The uppper limit used in loop is 97500
 
-`A total of 13063 regions have been identified from 10259 scaffolds`
+A total of 13063 regions have been identified from 10259 scaffolds
 
+
+Moved out files to logs
+```sh
+mv *out ../logs
+```
 
 ## step 11. Fetching genomes for closest relatives
 
