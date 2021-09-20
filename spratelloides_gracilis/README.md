@@ -319,12 +319,12 @@ nano ../best_ssl_assembly_per_sp.tsv
 
 ## Step 10. Probe design - regions for probe development
 
-From species directory. Made probe dir, rename assembly and copied scripts
+From species directory. Made probe dir, renamed assembly and copied scripts
 ```sh
 mkdir probe_design
-cp SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta probe_design
 cp ../scripts/WGprobe_annotation.sb probe_design
 cp ../scripts/WGprobe_bedcreation.sb probe_design
+cp SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta probe_design
 # list the busco dirs
 ls -d busco_*
 # identify the busco dir of best assembly, copy the treatments (starting with the library)
@@ -345,6 +345,13 @@ Execute the second script
 #WGprobe_annotation.sb <assembly base name> 
 sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
 ```
+
+`The longest scaffold is 105644`
+
+`The uppper limit used in loop is 97500`
+
+`A total of 13063 regions have been identified from 10259 scaffolds`
+
 
 ## step 11. Fetching genomes for closest relatives
 
