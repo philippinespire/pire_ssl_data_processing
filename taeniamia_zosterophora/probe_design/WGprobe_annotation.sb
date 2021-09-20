@@ -9,7 +9,7 @@ module load container_env/0.1
 module load repeatmasker/4.1.0
 
 export SINGULARITY_BIND=/home/r3clark
-
+export SINGULARITY_BIND=/home/e1garcia
 #copy to directory with raw fasta file and run there
 
 #create masked fasta
