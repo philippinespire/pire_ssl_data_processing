@@ -277,7 +277,9 @@ sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_process
 #3rd lib
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0282A_contam_R1R2_noIsolate" "contigs"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0282A_contam_R1R2_noIsolate" "scaffolds"
-
+#BUSCO for decontam of 3rd lib
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0282A_decontam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0282A_decontam_R1R2_noIsolate" "scaffolds"
 ```
 
 Look for the quast_results dir and note the (1) total number of contigs, (2) the size of the largest contig, (3) total length of assembly, (4) N50, and (5) L50 for eac$
@@ -296,6 +298,10 @@ cat quast-reports/quast-report_contigs_Sfa_spades_SfC0281H_contam_R1R2_21-99_iso
 cat quast-reports/quast-report_scaffolds_Sfa_spades_SfC0281H_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_contigs_Sfa_spades_SfC0282A_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_scaffolds_Sfa_spades_SfC0282A_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+#for decontam of highest library
+cat quast-reports/quast-report_contigs_Sfa_spades_SfC0282A_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Sfa_spades_SfC0282A_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+
 ```
 
 Then, to fill in the BUSCO single copy column, open the following files & look for S%:
@@ -318,6 +324,81 @@ Sfa  |SfC0281H   |contam      |contigs        |off       |64803  |119618     |51
 Sfa  |SfC0281H   |contam      |scaffolds      |off       |45792  |356588     |563766158        |43.98%      |18875     |8063	   |73.0%
 Sfa  |SfC0282A   |contam      |contigs        |off       |66229  |97374      |490610142        |43.91%      |8579      |16761  	   |53.8%
 Sfa  |SfC0282A   |contam      |scaffolds      |off	 |46311  |221552     |555041474        |44.03%      |18095     |8177	   |71.2%
-EDIT:
-Sfa  |SfC0282A   |decontam      |contigs        |off	 |66229  |97374      |490610142        |43.91%      |8579      |16761	   |53.8%
-Sfa  |SfC0282A   |decontam      |contigs        |off	 |66229  |97374      |490610142        |43.91%      |8579      |16761	   |53.8%
+Sfa  |SfC0282A   |decontam      |contigs        |off	 |65497  |92703      |489935535        |43.80%      |8715      |16767	   |55.5%
+Sfa  |SfC0282A   |decontam      |contigs        |off	 |51279  |140503     |539947694        |43.87%      |14718     |10321	   |69.5%
+
+---
+The best library was SfC0282A contam scaffolds.
+#### Main assembly stats
+
+New record of Sfa added to [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
+```sh
+# add your info in a new row
+nano ../best_ssl_assembly_per_sp.tsv
+```
+
+---
+### Probe Design
+
+In this section I identified contigs and regions within contigs to be used as candidate regions to develop the probes from.
+
+The following 4 files were created at the end of this step:
+1. *.fasta.masked: The masked fasta file
+2. *.fasta.out.gff: The gff file created from repeat masking (identifies regions of genome that were masked)
+3. *_augustus.gff: The gff file created from gene prediction (identifies putative coding regions)
+4. *_per10000_all.bed: The bed file with target regions (1 set of 2 probes per target region).
+
+#### 10 Identifying regions for probe development
+
+From the species directory, a new dir was made for the probe design
+```sh
+mkdir probe_design
+```
+Necessary scripts and the best assembly were copied (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly $
+
+```sh
+cp SPAdes_SfC0282A_contam_R1R2_noIsolate/scaffolds.fasta probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+```
+
+I renamed the assembly to reflect the species and parameters used. I copy and pasted the parameter info from the busco directory
+```sh
+# list the busco dirs by entering
+ls -d busco_*
+# identify the busco dir of the best assembly, copy the treatments (starting with the library)
+# Since the busco dir for the best assembly for Sfa is the scaffolds for SfC0282A
+# I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_"
+cd probe_design
+
+```sh
+mkdir probe_design
+```
+Necessary scripts and the best assembly were copied (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly $
+
+```sh
+cp SPAdes_contam_R1R2_noIsolate/scaffolds.fasta probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+```
+
+I renamed the assembly to reflect the species and parameters used. I copy and pasted the parameter info from the busco directory
+```sh
+# list the busco dirs by entering
+ls -d busco_*
+# identify the busco dir of the best assembly, copy the treatments (starting with the library)
+# Since the busco dir for the best assembly for Pli is the scaffolds for all libraries
+# I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_"
+cd probe_design
+mv scaffolds.fasta Sfa_scaffolds_SfC0282A_contam_R1R2_noIsolate.fasta
+```
+Added this line to the WGprobe_annotation script so I could run it from my home directory:
+export SINGULARITY_BIND=/home/e1garcia
+
+Execute the first script:
+```sh
+#WGprobe_annotation.sb <assembly name>
+sbatch WGprobe_annotation.sb "Sfa_scaffolds_SfC0282A_contam_R1R2_noIsolate.fasta"
+```
+
+

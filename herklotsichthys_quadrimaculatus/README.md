@@ -330,14 +330,73 @@ Summary of QUAST & BUSCO Results
 
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Hqu  |allLibs    |contam       |contigs       |off	 |126462  |1070312       |952740157       |41.11%       |8730	|34786       |36.3%
-Hqu  |allLibs    |contam       |scaffolds     |off	 |125095  |1070312       |960099166	|41.11%       |8957	  |34066       |48.8%
-Hqu  |HqC0021A   |contam       |contigs       |off	 |65176  |227579       |830651102	|39.20%       |18737    |11972         |34.2%
-Hqu  |HqC0021A   |contam       |scaffolds     |off	 |64301  |340415       |832616461	|39.20%       |19199    |11686       |43.4%
-Hqu  |HqC0021B   |contam       |contigs       |off	 |84668  |48595        |466349924	|39.35%       |5684     |27045       |33.7%
-Hqu  |HqC0021B   |contam       |scaffolds     |off	 |86989  |69417        |506992391	|39.33%       |6119	  |26533         |43.9%
-Hqu  |HqC0021C   |contam       |contigs       |off	 |64326  |252063       |833348334	|39.20%        |19230       |11742         |33.0%
-Hqu  |HqC0021C   |contam       |scaffolds     |off	 |63527  |252063       |834945222	|39.21%        |19682       |11491         |42.7%
-Hqu  |allLibs    |decontam	 |contigs	|off	   |94520  |126080  |66692       |813845906       |41.15%       |7085	|37545       |33.7%
-Hqu  |allLibs    |decontam	 |scaffolds	|off	   |125228  |94589       |840397753	|41.15%       |7471	  |36480       |42.7%
+Hqu  |allLibs    |contam       |contigs       |off	 |72680  |195361       |437705954       |43.98%       |6320	|21123       |36.3%
+Hqu  |allLibs    |contam       |scaffolds     |off	 |65871  |195361       |512737304	|44.04%       |9155	  |15571       |48.8%
+Hqu  |HqC0021A   |contam       |contigs       |off	 |65357   |147500       |366412508	|43.34%       |5733    |19934   |34.2%
+Hqu  |HqC0021A   |contam       |scaffolds     |off	 |63921   |149055       |434195608	|43.44%       |7527    |16539   |43.4%
+Hqu  |HqC0021B   |contam       |contigs       |off	 |67237  |189345        |384205692	|43.51%       |5883     |20200       |33.7%
+Hqu  |HqC0021B   |contam       |scaffolds     |off	 |64769  |321524        |454554704	|43.61%       |7881     |16436         |43.9%
+Hqu  |HqC0021C   |contam       |contigs       |off	 |64320  |216207       |357746760     	|43.31%       |5662     |19659         |33.0%
+Hqu  |HqC0021C   |contam       |scaffolds     |off	 |63577  |242909       |427945810	|43.42%       |7423     |16491         |42.7%
+Hqu  |allLibs    |decontam     |contigs       |off       |61190  |165445       |350787873       |43.11%       |5950       |18553       |33.7%
+Hqu  |allLibs    |decontam     |scaffolds     |off       |60202  |195347       |404379681	|43.16%       |7442	  |16090       |42.6%
+
+---
+The best library was allLibs scaffolds.
+#### Main assembly stats
+
+New record of Hqu added to [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
+```sh
+# add your info in a new row
+nano ../best_ssl_assembly_per_sp.tsv
+```
+
+### Probe Design
+
+In this section I identified contigs and regions within contigs to be used as candidate regions to develop the probes from.
+
+The following 4 files were created at the end of this step:
+1. *.fasta.masked: The masked fasta file
+2. *.fasta.out.gff: The gff file created from repeat masking (identifies regions of genome that were masked)
+3. *_augustus.gff: The gff file created from gene prediction (identifies putative coding regions)
+4. *_per10000_all.bed: The bed file with target regions (1 set of 2 probes per target region).
+
+#### 10 Identifying regions for probe development
+
+From the species directory, a new dir was made for the probe design
+```sh
+mkdir probe_design
+```
+Necessary scripts and the best assembly were copied (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly pr$
+
+```sh
+cp SPAdes_contam_R1R2_noIsolate/scaffolds.fasta probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+```
+
+I renamed the assembly to reflect the species and parameters used. I copy and pasted the parameter info from the busco directory
+```sh
+# list the busco dirs by entering
+ls -d busco_*
+# identify the busco dir of the best assembly, copy the treatments (starting with the library)
+# Since the busco dir for the best assembly for Hqu is SPAdes_contam_R1R2_noIsolate
+# I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_"
+cd probe_design
+mv scaffolds.fasta Hqu_scaffolds_allLibs_contam_R1R2_noIsolate.fasta
+```
+Since I am working on Eric's home directory, I added this line to the WGprobe_annotation script, after the export SINGULARITY_BIND line for Rene, so I could run it from my home directory:
+export SINGULARITY_BIND=/home/e1garcia
+
+Execute the first script:
+```sh
+#WGprobe_annotation.sb <assembly name>
+sbatch WGprobe_annotation.sb "Hqu_scaffolds_allLibs_contam_R1R2_noIsolate.fasta"
+```
+
+This will create:
+1. a repeat-masked fasta and gff file (.fasta.masked & .fasta.out.gff)
+2. a gff file with predicted gene regions (augustus.gff), and
+3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
+
 
