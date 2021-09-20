@@ -7,6 +7,8 @@ The purpose of this log is to create replicable steps for de novo genome assembl
 I cloned the repository, copied the data and followed all steps up to line 124 of the instructions on the [PIRE Shotgun Data Processing and Analysis Page](https://github.com/philippinespire/pire_ssl_data_processing).  I created a README in the *Halichoeres miniatus* directory.  I created this log.
 ***
 
+#Preprocessing (steps 1-6)
+
 The following commands were executed on the command line:
 
 ```sh
@@ -290,4 +292,49 @@ The job ran.
 The job completed.
 I pushed the changes to the repository to GitHub.
 
+***
 
+#Assembly and Evaluation (Steps 7-11)
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Hmi" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
+```
+
+The job ran.
+The job completed.
+
+I created a report on [Genomescope v1.0](http://qb.cshl.edu/genomescope/): [Report](http://genomescope.org/analysis.php?code=KhfDGA5uYzhqhMDcvWdd).
+
+I used the following data to created this table:
+
+Genome stats for *Halichoeres miniatus* from Jellyfish/GenomeScope v1.0 k=21
+
+stat|min|max|average
+------|------|------|------
+Heterozygosity |1.16164% |1.17048% |
+Genome Haploid Length |603,130,409 bp |603,766,833 bp |
+Model Fit |96.7109% |97.7415% |
+
+Average values are not listed in the report. I noted that in other assemblies in this project researchers arrived at the following:
+(min+max)/2 = average = true average for the stat
+Average values are being fed into the pipeline downstream.
+While averaging probabilities is unsound. I do not know that this not correct with respect to the genome haploid length.  Since the values are weighted a caluclation to arrive at the true average of these stat values must consider the weight used to arrive at min and max.  It is difficult to arrive at these necessary values just looking at the algorithm used to calculate the min and max.
+However min and max are weighted values arrived at by a formula shown on the report.  These weighted values are based on probabilities and very likely calculated from a t score.  Two t values or calculated probabilities cannot be averaged to determine a "mid-point" of equal probability.  As an example, imagine we are flipping a deck of alphabet cards.  We calculated the t value of the probability of the next flip will be the letter "C" or the letter "W".  It is unsound to gamble that the next letter to come up will be A, Z or M.  Another example, a student gets a 66 on  Please see the documentation for [GenomeScope](https://github.com/schatzlab/genomescope)
+
+After consultation with Dr. Garcia, Dr. Reid, Dr. Bird and Dr. Pinsky, they were in consensus that this getting the mid point for min and max without rounding would provide a valid result.  I calculated the value to be: 603448621
+
+The instructions for Spades are not clear.  The script for Spades must be executed on one library at a time.  A library consists of a file of forward reads and a file with the complamentary reverse reads. These files have similar names and are often differentiated in the naming scheme, for example SOME_FILE_NAME_r1.* SOME_FILE_NAME_r2.*.  For the purpose of the script created, the argument for the library input requires the entry of a single digit, such as 1, or 2, depending on the number of libraries present, or the text all.  The understanding is that the script created was written at the convenience of the author with the intent of creating a smooth easy to follow pipeline.
+
+At this point I sought clarification of the arguments to be entered for the Spades script from Dr. Garcia.  I observed that one library only contained forward reads.  Dr. Garcia indentified this library as incomplete and pulled the missing file to the ODU HPC.  Dr. Garcia instructed me on the proper use of the script and suggested I move forward with Spades.
+
+I ran the following commands:
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPaDEShimem_R1R2_noisolate.batch "ilope002" "Hmi" "1" "contam" "603448621" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPaDEShimem_R1R2_noisolate.batch "ilope002" "Hmi" "2" "contam" "603448621" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+```
+
+The job ran.
+The job completed.
+I pushed the changes to the repository to GitHub.
