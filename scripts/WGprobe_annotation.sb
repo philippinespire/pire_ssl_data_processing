@@ -17,7 +17,7 @@ crun RepeatMasker -species zebrafish -e rmblast -parallel $SLURM_CPUS_PER_TASK -
 
 #predict gene regions
 #NOTE: make sure augustus_config_dir is accessible
-module load busco/5.1.2
+module load busco/5.0.0
 
 crun augustus --progress=true --strand=both --species=zebrafish --AUGUSTUS_CONFIG_PATH=/home/r3clark/PIRE/WG_baits/augustus_config_dir *.fasta.masked > $1.augustus.gff
 
