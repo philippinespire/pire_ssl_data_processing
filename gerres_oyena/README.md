@@ -133,3 +133,34 @@ stat	|min	|max	|average
 Heterozygosity	|0.869466%	|0.877487%	|0.873476%	
 Genome Haploid Length	|532,667,711 bp	|533,247,245 bp	|532,957,478 bp	
 Model Fit	|96.5314%	|97.1227%	|96.82705 %	
+
+#runSPADEShimem_R1R2_noisolate.sbatch
+
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jwhal002" "Goy" "1" "contam" "533000000" "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena"
+```
+Error because there were only 2 libraries and the .sbatch script assumes 3 libraries were used. This caused an error saying that one of the files was used twice, which caused the script to fail.
+I editted the script in my directory and reran it using that script.
+
+```sh
+sbatch /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jwhal002" "Goy" "1" "contam" "533000000" "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena"
+```
+
+Other slurm .out files were removed
+
+
+
+
+
+
+
+Species |Library |DataType |SCAFIG |covcutoff |No. of contigs |Largest contig |Total lenght |% Genome size completeness |N50 |L50 |BUSCO single copy ------ 
+|------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
+Goy |allLibs |contam |contigs |off |2253577 |309779 |489995603 |70.5% |5515 |28571 |29.9% Sgr |allLibs |contam |scaffolds |off |2237565 |309779 |517068774 
+|74.5% |5806 |28041 |29.9%
+Goy |allLibs |contam |contigs |auto |2220821 |309779 |489827781 |70.6% |5800 |28040 |30% Sgr |allLibs |contam |scaffolds |auto |2204948 |309779 |516942564 
+|74.5% |5800 |28041 |32.2%
+Goy |Gy...D |decontam |contgs |off |2316449 |197090 |411716418 |59.3% |5443 |24590 |27.1% Sgr |allLibs |decontam |scaffolds |off |2295872 |197090 |440572995 
+|63.5% |5751 |24463 |29.5%
+Goy |Gy...E |decontam |contgs |auto |2290268 |197090 |411810888 |59.4% |5442 |24601 |27.1% Sgr |allLibs |decontam |scaffolds |auto |2269777 |197090 |440612739 
+|63.5% |5750 |24463 |29.5%
