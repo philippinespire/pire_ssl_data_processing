@@ -164,7 +164,10 @@ Goy |GyC0881D |contam |contigs |auto |55459 |111115 |456736917 |85.7% |9969 |137
 Goy |GyC0881D |contam |scaffolds |auto |25707 |383347 |518852621 |97.4% |33957 |4183 |
 
 
-Busco
+BUSCO for scaffolds and contigs
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena" "SPAdes_GyC0881D_contam_R1R2_noIsolate" "contigs"
 ```
+
+
+
