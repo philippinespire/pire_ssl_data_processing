@@ -381,14 +381,19 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 Run 3 more assemblies with the contaminated data for the second, third, and all libraries together (i.e. replace "1", with "2", "3", and "all")
 
-After assessing the best library (you'll need to complete number 8 below), it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO") if BUSCO values are too low try
+Next, you need to determine the best assembly to use the decontaminated data. Go on and complete step 9 (below) and come back here after.
+
+**After step 9**
+
+Assuming you have completed step 9, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species.
+If BUSCO values are too low, it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO")
 
 Example:
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
-Finally, run one more assembly using the decontaminated data from the same library(or all together) that produced the best assembly (with or without the covcutoff flag) with the contaminated files. Sgr example:
+Finally, run one more assembly using the decontaminated data from the same library(or all together) that produced the best assembly (with or without the covcutoff flag). Sgr example:
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "3" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
@@ -439,6 +444,25 @@ Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090   
 ```
 
 ---
+
+
+**Determine the best assembly**
+
+We assess quality across multiple metrics since we don't use a golden rule/metric for determing the best assembly. 
+Often, it is clear that single libray is relatively better than the others as it would have better results across metrics. Yet, sometimes this is not soo clear as different assemblies might be better in different metrics. Use the following table to help you decide:
+
+Importance    |Metric    |Direction    |Description
+------  |------  |------ |------ 
+1st  |BUSCO  | Bigger is better  | % of expected genes observed in your assembly
+2nd  |N50  |Bigger is better  | Lenght of the smaller contig from the set of contigs needed to reach half of your assembly
+3rd  |Genome size completeness  |Bigger is better  |Lenght of assembly divided by estimated genome lenght
+4th  |L50  | Smaller is better  | Number of contigs needed to reach half of your assembly
+5th  |Largest contig  |Bigger is better  | Lenght of largest contig
+ 
+If you are still undecided on which is the best assembly, post the best candidates on the species slack channel and ask for opinions
+
+Now, go back to step 8 and run decontaminated data for library that produced the best assembly
+
 
 #### Update the main assembly stats table with your species
 

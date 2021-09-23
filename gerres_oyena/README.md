@@ -148,26 +148,42 @@ sbatch /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 Other slurm .out files were removed
 
-Assemblies made for GyC0881D, GyC00881E, allLibs w/ covcutoff = off
+Assemblies made for GyC0881D (#"1"), GyC00881E (#"2"), allLibs w/ covcutoff = off
 Assemblies made for GyC0881D w/ covcutoff = auto
 
 
 Species |Library |DataType |SCAFIG |covcutoff |No. of contigs |Largest contig |Total length |% Genome size completeness |N50 |L50 |BUSCO single copy ------ 
 |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
-Goy |allLibs |contam |contigs |off |56139 |99979 |428433255 |80.4% |8873 |14304 |
-Goy |allLibs |contam |scaffolds |off |25822 |364333 |504055061 |94.6% |33151 |4188 |
-Goy |GyC0881D |contam |contigs |off |55401 |111112 |456566152 |85.7% |9976 |13705 |
-Goy |GyC0881D |contam |scaffolds |off |25665 |383347 |518735835 |97.3% |33953 |4182 |
-Goy |GyC0881E |contam |contigs |off |52039 |118096 |484528224 |90.9% |11778 |12108 |
-Goy |GyC0881E |contam |scaffolds |off |24249 |397418 |531155459 |99.7% |37754 |3908 |
-Goy |GyC0881D |contam |contigs |auto |55459 |111115 |456736917 |85.7% |9969 |13728 |
-Goy |GyC0881D |contam |scaffolds |auto |25707 |383347 |518852621 |97.4% |33957 |4183 |
-
+Goy |allLibs |contam |contigs |off |56139 |99979 |428433255 |80.4% |8873 |14304 | 48.8%
+Goy |allLibs |contam |scaffolds |off |25822 |364333 |504055061 |94.6% |33151 |4188 | 74.9%
+Goy |GyC0881D |contam |contigs |off |55401 |111112 |456566152 |85.7% |9976 |13705 | 54.6%
+Goy |GyC0881D |contam |scaffolds |off |25665 |383347 |518735835 |97.3% |33953 |4182 | 79.1%
+Goy |GyC0881E |contam |contigs |off |52039 |118096 |484528224 |90.9% |11778 |12108 | 58.2%
+Goy |GyC0881E |contam |scaffolds |off |24249 |397418 |531155459 |99.7% |37754 |3908 | 80.2%
+Goy |GyC0881D |contam |contigs |auto |55459 |111115 |456736917 |85.7% |9969 |13728 | 54.5%
+Goy |GyC0881D |contam |scaffolds |auto |25707 |383347 |518852621 |97.4% |33957 |4183 | 79.1%
+Goy |GyC0881E |decontam |contigs |off |52425 |113391 |488426273 |91.6% |11751 |12369 | 60.4%
+Goy |GyC0881E |decontam |scaffolds |off |30872 |259628 |528159939 |99.1% |26350 |5731 | 78.7%
 
 BUSCO for scaffolds and contigs
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena" "SPAdes_GyC0881D_contam_R1R2_noIsolate" "contigs"
 ```
 
+#9/22/21
+BUSCO done
 
+GoyC0881E(Library #"2") contam scaffolds determined to be the best assembly
+Will use the data that produced this assembly for creating a decontaminated assembly
+
+```
+sbatch /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jwhal002" "Goy" "2" "decontam" "533000000" "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena"
+```
+
+#9/23/21
+BUSCO for decontam file:
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena" "SPAdes_GyC0881E_decontam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena" "SPAdes_GyC0881E_decontam_R1R2_noIsolate" "scaffolds"
+```
 
