@@ -368,7 +368,6 @@ mkdir probe_design
 ```
 Necessary scripts and the best assembly were copied (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly previously to run the decontaminated data)
 
-Example:
 ```sh
 cp SPAdes_TzC0402G_contam_R1R2_noIsolate/scaffolds.fasta probe_design
 cp ../scripts/WGprobe_annotation.sb probe_design
@@ -380,11 +379,13 @@ I renamed the assembly to reflect the species and parameters used. I copy and pa
 # list the busco dirs by entering
 ls -d busco_*
 # identify the busco dir of the best assembly, copy the treatments (starting with the library)
-# Since the busco dir for the best assembly for Tzo is `busco_scaffolds_results-SPAdes_TzC0402G_contam_R1R2_noIsolate`
+# Since the busco dir for the best assembly for Tzo is the scaffolds for 'SPAdes_TzC0402G_contam_R1R2_noIsolate`
 # I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_"
 cd probe_design
-mv scaffolds.fasta Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta
+mv ../SPAdes_TzC0402G_contam_R1R2_noIsolate/scaffolds.fasta Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta
 ```
+Added this line to the WGprobe_annotation script so I could run it from my home directory:
+export SINGULARITY_BIND=/home/e1garcia
 
 Execute the first script:
 ```sh
@@ -397,7 +398,7 @@ This will create:
 2. a gff file with predicted gene regions (augustus.gff), and
 3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
 
-Execute the second script. Example for Tzo:
+Execute the second script.
 ```sh
 #WGprobe_annotation.sb <assembly base name>
 sbatch WGprobe_bedcreation.sb "Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fasta"

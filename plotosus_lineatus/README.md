@@ -293,15 +293,68 @@ Summary of QUAST & BUSCO Results
 
 Species    |Library     |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
 ------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Pli  |allLibs    |contam       |contigs       |off       |126462  |1070312       |952740157       |41.11%       |8730       |34786       |36.9%
-Pli  |allLibs    |contam       |scaffolds       |off       |125095  |1070312       |960099166       |41.11%       |8957       |34066       |37.9%
-Pli  |allLibs    |decontam       |contigs       |off       |126080  |66692       |813845906       |41.15%       |7085       |37545       |30.9%
-Pli  |allLibs    |decontam       |scaffolds       |off       |125228  |94589       |840397753       |41.15%       |7471       |36480       |32.3%
-Pli  |PlC0351D    |contam       |contigs       |off       |129516  |55006       |865312588	|41.16%  |7437  |37993  |33.2%
-Pli  |PlC0351D    |contam       |scaffolds       |off       |128482   |59925	|880535043	|41.16%    |7686  |37111       |34.5%   
-Pli  |PlC0351E    |contam       |contigs       |off       |128940  |60088         |898481094     |41.14%   |7879   |36969       |34.5%   
-Pli  |PlC0351E    |contam       |scaffolds       |off       |127572  |60088        |911334858	|41.14%    |8145       |36065       |35.5%   
-Pli  |PlC0351F    |contam       |contigs       |off       |130752  |55486       |880614509	|41.14%   |7515       |38296       |32.8%   
-Pli  |PlC0351F    |contam       |scaffolds       |off       |129035  |55486       |900730518	|41.14%   |7886       |37100       |34.6%   
+Pli  |allLibs    |contam       |contigs       |off       |126462  |1070312       |952740157     |41.11%       |8730       |34786       |36.9%
+Pli  |allLibs    |contam       |scaffolds     |off       |125095  |1070312       |960099166     |41.11%       |8957       |34066       |37.9%
+Pli  |allLibs    |decontam     |contigs       |off       |126080  |66692         |813845906     |41.15%       |7085       |37545       |30.9%
+Pli  |allLibs    |decontam     |scaffolds     |off       |125228  |94589         |840397753     |41.15%       |7471       |36480       |32.3%
+Pli  |PlC0351D    |contam       |contigs      |off       |129516  |55006         |865312588	|41.16%       |7437       |37993       |33.2%
+Pli  |PlC0351D    |contam       |scaffolds    |off       |128482  |59925       	 |880535043	|41.16%       |7686       |37111       |34.5%   
+Pli  |PlC0351E    |contam       |contigs      |off       |128940  |60088         |898481094     |41.14%       |7879       |36969       |34.5%   
+Pli  |PlC0351E    |contam       |scaffolds    |off       |127572  |60088         |911334858	|41.14%       |8145       |36065       |35.5%   
+Pli  |PlC0351F    |contam       |contigs      |off       |130752  |55486         |880614509	|41.14%       |7515       |38296       |32.8%   
+Pli  |PlC0351F    |contam       |scaffolds    |off       |129035  |55486         |900730518	|41.14%       |7886       |37100       |34.6%   
 
+---
+The best library was allLibs contam scaffolds.
+#### Main assembly stats
+
+New record of Pli added to [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
+```sh
+# add your info in a new row
+nano ../best_ssl_assembly_per_sp.tsv
+```
+
+---
+### Probe Design
+
+In this section I identified contigs and regions within contigs to be used as candidate regions to develop the probes from.
+
+The following 4 files were created at the end of this step:
+1. *.fasta.masked: The masked fasta file
+2. *.fasta.out.gff: The gff file created from repeat masking (identifies regions of genome that were masked)
+3. *_augustus.gff: The gff file created from gene prediction (identifies putative coding regions)
+4. *_per10000_all.bed: The bed file with target regions (1 set of 2 probes per target region).
+
+#### 10 Identifying regions for probe development
+
+From the species directory, a new dir was made for the probe design
+```sh
+mkdir probe_design
+```
+Necessary scripts and the best assembly were copied (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly pr$
+
+```sh
+cp SPAdes_contam_R1R2_noIsolate/scaffolds.fasta probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+```
+
+I renamed the assembly to reflect the species and parameters used. I copy and pasted the parameter info from the busco directory
+```sh
+# list the busco dirs by entering
+ls -d busco_*
+# identify the busco dir of the best assembly, copy the treatments (starting with the library)
+# Since the busco dir for the best assembly for Pli is the scaffolds for all libraries
+# I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_"
+cd probe_design
+mv scaffolds.fasta Pli_scaffolds_allLibs_contam_R1R2_noIsolate.fasta
+```
+Added this line to the WGprobe_annotation script so I could run it from my home directory:
+export SINGULARITY_BIND=/home/e1garcia
+
+Execute the first script:
+```sh
+#WGprobe_annotation.sb <assembly name>
+sbatch WGprobe_annotation.sb "Pli_scaffolds_allLibs_contam_R1R2_noIsolate.fasta"
+```
 

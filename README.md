@@ -311,7 +311,7 @@ Fetch the genome properties for your species
 	* [genomesize.com](https://www.genomesize.com/)
 	* search the literature
 * Estimate properties with `jellyfish` and `genomescope`
-	* More details [heree](https://github.com/philippinespire/denovo_genome_assembly/blob/main/jellyfish/JellyfishGenomescope_procedure.md)
+	* More details [here](https://github.com/philippinespire/denovo_genome_assembly/blob/main/jellyfish/JellyfishGenomescope_procedure.md)
 
 **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runJellyfish.sbatch) using decontaminated files**
 ```sh
@@ -332,9 +332,9 @@ Complete the following table in your Species README. You can copy and paste this
 Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
 stat	|min	|max	|average	
 ------	|------	|------	|------	
-Heterozygosity	|1.10243%	|1.10633%	|1.10438%	
-Genome Haploid Length	|524,384,095 bp	|524,590,385 bp	|524,487,240 bp	
-Model Fit	|97.6162%	|98.7154%	|98.1658 %	
+Heterozygosity  |1.32565%       |1.34149%       |1.33357%
+Genome Haploid Length   |693,553,516 bp |695,211,827 bp |694,382,672 bp
+Model Fit       |97.6162%       |98.7154%       |98.1658 %
 ```
 
 
@@ -346,8 +346,8 @@ Note the genome size (or estimate) in your species README. You will use this inf
 Congrats! You are now ready to assembly the genome of your species!
 
 After de novo assembler comparisons,  we decided to move forward using SPADES (isolate and covcutoff flags off). 
-For the most part, we obtained better assemblies using single libraries but in few instances using all the libraries was better.
-In addition, we also noted that assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA. 
+For the most part, we obtained better assemblies using single libraries (a library consists of one forward *r1.fq.gz and reverse file *r2.fq.gz) but in few instances using all the libraries was better.
+In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmparray_fp2` dir)  produced better results for nDNA and decontaminated (i.e. files in the `fq_fp1_clmparray_fp2_fqscrn_repaired` dir) was better for mtDNA. 
 
 Thus, use the contaminated files to run one assembly for each of your libraries independently and then one combining all.
 1. You need to be in Turing for this step. SPAdes requires high memory nodes (only avail in Turing)
@@ -381,14 +381,19 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 Run 3 more assemblies with the contaminated data for the second, third, and all libraries together (i.e. replace "1", with "2", "3", and "all")
 
-After assessing the best library (you'll need to complete number 8 below), it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO") if BUSCO values are too low try
+Next, you need to determine the best assembly to use the decontaminated data. Go on and complete step 9 (below) and come back here after.
+
+**After step 9**
+
+Assuming you have completed step 9, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species.
+If BUSCO values are too low, it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO")
 
 Example:
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
-Finally, run one more assembly using the decontaminated data from the same library(or all together) that produced the best assembly (with or without the covcutoff flag) with the contaminated files. Sgr example:
+Finally, run one more assembly using the decontaminated data from the same library(or all together) that produced the best assembly (with or without the covcutoff flag). Sgr example:
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "3" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
@@ -440,6 +445,25 @@ Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090   
 
 ---
 
+
+**Determine the best assembly**
+
+We assess quality across multiple metrics since we don't use a golden rule/metric for determing the best assembly. 
+Often, it is clear that single libray is relatively better than the others as it would have better results across metrics. Yet, sometimes this is not soo clear as different assemblies might be better in different metrics. Use the following table to help you decide:
+
+Importance    |Metric    |Direction    |Description
+------  |------  |------ |------ 
+1st  |BUSCO  | Bigger is better  | % of expected genes observed in your assembly
+2nd  |N50  |Bigger is better  | Lenght of the smaller contig from the set of contigs needed to reach half of your assembly
+3rd  |Genome size completeness  |Bigger is better  |Lenght of assembly divided by estimated genome lenght
+4th  |L50  | Smaller is better  | Number of contigs needed to reach half of your assembly
+5th  |Largest contig  |Bigger is better  | Lenght of largest contig
+ 
+If you are still undecided on which is the best assembly, post the best candidates on the species slack channel and ask for opinions
+
+Now, go back to step 8 and run decontaminated data for library that produced the best assembly
+
+
 #### Update the main assembly stats table with your species
 
 Add a new record for your species/assembly to the [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
@@ -453,9 +477,9 @@ nano ../best_ssl_assembly_per_sp.tsv
 
 In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
 
-You will create the followin 4 files:
+Among other outpue, you will create the following 4 files:
 1. *.fasta.masked: The masked fasta file 
-2. *.fasta.masked.gff: The gff file created from repeat masking (identifies regions of genome that were masked)
+2. *.fasta.out.gff: The gff file created from repeat masking (identifies regions of genome that were masked)
 3. *_augustus.gff: The gff file created from gene prediction (identifies putative coding regions)
 4. *_per10000_all.bed: The bed file with target regions (1 set of 2 probes per target region).
 
@@ -464,29 +488,30 @@ to best fit this repo
 
 #### 10 Identifying regions for probe development 
 
-From your species directory, make a new dir the the probe design
+From your species directory, make a new dir for the probe design
 ```sh
 mkdir probe_design
 ```
 
-Copy the best assembly (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly previous to run the decontaminated data) as well as necessary scripts
+Copy necessary scripts and the best assembly (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly previously to run the decontaminated data) 
 
 Example:
 ```sh
-cp SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta probe_design
 cp ../scripts/WGprobe_annotation.sb probe_design
 cp ../scripts/WGprobe_bedcreation.sb probe_design
+cp SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta probe_design
 ```
 
-Rename the assembly to reflect the species and parameters used. You can just copy and paste from the `busco_scaffolds_results-SPAdes_*` dir
+Rename the assembly to reflect the species and parameters used. You can just copy and paste the parameter info from the busco directory
 ```sh
 # list the busco dirs
 ls -d busco_*
-# identify the busco dir of best assembly, copy the treatments (starting with the library)
+# identify the busco dir of the best assembly, copy the treatments (starting with the library)
 # Example,the busco dir for the best assembly for Sgr is `busco_scaffolds_results-SPAdes_SgC0072C_contam_R1R2_noIsolate`
 # I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_" 
 cd probe_design
 mv scaffolds.fasta Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta
+```
 
 Execute the first script. Example for Sgr:
 ```sh
@@ -495,19 +520,43 @@ sbatch WGprobe_annotation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta
 ```
 
 This will create: 
-1. a repeat-masked fasta and gff file (.fasta.masked & .fasta.masked.gff)
+1. a repeat-masked fasta and gff file (.fasta.masked & .fasta.out.gff)
 2. a gff file with predicted gene regions (augustus.gff), and 
 3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
+
+I have modified the bed script to set the upper limit automatically. The longest scaffold and upper limit will  printed in the out file after execution.
+
 
 Execute the second script. Example for Sgr:
 ```sh
 #WGprobe_annotation.sb <assembly base name> 
-sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
+sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta"
 ```
 
 This will create a .bed file that will be sent for probe creation.
  The bed file identifies 5,000 bp regions (spaced every 10,000 bp apart) in scaffolds > 10,000 bp long.
 
+
+**Check Upper Limit**
+
+Open your out file and check that the upper limit was set correctly. Record the longest contig, uppper limit used in loop, and the number of identified regions and scaffolds  in your species README. 
+
+The upper limit should be XX7500 (just under longest scaffold length). Ex: if longest scaffold is 88,888, then the upper limit should be 87,500; if longest scaffold is 87,499, then the upper limit should be 77,500.  
+
+Sgr example:
+```sh
+cat BEDprobes-415039.out
+
+
+The longest scaffold is 105644
+The uppper limit used in loop is 97500
+A total of 13063 regions have been identified from 10259 scaffolds
+```
+
+Move out files into your species logs dir
+```sh
+mv *out ../logs
+```
 
 #### 11 Closest relatives with available genomes
 
@@ -547,7 +596,7 @@ https://www.ncbi.nlm.nih.gov/genome/7889
 Share the following files with Arbor Bio to aid in probe creation:
 
 1. The repeat-masked fasta file (.fasta.masked)
-2. The gff file with repeat-masked regions (.masked.gff)
+2. The gff file with repeat-masked regions (.fasta.out.gff)
 3. The gff file with predicted gene regions (.augustus.gff)
 4. The bed file (.bed)
 5. The text file with links to available genomes from the 5 most closely-related species.

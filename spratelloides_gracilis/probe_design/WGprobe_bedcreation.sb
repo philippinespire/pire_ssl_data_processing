@@ -18,9 +18,21 @@ awk '{ if($2 >=10000) {print}}' *.fasta.masked.fai | awk '{print $1, 2500, 7500}
 #pull out every 10,000 bp sections
 #97500 should be replaced by X7500 (just under longest scaffold length)
 #Ex: if longest scaffold in fasta is 88,888, then the second number in the for loop would be 87,500
-for i in {17500..97500..10000}
+
+if [[ $(head -n1 *fai | cut -f2 | rev | cut -c 3,4 | rev) -ge 75 ]]
+then
+	TENSK=$(head -n1 *fai | cut -f2 | rev | cut -c 5- | rev)
+else
+	let TENSK=$(head -n1 *fai | cut -f2 | rev | cut -c 5- | rev)-1
+fi
+
+UPPERLIMIT=${TENSK}7500
+
+echo The uppper limit used in loop is $UPPERLIMIT
+
+for i in $(seq 17500 10000 $UPPERLIMIT)
 do
- awk -v num="$i" '{ if($2 >=num) {print}}' *.fasta.masked.fai | awk -v num="$i" '{print $1, num-5000, num}' | sed -e 's/ /\t/g' > temp_$BASENAME.bed
+ awk -v num="$i" '{ if($2 >=num) {print}}' *.fasta.masked.fai | awk -v num="$i" '{print $1, num-5000, num}' | sed -e 's/ /\t/g' > temp_$i.bed
 done
 
 #cat all temp files together
