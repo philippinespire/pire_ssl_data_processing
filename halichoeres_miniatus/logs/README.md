@@ -9,6 +9,8 @@ I cloned the repository, copied the data and followed all steps up to line 124 o
 
 #Preprocessing (steps 1-6)
 
+### 1
+
 The following commands were executed on the command line:
 
 ```sh
@@ -86,6 +88,8 @@ Imodified the script as follows:
 #SBATCH --mail-type=ALL
 ```
 
+### 2
+
 I ran the following commands:
 ```sh
 cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/shotgun_raw_fq
@@ -95,6 +99,9 @@ sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatc
 The job ran.
 The job completed.
 I pushed the changes to the repository to GitHub.  I opened the 1st_fastp_report, however, I am not trained to interpret the data. The data displayed by the report and the data requested do not coincide literraly.  I updated the main README.MD as per the instructions.
+
+### 3
+
 I read the instructions to sbatch runCLUMPIFY_r1r2_array.bash
 Imodified the script as follows:
 ```sh
@@ -154,6 +161,8 @@ Clumpify Successfully worked on all samples.
 I moved to *out files to ./logs
 I pushed the changes to the repository to GitHub.
 
+### 4
+
 I read the instructions to sbatch runFASTP_2_ssl.sbatch
 I modified the script as follows:
 ```sh
@@ -174,6 +183,9 @@ sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch f
 
 The job ran.
 The job completed.
+
+### 5
+
 I ran the following commands:
 ```sh
 cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
@@ -236,6 +248,8 @@ module load multiqc
 The report worked.
 I pushed the changes to the repository to GitHub.
 
+### 6
+
 I read the instructions to sbatch runREPAIR.sbatch
 I modified the script as follows:
 ```sh
@@ -287,6 +301,7 @@ The job completed.
 I ran the following commands:
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+```
 
 The job ran.
 The job completed.
@@ -338,3 +353,134 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPaDEShim
 The job ran.
 The job completed.
 I pushed the changes to the repository to GitHub.
+
+***
+
+#Preprocessing (steps 1-6)
+
+Since one library was incomplete, it was not processed.  I am returning to step on to process the library for reads: HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_1.fq.gz
+HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_2.fq.gz
+
+### 1
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/
+mkdir hmi
+cd hmi
+mkdir logs
+mkdir shotgun_raw_fq
+cd shotgun_raw_fq
+cp /home/e1garcia/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_1.fq.gz .
+cp /home/e1garcia/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_2.fq.gz .
+cd ../
+sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/shotgun_raw_fq"
+```
+
+The job ran.
+The job completed.
+
+### 2
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/shotgun_raw_fq
+sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
+```
+
+The job ran.
+The job completed.
+
+### 3
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi
+salloc
+bash /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmparray /scratch/ilope002 3
+enable_lmod
+module load container_env mapdamage2
+crun R < \/home/ilope002/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+```
+
+The job ran.
+The job completed.
+Clumpify worked on the sample.
+
+### 4
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi
+sbatch /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray fq_fp1_clmparray_fp2
+```
+
+The job ran.
+The job completed.
+
+### 5
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+salloc
+bash /home/ilope002/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 4
+```
+
+The job ran.
+The job completed.
+I verified 5 files for the 4 files analyzed as per the instructions.
+I ran the following commands:
+```sh
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+```
+
+Nothing was returned.  All files ran correctly.  I moved all out files to logs/
+I ran the following commands:
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+```
+
+The script failed.
+I reviewed the original script which has typographical errors which will cause it to crash.  I edited the scritp as follows:
+```sh
+#!/bin/bash -l
+
+#SBATCH --job-name=mqc
+#SBATCH -o mqc-%j.out
+#SBATCH --time=00:00:00
+#SBATCH --cpus-per-task=40
+#SBATCH --mail-user=ilopez@odu.edu
+#SBATCH --mail-type=ALL
+
+enable_lmod
+module load container_env pire_genome_assembly/2021.07.01
+module load multiqc
+
+DIR=$1
+REPORTNAME=$2
+
+srun crun multiqc $DIR -n $DIR/$REPORTNAME
+```
+
+I ran the following commands:
+```sh
+sbatch /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
+```
+
+The job ran.
+The job completed.
+
+### 6
+
+I ran the following commands:
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2_fqscrn /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2_fqscrn_repaired 40
+```
+
+The job ran.
+The job completed.
+
+I ran the following commands:
+```sh
+

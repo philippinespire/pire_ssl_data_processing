@@ -10,11 +10,15 @@ All work is done for the [Philippines PIRE Project](https://sites.wp.odu.edu/PIR
 See documentation for the Old Dominion University [High Performance Computing](https://www.odu.edu/facultystaff/research/resources/computing/high-performance-computing/user-documentation).
 
 A complete log of all command line work can be found in the [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/logs) of this repository's subdirectory logs.
+
+One library was incomplete.  The missing files were retireved and steps 1-8 were performed for this library separately.  Reports are attached at each step.
 ***
 
 ## Step 1. Fastqc
 
-Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/Multi_FASTQC/multiqc_report_fq.gz.html) (copy and paste into a text editor locally) Save and open in your browser to view
+Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/Multi_FASTQC/multiqc_report_fq.gz.html)
+
+Athe second [MultiQC report] ()
 
 Potential issues:
 * % duplication - 
@@ -31,6 +35,9 @@ Potential issues:
 ## Step 2.  1st fastp
 
 Used [runFASTP_1st_trim.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch) to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1/1st_fastp_report.html)
+
+The second [fastp report] ()
+
 
 Potential issues:
 * % duplication -
@@ -51,7 +58,15 @@ Ran [runCLUMPIFY_r1r2_array.bash](https://github.com/philippinespire/pire_fq_gz_
 
 Checked the output with `/home/ilope002/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R`
 
-Clumpify worked succesfully.
+Clumpify worked succesfully on all libraries.
+
+## Step 4. FASTP2
+
+Ran [FASTP]((https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2/2nd_fastp_report.html)
+
+Second [report]()
+
+Please review the reports directly using the links above.  I will not describe data I cannot accurately interpret.
 
 ## Step 5. Run fastq_screen
 
@@ -78,6 +93,8 @@ The script was corrected and the MultiQC report was generated.
 Highlights from [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/fastqc_screen_report.html):
 * about 96% of reads were retained
 
+The second report is [here]()
+
 ## Step 6. Repair fastq_screen paired end files
 
 Executed `runREPAIR.sbatch`
@@ -85,6 +102,8 @@ Executed `runREPAIR.sbatch`
 ### Calculated the percent of reads lost in each step
 
 Executed [read_calculator_ssl.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_ssl.sh) to generate the [percent read loss](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readLoss_table.tsv) and [percent reads remaining](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readsRemaining_table.tsv) tables
+
+The second reports are here [percent read loss]() and here [percent reads remaining] ().
 
 # Assembly section
 

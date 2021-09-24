@@ -1,0 +1,92 @@
+{
+    "report_data_sources": {
+        "FastQ Screen": {
+            "all_sections": {
+                "HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_r1_screen": "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2_fqscrn/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_r1_screen.txt",
+                "HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_r2_screen": "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2_fqscrn/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_r2_screen.txt"
+            }
+        }
+    },
+    "report_general_stats_data": [],
+    "report_general_stats_headers": [],
+    "report_multiqc_command": "/opt/conda/bin/multiqc /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2_fqscrn -n /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report",
+    "report_plot_data": {},
+    "report_saved_raw_data": {
+        "multiqc_fastq_screen": {
+            "HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_r1_screen": {
+                "total_reads": 113208100,
+                "Human counts": 2505660.0,
+                "Human percentage": 2.2199999999999998,
+                "Ecoli counts": 263.0,
+                "Ecoli percentage": 0.0,
+                "PhiX counts": 0.0,
+                "PhiX percentage": 0.0,
+                "Contamnts_Adaptrs counts": 8.0,
+                "Contamnts_Adaptrs percentage": 0.0,
+                "Vectors counts": 682323.0,
+                "Vectors percentage": 0.61,
+                "Bacteria_24k counts": 1574323.0,
+                "Bacteria_24k percentage": 1.38,
+                "Protists_1k counts": 3273253.0,
+                "Protists_1k percentage": 2.9000000000000004,
+                "Viruses counts": 1555305.0,
+                "Viruses percentage": 1.37,
+                "Fungi_RefSeq_release counts": 2306458.0,
+                "Fungi_RefSeq_release percentage": 2.0300000000000002,
+                "Coral counts": 1556219.0,
+                "Coral percentage": 1.37,
+                "Bird counts": 1905855.0,
+                "Bird percentage": 1.68,
+                "Plant counts": 1664369.0,
+                "Plant percentage": 1.46,
+                "No hits counts": 109506195,
+                "No hits percentage": 96.73
+            },
+            "HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_r2_screen": {
+                "total_reads": 113208100,
+                "Human counts": 2308379.0,
+                "Human percentage": 2.04,
+                "Ecoli counts": 267.0,
+                "Ecoli percentage": 0.0,
+                "PhiX counts": 0.0,
+                "PhiX percentage": 0.0,
+                "Contamnts_Adaptrs counts": 1.0,
+                "Contamnts_Adaptrs percentage": 0.0,
+                "Vectors counts": 555753.0,
+                "Vectors percentage": 0.5,
+                "Bacteria_24k counts": 1405923.0,
+                "Bacteria_24k percentage": 1.2400000000000002,
+                "Protists_1k counts": 3070779.0,
+                "Protists_1k percentage": 2.71,
+                "Viruses counts": 1392172.0,
+                "Viruses percentage": 1.23,
+                "Fungi_RefSeq_release counts": 2118353.0,
+                "Fungi_RefSeq_release percentage": 1.8699999999999999,
+                "Coral counts": 1387215.0,
+                "Coral percentage": 1.23,
+                "Bird counts": 1723713.0,
+                "Bird percentage": 1.52,
+                "Plant counts": 1498827.0,
+                "Plant percentage": 1.3199999999999998,
+                "No hits counts": 109732611,
+                "No hits percentage": 96.93
+            }
+        }
+    },
+    "config_analysis_dir_abs": [
+        "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2_fqscrn"
+    ],
+    "config_analysis_dir": [
+        "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2_fqscrn"
+    ],
+    "config_creation_date": "2021-09-22, 12:18",
+    "config_git_hash": null,
+    "config_intro_text": null,
+    "config_report_comment": null,
+    "config_report_header_info": null,
+    "config_script_path": "/opt/conda/lib/python3.7/site-packages/multiqc/utils",
+    "config_short_version": "1.9",
+    "config_subtitle": null,
+    "config_title": null,
+    "config_version": "1.9"
+}
