@@ -311,6 +311,8 @@ I pushed the changes to the repository to GitHub.
 
 #Assembly and Evaluation (Steps 7-11)
 
+### 7
+
 I ran the following commands:
 ```sh
 cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
@@ -336,9 +338,9 @@ Average values are not listed in the report. I noted that in other assemblies in
 (min+max)/2 = average = true average for the stat
 Average values are being fed into the pipeline downstream.
 While averaging probabilities is unsound. I do not know that this not correct with respect to the genome haploid length.  Since the values are weighted a caluclation to arrive at the true average of these stat values must consider the weight used to arrive at min and max.  It is difficult to arrive at these necessary values just looking at the algorithm used to calculate the min and max.
-However min and max are weighted values arrived at by a formula shown on the report.  These weighted values are based on probabilities and very likely calculated from a t score.  Two t values or calculated probabilities cannot be averaged to determine a "mid-point" of equal probability.  As an example, imagine we are flipping a deck of alphabet cards.  We calculated the t value of the probability of the next flip will be the letter "C" or the letter "W".  It is unsound to gamble that the next letter to come up will be A, Z or M.  Another example, a student gets a 66 on  Please see the documentation for [GenomeScope](https://github.com/schatzlab/genomescope)
+However min and max are weighted values arrived at by a formula shown on the report.  These weighted values are based on probabilities and very likely calculated from a t score.  Two t values or calculated probabilities cannot be averaged to determine a "mid-point" of equal probability.  As an example, imagine we are flipping a deck of alphabet cards.  We calculated the t value of the probability of the next flip will be the letter "C" or the letter "W".  It is unsound to gamble that the next letter to come up will be A, Z or M.  Another example, in a curriculum mandatory class, a student gets a 66 on a test and a 74 on a quiz.  The student says "(66=74)/2 = 70. Hooray, my average is 70.  I wont have to repeat the class!"  The student could be correct if the assumption that the values were weighted equally is correct.  Please see the documentation for [GenomeScope](https://github.com/schatzlab/genomescope)
 
-After consultation with Dr. Garcia, Dr. Reid, Dr. Bird and Dr. Pinsky, they were in consensus that this getting the mid point for min and max without rounding would provide a valid result.  I calculated the value to be: 603448621
+After consultation with Dr. Garcia, Dr. Reid, Dr. Bird and Dr. Pinsky, they were in consensus that this getting the mid point for min and max without rounding would provide a valid result in the rest of the pipeline.  I calculated the value to be: 603448621
 
 The instructions for Spades are not clear.  The script for Spades must be executed on one library at a time.  A library consists of a file of forward reads and a file with the complamentary reverse reads. These files have similar names and are often differentiated in the naming scheme, for example SOME_FILE_NAME_r1.* SOME_FILE_NAME_r2.*.  For the purpose of the script created, the argument for the library input requires the entry of a single digit, such as 1, or 2, depending on the number of libraries present, or the text all.  The understanding is that the script created was written at the convenience of the author with the intent of creating a smooth easy to follow pipeline.
 
@@ -483,4 +485,59 @@ The job completed.
 
 I ran the following commands:
 ```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi"
+```
+
+The job ran.
+The job completed.
+
+#Assembly and Evaluation (Steps 7-11)
+
+### 7
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Hmi" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
+```
+
+The job ran.
+The job completed.
+
+I created a report on [Genomescope v1.0](http://qb.cshl.edu/genomescope/): [Report](http://genomescope.org/analysis.php?code=7VuM61PauIP6FBZxHoPz).
+
+
+Genome stats for single library
+
+stat|min|max|average
+------|------|------|------
+Heterozygosity |1.22946% |1.23251% |
+Genome Haploid Length |602,263,751 bp |602,564,366 bp |
+Model Fit |98.2985% |99.4717% |
+
+Upon analizing this data I felt the libraries should be combined and this step repeated on all.  I renamed files as appropriate and merged the hmi dir into the halichores_miniatus/ dir.
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Hmi" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
+```
+
+The job ran.
+The job completed.
+
+I created a report on [Genomescope v1.0](http://qb.cshl.edu/genomescope/): [Report](http://genomescope.org/analysis.php?code=RV3Qm2ESrB5kIKmxZVvU).
+
+
+Genome stats for all libraries
+
+stat|min|max|average
+------|------|------|------
+Heterozygosity |1.1754% |1.19961%  |
+Genome Haploid Length |592,484,550 bp |594,056,703 bp |593,270,627 bp
+Model Fit |95.4277%  |96.3268% |
+
+I will use 593000000 as the genome size estimate for all libraries and run Spades again.
+
+I pushed all changes to GitHub.
 

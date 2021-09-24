@@ -111,7 +111,7 @@ The second reports are here [percent read loss]() and here [percent reads remain
 
 The genome size of *Halichoeres miniatus* is not in the [genomesize.com](https://www.genomesize.com/) database.
 
-This jellyfish kmer-frequency [hitogram file](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/jellyfish_out/Hmi_all_reads.histo) was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://genomescope.org/analysis.php?code=KhfDGA5uYzhqhMDcvWdd). Highlights:
+This jellyfish kmer-frequency [hitogram file](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/jellyfish_out/Hmi_all_reads.histo) was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://genomescope.org/analysis.php?code=RV3Qm2ESrB5kIKmxZVvU). Highlights:
 
 Genome stats for *Halichoeres miniatus* from Jellyfish/GenomeScope v1.0 k=21
 
