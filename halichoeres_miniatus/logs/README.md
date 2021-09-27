@@ -358,7 +358,7 @@ I pushed the changes to the repository to GitHub.
 
 ***
 
-#Preprocessing (steps 1-6)
+# Preprocessing (steps 1-6)
 
 Since one library was incomplete, it was not processed.  I am returning to step on to process the library for reads: HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_1.fq.gz
 HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_2.fq.gz
@@ -540,4 +540,50 @@ Model Fit |95.4277%  |96.3268% |
 I will use 593000000 as the genome size estimate for all libraries and run Spades again.
 
 I pushed all changes to GitHub.
+
+### 8
+
+I read the instructions for step 8.  I logged in to Turing.
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "1" "contam" "593000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "2" "contam" "593000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "3" "contam" "593000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "all" "contam" "593000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+```
+
+The jobs failed.
+The error output was as follows:
+```sh
+ls: cannot access /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/fq_fp1_clmparray_fp2/*1.fq.gz: No such file or directory
+mkdir: cannot create directory `/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/SPAdes__contam_R1R2_noIsolate': No such file or directory
+mkdir: cannot create directory `/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/SPAdes__contam_R1R2_noIsolate/quast_contigs_report': No such file or directory
+mkdir: cannot create directory `/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/SPAdes__contam_R1R2_noIsolate/quast_scaffolds_report': No such file or directory
+ls: cannot access /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/fq_fp1_clmparray_fp2/*1.fq.gz: No such file or directory
+ls: cannot access /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/fq_fp1_clmparray_fp2/*2.fq.gz: No such file or directory
+SPAdes genome assembler v3.15.2
+```
+
+The script is looking for *1.fq.gz files in the dir /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/fq_fp1_clmparray_fp2/.  Files with these numbered extensions were not created by previous scripts.  I noticed I made a typo in the dir name.
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "1" "contam" "593000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "2" "contam" "593000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "3" "contam" "593000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "all" "contam" "593000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+```
+
+The jobs ran.
+The jobs completed.
+I pushed changes to Github.
+
+### 9
+
+Species|Library|DataType|SCAFIG|covcutoff|No. of contigs|Largest contig|Total lenght|% Genome size completeness|N50|L50|BUSCO single copy
+------|------|------|------|------|------|------|------|------|------|------|------ 
+
 
