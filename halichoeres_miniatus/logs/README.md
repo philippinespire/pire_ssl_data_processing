@@ -583,7 +583,62 @@ I pushed changes to Github.
 
 ### 9
 
+I read the instructions for step 9.
+I ran the following commads:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus" "SPAdes_decontam_R1R2_noIsolate" "contigs"
+cat quast-reports/quast-report_scaffolds_Hmi_spades_contam_R1R2_21-99_isolate-off.tsv | column -ts $'\t' | less -S
+```
+
+The job failed.
+The cat command returned illegal variable name.
+The file name is incorrect. I forgot to enter the bash command, however after entering bash and correcting the file name, no output was generated.  For reasons I don't understand, bash ls will return the files in the dir when searching for quast-report_scaffolds*, but it will not find the files for the pipes below.
+```sh
+cat quast-reports/quast-report_scaffolds_Hmi_spades_*_contam_*.tsv | column -ts $'\t' | less -S
+```
+I opened the files one by one, but the information on the quast reports does not coincide with the information requested for this data table.  Some of the data for this table appears to be retrieved from busco reports.
+
 Species|Library|DataType|SCAFIG|covcutoff|No. of contigs|Largest contig|Total lenght|% Genome size completeness|N50|L50|BUSCO single copy
-------|------|------|------|------|------|------|------|------|------|------|------ 
+------|------|------|------|------|------|------|------|------|------|------|-----
+
+It would be helpful to describe which data is requested from which part of which report.
+I left this task for now.
+
+I ran the following commads:
+```sh
+cat quast-reports/quast-report_scaffolds_Hmi_spades_*_contam_*.tsv > /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/quasttable.tsv
+The pipeline requires clarification.  The scripts will not work from the main species dir.  QUAST reports are three lines max.  The data table is useless because it clutters all the data into one hard to read file.  All the lines are unidentifed so it is not possible to know which library is referenced.
+
+I ran the following commands:
+```sh
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh .
+```
+
+The script inputs the second argument as SPAdesDIR.  The directories created are not named as in the example.  The script will not loop through the directories, so it must be run on each directory created by spades.  I modified the example script with my directory names.  My directory names are as follows:
+SPAdes_HmC0451A_contam_R1R2_noIsolate
+SPAdes_HmC0451B_contam_R1R2_noIsolate
+SPAdes_HmC0451C_contam_R1R2_noIsolate
+SPAdes_allLibs_contam_R1R2_noIsolate
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus" "SPAdes_HmC0451A_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus" "SPAdes_HmC0451B_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus" "SPAdes_HmC0451C_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus" "SPAdes_HmC0451A_contam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus" "SPAdes_HmC0451B_contam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus" "SPAdes_HmC0451C_contam_R1R2_noIsolate" "scaffolds"
+```
+
+The jobs ran.
+I pushed changes to GitHub.
+
+
+
+
+
+
 
 
