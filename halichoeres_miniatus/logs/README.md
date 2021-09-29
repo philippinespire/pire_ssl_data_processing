@@ -634,6 +634,17 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 
 The jobs ran.
 I pushed changes to GitHub.
+The jobs completed.
+All libraries completed on Turing.
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus" "SPAdes_allLibs_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus" "SPAdes_allLibs_contam_R1R2_noIsolate" "scaffolds"
+```
+
+The jobs ran.
+I pushed changes to GitHub.
 
 
 
