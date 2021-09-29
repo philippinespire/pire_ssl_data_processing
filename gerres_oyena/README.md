@@ -1,3 +1,5 @@
+######**_Gerres oyena_Shotgun Data Processing Log - SSL Data**
+
 TAMUCC-ODU
 scp /work/hobi/GCL/20210829_PIRE-Goy-shotgun/* e1garcia@turing.hpc.odu.edu://RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq
 
@@ -186,4 +188,42 @@ BUSCO for decontam file:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena" "SPAdes_GyC0881E_decontam_R1R2_noIsolate" "contigs"
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena" "SPAdes_GyC0881E_decontam_R1R2_noIsolate" "scaffolds"
 ```
+
+#9/24/21
+###Probe Design
+
+
+```
+mkdir probe_design
+cp SPAdes_GyC0881E_contam_R1R2_noIsolate/scaffolds.fasta probe_design/
+mv scaffolds.fasta Goy_scaffolds_GyC0881E_contam_R1R2_noIsolate.fasta
+sbatch WGprobe_annotation.sb "Goy_scaffolds_GyC0881E_contam_R1R2_noIsolate.fasta"
+```
+
+
+#9/26/21
+Check upper limit:
+The longest scaffold is 397418
+The uppper limit used in loop is 387500
+A total of 43671 regions have been identified from 14263 scaffolds
+
+
+#9/27/21
+Betancur 2017
+Series: Eupercaria
+Order: Gerreiformes (Incertae sedis in Eupercaria)
+No Gerreiformes, Haemulidae, Uranoscopiformes
+Lutjanidae: 1
+Sparidae: 4
+
+1. Lutjanus erythropterus
+https://www.ncbi.nlm.nih.gov/genome/?term=lutnajus+erythropterus
+2. Diplodus sargus
+https://www.ncbi.nlm.nih.gov/genome/92100
+3. Spondyliosoma cantharus
+https://www.ncbi.nlm.nih.gov/genome/69439
+4. Sparus aurata
+https://www.ncbi.nlm.nih.gov/genome/11609
+5. Acanthopagrus latus
+https://www.ncbi.nlm.nih.gov/genome/8551
 
