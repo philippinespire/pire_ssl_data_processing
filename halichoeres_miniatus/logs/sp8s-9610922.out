@@ -2612,3 +2612,230 @@ mimalloc: warning: unable to allocate from region: size 4194304
   8:27:27.932   118G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  70)   Marking overlaps
   8:27:28.176   118G / 174G  INFO   OverlapRemover           (overlap_remover.hpp       : 116)   Marking start/end overlaps
   9:10:35.719   118G / 174G  INFO   OverlapRemover           (overlap_remover.hpp       : 119)   Marking remaining overlaps
+  9:54:33.530   118G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  73)   Splitting paths
+  9:54:42.194   124G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  78)   Deduplicating paths
+  9:55:51.495   118G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  80)   Overlaps removed
+  9:55:56.255   120G / 174G  INFO    General                 (launcher.cpp              : 273)   Paths finalized
+  9:55:56.450   120G / 174G  INFO    General                 (launcher.cpp              : 454)   Closing gaps in paths
+  9:56:02.844   125G / 174G  INFO    General                 (launcher.cpp              : 484)   Gap closing completed
+  9:56:04.064   125G / 174G  INFO    General                 (launcher.cpp              : 302)   Traversing tandem repeats
+  9:56:15.682   125G / 174G  INFO    General                 (launcher.cpp              : 312)   Traversed 48983 loops
+  9:56:15.936   125G / 174G  INFO    General                 (launcher.cpp              : 250)   Finalizing paths
+  9:56:16.133   125G / 174G  INFO    General                 (launcher.cpp              : 252)   Deduplicating paths
+  9:56:25.069   125G / 174G  INFO    General                 (launcher.cpp              : 256)   Paths deduplicated
+  9:56:25.303   125G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  60)   Removing overlaps
+  9:56:25.493   125G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  63)   Sorting paths
+  9:56:26.890   125G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  70)   Marking overlaps
+  9:56:27.090   125G / 174G  INFO   OverlapRemover           (overlap_remover.hpp       : 116)   Marking start/end overlaps
+  9:56:45.375   125G / 174G  INFO   OverlapRemover           (overlap_remover.hpp       : 119)   Marking remaining overlaps
+  9:57:04.326   125G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  73)   Splitting paths
+  9:57:05.138   125G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  78)   Deduplicating paths
+  9:57:07.119   125G / 174G  INFO   PEResolver               (pe_resolver.cpp           :  80)   Overlaps removed
+  9:57:09.648   125G / 174G  INFO    General                 (launcher.cpp              : 273)   Paths finalized
+  9:57:09.850   125G / 174G  INFO    General                 (launcher.cpp              : 664)   ExSPAnder repeat resolving tool finished
+  9:57:25.735   107G / 174G  INFO   StageManager             (stage.cpp                 : 185)   STAGE == Contig Output (id: contig_output)
+  9:57:26.076   107G / 174G  INFO    General                 (contig_output.hpp         :  16)   Outputting contigs to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/before_rr.fasta
+  9:57:46.636   107G / 174G  INFO    General                 (contig_output_stage.cpp   : 151)   Writing GFA graph to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/assembly_graph_with_scaffolds.gfa
+  9:57:55.524   107G / 174G  INFO    General                 (contig_output_stage.cpp   : 165)   Outputting FastG graph to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/assembly_graph.fastg
+  9:58:47.937   107G / 174G  INFO    General                 (contig_output_stage.cpp   : 196)   Breaking scaffolds
+  9:59:05.517   113G / 174G  INFO    General                 (contig_output_stage.cpp   :  98)   Outputting contigs to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/final_contigs.fasta
+  9:59:18.713   113G / 174G  INFO    General                 (contig_output_stage.cpp   : 104)   Outputting FastG paths to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/final_contigs.paths
+  9:59:32.902   108G / 174G  INFO    General                 (contig_output_stage.cpp   :  98)   Outputting contigs to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/scaffolds.fasta
+  9:59:45.781   108G / 174G  INFO    General                 (contig_output_stage.cpp   : 104)   Outputting FastG paths to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/scaffolds.paths
+  9:59:49.131   108G / 174G  INFO    General                 (contig_output_stage.cpp   : 111)   Populating GFA with scaffold paths
+  9:59:51.885   107G / 174G  INFO    General                 (pipeline.cpp              : 287)   SPAdes finished
+ 10:03:04.576     1M / 174G  INFO    General                 (main.cpp                  : 136)   Assembling time: 10 hours 3 minutes 4 seconds
+
+===== K99 finished. 
+
+
+===== Copy files started. 
+
+
+== Running: /opt/conda/bin/python /opt/conda/share/spades/spades_pipeline/scripts/copy_files.py /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/before_rr.fasta /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/before_rr.fasta /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/assembly_graph_after_simplification.gfa /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/assembly_graph_after_simplification.gfa /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/final_contigs.fasta /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.fasta /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/first_pe_contigs.fasta /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/first_pe_contigs.fasta /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/strain_graph.gfa /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/strain_graph.gfa /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/scaffolds.fasta /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/scaffolds.paths /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.paths /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/assembly_graph_with_scaffolds.gfa /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/assembly_graph_with_scaffolds.gfa /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/assembly_graph.fastg /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/assembly_graph.fastg /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/K99/final_contigs.paths /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.paths
+
+
+===== Copy files finished. 
+
+
+===== Assembling finished. 
+
+
+===== Breaking scaffolds started. 
+
+
+== Running: /opt/conda/bin/python /opt/conda/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py --result_scaffolds_filename /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta --misc_dir /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/misc --threshold_for_breaking_scaffolds 3
+
+
+===== Breaking scaffolds finished. 
+
+
+===== Terminate started. 
+
+
+===== Terminate finished. 
+
+ * Corrected reads are in /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/corrected/
+ * Assembled contigs are in /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.fasta
+ * Assembled scaffolds are in /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta
+ * Paths in the assembly graph corresponding to the contigs are in /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.paths
+ * Paths in the assembly graph corresponding to the scaffolds are in /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.paths
+ * Assembly graph is in /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/assembly_graph.fastg
+ * Assembly graph in GFA format is in /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/assembly_graph_with_scaffolds.gfa
+
+======= SPAdes pipeline finished.
+
+SPAdes log can be found here: /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/spades.log
+
+Thank you for using SPAdes!
+
+Running QUAST Now
+
+/opt/conda/bin/quast.py /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.fasta -o /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report --est-ref-size 593000000 -s --eukaryote --large
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-4.4.262-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two (linux_64)
+  Python version: 3.7.9
+  CPUs number: 32
+
+Started: 2021-09-28 16:37:18
+
+Logging to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/quast.log
+NOTICE: Maximum number of threads is set to 8 (use --threads option to set it manually)
+
+CWD: /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+Main parameters: 
+  MODE: large, threads: 8, eukaryotic: true, split scaffolds: true, minimum contig length: 3000, \
+  minimum alignment length: 500, ambiguity: one, threshold for extensive misassembly size: 7000
+
+Contigs:
+  Pre-processing...
+  /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.fasta ==> contigs
+    breaking scaffolds into contigs:
+      WARNING: nothing was broken, skipping 'contigs broken' from further analysis
+
+2021-09-28 16:37:57
+Running Basic statistics processor...
+  Estimated reference length = 593000000
+  Contig files: 
+    contigs
+  Calculating N50 and L50...
+    contigs, N50 = 6609, L50 = 18668, Total length = 416912122, GC % = 40.95, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/GC_content_plot.pdf
+  Drawing contigs GC content plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/contigs_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/coverage_histogram.pdf
+  Drawing contigs coverage histogram (bin size: 1x)...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/contigs_coverage_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2021-09-28 16:38:26
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2021-09-28 16:38:31
+RESULTS:
+  Text versions of total report are saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/report.html
+  PDF version (tables and plots) is saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/report.pdf
+  Icarus (contig browser) is saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/icarus.html
+  Log is saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/quast.log
+
+Finished: 2021-09-28 16:38:32
+Elapsed time: 0:01:13.864685
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
+/opt/conda/bin/quast.py /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta -o /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report --est-ref-size 593000000 -s --eukaryote --large
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-4.4.262-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two (linux_64)
+  Python version: 3.7.9
+  CPUs number: 32
+
+Started: 2021-09-28 16:38:32
+
+Logging to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/quast.log
+NOTICE: Maximum number of threads is set to 8 (use --threads option to set it manually)
+
+CWD: /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+Main parameters: 
+  MODE: large, threads: 8, eukaryotic: true, split scaffolds: true, minimum contig length: 3000, \
+  minimum alignment length: 500, ambiguity: one, threshold for extensive misassembly size: 7000
+
+Contigs:
+  Pre-processing...
+  /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta ==> scaffolds
+    breaking scaffolds into contigs:
+      60419 scaffolds (scaffolds) were broken into 94030 contigs (scaffolds_broken)
+
+2021-09-28 16:39:48
+Running Basic statistics processor...
+  Estimated reference length = 593000000
+  Contig files: 
+    1  scaffolds
+    2  scaffolds_broken
+  Calculating N50 and L50...
+    1  scaffolds, N50 = 10188, L50 = 13331, Total length = 502459845, GC % = 40.97, # N's per 100 kbp =  964.15
+    2  scaffolds_broken, N50 = 5932, L50 = 22761, Total length = 468103396, GC % = 40.96, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/basic_stats/GC_content_plot.pdf
+  Drawing scaffolds GC content plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/basic_stats/scaffolds_GC_content_plot.pdf
+  Drawing scaffolds_broken GC content plot...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/basic_stats/scaffolds_broken_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/basic_stats/coverage_histogram.pdf
+  Drawing scaffolds coverage histogram (bin size: 1x)...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/basic_stats/scaffolds_coverage_histogram.pdf
+  Drawing scaffolds_broken coverage histogram (bin size: 1x)...
+    saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/basic_stats/scaffolds_broken_coverage_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2021-09-28 16:40:58
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2021-09-28 16:41:09
+RESULTS:
+  Text versions of total report are saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/report.html
+  PDF version (tables and plots) is saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/report.pdf
+  Icarus (contig browser) is saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/icarus.html
+  Log is saved to /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/quast.log
+
+Finished: 2021-09-28 16:41:10
+Elapsed time: 0:02:37.159817
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
