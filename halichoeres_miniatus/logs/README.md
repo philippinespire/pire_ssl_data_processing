@@ -646,10 +646,85 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 The jobs ran.
 I pushed changes to GitHub.
 
+Revisiting the table.  I highly recommend navigating to and viewing the reports in the appropriate directories
+The guide requests the following data from QUAST
 
+Library and contig or scaff
+1 # of contigs (QUAST presents many variables for this.  I used # contigs (>=0))
+2 largest contig
+3 Length of assembly (this is not a stat in QUAST. QUAST presents many variables for this. I used total length)
+4 N50
+5 L50
 
+Busco Reports
+Complete BUSCOs (C)
+Complete and single-copy BUSCOs (S)
+Complete and duplicated BUSCOs (D)
+Fragmented BUSCOs (F)
+Missing BUSCOs (M)
+Total BUSCO groups searched (n)
 
+Hmi A contig
+1059314
+125732
+434260664
+6716
+19242
+C:47.6%[S:46.6%,D:1.0%],F:16.7%,M:35.7%,n:3640
 
+Hmi B contig
+1152395
+94343
+435308849
+6809
+18997
+C:49.3%[S:48.5%,D:0.8%],F:16.3%,M:34.4%,n:3640
 
+Hmi C contig
+1151936
+71699
+409046162
+6513
+18731
+C:46.2%[S:45.2%,D:1.0%],F:16.0%,M:37.8%,n:3640
 
+Hmi allLibs contig
+1178612
+99674
+416912122
+6609
+18668
+C:47.0%[S:45.5%,D:1.5%],F:16.1%,M:36.9%,n:3640
+
+Hmi A scaffolds
+1012225
+165936
+511942208
+9996
+14062
+C:61.1%[S:60.1%,D:1.0%],F:13.5%,M:25.4%,n:3640
+
+Hmi B scaffolds
+1106460
+200054
+511188068
+10051
+13877
+C:62.4%[S:61.5%,D:0.9%],F:12.9%,M:24.7%,n:3640
+
+Hmi C scaffolds
+1102909
+131151
+492541584
+9800
+13726
+C:59.4%[S:58.5%,D:0.9%],F:13.7%,M:26.9%,n:3640
+
+Hmi allLibs scaffolds
+1128280
+171801
+502459845
+10188
+13331
+C:60.5%[S:59.1%,D:1.4%],F:13.4%,M:26.1%,n:3640
 
