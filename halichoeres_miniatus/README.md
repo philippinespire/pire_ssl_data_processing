@@ -121,6 +121,8 @@ Heterozygosity |1.1754% |1.19961%  |
 Genome Haploid Length |592,484,550 bp |594,056,703 bp |593,270,627 bp
 Model Fit |95.4277%  |96.3268% |
 
+I will use 593000000 as the genome size estimate.
+
 ## Step 8. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
 
 I ran SPAdes on contaminated libraries and assesed them with QUAST and Busco
