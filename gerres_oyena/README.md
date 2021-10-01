@@ -141,10 +141,11 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calcula
 ```
 
 Percent total read loss:
-*D*L1_1.fq.gz 42.6037%
-*D*L1_2.fq.gz 42.6037%
-*E*L1_1.fq.gz 40.7463%
-*E*L1_2.fq.gz 40.7463%
+
+GyC0881D*L1_1.fq.gz: 42.6037%
+GyC0881D*L1_2.fq.gz: 42.6037%
+GyC0881E*L1_1.fq.gz: 40.7463%
+GyC0881E*L1_2.fq.gz: 40.7463%
 
 How much is too much data lost?
 
@@ -158,23 +159,39 @@ I did find two species within the Genus *Gerres*: *Gerres subfasciatus* & *Gerre
 Pretty sure *G. subfasciatus* is more closely related to *G. oyena* than *G. oblongus* (Iwatsuki et al 2006)
 
 __*Gerres subfasciatus*__
+
 https://www.genomesize.com/result_species.php?id=2820
+
 C-value (pg): 0.61
+
 Method: Feulgen Image Analysis Densitometry
+
 Cell Type: Red blood cells
+
 Standard Species: Betta splendens = 0.64pg, Gallus domesticus = 1.25pg, Oncorhynchus mykiss = 2.60pg, Rana pipiens = 6.70pg
+
 References:
+
 Hardie, D.C. and P.D.N. Hebert (2003). The nucleotypic effects of cellular DNA content in cartilaginous and ray-finned fishes. Genome 46: 683-706.
+
 Hardie, D.C. and P.D.N. Hebert (2004). Genome-size evolution in fishes. Canadian Journal of Fisheries and Aquatic Sciences 61: 1636-1646.
 
 __*Gerres oblongus*__
+
 https://www.genomesize.com/result_species.php?id=2819
+
 C-value (pg): 0.70
+
 Chromosome Number (2n): 50
+
 Method: Flow Cytometry
+
 Cell Type: Red blood cells
+
 Standard Species: Mus musculus = 3.30pg
+
 References:
+
 Ojima, Y. and K. Yamamoto (1990). Cellular DNA contents of fishes determined by flow cytometry. La Kromosomo II 57: 1871-1888.
 
 Genome stats for Goy from Jellyfish/GenomeScope v1.0 k=21
@@ -190,6 +207,7 @@ Ran runSPADEShimem_R1R2_noisolate.sbatch
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jwhal002" "Goy" "1" "contam" "533000000" "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena"
 ```
 Error because there were only 2 libraries and the .sbatch script assumes 3 libraries were used. This caused an error saying that one of the files was used twice, which caused the script to fail.
+
 I editted the script in my directory and reran it using that script.
 ```sh
 sbatch /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jwhal002" "Goy" "1" "contam" "533000000" "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena"
@@ -198,6 +216,7 @@ sbatch /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 Other slurm .out files were removed
 
 Assemblies made for GyC0881D (#"1"), GyC00881E (#"2"), allLibs w/ covcutoff = off
+
 Assemblies made for GyC0881D w/ covcutoff = auto
 
 ### Summary of QUAST and BUSCO Results
@@ -223,6 +242,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 BUSCO done
 
 GoyC0881E(Library #"2") contam scaffolds determined to be the best assembly
+
 Will use the data that produced this assembly for creating a decontaminated assembly
 
 ```sh
@@ -252,16 +272,24 @@ sbatch WGprobe_bedcreation.sb "Goy_scaffolds_GyC0881E_contam_R1R2_noIsolate"
 ```
 
 The longest scaffold is 397418
+
 The uppper limit used in loop is 387500
+
 A total of 43671 regions have been identified from 14263 scaffolds
 
 ## Step 11. Fetching genomes for closest relatives
 Betancur 2017
+
 Series: Eupercaria
+
 Order: Gerreiformes (Incertae sedis in Eupercaria)
+
 No Gerreiformes, Haemulidae, Uranoscopiformes
+
 Used the phylogeny of CAS & others to determine closest relatives
+
 Lutjanidae: 1
+
 Sparidae: 4
 
 1. Lutjanus erythropterus
