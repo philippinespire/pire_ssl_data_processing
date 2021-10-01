@@ -155,20 +155,14 @@ How much is too much data lost?
 
 ## Step 7. Genome properties
 I couldn't find Goy in www.genomesize.com
+
 I did find two species within the Genus *Gerres*: *Gerres subfasciatus* & *Gerres oblongus*
+
 Pretty sure *G. subfasciatus* is more closely related to *G. oyena* than *G. oblongus* (Iwatsuki et al 2006)
 
-__*Gerres subfasciatus*__
-
-https://www.genomesize.com/result_species.php?id=2820
+[__*Gerres subfasciatus*__](https://www.genomesize.com/result_species.php?id=2820)
 
 C-value (pg): 0.61
-
-Method: Feulgen Image Analysis Densitometry
-
-Cell Type: Red blood cells
-
-Standard Species: Betta splendens = 0.64pg, Gallus domesticus = 1.25pg, Oncorhynchus mykiss = 2.60pg, Rana pipiens = 6.70pg
 
 References:
 
@@ -176,19 +170,11 @@ Hardie, D.C. and P.D.N. Hebert (2003). The nucleotypic effects of cellular DNA c
 
 Hardie, D.C. and P.D.N. Hebert (2004). Genome-size evolution in fishes. Canadian Journal of Fisheries and Aquatic Sciences 61: 1636-1646.
 
-__*Gerres oblongus*__
-
-https://www.genomesize.com/result_species.php?id=2819
+[__*Gerres oblongus*__](https://www.genomesize.com/result_species.php?id=2819)
 
 C-value (pg): 0.70
 
 Chromosome Number (2n): 50
-
-Method: Flow Cytometry
-
-Cell Type: Red blood cells
-
-Standard Species: Mus musculus = 3.30pg
 
 References:
 
@@ -292,14 +278,9 @@ Lutjanidae: 1
 
 Sparidae: 4
 
-1. Lutjanus erythropterus
-https://www.ncbi.nlm.nih.gov/genome/?term=lutnajus+erythropterus
-2. Diplodus sargus
-https://www.ncbi.nlm.nih.gov/genome/92100
-3. Spondyliosoma cantharus
-https://www.ncbi.nlm.nih.gov/genome/69439
-4. Sparus aurata
-https://www.ncbi.nlm.nih.gov/genome/11609
-5. Acanthopagrus latus
-https://www.ncbi.nlm.nih.gov/genome/8551
+1. [Lutjanus erythropterus](https://www.ncbi.nlm.nih.gov/genome/?term=lutnajus+erythropterus)
+2. [Diplodus sargus](https://www.ncbi.nlm.nih.gov/genome/92100)
+3. [Spondyliosoma cantharus](https://www.ncbi.nlm.nih.gov/genome/69439)
+4. [Sparus aurata](https://www.ncbi.nlm.nih.gov/genome/11609)
+5. [Acanthopagrus latus](https://www.ncbi.nlm.nih.gov/genome/8551)
 
