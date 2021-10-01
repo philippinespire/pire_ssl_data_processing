@@ -22,7 +22,7 @@ Athe second [MultiQC report] ()
 
 Potential issues:
 * % duplication - 
-  * 37.1%-48.2%s
+  * 37.1%-48.2%sf
 * gc content - 
   * 49-58%
 * quality - 
@@ -117,9 +117,9 @@ Genome stats for *Halichoeres miniatus* from Jellyfish/GenomeScope v1.0 k=21
 
 stat|min|max|average
 ------|------|------|------
-Heterozygosity |1.16164% |1.17048% |
-Genome Haploid Length |603,130,409 bp |603,766,833 bp |603,448,621 bp 
-Model Fit |96.7109% |97.7415% |
+Heterozygosity |1.1754% |1.19961%  |
+Genome Haploid Length |592,484,550 bp |594,056,703 bp |593,270,627 bp
+Model Fit |95.4277%  |96.3268% |
 
 ## Step 8. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
 
@@ -129,7 +129,7 @@ I ran SPAdes on contaminated libraries and assesed them with QUAST and Busco
 
 The table below shows the outcomes of the assemblies.  The value covcutoff is omitted as I cannot intrepret how to acquire it. I adjusted the value in a column to BUSCO complete & single copy.  See the reports for further information.
 
-Species|Library|DataType|SCAFIG|No. of contigs|Largest contig|Total lenght|N50|L50|BUSCO complete & single copy|% Genome size completeness
+Species|Library|DataType|SCAFIG|No. of contigs|Largest contig|Total length|N50|L50|BUSCO complete & single copy|% Genome size completeness
 ------|------|------|------|------|------|------|------|------|------|------
 Hmi|A|contam|contig|1059314|125732|434260664|6716|19242|46.6%|73.2%
 Hmi|B|contam|contig|1152395|94343|435308849|6809|18997|48.5%|73.4%
