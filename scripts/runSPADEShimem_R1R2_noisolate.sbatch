@@ -87,8 +87,6 @@ if [[ "$LIBRARY" == "all" ]]; then
 	--pe1-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n1) \
 	--pe2-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n2 | tail -n1) \
 	--pe2-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n2 | tail -n1) \
-	--pe3-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n3 | tail -n1) \
-	--pe3-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n3 | tail -n1) \
 	--threads $THREADS \
 	--memory 750 \
 	--tmp-dir $TEMPDIR \
