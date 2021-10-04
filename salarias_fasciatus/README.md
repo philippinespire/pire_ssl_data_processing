@@ -219,24 +219,38 @@ I found the genome size of Sfa in the [genomesize.com](https://www.genomesize.co
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sfa" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish__decontam"
 ```
-This jellyfish kmer-frequency [histogram file]() was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=zwj01qbRCNCZ9oF2N8RV)
+This jellyfish kmer-frequency [histogram file](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/salarias_fasciatus/jellyfish_decontam/Sfa_all_reads.histo) was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=zwj01qbRCNCZ9oF2N8RV)
 
 Description: Sfa_ssl_decontam
 Kmer length: 21
 Read length: 140
 Max kmer coverage: 1000
 
-Genome stats for Sfa from Jellyfish/GenomeScope v1.0 k=21
+There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website] (http://qb.cshl.edu/genomescope/genomescope2.0/) too$
+
+Description: Sfa_ssl_decontam2
+Kmer length: 21
+Ploidy: 2
+Max kmer coverage: -1
+Average k-mer coverage for polyploid genome: -1
+
+The report generated for v2.0 is [here] (http://genomescope.org/genomescope2.0/analysis.php?code=hGAiwIq4ab6yyLFhgOae)
+
+Genome stats for Sfa from Jellyfish/GenomeScope v1.0 & v2.0
 stat    |min    |max    |average
 ------  |------ |------ |------
-Heterozygosity  |1.05362%       |1.08527%       |1.069445%
-Genome Haploid Length   |577,799,589 bp    |579,898,449 bp | 578,849,019 bp
-Model Fit       |90.9818%       |92.2968%       |91.6393%
+Heterozygosity v1.0|1.05362%       |1.08527%       |1.069445%
+Heterozygosity v2.0|1.08056%       |1.10253%       |1.091545%
+Genome Haploid Length v1.0|577,799,589 bp    |579,898,449 bp | 578,849,019 bp
+Genome Haploid Length v2.0|633,734,275 bp    |634,705,011 bp | 634,219,643 bp
+Model Fit   v1.0|90.9818%       |92.2968%       |91.6393%
+Model Fit   v2.0|80.1744%       |93.4121%       |86.79325%
+
 
 ---
 ## Step 8. Assemble the genome using SPAdes
 
-Assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA.
+Assembling contamþinated data produced better results for nDNA and decontaminated was better for mtDNA.
 
 Thus, run one assembly using your contaminated data and one with the decontaminated files.
 
@@ -314,18 +328,18 @@ Summary of QUAST & BUSCO Results
 
 Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single co$
 ------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Sfa  |allLibs    |contam       |contigs       |off       |96125  |236270       |745725175       |39.43%       |9041       |24287       |50.7%
-Sfa  |allLibs    |contam       |scaffolds       |off       |74846  |320496       |812404903       |39.43%       |14515       |15479       |64.7%
-Sfa  |allLibs    |decontam       |contigs       |off       |94520  |100990       |657658468       |39.44%       |7749       |24786       |47.9%
-Sfa  |allLibs    |decontam       |scaffolds       |off       |80472  |144523       |739361830       |39.40%       |11593       |17523       |61.4%
-Sfa  |SfC0281G   |contam      |contigs        |off       |66551  |87063      |484209845        |43.87%      |8351      |17065      |52.6%
-Sfa  |SfC0281G   |contam      |scaffolds      |off       |47251  |206689     |549666344        |44.00%	    |17292     |8582  	   |70.3%
-Sfa  |SfC0281H   |contam      |contigs        |off       |64803  |119618     |510341019        |43.85%	    |9378      |15757  	   |57.0%
-Sfa  |SfC0281H   |contam      |scaffolds      |off       |45792  |356588     |563766158        |43.98%      |18875     |8063	   |73.0%
-Sfa  |SfC0282A   |contam      |contigs        |off       |66229  |97374      |490610142        |43.91%      |8579      |16761  	   |53.8%
-Sfa  |SfC0282A   |contam      |scaffolds      |off	 |46311  |221552     |555041474        |44.03%      |18095     |8177	   |71.2%
-Sfa  |SfC0282A   |decontam      |contigs        |off	 |65497  |92703      |489935535        |43.80%      |8715      |16767	   |55.5%
-Sfa  |SfC0282A   |decontam      |contigs        |off	 |51279  |140503     |539947694        |43.87%      |14718     |10321	   |69.5%
+Sfa  |allLibs    |contam       |contigs       |off       |96125  |236270       |745725175       |128.83%       |9041       |24287       |50.7%
+Sfa  |allLibs    |contam       |scaffolds       |off       |74846  |320496       |812404903       |140.35%       |14515       |15479       |64.7%
+Sfa  |allLibs    |decontam       |contigs       |off       |94520  |100990       |657658468       |113.61%       |7749       |24786       |47.9%
+Sfa  |allLibs    |decontam       |scaffolds       |off       |80472  |144523       |739361830       |127.73%       |11593       |17523       |61.4%
+Sfa  |SfC0281G   |contam      |contigs        |off       |66551  |87063      |484209845        |83.65%      |8351      |17065      |52.6%
+Sfa  |SfC0281G   |contam      |scaffolds      |off       |47251  |206689     |549666344        |94.96%	    |17292     |8582  	   |70.3%
+Sfa  |SfC0281H   |contam      |contigs        |off       |64803  |119618     |510341019        |83.65%	    |9378      |15757  	   |57.0%
+Sfa  |SfC0281H   |contam      |scaffolds      |off       |45792  |356588     |563766158        |94.96%      |18875     |8063	   |73.0%
+Sfa  |SfC0282A   |contam      |contigs        |off       |66229  |97374      |490610142        |88.16%      |8579      |16761  	   |53.8%
+Sfa  |SfC0282A   |contam      |scaffolds      |off	 |46311  |221552     |555041474        |97.39%      |18095     |8177	   |71.2%
+Sfa  |SfC0282A   |decontam      |contigs        |off	 |65497  |92703      |489935535        |84.76%      |8715      |16767	   |55.5%
+Sfa  |SfC0282A   |decontam      |contigs        |off	 |51279  |140503     |539947694        |93.28%      |14718     |10321	   |69.5%
 
 ---
 The best library was SfC0282A contam scaffolds.

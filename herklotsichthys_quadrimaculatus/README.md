@@ -218,23 +218,36 @@ I found the genome size of Hqu in the [genomesize.com](https://www.genomesize.co
 
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Hqu" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish__decontam"
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Hqu" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
 ```
-This jellyfish kmer-frequency [histogram file]() was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=tHzBW2RjBK00gQMUSfl4)
+This jellyfish kmer-frequency [histogram file](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/herklotsichthys_quadrimaculatus/jellyfish_decontam/Hqu_all_reads.histo) was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=tHzBW2RjBK00gQMUSfl4)
 
 Description: Hqu_ssl_decontam
 Kmer length: 21
 Read length: 140
 Max kmer coverage: 1000
 
-Genome stats for Hqu from Jellyfish/GenomeScope v1.0 k=21
+There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website] (http://qb.cshl.edu/genomescope/genomescope2.0/) too, with the following inputs:
+
+Description: Hqu_ssl_decontam2
+Kmer length: 21
+Ploidy: 2
+Max kmer coverage: -1
+Average k-mer coverage for polyploid genome: -1
+
+The report generated for v2.0 is [here] (http://genomescope.org/genomescope2.0/analysis.php?code=8eVzhAQ8zSenObScLMGC)
+
+Genome stats for Hqu from Jellyfish/GenomeScope v1.0 & v2.0
 stat    |min    |max    |average
 ------  |------ |------ |------
-Heterozygosity  |0.449245%       |0.459506%       |0.4543755%
-Genome Haploid Length   |843,747,830 bp    |845,694,580 bp |844,721,205 bp
-Model Fit       |95.034%       |97.832%       |96.433%
-
+Heterozygosity v1.0  |0.449245%       |0.459506%       |0.4543755%
+Heterozygosity v2.0  |2.03309%       |2.074009%       |2.0535495%   
+Genome Haploid Length v1.0   |843,747,830 bp    |845,694,580 bp |844,721,205 bp
+Genome Haploid Length v2.0   |455,505,014 bp    |457,259,745 bp |456,382,380 bp
+Model Fit v1.0       |95.034%       |97.832%       |96.433%
+Model Fit v2.0       |79.9163%      |92.0546%      |85.98545%
 ---
+
 ## Step 8. Assemble the genome using SPAdes
 
 Assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA.
@@ -322,7 +335,7 @@ sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_process
 
 Then, to fill in the BUSCO single copy column, open the following files & look for S%:
 Contam, contigs:
-Contam, scaffolds:
+Contam, scaffolds:c
 Decontam, contigs:
 Decontam, scaffolds:
 
@@ -330,19 +343,20 @@ Summary of QUAST & BUSCO Results
 
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Hqu  |allLibs    |contam       |contigs       |off	 |72680  |195361       |437705954       |43.98%       |6320	|21123       |36.3%
-Hqu  |allLibs    |contam       |scaffolds     |off	 |65871  |195361       |512737304	|44.04%       |9155	  |15571       |48.8%
-Hqu  |HqC0021A   |contam       |contigs       |off	 |65357   |147500       |366412508	|43.34%       |5733    |19934   |34.2%
-Hqu  |HqC0021A   |contam       |scaffolds     |off	 |63921   |149055       |434195608	|43.44%       |7527    |16539   |43.4%
-Hqu  |HqC0021B   |contam       |contigs       |off	 |67237  |189345        |384205692	|43.51%       |5883     |20200       |33.7%
-Hqu  |HqC0021B   |contam       |scaffolds     |off	 |64769  |321524        |454554704	|43.61%       |7881     |16436         |43.9%
-Hqu  |HqC0021C   |contam       |contigs       |off	 |64320  |216207       |357746760     	|43.31%       |5662     |19659         |33.0%
-Hqu  |HqC0021C   |contam       |scaffolds     |off	 |63577  |242909       |427945810	|43.42%       |7423     |16491         |42.7%
-Hqu  |allLibs    |decontam     |contigs       |off       |61190  |165445       |350787873       |43.11%       |5950       |18553       |33.7%
-Hqu  |allLibs    |decontam     |scaffolds     |off       |60202  |195347       |404379681	|43.16%       |7442	  |16090       |42.6%
+Hqu  |allLibs    |contam       |contigs       |off	 |72680  |195361       |437705954       |51.82%       |6320	|21123       |36.3%
+Hqu  |allLibs    |contam       |scaffolds     |off	 |65871  |195361       |512737304	|60.70%       |9155	  |15571       |48.8%
+Hqu  |HqC0021A   |contam       |contigs       |off	 |65357   |147500       |366412508	|43.38%       |5733    |19934   |34.2%
+Hqu  |HqC0021A   |contam       |scaffolds     |off	 |63921   |149055       |434195608	|51.40%       |7527    |16539   |43.4%
+Hqu  |HqC0021B   |contam       |contigs       |off	 |67237  |189345        |384205692	|45.48%       |5883     |20200       |33.7%
+Hqu  |HqC0021B   |contam       |scaffolds     |off	 |64769  |321524        |454554704	|53.81%       |7881     |16436         |43.9%
+Hqu  |HqC0021C   |contam       |contigs       |off	 |64320  |216207       |357746760     	|45.48%       |5662     |19659         |33.0%
+Hqu  |HqC0021C   |contam       |scaffolds     |off	 |63577  |242909       |427945810	|53.81%       |7423     |16491         |42.7%
+Hqu  |allLibs    |decontam     |contigs       |off       |61190  |165445       |350787873       |42.35%       |5950       |18553       |33.7%
+Hqu  |allLibs    |decontam     |scaffolds     |off       |60202  |195347       |404379681	|50.66%       |7442	  |16090       |42.6%
 
 ---
 The best library was allLibs scaffolds.
+
 #### Main assembly stats
 
 New record of Hqu added to [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file

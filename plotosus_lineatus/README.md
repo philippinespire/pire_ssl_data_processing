@@ -215,19 +215,32 @@ From species home directory: Executed runJellyfish.sbatch using decontaminated f
 #runJellyfish.sbatch <Species 2-letter ID> <indir> <outdir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Pli" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish__decontam"
 ```
-This jellyfish kmer-frequency [histogram file]() was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=URnqm6DaJIVyouKPOCOI)
+This jellyfish kmer-frequency [histogram file](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/plotosus_lineatus/jellyfish_decontam/Pli_all_reads.histo) was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=URnqm6DaJIVyouKPOCOI)
 
 Description: Pli_ssl_decontam
 Kmer length: 21
 Read length: 140
 Max kmer coverage: 1000
 
-Genome stats for Pli from Jellyfish/GenomeScope v1.0 k=21
+There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website] (http://qb.cshl.edu/genomescope/genomescope2.0/) too, with the following input:
+
+Description: Pli_ssl_decontam2
+Kmer length: 21
+Ploidy: 2
+Max kmer coverage: -1
+Average k-mer coverage for polyploid genome: -1
+
+The report generated for v2.0 is [here] (http://genomescope.org/genomescope2.0/analysis.php?code=YgUl0nfw01TyRVNlnsyn)
+
+Genome stats for Pli from Jellyfish/GenomeScope v1.0 & v2.0
 stat    |min    |max    |average
 ------  |------ |------ |------
-Heterozygosity  |0.702616%         |0.7111730.9%       |0.7068945%
-Genome Haploid Length   |737,279,443 bp    |738,434,396 bp     |737,856,920 bp
-Model Fit       |95.7689%       |97.9334%       |96.85115%
+Heterozygosity v1.0 |0.702616%         |0.7111730.9%       |0.7068945%
+Heterozygosity v2.0 |0.725836%         |0.748822%       |0.737329%
+Genome Haploid Length v1.0   |737,279,443 bp    |738,434,396 bp     |737,856,920 bp
+Genome Haploid Length v2.0  |845,715,400 bp    |847,610,578 bp     |846,662,989 bp
+Model Fit v1.0      |95.7689%       |97.9334%       |96.85115%
+Model Fit v2.0      |76.5797%       |97.9609%       |87.2703%
 
 ---
 ## Step 8. Assemble the genome using SPAdes
@@ -293,16 +306,16 @@ Summary of QUAST & BUSCO Results
 
 Species    |Library     |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
 ------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Pli  |allLibs    |contam       |contigs       |off       |126462  |1070312       |952740157     |41.11%       |8730       |34786       |36.9%
-Pli  |allLibs    |contam       |scaffolds     |off       |125095  |1070312       |960099166     |41.11%       |8957       |34066       |37.9%
-Pli  |allLibs    |decontam     |contigs       |off       |126080  |66692         |813845906     |41.15%       |7085       |37545       |30.9%
-Pli  |allLibs    |decontam     |scaffolds     |off       |125228  |94589         |840397753     |41.15%       |7471       |36480       |32.3%
-Pli  |PlC0351D    |contam       |contigs      |off       |129516  |55006         |865312588	|41.16%       |7437       |37993       |33.2%
-Pli  |PlC0351D    |contam       |scaffolds    |off       |128482  |59925       	 |880535043	|41.16%       |7686       |37111       |34.5%   
-Pli  |PlC0351E    |contam       |contigs      |off       |128940  |60088         |898481094     |41.14%       |7879       |36969       |34.5%   
-Pli  |PlC0351E    |contam       |scaffolds    |off       |127572  |60088         |911334858	|41.14%       |8145       |36065       |35.5%   
-Pli  |PlC0351F    |contam       |contigs      |off       |130752  |55486         |880614509	|41.14%       |7515       |38296       |32.8%   
-Pli  |PlC0351F    |contam       |scaffolds    |off       |129035  |55486         |900730518	|41.14%       |7886       |37100       |34.6%   
+Pli  |allLibs    |contam       |contigs       |off       |126462  |1070312       |952740157     |129.12%       |8730       |34786       |36.9%
+Pli  |allLibs    |contam       |scaffolds     |off       |125095  |1070312       |960099166     |130.12%       |8957       |34066       |37.9%
+Pli  |allLibs    |decontam     |contigs       |off       |126080  |66692         |813845906     |110.30%       |7085       |37545       |30.9%
+Pli  |allLibs    |decontam     |scaffolds     |off       |125228  |94589         |840397753     |113.90%       |7471       |36480       |32.3%
+Pli  |PlC0351D    |contam       |contigs      |off       |129516  |55006         |865312588	|117.27%       |7437       |37993       |33.2%
+Pli  |PlC0351D    |contam       |scaffolds    |off       |128482  |59925       	 |880535043	|119.34%       |7686       |37111       |34.5%   
+Pli  |PlC0351E    |contam       |contigs      |off       |128940  |60088         |898481094     |117.27%       |7879       |36969       |34.5%   
+Pli  |PlC0351E    |contam       |scaffolds    |off       |127572  |60088         |911334858	|119.34%       |8145       |36065       |35.5%   
+Pli  |PlC0351F    |contam       |contigs      |off       |130752  |55486         |880614509	|121.77%       |7515       |38296       |32.8%   
+Pli  |PlC0351F    |contam       |scaffolds    |off       |129035  |55486         |900730518	|123.51%       |7886       |37100       |34.6%   
 
 ---
 The best library was allLibs contam scaffolds.

@@ -206,23 +206,37 @@ I could not find Tzo in the [genomesize.com](https://www.genomesize.com/) databa
 From species home directory: Executed runJellyfish.sbatch using decontaminated files
 ```sh
 #runJellyfish.sbatch <Species 2-letter ID> <indir> <outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Tzo" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish__decontam"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Tzo" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
 ```
-This jellyfish kmer-frequency [histogram file]() was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=KfPRFUXJmbrA0rouEvNx). Highlights:
+This jellyfish kmer-frequency [histogram file](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/taeniamia_zosterophora/jellyfish_decontam/Tzo_all_reads.histo) was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=KfPRFUXJmbrA0rouEvNx). Highlights:
 
 Description: Tzo_ssl_decontam
 Kmer length: 21
 Read length: 140
 Max kmer coverage: 1000
 
-Genome stats for Tzo from Jellyfish/GenomeScope v1.0 k=21
+There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website] (http://qb.cshl.edu/genomescope/genomescope2.0/) too, with the following input:
+
+Description: Tzo_ssl_decontam2
+Kmer length: 21
+Ploidy: 2
+Max kmer coverage: -1
+Average k-mer coverage for polyploid genome: -1
+
+The report generated for v2.0 is [here] (http://genomescope.org/genomescope2.0/analysis.php?code=iYAXsA0hmMtIMGeLX19n)
+
+Genome stats for Tzo from Jellyfish/GenomeScope v1.0 & v2.0
 stat    |min    |max    |average
 ------  |------ |------ |------
-Heterozygosity  |0.915939%       |0.920206%       |0.9180725%
-Genome Haploid Length   |817,498,230 bp    |818,019,292 bp |817,758,761 bp
-Model Fit       |97.6439%       |99.4735%       |98.5587%
-
+Heterozygosity v1.0 |0.915939%       |0.920206%       |0.9180725%
+Heterozygosity v2.0 |0.911721%       |0.928177%       |0.919949%
+Genome Haploid Length v1.0   |817,498,230 bp    |818,019,292 bp |817,758,761 bp
+Genome Haploid Length v2.0   |882,851,069 bp    |884,178,743 bp |883,514,906 bp
+Model Fit v1.0      |97.6439%       |99.4735%       |98.5587%
+Model Fit v2.0      |82.422%       |99.3423%       |90.88215%
 ---
+
+
 ## Step 8. Assemble the genome using SPAdes
 
 Assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA.
@@ -326,18 +340,18 @@ Summary of QUAST & BUSCO Results
 
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Tzo  |allLibs    |contam       |contigs       |off	 |96125  |236270       |745725175	|39.43%       |9041	  |24287       |50.7%
-Tzo  |allLibs    |contam       |scaffolds     |off	 |74846  |320496       |812404903	|39.43%       |14515	   |15479	|64.7%
-Tzo  |TzC0402E   |contam       |contigs       |off	 |65176  |227579       |830651102       |39.20%       |18737	|11972         |70.0%
-Tzo  |TzC0402E   |contam       |scaffolds     |off	 |64301  |340415       |832616461       |39.20%       |19199    |11686       |70.1%
-Tzo  |TzC0402F   |contam       |contigs       |off	 |84668  |48595        |466349924       |39.35%       |5684     |27045		|35.5
-Tzo  |TzC0402F   |contam       |scaffolds     |off	 |86989  |69417        |506992391       |39.33%       |6119       |26533         |39.0%
-Tzo  |TzC0402G   |contam       |contigs       |off	 |64326  |252063       |833348334       |39.20%        |19230       |11742         |70.8%
-Tzo  |TzC0402G   |contam       |scaffolds     |off	 |63527  |252063       |834945222       |39.21%        |19682       |11491         |71.1%
-Tzo  |TzC0402G   |decontam     |contigs       |off	 |74000  |170219       |787350440       |39.19%        |14381       |15216         |66.3%
-Tzo  |TzC0402G   |decontam     |scaffolds     |off	 |74000  |170219       |787350440	|39.19%        |14381       |15216         |67.6%
-Tzo  |allLibs    |decontam     |scaffolds     |off	 |71206  |170219       |794560568 	|39.20%        |15481       |14123         |
-Tzo  |allLibs    |decontam     |contigs	      |off	 |94520  |100990       |657658468       |39.44%	       |7749        |24786	   |
+Tzo  |allLibs    |contam       |contigs       |off	 |96125  |236270       |745725175	|91.19%       |9041	  |24287       |50.7%
+Tzo  |allLibs    |contam       |scaffolds     |off	 |74846  |320496       |812404903	|99.35%       |14515	   |15479	|64.7%
+Tzo  |TzC0402E   |contam       |contigs       |off	 |65176  |227579       |830651102       |101.58%       |18737	|11972         |70.0%
+Tzo  |TzC0402E   |contam       |scaffolds     |off	 |64301  |340415       |832616461       |101.82%       |19199    |11686       |70.1%
+Tzo  |TzC0402F   |contam       |contigs       |off	 |84668  |48595        |466349924       |57.03%       |5684     |27045		|35.5
+Tzo  |TzC0402F   |contam       |scaffolds     |off	 |86989  |69417        |506992391       |62.00%       |6119       |26533         |39.0%
+Tzo  |TzC0402G   |contam       |contigs       |off	 |64326  |252063       |833348334       |101.91%        |19230       |11742         |70.8%
+Tzo  |TzC0402G   |contam       |scaffolds     |off	 |63527  |252063       |834945222       |102.10%        |19682       |11491         |71.1%
+Tzo  |TzC0402G   |decontam     |contigs       |off	 |74000  |170219       |787350440       |96.28%        |14381       |15216         |66.3%
+Tzo  |TzC0402G   |decontam     |scaffolds     |off	 |71206  |170219       |794560568	|97.16%        |15481       |14123         |67.6%
+Tzo  |allLibs    |decontam     |scaffolds     |off	 |80472  |144523       |739361830 	|90.41%        |11593       |17523         |
+Tzo  |allLibs    |decontam     |contigs	      |off	 |94520  |100990       |657658468       |80.42%	       |7749        |24786	   |
 
 ---
 The best library was TzC0402G scaffolds.
