@@ -180,7 +180,7 @@ References:
 
 Ojima, Y. and K. Yamamoto (1990). Cellular DNA contents of fishes determined by flow cytometry. La Kromosomo II 57: 1871-1888.
 
-The jellyfish kmer-frequency histogram file was uploaded to [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [Report](http://qb.cshl.edu/genomescope/analysis.php?code=GtcmGEsUFzCZjnuqRQE9)
+The jellyfish kmer-frequency histogram file was uploaded to [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=GtcmGEsUFzCZjnuqRQE9)
 
 Genome stats for Goy from Jellyfish/GenomeScope v1.0 k=21
 stat	|min	|max	|average	
@@ -196,6 +196,7 @@ Genome stats for Goy from Jellyfish/GenomeScope v2.0 with the following default 
 * Ploidy: 2
 * Max k-mer coverage: -1
 * Average k-mer coverage for polyploid genome: -1
+
 stat    |min    |max    |average
 ------  |------ |------ |------
 Heterozygosity  |0.883455%      |0.891843%      |0.887649%
