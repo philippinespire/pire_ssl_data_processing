@@ -728,3 +728,28 @@ Hmi allLibs scaffolds
 13331
 C:60.5%[S:59.1%,D:1.4%],F:13.4%,M:26.1%,n:3640
 
+I created a table and posted it on the main *H. miniatus* README.md.
+After confering with colleagues I picked Hmi B for the decontam assembly.
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "2" "decontam" "593000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+```
+
+The job ran.
+
+due to a problem in the assembly of another species Dr. Garcia asked me to run Genomescope V2.
+I created a report on [Genomescope v2.0](http://qb.cshl.edu/genomescope/genomescope2.0/): [Report](http://genomescope.org/genomescope2.0/analysis.php?code=ZiuyUi6puHvBqiz4BSQ1).
+
+
+Genome stats for all libraries
+
+stat|min|max|average
+------|------|------|------
+Heterozygosity |1.22796% |1.2388%  |
+Genome Haploid Length |631,820,236 bp  |632,395,858 bp |632,108,047 bp
+Model Fit |87.7119%  |99.3197% |
+
+I will run SPAdes on the libraries with a new genome length of 632000000 bp
+
