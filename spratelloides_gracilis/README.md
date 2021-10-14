@@ -193,16 +193,19 @@ From species home directory: Executed runJellyfish.sbatch using decontaminated f
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
 ```
 This jellyfish kmer-frequency [hitogram file](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/spratelloides_gracilis/jellyfish_out/Sgr_all_reads.histo) 
-was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this 
-[report](http://genomescope.org/analysis.php?code=Bm6XRZmRpQ2dNxEo8fHs). Highlights:
+was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) and [Genomescope v2.0](http://qb.cshl.edu/genomescope/genomescope2.0/) to generate the 
+[v1.report](http://genomescope.org/analysis.php?code=Bm6XRZmRpQ2dNxEo8fHs) and [v2.report](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=Gl6gm6OeSCqMbM7Jx1SM). Highlights:
 
-Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
+Genome stats for Sgr from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
 
-stat    |min    |max    |average
-------  |------ |------ |------
-Heterozygosity  |1.32565%       |1.34149%       |1.33357%
-Genome Haploid Length   |693,553,516 bp |695,211,827 bp |694,382,672 bp
-Model Fit       |97.6162%       |98.7154%       |98.1658 %
+version    |stat    |min    |max    
+------  |------ |------ 
+1  |Heterozygosity  |1.32565%       |1.34149%       
+2  |Heterozygosity  |1.32975%       |1.35795%       
+1  |Genome Haploid Length   |693,553,516 bp |695,211,827 bp 
+2  |Genome Haploid Length   |851,426,393 bp |853,706,410 bp 
+1  |Model Fit       |97.6162%       |98.7154%       
+2  |Model Fit       |65.11692%       |96.0314%       
 
 ## Step 8. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
 
@@ -275,28 +278,43 @@ sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_process
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072D_contam_R1R2_noIsolate" "scaffolds"
 ```
 
-### Summary of QUAST and BUSCO Results
+### Summary of QUAST (using Genome Scope v.1 estimate) and BUSCO Results
 
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
-------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ 
-Sgr  |allLibs  |contam       |contigs       |off       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
-Sgr  |allLibs  |contam       |scaffolds       |off       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
-Sgr  |allLibs  |contam       |contigs       |auto       |2220821  |309779       |489827781       |70.6%       |5800       |28040       |30%
-Sgr  |allLibs  |contam       |scaffolds       |auto       |2204948  |309779       |516942564       |74.5%       |5800       |28041       |32.2%
-Sgr  |allLibs  |decontam       |contgs       |off       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
-Sgr  |allLibs  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
-Sgr  |allLibs  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
-Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
-Sgr  |SgC0072B  |contam       |contgs       |off       |3375654  |68606       |441333876       |63.6%       |5405       |26613       |29.2%
-Sgr  |SgC0072B  |contam       |scaffolds       |off       |3358197  |68606       |460942092       |66.4%       |5587       |26490       |31.3%
-Sgr  |SgC0072C  |contam       |contgs       |off       |502823  |105644       |531230550       |76.5%       |6597       |24512       |37.9%
-Sgr  |SgC0072C  |contam       |scaffolds       |off       |496944  |105644       |536090329       |77.2%       |6662      |24355       |38.4%
-Sgr  |SgC0072D  |contam       |contgs       |off       |3534280  |68563       |441118097       |63.6%       |5352      |26844       |29.7%
-Sgr  |SgC0072D  |contam       |scaffolds       |off       |3515909  |120121       |462780087       |66.7%       |5570      |26612       |31.5%
-Sgr  |SgC0072C  |contam       |contgs       |auto       |13018  |29230       |5972351       |1%       |7942	|242       |0.1%
-Sgr  |SgC0072C  |contam       |scaffolds       |auto	  |13125  |29230	 |5849289	  |1%       |7942	  |240       |0.1%
-Sgr  |SgC0072C  |decontam       |contgs       |off       |502823  |105644       |531230550       |76.5%       |6597	|24512       |32.2%
-Sgr  |SgC0072C  |decontam       |scaffolds       |off	  |496944  |105644	 |536090329	  |77.2%       |6662	  |24355       |33.2%
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs >0    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ 
+Sgr  |allLibs  |contam       |contigs       |off       |1       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
+Sgr  |allLibs  |contam       |scaffolds       |off       |1       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
+Sgr  |allLibs  |contam       |contigs       |auto       |1       |2220821  |309779       |489827781       |70.6%       |5800       |28040       |30%
+Sgr  |allLibs  |contam       |scaffolds       |auto       |1       |2204948  |309779       |516942564       |74.5%       |5800       |28041       |32.2%
+Sgr  |allLibs  |decontam       |contgs       |off       |1       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
+Sgr  |allLibs  |decontam       |scaffolds       |off       |1       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
+Sgr  |allLibs  |decontam       |contgs       |auto       |1       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
+Sgr  |allLibs  |decontam       |scaffolds       |auto       |1       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
+Sgr  |SgC0072B  |contam       |contgs       |off       |1       |3375654  |68606       |441333876       |63.6%       |5405       |26613       |29.2%
+Sgr  |SgC0072B  |contam       |scaffolds       |off       |1       |3358197  |68606       |460942092       |66.4%       |5587       |26490       |31.3%
+Sgr  |SgC0072C  |contam       |contgs       |off       |1       |502823  |105644       |531230550       |76.5%       |6597       |24512       |37.9%
+Sgr  |SgC0072C  |contam       |scaffolds       |off       |1       |496944  |105644       |536090329       |77.2%       |6662      |24355       |38.4%
+Sgr  |SgC0072D  |contam       |contgs       |off       |1       |3534280  |68563       |441118097       |63.6%       |5352      |26844       |29.7%
+Sgr  |SgC0072D  |contam       |scaffolds       |off       |1       |3515909  |120121       |462780087       |66.7%       |5570      |26612       |31.5%
+Sgr  |SgC0072C  |contam       |contgs       |auto       |1       |13018  |29230       |5972351       |1%       |7942	|242       |0.1%
+Sgr  |SgC0072C  |contam       |scaffolds       |auto	  |1       |13125  |29230	 |5849289	  |1%       |7942	  |240       |0.1%
+Sgr  |SgC0072C  |decontam       |contgs       |off       |1       |502823  |105644       |531230550       |76.5%       |6597	|24512       |32.2%
+Sgr  |SgC0072C  |decontam       |scaffolds       |off	  |1       |496944  |105644	 |536090329	  |77.2%       |6662	  |24355       |33.2%
+
+
+### Summary of QUAST (using Genome Scope v.2 estimate) and BUSCO Results
+
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ 
+Sgr  |SgC0072B  |contam       |contgs       |off       |2       |82681  |68606       |441333876       |51.7%       |5405       |26613       |0   |29.2%
+Sgr  |SgC0072B  |contam       |scaffolds       |off       |2       |84110  |68606       |460942092       |54%       |5587       |26490       |147.59   |31.3%
+Sgr  |SgC0072C  |contam       |contgs       |off       |2       |85876  |105644       |531350946       |62.2%       |6617       |24450       |0   |37.9%
+Sgr  |SgC0072C  |contam       |scaffolds       |off       |2       |85997  |105644       |536156621       |62.8%       |6686      |24304       |14.73   |38.4%
+Sgr  |SgC0072D  |contam       |contgs       |off       |2       |83191  |68563       |441118097       |51.7%       |5352      |26844       |0   |29.7%
+Sgr  |SgC0072D  |contam       |scaffolds       |off       |2       |84615  |120121       |462780087       |54.2%       |5570      |26612       |167.75   |31.5%
+Sgr  |SgC0072C  |decontam       |contgs       |off       |2       |69371  |103720       |395865756       |46.6%       |5946	|21196       |0   |32.2%
+Sgr  |SgC0072C  |decontam       |scaffolds       |off	  |2       |69932  |103720	 |406306057	  |47.6%       |6080	  |21004       |42.77   |33.2%
+
 
 
 SgC0072C contam created the best assembly. BUSCO values are somewhat low so running `--cov-cutoff auto`
