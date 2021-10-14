@@ -305,7 +305,7 @@ Sgr  |SgC0072C  |decontam       |scaffolds       |off	  |1       |496944  |10564
 ### Summary of QUAST (using Genome Scope v.2 estimate) and BUSCO Results
 
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
-------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ 
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
 Sgr  |SgC0072B  |contam       |contgs       |off       |2       |82681  |68606       |441333876       |51.7%       |5405       |26613       |0   |29.2%
 Sgr  |SgC0072B  |contam       |scaffolds       |off       |2       |84110  |68606       |460942092       |54%       |5587       |26490       |147.59   |31.3%
 Sgr  |SgC0072C  |contam       |contgs       |off       |2       |85876  |105644       |531350946       |62.2%       |6617       |24450       |0   |37.9%
