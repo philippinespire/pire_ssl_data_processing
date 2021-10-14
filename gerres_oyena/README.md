@@ -223,19 +223,29 @@ Assemblies made for GyC0881D (#"1"), GyC00881E (#"2"), allLibs w/ covcutoff = of
 
 Assemblies made for GyC0881D w/ covcutoff = auto
 
-### Summary of QUAST and BUSCO Results
+### Summary of QUAST and BUSCO results using genome size from Genomescope v1.0 (533,000,000 bp)
 Species |Library |DataType |SCAFIG |covcutoff |No. of contigs |Largest contig |Total length |% Genome size completeness |N50 |L50 |BUSCO single copy
 ------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
-Goy |allLibs |contam |contigs |off |56139 |99979 |428433255 |80.4% |8873 |14304 | 48.8%
-Goy |allLibs |contam |scaffolds |off |25822 |364333 |504055061 |94.6% |33151 |4188 | 74.9%
-Goy |GyC0881D |contam |contigs |off |55401 |111112 |456566152 |85.7% |9976 |13705 | 54.6%
-Goy |GyC0881D |contam |scaffolds |off |25665 |383347 |518735835 |97.3% |33953 |4182 | 79.1%
-Goy |GyC0881E |contam |contigs |off |52039 |118096 |484528224 |90.9% |11778 |12108 | 58.2%
-Goy |GyC0881E |contam |scaffolds |off |24249 |397418 |531155459 |99.7% |37754 |3908 | 80.2%
-Goy |GyC0881D |contam |contigs |auto |55459 |111115 |456736917 |85.7% |9969 |13728 | 54.5%
-Goy |GyC0881D |contam |scaffolds |auto |25707 |383347 |518852621 |97.4% |33957 |4183 | 79.1%
-Goy |GyC0881E |decontam |contigs |off |52425 |113391 |488426273 |91.6% |11751 |12369 | 60.4%
-Goy |GyC0881E |decontam |scaffolds |off |30872 |259628 |528159939 |99.1% |26350 |5731 | 78.7%
+Goy |allLibs |contam |contigs |off |56139 |99979 |428433255 |80.4% |8873 |14304 |48.8%
+Goy |allLibs |contam |scaffolds |off |25822 |364333 |504055061 |94.6% |33151 |4188 |74.9%
+Goy |GyC0881D |contam |contigs |off |55401 |111112 |456566152 |85.7% |9976 |13705 |54.6%
+Goy |GyC0881D |contam |scaffolds |off |25665 |383347 |518735835 |97.3% |33953 |4182 |79.1%
+Goy |GyC0881E |contam |contigs |off |52039 |118096 |484528224 |90.9% |11778 |12108 |58.2%
+Goy |GyC0881E |contam |scaffolds |off |24249 |397418 |531155459 |99.7% |37754 |3908 |80.2%
+Goy |GyC0881D |contam |contigs |auto |55459 |111115 |456736917 |85.7% |9969 |13728 |54.5%
+Goy |GyC0881D |contam |scaffolds |auto |25707 |383347 |518852621 |97.4% |33957 |4183 |79.1%
+Goy |GyC0881E |decontam |contigs |off |52425 |113391 |488426273 |91.6% |11751 |12369 |60.4%
+Goy |GyC0881E |decontam |scaffolds |off |30872 |259628 |528159939 |99.1% |26350 |5731 |78.7%
+
+###Summary of QUAST and BUSCO results using genome size from Genomescope v2.0 (549,000,000 bp)
+Species |Library |DataType |SCAFIG |covcutoff |No. of contigs |Largest contig |Total lenght |% Genome size completeness |N50 |L50 |BUSCO single copy|
+------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
+Goy |allLibs |contam |contigs |off |56139 |99979 |428433255 |78.0% |8873 |14304 |48.8% 
+Goy |allLibs |contam |scaffolds |off |25822 |364333 |504055061 |91.8% |33151 |4188 |74.9% 
+Goy |GyC0881D |contam |contigs |off |55401 |111112 |456566152 |83.2% |9976 |13705 |54.6%
+Goy |GyC0881D |contam |scaffolds |off |25665 |383347 |518735835 |94.5% |33953 |4182 |79.1%
+Goy |GyC0881E |contam |contigs |off |52039 |118096 |484528224 |88.3% |11778 |12108 |58.2%
+Goy |GyC0881E |contam |scaffolds |off |24249 |397418 |531155459 |96.8% |37884 |3908 |80.2%
 
 
 ## Step 9. Assessing the best assembly
