@@ -86,7 +86,7 @@ All files were successful!
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
 
-[Report](), download and open in web browser
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/plotosus_lineatus/fq_fp1_clmparray_fp2/2nd_fastp_report.html), download and open in web browser
 
 Potential issues:  
 * % duplication - good  
@@ -208,12 +208,12 @@ Reads remaining:
 
 ## Step 7. Genome properties
 
-I found the genome size of Sfa in the [genomesize.com](https://www.genomesize.com/) database. Here is the link to that [page] (https://www.genomesize.com/result_species.php?id=2683)
+I found the genome size of Sfa in the [genomesize.com](https://www.genomesize.com/) database. Here is the link to that [page](https://www.genomesize.com/result_species.php?id=2683)
 
 From species home directory: Executed runJellyfish.sbatch using decontaminated files
 ```sh
 #runJellyfish.sbatch <Species 2-letter ID> <indir> <outdir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Pli" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish__decontam"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Pli" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
 ```
 This jellyfish kmer-frequency [histogram file](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/plotosus_lineatus/jellyfish_decontam/Pli_all_reads.histo) was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=URnqm6DaJIVyouKPOCOI)
 
@@ -222,7 +222,7 @@ Kmer length: 21
 Read length: 140
 Max kmer coverage: 1000
 
-There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website] (http://qb.cshl.edu/genomescope/genomescope2.0/) too, with the following input:
+There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website](http://qb.cshl.edu/genomescope/genomescope2.0/) too, with the following input:
 
 Description: Pli_ssl_decontam2
 Kmer length: 21
@@ -230,17 +230,17 @@ Ploidy: 2
 Max kmer coverage: -1
 Average k-mer coverage for polyploid genome: -1
 
-The report generated for v2.0 is [here] (http://genomescope.org/genomescope2.0/analysis.php?code=YgUl0nfw01TyRVNlnsyn)
+The report generated for v2.0 is [here](http://genomescope.org/genomescope2.0/analysis.php?code=YgUl0nfw01TyRVNlnsyn)
 
 Genome stats for Pli from Jellyfish/GenomeScope v1.0 & v2.0
-stat    |min    |max    |average
-------  |------ |------ |------
-Heterozygosity v1.0 |0.702616%         |0.7111730.9%       |0.7068945%
-Heterozygosity v2.0 |0.725836%         |0.748822%       |0.737329%
-Genome Haploid Length v1.0   |737,279,443 bp    |738,434,396 bp     |737,856,920 bp
-Genome Haploid Length v2.0  |845,715,400 bp    |847,610,578 bp     |846,662,989 bp
-Model Fit v1.0      |95.7689%       |97.9334%       |96.85115%
-Model Fit v2.0      |76.5797%       |97.9609%       |87.2703%
+stat    |min    |max    
+------  |------ |------
+Heterozygosity v1.0 |0.702616%         |0.7111730.9%       
+Heterozygosity v2.0 |0.725836%         |0.748822%       
+Genome Haploid Length v1.0   |737,000,000 bp    |738,000,000 bp     
+Genome Haploid Length v2.0  |846,000,000 bp    |848,000,000 bp    
+Model Fit v1.0      |95.7689%       |97.9334%       
+Model Fit v2.0      |76.5797%       |97.9609%      
 
 ---
 ## Step 8. Assemble the genome using SPAdes
@@ -256,13 +256,24 @@ Execute runSPADEShimem_R1R2_noisolate.sbatch*
 ```
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
 # do not use trailing / in paths. Example running contaminated data:
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pli" "contam" "737856920" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pli" "all" "contam" "848000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus"
 ```
+
 Repeat running the decontaminated data:
 ```
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pli" "decontam" "737856920" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pli" "all" "decontam" "848000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus"
+```
 
+I also ran individual libraries:
+```
+#1st library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pli" "1" "848000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus"
+#2nd library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pli" "2" "contam" "848000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus"
+#3rd library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pli" "3" "contam" "848000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus"
+```
 ---
 
 ## Step 9. Determine the best assembly

@@ -237,12 +237,12 @@ Average k-mer coverage for polyploid genome: -1
 The report generated for v2.0 is [here] (http://genomescope.org/genomescope2.0/analysis.php?code=hGAiwIq4ab6yyLFhgOae)
 
 Genome stats for Sfa from Jellyfish/GenomeScope v1.0 & v2.0
-stat    |min    |max    |average
-------  |------ |------ |------
-Heterozygosity v1.0|1.05362%       |1.08527%       |1.069445%
-Heterozygosity v2.0|1.08056%       |1.10253%       |1.091545%
-Genome Haploid Length v1.0|577,799,589 bp    |579,898,449 bp | 578,849,019 bp
-Genome Haploid Length v2.0|633,734,275 bp    |634,705,011 bp | 634,219,643 bp
+stat    |min    |max    
+------  |------ |------
+Heterozygosity v1.0|1.05362%       |1.08527%       
+Heterozygosity v2.0|1.08056%       |1.10253%       
+Genome Haploid Length v1.0|578,000,000 bp    |580,000,000 bp 
+Genome Haploid Length v2.0|634,000,000 bp    |635,000,000 bp 
 Model Fit   v1.0|90.9818%       |92.2968%       |91.6393%
 Model Fit   v2.0|80.1744%       |93.4121%       |86.79325%
 
@@ -261,13 +261,22 @@ Execute runSPADEShimem_R1R2_noisolate.sbatch*
 ```
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
 # do not use trailing / in paths. Example running contaminated data:
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "contam" "578849019" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "contam" "578849019" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "contam" "all" "635000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "contam" "635000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
 ```
-
 Repeat running the decontaminated data:
 ```
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "decontam" "578849019" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "decontam" "all" "635000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
+```
+
+Ran individual libraries:
+```
+#1st library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "1" "contam" "635000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
+#2nd library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "2" "contam" "635000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
+#3rd library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Sfa" "3" "contam" "635000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus"
 ```
 ---
 ## Step 9. Determine the best assembly

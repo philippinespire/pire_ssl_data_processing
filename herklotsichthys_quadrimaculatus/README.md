@@ -214,7 +214,7 @@ Reads remaining:
 
 ## Step 7. Genome properties
 
-I found the genome size of Hqu in the [genomesize.com](https://www.genomesize.com/) database. It can be found [here] (https://www.genomesize.com/result_species.php?id=2074)
+I found the genome size of Hqu in the [genomesize.com](https://www.genomesize.com/) database. It can be found [here](https://www.genomesize.com/result_species.php?id=2074)
 
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir>
@@ -235,17 +235,17 @@ Ploidy: 2
 Max kmer coverage: -1
 Average k-mer coverage for polyploid genome: -1
 
-The report generated for v2.0 is [here] (http://genomescope.org/genomescope2.0/analysis.php?code=8eVzhAQ8zSenObScLMGC)
+The report generated for v2.0 is [here](http://genomescope.org/genomescope2.0/analysis.php?code=8eVzhAQ8zSenObScLMGC)
 
 Genome stats for Hqu from Jellyfish/GenomeScope v1.0 & v2.0
-stat    |min    |max    |average
-------  |------ |------ |------
-Heterozygosity v1.0  |0.449245%       |0.459506%       |0.4543755%
-Heterozygosity v2.0  |2.03309%       |2.074009%       |2.0535495%   
-Genome Haploid Length v1.0   |843,747,830 bp    |845,694,580 bp |844,721,205 bp
-Genome Haploid Length v2.0   |455,505,014 bp    |457,259,745 bp |456,382,380 bp
-Model Fit v1.0       |95.034%       |97.832%       |96.433%
-Model Fit v2.0       |79.9163%      |92.0546%      |85.98545%
+stat    |min    |max    
+------  |------ |------ 
+Heterozygosity v1.0  |0.449245%       |0.459506%      
+Heterozygosity v2.0  |2.03309%       |2.074009%      
+Genome Haploid Length v1.0   |844,000,000 bp    |846,000,000 bp
+Genome Haploid Length v2.0   |456,000,000 bp    |457,000,000 bp 
+Model Fit v1.0       |95.034%       |97.832%      
+Model Fit v2.0       |79.9163%      |92.0546%   
 ---
 
 ## Step 8. Assemble the genome using SPAdes
@@ -261,21 +261,24 @@ Execute runSPADEShimem_R1R2_noisolate.sbatch*
 ```
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
 # do not use trailing / in paths. Example running contaminated data:
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "contam" "844721205" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "contam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
 ```
+
 Repeat running the decontaminated data:
+
 ```
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "decontam" "844721205" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "decontam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
+```
 
-Ran invidual libararies through these:
+Ran individual libararies through these:
 ```
 #1st library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "1" "contam" "817758761" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ta$
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "1" "contam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ta$
 #2nd library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "2" "contam" "844721205" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "2" "contam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
 #3rd library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "3" "contam" "844721205" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "3" "contam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
 ```
 ---
 

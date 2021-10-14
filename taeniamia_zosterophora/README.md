@@ -215,7 +215,7 @@ Kmer length: 21
 Read length: 140
 Max kmer coverage: 1000
 
-There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website] (http://qb.cshl.edu/genomescope/genomescope2.0/) too, with the following input:
+There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website](http://qb.cshl.edu/genomescope/genomescope2.0/) too, with the following input:
 
 Description: Tzo_ssl_decontam2
 Kmer length: 21
@@ -223,19 +223,18 @@ Ploidy: 2
 Max kmer coverage: -1
 Average k-mer coverage for polyploid genome: -1
 
-The report generated for v2.0 is [here] (http://genomescope.org/genomescope2.0/analysis.php?code=iYAXsA0hmMtIMGeLX19n)
+The report generated for v2.0 is [here](http://genomescope.org/genomescope2.0/analysis.php?code=iYAXsA0hmMtIMGeLX19n)
 
 Genome stats for Tzo from Jellyfish/GenomeScope v1.0 & v2.0
-stat    |min    |max    |average
-------  |------ |------ |------
-Heterozygosity v1.0 |0.915939%       |0.920206%       |0.9180725%
-Heterozygosity v2.0 |0.911721%       |0.928177%       |0.919949%
-Genome Haploid Length v1.0   |817,498,230 bp    |818,019,292 bp |817,758,761 bp
-Genome Haploid Length v2.0   |882,851,069 bp    |884,178,743 bp |883,514,906 bp
-Model Fit v1.0      |97.6439%       |99.4735%       |98.5587%
-Model Fit v2.0      |82.422%       |99.3423%       |90.88215%
+stat    |min    |max    |
+------  |------ |------ |
+Heterozygosity v1.0 |0.915939%       |0.920206%
+Heterozygosity v2.0 |0.911721%       |0.928177%    
+Genome Haploid Length v1.0   |817,498,230 bp    |818,019,292 bp 
+Genome Haploid Length v2.0   |882,851,069 bp    |884,000,000 bp
+Model Fit v1.0      |97.6439%       |99.4735%     
+Model Fit v2.0      |82.422%       |99.3423%    
 ---
-
 
 ## Step 8. Assemble the genome using SPAdes
 
@@ -250,27 +249,27 @@ Execute runSPADEShimem_R1R2_noisolate.sbatch*
 ```
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
 # do not use trailing / in paths. Example running contaminated data:
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "contam" "817758761" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "contam" "884000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
 ```
 Repeat running the decontaminated data:
 ```
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <contam | decontam> <genome size in bp> <species dir>
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "decontam" "817758761" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "decontam" "884000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
 ```
 
-Ran invidual libararies through these:
+Ran invidual libraries through these:
 ```
 #1st library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "1" "contam" "817758761" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "1" "contam" "884000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
 #2nd library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "2" "contam" "817758761" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "2" "contam" "884000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
 #3rd library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "3" "contam" "817758761" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "3" "contam" "884000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
 ```
 
 Because the 3rd library had the highest QUAST & BUSCO scores, I ran decontam w/ it too.
 ```
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "3" "decontam" "817758761" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Tzo" "3" "decontam" "884000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora"
 ```
 
 ---
@@ -327,8 +326,6 @@ sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_process
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_TzC0402G_contam_R1R2_noIsolate" "contigs"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_TzC0402G_contam_R1R2_noIsolate" "scaffolds"
 ```
-
-
 Then, to fill in the BUSCO single copy column, open the following files & look for S%:
 
 Contam, contigs:
