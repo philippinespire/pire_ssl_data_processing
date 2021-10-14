@@ -199,7 +199,7 @@ was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) and [Genom
 Genome stats for Sgr from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
 
 version    |stat    |min    |max    
-------  |------ |------ 
+------  |------ |------ |------ 
 1  |Heterozygosity  |1.32565%       |1.34149%       
 2  |Heterozygosity  |1.32975%       |1.35795%       
 1  |Genome Haploid Length   |693,553,516 bp |695,211,827 bp 
@@ -278,7 +278,7 @@ sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_process
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_SgC0072D_contam_R1R2_noIsolate" "scaffolds"
 ```
 
-### Summary of QUAST (using Genome Scope v.1 estimate) and BUSCO Results
+### Summary of QUAST (using Genome Scope v.1 694000000 estimate) and BUSCO Results
 
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs >0    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ 
@@ -302,7 +302,7 @@ Sgr  |SgC0072C  |decontam       |contgs       |off       |1       |502823  |1056
 Sgr  |SgC0072C  |decontam       |scaffolds       |off	  |1       |496944  |105644	 |536090329	  |77.2%       |6662	  |24355       |33.2%
 
 
-### Summary of QUAST (using Genome Scope v.2 estimate) and BUSCO Results
+### Summary of QUAST (using Genome Scope v.2 854000000 estimate) and BUSCO Results
 
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
