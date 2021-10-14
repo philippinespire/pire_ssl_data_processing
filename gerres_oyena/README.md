@@ -237,7 +237,7 @@ Goy |GyC0881D |contam |scaffolds |auto |25707 |383347 |518852621 |97.4% |33957 |
 Goy |GyC0881E |decontam |contigs |off |52425 |113391 |488426273 |91.6% |11751 |12369 |60.4%
 Goy |GyC0881E |decontam |scaffolds |off |30872 |259628 |528159939 |99.1% |26350 |5731 |78.7%
 
-###Summary of QUAST and BUSCO results using genome size from Genomescope v2.0 (549,000,000 bp)
+### Summary of QUAST and BUSCO results using genome size from Genomescope v2.0 (549,000,000 bp)
 Species |Library |DataType |SCAFIG |covcutoff |No. of contigs |Largest contig |Total lenght |% Genome size completeness |N50 |L50 |BUSCO single copy|
 ------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
 Goy |allLibs |contam |contigs |off |56139 |99979 |428433255 |78.0% |8873 |14304 |48.8% 
