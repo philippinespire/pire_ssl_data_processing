@@ -215,6 +215,7 @@ version    |stat    |min    |max
 SPAdes and BUSCO do not incoorporate the genome estimate so these don't need to be re-ran. Thus, I only rerunning QUAST with the max estimate of V2.
 
 QUAST stat table has also been updated to include the genome scope version and "#N's per 100 kbp"
+
 ---
 
 ## Step 8. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
