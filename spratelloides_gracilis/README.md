@@ -207,6 +207,16 @@ version    |stat    |min    |max
 1  |Model Fit       |97.6162%       |98.7154%       
 2  |Model Fit       |65.11692%       |96.0314%       
 
+---
+
+**Note:** the initial commands for assembly used the mid-point between min and max of Genome Scope V1, meaning that the first set of QUAST runs were feed this number.
+ After these runs were completed, we decided to use Genome Scope V2 instead. Giving that the model fit for the min is usually low, I recommended using the max estimate (rounded up or down to the nearest million).
+
+SPAdes and BUSCO do not incoorporate the genome estimate so these don't need to be re-ran. Thus, I only rerunning QUAST with the max estimate of V2.
+
+QUAST stat table has also been updated to include the genome scope version and "#N's per 100 kbp"
+---
+
 ## Step 8. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
 
 In our previous tests, contaminated data has produced the best assemblies for nDNA but decontaminated assemblies were better for mtDNA. The effect of using merged files remains unclear
