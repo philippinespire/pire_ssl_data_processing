@@ -225,7 +225,7 @@ Assemblies made for GyC0881D w/ covcutoff = auto
 
 ### Summary of QUAST and BUSCO results using genome size from Genomescope v1.0 (533,000,000 bp) from /quast-reports_v1/
 Species |Library |DataType |SCAFIG |covcutoff |genomescope v. |No. of contigs >0 |Largest contig |Total length |% Genome size completeness |N50 |L50 |BUSCO single copy
------- |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
+------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
 Goy |allLibs |contam |contigs |off |1 |597249 |99979 |428433255 |80.4% |8873 |14304 |48.8%
 Goy |allLibs |contam |scaffolds |off |1 |530964 |364333 |504055061 |94.6% |33151 |4188 |74.9%
 Goy |GyC0881D |contam |contigs |off |1 |533072 |111112 |456566152 |85.7% |9976 |13705 |54.6%
@@ -239,7 +239,7 @@ Goy |GyC0881E |decontam |scaffolds |off |1 |346055 |259628 |528159939 |99.1% |26
 
 ### Summary of QUAST and BUSCO results using genome size from Genomescope v2.0 (549,000,000 bp) from /quast-reports_v2/
 Species |Library |DataType |SCAFIG |covcutoff |genomescope v. |No. of contigs >0 |Largest contig |Total length |% Genome size completeness |N50 |L50 |BUSCO single copy|
------- |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
+------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
 Goy |allLibs |contam |contigs |off |2 |597249 |99979 |428433255 |78.0% |8873 |14304 |48.8% 
 Goy |allLibs |contam |scaffolds |off |2 |530964 |364333 |504055061 |91.8% |33151 |4188 |74.9% 
 Goy |GyC0881D |contam |contigs |off |2 |533072 |111112 |456566152 |83.2% |9976 |13705 |54.6%
