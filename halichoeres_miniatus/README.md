@@ -129,7 +129,7 @@ I ran SPAdes on contaminated libraries and assesed them with QUAST and Busco
 
 ## Step 9. Determine the best assembly
 
-The table below shows the outcomes of the assemblies.  The value covcutoff is omitted as I cannot intrepret how to acquire it. I adjusted the value in a column to BUSCO complete & single copy.  See the reports for further information.
+The table below shows the outcomes of the assemblies for Genomescope V1 estimate. 593000000 bp.  The value covcutoff is omitted as I cannot intrepret how to acquire it. I adjusted the value in a column to BUSCO complete & single copy.  See the reports for further information.
 
 Species|Library|DataType|SCAFIG|No. of contigs|Largest contig|Total length|N50|L50|BUSCO complete & single copy|% Genome size completeness
 ------|------|------|------|------|------|------|------|------|------|------
@@ -143,5 +143,21 @@ Hmi|C|contam|scaffolds|1102909|131151|492541584|9800|13726|58.5%|83.1%
 Hmi|allLibs|contam|scaffolds|1128280|171801|502459845|10188|13331|59.1%|84.7%
 
 After confering with colleagues I picked Hmi B for the decontam assembly.
+
+The table below shows the outcomes of the assemblies for Genomescope V2 estimate. 632000000 bp.
+Species|Library|DataType|SCAFIG|No. of contigs|Largest contig|Total length|N50|L50|BUSCO complete & single copy|% Genome size completeness
+------|------|------|------|------|------|------|------|------|------|------
+Hmi|A|contam|contig|1059314|125732|434260664|6716|19242|46.6%|73.2%
+Hmi|B|contam|contig|1152395|94343|435308849|6809|18997|48.5%|73.4%
+Hmi|C|contam|contig|1151936|71699|409046162|6513|18731|45.2%|69.0%
+Hmi|allLibs|contam|contig|1178612|99674|416912122|6609|18668|45.5%|70.3%
+Hmi|A|contam|scaffolds|1012225|165936|511942208|9996|14062|60.1%|86.3%
+Hmi|B|contam|scaffolds|1106460|200054|511188068|10051|13877|61.5%|86.2%
+Hmi|C|contam|scaffolds|1102909|131151|492541584|9800|13726|58.5%|83.1%
+Hmi|allLibs|contam|scaffolds|1128280|171801|502459845|10188|13331|59.1%|84.7%
+
+All values are the same.  Hmi B with be used for the decontam assembly.
+
+
 
 

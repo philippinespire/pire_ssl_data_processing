@@ -751,5 +751,64 @@ Heterozygosity |1.22796% |1.2388%  |
 Genome Haploid Length |631,820,236 bp  |632,395,858 bp |632,108,047 bp
 Model Fit |87.7119%  |99.3197% |
 
-I will run SPAdes on the libraries with a new genome length of 632000000 bp
+I will run QUAST on the libraries with a new genome length of 632000000 bp.
+
+I updated the best_ssl_assembly_per_sp.tsv
+
+I logged in to Turing
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "ilope002" "Hmi" "2" "decontam" "632000000" "/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus"
+```
+
+The job ran.
+The job completed.
+
+***
+
+# Probe design
+
+### 10
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus
+mkdir probe_design
+cp ../scripts/WG* probe_design
+cp SPAdes_HmC0451B_contam_R1R2_noIsolates/scaffolds.fasta probe_design
+cd probe_design
+mv probe_design Hmi_scaffolds_HmC0451B_contam_R1R2_noIsolate.fasta
+sbatch WGprobe_annotation.sb "Hmi_scaffolds_HmC0451B_contam_R1R2_noIsolate.fasta"
+sbatch WGprobe_bedcreation.sb "Hmi_scaffolds_HmC0451B_contam_R1R2_noIsolate.fasta"
+```
+
+The jobs ran.
+WGprobe\_bedcreation.sb failed.  This script must be lauched after the WGprobe\_annotation.sb script completes.
+The job completed.
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/probe_design
+sbatch WGprobe_bedcreation.sb "Hmi_scaffolds_HmC0451B_contam_R1R2_noIsolate.fasta"
+```
+
+The job ran.
+The job completed.
+
+The out file read as follows:
+```sh
+The longest scaffold is 172983
+The uppper limit used in loop is 167500
+A total of 20731 regions have been identified from 13397 scaffolds
+```
+
+I ran the following commands:
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/probe_design
+mv *out ../logs
+```
+
+I informed Dr. Garcia the pipeline for probe creation for *H. miniatus* was complete.
+I pushed all changes to GitHub.
 
