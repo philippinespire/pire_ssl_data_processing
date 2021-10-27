@@ -280,10 +280,8 @@ Look for the quast_results dir and note the (1) total number of contigs, (2) the
 To get summary for No. of contigs, largest contig, total length, % genome size completeness (GC), N50 & L50, do the following:
 ```
 bash
-cat quast-reports/quast-report_contigs_Tzo_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_scaffolds_Tzo_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_contigs_Tzo_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_scaffolds_Tzo_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Tzo_spades_allLibs_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Tzo_spades_allLibs_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 ```
 
 To get summary for individual libraries, I did the ff:
@@ -295,6 +293,9 @@ cat quast-report_scaffolds_Tzo_spades_TzC0402F_contam_R1R2_21-99_isolateoff-covo
 #3rd library only
 cat quast-report_contigs_Tzo_spades_TzC0402G_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-report_scaffolds_Tzo_spades_TzC0402G_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+#decontam for 3rd library
+cat quast-report_contigs_Tzo_spades_TzC0402G_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-report_scaffolds_Tzo_spades_TzC0402G_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 #1st library only
 cat quast-report_contigs_Tzo_spades_TzC0402E_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-report_scaffolds_Tzo_spades_TzC0402E_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
@@ -308,8 +309,6 @@ This SPAdes scripts automatically runs `QUAST` but not BUSCO.
 # do not use trailing / in paths:
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_contam_R1R2_noIsolate" "contigs"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_contam_R1R2_noIsolate" "scaffolds"
-sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_decontam_R1R2_noIsolate" "contigs"
-sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_decontam_R1R2_noIsolate" "scaffolds"
 ```
 
 For the individual libraries, I did the following to run BUSCO:
@@ -325,7 +324,10 @@ sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_process
 #3rd library
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_TzC0402G_contam_R1R2_noIsolate" "contigs"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_TzC0402G_contam_R1R2_noIsolate" "scaffolds"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_TzC0402G_decontam_R1R2_noIsolate" "contigs"
+sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora" "SPAdes_TzC0402G_decontam_R1R2_noIsolate" "scaffolds"
 ```
+
 Then, to fill in the BUSCO single copy column, open the following files & look for S%:
 
 Contam, contigs:
@@ -333,24 +335,38 @@ Contam, scaffolds:
 Decontam, contigs:
 Decontam, scaffolds:
 
-Summary of QUAST & BUSCO Results
+Summary of QUAST (using Genome Scope v.1 817758761 estimate) & BUSCO Results
 
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
-------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Tzo  |allLibs    |contam       |contigs       |off	 |96125  |236270       |745725175	|91.19%       |9041	  |24287       |50.7%
-Tzo  |allLibs    |contam       |scaffolds     |off	 |74846  |320496       |812404903	|99.35%       |14515	   |15479	|64.7%
-Tzo  |TzC0402E   |contam       |contigs       |off	 |65176  |227579       |830651102       |101.58%       |18737	|11972         |70.0%
-Tzo  |TzC0402E   |contam       |scaffolds     |off	 |64301  |340415       |832616461       |101.82%       |19199    |11686       |70.1%
-Tzo  |TzC0402F   |contam       |contigs       |off	 |84668  |48595        |466349924       |57.03%       |5684     |27045		|35.5
-Tzo  |TzC0402F   |contam       |scaffolds     |off	 |86989  |69417        |506992391       |62.00%       |6119       |26533         |39.0%
-Tzo  |TzC0402G   |contam       |contigs       |off	 |64326  |252063       |833348334       |101.91%        |19230       |11742         |70.8%
-Tzo  |TzC0402G   |contam       |scaffolds     |off	 |63527  |252063       |834945222       |102.10%        |19682       |11491         |71.1%
-Tzo  |TzC0402G   |decontam     |contigs       |off	 |74000  |170219       |787350440       |96.28%        |14381       |15216         |66.3%
-Tzo  |TzC0402G   |decontam     |scaffolds     |off	 |71206  |170219       |794560568	|97.16%        |15481       |14123         |67.6%
-Tzo  |allLibs    |decontam     |scaffolds     |off	 |80472  |144523       |739361830 	|90.41%        |11593       |17523         |
-Tzo  |allLibs    |decontam     |contigs	      |off	 |94520  |100990       |657658468       |80.42%	       |7749        |24786	   |
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------|-------
+Tzo  |allLibs    |contam       |contigs       |off	 |1     |96125  |236270       |745725175	|91.19%       |9041	  |24287       |50.7%
+Tzo  |allLibs    |contam       |scaffolds     |off	 |1     |74846  |320496       |812404903	|99.35%       |14515	   |15479	|64.7%
+Tzo  |TzC0402E   |contam       |contigs       |off	 |1     |65176  |227579       |830651102       |101.58%       |18737	|11972         |70.0%
+Tzo  |TzC0402E   |contam       |scaffolds     |off	 |1     |64301  |340415       |832616461       |101.82%       |19199    |11686       |70.1%
+Tzo  |TzC0402F   |contam       |contigs       |off	 |1     |84668  |48595        |466349924       |57.03%       |5684     |27045		|35.5%
+Tzo  |TzC0402F   |contam       |scaffolds     |off	 |1     |86989  |69417        |506992391       |62.00%       |6119       |26533         |39.0%
+Tzo  |TzC0402G   |contam       |contigs       |off	 |1     |64326  |252063       |833348334       |101.91%        |19230       |11742         |70.8%
+Tzo  |TzC0402G   |contam       |scaffolds     |off	 |1     |63527  |252063       |834945222       |102.10%        |19682       |11491         |71.1%
+Tzo  |TzC0402G   |decontam     |contigs       |off	 |1     |74000  |170219       |787350440       |96.28%        |14381       |15216         |66.3%
+Tzo  |TzC0402G   |decontam     |scaffolds     |off	 |1     |71206  |170219       |794560568	|97.16%        |15481       |14123         |67.6%
+
+Summary of QUAST (using Genome Scope v.2 884000000 estimate) & BUSCO Results
+
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp   |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ |------- | ------
+Tzo  |allLibs    |contam       |contigs       |off       |2     |96125    |236270     |745725175     |84.36%     |9041     |24287     |0.00     |50.7% 
+Tzo  |allLibs    |contam       |scaffolds     |off       |2     |74846    |320496     |812404903     |91.90%     |14515    |15479     |636.61   |64.7%
+Tzo  |TzC0402E   |contam       |contigs       |off       |2     |65176    |227579     |830651102     |93.97%     |18737    |11972     |0.00     |70.0%
+Tzo  |TzC0402E   |contam       |scaffolds     |off       |2     |64301    |340415     |832616461     |94.19%     |19199    |11686     |6.81     |70.1%
+Tzo  |TzC0402F   |contam       |contigs       |off       |2     |84668    |48595      |466349924     |52.75%     |5684     |27045     |0.00     |35.5
+Tzo  |TzC0402F   |contam       |scaffolds     |off       |2     |86989    |69417      |506992391     |57.35%     |6119     |26533     |111.39   |39.0%
+Tzo  |TzC0402G   |contam       |contigs       |off       |2     |64326    |252063     |833348334     |94.27%     |19230    |11742     |0.00     |70.8%
+Tzo  |TzC0402G   |contam       |scaffolds     |off       |2     |63527    |252063     |834945222     |94.45%     |19682    |11491     |6.05     |71.1%
+Tzo  |TzC0402G   |decontam     |contigs       |off       |2     |74000    |170219     |787350440     |89.07%     |14381    |15216     |0.00     |66.3%
+Tzo  |TzC0402G   |decontam     |scaffolds     |off       |2     |71206    |170219     |794560568     |89.88%     |15481    |14123     |27.46    |67.6%
 
 ---
+
 The best library was TzC0402G scaffolds.
 #### Main assembly stats
 
@@ -417,3 +433,32 @@ sbatch WGprobe_bedcreation.sb "Tzo_scaffolds_TzC0402G_contam_R1R2_noIsolate.fast
 
 This will create a .bed file that will be sent for probe creation.
  The bed file identifies 5,000 bp regions (spaced every 10,000 bp apart) in scaffolds > 10,000 bp long.
+
+The longest scaffold is 252063
+
+The uppper limit used in loop is 247500
+
+A total of 55706 regions have been identified from 26210 scaffolds
+
+Moved out files to logs
+```sh
+mv *out ../logs
+```
+
+## step 11. Fetching genomes for closest relatives
+
+```sh
+nano closest_relative_genomes_Taeniamia_zosterophora.txt
+
+1. Sphaeramia orbicularis - https://www.ncbi.nlm.nih.gov/genome/82499
+2. Bostrychus sinensis - https://www.ncbi.nlm.nih.gov/genome/13880
+3. Chaenogobius annularis - https://www.ncbi.nlm.nih.gov/genome/96250
+4. Mugilogobius chulae - https://www.ncbi.nlm.nih.gov/genome/36347
+5. Periopthalmus modestus - https://www.ncbi.nlm.nih.gov/genome/104952
+```
+
+following Betancur et al. 2017, Mabuchi et al. 2014 and Thacker 2009.
+
+
+
+
