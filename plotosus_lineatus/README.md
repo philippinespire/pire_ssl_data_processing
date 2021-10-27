@@ -64,7 +64,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 
 Out files were moved to the `logs` dir
 
-Ran [checkClumpify_EG.R] (https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any files failed.
+Ran [checkClumpify_EG.R](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any files failed.
 
 ```
 #navigate to out dir for clumpify
@@ -295,10 +295,10 @@ Look for the quast_results dir and note the (1) total number of contigs, (2) the
 To get summary for No. of contigs, largest contig, total length, % genome size completeness (GC), N50 & L50, do the following:
 ```
 bash
-cat quast-reports/quast-report_contigs_Pli_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_scaffolds_Pli_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_contigs_Pli_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_scaffolds_Pli_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Pli_spades_allLibs_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Pli_spades_allLibs_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Pli_spades_allLibs_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Pli_spades_allLibs_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_contigs_Pli_spades_PlC0351D_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_scaffolds_Pli_spades_PlC0351D_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_contigs_Pli_spades_PlC0351E_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
@@ -313,20 +313,35 @@ Contam, scaffolds:
 Decontam, contigs:
 Decontam, scaffolds:
 
-Summary of QUAST & BUSCO Results
+Summary of QUAST (using Genome Scope v.1 737856920 estimate) & BUSCO Results
 
-Species    |Library     |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
-------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Pli  |allLibs    |contam       |contigs       |off       |126462  |1070312       |952740157     |129.12%       |8730       |34786       |36.9%
-Pli  |allLibs    |contam       |scaffolds     |off       |125095  |1070312       |960099166     |130.12%       |8957       |34066       |37.9%
-Pli  |allLibs    |decontam     |contigs       |off       |126080  |66692         |813845906     |110.30%       |7085       |37545       |30.9%
-Pli  |allLibs    |decontam     |scaffolds     |off       |125228  |94589         |840397753     |113.90%       |7471       |36480       |32.3%
-Pli  |PlC0351D    |contam       |contigs      |off       |129516  |55006         |865312588	|117.27%       |7437       |37993       |33.2%
-Pli  |PlC0351D    |contam       |scaffolds    |off       |128482  |59925       	 |880535043	|119.34%       |7686       |37111       |34.5%   
-Pli  |PlC0351E    |contam       |contigs      |off       |128940  |60088         |898481094     |117.27%       |7879       |36969       |34.5%   
-Pli  |PlC0351E    |contam       |scaffolds    |off       |127572  |60088         |911334858	|119.34%       |8145       |36065       |35.5%   
-Pli  |PlC0351F    |contam       |contigs      |off       |130752  |55486         |880614509	|121.77%       |7515       |38296       |32.8%   
-Pli  |PlC0351F    |contam       |scaffolds    |off       |129035  |55486         |900730518	|123.51%       |7886       |37100       |34.6%   
+Species    |Library     |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ |-----
+Pli  |allLibs    |contam       |contigs       |off       |1     |126462  |1070312       |952740157     |129.12%       |8730       |34786       |36.9%
+Pli  |allLibs    |contam       |scaffolds     |off       |1     |125095  |1070312       |960099166     |130.12%       |8957       |34066       |37.9%
+Pli  |allLibs    |decontam     |contigs       |off       |1     |126080  |66692         |813845906     |110.30%       |7085       |37545       |30.9%
+Pli  |allLibs    |decontam     |scaffolds     |off       |1     |125228  |94589         |840397753     |113.90%       |7471       |36480       |32.3%
+Pli  |PlC0351D    |contam       |contigs      |off       |1     |129516  |55006         |865312588	|117.27%       |7437       |37993       |33.2%
+Pli  |PlC0351D    |contam       |scaffolds    |off       |1     |128482  |59925         |880535043	|119.34%       |7686       |37111       |34.5%   
+Pli  |PlC0351E    |contam       |contigs      |off       |1     |128940  |60088         |898481094     |117.27%       |7879       |36969       |34.5%   
+Pli  |PlC0351E    |contam       |scaffolds    |off       |1     |127572  |60088         |911334858	|119.34%       |8145       |36065       |35.5%   
+Pli  |PlC0351F    |contam       |contigs      |off       |1     |130752  |55486         |880614509	|121.77%       |7515       |38296       |32.8%   
+Pli  |PlC0351F    |contam       |scaffolds    |off       |1     |129035  |55486         |900730518	|123.51%       |7886       |37100       |34.6%   
+
+Summary of QUAST (using Genome Scope v.2 848000000 estimate) & BUSCO Results
+
+Species    |Library     |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp |BUSCO single copy 
+------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ |----- |-----
+Pli  |allLibs    |contam       |contigs       |off       |2     |126462     |1070312         |952740157     |112.35%     |8730     |34786     |0.00     |36.9%
+Pli  |allLibs    |contam       |scaffolds     |off       |2     |125095     |1070312         |960099166     |113.22%     |8957     |34066     |30.16    |37.9%
+Pli  |allLibs    |decontam     |contigs       |off       |2     |126080     |66692           |813845906     |95.97%      |7085     |37545     |0.00     |30.9%
+Pli  |allLibs    |decontam     |scaffolds     |off       |2     |125228     |94589           |840397753     |99.10%      |7471     |36480     |52.44    |32.3%
+Pli  |PlC0351D    |contam       |contigs      |off       |2     |9516       |55006           |865312588     |102.04%     |7437     |37993     |0.00     |33.2%
+Pli  |PlC0351D    |contam       |scaffolds    |off       |2     |128482     |59925           |880535043     |103.84%     |7686     |37111     |41.11    |34.5%
+Pli  |PlC0351E    |contam       |contigs      |off       |2     |128940     |60088           |898481094     |105.95%     |7879     |36969     |0.00     |34.5%
+Pli  |PlC0351E    |contam       |scaffolds    |off       |2     |127572     |60088           |911334858     |107.47%     |8145     |36065     |34.62    |35.5%
+Pli  |PlC0351F    |contam       |contigs      |off       |2     |130752     |55486           |880614509     |103.85%     |7515     |38296     |0.00     |32.8%
+Pli  |PlC0351F    |contam       |scaffolds    |off       |2     |129035     |55486           |900730518     |106.22%     |7886     |37100     |82.32    |34.6%                               
 
 ---
 The best library was allLibs contam scaffolds.
@@ -382,3 +397,40 @@ Execute the first script:
 sbatch WGprobe_annotation.sb "Pli_scaffolds_allLibs_contam_R1R2_noIsolate.fasta"
 ```
 
+This will create:
+1. a repeat-masked fasta and gff file (.fasta.masked & .fasta.out.gff)
+2. a gff file with predicted gene regions (augustus.gff), and
+3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
+
+Execute the second script.
+```sh
+#WGprobe_annotation.sb <assembly base name>
+sbatch WGprobe_bedcreation.sb "Pli_scaffolds_allLibs_contam_R1R2_noIsolate.fasta"
+```
+
+This will create a .bed file that will be sent for probe creation.
+ The bed file identifies 5,000 bp regions (spaced every 10,000 bp apart) in scaffolds > 10,000 bp long.
+
+The longest scaffold is 1070312
+
+The uppper limit used in loop is 1067500
+
+A total of 35209 regions have been identified from 27550 scaffolds
+
+Moved out files to logs
+```sh
+mv *out ../logs
+```
+
+## step 11. Fetching genomes for closest relatives
+
+```sh
+nano closest_relative_genomes_taeniamia_zosterophora.txt
+
+1.-
+https://www.ncbi.nlm.nih.gov/genome/15477
+2.-
+https://www.ncbi.nlm.nih.gov/genome/8239
+
+
+following Betancur et al. 2017 and Lavoué_etal_2007?????
