@@ -2,7 +2,8 @@
 
 ---
 
-The purpose of this repo is to document the processing and analysis of `Shotgun Sequencing Libraries - SSL data` for probe development which then will be processed according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) 
+The purpose of this repo is to document the processing and analysis of `Shotgun Sequencing Libraries - SSL data` for probe development which then will be processed according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing). 
+ Both SSL and CSSL pipelines use scripts from the (Pre-Processing PIRE Data)[https://github.com/philippinespire/pire_fq_gz_processing] repo at the beginning of files processing. 
 
 Each species will get it's own directory within this repo.  Try to avoing putting dirs inside dirs inside dirs. 
 
@@ -10,16 +11,20 @@ The Sgr dir will serve as the example to follow in terms of both directory struc
 
 If this is your first time working on wahab/turing or want to check out some tips see the [Working on ODU's HPC repo](https://github.com/philippinespire/denovo_genome_assembly/tree/main/working_in_Turing-Wahab)
 
+Contact Dr. Eric Garcia for questions or if you are having issues running scripts (e1garcia@odu.edu)
+
 ---
 
 ## Use Git/GitHub to Track Progress
 
 To process a species, begin by cloning this repo to your working dir. I recommend setting up a `shotgun_PIRE` sub-dir in your home dir if you have not done something similar already
 
-Example: `/home/e1garcia/shotgun_PIRE`
+Example: `/home/youruserID/shotgun_PIRE/`
 
-Clone the 
+Clone this repo
 ```
+cd ~ 	# this will take you to your home dir
+cd shotgun_PIRE
 git clone https://github.com/philippinespire/pire_ssl_data_processing.git
 ```
 
@@ -60,8 +65,9 @@ these deletions occurred in your local directory but these files will remain in 
 
 If you are in this situation, run these git commands manually, AFTER running the runGIT.bash as describe above.
 
-`git add -u .` will stage your deleled files, then you can commit and push
+`add -u` will stage your deleled files, then you can commit and push
 
+Run this from the directory where you deleted files:
 ```sh
 git add -u .
 git commit -m "update deletions"
@@ -77,6 +83,22 @@ Clone this repo to your working dir
 *(already done above)*
 
 #### 0. Set up directories and data
+
+Check your raw files: given that we use paired-end sequencing, you should have one pair of files (1 forward and 1 reverse) per library. This  means that you should have the same number of foward (1.fq.gz or f.fq.gz) and reverse sequence files (2.fq.gz or r.fq.gz).
+ If you don't have equal numbers for foward and reverse files, check with whoever provided the data to make sure there was no issues while transferring.
+
+You will likely get 2 or 3 libraries (4 or 6 files total). Sgr example:
+```sh
+ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
+
+-rwxrwx--- 1 e1garcia carpenter         248 Jul 27 12:37 README
+-rwxrwx--- 1 e1garcia carpenter 15652747635 Jul 22 17:19 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 16902243089 Jul 22 17:27 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_2.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 13765701672 Jul 22 17:32 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_1.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 14786676970 Jul 22 17:39 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_2.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 16465437932 Jul 22 17:46 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_1.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 17698149145 Jul 22 17:54 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_2.fq.gz
+```
 
 Make a copy of your raw files in the longterm carpenter RC dir **ONLY** if one doesn't exits already (if you copied your data from the RC, a long-term copy already exists)
 ```sh
@@ -98,7 +120,7 @@ mkdir spratelloides_gracilis/shotgun_raw_fq
 cp <source of files> spratelloides_gracilis/shotgun_raw_fq  # scp | cp | mv
 ```
 
-Also create a `README` in the `shotgun_raw_fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out for which individual(s) these sequence files belong to.
+Now create a `README` in the `shotgun_raw_fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out from which individual(s) these sequence files came from.
 
 
 This information is usually provied by Sharon Magnuson in species [slack](https://app.slack.com/client/TMJJ06SH0/CMPKY5C81/thread/CQ9GAAYGY-1627263374.002300) channel
@@ -113,7 +135,7 @@ Example:
 RC to e1garcia
 scp <source of files> /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
 
-All 3 sequence sets are for the same individual: Sgr-CMvi_007_Ex1
+All 3 library sets are from the same individual: Sgr-CMvi_007_Ex1
 ```
 
 *I like to update my git repo regularly, especially before and after lengthly steps. This keeps a nice record of the commits and prevents loss of data/effor. Feel free to repeat this at any step*
@@ -123,10 +145,19 @@ bash ../../runGIT.bash "README of raw data"
 ```
 
 ***You are ready to start processing files***
+
 Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo
-* This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair
+* This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair scripts from the pre-processing repo
+
+
+Move the `.out` files into the `logs` dir after each step is completed:
+```sh
+mv *out /home/youruserID/shotgun_PIRE/pire_ssl_data_processing/yourspecies/logs
+```
+
 
 #### 1. Execute [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh)
+From `yourspecies/shotgun_raw_fq/`
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "."
 ```
@@ -134,34 +165,35 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz"
 Download and review the Multiqc report for issues. 
 
 
-Create a species specific README.md to track the species progress
+Create a species specific README.md to track the species progress. You can create a brand new README or you can use the Sgr [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/spratelloides_gracilis) as a template and fill in as steps are accomplished for your species (this way you will have all the necessary formatting already)
 ```sh
 nano ../README.md
-```
 
-You can use the Sgr [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/spratelloides_gracilis) as a template and fill in as steps are accomplished for your species `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/README.md`
+or 
+
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/README.md ..
+```
 
 * Update your species README, i.e. provide a link to the report and list the highlights.
 * Update the species  README and the slack species channel after every step
 
+Move your `.out` files into your `logs` dir
 
 #### 2. Execute [runFASTP_1st_trim.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch)
+From `yourspecies/shotgun_raw_fq/`
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch "." "../fq_fp1"
 ```
 
-Move the `.out` files into the `logs` dir
-```sh
-mv *out ../logs
-```
-Repeat this AFTER each step is completed
-
+Move your `.out` files into your `logs` dir
 
 #### 3. Execute [runCLUMPIFY_r1r2_array.bash](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runCLUMPIFY_r1r2_array.bash) on Wahab.  
 
-The `max # of nodes to use at once` should not exceed the number of pair of r1-r2 files to be processed. If you have many sets of files, you could also limit the number of nodes to the number of nodes in `idle` in the main partiton i.e. run sinfo and look for `idle`
+Before running, modify the `<tempdir>` and `max # of nodes to use at once` in the code below.
 
-For Sgr, I had 6 r1 and 6 r2 files, or 3 sets of pairs so I used 3 nodes for clumpify
+Use your user ID in the `<tempdir>` and the `max # of nodes to use at once` should not exceed the number of pair of r1-r2 files to be processed. If you have many sets of files, you could also limit the number of nodes to the number of nodes in `idle` in the main partiton i.e. run sinfo and look for `idle`
+
+For Sgr, I had 6 r1 and 6 r2 files, or 3 sets of pairs so I used 3 nodes for clumpify.
 ```sh
 # Navigate to your species home dir
 cd ..
@@ -180,7 +212,11 @@ module load container_env mapdamage2
 
 # If you have not previously install tidyverse do the following:
 crun R				# you have entered R
+
 install.packages('tidyverse')	# intall tidyverse. Can take several minutes
+# type "yes" if it asks you if you would like a personal library
+# if it asks you to select a CRAN mirror, enter the two digit code for a US mirror
+
 quit()
 # R:save session?
 yes
@@ -190,9 +226,9 @@ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --
 ```
 If all files were successful, `checkClumpify_EG.R` will return "Clumpify Successfully worked on all samples". 
 
-If some failed, the script will also let you know. Try raising "-c 20" to "-c 40" in `runCLUMPIFY_r1r2_array.bash` and run clumplify again
+If some failed, the script will also let you know. Copy the `runCLUMPIFY_r1r2_array.bash` script to your species dir and try raising "-c 20" to "-c 40" and run clumplify again
 
-Also look for this error "OpenJDK 64-Bit Server VM warning:
+Also open the out files and look for this error "OpenJDK 64-Bit Server VM warning:
 INFO: os::commit_memory(0x00007fc08c000000, 204010946560, 0) failed; error='Not enough space' (errno=12)"
 
 
@@ -202,6 +238,8 @@ mv *out logs
 ```
 
 #### 4. Execute [runFASTP_2_ssl.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_2_ssl.sbatch)
+
+From your species dir:
 ```
 #runFASTP_2.sbatch <indir> <outdir> 
 # do not use trailing / in paths
@@ -221,6 +259,8 @@ Check the number of available nodes with `sinfo` (i.e. nodes in idle in the main
  Yet, the number of nodes running simultaneously should not exceed that number of fq.gz files.
 * ***NOTE: you are executing the bash not the sbatch script***
 * ***This can take up to several days depending on the size of your dataset. Plan accordingly
+
+From your species dir:
 ```sh 
 #runFQSCRN_6.bash <indir> <outdir> <number of nodes running simultaneously>
 # do not use trailing / in paths. Example:
@@ -239,7 +279,7 @@ ls fq_fp1_clmparray_fp2_fqscrn/*screen.html | wc -l
 
 # for each, you should have the same number as the number of input files
 
-#You should also check for errors in the *out files:
+# You should also check for errors in the *out files:
 # this will return any out files that had a problem
 
 #do all out files at once
@@ -250,7 +290,7 @@ grep 'No reads in' slurm-fqscrn.*out
 grep 'error' slurm-fqscrn.JOBID*out
 grep 'No reads in' slurm-fqscrn.JOBID*out
 ```
-If you see missing indiviudals or categories in the multiqc output, there was likely a ram error.  I'm not sure if the "error" search term catches it.
+If you see missing individuals or categories in the multiqc output, there was likely a ram error.  I'm not sure if the "error" search term catches it.
 
 Run the files that failed again.  This seems to work in most cases
 ```sh
@@ -269,6 +309,8 @@ Since we are running Fastq Screen as an array. I have set Multiqc to be ran sepe
 
 
 **Get the multiqc report**
+
+In this case, you will run the MultiQC script from the SSLrepo. From your species dir:
 ```sh
 #runMULTIQC.sbatch <INDIR> <Report name>
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
@@ -280,6 +322,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.s
 
 #### 6. Execute [runREPAIR.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runREPAIR.sbatch)
 
+From your species dir:
 ```
 #runREPAIR.sbatch <indir> <outdir> <threads>
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
@@ -287,18 +330,19 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1
 
 **Calculate the percent of reads lost in each step**
 
-Execute [read_calculator_ssl.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_ssl.sh)
+Execute [read_calculator_ssl.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_ssl.sh). From your species dir:
 ```sh
 #read_calculator_ssl.sh <Species home dir> 
 # do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
-`read_calculator_ssl.sh` counts the number of reads before and after each step in the pre-process of ssl data and creates the dir `reprocess_read_change` with the following 2 tables:
+`read_calculator_ssl.sh` counts the number of reads before and after each step in the pre-process of ssl data and creates the dir `preprocess_read_change` with the following 2 tables:
 1. `readLoss_table.tsv` which reporsts the step-specific percent of read loss and final accumulative read loss
 2. `readsRemaining_table.tsv` which reports the step-specific percent of read loss and final accumulative read loss
 
-Inspect these tables and revisit steps if too much data was lost
+After processing 7 species, 40-50% read lost is common (up to 60%s) but we still retaining a range of 60-150 million reads. 
+Inspect these tables for red flags. Specifically, check the total number of reads remaining after the 6 steps ("#reads_repr" column in the `readLoss_table.tsv`). If this is less than 60M, check which step(s) have too much data was lost and try to resolve the issue.. 
 
 ___
 
