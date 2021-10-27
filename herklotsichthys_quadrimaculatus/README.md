@@ -271,10 +271,10 @@ Repeat running the decontaminated data:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "decontam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
 ```
 
-Ran individual libararies through these:
+Ran individual libraries through these:
 ```
 #1st library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "1" "contam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ta$
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "1" "contam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
 #2nd library
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Hqu" "2" "contam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus"
 #3rd library
@@ -289,10 +289,10 @@ Look for the quast_results dir and note the (1) total number of contigs, (2) the
 To get summary for No. of contigs, largest contig, total length, % genome size completeness (GC), N50 & L50, do the follow$
 ```
 bash
-cat quast-reports/quast-report_contigs_Hqu_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_scaffolds_Hqu_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_contigs_Hqu_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_scaffolds_Hqu_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Hqu_spades_allLibs_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Hqu_spades_allLibs_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Hqu_spades_allLibs_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Hqu_spades_allLibs_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 ```
 
 To get summary for individual libraries, I did the ff:
@@ -342,20 +342,35 @@ Contam, scaffolds:c
 Decontam, contigs:
 Decontam, scaffolds:
 
-Summary of QUAST & BUSCO Results
+Summary of QUAST (using Genome Scope v.1 844721205 estimate) & BUSCO Results
 
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
-------  |------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Hqu  |allLibs    |contam       |contigs       |off	 |72680  |195361       |437705954       |51.82%       |6320	|21123       |36.3%
-Hqu  |allLibs    |contam       |scaffolds     |off	 |65871  |195361       |512737304	|60.70%       |9155	  |15571       |48.8%
-Hqu  |HqC0021A   |contam       |contigs       |off	 |65357   |147500       |366412508	|43.38%       |5733    |19934   |34.2%
-Hqu  |HqC0021A   |contam       |scaffolds     |off	 |63921   |149055       |434195608	|51.40%       |7527    |16539   |43.4%
-Hqu  |HqC0021B   |contam       |contigs       |off	 |67237  |189345        |384205692	|45.48%       |5883     |20200       |33.7%
-Hqu  |HqC0021B   |contam       |scaffolds     |off	 |64769  |321524        |454554704	|53.81%       |7881     |16436         |43.9%
-Hqu  |HqC0021C   |contam       |contigs       |off	 |64320  |216207       |357746760     	|45.48%       |5662     |19659         |33.0%
-Hqu  |HqC0021C   |contam       |scaffolds     |off	 |63577  |242909       |427945810	|53.81%       |7423     |16491         |42.7%
-Hqu  |allLibs    |decontam     |contigs       |off       |61190  |165445       |350787873       |42.35%       |5950       |18553       |33.7%
-Hqu  |allLibs    |decontam     |scaffolds     |off       |60202  |195347       |404379681	|50.66%       |7442	  |16090       |42.6%
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------
+Hqu  |allLibs    |contam       |contigs       |off	 |1     |72680  |195361       |437705954       |51.82%       |6320	|21123       |36.3%
+Hqu  |allLibs    |contam       |scaffolds     |off	 |1     |65871  |195361       |512737304	|60.70%       |9155	  |15571       |48.8%
+Hqu  |HqC0021A   |contam       |contigs       |off	 |1     |65357   |147500       |366412508	|43.38%       |5733    |19934   |34.2%
+Hqu  |HqC0021A   |contam       |scaffolds     |off	 |1     |63921   |149055       |434195608	|51.40%       |7527    |16539   |43.4%
+Hqu  |HqC0021B   |contam       |contigs       |off	 |1     |67237  |189345        |384205692	|45.48%       |5883     |20200       |33.7%
+Hqu  |HqC0021B   |contam       |scaffolds     |off	 |1     |64769  |321524        |454554704	|53.81%       |7881     |16436         |43.9%
+Hqu  |HqC0021C   |contam       |contigs       |off	 |1     |64320  |216207       |357746760       |45.48%       |5662     |19659         |33.0%
+Hqu  |HqC0021C   |contam       |scaffolds     |off	 |1     |63577  |242909       |427945810	|53.81%       |7423     |16491         |42.7%
+Hqu  |allLibs    |decontam     |contigs       |off       |1     |61190  |165445       |350787873       |42.35%       |5950       |18553       |33.7%
+Hqu  |allLibs    |decontam     |scaffolds     |off       |1     |60202  |195347       |404379681	|50.66%       |7442	  |16090       |42.6%
+
+Summary of QUAST (using Genome Scope v.2  457000000 estimate) & BUSCO Results
+
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------
+Hqu  |allLibs    |contam       |contigs       |off       |2     |69666      |357053          |405555294     |88.74%     |6021     |20625     |0.00     |36.3%
+Hqu  |allLibs    |contam       |scaffolds     |off       |2     |65472      |357053          |481801491     |105.43%    |8422     |16037     |843.69   |48.8%
+Hqu  |allLibs    |decontam     |contigs       |off       |2     |61190      |165445          |350787873     |76.76%     |5950     |18553     |0.00     |33.7%
+Hqu  |allLibs    |decontam     |scaffolds     |off       |2     |60202      |195347          |404379681     |88.49%     |7442     |16090     |533.73   |42.6%
+Hqu  |HqC0021A   |contam       |contigs       |off       |2     |65367      |147500          |366461990     |80.19%     |5734     |19944     |0.00     |34.2%
+Hqu  |HqC0021A   |contam       |scaffolds     |off       |2     |63940      |149059          |434260536     |95.02%     |7518     |16545     |770.66   |43.4%
+Hqu  |HqC0021B   |contam       |contigs       |off       |2     |67217      |189345          |384117534     |84.05%     |5884     |20193     |0.00     |33.7%
+Hqu  |HqC0021B   |contam       |scaffolds     |off       |2     |64766      |321524          |454430537     |99.04%     |7872     |16440     |785.39   |43.9%
+Hqu  |HqC0021C   |contam       |contigs       |off       |2     |64351      |216207          |357793983     |78.29%     |5657     |19680     |0.00     |33.0%
+Hqu  |HqC0021C   |contam       |scaffolds     |off       |2     |63614      |242909          |427983643     |93.65%     |7411     |16508     |798.19   |42.7%                            
 
 ---
 The best library was allLibs scaffolds.
@@ -416,4 +431,35 @@ This will create:
 2. a gff file with predicted gene regions (augustus.gff), and
 3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
 
+Execute the second script.
+```sh
+#WGprobe_annotation.sb <assembly base name>
+sbatch WGprobe_bedcreation.sb "Hqu_scaffolds_allLibs_contam_R1R2_noIsolate.fasta"
+```
 
+This will create a .bed file that will be sent for probe creation.
+ The bed file identifies 5,000 bp regions (spaced every 10,000 bp apart) in scaffolds > 10,000 bp long.
+
+The longest scaffold is 195361
+
+The uppper limit used in loop is 187500
+
+A total of 20336 regions have been identified from 13451 scaffolds
+
+Moved out files to logs
+```sh
+mv *out ../logs
+```
+
+## step 11. Fetching genomes for closest relatives
+
+```sh
+nano closest_relative_genomes_taeniamia_zosterophora.txt
+
+1.-
+https://www.ncbi.nlm.nih.gov/genome/15477
+2.-
+https://www.ncbi.nlm.nih.gov/genome/8239
+
+
+following Betancur et al. 2017 and Lavoué_etal_2007?????
