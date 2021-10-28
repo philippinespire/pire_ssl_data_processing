@@ -649,3 +649,78 @@ Share the following files with Arbor Bio to aid in probe creation:
 
 #### **Contrats! You have finished the ssl processing pipeline. Go ahead, give yourself a pat on the back!**
 
+---
+
+## Cleaning Up
+
+The SSL pipeline creates multiple copies of your data in the form of intermediate files. Assuming that you have finished the pipeline
+ (have checked your files and send probe info to Arbor Bio), it is now time to do some cleaning up
+
+Document the size of directories and files before cleaning up and save this to a file name <your species 3-letter ID>_ssl_beforeDeleting_IntermFiles 
+
+From your species dir:
+```sh
+du -h | sort -rh > <yourspecies>_ssl_beforeDeleting_IntermFiles
+```
+
+Before deleting files, make a copy of important files in the RC (only available in the login node):
+
+1. raw sequence files (this should had been done already but check again)
+2. "contaminated" files (fq_fp1_clmparray_fp2)
+3. "decontaminated" files (fq_fp1_clmparray_fp2_fqscrn_repaired)
+4. best assembly (probably just the contigs.fasta and scaffolds.fasta for contam and decontam of best assembly)
+
+Example for Sgr
+```sh
+# check for copy of raw files
+ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/
+
+# make copy of contaminated and decontaminated files
+cp -R fq_fp1_clmparray_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/
+cp -R fq_fp1_clmparray_fp2_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/               
+
+# make a copy of fasta files for best assembly
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_contam_R1R2_noIsolate
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_decontam_R1R2_noIsolate
+cp SPAdes_SgC0072C_contam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_contam_R1R2_noIsolate
+cp SPAdes_SgC0072C_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_decontam_R1R2_noIsolate
+```
+
+Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from intermediate processes (Fastp1, Clumpify, and Fastq Screen; steps 0, 2, and 5). Keep files from fq_fp1_clmparray_fp2 and fq_fp1_clmparray_fp2_fqscrn_repaired.
+
+It is a good idea to keep track of the files you are deleting.
+
+An easy way to do this is to list files to be deleted, copy the info and paste it into log file tracking the files you are deleting
+```sh
+ls -l shotgun_raq_fq/*fq.gz
+# copy from the line of the command to the last file and paste it while creating the log file 
+nano deleted_files
+# paste
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/
+-rwxr-x--- 1 e1garcia carpenter  15G Aug  2 12:12 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  16G Aug  2 12:30 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_2.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  13G Aug  2 12:45 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_1.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  14G Aug  2 13:01 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_2.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  16G Aug  2 13:19 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_1.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  17G Aug  2 13:36 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_2.fq.gz
+```
+
+Append the info of the rest of files to be deleted into the same file. At the end you'll have something similar to the Sgr [deleted_files_log]() 
+
+
+Finally, document the new size of your directories
+
+From your species dir:
+```sh
+du -h | sort -rh > <yourspecies>_ssl_afterDeleting_IntermFiles
+```
+
+For Sgr, I deleted about 1Tb of data! (I have many treatments while making the SSL pipeline. You will likely delete less than that but still a substancial amount)
+
+
+Move the cleaning files into the logs dir
+```sh
+mv Sgr_ssl* logs
+mv deleted_files_log logs
+```
+
