@@ -469,7 +469,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 #### 9 Determine the best assembly
 
 `QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and for each of your assemblies note the: 
-1. Number of contigs in assembly (this is the last contig column in quast report with the name "" # contigs")
+1. Number of contigs in assembly (this is the last contig column in quast report with the name "# contigs")
 2. the size of the largest contig
 3. total length of assembly
 4. N50
@@ -496,11 +496,22 @@ Repeat the comand using scaffolds.
 `runBUSCO.sh` will generate a new dir per run. Look for the `short_summary.txt` file and note the percentage of `Complete and single-copy BUSCOs (S)` genes
 
 
-Fill in this table with your values in your species README.
+Fill in this table with your QUAST and BUSCO values in your species README. 
 
+Few notes:
 
+* Library name can be obtained from file names
+* covcutoff is "off" as a default in this pipeline. This is "on" only if you ran an extra assembly with ""contam_covAUTO" trying to improve busco values
+* No. of contigs is the last contig column in quast report with the name "# contigs"
+* % Genome size completeness = "Total lenght"/genome size(or rounded genome max value) *100
+* **For QUAST, only report the row for the actual assembly (i.e. report "scaffolds" not "scaffolds_broken"**
+* **For BUSCO, only report the "Complete and single-copy BUSCOs (S)"
+
+```sh
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
+Sgr  |allLibs  |contam       |contigs       |off       |1       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |0       |29.9%
+Sgr  |allLibs  |contam       |scaffolds       |off       |1       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |147.59       |29.9%
 Sgr  |SgC0072B  |contam       |contgs       |off       |2       |82681  |68606       |441333876       |51.7%       |5405       |26613       |0   |29.2%
 Sgr  |SgC0072B  |contam       |scaffolds       |off       |2       |84110  |68606       |460942092       |54%       |5587       |26490       |147.59   |31.3%
 Sgr  |SgC0072C  |contam       |contgs       |off       |2       |85876  |105644       |531350946       |62.2%       |6617       |24450       |0   |37.9%
@@ -509,7 +520,7 @@ Sgr  |SgC0072D  |contam       |contgs       |off       |2       |83191  |68563  
 Sgr  |SgC0072D  |contam       |scaffolds       |off       |2       |84615  |120121       |462780087       |54.2%       |5570      |26612       |167.75   |31.5%
 Sgr  |SgC0072C  |decontam       |contgs       |off       |2       |69371  |103720       |395865756       |46.6%       |5946     |21196       |0   |32.2%
 Sgr  |SgC0072C  |decontam       |scaffolds       |off     |2       |69932  |103720       |406306057       |47.6%       |6080      |21004       |42.77   |33.2%
-
+```
 
 ---
 
@@ -531,10 +542,16 @@ If you are still undecided on which is the best assembly, post the best candidat
 
 Now, go back to step 8 and run decontaminated data for library that produced the best assembly
 
+---
 
 #### Update the main assembly stats table with your species
 
 Add a new record for your species/assembly to the [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
+
+Please note that you cannot paste a tab in nano as it interprets tabs as spaces. This means that you will have to manually enter each column one by one, or copy and paste multiple columns but then change the spaces by a single column to restore the tsv format.
+
+Once done, push your changes to GitHub and confirm the that tsv format is correct by opening the [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) that your browser is displaying code but a nice looking table (aligned columns, etc). 
+
 ```sh
 # add your info in a new row
 nano ../best_ssl_assembly_per_sp.tsv
@@ -545,7 +562,7 @@ nano ../best_ssl_assembly_per_sp.tsv
 
 In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
 
-Among other outpue, you will create the following 4 files:
+Among other output, you will create the following 4 files:
 1. *.fasta.masked: The masked fasta file 
 2. *.fasta.out.gff: The gff file created from repeat masking (identifies regions of genome that were masked)
 3. *_augustus.gff: The gff file created from gene prediction (identifies putative coding regions)
@@ -643,7 +660,7 @@ These are an excellent resource for high taxonomic groups but only a few species
 Thus, you should also seach for phylogenies especific to your group. If these are not available, use Betancur 
 
 
-Once your list is ready, create a file. Example for Sgr:
+Once your list is ready, create a file in your `probe_design` dir. Example for Sgr:
 ```sh
 nano closest_relative_genomes_Spratelloides_gracilis.txt
 
