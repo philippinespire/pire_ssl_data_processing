@@ -587,7 +587,11 @@ cp ../scripts/WGprobe_bedcreation.sb probe_design
 cp SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta probe_design
 ```
 
-Rename the assembly to reflect the species and parameters used. You can just copy and paste the parameter info from the busco directory
+Rename the assembly to reflect the species and parameters used. Format to follows:
+
+<3-letter species code>_scaffolds_<library>_<cotam|decontam>_R1R2_noIsolate_<other treatments, if any>.fasta
+
+To get this info, I usually copy and paste the parameter info from the busco directory:
 ```sh
 # list the busco dirs
 ls -d busco_*
@@ -685,6 +689,30 @@ Share the following files with Arbor Bio to aid in probe creation:
 3. The gff file with predicted gene regions (.augustus.gff)
 4. The bed file (.bed)
 5. The text file with links to available genomes from the 5 most closely-related species.
+
+Make a dir name "files_for_ArborSci" inside your probe_design dir and move these files there:
+```sh
+mkdir files_for_ArborSci
+mv *.fasta.masked *.fasta.out.gff *.augustus.gff *bed closest* files_for_ArborSci
+```
+
+Finally, notify Eric by email (e1garcia@odu.edu)  saying that your files are ready and post a message in the slack species channel with the probe region and scaffold info (from your BEDprobe*out file), and the full path to your files. Sgr example:
+```sh
+Probe Design Files Ready
+
+A total of 13063 regions have been identified from 10259 scaffolds. The longest scaffold is 105644. 
+
+Files for Arbor Bio:
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/probe_design/files_for_ArborSci
+
+Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta.augustus.gff
+Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta.masked
+Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta.out.gff
+Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate_great10000_per10000_all.bed
+closest_relative_genomes_Spratelloides_gracilis.txt
+```
+
+Eric will then share these with Arbor BioSciences.
 
 #### **Finito!!!**
 
