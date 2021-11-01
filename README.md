@@ -245,6 +245,9 @@ From your species dir:
 # do not use trailing / in paths
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray fq_fp1_clmparray_fp2
 ```
+
+**These are your "contaminated" files, which will be used whenever you see the "cotam" treatment**
+
 * Update your species README, i.e. provide a link to the report and list the highlights
 
 Move your out file
@@ -328,6 +331,8 @@ From your species dir:
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmparray_fp2_fqscrn fq_fp1_clmparray_fp2_fqscrn_repaired 40
 ```
 
+**These are your "decontaminated" files, which will be used whenever you see the "decotam" treatment**
+
 **Calculate the percent of reads lost in each step**
 
 Execute [read_calculator_ssl.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_ssl.sh). From your species dir:
@@ -364,25 +369,42 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish
 ```
 
 Jellyfish will create a histogram file (.hito) with kmer frequencies. 
-Download this file into your local computer and upload it in [GenomeScope v1.0](http://qb.cshl.edu/genomescope/)
-* Add a proper description to your run. Example "Sgr_ssl_decontam"
-* Adjust the read lenght to that of in the Fastp2 trimming, 140 (unless you had to modify this in Fastp2)
-* Leave Max kmer coverage = 1000 
+Download this file into your local computer and upload it in [GenomeScope v1.0](http://qb.cshl.edu/genomescope/) and and [Genomescope v2.0](http://qb.cshl.edu/genomescope/genomescope2.0/)
+* Add a proper description to both of your runs. Example "Sgr_ssl_decontam"
+* For version 1, Adjust the read lenght to that of in the Fastp2 trimming, 140 (unless you had to modify this in Fastp2)
+* Leave all other parameters with default settings for both versions. 
 * Submit (takes only few minutes)
-* *Note that GenomeScope v2.0 is also available and can "acount for different ploidy levels". However, when used with Sgr and others, the model performed very poorly. Explore v2.0 If you know or suspect your species is not diploid, otherwise is likely safe to stick to v1.0 
  
-Complete the following table in your Species README. You can copy and paste this table straight into your README (no need to enclose it with quotes, i.e. a code block) and just substitute values. You'll have to calculate the average
+Complete the following table in your Species README. You can copy and paste this table straight into your README (no need to enclose it with quotes, i.e. a code block) and just substitute values.
 ```sh
-Genome stats for Sgr from Jellyfish/GenomeScope v1.0 k=21
-stat	|min	|max	|average	
-------	|------	|------	|------	
-Heterozygosity  |1.32565%       |1.34149%       |1.33357%
-Genome Haploid Length   |693,553,516 bp |695,211,827 bp |694,382,672 bp
-Model Fit       |97.6162%       |98.7154%       |98.1658 %
+Genome stats for Sgr from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
+
+version    |stat    |min    |max
+------  |------ |------ |------
+1  |Heterozygosity  |1.32565%       |1.34149%
+2  |Heterozygosity  |1.32975%       |1.35795%
+1  |Genome Haploid Length   |693,553,516 bp |695,211,827 bp
+2  |Genome Haploid Length   |851,426,393 bp |853,706,410 bp
+1  |Model Fit       |97.6162%       |98.7154%
+2  |Model Fit       |65.11692%       |96.0314%
 ```
+Provide a link to both reports in your README. See other species READMEs for examples.
 
+**Choose a Genome Scope version**
 
-Note the genome size (or estimate) in your species README. You will use this info later
+Inspect your table and reports for red flags.
+* In your table, check the heterozygosity (values around 1% are common) and check for good model fit (>90%) in the max values (sometimes the min value might have a low fit but th$
+* In your reports, check for a tight relationship between the "observed", "full model" and "unique sequences" lines in the first graph.
+
+If values in your table are relative similar for v1 and v2 and you found no red flags in reports, then use v2 estimates.
+
+** Please use the "Genome Haploid Length" max value rounded up or down to the nearest million.** In the above example, this number is 853706410 for v2. Thus, 854000000 will be used in following steps
+
+Most of the time v1-2 perform very similar. However, sometimes the two reports give contrasting values such as very different genome sizes or unrealistic estimates of heterozygosity. For example:
+* In Sob, the [Sob_GenScp_v1](http://qb.cshl.edu/genomescope/analysis.php?code=zQRfOkSqbDYAGYJrs7Ee) report estimates a genome of 532 Mbp and 0.965 for H. On the other hand,  [Sob_GenScp_v2](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=5vZKBtdSgiAyFvzIusxT) reports a genome size of 259 Mbp (which is small for a fish) and it actually fails to estimate heterozygosity. Thus, version 1 was used for Sob. 
+* In Hte, the [Hte_GenScp_v1](http://qb.cshl.edu/genomescope/analysis.php?code=tHzBW2RjBK00gQMUSfl4) appears to have no red flags with a genome size of 846 Mbp and 0.49 for H but inspecting the first graph, you can see that the "uniqu sequence" line behaves diffently from the others. In contrast, [Hte_GenScp_v2](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=8eVzhAQ8zSenObScLMGC) restores a tight relationship between lines with no red flags in estimates either (H=2.1, GenSize= 457 Mbp)
+
+Note the source and genome size (if you found one already availble) or the Genome Scope version and rounded genome size estimate (if you had to run jellyfish) in your species README. You will use this info later
 
 
 #### 8. Assemble the genome
@@ -394,11 +416,11 @@ For the most part, we obtained better assemblies using single libraries (a libra
 In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmparray_fp2` dir)  produced better results for nDNA and decontaminated (i.e. files in the `fq_fp1_clmparray_fp2_fqscrn_repaired` dir) was better for mtDNA. 
 
 Thus, use the contaminated files to run one assembly for each of your libraries independently and then one combining all.
-1. You need to be in Turing for this step. SPAdes requires high memory nodes (only avail in Turing)
-2. Get the genome size of your species, or Jellyfish estimate, in bp from the previous step. Jellyfish gives an min an max: I have been using the average of both of these (rounding to the nearest million)
+1. **You need to be in Turing for this step.** SPAdes requires high memory nodes (only avail in Turing)
+2. Get the genome size of your species, or Jellyfish estimate, in bp from the previous step
+ 
 
-
-We produced 3 libraries (from the same individual) for the last 5 spp  with ssl data resulting in 3 sets of files. Sgr example:
+We produced 3 libraries (from the same individual) for the last 5 spp with ssl data resulting in 3 sets of files. Sgr example:
 ```sh
 ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
 
@@ -409,45 +431,47 @@ SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_2.fq.gz
 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_1.fq.gz
 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_2.fq.gz
 ```
-Thus, the following SPAdes script is optimized to run all and up to the first 3 libraries independently. 
-If your species has 4 or more libraries, you will need to modify the script to run the 4th,5th,.. library and so on (you'll only need to add the necessary libraries to the SPAdes command)
-
-No changes necessary for running the first, second, thrid, or all the libraries together.  
+Yet, every now and then one library can fail and you might end up with only 2 sets of files. 
+Thus, the following SPAdes script is optimized to run the first 3 libraries independently and 2 or 3 libraries together for your "all" assembly.
+. 
+Note: If your species has 4 or more libraries, you will need to modify the script to run the 4th,5th,.. library and so on (you'll only need to add the necessary libraries to the SPAdes command)
+No changes necessary for running the first, second, thrid, or all the libraries together (if you have 2 or 3 libraries only).  
 
 **Use the contaminated files to run one assembly for each of your libraries independently and then one combining all**
 
 **Execute [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch). Example using the 1st library***
 ```sh
-#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <library: all | 1 | 2 | 3> <contam | decontam> <genome size in bp> <species dir>
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <library: all_2libs | all_3libs | 1 | 2 | 3> <contam | decontam> <genome size in bp> <species dir>
 # do not use trailing / in paths. Example running contaminated data:
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
-Run 3 more assemblies with the contaminated data for the second, third, and all libraries together (i.e. replace "1", with "2", "3", and "all")
+Run 2 more assemblies with the contaminated data for the second and  third library by rreplacing the "1", with "2" and  "3". 
+Then, check the number of libraries you have and run a job combining all libraries together by choosing the appropiate "all_2libs" or "all_3libs" from the library options.
 
 Next, you need to determine the best assembly to use the decontaminated data. Go on and complete step 9 (below) and come back here after.
 
 **After step 9**
 
-Assuming you have completed step 9, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species.
+Assuming you have completed step 9, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species (for example, you can check the ["best assembly table"](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv).
 If BUSCO values are too low, it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO")
 
 Example:
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam_covAUTO" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam_covAUTO" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
 Finally, run one more assembly using the decontaminated data from the same library(or all together) that produced the best assembly (with or without the covcutoff flag). Sgr example:
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "3" "decontam" "694000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "3" "decontam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
 #### 9 Determine the best assembly
 
 `QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and for each of your assemblies note the: 
-1. total number of contigs
+1. Number of contigs in assembly (this is the last contig column in quast report with the name "" # contigs")
 2. the size of the largest contig
-3. total lenght of assembly
+3. total length of assembly
 4. N50
 5. L50 
 
@@ -459,7 +483,7 @@ cat quast-reports/quast-report_scaffolds_Sgr_spades_contam_R1R2_21-99_isolate-of
 
 Enter your stats in the table below
 
-Those are basic assembly statistics but we still need to know how many expected (i.e. highly conserved) genes were recovered by the assembly. 
+Those are basic assembly statistics but we still need to run BUSCO to know how many expected (i.e. highly conserved) genes were recovered by the assembly. 
 
 **Execute [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files for each assembly**
 ```sh
@@ -469,23 +493,23 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 ```
 Repeat the comand using scaffolds.
 
-`runBUSCO.sh` will generate a new dir per run. Look for the `short_summary.txt` file and note the percentage of `Complete and single-copy BUSCOs` genes
+`runBUSCO.sh` will generate a new dir per run. Look for the `short_summary.txt` file and note the percentage of `Complete and single-copy BUSCOs (S)` genes
 
 
 Fill in this table with your values in your species README.
 
-```sh
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |BUSCO single copy
-------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ 
-Sgr  |allLibs  |contam       |contigs       |off       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |29.9%       
-Sgr  |allLibs  |contam       |scaffolds       |off       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |29.9%
-Sgr  |allLibs  |contam       |contigs       |auto       |2220821  |309779       |489827781       |70.6%       |5800       |28040       |30%
-Sgr  |allLibs  |contam       |scaffolds       |auto       |2204948  |309779       |516942564       |74.5%       |5800       |28041       |32.2%
-Sgr  |allLibs  |decontam       |contgs       |off       |2316449  |197090       |411716418       |59.3%       |5443       |24590       |27.1%
-Sgr  |allLibs  |decontam       |scaffolds       |off       |2295872  |197090       |440572995       |63.5%       |5751       |24463       |29.5%
-Sgr  |allLibs  |decontam       |contgs       |auto       |2290268  |197090       |411810888       |59.4%       |5442       |24601       |27.1%
-Sgr  |allLibs  |decontam       |scaffolds       |auto       |2269777  |197090       |440612739       |63.5%       |5750       |24463       |29.5%
-```
+
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total lenght    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
+Sgr  |SgC0072B  |contam       |contgs       |off       |2       |82681  |68606       |441333876       |51.7%       |5405       |26613       |0   |29.2%
+Sgr  |SgC0072B  |contam       |scaffolds       |off       |2       |84110  |68606       |460942092       |54%       |5587       |26490       |147.59   |31.3%
+Sgr  |SgC0072C  |contam       |contgs       |off       |2       |85876  |105644       |531350946       |62.2%       |6617       |24450       |0   |37.9%
+Sgr  |SgC0072C  |contam       |scaffolds       |off       |2       |85997  |105644       |536156621       |62.8%       |6686      |24304       |14.73   |38.4%
+Sgr  |SgC0072D  |contam       |contgs       |off       |2       |83191  |68563       |441118097       |51.7%       |5352      |26844       |0   |29.7%
+Sgr  |SgC0072D  |contam       |scaffolds       |off       |2       |84615  |120121       |462780087       |54.2%       |5570      |26612       |167.75   |31.5%
+Sgr  |SgC0072C  |decontam       |contgs       |off       |2       |69371  |103720       |395865756       |46.6%       |5946     |21196       |0   |32.2%
+Sgr  |SgC0072C  |decontam       |scaffolds       |off     |2       |69932  |103720       |406306057       |47.6%       |6080      |21004       |42.77   |33.2%
+
 
 ---
 
@@ -661,8 +685,10 @@ Document the size of directories and files before cleaning up and save this to a
 From your species dir:
 ```sh
 du -h | sort -rh > <yourspecies>_ssl_beforeDeleting_IntermFiles
+# Sgr example Sgr_ssl_beforeDeleting_IntermFiles
 ```
 
+### Make a copy of important files 
 Before deleting files, make a copy of important files in the RC (only available in the login node):
 
 1. raw sequence files (this should had been done already but check again)
@@ -679,22 +705,23 @@ ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratello
 cp -R fq_fp1_clmparray_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/
 cp -R fq_fp1_clmparray_fp2_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/               
 
-# make a copy of fasta files for best assembly
-mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_contam_R1R2_noIsolate
-mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_decontam_R1R2_noIsolate
-cp SPAdes_SgC0072C_contam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_contam_R1R2_noIsolate
-cp SPAdes_SgC0072C_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_decontam_R1R2_noIsolate
+# make a copy of fasta files for best assembly (SgC0072C for Sgr)
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/SPAdes_SgC0072C_contam_R1R2_noIsolate
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/SPAdes_SgC0072C_decontam_R1R2_noIsolate
+cp SPAdes_SgC0072C_contam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/SPAdes_SgC0072C_contam_R1R2_noIsolate
+cp SPAdes_SgC0072C_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/SPAdes_SgC0072C_decontam_R1R2_noIsolate
 ```
 
-Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from intermediate processes (Fastp1, Clumpify, and Fastq Screen; steps 0, 2, and 5). Keep files from fq_fp1_clmparray_fp2 and fq_fp1_clmparray_fp2_fqscrn_repaired.
+### Delete unneeded files
+Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from intermediate processes (Fastp1, Clumpify, and Fastq Screen; steps 0, 2, and 5). Keep files from fq_fp1_clmparray_fp2 and fq_fp1_clmparray_fp2_fqscrn_repaired for now.
 
-It is a good idea to keep track of the files you are deleting.
+It is a good idea to keep track of the files you are deleting
 
 An easy way to do this is to list files to be deleted, copy the info and paste it into log file tracking the files you are deleting
 ```sh
-ls -l shotgun_raq_fq/*fq.gz
+ls -l shotgun_raw_fq/*fq.gz
 # copy from the line of the command to the last file and paste it while creating the log file 
-nano deleted_files
+nano deleted_files_log
 # paste
 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/
 -rwxr-x--- 1 e1garcia carpenter  15G Aug  2 12:12 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
@@ -715,7 +742,7 @@ From your species dir:
 du -h | sort -rh > <yourspecies>_ssl_afterDeleting_IntermFiles
 ```
 
-For Sgr, I deleted about 1Tb of data! (I have many treatments while making the SSL pipeline. You will likely delete less than that but still a substancial amount)
+For Sgr, I deleted about 1Tb of data! (I create many treatments while making the SSL pipeline. You will likely delete less than that but still a substancial amount)
 
 
 Move the cleaning files into the logs dir
