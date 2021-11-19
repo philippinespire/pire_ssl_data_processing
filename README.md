@@ -346,6 +346,8 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calcula
 1. `readLoss_table.tsv` which reporsts the step-specific percent of read loss and final accumulative read loss
 2. `readsRemaining_table.tsv` which reports the step-specific percent of read loss and final accumulative read loss
 
+**Report the total number of reads retained in your species README, i.e. "#reads_repr" column in the readLoss_table.tsv** You might also comment on other info from the tables.
+
 After processing 7 species, 40-50% read lost is common (up to 60%s) but we still retaining a range of 60-150 million reads. 
 Inspect these tables for red flags. Specifically, check the total number of reads remaining after the 6 steps ("#reads_repr" column in the `readLoss_table.tsv`). If this is less than 60M, check which step(s) have too much data was lost and try to resolve the issue.. 
 

@@ -72,7 +72,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 
 Out files were moved to the `logs` dir
 
-Ran [checkClumpify_EG.R] (https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any files failed.
+Ran [checkClumpify_EG.R](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any files failed.
 
 ```
 #navigate to out dir for clumpify
@@ -207,7 +207,7 @@ Reads lost:
 
 Reads remaining:
 * For each step, ranged between 72 to 90%
-* Total reads remaining ranged between 39-44%
+* Total reads remaining ranged between 39-44%, **which translates into 81-98M reads remaining**
 
 ---
 ### Assembly section
@@ -223,16 +223,23 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runJellyfish.sbatch "Hq
 This jellyfish kmer-frequency [histogram file](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/herklotsichthys_quadrimaculatus/jellyfish_decontam/Hqu_all_reads.histo) was uploaded into [Genomescope v1.0](http://qb.cshl.edu/genomescope/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=tHzBW2RjBK00gQMUSfl4)
 
 Description: Hqu_ssl_decontam
+
 Kmer length: 21
+
 Read length: 140
+
 Max kmer coverage: 1000
 
 There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website] (http://qb.cshl.edu/genomescope/genomescope2.0/) too, with the following inputs:
 
 Description: Hqu_ssl_decontam2
+
 Kmer length: 21
+
 Ploidy: 2
+
 Max kmer coverage: -1
+
 Average k-mer coverage for polyploid genome: -1
 
 The report generated for v2.0 is [here](http://genomescope.org/genomescope2.0/analysis.php?code=8eVzhAQ8zSenObScLMGC)
@@ -247,6 +254,11 @@ Genome Haploid Length v2.0   |456,000,000 bp    |457,000,000 bp
 Model Fit v1.0       |95.034%       |97.832%      
 Model Fit v2.0       |79.9163%      |92.0546%   
 ---
+
+GenomeScope v1 showed potential issues as the unique sequence line did not track well the observed and full model lines. He was really low as well. In this case, we are moving forward with the default GenomeScope v2. 
+
+**Using 457,000,000 as genome size for QUAST**
+
 
 ## Step 8. Assemble the genome using SPAdes
 
@@ -383,7 +395,9 @@ New record of Hqu added to [best_ssl_assembly_per_sp.tsv](https://github.com/phi
 nano ../best_ssl_assembly_per_sp.tsv
 ```
 
-### Probe Design
+---
+
+## Probe Design
 
 In this section I identified contigs and regions within contigs to be used as candidate regions to develop the probes from.
 
@@ -393,7 +407,7 @@ The following 4 files were created at the end of this step:
 3. *_augustus.gff: The gff file created from gene prediction (identifies putative coding regions)
 4. *_per10000_all.bed: The bed file with target regions (1 set of 2 probes per target region).
 
-#### 10 Identifying regions for probe development
+## 10 Identifying regions for probe development
 
 From the species directory, a new dir was made for the probe design
 ```sh
@@ -451,15 +465,18 @@ Moved out files to logs
 mv *out ../logs
 ```
 
+---
+
 ## step 11. Fetching genomes for closest relatives
 
 ```sh
-nano closest_relative_genomes_taeniamia_zosterophora.txt
+nano closest_relative_genomes_Herklotsichthys_quadrimaculatus.txt
 
-1.-
-https://www.ncbi.nlm.nih.gov/genome/15477
-2.-
-https://www.ncbi.nlm.nih.gov/genome/8239
+1. Alosa alosa - https://www.ncbi.nlm.nih.gov/genome/8249
+2. Alosa sapidissima - https://www.ncbi.nlm.nih.gov/genome/9608
+3. Limnothrissa miodon - https://www.ncbi.nlm.nih.gov/genome/100129
+4. Tenualosa ilisha - https://www.ncbi.nlm.nih.gov/genome/12362
+5. Clupea harengus - https://www.ncbi.nlm.nih.gov/genome/15477
+```
 
-
-following Betancur et al. 2017 and Lavoué_etal_2007?????
+Based on Betancur 2017, Lavoue et al 2007, Bloom and Egan 2018
