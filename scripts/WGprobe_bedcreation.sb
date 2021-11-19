@@ -27,7 +27,7 @@ LONGESTSCAFF=$(head -n1 *fai | cut -f2)
 
 # Report longest scaffold and uppper limit 
 echo The longest scaffold is $LONGESTSCAFF
-echo The uppper limit used in loop is $UPPERLIMIT
+echo The upper limit used in loop is $UPPERLIMIT
 
 #pull out every 10,000 bp sections
 #97500 should be replaced by X7500 (just under longest scaffold length)

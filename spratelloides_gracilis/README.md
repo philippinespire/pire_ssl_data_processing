@@ -377,7 +377,7 @@ sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
 
 The longest scaffold is 105644
 
-The uppper limit used in loop is 97500
+The upper limit used in loop is 97500
 
 A total of 13063 regions have been identified from 10259 scaffolds
 
