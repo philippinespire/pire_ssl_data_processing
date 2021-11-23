@@ -110,7 +110,7 @@ The second reports are here [percent read loss](https://github.com/philippinespi
 The script failed twice for reasons that time has eroded from my memory.  Dr. Garcia repaired this.
 The third reports are here [percent read loss](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readLoss_table_EG.tsv) and here [percent reads remaining] (https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readsRemaining_table_EG.tsv).
 
-95-135 million reads were retained afterpreprocessing
+95-135 million reads were retained after preprocessing
 
 # Assembly section
 
