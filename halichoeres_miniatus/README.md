@@ -94,10 +94,8 @@ No errors.
 
 MultiQC failed due to python errors in the program.  No report was generated.  Please see the outfile in this repo's logs dir.
 The script was corrected and the MultiQC report was generated.
-Highlights from [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/fastqc_screen_report.html):
+Highlights from report:
 * about 96% of reads were retained
-
-The second report is [here]()
 
 ## Step 6. Repair fastq_screen paired end files
 
