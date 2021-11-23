@@ -212,7 +212,7 @@ version    |stat    |min    |max
 **Note:** the initial commands for assembly used the mid-point between min and max of Genome Scope V1, meaning that the first set of QUAST runs were feed this number.
  After these runs were completed, we decided to use Genome Scope V2 instead. Giving that the model fit for the min is usually low, I recommended using the max estimate (rounded up or down to the nearest million).
 
-SPAdes and BUSCO do not incoorporate the genome estimate so these don't need to be re-ran. Thus, I only rerunning QUAST with the max estimate of V2.
+SPAdes and BUSCO do not incoorporate the genome estimate so these don't need to be re-ran. Thus, I am only rerunning QUAST with the max estimate of V2.
 
 QUAST stat table has also been updated to include the genome scope version and "#N's per 100 kbp"
 
@@ -377,7 +377,7 @@ sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
 
 The longest scaffold is 105644
 
-The uppper limit used in loop is 97500
+The upper limit used in loop is 97500
 
 A total of 13063 regions have been identified from 10259 scaffolds
 

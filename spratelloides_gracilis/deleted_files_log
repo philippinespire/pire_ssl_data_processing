@@ -1,0 +1,245 @@
+The PIRE SSL PIPELINE makes several copies of the data producing intermediate files that are not needed for downstream analyses. 
+
+This log keeps track of deleted files for Sgr
+
+working dir:/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis
+
+
+Cleanning Begins
+
+Deleted raw sequence files (copy of files at the RC):
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/
+-rwxr-x--- 1 e1garcia carpenter  15G Aug  2 12:12 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  16G Aug  2 12:30 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_2.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  13G Aug  2 12:45 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_1.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  14G Aug  2 13:01 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_2.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  16G Aug  2 13:19 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_1.fq.gz
+-rwxr-x--- 1 e1garcia carpenter  17G Aug  2 13:36 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_2.fq.gz
+
+Deleted fp1 sequence files
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1> l *gz 
+-rwxrwx--- 1 e1garcia carpenter 12G Jul 30 19:39 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r1.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 12G Jul 30 19:39 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r2.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 13G Jul 30 19:50 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r1.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 14G Jul 30 19:50 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r2.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 14G Jul 30 19:54 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r1.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 15G Jul 30 19:54 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r2.fq.gz
+
+Deleted fp1/failed sequence files
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/failed> l
+total 2.9G
+-rwxrwx--- 1 e1garcia carpenter 287M Jul 30 19:39 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_fail.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 268M Jul 30 19:39 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_unprd.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 378M Jul 30 19:50 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_fail.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 349M Jul 30 19:50 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_unprd.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 383M Jul 30 19:54 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_fail.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 356M Jul 30 19:54 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_unprd.fq.gz
+
+Deleted clumpify sequence files
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray> l
+total 59G
+-rwxrwx--- 1 e1garcia carpenter 6.0G Aug  2 15:46 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 7.4G Aug  2 15:46 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r2.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 6.0G Aug  2 15:49 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r1.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 7.4G Aug  2 15:49 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r2.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 7.8G Aug  2 15:51 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r2.fq.gz
+-rwxrwx--- 1 e1garcia carpenter 6.3G Aug  2 15:51 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r1.fq.gz
+
+keeping "contaminated" files for now
+fq_fp1_clmparray_fp2
+
+
+Deleted sequence files after fastq screen before repair
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn> l gz/
+total 88G
+-rwxrwx--- 1 e1garcia carpenter 4.7G Aug  3 18:57 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.tagged.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 5.8G Aug  3 19:12 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r2.tagged.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 6.2G Aug  3 19:18 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r2.tagged.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 4.2G Aug  3 19:43 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.tagged_filter.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 5.2G Aug  3 20:09 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r2.tagged_filter.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 5.6G Aug  3 20:19 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r2.tagged_filter.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 4.8G Aug  3 21:03 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r1.tagged.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 6.0G Aug  3 21:03 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r2.tagged.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 5.0G Aug  3 21:32 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r1.tagged.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 4.3G Aug  3 21:51 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r1.tagged_filter.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 5.4G Aug  3 22:01 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r2.tagged_filter.fastq.gz
+-rwxrwx--- 1 e1garcia carpenter 4.5G Aug  3 22:22 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r1.tagged_filter.fastq.gz
+
+keeping "decontaminated" files for now
+~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired
+
+Deleted files for testing the "merge" option in SPAdes (INCLUDING ALL DIRS WITH MERGE TREATMENT)
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis> l fq_fp1_clmparray_fp2_Onlymrgd
+total 47G
+drwxrwx--- 2 e1garcia users  571 Aug  6 17:15 failed
+-rwxrwx--- 1 e1garcia users 4.4G Aug  6 17:42 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_fp2_r1.fq.gz
+-rwxrwx--- 1 e1garcia users 5.5G Aug  6 17:42 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_fp2_r2.fq.gz
+-rwxrwx--- 1 e1garcia users 706M Aug  6 17:42 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_mrgd.fq.gz
+-rwxrwx--- 1 e1garcia users 4.5G Aug  6 17:44 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_fp2_r1.fq.gz
+-rwxrwx--- 1 e1garcia users 5.5G Aug  6 17:44 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_fp2_r2.fq.gz
+-rwxrwx--- 1 e1garcia users 825M Aug  6 17:44 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_mrgd.fq.gz
+-rwxrwx--- 1 e1garcia users 4.7G Aug  6 17:45 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_fp2_r1.fq.gz
+-rwxrwx--- 1 e1garcia users 5.8G Aug  6 17:45 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_fp2_r2.fq.gz
+-rwxrwx--- 1 e1garcia users 772M Aug  6 17:45 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_mrgd.fq.gz
+
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_Onlymrgd> l failed/
+total 384K
+-rwxrwx--- 1 e1garcia users 40 Aug  6 17:42 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_fp2_fail.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 17:42 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_fp2_unprd.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 17:44 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_fp2_fail.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 17:44 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_fp2_unprd.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 17:45 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_fp2_fail.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 17:45 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_fp2_unprd.fq.gz
+
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd> l
+total 40G
+drwxrwx--- 2 e1garcia users  601 Aug  6 17:38 failed
+-rwxrwx--- 1 e1garcia users 3.7G Aug  6 18:01 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_R1.fq.gz
+-rwxrwx--- 1 e1garcia users 4.6G Aug  6 18:01 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_R2.fq.gz
+-rwxrwx--- 1 e1garcia users 564M Aug  6 18:01 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.mrgd.fq.gz
+-rwxrwx--- 1 e1garcia users 4.0G Aug  6 18:03 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_R1.fq.gz
+-rwxrwx--- 1 e1garcia users 4.9G Aug  6 18:03 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_R2.fq.gz
+-rwxrwx--- 1 e1garcia users 624M Aug  6 18:03 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.mrgd.fq.gz
+-rwxrwx--- 1 e1garcia users 3.9G Aug  6 18:03 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_R1.fq.gz
+-rwxrwx--- 1 e1garcia users 4.8G Aug  6 18:03 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_R2.fq.gz
+-rwxrwx--- 1 e1garcia users 686M Aug  6 18:03 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.mrgd.fq.gz
+
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed> l
+total 384K
+-rwxrwx--- 1 e1garcia users 40 Aug  6 18:01 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_fail.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 18:01 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_unprd.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 18:03 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_fail.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 18:03 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_unprd.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 18:03 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_fail.fq.gz
+-rwxrwx--- 1 e1garcia users 40 Aug  6 18:03 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_unprd.fq.gz
+
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_mrgd> l
+total 47G
+drwxrwx--- 2 e1garcia users  547 Aug  6 17:01 failed
+-rwxrwx--- 1 e1garcia users 115K Aug  6 17:34 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r1r2_fastp.json
+-rwxrwx--- 1 e1garcia users 380K Aug  6 17:34 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.r1r2_fastp.html
+-rwxrwx--- 1 e1garcia users 4.4G Aug  6 17:34 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz
+-rwxrwx--- 1 e1garcia users 5.5G Aug  6 17:34 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r2.fq.gz
+-rwxrwx--- 1 e1garcia users 827M Aug  6 17:34 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.mrgd.fq.gz
+-rwxrwx--- 1 e1garcia users 115K Aug  6 17:35 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1r2_fastp.json
+-rwxrwx--- 1 e1garcia users 380K Aug  6 17:35 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.r1r2_fastp.html
+-rwxrwx--- 1 e1garcia users 4.5G Aug  6 17:35 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r1.fq.gz
+-rwxrwx--- 1 e1garcia users 5.5G Aug  6 17:35 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r2.fq.gz
+-rwxrwx--- 1 e1garcia users 924M Aug  6 17:35 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.mrgd.fq.gz
+-rwxrwx--- 1 e1garcia users 115K Aug  6 17:37 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r1r2_fastp.json
+-rwxrwx--- 1 e1garcia users 380K Aug  6 17:37 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.r1r2_fastp.html
+-rwxrwx--- 1 e1garcia users 4.7G Aug  6 17:37 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r1.fq.gz
+-rwxrwx--- 1 e1garcia users 5.8G Aug  6 17:37 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r2.fq.gz
+-rwxrwx--- 1 e1garcia users 893M Aug  6 17:37 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.mrgd.fq.gz
+-rwxrwx--- 1 e1garcia users 1.1M Aug  6 17:38 2nd_fastp_report.html
+drwxrwx--- 2 e1garcia users  179 Aug  6 17:38 2nd_fastp_report_data
+
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_mrgd/failed> l
+total 6.3G
+-rwxrwx--- 1 e1garcia users 667M Aug  6 17:34 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_fail.fq.gz
+-rwxrwx--- 1 e1garcia users 910M Aug  6 17:34 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz
+-rwxrwx--- 1 e1garcia users 539M Aug  6 17:35 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_fail.fq.gz
+-rwxrwx--- 1 e1garcia users 746M Aug  6 17:35 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz
+-rwxrwx--- 1 e1garcia users 681M Aug  6 17:37 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_fail.fq.gz
+-rwxrwx--- 1 e1garcia users 937M Aug  6 17:37 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_unprd.fq.gz
+
+
+Deleting fq.gz files from SPAdes treatments not used (MRGD)
+
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_contam_mrgd/corrected> l
+total 49G
+drwxrwx--- 2 e1garcia users   29 Aug  6 20:33 configs
+-rwxrwx--- 1 e1garcia users 1.4M Aug  7 17:40 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r_unpaired.00.0_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 5.6G Aug  7 17:40 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r2.fq.00.0_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 4.6G Aug  7 17:40 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.00.0_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 843M Aug  7 17:43 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.mrgd.fq.00.0_1.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 1.2M Aug  7 18:14 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r_unpaired.00.1_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 5.7G Aug  7 18:15 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r2.fq.00.1_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 4.8G Aug  7 18:15 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r1.fq.00.1_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 944M Aug  7 18:18 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.mrgd.fq.00.1_1.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 1.5M Aug  7 18:50 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r_unpaired.00.2_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 5.9G Aug  7 18:50 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r2.fq.00.2_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 5.0G Aug  7 18:50 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r1.fq.00.2_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 911M Aug  7 18:55 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.mrgd.fq.00.2_1.cor.fastq.gz
+
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_contam_mrgd> l .bin_reads
+total 44G
+-rwxrwx--- 1 e1garcia users   35 Aug  7 19:50 INFO_0
+-rwxrwx--- 1 e1garcia users 806K Aug  7 19:50 merged_0.off
+-rwxrwx--- 1 e1garcia users 670M Aug  7 19:50 merged_0.seq
+-rwxrwx--- 1 e1garcia users 1.2K Aug  7 19:50 single_0.off
+-rwxrwx--- 1 e1garcia users 712K Aug  7 19:50 single_0.seq
+-rwxrwx--- 1 e1garcia users 7.2M Aug  7 19:50 paired_0.off
+-rwxrwx--- 1 e1garcia users 9.2G Aug  7 19:50 paired_0.seq
+-rwxrwx--- 1 e1garcia users   35 Aug  7 19:59 INFO_1
+-rwxrwx--- 1 e1garcia users 910K Aug  7 19:59 merged_1.off
+-rwxrwx--- 1 e1garcia users 751M Aug  7 19:59 merged_1.seq
+-rwxrwx--- 1 e1garcia users  944 Aug  7 19:59 single_1.off
+-rwxrwx--- 1 e1garcia users 597K Aug  7 19:59 single_1.seq
+-rwxrwx--- 1 e1garcia users 7.6M Aug  7 19:59 paired_1.off
+-rwxrwx--- 1 e1garcia users 9.6G Aug  7 19:59 paired_1.seq
+-rwxrwx--- 1 e1garcia users   35 Aug  7 20:07 INFO_2
+-rwxrwx--- 1 e1garcia users 875K Aug  7 20:07 merged_2.off
+-rwxrwx--- 1 e1garcia users 729M Aug  7 20:07 merged_2.seq
+-rwxrwx--- 1 e1garcia users 1.2K Aug  7 20:07 single_2.off
+-rwxrwx--- 1 e1garcia users 754K Aug  7 20:07 single_2.seq
+-rwxrwx--- 1 e1garcia users 7.8M Aug  7 20:07 paired_2.off
+-rwxrwx--- 1 e1garcia users 9.9G Aug  7 20:07 paired_2.seq
+
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_decontam_Onlymrgd> l corrected/
+total 41G
+drwxrwx--- 2 e1garcia users   29 Aug  6 20:37 configs
+-rwxrwx--- 1 e1garcia users 1.4M Aug  7 10:21 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_R_unpaired.00.0_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 4.7G Aug  7 10:21 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_R2.fq.00.0_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 3.9G Aug  7 10:22 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_R1.fq.00.0_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 576M Aug  7 10:23 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.mrgd.fq.00.0_1.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 1.2M Aug  7 10:42 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_R_unpaired.00.1_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 4.9G Aug  7 10:42 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_R2.fq.00.1_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 4.1G Aug  7 10:42 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_R1.fq.00.1_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 702M Aug  7 10:44 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.mrgd.fq.00.1_1.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 1.5M Aug  7 11:02 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_R_unpaired.00.2_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 5.0G Aug  7 11:02 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_R2.fq.00.2_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 4.2G Aug  7 11:03 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_R1.fq.00.2_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 637M Aug  7 11:04 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.mrgd.fq.00.2_1.cor.fastq.gz
+
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_contam_NOmrgd> l corrected/
+total 49G
+drwxrwx--- 2 e1garcia users   29 Aug  5 19:17 configs
+-rwxrwx--- 1 e1garcia users 1.4M Aug  6 15:14 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r_unpaired.00.0_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 6.1G Aug  6 15:14 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r2.fq.00.0_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 5.0G Aug  6 15:14 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.00.0_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 1.2M Aug  6 15:37 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r_unpaired.00.1_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 6.3G Aug  6 15:38 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r2.fq.00.1_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 5.2G Aug  6 15:38 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_r1.fq.00.1_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 1.5M Aug  6 16:09 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r_unpaired.00.2_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 6.5G Aug  6 16:10 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r2.fq.00.2_0.cor.fastq.gz
+-rwxrwx--- 1 e1garcia users 5.4G Aug  6 16:10 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_r1.fq.00.2_0.cor.fastq.gz
+
+Selected files to delete from
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_decontam_Onlymrgd> rm K*/*
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_decontam_Onlymrgd> rm misc/*
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_decontam_Onlymrgd> rm assembly_graph*
+wahab-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_decontam_Onlymrgd> rm before_rr.fasta
+
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_contam_NOmrgd> rm K*/*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_contam_NOmrgd> rm misc/*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_contam_NOmrgd> rm assembly_graph*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_decontam_Onlymrgd> rm before_rr.fasta 
+
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO> rm K*/*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO> rm assembly_graph*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO> rm misc/*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO> rm corrected/*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_decontam_R1R2_noIsolate_covAUTO> rm before_rr.fasta
+
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_contam_R1R2_noIsolate_covAUTO> rm assembly_graph*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_contam_R1R2_noIsolate_covAUTO> rm before_rr.fasta 
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_contam_R1R2_noIsolate_covAUTO> rm corrected/*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_contam_R1R2_noIsolate_covAUTO> rm misc/*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_contam_R1R2_noIsolate_covAUTO> rm K*/*
+
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_contam_R1R2_noIsolate_covAUTO> rm before_rr.fasta 
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_contam_R1R2_noIsolate_covAUTO> rm assembly_graph*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_contam_R1R2_noIsolate_covAUTO> rm corrected/*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_contam_R1R2_noIsolate_covAUTO> rm misc/*
+e1-w6420b-01:~/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_SgC0072C_contam_R1R2_noIsolate_covAUTO> rm K*/*

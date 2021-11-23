@@ -24,7 +24,7 @@ GENSIZE=$5
 PROJDIR=$6
 
 # Get the Library code
-if [[ "$LIBRARY" == "all" ]]; then
+if [[ "$LIBRARY" == "all" || "$LIBRARY" == "all_2libs" || "$LIBRARY" == "all_3libs" ]]; then
 	LIBCODE=allLibs
 elif [[ "$LIBRARY" == "1" ]]; then
 	LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n1 | sed -e 's/.*\///' -e 's/_.*//')
@@ -33,7 +33,7 @@ elif [[ "$LIBRARY" == "2" ]]; then
 elif [[ "$LIBRARY" == "3" ]]; then
         LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n3 | tail -n1 | sed -e 's/.*\///' -e 's/_.*//')
 else
-	echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\nPlease enter which library(s) to process. Options: all | 1 | 2 | 3 \n" 
+	echo -e "This script is optimize to for up to 3 libraries and can run individual or 2- 3 libraries together\nPlease enter which library(s) to process. Options: all_2libs | all_3libs | 1 | 2 | 3 \n" 
 fi
 
 # Set the output dir according to the input data
@@ -80,18 +80,32 @@ mkdir $quastOUTDIR2
 
 # run SPAdes accordint to the library
 
-if [[ "$LIBRARY" == "all" ]]; then
-	crun spades.py \
-	-k 21,33,55,77,99 \
-	--pe1-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n1) \
-	--pe1-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n1) \
-	--pe2-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n2 | tail -n1) \
-	--pe2-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n2 | tail -n1) \
-	--threads $THREADS \
-	--memory 750 \
-	--tmp-dir $TEMPDIR \
-	--cov-cutoff $COVCUTOFF \
-	-o $INDIR/$OUTDIR
+if [[ "$LIBRARY" == "all_3libs" || "$LIBRARY" == "all" ]]; then
+        crun spades.py \
+        -k 21,33,55,77,99 \
+        --pe1-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n1) \
+        --pe1-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n1) \
+        --pe2-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n2 | tail -n1) \
+        --pe2-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n2 | tail -n1) \
+        --pe3-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n3 | tail -n1) \
+        --pe3-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n3 | tail -n1) \
+        --threads $THREADS \
+        --memory 750 \
+        --tmp-dir $TEMPDIR \
+        --cov-cutoff $COVCUTOFF \
+        -o $INDIR/$OUTDIR
+elif [[ "$LIBRARY" == "all_2libs" ]]; then
+        crun spades.py \
+        -k 21,33,55,77,99 \
+        --pe1-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n1) \
+        --pe1-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n1) \
+        --pe2-1 $(ls $FQDIR/${FQPATTERN}1.fq.gz | head -n2 | tail -n1) \
+        --pe2-2 $(ls $FQDIR/${FQPATTERN}2.fq.gz | head -n2 | tail -n1) \
+        --threads $THREADS \
+        --memory 750 \
+        --tmp-dir $TEMPDIR \
+        --cov-cutoff $COVCUTOFF \
+        -o $INDIR/$OUTDIR
 elif [[ "$LIBRARY" == "1" ]]; then
 	crun spades.py \
 	-k 21,33,55,77,99 \
@@ -127,7 +141,7 @@ elif [[ "$LIBRARY" == "continue" ]]; then
 	--continue
 	-o .
 else
-        echo -e "This script is optimize to for up to 3 libraries and can run individual or all 3 libraries together\nPlease enter which library(s) to process. Options: all | 1 | 2 | 3 \n"
+        echo -e "This script is optimize to for up to 3 libraries and can run individual or 2-3 libraries together\nPlease enter which library(s) to process. Options: all_2libs | all_3libs | 1 | 2 | 3 \n"
 fi
 
 echo -e "\nRunning QUAST Now\n"
@@ -148,21 +162,3 @@ sacct -j $SLURM_JOBID --long --units=G > $OUTDIR/resource_usage_g.tsv
 # save resource usage stats
 sacct -j $SLURM_JOBID --long --units=K > $OUTDIR/resource_usage_k.tsv
 
-
-# If have files with merged reads (*mrgd.fq.gz)
-#crun spades.py \
-#-k 21,33,55,77,99 \
-#--pe1-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n1) \
-#--pe1-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n1) \
-#--pe1-m $(ls $FQDIR/${FQPATTERN}mrgd*.fq.gz | head -n1) \
-#--pe2-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n2 | tail -n1) \
-#--pe2-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n2 | tail -n1) \
-#--pe2-m $(ls $FQDIR/${FQPATTERN}mrgd*.fq.gz | head -n2 | tail -n1) \
-#--pe3-1 $(ls $FQDIR/${FQPATTERN}r1.fq.gz | head -n3 | tail -n1) \
-#--pe3-2 $(ls $FQDIR/${FQPATTERN}r2.fq.gz | head -n3 | tail -n1) \
-#--pe3-m $(ls $FQDIR/${FQPATTERN}mrgd*.fq.gz | head -n3 | tail -n1) \
-#--threads $THREADS \
-#--memory 750 \
-#--tmp-dir $TEMPDIR \
-#--cov-cutoff $COVCUTOFF \
-#-o $INDIR/$OUTDIR
