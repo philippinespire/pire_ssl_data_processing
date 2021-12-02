@@ -12,13 +12,15 @@ See documentation for the Old Dominion University [High Performance Computing](h
 A complete log of all command line work can be found in the [README.md](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/logs) of this repository's subdirectory logs.
 
 One library was incomplete.  The missing files were retireved and steps 1-8 were performed for this library separately.  Reports are attached at each step.
+
+<a name="blank"> </a> Any "blanks" for steps that are completed in other pipelines are not out of laziness, but are left blank due to this author's inability to interpret the output.  Request a more experienced colaborator either train the author or complete the tables to satisfaction.
 ***
 
 ## Step 1. Fastqc
 
 Ran the [Multi_FASTQC.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/Multi_FASTQC.sh) script. [Report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/Multi_FASTQC/multiqc_report_fq.gz.html)
 
-Athe second [MultiQC report] ()
+And the second [MultiQC report] (https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/Multi_FASTQC/multiqc_report2_fq.gz.html)
 
 Potential issues:
 * % duplication - 
@@ -36,7 +38,7 @@ Potential issues:
 
 Used [runFASTP_1st_trim.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runFASTP_1st_trim.sbatch) to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1/1st_fastp_report.html)
 
-The second [fastp report] ()
+The second [fastp report] (https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1/1st_fastp_report2.html)
 
 
 Potential issues:
@@ -62,15 +64,17 @@ Clumpify worked succesfully on all libraries.
 
 ## Step 4. FASTP2
 
-Ran [FASTP]((https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2/2nd_fastp_report.html)
+Ran [FASTP](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2/2nd_fastp_report.html)
 
-Second [report]()
+Second [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2/2nd_fastp_report2.html)
 
-Please review the reports directly using the links above.  I will not describe data I cannot accurately interpret.
+Please review the reports directly using the links above.  I will not describe data I cannot accurately interpret as the output requested is not consistent with the program's output, see [above](#blank).
 
 ## Step 5. Run fastq_screen
 
-Executed `runFQSCRN_6.bash` to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/fastqc_screen_report.html)
+Executed `runFQSCRN_6.bash` to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report.html)
+
+Second [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report2.html)
 
 Checked output for errors
 
@@ -90,10 +94,8 @@ No errors.
 
 MultiQC failed due to python errors in the program.  No report was generated.  Please see the outfile in this repo's logs dir.
 The script was corrected and the MultiQC report was generated.
-Highlights from [report](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/fq_fp1_clmparray_fp2_fqscrn/fastqc_screen_report.html):
+Highlights from report:
 * about 96% of reads were retained
-
-The second report is [here]()
 
 ## Step 6. Repair fastq_screen paired end files
 
@@ -103,7 +105,12 @@ Executed `runREPAIR.sbatch`
 
 Executed [read_calculator_ssl.sh](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/read_calculator_ssl.sh) to generate the [percent read loss](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readLoss_table.tsv) and [percent reads remaining](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readsRemaining_table.tsv) tables
 
-The second reports are here [percent read loss]() and here [percent reads remaining] ().
+The second reports are here [percent read loss](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readLoss_table2.tsv) and here [percent reads remaining] (https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readsRemaining_table2.tsv).
+
+The script failed twice for reasons that time has eroded from my memory.  Dr. Garcia repaired this.
+The third reports are here [percent read loss](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readLoss_table_EG.tsv) and here [percent reads remaining] (https://github.com/philippinespire/pire_ssl_data_processing/tree/main/halichoeres_miniatus/preprocess_read_change/readsRemaining_table_EG.tsv).
+
+95-135 million reads were retained after preprocessing
 
 # Assembly section
 
@@ -115,11 +122,11 @@ This jellyfish kmer-frequency [hitogram file](https://github.com/philippinespire
 
 Genome stats for *Halichoeres miniatus* from Jellyfish/GenomeScope v2.0 k=21
 
-stat|min|max|average
-------|------|------|------
-Heterozygosity |1.22796% |1.2388%  |
-Genome Haploid Length |631,820,236 bp  |632,395,858 bp |632,108,047 bp
-Model Fit |87.7119%  |99.3197% |
+stat|min|max|
+------|------|------
+Heterozygosity |1.22796% |1.2388%
+Genome Haploid Length |631,820,236 bp  |632,395,858 bp
+Model Fit |87.7119%  |99.3197%
 
 I will use 632000000 as the genome size estimate.
 
