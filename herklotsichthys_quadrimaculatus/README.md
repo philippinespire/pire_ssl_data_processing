@@ -380,9 +380,9 @@ Hqu  |allLibs    |decontam     |scaffolds     |off       |2     |60202      |195
 Hqu  |HqC0021A   |contam       |contigs       |off       |2     |65367      |147500          |366461990     |80.19%     |5734     |19944     |0.00     |34.2%
 Hqu  |HqC0021A   |contam       |scaffolds     |off       |2     |63940      |149059          |434260536     |95.02%     |7518     |16545     |770.66   |43.4%
 Hqu  |HqC0021B   |contam       |contigs       |off       |2     |67217      |189345          |384117534     |84.05%     |5884     |20193     |0.00     |33.7%
-Hqu  |HqC0021B   |contam       |scaffolds     |off       |2     |64766      |321524          |454430537     |99.04%     |7872     |16440     |785.39   |43.9%
+Hqu  |HqC0021B   |contam       |scaffolds     |off       |2     |64766      |321524          |454430537     |99.04%     |7872     |16440     |785.39   |44.0%
 Hqu  |HqC0021C   |contam       |contigs       |off       |2     |64351      |216207          |357793983     |78.29%     |5657     |19680     |0.00     |33.0%
-Hqu  |HqC0021C   |contam       |scaffolds     |off       |2     |63614      |242909          |427983643     |93.65%     |7411     |16508     |798.19   |42.7%                            
+Hqu  |HqC0021C   |contam       |scaffolds     |off       |2     |63614      |242909          |427983643     |93.65%     |7411     |16508     |798.19   |42.6%                            
 
 ---
 The best library was allLibs scaffolds.

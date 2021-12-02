@@ -208,7 +208,7 @@ Reads remaining:
 
 ## Step 7. Genome properties
 
-I found the genome size of Sfa in the [genomesize.com](https://www.genomesize.com/) database. Here is the link to that [page](https://www.genomesize.com/result_species.php?id=2683)
+I did not find a genome for Pli in the [genomesize.com](https://www.genomesize.com/) database.
 
 From species home directory: Executed runJellyfish.sbatch using decontaminated files
 ```sh
@@ -427,10 +427,11 @@ mv *out ../logs
 ```sh
 nano closest_relative_genomes_taeniamia_zosterophora.txt
 
-1.-
-https://www.ncbi.nlm.nih.gov/genome/15477
-2.-
-https://www.ncbi.nlm.nih.gov/genome/8239
+1. Ictalurus punctatus - https://www.ncbi.nlm.nih.gov/genome/198
+2. Ameiurus melas - https://www.ncbi.nlm.nih.gov/genome/67648
+3. Clarias magur - https://www.ncbi.nlm.nih.gov/genome/93387
+4. Clarias macrocephalus - https://www.ncbi.nlm.nih.gov/genome/88086
+5. Clarias batrachus -https://www.ncbi.nlm.nih.gov/genome/31689
+```
 
-
-following Betancur et al. 2017 and Lavoué_etal_2007?????
+following Betancur et al. 2017
