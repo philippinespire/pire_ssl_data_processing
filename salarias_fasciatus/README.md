@@ -168,7 +168,7 @@ Ran MultiQC separately:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
 ```
 
-[Report](), download and open in web browser
+[Report](https://raw.githubusercontent.com/philippinespire/pire_ssl_data_processing/main/salarias_fasciatus/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report.html?token=AJSZEDFXEVVIS5FTR5CBQKDBWOQMG), download and open in web browser
 
 Potential issues:
   * One hit, one genome ~96%
@@ -206,7 +206,7 @@ Reads lost:
 
 Reads remaining:
 * Per step: 81%-97%
-* Total reads remaining: 63-66%
+* Total reads remaining: 63-66% (112-165M reads)
 
 ---
 ### Assembly section
@@ -346,8 +346,8 @@ Sfa  |SfC0282A   |decontam      |contigs        |off	 |1     |51279  |140503    
 
 Summary of QUAST (using Genome Scope v.2 635000000 estimate) & BUSCO Results
 
-Species    |DataType    |SCAFIG    |covcutoff    |genome scope v.  |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp |BUSCO single copy
-------  |------ |------ |------ |------  |------ |------ |------|------ |------  |------ |------ |------
+Species    |Library     |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp |BUSCO single copy 
+------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ |----- |-----
 Sfa  |allLibs    |contam       |contigs       |off       |2     |65925      |143244          |505647697     |79.63%     |9029     |16262     |0.00     |50.7%
 Sfa  |allLibs    |contam       |scaffolds       |off       |2     |44568      |280192          |565789902   |89.10%     |19913    |7533      |866.33   |64.7%
 Sfa  |SfC0281G   |contam      |contigs        |off       |2     |66496      |87063           |484063030     |76.23%     |8356     |17038     |0.00     |52.6%
