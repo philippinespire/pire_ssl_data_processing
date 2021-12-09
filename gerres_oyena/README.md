@@ -16,6 +16,7 @@ cp /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/gerres_oy
 
 ## Step 1. Fastqc
 Run from /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/
+[Report](https://raw.githubusercontent.com/philippinespire/pire_ssl_data_processing/main/gerres_oyena/Multi_FASTQC/multiqc_report_fq.gz.html?token=AKGFYMP2HG6DWETR4POISA3BXKK2Y) (copy and paste into a text editor locally, save and open in your browser to view)
 ```sh
 sbatch Multi_FASTQC.sh "fq.gz" "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq"
 ```
@@ -33,7 +34,7 @@ Potential issues:
  *105.7M - 129.5M
 
 ## Step 2. 1st fastp
-
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/gerres_oyena/fq_fp1/1st_fastp_report.html)
 Run runFASTP_1st_trim.sbatch to generate this report
 ```sh
 sbatch runFASTP_1st_trim.sbatch /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1
@@ -88,7 +89,7 @@ Potential issues:
   * 132M - 157M (per pair of r1-r2 files)
 
 ## Step 5. fastq_screen
-Ran from runFQSCRN_6.bash/gerres_oyena/ to generate this [report]()
+Ran from runFQSCRN_6.bash/gerres_oyena/ to generate this [report]().
 ```sh
 bash /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 4
 ```
