@@ -71,7 +71,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 
 Out files were moved to the `logs` dir
 
-Ran [checkClumpify_EG.R] (https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any files failed.
+Ran [checkClumpify_EG.R](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/checkClumpify_EG.R) to see if any files failed.
 
 ```
 #navigate to out dir for clumpify
@@ -93,7 +93,7 @@ All files were successful!
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmparray/ fq_fp1_clmparray_fp2
 ```
 
-[Report](), download and open in web browser
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/salarias_fasciatus/fq_fp1_clmparray_fp2/2nd_fastp_report.html), download and open in web browser
 
 Potential issues:  
 * % duplication - good  
@@ -168,7 +168,7 @@ Ran MultiQC separately:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMULTIQC.sbatch "fq_fp1_clmparray_fp2_fqscrn" "fqsrn_report"
 ```
 
-[Report](), download and open in web browser
+[Report](https://raw.githubusercontent.com/philippinespire/pire_ssl_data_processing/main/salarias_fasciatus/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report.html?token=AJSZEDFXEVVIS5FTR5CBQKDBWOQMG), download and open in web browser
 
 Potential issues:
   * One hit, one genome ~96%
@@ -206,7 +206,7 @@ Reads lost:
 
 Reads remaining:
 * Per step: 81%-97%
-* Total reads remaining: 63-66%
+* Total reads remaining: 63-66% (112-165M reads)
 
 ---
 ### Assembly section
@@ -226,7 +226,7 @@ Kmer length: 21
 Read length: 140
 Max kmer coverage: 1000
 
-There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website] (http://qb.cshl.edu/genomescope/genomescope2.0/) too$
+There may be differences in GenomeScope results, depending on the version. As such, we uploaded the same file to the [GenomesScope v2.0 website](http://qb.cshl.edu/genomescope/genomescope2.0/) too, with the following input:
 
 Description: Sfa_ssl_decontam2
 Kmer length: 21
@@ -234,7 +234,7 @@ Ploidy: 2
 Max kmer coverage: -1
 Average k-mer coverage for polyploid genome: -1
 
-The report generated for v2.0 is [here] (http://genomescope.org/genomescope2.0/analysis.php?code=hGAiwIq4ab6yyLFhgOae)
+The report generated for v2.0 is [here](http://genomescope.org/genomescope2.0/analysis.php?code=hGAiwIq4ab6yyLFhgOae)
 
 Genome stats for Sfa from Jellyfish/GenomeScope v1.0 & v2.0
 stat    |min    |max    
@@ -289,8 +289,6 @@ This SPAdes scripts automatically runs `QUAST` but runs `BUSCO` separately
 # do not use trailing / in paths:
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_contam_R1R2_noIsolate" "contigs"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_contam_R1R2_noIsolate" "scaffolds"
-sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_decontam_R1R2_noIsolate" "contigs"
-sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_decontam_R1R2_noIsolate" "scaffolds"
 #1st lib
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0281G_contam_R1R2_noIsolate" "contigs"
 sbatch ../scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus" "SPAdes_SfC0281G_contam_R1R2_noIsolate" "scaffolds"
@@ -310,10 +308,8 @@ Look for the quast_results dir and note the (1) total number of contigs, (2) the
 To get summary for No. of contigs, largest contig, total length, % genome size completeness (GC), N50 & L50, do the following:
 ```
 bash
-cat quast-reports/quast-report_contigs_Sfa_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_scaffolds_Sfa_spades_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_contigs_Sfa_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
-cat quast-reports/quast-report_scaffolds_Sfa_spades_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_contigs_Sfa_spades_allLibs_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
+cat quast-reports/quast-report_scaffolds_Sfa_spades_allLibs_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 #for individual libraries:
 cat quast-reports/quast-report_contigs_Sfa_spades_SfC0281G_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 cat quast-reports/quast-report_scaffolds_Sfa_spades_SfC0281G_contam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
@@ -333,22 +329,37 @@ Contam, scaffolds:
 Decontam, contigs:
 Decontam, scaffolds:
 
-Summary of QUAST & BUSCO Results
+Summary of QUAST (using Genome Scope v.1 578849019 estimate) & BUSCO Results
 
-Species    |DataType    |SCAFIG    |covcutoff    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single co$
-------  |------ |------ |------ |------  |------ |------ |------ |------  |------ |------
-Sfa  |allLibs    |contam       |contigs       |off       |96125  |236270       |745725175       |128.83%       |9041       |24287       |50.7%
-Sfa  |allLibs    |contam       |scaffolds       |off       |74846  |320496       |812404903       |140.35%       |14515       |15479       |64.7%
-Sfa  |allLibs    |decontam       |contigs       |off       |94520  |100990       |657658468       |113.61%       |7749       |24786       |47.9%
-Sfa  |allLibs    |decontam       |scaffolds       |off       |80472  |144523       |739361830       |127.73%       |11593       |17523       |61.4%
-Sfa  |SfC0281G   |contam      |contigs        |off       |66551  |87063      |484209845        |83.65%      |8351      |17065      |52.6%
-Sfa  |SfC0281G   |contam      |scaffolds      |off       |47251  |206689     |549666344        |94.96%	    |17292     |8582  	   |70.3%
-Sfa  |SfC0281H   |contam      |contigs        |off       |64803  |119618     |510341019        |83.65%	    |9378      |15757  	   |57.0%
-Sfa  |SfC0281H   |contam      |scaffolds      |off       |45792  |356588     |563766158        |94.96%      |18875     |8063	   |73.0%
-Sfa  |SfC0282A   |contam      |contigs        |off       |66229  |97374      |490610142        |88.16%      |8579      |16761  	   |53.8%
-Sfa  |SfC0282A   |contam      |scaffolds      |off	 |46311  |221552     |555041474        |97.39%      |18095     |8177	   |71.2%
-Sfa  |SfC0282A   |decontam      |contigs        |off	 |65497  |92703      |489935535        |84.76%      |8715      |16767	   |55.5%
-Sfa  |SfC0282A   |decontam      |contigs        |off	 |51279  |140503     |539947694        |93.28%      |14718     |10321	   |69.5%
+Species    |DataType    |SCAFIG    |covcutoff    |genome scope v.  |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
+------  |------ |------ |------ |------  |------ |------ |------|------ |------  |------ |------
+Sfa  |allLibs    |contam       |contigs       |off       |1     |96125  |236270       |745725175       |128.83%       |9041       |24287       |50.7%
+Sfa  |allLibs    |contam       |scaffolds       |off       |1     |74846  |320496       |812404903       |140.35%       |14515       |15479       |64.7%
+Sfa  |SfC0281G   |contam      |contigs        |off       |1     |66551  |87063      |484209845        |83.65%      |8351      |17065      |52.6%
+Sfa  |SfC0281G   |contam      |scaffolds      |off       |1     |47251  |206689     |549666344        |94.96%	    |17292     |8582      |70.3%
+Sfa  |SfC0281H   |contam      |contigs        |off       |1     |64803  |119618     |510341019        |83.65%	    |9378      |15757      |57.0%
+Sfa  |SfC0281H   |contam      |scaffolds      |off       |1     |45792  |356588     |563766158        |94.96%      |18875     |8063	   |73.0%
+Sfa  |SfC0282A   |contam      |contigs        |off       |1     |66229  |97374      |490610142        |88.16%      |8579      |16761       |53.8%
+Sfa  |SfC0282A   |contam      |scaffolds      |off	 |1     |46311  |221552     |555041474        |97.39%      |18095     |8177	   |71.2%
+Sfa  |SfC0282A   |decontam      |contigs        |off	 |1     |65497  |92703      |489935535        |84.76%      |8715      |16767	   |55.5%
+Sfa  |SfC0282A   |decontam      |contigs        |off	 |1     |51279  |140503     |539947694        |93.28%      |14718     |10321	   |69.5%
+
+Summary of QUAST (using Genome Scope v.2 635000000 estimate) & BUSCO Results
+
+Species    |Library     |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp |BUSCO single copy 
+------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ |----- |-----
+Sfa  |allLibs    |contam       |contigs       |off       |2     |65925      |143244          |505647697     |79.63%     |9029     |16262     |0.00     |50.7%
+Sfa  |allLibs    |contam       |scaffolds       |off       |2     |44568      |280192          |565789902   |89.10%     |19913    |7533      |866.33   |64.7%
+Sfa  |SfC0281G   |contam      |contigs        |off       |2     |66496      |87063           |484063030     |76.23%     |8356     |17038     |0.00     |52.6%
+Sfa  |SfC0281G   |contam      |scaffolds      |off       |2     |47190      |206530          |549551838     |86.54%     |17320    |8563      |899.99   |70.3%
+Sfa  |SfC0281H   |contam      |contigs        |off       |2     |64803      |119618          |510341019     |80.37%     |9378     |15757     |0.00     |57.0%
+Sfa  |SfC0281H   |contam      |scaffolds      |off       |2     |45792      |356588          |563766158     |88.78%     |18875    |8063      |765.81   |73.0%
+Sfa  |SfC0282A   |contam      |contigs        |off       |2     |66229      |97374           |490610142     |77.26%     |8579     |16761     |0.00     |53.8%
+Sfa  |SfC0282A   |contam      |scaffolds      |off       |2     |46311      |221552          |555041474     |87.41%     |18095    |8177      |892.51   |71.2%
+Sfa  |SfC0282A   |decontam      |contigs        |off     |2     |65497      |92703           |489935535     |77.16%     |8715     |16767     |0.00     |55.5%
+Sfa  |SfC0282A   |decontam      |contigs        |off     |2     |51279      |140503          |539947694     |85.03%     |14718    |10321     |643.68   |69.5%                             
+
+
 
 ---
 The best library was SfC0282A contam scaffolds.
@@ -424,4 +435,40 @@ Execute the first script:
 sbatch WGprobe_annotation.sb "Sfa_scaffolds_SfC0282A_contam_R1R2_noIsolate.fasta"
 ```
 
+This will create:
+1. a repeat-masked fasta and gff file (.fasta.masked & .fasta.out.gff)
+2. a gff file with predicted gene regions (augustus.gff), and
+3. a sorted fasta index file that will act as a template for the .bed file (.fasta.masked.fai)
 
+Execute the second script.
+```sh
+#WGprobe_annotation.sb <assembly base name>
+sbatch WGprobe_bedcreation.sb "Sfa_scaffolds_SfC0282A_contam_R1R2_noIsolate.fasta"
+```
+
+This will create a .bed file that will be sent for probe creation.
+ The bed file identifies 5,000 bp regions (spaced every 10,000 bp apart) in scaffolds > 10,000 bp long.
+
+The longest scaffold is 221552
+
+The uppper limit used in loop is 217500
+
+A total of 35068 regions have been identified from 16820 scaffolds
+
+Moved out files to logs
+```sh
+mv *out ../logs
+```
+
+## step 11. Fetching genomes for closest relatives
+
+```sh
+nano closest_relative_genomes_taeniamia_zosterophora.txt
+
+1.-
+https://www.ncbi.nlm.nih.gov/genome/15477
+2.-
+https://www.ncbi.nlm.nih.gov/genome/8239
+
+
+following Betancur et al. 2017 and Lavoué_etal_2007?????
