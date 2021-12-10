@@ -89,7 +89,7 @@ Potential issues:
   * 132M - 157M (per pair of r1-r2 files)
 
 ## Step 5. fastq_screen
-Ran from runFQSCRN_6.bash/gerres_oyena/ to generate this [report]().
+Ran from runFQSCRN_6.bash/gerres_oyena/ to generate this [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/gerres_oyena/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report.html).
 ```sh
 bash /home/jwhal002/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmparray_fp2 fq_fp1_clmparray_fp2_fqscrn 4
 ```
@@ -141,11 +141,18 @@ run from gerres_oyena/ using:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena"
 ```
 
+## Calculated the percent of reds lost in each step
+Executed read_calculator_ssl.sh to generate the [percent read loss](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/gerres_oyena/preprocess_read_change/readLoss_table.tsv) and [percent reads remaining](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/gerres_oyena/preprocess_read_change/readsRemaining_table.tsv) tables
+
+
 Percent total read loss:
 
 GyC0881D*L1_1.fq.gz: 42.6037%
+
 GyC0881D*L1_2.fq.gz: 42.6037%
+
 GyC0881E*L1_1.fq.gz: 40.7463%
+
 GyC0881E*L1_2.fq.gz: 40.7463%
 
 How much is too much data lost?
