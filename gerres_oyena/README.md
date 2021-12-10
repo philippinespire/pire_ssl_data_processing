@@ -255,7 +255,7 @@ Goy |GyC0881D |contam |scaffolds |off |2 |25665 |383347 |518735835 |94.5% |33953
 Goy |GyC0881E |contam |contigs |off |2 |52039 |118096 |484528224 |88.3% |11778 |12108 |0 |58.2%
 Goy |GyC0881E |contam |scaffolds |off |2 |24249 |397418 |531155459 |96.8% |37884 |3908 |912.36 |80.2%
 
-# Best assemblies [report]()
+### Best assemblies [report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/gerres_oyena/best_ssl_assembly_per_sp.tsv)
 
 ## Step 9. Assessing the best assembly
 Ran runBUSCO.sh on the contigs and scaffolds files
