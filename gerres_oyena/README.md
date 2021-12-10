@@ -197,7 +197,7 @@ Heterozygosity	|0.869466%	|0.877487%	|0.873476%
 Genome Haploid Length	|532,667,711 bp	|533,247,245 bp	|532,957,478 bp	
 Model Fit	|96.5314%	|97.1227%	|96.82705 %	
 
-The jellyfish kmer-frequency historgram file was uploaded to [Jellyfish/GenomeScope v2.0](http://qb.cshl.edu/genomescope/genomescope2.0/) to generate this [report](http://qb.cshl.edu/genomescope/analysis.php?code=GtcmGEsUFzCZjnuqRQE9)
+The jellyfish kmer-frequency historgram file was uploaded to [Jellyfish/GenomeScope v2.0](http://qb.cshl.edu/genomescope/genomescope2.0/) to generate this [report](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=lXqZ2XFZrPQ4M3dsyKlV)
 
 Genome stats for Goy from Jellyfish/GenomeScope v2.0 with the following default settings:
 * K-mer length: 21
@@ -246,15 +246,14 @@ Goy |GyC0881E |decontam |contigs |off |1 |386437 |113391 |488426273 |91.6% |1175
 Goy |GyC0881E |decontam |scaffolds |off |1 |346055 |259628 |528159939 |99.1% |26350 |5731 |78.7%
 
 ### Summary of QUAST and BUSCO results using genome size from Genomescope v2.0 (549,000,000 bp) from /quast-reports_v2/
-Species |Library |DataType |SCAFIG |covcutoff |genomescope v. |No. of contigs >0 |Largest contig |Total length |% Genome size completeness |N50 |L50 |BUSCO single copy|
------- |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
-Goy |allLibs |contam |contigs |off |2 |597249 |99979 |428433255 |78.0% |8873 |14304 |48.8% 
-Goy |allLibs |contam |scaffolds |off |2 |530964 |364333 |504055061 |91.8% |33151 |4188 |74.9% 
-Goy |GyC0881D |contam |contigs |off |2 |533072 |111112 |456566152 |83.2% |9976 |13705 |54.6%
-Goy |GyC0881D |contam |scaffolds |off |2 |474229 |383347 |518735835 |94.5% |33953 |4182 |79.1%
-Goy |GyC0881E |contam |contigs |off |2 |432435 |118096 |484528224 |88.3% |11778 |12108 |58.2%
-Goy |GyC0881E |contam |scaffolds |off |2 |383344 |397418 |531155459 |96.8% |37884 |3908 |80.2%
-
+Species |Library |DataType |SCAFIG |covcutoff |genomescope v. |No. of contigs >0 |Largest contig |Total length |% Genome size completeness |N50 |L50|Ns per 100 kbp |BUSCO single copy|
+------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------ |------
+Goy |allLibs |contam |contigs |off |2 |56139 |99979 |428433255 |78.0% |8873 |14304 |0 |48.8%
+Goy |allLibs |contam |scaffolds |off |2 |25822 |364333 |504055061 |91.8% |33151 |4188 |1301.15 |74.9%
+Goy |GyC0881D |contam |contigs |off |2 |55401 |111112 |456566152 |83.2% |9976 |13705 |0 |54.6%
+Goy |GyC0881D |contam |scaffolds |off |2 |25665 |383347 |518735835 |94.5% |33953 |4182 |1120.02 |79.1%
+Goy |GyC0881E |contam |contigs |off |2 |52039 |118096 |484528224 |88.3% |11778 |12108 |0 |58.2%
+Goy |GyC0881E |contam |scaffolds |off |2 |24249 |397418 |531155459 |96.8% |37884 |3908 |912.36 |80.2%
 
 ## Step 9. Assessing the best assembly
 Ran runBUSCO.sh on the contigs and scaffolds files
