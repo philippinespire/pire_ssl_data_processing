@@ -371,18 +371,18 @@ Hqu  |allLibs    |decontam     |scaffolds     |off       |1     |60202  |195347 
 
 Summary of QUAST (using Genome Scope v.2  457000000 estimate) & BUSCO Results
 
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |BUSCO single copy
-------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp     |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------
 Hqu  |allLibs    |contam       |contigs       |off       |2     |69666      |357053          |405555294     |88.74%     |6021     |20625     |0.00     |36.3%
 Hqu  |allLibs    |contam       |scaffolds     |off       |2     |65472      |357053          |481801491     |105.43%    |8422     |16037     |843.69   |48.8%
 Hqu  |allLibs    |decontam     |contigs       |off       |2     |61190      |165445          |350787873     |76.76%     |5950     |18553     |0.00     |33.7%
 Hqu  |allLibs    |decontam     |scaffolds     |off       |2     |60202      |195347          |404379681     |88.49%     |7442     |16090     |533.73   |42.6%
 Hqu  |HqC0021A   |contam       |contigs       |off       |2     |65367      |147500          |366461990     |80.19%     |5734     |19944     |0.00     |34.2%
-Hqu  |HqC0021A   |contam       |scaffolds     |off       |2     |63940      |149059          |434260536     |95.02%     |7518     |16545     |770.66   |43.4%
-Hqu  |HqC0021B   |contam       |contigs       |off       |2     |67217      |189345          |384117534     |84.05%     |5884     |20193     |0.00     |33.7%
-Hqu  |HqC0021B   |contam       |scaffolds     |off       |2     |64766      |321524          |454430537     |99.04%     |7872     |16440     |785.39   |44.0%
-Hqu  |HqC0021C   |contam       |contigs       |off       |2     |64351      |216207          |357793983     |78.29%     |5657     |19680     |0.00     |33.0%
-Hqu  |HqC0021C   |contam       |scaffolds     |off       |2     |63614      |242909          |427983643     |93.65%     |7411     |16508     |798.19   |42.6%                            
+Hqu  |HqC0021A   |contam       |scaffolds     |off       |2     |63940      |149059          |434260536     |95.02%     |7518     |16545     |770.66   |      |43.4%
+Hqu  |HqC0021B   |contam       |contigs       |off       |2     |67217      |189345          |384117534     |84.05%     |5884     |20193     |0.00     |      |33.7%
+Hqu  |HqC0021B   |contam       |scaffolds     |off       |2     |64766      |321524          |454430537     |99.04%     |7872     |16440     |785.39   |      |44.0%
+Hqu  |HqC0021C   |contam       |contigs       |off       |2     |64351      |216207          |357793983     |78.29%     |5657     |19680     |0.00     |      |33.0%
+Hqu  |HqC0021C   |contam       |scaffolds     |off       |2     |63614      |242909          |427983643     |93.65%     |7411     |16508     |798.19   |      |42.6%                            
 
 ---
 The best library was allLibs scaffolds.

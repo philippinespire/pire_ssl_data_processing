@@ -620,7 +620,7 @@ I have modified the bed script to set the upper limit automatically. The longest
 
 Execute the second script. Example for Sgr:
 ```sh
-#WGprobe_annotation.sb <assembly base name> 
+#WGprobe_annotation.sb <assembly name> 
 sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta"
 ```
 

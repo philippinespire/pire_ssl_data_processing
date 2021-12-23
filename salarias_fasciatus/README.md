@@ -349,20 +349,20 @@ Summary of QUAST (using Genome Scope v.2 635000000 estimate) & BUSCO Results
 Species    |Library     |DataType    |SCAFIG    |covcutoff    |genome scope v. |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp |BUSCO single copy 
 ------  |------ |------ |------ |------ |------  |------ |------ |------ |------  |------ |------ |----- |-----
 Sfa  |allLibs    |contam       |contigs       |off       |2     |65925      |143244          |505647697     |79.63%     |9029     |16262     |0.00     |50.7%
-Sfa  |allLibs    |contam       |scaffolds       |off       |2     |44568      |280192          |565789902   |89.10%     |19913    |7533      |866.33   |64.7%
+Sfa  |allLibs    |contam       |scaffolds       |off       |2     |44568      |280192          |565789902   |89.10%     |19913    |7533      |866.33   |72.9%
 Sfa  |SfC0281G   |contam      |contigs        |off       |2     |66496      |87063           |484063030     |76.23%     |8356     |17038     |0.00     |52.6%
 Sfa  |SfC0281G   |contam      |scaffolds      |off       |2     |47190      |206530          |549551838     |86.54%     |17320    |8563      |899.99   |70.3%
 Sfa  |SfC0281H   |contam      |contigs        |off       |2     |64803      |119618          |510341019     |80.37%     |9378     |15757     |0.00     |57.0%
 Sfa  |SfC0281H   |contam      |scaffolds      |off       |2     |45792      |356588          |563766158     |88.78%     |18875    |8063      |765.81   |73.0%
 Sfa  |SfC0282A   |contam      |contigs        |off       |2     |66229      |97374           |490610142     |77.26%     |8579     |16761     |0.00     |53.8%
 Sfa  |SfC0282A   |contam      |scaffolds      |off       |2     |46311      |221552          |555041474     |87.41%     |18095    |8177      |892.51   |71.2%
-Sfa  |SfC0282A   |decontam      |contigs        |off     |2     |65497      |92703           |489935535     |77.16%     |8715     |16767     |0.00     |55.5%
-Sfa  |SfC0282A   |decontam      |contigs        |off     |2     |51279      |140503          |539947694     |85.03%     |14718    |10321     |643.68   |69.5%                             
+Sfa  |allLibs   |decontam      |contigs        |off     |2     |updateALLcol      |92703           |489935535     |77.16%     |8715     |16767     |0.00     |55.5%
+Sfa  |allLibs   |decontam      |contigs        |off     |2     |updateALLcol     |140503          |539947694     |85.03%     |14718    |10321     |643.68   |69.5%                             
 
 
 
 ---
-The best library was SfC0282A contam scaffolds.
+The best library was allLibs contam scaffolds.
 #### Main assembly stats
 
 New record of Sfa added to [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
@@ -388,10 +388,10 @@ From the species directory, a new dir was made for the probe design
 ```sh
 mkdir probe_design
 ```
-Necessary scripts and the best assembly were copied (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly $
+Necessary scripts and the best assembly were copied (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly) 
 
 ```sh
-cp SPAdes_SfC0282A_contam_R1R2_noIsolate/scaffolds.fasta probe_design
+cp SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta probe_design
 cp ../scripts/WGprobe_annotation.sb probe_design
 cp ../scripts/WGprobe_bedcreation.sb probe_design
 ```
@@ -401,30 +401,13 @@ I renamed the assembly to reflect the species and parameters used. I copy and pa
 # list the busco dirs by entering
 ls -d busco_*
 # identify the busco dir of the best assembly, copy the treatments (starting with the library)
-# Since the busco dir for the best assembly for Sfa is the scaffolds for SfC0282A
+# Since the busco dir for the best assembly for Sfa is the scaffolds for allLibs
 # I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_"
 cd probe_design
 
 ```sh
 mkdir probe_design
-```
-Necessary scripts and the best assembly were copied (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly $
-
-```sh
-cp SPAdes_contam_R1R2_noIsolate/scaffolds.fasta probe_design
-cp ../scripts/WGprobe_annotation.sb probe_design
-cp ../scripts/WGprobe_bedcreation.sb probe_design
-```
-
-I renamed the assembly to reflect the species and parameters used. I copy and pasted the parameter info from the busco directory
-```sh
-# list the busco dirs by entering
-ls -d busco_*
-# identify the busco dir of the best assembly, copy the treatments (starting with the library)
-# Since the busco dir for the best assembly for Pli is the scaffolds for all libraries
-# I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_"
-cd probe_design
-mv scaffolds.fasta Sfa_scaffolds_SfC0282A_contam_R1R2_noIsolate.fasta
+mv scaffolds.fasta Sfa_scaffolds_allLibs_contam_R1R2_noIsolate.fasta
 ```
 Added this line to the WGprobe_annotation script so I could run it from my home directory:
 export SINGULARITY_BIND=/home/e1garcia
@@ -432,7 +415,7 @@ export SINGULARITY_BIND=/home/e1garcia
 Execute the first script:
 ```sh
 #WGprobe_annotation.sb <assembly name>
-sbatch WGprobe_annotation.sb "Sfa_scaffolds_SfC0282A_contam_R1R2_noIsolate.fasta"
+sbatch WGprobe_annotation.sb "Sfa_scaffolds_allLibs_contam_R1R2_noIsolate.fasta"
 ```
 
 This will create:
@@ -443,17 +426,19 @@ This will create:
 Execute the second script.
 ```sh
 #WGprobe_annotation.sb <assembly base name>
-sbatch WGprobe_bedcreation.sb "Sfa_scaffolds_SfC0282A_contam_R1R2_noIsolate.fasta"
+sbatch WGprobe_bedcreation.sb "Sfa_scaffolds_allLibs_contam_R1R2_noIsolate.fasta"
 ```
 
 This will create a .bed file that will be sent for probe creation.
  The bed file identifies 5,000 bp regions (spaced every 10,000 bp apart) in scaffolds > 10,000 bp long.
 
-The longest scaffold is 221552
+**Results**
 
-The uppper limit used in loop is 217500
+The longest scaffold is 280192
 
-A total of 35068 regions have been identified from 16820 scaffolds
+The upper limit used in loop is 277500
+
+A total of 37134 regions have been identified from 16894 scaffolds
 
 Moved out files to logs
 ```sh
@@ -463,12 +448,17 @@ mv *out ../logs
 ## step 11. Fetching genomes for closest relatives
 
 ```sh
-nano closest_relative_genomes_taeniamia_zosterophora.txt
+nano closest_relative_genomes_salarias_fasciatus.txt
 
-1.-
-https://www.ncbi.nlm.nih.gov/genome/15477
-2.-
-https://www.ncbi.nlm.nih.gov/genome/8239
+Closest genomes:
+1. Salarias fascistus - https://www.ncbi.nlm.nih.gov/genome/7248
+2. Parablennius parvicornis - https://www.ncbi.nlm.nih.gov/genome/69445
+3. Petroscirtes breviceps - https://www.ncbi.nlm.nih.gov/genome/7247
+4. Ecsenius bicolor - https://www.ncbi.nlm.nih.gov/genome/41373
+5. Gouania willdenowi - https://www.ncbi.nlm.nih.gov/genome/76090
 
+Used Betancour et al. 2017 (All Blenniiformes)
 
-following Betancur et al. 2017 and Lavoué_etal_2007?????
+---
+
+**NOTE:** Sfa had a genome available at GenBank. We download it and mapped our read to chromosome 1 (to speed up the process)
