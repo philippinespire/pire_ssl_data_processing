@@ -3,7 +3,7 @@
 ---
 
 The purpose of this repo is to document the processing and analysis of `Shotgun Sequencing Libraries - SSL data` for probe development which then will be processed according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing). 
- Both SSL and CSSL pipelines use scripts from the (Pre-Processing PIRE Data)[https://github.com/philippinespire/pire_fq_gz_processing] repo at the beginning of files processing. 
+ Both SSL and CSSL pipelines use scripts from the [Pre-Processing PIRE Data](https://github.com/philippinespire/pire_fq_gz_processing) repo at the beginning of files processing. 
 
 Each species will get it's own directory within this repo.  Try to avoing putting dirs inside dirs inside dirs. 
 
