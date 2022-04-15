@@ -42,7 +42,7 @@ You must pull down the latest version of the repo everytime you sit down to work
 From your species directory, execute these commands manually or run the `runGit.sh` script (see bellow) 
 ```
 git pull
-git add ./*
+git add --all
 git commit -m "$1"
 git push -u origin main
 ```
