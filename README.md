@@ -127,7 +127,7 @@ This information is usually provied by Sharon Magnuson in species [slack](https:
 
 ```sh
 cd spratelloides_gracilis/shotgun_raw_fq
-nano README
+nano README.md
 ```
 
 Example:
