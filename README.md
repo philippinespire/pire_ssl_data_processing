@@ -77,7 +77,7 @@ ___
 
 ## Data Processing Roadmap
 
-### A. Pre-Processing Sequences
+### A. PRE-PRECESSING SEQUENCES
 
 ---
 
@@ -153,7 +153,7 @@ Complete the pre-processing of your files following the [pire_fq_gz_processing](
 * This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair scripts from the pre-processing repo
 ___
 
-### B. Assembly
+### B. GENOME ASSEMBLY
 
 ---
 
@@ -383,7 +383,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ---
 
-### PROBE DESIGN
+### C. PROBE DESIGN
 
 In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
 
