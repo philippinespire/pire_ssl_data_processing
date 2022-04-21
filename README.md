@@ -79,6 +79,8 @@ ___
 
 ### A. Pre-Processing Sequences
 
+---
+
 #### 1. Set up directories and data
 
 Check your raw files: given that we use paired-end sequencing, you should have one pair of files (1 forward and 1 reverse) per library. This  means that you should have the same number of foward (1.fq.gz or f.fq.gz) and reverse sequence files (2.fq.gz or r.fq.gz).
@@ -143,6 +145,8 @@ bash ../../runGIT.bash "README of raw data"
 
 ***You are ready to start processing files***
 
+---
+
 #### 2. Initial processing
 
 Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo, then return here
@@ -150,6 +154,8 @@ Complete the pre-processing of your files following the [pire_fq_gz_processing](
 ___
 
 ### B. Assembly
+
+---
 
 #### 1. Genome Properties
 
@@ -331,6 +337,8 @@ Importance    |Metric    |Direction    |Description
  
 If you are still undecided on which is the best assembly, post the best candidates on the species slack channel and ask for opinions
 
+---
+
 #### 7. Assemble contaminated data for best library 
 
 ```bash
@@ -341,7 +349,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ---
 
-#### Update the main assembly stats table with your species
+#### 9. Update the main assembly stats table with your species
 
 Add a new record for your species/assembly to the [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
 
@@ -356,7 +364,9 @@ nano ../best_ssl_assembly_per_sp.tsv
 
 Next, you need to determine the best assembly to use the decontaminated data. Go on and complete step 9 (below) and come back here after.
 
-#### **4. Evaluate then either go back to step B2 or  move onto next step**
+--- 
+
+#### **10. Evaluate then either go back to step B2 or  move onto next step**
 
 Assuming you have completed step 9, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species (for example, you can check the ["best assembly table"](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv).
 If BUSCO values are too low, it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO")
@@ -373,7 +383,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ---
 
-### Probe Design
+### PROBE DESIGN
 
 In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
 
