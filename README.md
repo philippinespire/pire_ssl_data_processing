@@ -210,9 +210,9 @@ Note the source and genome size (if you found one already availble) or the Genom
 
 Congrats! You are now ready to assembly the genome of your species!
 
-After de novo assembler comparisons,  we decided to move forward using SPADES (isolate and covcutoff flags off). 
+After de novo assembler comparisons, we decided to move forward using SPADES (isolate and covcutoff flags off). 
 For the most part, we obtained better assemblies using single libraries (a library consists of one forward *r1.fq.gz and reverse file *r2.fq.gz) but in few instances using all the libraries was better.
-In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmparray_fp2` dir)  produced better results for nDNA and decontaminated (i.e. files in the `fq_fp1_clmparray_fp2_fqscrn_repaired` dir) was better for mtDNA. 
+In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmparray_fp2` dir)  produced better results for mtDNA (mt = mitochondrial) and decontaminated (i.e. files in the `fq_fp1_clmparray_fp2_fqscrn_repaired` dir) was better for nDNA (n=nuclear). 
 
 Thus, use the contaminated files to run one assembly for each of your libraries independently and then one combining all.
 1. **You need to be in Turing for this step.** SPAdes requires high memory nodes (only avail in Turing)
