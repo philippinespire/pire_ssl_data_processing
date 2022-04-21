@@ -77,7 +77,7 @@ ___
 
 ## Data Processing Roadmap
 
-### Pre-Processing Sequences
+### A. Pre-Processing Sequences
 
 #### 1. Set up directories and data
 
@@ -149,9 +149,9 @@ Complete the pre-processing of your files following the [pire_fq_gz_processing](
 * This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair scripts from the pre-processing repo
 ___
 
-### Assembly
+### B. Assembly
 
-#### 7. Genome Properties
+#### 1. Genome Properties
 
 Fetch the genome properties for your species
 * From the literature or other sources
@@ -204,8 +204,9 @@ Most of the time v1-2 perform very similar. However, sometimes the two reports g
 
 Note the source and genome size (if you found one already availble) or the Genome Scope version and rounded genome size estimate (if you had to run jellyfish) in your species README. You will use this info later
 
+---
 
-#### 8. Assemble the genome
+#### 2. Assemble the genome
 
 Congrats! You are now ready to assembly the genome of your species!
 
