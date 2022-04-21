@@ -206,9 +206,9 @@ Note the source and genome size (if you found one already availble) or the Genom
 
 ---
 
-#### 2. Assemble the genome
+#### 2. Assemble the Genome with SPAdes
 
-Congrats! You are now ready to assembly the genome of your species!
+Congrats! You are now ready to assemble the genome of your species!
 
 After de novo assembler comparisons, we decided to move forward using SPADES (isolate and covcutoff flags off). 
 For the most part, we obtained better assemblies using single libraries (a library consists of one forward *r1.fq.gz and reverse file *r2.fq.gz) but in few instances using all the libraries was better.
