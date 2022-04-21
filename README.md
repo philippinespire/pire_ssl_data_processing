@@ -236,19 +236,22 @@ Thus, the following SPAdes script is optimized to run the first 3 libraries inde
 Note: If your species has 4 or more libraries, you will need to modify the script to run the 4th,5th,.. library and so on (you'll only need to add the necessary libraries to the SPAdes command)
 No changes necessary for running the first, second, thrid, or all the libraries together (if you have 2 or 3 libraries only).  
 
-**Use the contaminated files to run one assembly for each of your libraries independently and then one combining all**
+**Use the decontaminated files to run one assembly for each of your libraries independently and then one combining all**
 
 **Execute [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch). Example using the 1st library***
-```sh
+
+```bash
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <library: all_2libs | all_3libs | 1 | 2 | 3> <contam | decontam> <genome size in bp> <species dir>
 # do not use trailing / in paths. Example running contaminated data:
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "decontam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
 Run 2 more assemblies with the contaminated data for the second and  third library by rreplacing the "1", with "2" and  "3". 
 Then, check the number of libraries you have and run a job combining all libraries together by choosing the appropiate "all_2libs" or "all_3libs" from the library options.
 
-#### 3. Determine the best assembly
+---
+
+#### 3. Review Info on Assembly Quality from Quast Output
 
 `QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and for each of your assemblies note the: 
 1. Number of contigs in assembly (this is the last contig column in quast report with the name "# contigs")
@@ -265,20 +268,27 @@ cat quast-reports/quast-report_scaffolds_Sgr_spades_contam_R1R2_21-99_isolate-of
 
 Enter your stats in the table below
 
+---
+
+#### 4. Run BUSCO
+
 Those are basic assembly statistics but we still need to run BUSCO to know how many expected (i.e. highly conserved) genes were recovered by the assembly. 
 
 **Execute [runBUCSO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) on the `contigs` and `scaffolds` files for each assembly**
-```sh
+
+```bash
 #runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
 # do not use trailing / in paths. Example using contigs:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate" "contigs"
 ```
+
 Repeat the comand using scaffolds.
 
 `runBUSCO.sh` will generate a new dir per run. Look for the `short_summary.txt` file and note the percentage of `Complete and single-copy BUSCOs (S)` genes
 
+---
 
-Fill in this table with your QUAST and BUSCO values in your species README. 
+#### 5. Fill in this table with your QUAST and BUSCO values in your species README. 
 
 Few notes:
 
@@ -306,8 +316,7 @@ Sgr  |SgC0072C  |decontam       |scaffolds       |off     |2       |69932  |1037
 
 ---
 
-
-**Determine the best assembly**
+#### 6. **Determine the best assembly**
 
 We assess quality across multiple metrics since we don't use a golden rule/metric for determing the best assembly. 
 Often, it is clear that single libray is relatively better than the others as it would have better results across metrics. Yet, sometimes this is not soo clear as different assemblies might be better in different metrics. Use the following table to help you decide:
@@ -322,7 +331,13 @@ Importance    |Metric    |Direction    |Description
  
 If you are still undecided on which is the best assembly, post the best candidates on the species slack channel and ask for opinions
 
-Now, go back to step 8 and run decontaminated data for library that produced the best assembly
+#### 7. Assemble contaminated data for best library 
+
+```bash
+#runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <library: all_2libs | all_3libs | 1 | 2 | 3> <contam | decontam> <genome size in bp> <species dir>
+# do not use trailing / in paths. Example running contaminated data:
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+```
 
 ---
 
