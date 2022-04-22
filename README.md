@@ -157,29 +157,30 @@ ___
 
 ---
 
-#### 1. Genome Properties
+#### 1. **Genome Properties**
 
-Fetch the genome properties for your species
+##### 1a. Fetch the genome properties for your species
 * From the literature or other sources
 	* [genomesize.com](https://www.genomesize.com/)
 	* search the literature
 * Estimate properties with `jellyfish` and `genomescope`
 	* More details [here](https://github.com/philippinespire/denovo_genome_assembly/blob/main/jellyfish/JellyfishGenomescope_procedure.md)
 
-**Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runJellyfish.sbatch) using decontaminated files**
+##### 1b. **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runJellyfish.sbatch) using decontaminated files**
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir> 
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmp_fp2_fqscrn_rprd" "fq_fp1_clmp_fp2_fqscrn_rprd_jfsh"
 ```
 
 Jellyfish will create a histogram file (.hito) with kmer frequencies. 
-Download this file into your local computer and upload it in [GenomeScope v1.0](http://qb.cshl.edu/genomescope/) and and [Genomescope v2.0](http://qb.cshl.edu/genomescope/genomescope2.0/)
+
+##### 1c. ** Download this file into your local computer and upload it in [GenomeScope v1.0](http://qb.cshl.edu/genomescope/) and [Genomescope v2.0](http://qb.cshl.edu/genomescope/genomescope2.0/)**
 * Add a proper description to both of your runs. Example "Sgr_ssl_decontam"
 * For version 1, Adjust the read lenght to that of in the Fastp2 trimming, 140 (unless you had to modify this in Fastp2)
 * Leave all other parameters with default settings for both versions. 
 * Submit (takes only few minutes)
  
-Complete the following table in your Species README. You can copy and paste this table straight into your README (no need to enclose it with quotes, i.e. a code block) and just substitute values.
+##### 1d. **Complete the following table in your Species README. You can copy and paste this table straight into your README (no need to enclose it with quotes, i.e. a code block) and just substitute values.**
 ```sh
 Genome stats for Sgr from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
 
@@ -194,9 +195,7 @@ version    |stat    |min    |max
 ```
 Provide a link to both reports in your README. See other species READMEs for examples.
 
-**Choose a Genome Scope version**
-
-Inspect your table and reports for red flags.
+##### 1e. **Inspect your table and reports for red flags.**
 * In your table, check the heterozygosity (values around 1% are common) and check for good model fit (>90%) in the max values (sometimes the min value might have a low fit but th$
 * In your reports, check for a tight relationship between the "observed", "full model" and "unique sequences" lines in the first graph.
 
