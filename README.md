@@ -221,7 +221,14 @@ In addition, we also noted that assembling contaminated data (i.e. files in the 
 
 Thus, use the contaminated files to run one assembly for each of your libraries independently and then one combining all.
 1. **You need to be in Turing for this step.** SPAdes requires high memory nodes (only avail in Turing)
-2. Get the genome size of your species, or Jellyfish estimate, in bp from the previous step
+
+```bash
+#from wahab.hpc.odu.edu
+exit
+ssh username@turing.hpc.odu.edu
+```
+
+3. Get the genome size of your species, or Jellyfish estimate, in bp from the previous step
  
 
 We produced 3 libraries (from the same individual) for the last 5 spp with ssl data resulting in 3 sets of files. Sgr example:
