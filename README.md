@@ -169,7 +169,7 @@ Fetch the genome properties for your species
 **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_fq_gz_processing/blob/main/runJellyfish.sbatch) using decontaminated files**
 ```sh
 #runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir> 
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmparray_fp2_fqscrn_repaired" "jellyfish_decontam"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmp_fp2_fqscrn_rprd" "fq_fp1_clmp_fp2_fqscrn_rprd_jfsh"
 ```
 
 Jellyfish will create a histogram file (.hito) with kmer frequencies. 
