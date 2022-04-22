@@ -195,7 +195,7 @@ version    |stat    |min    |max
 ```
 Provide a link to both reports in your README. See other species READMEs for examples.
 
-##### 1e. **Inspect your table and reports for red flags.**
+##### 1e. **Inspect your table and reports for red flags and choose a genome scope version.**
 * In your table, check the heterozygosity (values around 1% are common) and check for good model fit (>90%) in the max values (sometimes the min value might have a low fit but th$
 * In your reports, check for a tight relationship between the "observed", "full model" and "unique sequences" lines in the first graph.
 
