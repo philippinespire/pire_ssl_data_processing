@@ -220,7 +220,7 @@ For the most part, we obtained better assemblies using single libraries (a libra
 In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmparray_fp2` dir)  produced better results for mtDNA (mt = mitochondrial) and decontaminated (i.e. files in the `fq_fp1_clmparray_fp2_fqscrn_repaired` dir) was better for nDNA (n=nuclear). 
 
 Thus, use the contaminated files to run one assembly for each of your libraries independently and then one combining all.
-2.1 **You need to be in Turing for this step.** SPAdes requires high memory nodes (only avail in Turing)
+2a. **You need to be in Turing for this step.** SPAdes requires high memory nodes (only avail in Turing)
 
 ```bash
 #from wahab.hpc.odu.edu
@@ -228,7 +228,7 @@ exit
 ssh username@turing.hpc.odu.edu
 ```
 
-2.2 **Get the genome size of your species, or Jellyfish estimate, in bp from the previous step**
+2b. **Get the genome size of your species, or Jellyfish estimate, in bp from the previous step**
  
 
 We produced 3 libraries (from the same individual) for the last 5 spp with ssl data resulting in 3 sets of files. Sgr example:
