@@ -33,6 +33,24 @@ For example, the BUSCO outdir contains several large files that will cause probl
 
 Because large data files will not be saved to github, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermedate files produced by fastp, clumpify, fastq_screen.
 
+A list of ongoing SSL projects can be found below. If you are working on an SSL analysis project (or if you wish to claim a project), please indicate so in the table. When data are available, priority should go to species that are higher on the CSSL priority list which will need probes in the near future.
+
+|Species | Data availability | CSSL priority | Analysis lead | Analysis status / notes |
+| --- | --- | --- | --- | --- |
+|Periophthalmus_argentilineatus | On ODU HPC | 19 | not assigned | |
+|Sphaeramia_nematoptera | On ODU HPC | 21 | not assigned | |
+|Pomacentrus_brachialis | On ODU HPC | 29 | not assigned | |
+|Corythoichthys_haematopterus | On ODU HPC | 38 | not assigned | |
+|Stethojulis_interrupta | On ODU HPC | 39 | not assigned | |
+|Ostorhinchus_chrysopomus | On ODU HPC | 40 | not assigned | |
+|Pomacentrus_pavo | On ODU HPC | 41 | not assigned | |
+|Lethrinus_variegatus | On ODU HPC | 42 | not assigned | |
+|Hypoatherina_temminckii | On ODU HPC | 8 | not assigned | Remake probes with correct genome |
+|Encrasicholina_pseudoheteroloba | On ODU HPC | 25 | not assigned | Check individual ID |
+|Ambassis_buruensis | Library prep ongoing | 20 | not assigned | |
+|Tylosurus_crocodilus | Needs extraction | NA | not assigned | |
+|Sphaeramia_orbicularis | Needs extraction | 34 | not assigned | |
+
 ---
 
 ## Maintaining Git Repo
