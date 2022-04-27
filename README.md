@@ -37,16 +37,16 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 
 |Species | Data availability | CSSL priority | Analysis lead | Analysis status / notes |
 | --- | --- | --- | --- | --- |
-|Periophthalmus_argentilineatus | On ODU HPC | 12 | not assigned | |
-|Sphaeramia_nematoptera | On ODU HPC | 20 | not assigned | |
-|Pomacentrus_brachialis | On ODU HPC | 26 | not assigned | |
-|Corythoichthys_haematopterus | On ODU HPC | 24 | not assigned | |
-|Stethojulis_interrupta | On ODU HPC | 23 | not assigned | |
-|Ostorhinchus_chrysopomus | On ODU HPC | 27 | not assigned | |
-|Pomacentrus_pavo | On ODU HPC | 25 | not assigned | |
-|Lethrinus_variegatus | On ODU HPC | 21 | not assigned | |
-|Hypoatherina_temminckii | On ODU HPC | 9/10 | not assigned | Remake probes with correct genome |
-|Encrasicholina_pseudoheteroloba | On ODU HPC | 30 | not assigned | Check individual ID |
+|Periophthalmus_argentilineatus | On ODU HPC | 12 | Keenan/Chris | probe development pipeline in progress |
+|Sphaeramia_nematoptera | On ODU HPC | 20 | Jem | |
+|Pomacentrus_brachialis | On ODU HPC | 26 | Jem/Kyra | |
+|Corythoichthys_haematopterus | On ODU HPC | 24 | John/Brendan? | |
+|Stethojulis_interrupta | On ODU HPC | 23 |John/Brendan? | |
+|Ostorhinchus_chrysopomus | On ODU HPC | 27 | Eric | |
+|Pomacentrus_pavo | On ODU HPC | 25 | John/Brendan? | |
+|Lethrinus_variegatus | On ODU HPC | 21 | Jordan/Chris | probe development pipeline in progress |
+|Hypoatherina_temminckii | On ODU HPC | 9/10 | John/Brendan? | Remake probes with correct genome |
+|Encrasicholina_pseudoheteroloba | On ODU HPC | 30 | John/Brendan? | Check individual ID |
 |Ambassis_buruensis | Library prep ongoing | n/a | not assigned | |
 |Tylosurus_crocodilus | Needs extraction | 35 | not assigned | |
 |Sphaeramia_orbicularis | Needs extraction | 36 | not assigned | |
