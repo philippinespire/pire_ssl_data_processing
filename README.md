@@ -37,19 +37,19 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 
 |Species | Data availability | CSSL priority | Analysis lead | Analysis status / notes |
 | --- | --- | --- | --- | --- |
-|Periophthalmus_argentilineatus | On ODU HPC | 19 | not assigned | |
-|Sphaeramia_nematoptera | On ODU HPC | 21 | not assigned | |
-|Pomacentrus_brachialis | On ODU HPC | 29 | not assigned | |
-|Corythoichthys_haematopterus | On ODU HPC | 38 | not assigned | |
-|Stethojulis_interrupta | On ODU HPC | 39 | not assigned | |
-|Ostorhinchus_chrysopomus | On ODU HPC | 40 | not assigned | |
-|Pomacentrus_pavo | On ODU HPC | 41 | not assigned | |
-|Lethrinus_variegatus | On ODU HPC | 42 | not assigned | |
-|Hypoatherina_temminckii | On ODU HPC | 8 | not assigned | Remake probes with correct genome |
-|Encrasicholina_pseudoheteroloba | On ODU HPC | 25 | not assigned | Check individual ID |
-|Ambassis_buruensis | Library prep ongoing | 20 | not assigned | |
-|Tylosurus_crocodilus | Needs extraction | NA | not assigned | |
-|Sphaeramia_orbicularis | Needs extraction | 34 | not assigned | |
+|Periophthalmus_argentilineatus | On ODU HPC | 12 | not assigned | |
+|Sphaeramia_nematoptera | On ODU HPC | 20 | not assigned | |
+|Pomacentrus_brachialis | On ODU HPC | 26 | not assigned | |
+|Corythoichthys_haematopterus | On ODU HPC | 24 | not assigned | |
+|Stethojulis_interrupta | On ODU HPC | 23 | not assigned | |
+|Ostorhinchus_chrysopomus | On ODU HPC | 27 | not assigned | |
+|Pomacentrus_pavo | On ODU HPC | 25 | not assigned | |
+|Lethrinus_variegatus | On ODU HPC | 21 | not assigned | |
+|Hypoatherina_temminckii | On ODU HPC | 9/10 | not assigned | Remake probes with correct genome |
+|Encrasicholina_pseudoheteroloba | On ODU HPC | 30 | not assigned | Check individual ID |
+|Ambassis_buruensis | Library prep ongoing | n/a | not assigned | |
+|Tylosurus_crocodilus | Needs extraction | 35 | not assigned | |
+|Sphaeramia_orbicularis | Needs extraction | 36 | not assigned | |
 
 ---
 
