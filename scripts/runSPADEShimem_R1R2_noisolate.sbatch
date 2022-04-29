@@ -28,11 +28,11 @@ FQDIR=$(echo $7 | sed 's/\/$//')
 if [[ "$LIBRARY" == "all" || "$LIBRARY" == "all_2libs" || "$LIBRARY" == "all_3libs" ]]; then
 	LIBCODE=allLibs
 elif [[ "$LIBRARY" == "1" ]]; then
-	LIBCODE=$(ls ${PROJDIR}/${FQDIR}/*1.fq.gz | head -n1 | sed -e 's/.*\///' -e 's/_.*//')
+	LIBCODE=$(ls ${PROJDIR}/${FQDIR}/*1.fq.gz | head -n1 | sed -e 's/.*\///' -e 's/_.*/\-A/')
 elif [[ "$LIBRARY" == "2" ]]; then
-        LIBCODE=$(ls ${PROJDIR}/${FQDIR}/*1.fq.gz | head -n2 | tail -n1 | sed -e 's/.*\///' -e 's/_.*//')
+        LIBCODE=$(ls ${PROJDIR}/${FQDIR}/*1.fq.gz | head -n2 | tail -n1 | sed -e 's/.*\///' -e 's/_.*/\-B/')
 elif [[ "$LIBRARY" == "3" ]]; then
-        LIBCODE=$(ls ${PROJDIR}/${FQDIR}/*1.fq.gz | head -n3 | tail -n1 | sed -e 's/.*\///' -e 's/_.*//')
+        LIBCODE=$(ls ${PROJDIR}/${FQDIR}/*1.fq.gz | head -n3 | tail -n1 | sed -e 's/.*\///' -e 's/_.*/\-C/')
 else
 	echo -e "This script is optimize to for up to 3 libraries and can run individual or 2- 3 libraries together\nPlease enter which library(s) to process. Options: all_2libs | all_3libs | 1 | 2 | 3 \n" 
 fi
