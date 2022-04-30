@@ -12,6 +12,7 @@ and [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_proces
 
 ## Step 1. Fastqc
 Run from /scratch/breid/pire_ssl_data_processing/corythoichthys_haematoptera/shotgun_raw_fq
+
 [Report](https://raw.githubusercontent.com/philippinespire/pire_ssl_data_processing/main/corythoichthys_haematopterus/Multi_FASTQC/multiqc_report_fq.gz.html?token=GHSAT0AAAAAABHRMAUO3M6TJIRDQAECASP2YTMRRUA) (copy and paste into a text editor locally, save and open in your browser to view)
 ```sh
 sbatch Multi_FASTQC.sh "fq.gz" "/scratch/breid/pire_ssl_data_processing/corythoichthys_haematoptera/shotgun_raw_fq" 
