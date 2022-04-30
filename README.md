@@ -38,8 +38,8 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Species | Data availability | CSSL priority | Analysis lead | Analysis status / notes |
 | --- | --- | --- | --- | --- |
 |Periophthalmus_argentilineatus | On ODU HPC | 12 | Keenan/Chris | probe development pipeline in progress |
-|Sphaeramia_nematoptera | On ODU HPC | 20 | Jem | |
-|Pomacentrus_brachialis | On ODU HPC | 26 | Jem/Kyra | |
+|Sphaeramia_nematoptera | On ODU HPC | 20 | Jem | Step 5 FQSCRN |
+|Pomacentrus_brachialis | On ODU HPC | 26 | Jem/Kyra | Step 5 FQSCRN |
 |Corythoichthys_haematopterus | On ODU HPC | 24 | John/Brendan? | |
 |Stethojulis_interrupta | On ODU HPC | 23 |John/Brendan? | |
 |Ostorhinchus_chrysopomus | On ODU HPC | 27 | Eric | |
