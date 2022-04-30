@@ -19,12 +19,12 @@ sbatch Multi_FASTQC.sh "fq.gz" "/scratch/breid/pire_ssl_data_processing/corythoi
 
 Potential issues:
 
-% duplication:
->70% (high!!)
-gc content:
-42% - 45%
-quality: good
-sequence quality and per sequence qual both good
-% adapter: low
-<2%
-number of reads: *110M - 136.4M
+* % duplication:
+* >70% (high!!)
+* gc content:
+* 42% - 45%
+* quality: good
+* sequence quality and per sequence qual both good
+* % adapter: low
+* <2%
+* number of reads: *110M - 136.4M
