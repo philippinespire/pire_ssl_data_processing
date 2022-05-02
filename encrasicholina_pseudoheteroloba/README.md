@@ -25,6 +25,7 @@ Potential issues:
 * 46-47%
 * good sequence quality
 * !!high adapter content - lots of overrepresented sequences!
+* 218-279 M reads/library
 
 ## Step 2. 1st fastp
 
@@ -37,4 +38,5 @@ sbatch runFASTP_1st_trim.sbatch /scratch/breid/pire_ssl_data_processing/encrasic
 * duplication 14.8% - 18.2%
 * GC content 45% - 45.2%
 * 94.9%-95.8% passed filter
-* 22% - 32.4% adapter  
+* 22% - 32.4% adapter (still a bit high?)
+* ~ 430 / 475 / 560 M reads
