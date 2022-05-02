@@ -28,3 +28,17 @@ Potential issues:
 * no obvious read flags
 * lots of sequences for some libraries
 * *114.6M - 223.7M
+
+## Step 2. 1st fastp
+
+[Report](https://raw.githubusercontent.com/philippinespire/pire_ssl_data_processing/main/pomacentrus_pavo/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABHRMAUOHQO72K2XCSZB3CYGYTP5U3A)
+
+```sh
+sbatch runFASTP_1st_trim.sbatch /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/shotgun_raw_fq /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1
+```
+
+* 20.5%-34.6% duplication
+* GC content 40.3%-41.1%
+* 98.5% - 98.8% passed filter
+* 3.9% - 11.5% adapter
+* ~ 225 / 375 / 450 M reads 
