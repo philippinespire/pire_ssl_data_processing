@@ -25,3 +25,16 @@ Potential issues:
 * 46-47%
 * good sequence quality
 * !!high adapter content - lots of overrepresented sequences!
+
+## Step 2. 1st fastp
+
+[Report](https://raw.githubusercontent.com/philippinespire/pire_ssl_data_processing/main/encrasicholina_pseudoheteroloba/fq_fp1/1st_fastp_report.html?token=GHSAT0AAAAAABHRMAUOT6S7S7CDFSEDOILOYTP5RWQ)
+
+```sh
+sbatch runFASTP_1st_trim.sbatch /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/shotgun_raw_fq /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1
+```
+
+* duplication 14.8% - 18.2%
+* GC content 45% - 45.2%
+* 94.9%-95.8% passed filter
+* 22% - 32.4% adapter  
