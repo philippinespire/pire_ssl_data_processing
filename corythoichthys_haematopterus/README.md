@@ -29,3 +29,11 @@ Potential issues:
 * % adapter: low
 * <2%
 * number of reads: *110M - 136.4M
+
+## Step 2. 1st fastp.
+
+Run in Brendan Reid's directory - John Whalen taking over after this step.
+
+```sh
+sbatch runFASTP_1st_trim.sbatch /scratch/breid/pire_ssl_data_processing/corythoichthys_haematopterus/shotgun_raw_fq /scratch/breid/pire_ssl_data_processing/corythoichthys_haematopterus/fq_fp1
+```
