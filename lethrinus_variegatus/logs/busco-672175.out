@@ -1,0 +1,52 @@
+
+INFO:	***** Start a BUSCO v5.0.0 analysis, current time: 05/10/2022 15:51:19 *****
+INFO:	Configuring BUSCO with local environment
+INFO:	Mode is genome
+INFO:	Input file is /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_Lva-CPnd-B_decontam_R1R2_noIsolate/contigs.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
+INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
+INFO:	Running 1 job(s) on metaeuk, starting at 05/10/2022 15:51:33
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 05/10/2022 16:07:53
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	728 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 05/10/2022 16:09:21
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 1541 job(s) on hmmsearch, starting at 05/10/2022 16:49:46
+INFO:	[hmmsearch]	155 of 1541 task(s) completed
+INFO:	[hmmsearch]	309 of 1541 task(s) completed
+INFO:	[hmmsearch]	463 of 1541 task(s) completed
+INFO:	[hmmsearch]	617 of 1541 task(s) completed
+INFO:	[hmmsearch]	771 of 1541 task(s) completed
+INFO:	[hmmsearch]	1387 of 1541 task(s) completed
+INFO:	[hmmsearch]	1541 of 1541 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:58.5%[S:57.7%,D:0.8%],F:15.5%,M:26.0%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:58.5%[S:57.7%,D:0.8%],F:15.5%,M:26.0%,n:3640   |
+	|2132	Complete BUSCOs (C)                       |
+	|2102	Complete and single-copy BUSCOs (S)       |
+	|30	Complete and duplicated BUSCOs (D)        |
+	|565	Fragmented BUSCOs (F)                     |
+	|943	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 3658 seconds
+INFO:	Results written in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/busco_contigs_results-SPAdes_Lva-CPnd-B_decontam_R1R2_noIsolate
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+

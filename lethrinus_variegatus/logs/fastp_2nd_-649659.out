@@ -1,0 +1,153 @@
+
+mkdir: cannot create directory ‘fq_fp1_clmp_fp2’: File exists
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 108473557
+total bases: 15487576123
+Q20 bases: 15195591998(98.1147%)
+Q30 bases: 14676690473(94.7643%)
+
+Read2 before filtering:
+total reads: 108473557
+total bases: 15485731264
+Q20 bases: 15035883406(97.0951%)
+Q30 bases: 14208341024(91.7512%)
+
+Read1 after filtering:
+total reads: 92564592
+total bases: 13863804620
+Q20 bases: 13612688299(98.1887%)
+Q30 bases: 13147684467(94.8346%)
+
+Read2 aftering filtering:
+total reads: 92564592
+total bases: 13861004348
+Q20 bases: 13446693639(97.011%)
+Q30 bases: 12675707127(91.4487%)
+
+Filtering result:
+reads passed filter: 185129184
+reads failed due to low quality: 40
+reads failed due to too many N: 0
+reads failed due to too short: 31817890
+reads with adapter trimmed: 720
+bases trimmed due to adapters: 34950
+
+Duplication rate: 3.20237%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1_clmp_fp2/Lva-CPnd_006A_L3_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Lva-CPnd_006A_L3_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Lva-CPnd_006A_L3_clmp.r1.fq.gz --in2 fq_fp1_clmp/Lva-CPnd_006A_L3_clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Lva-CPnd_006A_L3_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Lva-CPnd_006A_L3_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Lva-CPnd_006A_L3_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Lva-CPnd_006A_L3_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Lva-CPnd_006A_L3_clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Lva-CPnd_006A_L3_clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Lva-CPnd_006A_L3_clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 
+fastp v0.20.1, time used: 1398 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 117721227
+total bases: 16943010932
+Q20 bases: 16616685472(98.074%)
+Q30 bases: 16044687949(94.698%)
+
+Read2 before filtering:
+total reads: 117721227
+total bases: 16940403035
+Q20 bases: 16458901487(97.1577%)
+Q30 bases: 15590546646(92.0317%)
+
+Read1 after filtering:
+total reads: 103341454
+total bases: 15480781112
+Q20 bases: 15191954770(98.1343%)
+Q30 bases: 14669189170(94.7574%)
+
+Read2 aftering filtering:
+total reads: 103341454
+total bases: 15477649888
+Q20 bases: 15031215567(97.1156%)
+Q30 bases: 14213278921(91.831%)
+
+Filtering result:
+reads passed filter: 206682908
+reads failed due to low quality: 38
+reads failed due to too many N: 0
+reads failed due to too short: 28759508
+reads with adapter trimmed: 868
+bases trimmed due to adapters: 42391
+
+Duplication rate: 3.20741%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1_clmp_fp2/Lva-CPnd_006H_L3_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Lva-CPnd_006H_L3_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Lva-CPnd_006H_L3_clmp.r1.fq.gz --in2 fq_fp1_clmp/Lva-CPnd_006H_L3_clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Lva-CPnd_006H_L3_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Lva-CPnd_006H_L3_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Lva-CPnd_006H_L3_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Lva-CPnd_006H_L3_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Lva-CPnd_006H_L3_clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Lva-CPnd_006H_L3_clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Lva-CPnd_006H_L3_clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 
+fastp v0.20.1, time used: 1597 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 209330614
+total bases: 31067598874
+Q20 bases: 30459478195(98.0426%)
+Q30 bases: 29388744016(94.5961%)
+
+Read2 before filtering:
+total reads: 209330614
+total bases: 31059058434
+Q20 bases: 29970991543(96.4968%)
+Q30 bases: 28105171982(90.4895%)
+
+Read1 after filtering:
+total reads: 202485025
+total bases: 30350885519
+Q20 bases: 29777223197(98.1099%)
+Q30 bases: 28738979382(94.6891%)
+
+Read2 aftering filtering:
+total reads: 202485025
+total bases: 30342892604
+Q20 bases: 29297980310(96.5563%)
+Q30 bases: 27475968345(90.5516%)
+
+Filtering result:
+reads passed filter: 404970050
+reads failed due to low quality: 68
+reads failed due to too many N: 0
+reads failed due to too short: 13691110
+reads with adapter trimmed: 1140
+bases trimmed due to adapters: 53255
+
+Duplication rate: 6.44145%
+
+Insert size peak (evaluated by paired-end reads): 268
+
+JSON report: fq_fp1_clmp_fp2/Lva-CPnd_006G_L3_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Lva-CPnd_006G_L3_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Lva-CPnd_006G_L3_clmp.r1.fq.gz --in2 fq_fp1_clmp/Lva-CPnd_006G_L3_clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Lva-CPnd_006G_L3_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Lva-CPnd_006G_L3_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Lva-CPnd_006G_L3_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Lva-CPnd_006G_L3_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Lva-CPnd_006G_L3_clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Lva-CPnd_006G_L3_clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Lva-CPnd_006G_L3_clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 
+fastp v0.20.1, time used: 3073 seconds
+/var/spool/slurmd/job649659/slurm_script: line 61: --cut_right: command not found
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1_clmp_fp2/2nd_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1_clmp_fp2/2nd_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

@@ -1,0 +1,31 @@
+
+INDIR=fq_fp1_clmp_fp2
+OUTDIR=fq_fp1_clmp_fp2_fqscrn
+CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf
+PATTERN=*.fq.gz
+PARALLELISM=
+THREADS=40
+SUBSET=0
+FILTER=000000000000
+INFILES:
+fq_fp1_clmp_fp2/Lva-CPnd_006A_L3_clmp.fp2_r1.fq.gz
+
+Mon Apr 18 23:10:39 EDT 2022 RUNNING FASTQ_SCREEN TO FILTER FQ FILES AND GENERATE REPORTS, NO SUBSETTING
+Using fastq_screen v0.14.0
+Reading configuration from '/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf'
+Adding database Human
+Adding database Ecoli
+Adding database PhiX
+Adding database Contamnts_Adaptrs
+Adding database Vectors
+Adding database Bacteria_24k
+Adding database Protists_1k
+Adding database Viruses
+Adding database Fungi_RefSeq_release
+Adding database Coral
+Adding database Bird
+Adding database Plant
+Using 40 threads for searches
+Option --subset set to 0: processing all reads in FASTQ files
+Processing Lva-CPnd_006A_L3_clmp.fp2_r1.fq.gz
+slurmstepd: error: *** JOB 649476 ON d4-w6420b-09 CANCELLED AT 2022-04-18T23:12:13 ***

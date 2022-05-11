@@ -1,0 +1,161 @@
+
+mkdir: cannot create directory ‘fq_fp1_clmp_fp2b’: File exists
+mkdir: cannot create directory ‘fq_fp1_clmp_fp2b/failed’: File exists
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 108473557
+total bases: 15487576123
+Q20 bases: 15195591998(98.1147%)
+Q30 bases: 14676690473(94.7643%)
+
+Read2 before filtering:
+total reads: 108473557
+total bases: 15485731264
+Q20 bases: 15035883406(97.0951%)
+Q30 bases: 14208341024(91.7512%)
+
+Read1 after filtering:
+total reads: 87863194
+total bases: 11931007963
+Q20 bases: 11781224192(98.7446%)
+Q30 bases: 11401973219(95.5659%)
+
+Read2 aftering filtering:
+total reads: 87863194
+total bases: 11928317742
+Q20 bases: 11647934655(97.6494%)
+Q30 bases: 10995198365(92.1773%)
+
+Filtering result:
+reads passed filter: 175726388
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 41220726
+reads with adapter trimmed: 35803016
+bases trimmed due to adapters: 20819805
+reads corrected by overlap analysis: 5282271
+bases corrected by overlap analysis: 10363139
+
+Duplication rate: 3.20237%
+
+Insert size peak (evaluated by paired-end reads): 164
+
+JSON report: fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Lva-CPnd_006A_L3_clmp.r1.fq.gz --in2 fq_fp1_clmp/Lva-CPnd_006A_L3_clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2b/failed/Lva-CPnd_006A_L3_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2b/failed/Lva-CPnd_006A_L3_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2b/failed/Lva-CPnd_006A_L3_clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 14 --trim_front2 14 --length_required 126 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1493 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 117721227
+total bases: 16943010932
+Q20 bases: 16616685472(98.074%)
+Q30 bases: 16044687949(94.698%)
+
+Read2 before filtering:
+total reads: 117721227
+total bases: 16940403035
+Q20 bases: 16458901487(97.1577%)
+Q30 bases: 15590546646(92.0317%)
+
+Read1 after filtering:
+total reads: 97893994
+total bases: 13295920668
+Q20 bases: 13126469481(98.7255%)
+Q30 bases: 12703390030(95.5435%)
+
+Read2 aftering filtering:
+total reads: 97893994
+total bases: 13293137591
+Q20 bases: 13001155598(97.8035%)
+Q30 bases: 12313844117(92.6331%)
+
+Filtering result:
+reads passed filter: 195787988
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 39654466
+reads with adapter trimmed: 31277772
+bases trimmed due to adapters: 22961325
+reads corrected by overlap analysis: 5494352
+bases corrected by overlap analysis: 11081810
+
+Duplication rate: 3.20741%
+
+Insert size peak (evaluated by paired-end reads): 164
+
+JSON report: fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Lva-CPnd_006H_L3_clmp.r1.fq.gz --in2 fq_fp1_clmp/Lva-CPnd_006H_L3_clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2b/failed/Lva-CPnd_006H_L3_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2b/failed/Lva-CPnd_006H_L3_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2b/failed/Lva-CPnd_006H_L3_clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 14 --trim_front2 14 --length_required 126 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1626 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 209330614
+total bases: 31067598874
+Q20 bases: 30459478195(98.0426%)
+Q30 bases: 29388744016(94.5961%)
+
+Read2 before filtering:
+total reads: 209330614
+total bases: 31059058434
+Q20 bases: 29970991543(96.4968%)
+Q30 bases: 28105171982(90.4895%)
+
+Read1 after filtering:
+total reads: 190794574
+total bases: 25930856708
+Q20 bases: 25595492645(98.7067%)
+Q30 bases: 24766565427(95.51%)
+
+Read2 aftering filtering:
+total reads: 190794574
+total bases: 25923907341
+Q20 bases: 25237161936(97.3509%)
+Q30 bases: 23719348533(91.496%)
+
+Filtering result:
+reads passed filter: 381589148
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 37072080
+reads with adapter trimmed: 8602164
+bases trimmed due to adapters: 32091693
+reads corrected by overlap analysis: 6052312
+bases corrected by overlap analysis: 13423957
+
+Duplication rate: 6.44145%
+
+Insert size peak (evaluated by paired-end reads): 164
+
+JSON report: fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Lva-CPnd_006G_L3_clmp.r1.fq.gz --in2 fq_fp1_clmp/Lva-CPnd_006G_L3_clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2b/failed/Lva-CPnd_006G_L3_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2b/failed/Lva-CPnd_006G_L3_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2b/failed/Lva-CPnd_006G_L3_clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 14 --trim_front2 14 --length_required 126 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 3087 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[WARNING]         multiqc : Previous MultiQC output found! Adjusting filenames..
+[WARNING]         multiqc : Use -f or --force to overwrite existing reports instead
+[INFO   ]         multiqc : Report      : fq_fp1_clmp_fp2b/2nd_fastp_report_3.html
+[INFO   ]         multiqc : Data        : 2nd_fastp_report_data_3
+[INFO   ]         multiqc : MultiQC complete

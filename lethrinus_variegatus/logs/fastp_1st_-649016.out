@@ -1,0 +1,144 @@
+
+mkdir: cannot create directory ‘fq_fp1’: File exists
+mkdir: cannot create directory ‘fq_fp1/failed’: File exists
+Read1 before filtering:
+total reads: 133716914
+total bases: 20057537100
+Q20 bases: 19539206765(97.4158%)
+Q30 bases: 18807527550(93.7679%)
+
+Read2 before filtering:
+total reads: 133716914
+total bases: 20057537100
+Q20 bases: 19323099459(96.3383%)
+Q30 bases: 18210156798(90.7896%)
+
+Read1 after filtering:
+total reads: 131434967
+total bases: 18709772531
+Q20 bases: 18384749620(98.2628%)
+Q30 bases: 17763358959(94.9416%)
+
+Read2 aftering filtering:
+total reads: 131434967
+total bases: 18706740396
+Q20 bases: 18203306780(97.3088%)
+Q30 bases: 17219252912(92.0484%)
+
+Filtering result:
+reads passed filter: 262869934
+reads failed due to low quality: 3877632
+reads failed due to too many N: 19914
+reads failed due to too short: 529812
+reads failed due to low complexity: 136536
+reads with adapter trimmed: 43264081
+bases trimmed due to adapters: 1864644124
+reads with polyX in 3' end: 2555269
+bases trimmed in polyX tail: 37607958
+
+Duplication rate: 18.2156%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Lva-CPnd_006A_L3_fastp.json
+HTML report: fq_fp1/Lva-CPnd_006A_L3_fastp.html
+
+fastp --in1 shotgun_raw_fq//Lva-CPnd_006A_L3_1.fq.gz --in2 shotgun_raw_fq//Lva-CPnd_006A_L3_2.fq.gz --out1 fq_fp1/Lva-CPnd_006A_L3_r1.fq.gz --out2 fq_fp1/Lva-CPnd_006A_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Lva-CPnd_006A_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Lva-CPnd_006A_L3_unprd.fq.gz --failed_out fq_fp1/failed/Lva-CPnd_006A_L3_fail.fq.gz -h fq_fp1/Lva-CPnd_006A_L3_fastp.html -j fq_fp1/Lva-CPnd_006A_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 2632 seconds
+Read1 before filtering:
+total reads: 147190146
+total bases: 22078521900
+Q20 bases: 21469400862(97.2411%)
+Q30 bases: 20669167578(93.6166%)
+
+Read2 before filtering:
+total reads: 147190146
+total bases: 22078521900
+Q20 bases: 21231110212(96.1618%)
+Q30 bases: 20057237807(90.845%)
+
+Read1 after filtering:
+total reads: 143550572
+total bases: 20614980038
+Q20 bases: 20251877616(98.2386%)
+Q30 bases: 19562933234(94.8967%)
+
+Read2 aftering filtering:
+total reads: 143550572
+total bases: 20611058058
+Q20 bases: 20073174755(97.3903%)
+Q30 bases: 19036046551(92.3584%)
+
+Filtering result:
+reads passed filter: 287101144
+reads failed due to low quality: 5671740
+reads failed due to too many N: 21634
+reads failed due to too short: 1355722
+reads failed due to low complexity: 230052
+reads with adapter trimmed: 39190778
+bases trimmed due to adapters: 1716262156
+reads with polyX in 3' end: 2987376
+bases trimmed in polyX tail: 48918224
+
+Duplication rate: 19.0586%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: fq_fp1/Lva-CPnd_006H_L3_fastp.json
+HTML report: fq_fp1/Lva-CPnd_006H_L3_fastp.html
+
+fastp --in1 shotgun_raw_fq//Lva-CPnd_006H_L3_1.fq.gz --in2 shotgun_raw_fq//Lva-CPnd_006H_L3_2.fq.gz --out1 fq_fp1/Lva-CPnd_006H_L3_r1.fq.gz --out2 fq_fp1/Lva-CPnd_006H_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Lva-CPnd_006H_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Lva-CPnd_006H_L3_unprd.fq.gz --failed_out fq_fp1/failed/Lva-CPnd_006H_L3_fail.fq.gz -h fq_fp1/Lva-CPnd_006H_L3_fastp.html -j fq_fp1/Lva-CPnd_006H_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 2981 seconds
+Read1 before filtering:
+total reads: 296132403
+total bases: 44419860450
+Q20 bases: 43394764447(97.6923%)
+Q30 bases: 41817551925(94.1416%)
+
+Read2 before filtering:
+total reads: 296132403
+total bases: 44419860450
+Q20 bases: 42548441630(95.787%)
+Q30 bases: 39872761889(89.7634%)
+
+Read1 after filtering:
+total reads: 289614459
+total bases: 42947307151
+Q20 bases: 42225991068(98.3205%)
+Q30 bases: 40779953885(94.9535%)
+
+Read2 aftering filtering:
+total reads: 289614459
+total bases: 42933831423
+Q20 bases: 41631973858(96.9678%)
+Q30 bases: 39145075603(91.1754%)
+
+Filtering result:
+reads passed filter: 579228918
+reads failed due to low quality: 10649142
+reads failed due to too many N: 44726
+reads failed due to too short: 1963946
+reads failed due to low complexity: 378074
+reads with adapter trimmed: 18012754
+bases trimmed due to adapters: 946723700
+reads with polyX in 3' end: 5193741
+bases trimmed in polyX tail: 77478349
+
+Duplication rate: 31.6008%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: fq_fp1/Lva-CPnd_006G_L3_fastp.json
+HTML report: fq_fp1/Lva-CPnd_006G_L3_fastp.html
+
+fastp --in1 shotgun_raw_fq//Lva-CPnd_006G_L3_1.fq.gz --in2 shotgun_raw_fq//Lva-CPnd_006G_L3_2.fq.gz --out1 fq_fp1/Lva-CPnd_006G_L3_r1.fq.gz --out2 fq_fp1/Lva-CPnd_006G_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Lva-CPnd_006G_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Lva-CPnd_006G_L3_unprd.fq.gz --failed_out fq_fp1/failed/Lva-CPnd_006G_L3_fail.fq.gz -h fq_fp1/Lva-CPnd_006G_L3_fastp.html -j fq_fp1/Lva-CPnd_006G_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 6314 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

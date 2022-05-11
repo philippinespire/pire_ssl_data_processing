@@ -1,0 +1,50 @@
+
+Error to read gzip file
+Error to read gzip file
+Error to read gzip file
+Error to read gzip file
+Read1 before filtering:
+total reads: 0
+total bases: 0
+Q20 bases: 0(-nan%)
+Q30 bases: 0(-nan%)
+
+Read2 before filtering:
+total reads: 0
+total bases: 0
+Q20 bases: 0(-nan%)
+Q30 bases: 0(-nan%)
+
+Read1 after filtering:
+total reads: 0
+total bases: 0
+Q20 bases: 0(-nan%)
+Q30 bases: 0(-nan%)
+
+Read2 aftering filtering:
+total reads: 0
+total bases: 0
+Q20 bases: 0(-nan%)
+Q30 bases: 0(-nan%)
+
+Filtering result:
+reads passed filter: 0
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 0
+reads failed due to low complexity: 0
+reads with adapter trimmed: 0
+bases trimmed due to adapters: 0
+reads with polyX in 3' end: 0
+bases trimmed in polyX tail: 0
+
+Duplication rate: 0%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: fq_fp1/Lva-CPnd_006A_L3_fastp.json
+HTML report: fq_fp1/Lva-CPnd_006A_L3_fastp.html
+
+fastp --in1 shotgun_raw_fq//Lva-CPnd_006A_L3_1.fq.gz --in2 shotgun_raw_fq//Lva-CPnd_006A_L3_2.fq.gz --out1 fq_fp1/Lva-CPnd_006A_L3_r1.fq.gz --out2 fq_fp1/Lva-CPnd_006A_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Lva-CPnd_006A_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Lva-CPnd_006A_L3_unprd.fq.gz --failed_out fq_fp1/failed/Lva-CPnd_006A_L3_fail.fq.gz -h fq_fp1/Lva-CPnd_006A_L3_fastp.html -j fq_fp1/Lva-CPnd_006A_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 1 seconds
+slurmstepd: error: *** JOB 649010 ON d4-w6420b-07 CANCELLED AT 2022-04-18T13:34:11 ***
