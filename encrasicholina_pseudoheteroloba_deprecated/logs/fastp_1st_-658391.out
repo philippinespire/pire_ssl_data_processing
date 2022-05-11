@@ -1,0 +1,142 @@
+
+Read1 before filtering:
+total reads: 218012206
+total bases: 32701830900
+Q20 bases: 30838023558(94.3006%)
+Q30 bases: 29274956767(89.5208%)
+
+Read2 before filtering:
+total reads: 218012206
+total bases: 32701830900
+Q20 bases: 30883751956(94.4404%)
+Q30 bases: 29196499629(89.2809%)
+
+Read1 after filtering:
+total reads: 206989151
+total bases: 27952267423
+Q20 bases: 27059757528(96.807%)
+Q30 bases: 25921447339(92.7347%)
+
+Read2 aftering filtering:
+total reads: 206989151
+total bases: 27964691204
+Q20 bases: 27040054891(96.6936%)
+Q30 bases: 25771097654(92.1558%)
+
+Filtering result:
+reads passed filter: 413978302
+reads failed due to low quality: 19989720
+reads failed due to too many N: 35494
+reads failed due to too short: 1753552
+reads failed due to low complexity: 267344
+reads with adapter trimmed: 119094033
+bases trimmed due to adapters: 5497753594
+reads with polyX in 3' end: 6607624
+bases trimmed in polyX tail: 120811923
+
+Duplication rate: 16.0682%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-1B_L4_fastp.json
+HTML report: /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-1B_L4_fastp.html
+
+fastp --in1 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/shotgun_raw_fq/Eps-CBai_043_Ex1-1B_L4_1.fq.gz --in2 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/shotgun_raw_fq/Eps-CBai_043_Ex1-1B_L4_2.fq.gz --out1 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-1B_L4_r1.fq.gz --out2 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-1B_L4_r2.fq.gz --unpaired1 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/failed/Eps-CBai_043_Ex1-1B_L4_unprd.fq.gz --unpaired2 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/failed/Eps-CBai_043_Ex1-1B_L4_unprd.fq.gz --failed_out /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/failed/Eps-CBai_043_Ex1-1B_L4_fail.fq.gz -h /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-1B_L4_fastp.html -j /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-1B_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4114 seconds
+Read1 before filtering:
+total reads: 240148768
+total bases: 36022315200
+Q20 bases: 34333057986(95.3105%)
+Q30 bases: 32707545459(90.798%)
+
+Read2 before filtering:
+total reads: 240148768
+total bases: 36022315200
+Q20 bases: 34155199431(94.8168%)
+Q30 bases: 32186788300(89.3524%)
+
+Read1 after filtering:
+total reads: 230066438
+total bases: 31755555987
+Q20 bases: 30844727719(97.1318%)
+Q30 bases: 29609488041(93.2419%)
+
+Read2 aftering filtering:
+total reads: 230066438
+total bases: 31761274192
+Q20 bases: 30716468417(96.7104%)
+Q30 bases: 29161473106(91.8146%)
+
+Filtering result:
+reads passed filter: 460132876
+reads failed due to low quality: 18365940
+reads failed due to too many N: 40474
+reads failed due to too short: 1384818
+reads failed due to low complexity: 373428
+reads with adapter trimmed: 105617822
+bases trimmed due to adapters: 4906024393
+reads with polyX in 3' end: 6137664
+bases trimmed in polyX tail: 104269524
+
+Duplication rate: 18.1523%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2A_L4_fastp.json
+HTML report: /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2A_L4_fastp.html
+
+fastp --in1 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/shotgun_raw_fq/Eps-CBai_043_Ex1-2A_L4_1.fq.gz --in2 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/shotgun_raw_fq/Eps-CBai_043_Ex1-2A_L4_2.fq.gz --out1 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2A_L4_r1.fq.gz --out2 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2A_L4_r2.fq.gz --unpaired1 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/failed/Eps-CBai_043_Ex1-2A_L4_unprd.fq.gz --unpaired2 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/failed/Eps-CBai_043_Ex1-2A_L4_unprd.fq.gz --failed_out /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/failed/Eps-CBai_043_Ex1-2A_L4_fail.fq.gz -h /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2A_L4_fastp.html -j /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2A_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4915 seconds
+Read1 before filtering:
+total reads: 278974147
+total bases: 41846122050
+Q20 bases: 39506593160(94.4092%)
+Q30 bases: 37424856686(89.4345%)
+
+Read2 before filtering:
+total reads: 278974147
+total bases: 41846122050
+Q20 bases: 39629749829(94.7035%)
+Q30 bases: 37480773988(89.5681%)
+
+Read1 after filtering:
+total reads: 266447628
+total bases: 35186208852
+Q20 bases: 34030172829(96.7145%)
+Q30 bases: 32565265301(92.5512%)
+
+Read2 aftering filtering:
+total reads: 266447628
+total bases: 35205884497
+Q20 bases: 34073722895(96.7842%)
+Q30 bases: 32487878405(92.2797%)
+
+Filtering result:
+reads passed filter: 532895256
+reads failed due to low quality: 22680614
+reads failed due to too many N: 45546
+reads failed due to too short: 2020990
+reads failed due to low complexity: 305888
+reads with adapter trimmed: 180825531
+bases trimmed due to adapters: 8494273420
+reads with polyX in 3' end: 8088305
+bases trimmed in polyX tail: 147108550
+
+Duplication rate: 14.7696%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2H_L4_fastp.json
+HTML report: /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2H_L4_fastp.html
+
+fastp --in1 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/shotgun_raw_fq/Eps-CBai_043_Ex1-2H_L4_1.fq.gz --in2 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/shotgun_raw_fq/Eps-CBai_043_Ex1-2H_L4_2.fq.gz --out1 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2H_L4_r1.fq.gz --out2 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2H_L4_r2.fq.gz --unpaired1 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/failed/Eps-CBai_043_Ex1-2H_L4_unprd.fq.gz --unpaired2 /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/failed/Eps-CBai_043_Ex1-2H_L4_unprd.fq.gz --failed_out /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/failed/Eps-CBai_043_Ex1-2H_L4_fail.fq.gz -h /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2H_L4_fastp.html -j /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/Eps-CBai_043_Ex1-2H_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 5490 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /scratch/breid/pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : ../pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : ../pire_ssl_data_processing/encrasicholina_pseudoheteroloba/fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

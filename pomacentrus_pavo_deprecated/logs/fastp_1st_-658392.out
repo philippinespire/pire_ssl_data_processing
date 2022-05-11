@@ -1,0 +1,142 @@
+
+Read1 before filtering:
+total reads: 114646469
+total bases: 17196970350
+Q20 bases: 16780671384(97.5792%)
+Q30 bases: 16159093327(93.9648%)
+
+Read2 before filtering:
+total reads: 114646469
+total bases: 17196970350
+Q20 bases: 16616065640(96.6221%)
+Q30 bases: 15753117194(91.604%)
+
+Read1 after filtering:
+total reads: 112870825
+total bases: 16263374318
+Q20 bases: 15977523793(98.2424%)
+Q30 bases: 15433196569(94.8954%)
+
+Read2 aftering filtering:
+total reads: 112870825
+total bases: 16260550076
+Q20 bases: 15840186801(97.4148%)
+Q30 bases: 15055009074(92.5861%)
+
+Filtering result:
+reads passed filter: 225741650
+reads failed due to low quality: 3209308
+reads failed due to too many N: 20982
+reads failed due to too short: 247788
+reads failed due to low complexity: 73210
+reads with adapter trimmed: 27029583
+bases trimmed due to adapters: 1212457416
+reads with polyX in 3' end: 2468423
+bases trimmed in polyX tail: 32690948
+
+Duplication rate: 20.4725%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-2E_L4_fastp.json
+HTML report: /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-2E_L4_fastp.html
+
+fastp --in1 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/shotgun_raw_fq/Ppa-CPnd_001_Ex1-2E_L4_1.fq.gz --in2 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/shotgun_raw_fq/Ppa-CPnd_001_Ex1-2E_L4_2.fq.gz --out1 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-2E_L4_r1.fq.gz --out2 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-2E_L4_r2.fq.gz --unpaired1 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/failed/Ppa-CPnd_001_Ex1-2E_L4_unprd.fq.gz --unpaired2 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/failed/Ppa-CPnd_001_Ex1-2E_L4_unprd.fq.gz --failed_out /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/failed/Ppa-CPnd_001_Ex1-2E_L4_fail.fq.gz -h /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-2E_L4_fastp.html -j /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-2E_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 2211 seconds
+Read1 before filtering:
+total reads: 190596196
+total bases: 28589429400
+Q20 bases: 28008399974(97.9677%)
+Q30 bases: 27067464502(94.6765%)
+
+Read2 before filtering:
+total reads: 190596196
+total bases: 28589429400
+Q20 bases: 27752019701(97.0709%)
+Q30 bases: 26449656076(92.5155%)
+
+Read1 after filtering:
+total reads: 187947731
+total bases: 27466472594
+Q20 bases: 27033744478(98.4245%)
+Q30 bases: 26181206845(95.3206%)
+
+Read2 aftering filtering:
+total reads: 187947731
+total bases: 27462202265
+Q20 bases: 26856716394(97.7952%)
+Q30 bases: 25660076655(93.4378%)
+
+Filtering result:
+reads passed filter: 375895462
+reads failed due to low quality: 4729198
+reads failed due to too many N: 34526
+reads failed due to too short: 390760
+reads failed due to low complexity: 142446
+reads with adapter trimmed: 28494953
+bases trimmed due to adapters: 1319091924
+reads with polyX in 3' end: 3555871
+bases trimmed in polyX tail: 46795572
+
+Duplication rate: 29.1122%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-3D_L4_fastp.json
+HTML report: /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-3D_L4_fastp.html
+
+fastp --in1 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/shotgun_raw_fq/Ppa-CPnd_001_Ex1-3D_L4_1.fq.gz --in2 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/shotgun_raw_fq/Ppa-CPnd_001_Ex1-3D_L4_2.fq.gz --out1 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-3D_L4_r1.fq.gz --out2 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-3D_L4_r2.fq.gz --unpaired1 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/failed/Ppa-CPnd_001_Ex1-3D_L4_unprd.fq.gz --unpaired2 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/failed/Ppa-CPnd_001_Ex1-3D_L4_unprd.fq.gz --failed_out /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/failed/Ppa-CPnd_001_Ex1-3D_L4_fail.fq.gz -h /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-3D_L4_fastp.html -j /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-3D_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4062 seconds
+Read1 before filtering:
+total reads: 223748908
+total bases: 33562336200
+Q20 bases: 32877615330(97.9599%)
+Q30 bases: 31749811088(94.5995%)
+
+Read2 before filtering:
+total reads: 223748908
+total bases: 33562336200
+Q20 bases: 32455577547(96.7024%)
+Q30 bases: 30703792567(91.4829%)
+
+Read1 after filtering:
+total reads: 221123617
+total bases: 32713739878
+Q20 bases: 32186327718(98.3878%)
+Q30 bases: 31131305429(95.1628%)
+
+Read2 aftering filtering:
+total reads: 221123617
+total bases: 32705872974
+Q20 bases: 31829491988(97.3204%)
+Q30 bases: 30168128009(92.2407%)
+
+Filtering result:
+reads passed filter: 442247234
+reads failed due to low quality: 4706412
+reads failed due to too many N: 40876
+reads failed due to too short: 368188
+reads failed due to low complexity: 135106
+reads with adapter trimmed: 17374130
+bases trimmed due to adapters: 798403123
+reads with polyX in 3' end: 4388596
+bases trimmed in polyX tail: 58449858
+
+Duplication rate: 34.599%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-1F_L4_fastp.json
+HTML report: /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-1F_L4_fastp.html
+
+fastp --in1 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/shotgun_raw_fq/Ppa-CPnd_001_Ex1-1F_L4_1.fq.gz --in2 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/shotgun_raw_fq/Ppa-CPnd_001_Ex1-1F_L4_2.fq.gz --out1 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-1F_L4_r1.fq.gz --out2 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-1F_L4_r2.fq.gz --unpaired1 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/failed/Ppa-CPnd_001_Ex1-1F_L4_unprd.fq.gz --unpaired2 /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/failed/Ppa-CPnd_001_Ex1-1F_L4_unprd.fq.gz --failed_out /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/failed/Ppa-CPnd_001_Ex1-1F_L4_fail.fq.gz -h /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-1F_L4_fastp.html -j /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/Ppa-CPnd_001_Ex1-1F_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4812 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /scratch/breid/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : ../pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : ../pire_ssl_data_processing/pomacentrus_pavo/fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

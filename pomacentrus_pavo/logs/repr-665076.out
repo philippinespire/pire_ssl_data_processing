@@ -1,0 +1,43 @@
+
+java -ea -Xmx161009m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_r1.tagged_filter.fastq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_r2.tagged_filter.fastq.gz out1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_repr.R1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_repr.R2.fq.gz outs=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_r1.tagged_filter.fastq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_r2.tagged_filter.fastq.gz, out1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_repr.R1.fq.gz, out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_repr.R2.fq.gz, outs=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Ppa-CPnd_001_Ex1-2E_L4_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	151191767 reads 		20383114288 bases.
+Result:                 	151191767 reads (100.00%) 	20383114288 bases (100.00%)
+Pairs:                  	148004114 reads (97.89%) 	19953336704 bases (97.89%)
+Singletons:             	3187653 reads (2.11%) 	429777584 bases (2.11%)
+
+Time:                         	491.583 seconds.
+Reads Processed:        151m 	307.56k reads/sec
+Bases Processed:      20383m 	41.46m bases/sec
+java -ea -Xmx161009m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_r1.tagged_filter.fastq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_r2.tagged_filter.fastq.gz out1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_repr.R1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_repr.R2.fq.gz outs=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_r1.tagged_filter.fastq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_r2.tagged_filter.fastq.gz, out1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_repr.R1.fq.gz, out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_repr.R2.fq.gz, outs=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Ppa-CPnd_001_Ex1-3D_L4_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	238738723 reads 		32196703056 bases.
+Result:                 	238738723 reads (100.00%) 	32196703056 bases (100.00%)
+Pairs:                  	233788634 reads (97.93%) 	31529111961 bases (97.93%)
+Singletons:             	4950089 reads (2.07%) 	667591095 bases (2.07%)
+
+Time:                         	694.405 seconds.
+Reads Processed:        238m 	343.80k reads/sec
+Bases Processed:      32196m 	46.37m bases/sec
+java -ea -Xmx161009m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_r1.tagged_filter.fastq.gz in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_r2.tagged_filter.fastq.gz out1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_repr.R1.fq.gz out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_repr.R2.fq.gz outs=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_r1.tagged_filter.fastq.gz, in2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_r2.tagged_filter.fastq.gz, out1=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_repr.R1.fq.gz, out2=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_repr.R2.fq.gz, outs=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Ppa-CPnd_001_Ex1-1F_L4_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	271914716 reads 		36674416508 bases.
+Result:                 	271914716 reads (100.00%) 	36674416508 bases (100.00%)
+Pairs:                  	265796316 reads (97.75%) 	35849241446 bases (97.75%)
+Singletons:             	6118400 reads (2.25%) 	825175062 bases (2.25%)
+
+Time:                         	814.481 seconds.
+Reads Processed:        271m 	333.85k reads/sec
+Bases Processed:      36674m 	45.03m bases/sec

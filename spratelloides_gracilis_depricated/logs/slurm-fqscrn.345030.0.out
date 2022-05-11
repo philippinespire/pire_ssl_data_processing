@@ -1,0 +1,46 @@
+INDIR=fq_fp1_clmparray_fp2
+OUTDIR=fq_fp1_clmparray_fp2_fqscrn
+CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf
+PATTERN=*.fq.gz
+PARALLELISM=
+THREADS=40
+SUBSET=0
+FILTER=000000000000
+INFILES:
+fq_fp1_clmparray_fp2/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz
+
+Tue Aug 3 15:06:23 EDT 2021 RUNNING FASTQ_SCREEN TO FILTER FQ FILES AND GENERATE REPORTS, NO SUBSETTING
+Using fastq_screen v0.14.0
+Reading configuration from '/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf'
+Adding database Human
+Adding database Ecoli
+Adding database PhiX
+Adding database Contamnts_Adaptrs
+Adding database Vectors
+Adding database Bacteria_24k
+Adding database Protists_1k
+Adding database Viruses
+Adding database Fungi_RefSeq_release
+Adding database Coral
+Adding database Bird
+Adding database Plant
+Using 40 threads for searches
+Option --subset set to 0: processing all reads in FASTQ files
+Processing SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz
+Not making data subset
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Human
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Ecoli
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against PhiX
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Contamnts_Adaptrs
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Vectors
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Bacteria_24k
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Protists_1k
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Viruses
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Fungi_RefSeq_release
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Coral
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Bird
+Searching SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.fq.gz_temp_subset.fastq against Plant
+Filtering SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.tagged.fastq.gz
+Filtering files with filter '000000000000'
+Filtering SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_r1.tagged.fastq.gz
+Processing complete

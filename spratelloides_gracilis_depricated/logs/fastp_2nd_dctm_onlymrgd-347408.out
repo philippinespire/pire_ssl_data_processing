@@ -1,0 +1,126 @@
+Read1 before filtering:
+total reads: 86365309
+total bases: 12945619044
+Q20 bases: 12721062879(98.2654%)
+Q30 bases: 12276948433(94.8348%)
+
+Read2 before filtering:
+total reads: 86365309
+total bases: 12944085445
+Q20 bases: 12588658395(97.2541%)
+Q30 bases: 11891042420(91.8647%)
+
+Merged and filtered:
+total reads: 7005872
+total bases: 1482976373
+Q20 bases: 1461007760(98.5186%)
+Q30 bases: 1409872296(95.0704%)
+
+Filtering result:
+reads passed filter: 172730600
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 18
+reads corrected by overlap analysis: 31168
+bases corrected by overlap analysis: 77020
+
+Duplication rate: 9.83322%
+
+Insert size peak (evaluated by paired-end reads): 268
+
+Read pairs merged: 7005872
+% of original read pairs: 8.11191%
+% in reads after filtering: 100%
+
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp --in1 fq_fp1_clmparray_fp2_fqscrn_repaired/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.R1.fq.gz --in2 fq_fp1_clmparray_fp2_fqscrn_repaired/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.R2.fq.gz --out1 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_R1.fq.gz --out2 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_R2.fq.gz --merged_out fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.mrgd.fq.gz --unpaired1 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_unprd.fq.gz --failed_out fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_clmp.fp2_repr.fp2_fail.fq.gz --merge --length_required 140 --disable_trim_poly_g --disable_quality_filtering --disable_adapter_trimming --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1433 seconds
+Read1 before filtering:
+total reads: 94469146
+total bases: 14160441353
+Q20 bases: 13916628866(98.2782%)
+Q30 bases: 13432857029(94.8619%)
+
+Read2 before filtering:
+total reads: 94469146
+total bases: 14159195620
+Q20 bases: 13798663637(97.4537%)
+Q30 bases: 13070346357(92.3099%)
+
+Merged and filtered:
+total reads: 7795483
+total bases: 1655144812
+Q20 bases: 1631049493(98.5442%)
+Q30 bases: 1574935866(95.154%)
+
+Filtering result:
+reads passed filter: 188938262
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 30
+reads corrected by overlap analysis: 32401
+bases corrected by overlap analysis: 79692
+
+Duplication rate: 9.0596%
+
+Insert size peak (evaluated by paired-end reads): 268
+
+Read pairs merged: 7795483
+% of original read pairs: 8.25188%
+% in reads after filtering: 100%
+
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp --in1 fq_fp1_clmparray_fp2_fqscrn_repaired/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.R1.fq.gz --in2 fq_fp1_clmparray_fp2_fqscrn_repaired/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.R2.fq.gz --out1 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_R1.fq.gz --out2 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_R2.fq.gz --merged_out fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.mrgd.fq.gz --unpaired1 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_unprd.fq.gz --failed_out fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_clmp.fp2_repr.fp2_fail.fq.gz --merge --length_required 140 --disable_trim_poly_g --disable_quality_filtering --disable_adapter_trimming --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1537 seconds
+Read1 before filtering:
+total reads: 94186726
+total bases: 14117840497
+Q20 bases: 13898773537(98.4483%)
+Q30 bases: 13437100210(95.1782%)
+
+Read2 before filtering:
+total reads: 94186726
+total bases: 14116296154
+Q20 bases: 13785267911(97.655%)
+Q30 bases: 13076888269(92.6368%)
+
+Merged and filtered:
+total reads: 8671544
+total bases: 1807937888
+Q20 bases: 1782805340(98.6099%)
+Q30 bases: 1723227693(95.3145%)
+
+Filtering result:
+reads passed filter: 188373430
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 22
+reads corrected by overlap analysis: 27588
+bases corrected by overlap analysis: 67238
+
+Duplication rate: 5.75608%
+
+Insert size peak (evaluated by paired-end reads): 268
+
+Read pairs merged: 8671544
+% of original read pairs: 9.20676%
+% in reads after filtering: 100%
+
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp --in1 fq_fp1_clmparray_fp2_fqscrn_repaired/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.R1.fq.gz --in2 fq_fp1_clmparray_fp2_fqscrn_repaired/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.R2.fq.gz --out1 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_R1.fq.gz --out2 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_R2.fq.gz --merged_out fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.mrgd.fq.gz --unpaired1 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_unprd.fq.gz --failed_out fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd/failed/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_clmp.fp2_repr.fp2_fail.fq.gz --merge --length_required 140 --disable_trim_poly_g --disable_quality_filtering --disable_adapter_trimming --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1556 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1_clmparray_fp2_fqscrn_repaired_Onlymrgd
+[WARNING]         multiqc : No analysis results found. Cleaning up..
+[INFO   ]         multiqc : MultiQC complete

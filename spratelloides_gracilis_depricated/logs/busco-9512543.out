@@ -1,0 +1,113 @@
+/var/spool/slurmd/job9512543/slurm_script: line 6: enable: l_mod: not a shell builtin
+INFO:	***** Start a BUSCO v5.0.0 analysis, current time: 08/13/2021 09:31:15 *****
+INFO:	Configuring BUSCO with local environment
+INFO:	Mode is genome
+INFO:	Input file is /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_contam_NOmrgd/contigs.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
+INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
+INFO:	Running 1 job(s) on metaeuk, starting at 08/13/2021 09:31:31
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 08/13/2021 09:52:07
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	728 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2184 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 08/13/2021 10:22:35
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 2547 job(s) on hmmsearch, starting at 08/13/2021 11:14:24
+INFO:	[hmmsearch]	255 of 2547 task(s) completed
+INFO:	[hmmsearch]	510 of 2547 task(s) completed
+INFO:	[hmmsearch]	765 of 2547 task(s) completed
+INFO:	[hmmsearch]	1019 of 2547 task(s) completed
+INFO:	[hmmsearch]	1274 of 2547 task(s) completed
+INFO:	[hmmsearch]	1529 of 2547 task(s) completed
+INFO:	[hmmsearch]	1783 of 2547 task(s) completed
+INFO:	[hmmsearch]	2038 of 2547 task(s) completed
+INFO:	[hmmsearch]	2293 of 2547 task(s) completed
+INFO:	[hmmsearch]	2547 of 2547 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:31.0%[S:29.9%,D:1.1%],F:12.0%,M:57.0%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:31.0%[S:29.9%,D:1.1%],F:12.0%,M:57.0%,n:3640   |
+	|1130	Complete BUSCOs (C)                       |
+	|1089	Complete and single-copy BUSCOs (S)       |
+	|41	Complete and duplicated BUSCOs (D)        |
+	|435	Fragmented BUSCOs (F)                     |
+	|2075	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 7082 seconds
+INFO:	Results written in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/busco_results
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
+INFO:	***** Start a BUSCO v5.0.0 analysis, current time: 08/13/2021 11:29:21 *****
+INFO:	Configuring BUSCO with local environment
+INFO:	Mode is genome
+INFO:	'Force' option selected; overwriting previous results directory
+INFO:	Input file is /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/SPAdes_R1R2_noIsolate_contam_NOmrgd/scaffolds.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
+INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
+INFO:	Running 1 job(s) on metaeuk, starting at 08/13/2021 11:29:51
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 08/13/2021 11:50:29
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	728 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2184 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3276 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 08/13/2021 12:20:16
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 2465 job(s) on hmmsearch, starting at 08/13/2021 13:11:24
+INFO:	[hmmsearch]	247 of 2465 task(s) completed
+INFO:	[hmmsearch]	493 of 2465 task(s) completed
+INFO:	[hmmsearch]	740 of 2465 task(s) completed
+INFO:	[hmmsearch]	986 of 2465 task(s) completed
+INFO:	[hmmsearch]	1233 of 2465 task(s) completed
+INFO:	[hmmsearch]	1479 of 2465 task(s) completed
+INFO:	[hmmsearch]	1726 of 2465 task(s) completed
+INFO:	[hmmsearch]	1972 of 2465 task(s) completed
+INFO:	[hmmsearch]	2219 of 2465 task(s) completed
+INFO:	[hmmsearch]	2465 of 2465 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:33.3%[S:32.1%,D:1.2%],F:11.8%,M:54.9%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:33.3%[S:32.1%,D:1.2%],F:11.8%,M:54.9%,n:3640   |
+	|1214	Complete BUSCOs (C)                       |
+	|1170	Complete and single-copy BUSCOs (S)       |
+	|44	Complete and duplicated BUSCOs (D)        |
+	|430	Fragmented BUSCOs (F)                     |
+	|1996	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 7032 seconds
+INFO:	Results written in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/busco_results
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
