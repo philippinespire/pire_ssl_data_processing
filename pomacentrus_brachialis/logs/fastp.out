@@ -1,0 +1,142 @@
+
+Read1 before filtering:
+total reads: 98422457
+total bases: 14763368550
+Q20 bases: 14306541076(96.9057%)
+Q30 bases: 13756145061(93.1775%)
+
+Read2 before filtering:
+total reads: 98422457
+total bases: 14763368550
+Q20 bases: 14217836987(96.3048%)
+Q30 bases: 13499778072(91.441%)
+
+Read1 after filtering:
+total reads: 96650036
+total bases: 13754175035
+Q20 bases: 13490700846(98.0844%)
+Q30 bases: 13029284681(94.7297%)
+
+Read2 aftering filtering:
+total reads: 96650036
+total bases: 13751344361
+Q20 bases: 13397743559(97.4286%)
+Q30 bases: 12768696109(92.8542%)
+
+Filtering result:
+reads passed filter: 193300072
+reads failed due to low quality: 3064938
+reads failed due to too many N: 17338
+reads failed due to too short: 392044
+reads failed due to low complexity: 70522
+reads with adapter trimmed: 28483851
+bases trimmed due to adapters: 1347014572
+reads with polyX in 3' end: 1896960
+bases trimmed in polyX tail: 26062666
+
+Duplication rate: 16.5365%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Pba-CTat_001_Ex1-1E_L4_fastp.json
+HTML report: fq_fp1/Pba-CTat_001_Ex1-1E_L4_fastp.html
+
+fastp --in1 fq_raw_shotgun/Pba-CTat_001_Ex1-1E_L4_1.fq.gz --in2 fq_raw_shotgun/Pba-CTat_001_Ex1-1E_L4_2.fq.gz --out1 fq_fp1/Pba-CTat_001_Ex1-1E_L4_r1.fq.gz --out2 fq_fp1/Pba-CTat_001_Ex1-1E_L4_r2.fq.gz --unpaired1 fq_fp1/failed/Pba-CTat_001_Ex1-1E_L4_unprd.fq.gz --unpaired2 fq_fp1/failed/Pba-CTat_001_Ex1-1E_L4_unprd.fq.gz --failed_out fq_fp1/failed/Pba-CTat_001_Ex1-1E_L4_fail.fq.gz -h fq_fp1/Pba-CTat_001_Ex1-1E_L4_fastp.html -j fq_fp1/Pba-CTat_001_Ex1-1E_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 1878 seconds
+Read1 before filtering:
+total reads: 146277214
+total bases: 21941582100
+Q20 bases: 21337168395(97.2454%)
+Q30 bases: 20539781608(93.6112%)
+
+Read2 before filtering:
+total reads: 146277214
+total bases: 21941582100
+Q20 bases: 21142205483(96.3568%)
+Q30 bases: 20096997380(91.5932%)
+
+Read1 after filtering:
+total reads: 143509952
+total bases: 20632065529
+Q20 bases: 20244654339(98.1223%)
+Q30 bases: 19562061823(94.8139%)
+
+Read2 aftering filtering:
+total reads: 143509952
+total bases: 20627725830
+Q20 bases: 20116609409(97.5222%)
+Q30 bases: 19196226387(93.0603%)
+
+Filtering result:
+reads passed filter: 287019904
+reads failed due to low quality: 4900838
+reads failed due to too many N: 26362
+reads failed due to too short: 497816
+reads failed due to low complexity: 109508
+reads with adapter trimmed: 33599160
+bases trimmed due to adapters: 1633399273
+reads with polyX in 3' end: 2838786
+bases trimmed in polyX tail: 38397237
+
+Duplication rate: 20.6742%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Pba-CTat_001_Ex1-3C_L4_fastp.json
+HTML report: fq_fp1/Pba-CTat_001_Ex1-3C_L4_fastp.html
+
+fastp --in1 fq_raw_shotgun/Pba-CTat_001_Ex1-3C_L4_1.fq.gz --in2 fq_raw_shotgun/Pba-CTat_001_Ex1-3C_L4_2.fq.gz --out1 fq_fp1/Pba-CTat_001_Ex1-3C_L4_r1.fq.gz --out2 fq_fp1/Pba-CTat_001_Ex1-3C_L4_r2.fq.gz --unpaired1 fq_fp1/failed/Pba-CTat_001_Ex1-3C_L4_unprd.fq.gz --unpaired2 fq_fp1/failed/Pba-CTat_001_Ex1-3C_L4_unprd.fq.gz --failed_out fq_fp1/failed/Pba-CTat_001_Ex1-3C_L4_fail.fq.gz -h fq_fp1/Pba-CTat_001_Ex1-3C_L4_fastp.html -j fq_fp1/Pba-CTat_001_Ex1-3C_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3037 seconds
+Read1 before filtering:
+total reads: 201044822
+total bases: 30156723300
+Q20 bases: 29169017837(96.7248%)
+Q30 bases: 27986942332(92.805%)
+
+Read2 before filtering:
+total reads: 201044822
+total bases: 30156723300
+Q20 bases: 29044532391(96.312%)
+Q30 bases: 27604744498(91.5376%)
+
+Read1 after filtering:
+total reads: 197027444
+total bases: 27221902415
+Q20 bases: 26668498713(97.9671%)
+Q30 bases: 25737617091(94.5475%)
+
+Read2 aftering filtering:
+total reads: 197027444
+total bases: 27217783865
+Q20 bases: 26551153974(97.5508%)
+Q30 bases: 25365805710(93.1957%)
+
+Filtering result:
+reads passed filter: 394054888
+reads failed due to low quality: 6863144
+reads failed due to too many N: 35058
+reads failed due to too short: 891074
+reads failed due to low complexity: 245480
+reads with adapter trimmed: 90917285
+bases trimmed due to adapters: 4233724264
+reads with polyX in 3' end: 4342934
+bases trimmed in polyX tail: 59634619
+
+Duplication rate: 13.5948%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fq_fp1/Pba-CTat_001_Ex1-2D_L4_fastp.json
+HTML report: fq_fp1/Pba-CTat_001_Ex1-2D_L4_fastp.html
+
+fastp --in1 fq_raw_shotgun/Pba-CTat_001_Ex1-2D_L4_1.fq.gz --in2 fq_raw_shotgun/Pba-CTat_001_Ex1-2D_L4_2.fq.gz --out1 fq_fp1/Pba-CTat_001_Ex1-2D_L4_r1.fq.gz --out2 fq_fp1/Pba-CTat_001_Ex1-2D_L4_r2.fq.gz --unpaired1 fq_fp1/failed/Pba-CTat_001_Ex1-2D_L4_unprd.fq.gz --unpaired2 fq_fp1/failed/Pba-CTat_001_Ex1-2D_L4_unprd.fq.gz --failed_out fq_fp1/failed/Pba-CTat_001_Ex1-2D_L4_fail.fq.gz -h fq_fp1/Pba-CTat_001_Ex1-2D_L4_fastp.html -j fq_fp1/Pba-CTat_001_Ex1-2D_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3958 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_brachialis/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete
