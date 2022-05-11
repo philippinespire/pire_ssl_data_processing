@@ -1,0 +1,143 @@
+
+mkdir: cannot create directory ‘fq_fp1’: File exists
+Read1 before filtering:
+total reads: 190217239
+total bases: 28532585850
+Q20 bases: 27712184080(97.1247%)
+Q30 bases: 26646753857(93.3906%)
+
+Read2 before filtering:
+total reads: 190217239
+total bases: 28532585850
+Q20 bases: 27282348438(95.6182%)
+Q30 bases: 25736988197(90.2021%)
+
+Read1 after filtering:
+total reads: 186185181
+total bases: 26301781696
+Q20 bases: 25797585676(98.083%)
+Q30 bases: 24916263708(94.7322%)
+
+Read2 aftering filtering:
+total reads: 186185181
+total bases: 26291212757
+Q20 bases: 25468293405(96.87%)
+Q30 bases: 24124987985(91.7607%)
+
+Filtering result:
+reads passed filter: 372370362
+reads failed due to low quality: 7113568
+reads failed due to too many N: 157792
+reads failed due to too short: 619494
+reads failed due to low complexity: 173262
+reads with adapter trimmed: 63842646
+bases trimmed due to adapters: 2932436199
+reads with polyX in 3' end: 5170461
+bases trimmed in polyX tail: 73958951
+
+Duplication rate: 26.0688%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sne-CTaw_051_Ex13H_L3_fastp.json
+HTML report: fq_fp1/Sne-CTaw_051_Ex13H_L3_fastp.html
+
+fastp --in1 fq_raw_shotgun/Sne-CTaw_051_Ex13H_L3_1.fq.gz --in2 fq_raw_shotgun/Sne-CTaw_051_Ex13H_L3_2.fq.gz --out1 fq_fp1/Sne-CTaw_051_Ex13H_L3_r1.fq.gz --out2 fq_fp1/Sne-CTaw_051_Ex13H_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Sne-CTaw_051_Ex13H_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Sne-CTaw_051_Ex13H_L3_unprd.fq.gz --failed_out fq_fp1/failed/Sne-CTaw_051_Ex13H_L3_fail.fq.gz -h fq_fp1/Sne-CTaw_051_Ex13H_L3_fastp.html -j fq_fp1/Sne-CTaw_051_Ex13H_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3790 seconds
+Read1 before filtering:
+total reads: 196174062
+total bases: 29426109300
+Q20 bases: 28585202019(97.1423%)
+Q30 bases: 27487291624(93.4112%)
+
+Read2 before filtering:
+total reads: 196174062
+total bases: 29426109300
+Q20 bases: 28152867821(95.6731%)
+Q30 bases: 26554469153(90.2412%)
+
+Read1 after filtering:
+total reads: 192178845
+total bases: 27175974505
+Q20 bases: 26653688948(98.0781%)
+Q30 bases: 25741115984(94.7201%)
+
+Read2 aftering filtering:
+total reads: 192178845
+total bases: 27164940424
+Q20 bases: 26315094324(96.8715%)
+Q30 bases: 24924195051(91.7513%)
+
+Filtering result:
+reads passed filter: 384357690
+reads failed due to low quality: 7033260
+reads failed due to too many N: 161942
+reads failed due to too short: 622954
+reads failed due to low complexity: 172278
+reads with adapter trimmed: 65495972
+bases trimmed due to adapters: 2983831639
+reads with polyX in 3' end: 5475104
+bases trimmed in polyX tail: 77600104
+
+Duplication rate: 25.6304%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sne-CTaw_051_Ex1-3F_L3_fastp.json
+HTML report: fq_fp1/Sne-CTaw_051_Ex1-3F_L3_fastp.html
+
+fastp --in1 fq_raw_shotgun/Sne-CTaw_051_Ex1-3F_L3_1.fq.gz --in2 fq_raw_shotgun/Sne-CTaw_051_Ex1-3F_L3_2.fq.gz --out1 fq_fp1/Sne-CTaw_051_Ex1-3F_L3_r1.fq.gz --out2 fq_fp1/Sne-CTaw_051_Ex1-3F_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Sne-CTaw_051_Ex1-3F_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Sne-CTaw_051_Ex1-3F_L3_unprd.fq.gz --failed_out fq_fp1/failed/Sne-CTaw_051_Ex1-3F_L3_fail.fq.gz -h fq_fp1/Sne-CTaw_051_Ex1-3F_L3_fastp.html -j fq_fp1/Sne-CTaw_051_Ex1-3F_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4053 seconds
+Read1 before filtering:
+total reads: 229183420
+total bases: 34377513000
+Q20 bases: 33402492960(97.1638%)
+Q30 bases: 32116002627(93.4215%)
+
+Read2 before filtering:
+total reads: 229183420
+total bases: 34377513000
+Q20 bases: 32969606827(95.9046%)
+Q30 bases: 31165444295(90.6565%)
+
+Read1 after filtering:
+total reads: 224822145
+total bases: 31399895183
+Q20 bases: 30802506879(98.0975%)
+Q30 bases: 29752907265(94.7548%)
+
+Read2 aftering filtering:
+total reads: 224822145
+total bases: 31386326059
+Q20 bases: 30467977556(97.074%)
+Q30 bases: 28930750996(92.1763%)
+
+Filtering result:
+reads passed filter: 449644290
+reads failed due to low quality: 7590080
+reads failed due to too many N: 187844
+reads failed due to too short: 743704
+reads failed due to low complexity: 200922
+reads with adapter trimmed: 92867126
+bases trimmed due to adapters: 4214841848
+reads with polyX in 3' end: 6056803
+bases trimmed in polyX tail: 86268462
+
+Duplication rate: 24.0643%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Sne-CTaw_051_Ex1-3G_L3_fastp.json
+HTML report: fq_fp1/Sne-CTaw_051_Ex1-3G_L3_fastp.html
+
+fastp --in1 fq_raw_shotgun/Sne-CTaw_051_Ex1-3G_L3_1.fq.gz --in2 fq_raw_shotgun/Sne-CTaw_051_Ex1-3G_L3_2.fq.gz --out1 fq_fp1/Sne-CTaw_051_Ex1-3G_L3_r1.fq.gz --out2 fq_fp1/Sne-CTaw_051_Ex1-3G_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Sne-CTaw_051_Ex1-3G_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Sne-CTaw_051_Ex1-3G_L3_unprd.fq.gz --failed_out fq_fp1/failed/Sne-CTaw_051_Ex1-3G_L3_fail.fq.gz -h fq_fp1/Sne-CTaw_051_Ex1-3G_L3_fastp.html -j fq_fp1/Sne-CTaw_051_Ex1-3G_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4705 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

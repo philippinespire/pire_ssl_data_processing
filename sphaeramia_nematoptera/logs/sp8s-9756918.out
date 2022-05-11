@@ -1,0 +1,132 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R1.fq.gz	--pe1-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/jbald004	--cov-cutoff	off	-o	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_Sne-CTaw_decontam_R1R2_noIsolate	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.9
+  OS: Linux-4.4.302-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two
+
+Output dir: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_Sne-CTaw_decontam_R1R2_noIsolate
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77, 99]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /scratch-lustre/jbald004
+  Threads: 32
+  Memory limit (in Gb): 750
+
+
+======= SPAdes pipeline started. Log can be found here: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_Sne-CTaw_decontam_R1R2_noIsolate/spades.log
+
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R2.fq.gz: max reads length: 150
+
+Reads length: 150
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /opt/conda/bin/spades-hammer /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_Sne-CTaw_decontam_R1R2_noIsolate/corrected/configs/config.info
+
+  0:00:00.000     1M / 12M   INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.032     1M / 12M   INFO    General                 (main.cpp                  :  76)   Loading config from /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_Sne-CTaw_decontam_R1R2_noIsolate/corrected/configs/config.info
+  0:00:00.047     1M / 12M   INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 32
+  0:00:00.050     1M / 12M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 750 Gb
+  0:00:00.056     1M / 12M   INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.061     1M / 12M   INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.063     1M / 12M   INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.067     1M / 12M   INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.073     1M / 12M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 16 files using 32 threads. This might take a while.
+  0:00:00.077     1M / 12M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 50000
+  0:00:00.094     1M / 12M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 7.8125 Gb
+  0:00:00.094     1M / 12M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 4194304
+  0:00:00.323    19G / 19G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R1.fq.gz
+  0:00:57.603    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 7885848 reads
+  0:01:52.577    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 15557833 reads
+  0:02:47.422    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 23187123 reads
+  0:03:42.856    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 30944675 reads
+  0:04:38.016    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 38720452 reads
+  0:05:34.548    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 46600444 reads
+  0:06:29.588    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 54417776 reads
+  0:07:25.067    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 62208471 reads
+  0:08:21.055    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 70004852 reads
+  0:09:16.747    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 77776393 reads
+  0:10:11.925    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 85577157 reads
+  0:11:07.642    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 93340388 reads
+  0:12:06.264    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R2.fq.gz
+  0:17:38.609    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 140168264 reads
+  0:26:31.746    19G / 32G   INFO   K-mer Splitting          (kmer_data.cpp             : 112)   Total 203143108 reads processed
+  0:26:31.750     1M / 32G   INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  0:28:22.844     1M / 111G  INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 2934969772 kmers in total.
+  0:28:22.847     1M / 111G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:30:31.838  2054M / 111G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 2934969772 kmers, 2119835312 bytes occupied (5.77815 bits per kmer).
+  0:30:31.847  2054M / 111G  INFO   K-mer Counting           (kmer_data.cpp             : 354)   Arranging kmers in hash map order
+  0:32:10.555    46G / 111G  INFO    General                 (main.cpp                  : 148)   Clustering Hamming graph.
+  0:49:54.524    46G / 111G  INFO    General                 (main.cpp                  : 155)   Extracting clusters:
+  0:49:54.524    46G / 111G  INFO    General                 (concurrent_dsu.cpp        :  18)   Connecting to root
+  0:49:58.140    46G / 111G  INFO    General                 (concurrent_dsu.cpp        :  34)   Calculating counts
+  0:55:17.258    80G / 111G  INFO    General                 (concurrent_dsu.cpp        :  63)   Writing down entries
+  1:06:55.972    46G / 112G  INFO    General                 (main.cpp                  : 167)   Clustering done. Total clusters: 1305603237
+  1:06:56.032    24G / 112G  INFO   K-mer Counting           (kmer_data.cpp             : 371)   Collecting K-mer information, this takes a while.
+  1:07:14.998    90G / 112G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R1.fq.gz
+  1:15:33.431    90G / 112G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2_fqscrn_repaired/Sne-CTaw_051_Ex13H_L3_clmp.fp2_repr.R2.fq.gz
+  1:24:18.470    90G / 112G  INFO   K-mer Counting           (kmer_data.cpp             : 384)   Collection done, postprocessing.
+  1:24:30.702    90G / 112G  INFO   K-mer Counting           (kmer_data.cpp             : 397)   There are 2934969772 kmers in total. Among them 1107844350 (37.7464%) are singletons.
+  1:24:30.702    90G / 112G  INFO    General                 (main.cpp                  : 173)   Subclustering Hamming graph
+  2:36:55.781    90G / 112G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 650)   Subclustering done. Total 303753 non-read kmers were generated.
+  2:36:55.787    90G / 112G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 651)   Subclustering statistics:
+  2:36:55.803    90G / 112G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 652)     Total singleton hamming clusters: 846897594. Among them 677348874 (79.98%) are good
+  2:36:55.806    90G / 112G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 653)     Total singleton subclusters: 163479995. Among them 162880382 (99.6332%) are good
+  2:36:55.810    90G / 112G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 654)     Total non-singleton subcluster centers: 525910620. Among them 360879726 (68.62%) are good
+  2:36:55.813    90G / 112G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 655)     Average size of non-trivial subcluster: 3.97254 kmers
+  2:36:55.814    90G / 112G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 656)     Average number of sub-clusters per non-singleton cluster: 1.5029
+  2:36:55.814    90G / 112G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 657)     Total solid k-mers: 1201108982
+  2:36:55.814    90G / 112G  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 658)     Substitution probabilities: [4,4]((0.900392,0.0350179,0.0269174,0.0376724),(0.0484538,0.893675,0.0200648,0.0378063),(0.0369385,0.0199137,0.893717,0.0494311),(0.0372201,0.0269652,0.0351193,0.900695))
+  2:36:58.229    90G / 112G  INFO    General                 (main.cpp                  : 178)   Finished clustering.
+  2:36:58.230    90G / 112G  INFO    General                 (main.cpp                  : 197)   Starting solid k-mers expansion in 32 threads.
+  2:48:37.731    90G / 112G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 0 produced 492800614 new k-mers.
+  3:00:22.956    90G / 112G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 1 produced 22070303 new k-mers.
+  3:12:06.239    90G / 112G  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 2 produced 804252 new k-mers.
+slurmstepd: error: *** JOB 9756918 ON coreV4-21-himem-003 CANCELLED AT 2022-05-08T05:24:08 ***
