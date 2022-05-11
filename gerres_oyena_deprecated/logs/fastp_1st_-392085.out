@@ -1,0 +1,97 @@
+Read1 before filtering:
+total reads: 105699128
+total bases: 15854869200
+Q20 bases: 15289998582(96.4372%)
+Q30 bases: 14501200610(91.4621%)
+
+Read2 before filtering:
+total reads: 105699128
+total bases: 15854869200
+Q20 bases: 14736336708(92.9452%)
+Q30 bases: 13210235827(83.3197%)
+
+Read1 after filtering:
+total reads: 86791776
+total bases: 12631430946
+Q20 bases: 12286257923(97.2673%)
+Q30 bases: 11693243455(92.5726%)
+
+Read2 aftering filtering:
+total reads: 86791776
+total bases: 12628164234
+Q20 bases: 12044520088(95.3782%)
+Q30 bases: 11087530533(87.8%)
+
+Filtering result:
+reads passed filter: 173583552
+reads failed due to low quality: 5190586
+reads failed due to too many N: 32318
+reads failed due to too short: 27841472
+reads failed due to low complexity: 4750328
+reads with adapter trimmed: 31633781
+bases trimmed due to adapters: 1228053238
+reads with polyX in 3' end: 2681895
+bases trimmed in polyX tail: 51146965
+
+Duplication rate: 12.1557%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_fastp.json
+HTML report: /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_fastp.html
+
+fastp --in1 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq//GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_1.fq.gz --in2 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq//GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_2.fq.gz --out1 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_r1.fq.gz --out2 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_r2.fq.gz --unpaired1 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/failed/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_unprd.fq.gz --unpaired2 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/failed/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_unprd.fq.gz --failed_out /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/failed/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_fail.fq.gz -h /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_fastp.html -j /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881E_CKDL210018111-1a-5UDI225-AK7549_HH72GDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 1873 seconds
+Read1 before filtering:
+total reads: 129546871
+total bases: 19432030650
+Q20 bases: 18564701115(95.5366%)
+Q30 bases: 17464986927(89.8773%)
+
+Read2 before filtering:
+total reads: 129546871
+total bases: 19432030650
+Q20 bases: 18033398535(92.8024%)
+Q30 bases: 16131094581(83.0129%)
+
+Read1 after filtering:
+total reads: 105578801
+total bases: 15214481734
+Q20 bases: 14763129690(97.0334%)
+Q30 bases: 14015660399(92.1205%)
+
+Read2 aftering filtering:
+total reads: 105578801
+total bases: 15210923991
+Q20 bases: 14488718541(95.2521%)
+Q30 bases: 13341707779(87.7114%)
+
+Filtering result:
+reads passed filter: 211157602
+reads failed due to low quality: 6580320
+reads failed due to too many N: 41308
+reads failed due to too short: 35911594
+reads failed due to low complexity: 5402918
+reads with adapter trimmed: 45361344
+bases trimmed due to adapters: 1791359620
+reads with polyX in 3' end: 3101904
+bases trimmed in polyX tail: 57196232
+
+Duplication rate: 10.8505%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_fastp.json
+HTML report: /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_fastp.html
+
+fastp --in1 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq//GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_1.fq.gz --in2 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/shotgun_raw_fq//GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_2.fq.gz --out1 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_r1.fq.gz --out2 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_r2.fq.gz --unpaired1 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/failed/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_unprd.fq.gz --unpaired2 /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/failed/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_unprd.fq.gz --failed_out /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/failed/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_fail.fq.gz -h /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_fastp.html -j /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1/GyC0881D_CKDL210018111-1a-AK9143-AK7533_HH72GDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 2300 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/fq_fp1
+[INFO   ]           fastp : Found 2 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : ../pire_ssl_data_processing/fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : ../pire_ssl_data_processing/fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

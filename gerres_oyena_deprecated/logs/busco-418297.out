@@ -1,0 +1,54 @@
+INFO:	***** Start a BUSCO v5.0.0 analysis, current time: 09/22/2021 11:11:24 *****
+INFO:	Configuring BUSCO with local environment
+INFO:	Mode is genome
+INFO:	Input file is /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/SPAdes_GyC0881D_contam_R1R2_noIsolate_covAUTO/scaffolds.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
+INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
+INFO:	Running 1 job(s) on metaeuk, starting at 09/22/2021 11:11:34
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 09/22/2021 11:22:19
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2184 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3276 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 09/22/2021 11:23:30
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 767 job(s) on hmmsearch, starting at 09/22/2021 11:46:19
+INFO:	[hmmsearch]	77 of 767 task(s) completed
+INFO:	[hmmsearch]	154 of 767 task(s) completed
+INFO:	[hmmsearch]	307 of 767 task(s) completed
+INFO:	[hmmsearch]	384 of 767 task(s) completed
+INFO:	[hmmsearch]	461 of 767 task(s) completed
+INFO:	[hmmsearch]	537 of 767 task(s) completed
+INFO:	[hmmsearch]	614 of 767 task(s) completed
+INFO:	[hmmsearch]	691 of 767 task(s) completed
+INFO:	[hmmsearch]	767 of 767 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:79.7%[S:79.1%,D:0.6%],F:8.7%,M:11.6%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:79.7%[S:79.1%,D:0.6%],F:8.7%,M:11.6%,n:3640    |
+	|2901	Complete BUSCOs (C)                       |
+	|2878	Complete and single-copy BUSCOs (S)       |
+	|23	Complete and duplicated BUSCOs (D)        |
+	|315	Fragmented BUSCOs (F)                     |
+	|424	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 2235 seconds
+INFO:	Results written in /home/jwhal002/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/busco_scaffolds_results-SPAdes_GyC0881D_contam_R1R2_noIsolate_covAUTO
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+

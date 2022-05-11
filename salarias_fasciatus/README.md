@@ -1,3 +1,4 @@
+
 # Sfa Shotgun Data Processing Log -SSL data
 
 copy and paste this into a new species dir and fill in as steps are accomplished.
@@ -461,4 +462,10 @@ Used Betancour et al. 2017 (All Blenniiformes)
 
 ---
 
-**NOTE:** Sfa had a genome available at GenBank. We download it and mapped our read to chromosome 1 (to speed up the process)
+**NOTE:** Sfa has a genome available in GenBank. We downloaded it and mapped our reads to chromosome 1 (to speed up the process) in mkBAM. 
+After viewing the BAMs files and published genome in IGV, we observe consistent fixed differences between these. 
+Later, the mitochondrial genome was extracted using NOVOPlasty and difference of 0.5% was calculated between published and assembled genomes. 
+
+This difference represents population divergence but is safely within species boundaries. We could not find the location where the sample was collected for the published genome but authors and their affiliations (and perhaps the sample itself) are from Japan.
+
+**Moving forward with our own assembly to develop probes**

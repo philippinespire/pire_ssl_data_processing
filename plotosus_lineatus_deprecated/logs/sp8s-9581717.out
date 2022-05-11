@@ -1,0 +1,127 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/20.11
+
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1_clmparray_fp2/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_clmp.fp2_r1.fq.gz	--pe1-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1_clmparray_fp2/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_clmp.fp2_r2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/jbald004	--cov-cutoff	off	-o	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.9
+  OS: Linux-4.4.262-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two
+
+Output dir: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1_clmparray_fp2/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1_clmparray_fp2/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77, 99]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /scratch-lustre/jbald004
+  Threads: 32
+  Memory limit (in Gb): 750
+
+
+======= SPAdes pipeline started. Log can be found here: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate/spades.log
+
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1_clmparray_fp2/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_clmp.fp2_r1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1_clmparray_fp2/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_clmp.fp2_r2.fq.gz: max reads length: 150
+
+Reads length: 150
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /opt/conda/bin/spades-hammer /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate/corrected/configs/config.info
+
+  0:00:00.000     1M / 12M   INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.032     1M / 12M   INFO    General                 (main.cpp                  :  76)   Loading config from /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate/corrected/configs/config.info
+  0:00:00.042     1M / 12M   INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 32
+  0:00:00.042     1M / 12M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 750 Gb
+  0:00:00.042     1M / 12M   INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.042     1M / 12M   INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.042     1M / 12M   INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.042     1M / 12M   INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.045     1M / 12M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 16 files using 32 threads. This might take a while.
+  0:00:00.049     1M / 12M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 50000
+  0:00:00.055     1M / 12M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 7.8125 Gb
+  0:00:00.058     1M / 12M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 4194304
+  0:00:00.287    19G / 19G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1_clmparray_fp2/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_clmp.fp2_r1.fq.gz
+  0:00:57.721    19G / 30G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 7597956 reads
+  0:01:52.042    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 15263076 reads
+  0:02:45.886    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 23052474 reads
+  0:03:39.240    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 30720959 reads
+  0:04:34.570    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 38488989 reads
+  0:05:32.913    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 46280882 reads
+  0:06:29.902    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 54081298 reads
+  0:07:29.177    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 61787692 reads
+  0:08:26.163    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 69511275 reads
+  0:09:23.481    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 77192190 reads
+  0:10:17.049    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 84751601 reads
+  0:11:13.173    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 92383293 reads
+  0:17:21.720    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 138694075 reads
+  0:21:49.514    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/fq_fp1_clmparray_fp2/PlC0351F_CKDL210013395-1a-AK9144-AK7549_HF33GDSX2_L4_clmp.fp2_r2.fq.gz
+  0:36:43.525    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 271723580 reads
+  0:39:06.769    27G / 31G   ERROR   General                 (kmer_splitter.hpp         : 150)   I/O error! Incomplete write! Reason: No space left on device. Error code: 28
+
+
+== Error ==  system call for: "['/opt/conda/bin/spades-hammer', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate/corrected/configs/config.info']" finished abnormally, OS return value: 28
+
+In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+or report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.
+
+SPAdes log can be found here: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate/spades.log
+
+Thank you for using SPAdes!
+
+Running QUAST Now
+
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate/contigs.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate/scaffolds.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/SPAdes_PlC0351F_contam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.tsv': No such file or directory

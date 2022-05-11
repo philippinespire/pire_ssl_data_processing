@@ -1,0 +1,45 @@
+fatal: could not read Username for 'https://github.com': No such device or address
+The following paths are ignored by one of your .gitignore files:
+gerres_oyena/SPAdes_GyC0881D_contam_R1R2_noIsolate
+gerres_oyena/SPAdes_GyC0881D_contam_R1R2_noIsolate_covAUTO
+gerres_oyena/SPAdes_GyC0881E_contam_R1R2_noIsolate
+gerres_oyena/SPAdes_GyC0881E_decontam_R1R2_noIsolate
+gerres_oyena/SPAdes_allLibs_contam_R1R2_noIsolate
+gerres_oyena/busco_contigs_results-SPAdes_GyC0881D_contam_R1R2_noIsolate
+gerres_oyena/busco_contigs_results-SPAdes_GyC0881D_contam_R1R2_noIsolate_covAUTO
+gerres_oyena/busco_contigs_results-SPAdes_GyC0881E_contam_R1R2_noIsolate
+gerres_oyena/busco_contigs_results-SPAdes_GyC0881E_decontam_R1R2_noIsolate
+gerres_oyena/busco_contigs_results-SPAdes_allLibs_contam_R1R2_noIsolate
+gerres_oyena/busco_downloads
+gerres_oyena/busco_scaffolds_results-SPAdes_GyC0881D_contam_R1R2_noIsolate
+gerres_oyena/busco_scaffolds_results-SPAdes_GyC0881D_contam_R1R2_noIsolate_covAUTO
+gerres_oyena/busco_scaffolds_results-SPAdes_GyC0881E_contam_R1R2_noIsolate
+gerres_oyena/busco_scaffolds_results-SPAdes_GyC0881E_decontam_R1R2_noIsolate
+gerres_oyena/busco_scaffolds_results-SPAdes_allLibs_contam_R1R2_noIsolate
+Use -f if you really want to add them.
+[main 2edf908c] update
+ Committer: jwhal002 <jwhal002@d5-w6420b-03.ib.cluster>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 11 files changed, 5332 insertions(+), 2 deletions(-)
+ create mode 100755 gerres_oyena/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report.html
+ create mode 100644 gerres_oyena/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report_data/multiqc.log
+ create mode 100644 gerres_oyena/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report_data/multiqc_data.json
+ create mode 100644 gerres_oyena/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report_data/multiqc_fastq_screen.txt
+ create mode 100644 gerres_oyena/fq_fp1_clmparray_fp2_fqscrn/fqsrn_report_data/multiqc_sources.txt
+ create mode 100755 gerres_oyena/logs/mqc-509972.out
+ rename gerres_oyena/probe_design/{ => files_for_ArborSci}/Goy_scaffolds_GyC0881E_contam_R1R2_noIsolate_great10000_per10000_all.bed (100%)
+ rename gerres_oyena/probe_design/{ => files_for_ArborSci}/closest_relative_genomes_Gerres_oyena.txt (100%)
+ create mode 100755 gerres_oyena/runGIT.bash
+ create mode 100755 gerres_oyena/slurm-535839.out
+fatal: could not read Username for 'https://github.com': No such device or address

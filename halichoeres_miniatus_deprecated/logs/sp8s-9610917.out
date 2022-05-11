@@ -1,0 +1,30 @@
+ls: cannot access /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/fq_fp1_clmparray_fp2/*1.fq.gz: No such file or directory
+ls: cannot access /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/fq_fp1_clmparray_fp2/*1.fq.gz: No such file or directory
+ls: cannot access /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/fq_fp1_clmparray_fp2/*2.fq.gz: No such file or directory
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+SPAdes genome assembler v3.15.2
+
+Usage: spades.py [options] -o <output_dir>
+spades.py: error: argument --pe1-1: expected 1 argument
+
+Running QUAST Now
+
+ERROR! File not found (contigs): /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/SPAdes__contam_R1R2_noIsolate/contigs.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! File not found (contigs): /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/SPAdes__contam_R1R2_noIsolate/scaffolds.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+cp: cannot stat `/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/SPAdes__contam_R1R2_noIsolate/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `/home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichores_miniatus/SPAdes__contam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.tsv': No such file or directory
+/var/spool/slurmd/job9610917/slurm_script: line 147: SPAdes__contam_R1R2_noIsolate/resource_usage_m.tsv: No such file or directory
+/var/spool/slurmd/job9610917/slurm_script: line 149: SPAdes__contam_R1R2_noIsolate/resource_usage_g.tsv: No such file or directory
+/var/spool/slurmd/job9610917/slurm_script: line 151: SPAdes__contam_R1R2_noIsolate/resource_usage_k.tsv: No such file or directory

@@ -1,0 +1,58 @@
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 132092367
+total bases: 19425166691
+Q20 bases: 18796581761(96.7641%)
+Q30 bases: 17791681141(91.5909%)
+
+Read2 before filtering:
+total reads: 132092367
+total bases: 19416073001
+Q20 bases: 18226710915(93.8743%)
+Q30 bases: 16539413912(85.1841%)
+
+Read1 after filtering:
+total reads: 113208100
+total bases: 16963107210
+Q20 bases: 16626806022(98.0175%)
+Q30 bases: 15894442189(93.7001%)
+
+Read2 aftering filtering:
+total reads: 113208100
+total bases: 16957748857
+Q20 bases: 16217062522(95.6322%)
+Q30 bases: 14856825860(87.6108%)
+
+Filtering result:
+reads passed filter: 226416200
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 37768534
+reads with adapter trimmed: 787174
+bases trimmed due to adapters: 17508776
+reads corrected by overlap analysis: 7982401
+bases corrected by overlap analysis: 16036519
+
+Duplication rate: 3.64917%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmparray_fp2/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmparray_fp2/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmparray/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.r1.fq.gz --in2 fq_fp1_clmparray/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.r2.fq.gz --out1 fq_fp1_clmparray_fp2/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmparray_fp2/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmparray_fp2/failed/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmparray_fp2/failed/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmparray_fp2/failed/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.fp2_fail.fq.gz -h fq_fp1_clmparray_fp2/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.r1r2_fastp.html -j fq_fp1_clmparray_fp2/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_clmp.r1r2_fastp.json --detect_adapter_for_pe --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 1984 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1_clmparray_fp2
+[INFO   ]           fastp : Found 1 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1_clmparray_fp2/2nd_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1_clmparray_fp2/2nd_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

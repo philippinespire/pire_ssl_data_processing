@@ -1,0 +1,160 @@
+Read1 before filtering:
+total reads: 184203085
+total bases: 27630462750
+Q20 bases: 26392760915(95.5205%)
+Q30 bases: 25036202930(90.6109%)
+
+Read2 before filtering:
+total reads: 184203085
+total bases: 27630462750
+Q20 bases: 25554417800(92.4864%)
+Q30 bases: 23364781908(84.5617%)
+
+Read1 after filtering:
+total reads: 154890969
+total bases: 22814973279
+Q20 bases: 22095886838(96.8482%)
+Q30 bases: 21114246596(92.5456%)
+
+Read2 aftering filtering:
+total reads: 154890969
+total bases: 22808432446
+Q20 bases: 21857667353(95.8315%)
+Q30 bases: 20532647049(90.0222%)
+
+Filtering result:
+reads passed filter: 309781938
+reads failed due to low quality: 16775054
+reads failed due to too many N: 49354
+reads failed due to too short: 16116704
+reads failed due to low complexity: 25683120
+reads with adapter trimmed: 36757201
+bases trimmed due to adapters: 1433693688
+reads with polyX in 3' end: 12188740
+bases trimmed in polyX tail: 157862746
+
+Duplication rate: 22.4051%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: ../fq_fp1/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_fastp.json
+HTML report: ../fq_fp1/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_fastp.html
+
+fastp --in1 ./HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_1.fq.gz --in2 ./HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_2.fq.gz --out1 ../fq_fp1/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_r1.fq.gz --out2 ../fq_fp1/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_r2.fq.gz --unpaired1 ../fq_fp1/failed/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_unprd.fq.gz --unpaired2 ../fq_fp1/failed/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_unprd.fq.gz --failed_out ../fq_fp1/failed/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_fail.fq.gz -h ../fq_fp1/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_fastp.html -j ../fq_fp1/HqC0021A_CKDL210013395-1a-5UDI301-7UDI304_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3497 seconds
+Read1 before filtering:
+total reads: 209869078
+total bases: 31480361700
+Q20 bases: 30104922876(95.6308%)
+Q30 bases: 28630521423(90.9472%)
+
+Read2 before filtering:
+total reads: 209869078
+total bases: 31480361700
+Q20 bases: 29397464030(93.3835%)
+Q30 bases: 27143326013(86.223%)
+
+Read1 after filtering:
+total reads: 189190217
+total bases: 27970237134
+Q20 bases: 27113318142(96.9363%)
+Q30 bases: 25938710765(92.7368%)
+
+Read2 aftering filtering:
+total reads: 189190217
+total bases: 27964371721
+Q20 bases: 26792424175(95.8091%)
+Q30 bases: 25150972753(89.9393%)
+
+Filtering result:
+reads passed filter: 378380434
+reads failed due to low quality: 15224414
+reads failed due to too many N: 60892
+reads failed due to too short: 10099060
+reads failed due to low complexity: 15973356
+reads with adapter trimmed: 25893542
+bases trimmed due to adapters: 1089271123
+reads with polyX in 3' end: 9388832
+bases trimmed in polyX tail: 127850293
+
+Duplication rate: 31.0122%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: ../fq_fp1/HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_fastp.json
+HTML report: ../fq_fp1/HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_fastp.html
+
+fastp --in1 ./HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_1.fq.gz --in2 ./HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_2.fq.gz --out1 ../fq_fp1/HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_r1.fq.gz --out2 ../fq_fp1/HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_r2.fq.gz --unpaired1 ../fq_fp1/failed/HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_unprd.fq.gz --unpaired2 ../fq_fp1/failed/HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_unprd.fq.gz --failed_out ../fq_fp1/failed/HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_fail.fq.gz -h ../fq_fp1/HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_fastp.html -j ../fq_fp1/HqC0021C_CKDL210013395-1a-AK7078-AK7096_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4251 seconds
+Read1 before filtering:
+total reads: 249784293
+total bases: 37467643950
+Q20 bases: 35814345372(95.5874%)
+Q30 bases: 34055116737(90.8921%)
+
+Read2 before filtering:
+total reads: 249784293
+total bases: 37467643950
+Q20 bases: 34961877498(93.3122%)
+Q30 bases: 32241484753(86.0515%)
+
+Read1 after filtering:
+total reads: 220768249
+total bases: 32636067668
+Q20 bases: 31645341078(96.9643%)
+Q30 bases: 30286601858(92.801%)
+
+Read2 aftering filtering:
+total reads: 220768249
+total bases: 32630631891
+Q20 bases: 31338236064(96.0393%)
+Q30 bases: 29507974083(90.4303%)
+
+Filtering result:
+reads passed filter: 441536498
+reads failed due to low quality: 19282688
+reads failed due to too many N: 70842
+reads failed due to too short: 14127020
+reads failed due to low complexity: 24551538
+reads with adapter trimmed: 35681407
+bases trimmed due to adapters: 1440768557
+reads with polyX in 3' end: 14028587
+bases trimmed in polyX tail: 180555877
+
+Duplication rate: 36.8566%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: ../fq_fp1/HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_fastp.json
+HTML report: ../fq_fp1/HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_fastp.html
+
+fastp --in1 ./HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_1.fq.gz --in2 ./HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_2.fq.gz --out1 ../fq_fp1/HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_r1.fq.gz --out2 ../fq_fp1/HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_r2.fq.gz --unpaired1 ../fq_fp1/failed/HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_unprd.fq.gz --unpaired2 ../fq_fp1/failed/HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_unprd.fq.gz --failed_out ../fq_fp1/failed/HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_fail.fq.gz -h ../fq_fp1/HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_fastp.html -j ../fq_fp1/HqC0021B_CKDL210013395-1a-AK7758-AK7099_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 5051 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.10.1
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus/fq_fp1
+Traceback (most recent call last):
+  File "/opt/conda/bin/multiqc", line 6, in <module>
+    from multiqc.__main__ import multiqc
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/__main__.py", line 53, in <module>
+    multiqc.run_cli(prog_name="multiqc")
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1137, in __call__
+    return self.main(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1062, in main
+    rv = self.invoke(ctx)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/opt/conda/lib/python3.7/site-packages/click/core.py", line 763, in invoke
+    return __callback(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 261, in run_cli
+    kwargs=kwargs,
+  File "/opt/conda/lib/python3.7/site-packages/multiqc/multiqc.py", line 562, in run
+    template_mod = config.avail_templates[config.template].load()
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2446, in load
+    self.require(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2469, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File "/opt/conda/lib/python3.7/site-packages/pkg_resources/__init__.py", line 775, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (idna 3.2 (/opt/conda/lib/python3.7/site-packages), Requirement.parse('idna<3,>=2.5'), {'requests'})

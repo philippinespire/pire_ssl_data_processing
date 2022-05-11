@@ -1,0 +1,181 @@
+
+Running QUAST Now
+
+/opt/conda/bin/quast.py /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/contigs.fasta -o /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report --est-ref-size 635000000 -s --eukaryote --large
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-4.15.0-139-generic-x86_64-with-fedora-32-Thirty_Two (linux_64)
+  Python version: 3.7.9
+  CPUs number: 40
+
+Started: 2021-10-15 10:24:52
+
+Logging to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/quast.log
+NOTICE: Output directory already exists and looks like a QUAST output dir. Existing results can be reused (e.g. previously generated alignments)!
+NOTICE: Maximum number of threads is set to 10 (use --threads option to set it manually)
+
+CWD: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus
+Main parameters: 
+  MODE: large, threads: 10, eukaryotic: true, split scaffolds: true, minimum contig length: 3000, \
+  minimum alignment length: 500, ambiguity: one, threshold for extensive misassembly size: 7000
+
+Contigs:
+  Pre-processing...
+  /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/contigs.fasta ==> contigs
+    breaking scaffolds into contigs:
+      WARNING: nothing was broken, skipping 'contigs broken' from further analysis
+
+2021-10-15 10:25:40
+Running Basic statistics processor...
+  Estimated reference length = 635000000
+  Contig files: 
+    contigs
+  Calculating N50 and L50...
+    contigs, N50 = 8579, L50 = 16761, Total length = 490610142, GC % = 43.91, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/GC_content_plot.pdf
+  Drawing contigs GC content plot...
+    saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/contigs_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 1x)...
+    saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/coverage_histogram.pdf
+  Drawing contigs coverage histogram (bin size: 1x)...
+    saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/basic_stats/contigs_coverage_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2021-10-15 10:26:27
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating Icarus viewers...
+  2 of 2: Creating PDF with all tables and plots...
+Done
+
+2021-10-15 10:26:34
+RESULTS:
+  Text versions of total report are saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/report.html
+  PDF version (tables and plots) is saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/report.pdf
+  Icarus (contig browser) is saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/icarus.html
+  Log is saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_contigs_report/quast.log
+
+Finished: 2021-10-15 10:26:34
+Elapsed time: 0:01:42.684326
+NOTICEs: 3; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
+/opt/conda/bin/quast.py /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/scaffolds.fasta -o /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_scaffolds_report --est-ref-size 635000000 -s --eukaryote --large
+
+Version: 5.0.2
+
+System information:
+  OS: Linux-4.15.0-139-generic-x86_64-with-fedora-32-Thirty_Two (linux_64)
+  Python version: 3.7.9
+  CPUs number: 40
+
+Started: 2021-10-15 10:26:36
+
+Logging to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_scaffolds_report/quast.log
+NOTICE: Output directory already exists and looks like a QUAST output dir. Existing results can be reused (e.g. previously generated alignments)!
+NOTICE: Maximum number of threads is set to 10 (use --threads option to set it manually)
+
+CWD: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus
+Main parameters: 
+  MODE: large, threads: 10, eukaryotic: true, split scaffolds: true, minimum contig length: 3000, \
+  minimum alignment length: 500, ambiguity: one, threshold for extensive misassembly size: 7000
+
+Contigs:
+  Pre-processing...
+
+[Errno 5] Input/output error: '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_scaffolds_report/quast_corrected_input/scaffolds.fasta'
+Traceback (most recent call last):
+  File "/opt/conda/bin/quast.py", line 307, in <module>
+    return_code = main(sys.argv[1:])
+  File "/opt/conda/bin/quast.py", line 107, in main
+    contigs_fpaths, old_contigs_fpaths = qutils.correct_contigs(contigs_fpaths, corrected_dirpath, labels, reporting)
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/qutils.py", line 180, in correct_contigs
+    old_fpaths, corr_fpaths, broken_scaffold_fpaths, logs, is_fatal_error = run_parallel(parallel_correct_contigs, parallel_run_args, n_jobs)
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/qutils.py", line 1065, in run_parallel
+    results_tuples = Parallel(**parallel_args)(delayed(_fn)(*args) for args in fn_args)
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 1041, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 859, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 777, in _dispatch
+    job = self._backend.apply_async(batch, callback=cb)
+  File "/opt/conda/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 208, in apply_async
+    result = ImmediateResult(func)
+  File "/opt/conda/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 572, in __init__
+    self.results = batch()
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 263, in __call__
+    for func, args, kwargs in self.items]
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 263, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/qutils.py", line 248, in parallel_correct_contigs
+    elif not correct_fasta(contigs_fpath, qconfig.min_contig, corr_fpath):
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/qutils.py", line 133, in correct_fasta
+    fastaparser.write_fasta(corrected_fpath, modified_fasta_entries)
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/fastaparser.py", line 261, in write_fasta
+    outfile = open(fpath, mode)
+OSError: [Errno 5] Input/output error: '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_scaffolds_report/quast_corrected_input/scaffolds.fasta'
+--- Logging error ---
+Traceback (most recent call last):
+  File "/opt/conda/bin/quast.py", line 307, in <module>
+    return_code = main(sys.argv[1:])
+  File "/opt/conda/bin/quast.py", line 107, in main
+    contigs_fpaths, old_contigs_fpaths = qutils.correct_contigs(contigs_fpaths, corrected_dirpath, labels, reporting)
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/qutils.py", line 180, in correct_contigs
+    old_fpaths, corr_fpaths, broken_scaffold_fpaths, logs, is_fatal_error = run_parallel(parallel_correct_contigs, parallel_run_args, n_jobs)
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/qutils.py", line 1065, in run_parallel
+    results_tuples = Parallel(**parallel_args)(delayed(_fn)(*args) for args in fn_args)
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 1041, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 859, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 777, in _dispatch
+    job = self._backend.apply_async(batch, callback=cb)
+  File "/opt/conda/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 208, in apply_async
+    result = ImmediateResult(func)
+  File "/opt/conda/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 572, in __init__
+    self.results = batch()
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 263, in __call__
+    for func, args, kwargs in self.items]
+  File "/opt/conda/lib/python3.7/site-packages/joblib/parallel.py", line 263, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/qutils.py", line 248, in parallel_correct_contigs
+    elif not correct_fasta(contigs_fpath, qconfig.min_contig, corr_fpath):
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/qutils.py", line 133, in correct_fasta
+    fastaparser.write_fasta(corrected_fpath, modified_fasta_entries)
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/fastaparser.py", line 261, in write_fasta
+    outfile = open(fpath, mode)
+OSError: [Errno 5] Input/output error: '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus/SPAdes_SfC0282A_contam_R1R2_noIsolate/quast_scaffolds_report/quast_corrected_input/scaffolds.fasta'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/logging/__init__.py", line 1029, in emit
+    self.flush()
+  File "/opt/conda/lib/python3.7/logging/__init__.py", line 1009, in flush
+    self.stream.flush()
+OSError: [Errno 5] Input/output error
+Call stack:
+  File "/opt/conda/bin/quast.py", line 311, in <module>
+    logger.exception(exc_value)
+  File "/opt/conda/lib/python3.7/site-packages/quast_libs/log.py", line 204, in exception
+    self._logger.error('')
+Message: ''
+Arguments: ()
+ERROR! exception caught!
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.

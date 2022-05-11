@@ -1,0 +1,53 @@
+Read1 before filtering:
+total reads: 189219510
+total bases: 28382926500
+Q20 bases: 27128791126(95.5814%)
+Q30 bases: 25505172526(89.861%)
+
+Read2 before filtering:
+total reads: 189219510
+total bases: 28382926500
+Q20 bases: 26031625499(91.7158%)
+Q30 bases: 23014625150(81.0862%)
+
+Read1 after filtering:
+total reads: 147838971
+total bases: 21638690764
+Q20 bases: 20984629829(96.9774%)
+Q30 bases: 19901642865(91.9725%)
+
+Read2 aftering filtering:
+total reads: 147838971
+total bases: 21628529227
+Q20 bases: 20382033612(94.2368%)
+Q30 bases: 18545582743(85.7459%)
+
+Filtering result:
+reads passed filter: 295677942
+reads failed due to low quality: 10400660
+reads failed due to too many N: 58576
+reads failed due to too short: 62938738
+reads failed due to low complexity: 9363104
+reads with adapter trimmed: 56253645
+bases trimmed due to adapters: 2159360249
+reads with polyX in 3' end: 4738207
+bases trimmed in polyX tail: 92647987
+
+Duplication rate: 12.4062%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: ../fq_fp1/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_fastp.json
+HTML report: ../fq_fp1/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_fastp.html
+
+fastp --in1 ./HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_1.fq.gz --in2 ./HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_2.fq.gz --out1 ../fq_fp1/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_r1.fq.gz --out2 ../fq_fp1/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_r2.fq.gz --unpaired1 ../fq_fp1/failed/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_unprd.fq.gz --unpaired2 ../fq_fp1/failed/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_unprd.fq.gz --failed_out ../fq_fp1/failed/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_fail.fq.gz -h ../fq_fp1/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_fastp.html -j ../fq_fp1/HmC0451A_CKDL210018111-1a-5UDI301-7UDI304_HH72GDSX2_L1_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3651 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/hmi/fq_fp1
+[INFO   ]           fastp : Found 1 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : ../fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : ../fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete
