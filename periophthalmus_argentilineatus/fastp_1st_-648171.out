@@ -1,0 +1,142 @@
+
+Read1 before filtering:
+total reads: 194211450
+total bases: 29131717500
+Q20 bases: 28401414855(97.4931%)
+Q30 bases: 27367750744(93.9449%)
+
+Read2 before filtering:
+total reads: 194211450
+total bases: 29131717500
+Q20 bases: 27957208046(95.9683%)
+Q30 bases: 26231927492(90.0459%)
+
+Read1 after filtering:
+total reads: 190794522
+total bases: 28105899830
+Q20 bases: 27622192114(98.279%)
+Q30 bases: 26690202316(94.963%)
+
+Read2 aftering filtering:
+total reads: 190794522
+total bases: 28095992523
+Q20 bases: 27269678714(97.059%)
+Q30 bases: 25670667889(91.3677%)
+
+Filtering result:
+reads passed filter: 381589044
+reads failed due to low quality: 5992486
+reads failed due to too many N: 29340
+reads failed due to too short: 618804
+reads failed due to low complexity: 193226
+reads with adapter trimmed: 19618599
+bases trimmed due to adapters: 957963665
+reads with polyX in 3' end: 3290622
+bases trimmed in polyX tail: 48366459
+
+Duplication rate: 29.2338%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Par-CPas_076C_L3_fastp.json
+HTML report: fq_fp1/Par-CPas_076C_L3_fastp.html
+
+fastp --in1 shotgun_raw_fq//Par-CPas_076C_L3_1.fq.gz --in2 shotgun_raw_fq//Par-CPas_076C_L3_2.fq.gz --out1 fq_fp1/Par-CPas_076C_L3_r1.fq.gz --out2 fq_fp1/Par-CPas_076C_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Par-CPas_076C_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Par-CPas_076C_L3_unprd.fq.gz --failed_out fq_fp1/failed/Par-CPas_076C_L3_fail.fq.gz -h fq_fp1/Par-CPas_076C_L3_fastp.html -j fq_fp1/Par-CPas_076C_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4010 seconds
+Read1 before filtering:
+total reads: 208188329
+total bases: 31228249350
+Q20 bases: 30447621567(97.5003%)
+Q30 bases: 29329936618(93.9212%)
+
+Read2 before filtering:
+total reads: 208188329
+total bases: 31228249350
+Q20 bases: 29942592759(95.883%)
+Q30 bases: 28058573968(89.85%)
+
+Read1 after filtering:
+total reads: 204343466
+total bases: 30122293609
+Q20 bases: 29599395900(98.2641%)
+Q30 bases: 28589839540(94.9126%)
+
+Read2 aftering filtering:
+total reads: 204343466
+total bases: 30111924166
+Q20 bases: 29207114495(96.9952%)
+Q30 bases: 27461289373(91.1974%)
+
+Filtering result:
+reads passed filter: 408686932
+reads failed due to low quality: 6580534
+reads failed due to too many N: 31636
+reads failed due to too short: 826034
+reads failed due to low complexity: 251522
+reads with adapter trimmed: 20105938
+bases trimmed due to adapters: 983960857
+reads with polyX in 3' end: 3531103
+bases trimmed in polyX tail: 53585010
+
+Duplication rate: 32.0943%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: fq_fp1/Par-CPas_076A_L3_fastp.json
+HTML report: fq_fp1/Par-CPas_076A_L3_fastp.html
+
+fastp --in1 shotgun_raw_fq//Par-CPas_076A_L3_1.fq.gz --in2 shotgun_raw_fq//Par-CPas_076A_L3_2.fq.gz --out1 fq_fp1/Par-CPas_076A_L3_r1.fq.gz --out2 fq_fp1/Par-CPas_076A_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Par-CPas_076A_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Par-CPas_076A_L3_unprd.fq.gz --failed_out fq_fp1/failed/Par-CPas_076A_L3_fail.fq.gz -h fq_fp1/Par-CPas_076A_L3_fastp.html -j fq_fp1/Par-CPas_076A_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4324 seconds
+Read1 before filtering:
+total reads: 229642822
+total bases: 34446423300
+Q20 bases: 33539530229(97.3672%)
+Q30 bases: 32288786198(93.7363%)
+
+Read2 before filtering:
+total reads: 229642822
+total bases: 34446423300
+Q20 bases: 33039815110(95.9165%)
+Q30 bases: 31024833083(90.0669%)
+
+Read1 after filtering:
+total reads: 225181723
+total bases: 33017806007
+Q20 bases: 32433958055(98.2317%)
+Q30 bases: 31320191686(94.8585%)
+
+Read2 aftering filtering:
+total reads: 225181723
+total bases: 33007406971
+Q20 bases: 32038458558(97.0645%)
+Q30 bases: 30185713531(91.4513%)
+
+Filtering result:
+reads passed filter: 450363446
+reads failed due to low quality: 7567842
+reads failed due to too many N: 34724
+reads failed due to too short: 1075858
+reads failed due to low complexity: 243774
+reads with adapter trimmed: 29834448
+bases trimmed due to adapters: 1422775094
+reads with polyX in 3' end: 3820606
+bases trimmed in polyX tail: 54585660
+
+Duplication rate: 28.3242%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: fq_fp1/Par-CPas_076B_L3_fastp.json
+HTML report: fq_fp1/Par-CPas_076B_L3_fastp.html
+
+fastp --in1 shotgun_raw_fq//Par-CPas_076B_L3_1.fq.gz --in2 shotgun_raw_fq//Par-CPas_076B_L3_2.fq.gz --out1 fq_fp1/Par-CPas_076B_L3_r1.fq.gz --out2 fq_fp1/Par-CPas_076B_L3_r2.fq.gz --unpaired1 fq_fp1/failed/Par-CPas_076B_L3_unprd.fq.gz --unpaired2 fq_fp1/failed/Par-CPas_076B_L3_unprd.fq.gz --failed_out fq_fp1/failed/Par-CPas_076B_L3_fail.fq.gz -h fq_fp1/Par-CPas_076B_L3_fastp.html -j fq_fp1/Par-CPas_076B_L3_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4687 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete
