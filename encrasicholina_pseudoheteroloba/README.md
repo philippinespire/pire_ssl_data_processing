@@ -87,7 +87,7 @@ sbatch runREPAIR.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/enc
 
 ## Percent reads lost at each step
 
-->Add links to these tables once we can push again!
+[Read loss](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/encrasicholina_pseudoheteroloba/preprocess_read_change/readLoss_table.tsv) and [reads remaining](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/encrasicholina_pseudoheteroloba/preprocess_read_change/readsRemaining_table.tsv)
 
 39.6-46.4% of reads retained
 
@@ -103,13 +103,31 @@ Genomescope1 results:
 
 http://genomescope.org/analysis.php?code=LnG0WgSew2VMbAkXr6Up
 
+Genome stats for Eps from Jellyfish/GenomeScope v1.0 (run with k=21, read length=135 since we trimmed): 
+stat	|min	|max	|average	
+------	|------	|------	|------	
+Heterozygosity	|4.14483%	|4.22689%	|4.18676%	
+Genome Haploid Length	|1,140,911,740 bp	|1,149,163,333 bp	|1,145,037,537 bp	
+Model Fit	|93.2582%	|97.0717%	|95.16495 %	
+
 Genomescope2 results:
 
 http://genomescope.org/genomescope2.0/analysis.php?code=GRrkvjLqtPAQ9giDuooI
 
-[make tables]
+Genome stats for Eps from Jellyfish/GenomeScope v2.0 with the following default settings:
+* K-mer length: 21
+* Ploidy: 2
+* Max k-mer coverage: -1
+* Average k-mer coverage for polyploid genome: -1
+
+stat    |min    |max    |average
+------  |------ |------ |------
+Heterozygosity  |4.14183%      |4.28808%|      4.21496%
+Genome Haploid Length   |1,386,198,038 bp |1,405,138,860 bp |1,395,668,479 bp
+Model Fit       |60.0146%       |95.4693%       |77.742%
+
 
 v2 result is larger than v1; both are relatively large, high heterozygosity, low unique content. Maybe weird GC content has something to do with lots of repetitive sequence?
 
-Go with v1 result (~1,149,000,000)?
+Go with v1 result (~1,145,000,000) because better model fit?
 
