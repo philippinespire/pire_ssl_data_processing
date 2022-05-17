@@ -106,7 +106,7 @@ Check your raw files: given that we use paired-end sequencing, you should have o
 
 You will likely get 2 or 3 libraries (4 or 6 files total). Sgr example:
 ```sh
-ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
+ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq
 
 -rwxrwx--- 1 e1garcia carpenter         248 Jul 27 12:37 README
 -rwxrwx--- 1 e1garcia carpenter 15652747635 Jul 22 17:19 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
@@ -121,36 +121,36 @@ Make a copy of your raw files in the longterm carpenter RC dir **ONLY** if one d
 ```sh
 cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
 mkdir <species_name>
-mkdir <species_name>/shotgun_raw_fq
-cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<species_name>/shotgun_raw_fq
+mkdir <species_name>/fq
+cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<species_name>/fq
 ```
 *The RC drive is only available from the login node (you won't find it after getting a working node, i.e. `salloc`)*
 
-Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`. Transfer your raw data into `shotgun_raw_fq`  (your data will most likely be avaliable in the RC)
+Create your `species dir` and and subdirs `logs` and `fq`. Transfer your raw data into `fq`  (your data will most likely be avaliable in the RC)
 *(can take several hours)*
 
 ```sh
 cd pire_ssl_data_processing
 mkdir spratelloides_gracilis 
 mkdir spratelloides_gracilis/logs
-mkdir spratelloides_gracilis/shotgun_raw_fq
-cp <source of files> spratelloides_gracilis/shotgun_raw_fq  # scp | cp | mv
+mkdir spratelloides_gracilis/fq
+cp <source of files> spratelloides_gracilis/fq  # scp | cp | mv
 ```
 
-Now create a `README` in the `shotgun_raw_fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out from which individual(s) these sequence files came from.
+Now create a `README` in the `fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out from which individual(s) these sequence files came from.
 
 
 This information is usually provied by Sharon Magnuson in species [slack](https://app.slack.com/client/TMJJ06SH0/CMPKY5C81/thread/CQ9GAAYGY-1627263374.002300) channel
 
 ```sh
-cd spratelloides_gracilis/shotgun_raw_fq
+cd spratelloides_gracilis/fq
 nano README.md
 ```
 
 Example:
 ```sh
 RC to e1garcia
-scp <source of files> /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
+scp <source of files> /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq
 
 All 3 library sets are from the same individual: Sgr-CMvi_007_Ex1
 ```
@@ -186,8 +186,8 @@ ___
 
 ##### 1b. **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runJellyfish.sbatch) using decontaminated files**
 ```sh
-#runJellyfish.sbatch <Species 3-letter ID> <indir> <outdir> 
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmp_fp2_fqscrn_rprd" "fq_fp1_clmp_fp2_fqscrn_rprd_jfsh"
+#sbatch runJellyfish.sbatch <Species 3-letter ID> <indir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
 
 Jellyfish will create a histogram file (.hito) with kmer frequencies. 
@@ -238,7 +238,7 @@ For the most part, we obtained better assemblies using single libraries (a libra
 In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmparray_fp2` dir)  produced better results for mtDNA (mt = mitochondrial) and decontaminated (i.e. files in the `fq_fp1_clmparray_fp2_fqscrn_repaired` dir) was better for nDNA (n=nuclear). 
 
 Thus, use the contaminated files to run one assembly for each of your libraries independently and then one combining all.
-2a. **You need to be in Turing for this step.** SPAdes requires high memory nodes (only avail in Turing)
+2a. **You need to be in `turing.hpc.odu.edu` for this step.** SPAdes requires high memory nodes (only avail in Turing)
 
 ```bash
 #from wahab.hpc.odu.edu
@@ -251,7 +251,7 @@ ssh username@turing.hpc.odu.edu
 
 We produced 3 libraries (from the same individual) for the last 5 spp with ssl data resulting in 3 sets of files. Sgr example:
 ```bash
-ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq
 
 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_2.fq.gz
@@ -593,7 +593,7 @@ Before deleting files, make a copy of important files in the RC (only available 
 Example for Sgr
 ```sh
 # check for copy of raw files
-ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/
+ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq
 
 # make copy of contaminated and decontaminated files
 cp -R fq_fp1_clmparray_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/
@@ -613,11 +613,11 @@ It is a good idea to keep track of the files you are deleting
 
 An easy way to do this is to list files to be deleted, copy the info and paste it into log file tracking the files you are deleting
 ```sh
-ls -l shotgun_raw_fq/*fq.gz
+ls -l fq/*fq.gz
 # copy from the line of the command to the last file and paste it while creating the log file 
 nano deleted_files_log
 # paste
-/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq/
 -rwxr-x--- 1 e1garcia carpenter  15G Aug  2 12:12 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
 -rwxr-x--- 1 e1garcia carpenter  16G Aug  2 12:30 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_2.fq.gz
 -rwxr-x--- 1 e1garcia carpenter  13G Aug  2 12:45 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_1.fq.gz
