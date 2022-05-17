@@ -1,0 +1,141 @@
+Read1 before filtering:
+total reads: 190069693
+total bases: 28510453950
+Q20 bases: 27380043483(96.0351%)
+Q30 bases: 26151652315(91.7265%)
+
+Read2 before filtering:
+total reads: 190069693
+total bases: 28510453950
+Q20 bases: 26846539558(94.1638%)
+Q30 bases: 24883880749(87.2798%)
+
+Read1 after filtering:
+total reads: 163497116
+total bases: 24502266985
+Q20 bases: 23900063024(97.5423%)
+Q30 bases: 22960954571(93.7095%)
+
+Read2 aftering filtering:
+total reads: 163497116
+total bases: 24495598730
+Q20 bases: 23662673462(96.5997%)
+Q30 bases: 22316638262(91.1047%)
+
+Filtering result:
+reads passed filter: 326994232
+reads failed due to low quality: 12013268
+reads failed due to too many N: 54030
+reads failed due to too short: 41027962
+reads failed due to low complexity: 49894
+reads with adapter trimmed: 28405924
+bases trimmed due to adapters: 1109983511
+reads with polyX in 3' end: 8423839
+bases trimmed in polyX tail: 104254119
+
+Duplication rate: 31.446%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/failed/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 140 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3777 seconds
+Read1 before filtering:
+total reads: 215188791
+total bases: 32278318650
+Q20 bases: 31138708358(96.4694%)
+Q30 bases: 29768304215(92.2238%)
+
+Read2 before filtering:
+total reads: 215188791
+total bases: 32278318650
+Q20 bases: 30363674889(94.0683%)
+Q30 bases: 28129930744(87.1481%)
+
+Read1 after filtering:
+total reads: 189886783
+total bases: 28457730919
+Q20 bases: 27735282583(97.4613%)
+Q30 bases: 26625914965(93.563%)
+
+Read2 aftering filtering:
+total reads: 189886783
+total bases: 28448506085
+Q20 bases: 27389629834(96.2779%)
+Q30 bases: 25750660832(90.5167%)
+
+Filtering result:
+reads passed filter: 379773566
+reads failed due to low quality: 12945176
+reads failed due to too many N: 62252
+reads failed due to too short: 37542172
+reads failed due to low complexity: 54416
+reads with adapter trimmed: 24432434
+bases trimmed due to adapters: 981295221
+reads with polyX in 3' end: 7384205
+bases trimmed in polyX tail: 94826862
+
+Duplication rate: 45.9852%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/failed/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 140 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4245 seconds
+Read1 before filtering:
+total reads: 227509678
+total bases: 34126451700
+Q20 bases: 32944291642(96.5359%)
+Q30 bases: 31517941709(92.3563%)
+
+Read2 before filtering:
+total reads: 227509678
+total bases: 34126451700
+Q20 bases: 32121533409(94.125%)
+Q30 bases: 29786266451(87.282%)
+
+Read1 after filtering:
+total reads: 199539471
+total bases: 29904463887
+Q20 bases: 29143212192(97.4544%)
+Q30 bases: 27974576885(93.5465%)
+
+Read2 aftering filtering:
+total reads: 199539471
+total bases: 29896017694
+Q20 bases: 28845979319(96.4877%)
+Q30 bases: 27191878973(90.9549%)
+
+Filtering result:
+reads passed filter: 399078942
+reads failed due to low quality: 15268532
+reads failed due to too many N: 65846
+reads failed due to too short: 40546676
+reads failed due to low complexity: 59360
+reads with adapter trimmed: 27095329
+bases trimmed due to adapters: 1074218777
+reads with polyX in 3' end: 8954297
+bases trimmed in polyX tail: 108367449
+
+Duplication rate: 44.1216%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/failed/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1/SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 140 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 4554 seconds
+[WARNING]         multiqc : MultiQC Version v1.11 now available!
+[INFO   ]         multiqc : This is MultiQC v1.10.1
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_fp1
+Searching   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 18/18  [INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : spratelloides_gracilis/fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : spratelloides_gracilis/fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete
