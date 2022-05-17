@@ -11,16 +11,17 @@ export SINGULARITY_BIND=/home/e1garcia
 
 SPECIES_ID=$1
 INDIR=$2
-OUTDIR=$3
 
-mkdir $OUTDIR
+#CEB: no need for outdir, just write to the indir
+#OUTDIR=$3
 
-# Using contaminated files
-crun jellyfish count -C -m 21 -s 1000000000 -t 32 <(zcat ${INDIR}/*.fq.gz) -o ${OUTDIR}/${SPECIES_ID}_all_reads.jf &&
-crun jellyfish histo -t 32 ${OUTDIR}/${SPECIES_ID}_all_reads.jf > ${OUTDIR}/${SPECIES_ID}_all_reads.histo &&
-rm ${OUTDIR}/${SPECIES_ID}_all_reads.jf
+#mkdir $OUTDIR
 
+#crun jellyfish count -C -m 21 -s 1000000000 -t 32 <(zcat ${INDIR}/*.fq.gz) -o ${OUTDIR}/${SPECIES_ID}_all_reads.jf &&
+#crun jellyfish histo -t 32 ${OUTDIR}/${SPECIES_ID}_all_reads.jf > ${OUTDIR}/${SPECIES_ID}_all_reads.histo &&
+#rm ${OUTDIR}/${SPECIES_ID}_all_reads.jf
 
-#Using decontaminated files
-#crun jellyfish count -C -m 21 -s 1000000000 -t 10 fq_fp1_clmparray_fp2_fqscrn_repaired/*.fq.gz -o ${OUTDIR}/${SPECIES_ID}_all_reads.jf
+crun jellyfish count -C -m 21 -s 1000000000 -t 32 <(zcat ${INDIR}/*.fq.gz) -o ${INDIR}/${SPECIES_ID}_all_reads.jf &&
+crun jellyfish histo -t 32 ${INDIR}/${SPECIES_ID}_all_reads.jf > ${INDIR}/${SPECIES_ID}_all_reads.histo &&
+rm ${INDIR}/${SPECIES_ID}_all_reads.jf
 
