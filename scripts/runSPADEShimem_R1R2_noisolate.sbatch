@@ -23,6 +23,9 @@ DATATYPE=$4
 GENSIZE=$5
 PROJDIR=$6
 
+# remove trailing /
+PROJDIR=$(echo $PROJDIR | sed "s/\/$//")
+
 # Get the Library code
 if [[ "$LIBRARY" == "all" || "$LIBRARY" == "all_2libs" || "$LIBRARY" == "all_3libs" ]]; then
 	LIBCODE=allLibs
