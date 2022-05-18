@@ -22,32 +22,38 @@ LIBRARY=$3
 DATATYPE=$4
 GENSIZE=$5
 PROJDIR=$6
-FQDIR=$(echo $7 | sed 's/\/$//')
+
+# remove trailing /
+PROJDIR=$(echo $PROJDIR | sed "s/\/$//")
 
 # Get the Library code
 if [[ "$LIBRARY" == "all" || "$LIBRARY" == "all_2libs" || "$LIBRARY" == "all_3libs" ]]; then
 	LIBCODE=allLibs
 elif [[ "$LIBRARY" == "1" ]]; then
-	LIBCODE=$(ls ${PROJDIR}/${FQDIR}/*1.fq.gz | head -n1 | sed -e 's/.*\///' -e 's/_.*/\-A/')
+	LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n1 | sed -e 's/.*\///' -e 's/_.*//')
 elif [[ "$LIBRARY" == "2" ]]; then
-        LIBCODE=$(ls ${PROJDIR}/${FQDIR}/*1.fq.gz | head -n2 | tail -n1 | sed -e 's/.*\///' -e 's/_.*/\-B/')
+        LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n2 | tail -n1 | sed -e 's/.*\///' -e 's/_.*//')
 elif [[ "$LIBRARY" == "3" ]]; then
-        LIBCODE=$(ls ${PROJDIR}/${FQDIR}/*1.fq.gz | head -n3 | tail -n1 | sed -e 's/.*\///' -e 's/_.*/\-C/')
+        LIBCODE=$(ls ${PROJDIR}/fq_fp1_clmparray_fp2/*1.fq.gz | head -n3 | tail -n1 | sed -e 's/.*\///' -e 's/_.*//')
 else
 	echo -e "This script is optimize to for up to 3 libraries and can run individual or 2- 3 libraries together\nPlease enter which library(s) to process. Options: all_2libs | all_3libs | 1 | 2 | 3 \n" 
 fi
 
 # Set the output dir according to the input data
 if [[ "$DATATYPE" == "contam" ]]; then
+        FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
 	OUTDIR=SPAdes_${LIBCODE}_contam_R1R2_noIsolate
 	COVCUTOFF=off
 elif [[ "$DATATYPE" == "decontam" ]]; then
+        FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2_fqscrn_repaired
 	OUTDIR=SPAdes_${LIBCODE}_decontam_R1R2_noIsolate
 	COVCUTOFF=off
 elif [[ "$DATATYPE" == "contam_covAUTO" ]]; then
+        FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
         OUTDIR=SPAdes_${LIBCODE}_contam_R1R2_noIsolate_covAUTO
 	COVCUTOFF=auto
 elif [[ "$DATATYPE" == "decontam_covAUTO" ]]; then
+        FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2_fqscrn_repaired
         OUTDIR=SPAdes_${LIBCODE}_decontam_R1R2_noIsolate_covAUTO
 	COVCUTOFF=auto
 else
@@ -55,7 +61,7 @@ else
 fi
 
 
-#FQDIR=${PROJDIR}/${FQDIR}
+#FQDIR=${PROJDIR}/fq_fp1_clmparray_fp2
 INDIR=${PROJDIR}
 TEMPDIR=/scratch-lustre/${USERID}
 #OUTDIR=SPAdes_contam_R1R2_noIsolate
