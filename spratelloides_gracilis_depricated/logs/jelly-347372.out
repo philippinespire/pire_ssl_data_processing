@@ -1,4 +1,0 @@
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  Unsupported format
-/var/spool/slurmd/job347372/slurm_script: line 20:   313 Aborted                 (core dumped) crun jellyfish count -C -m 21 -s 1000000000 -t 10 ${INDIR}/*.fq.gz -o ${OUTDIR}/${SPECIES_ID}_all_reads.jf
-/var/spool/slurmd/job347372/slurm_script: line 21: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/jellyfish_out_contam/Sgr_all_reads.histo: No such file or directory
