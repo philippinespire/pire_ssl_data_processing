@@ -235,7 +235,7 @@ Congrats! You are now ready to assemble the genome of your species!
 
 After de novo assembler comparisons, we decided to move forward using SPADES (isolate and covcutoff flags off). 
 For the most part, we obtained better assemblies using single libraries (a library consists of one forward *r1.fq.gz and reverse file *r2.fq.gz) but in few instances using all the libraries was better.
-In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmparray_fp2` dir)  produced better results for mtDNA (mt = mitochondrial) and decontaminated (i.e. files in the `fq_fp1_clmparray_fp2_fqscrn_repaired` dir) was better for nDNA (n=nuclear). 
+In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmp_fp2` dir)  produced better results for mtDNA (mt = mitochondrial) and decontaminated (i.e. files in the `fq_fp1_clmp_fp2_fqscrn_repaired` dir) was better for nDNA (n=nuclear). 
 
 Thus, use the contaminated files to run one assembly for each of your libraries independently and then one combining all.
 2a. **You need to be in `turing.hpc.odu.edu` for this step.** SPAdes requires high memory nodes (only avail in Turing)
@@ -273,7 +273,7 @@ No changes necessary for running the first, second, thrid, or all the libraries 
 ```bash
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <library: all_2libs | all_3libs | 1 | 2 | 3> <contam | decontam> <genome size in bp> <species dir> <fq data dir>
 # do not use trailing / in paths. Example running contaminated data:
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "decontam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "fq_fp1_clmparray_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "decontam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
 
 Run 2 more assemblies with the contaminated data for the second and  third library by rreplacing the "1", with "2" and  "3". 
@@ -586,8 +586,8 @@ du -h | sort -rh > <yourspecies>_ssl_beforeDeleting_IntermFiles
 Before deleting files, make a copy of important files in the RC (only available in the login node):
 
 1. raw sequence files (this should had been done already but check again)
-2. "contaminated" files (fq_fp1_clmparray_fp2)
-3. "decontaminated" files (fq_fp1_clmparray_fp2_fqscrn_repaired)
+2. "contaminated" files (fq_fp1_clmp_fp2)
+3. "decontaminated" files (fq_fp1_clmp_fp2_fqscrn_repaired)
 4. best assembly (probably just the contigs.fasta and scaffolds.fasta for contam and decontam of best assembly)
 
 Example for Sgr
@@ -596,8 +596,8 @@ Example for Sgr
 ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq
 
 # make copy of contaminated and decontaminated files
-cp -R fq_fp1_clmparray_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/
-cp -R fq_fp1_clmparray_fp2_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/               
+cp -R fq_fp1_clmp_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/
+cp -R fq_fp1_clmp_fp2_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/               
 
 # make a copy of fasta files for best assembly (SgC0072C for Sgr)
 mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/SPAdes_SgC0072C_contam_R1R2_noIsolate
@@ -607,7 +607,7 @@ cp SPAdes_SgC0072C_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab
 ```
 
 ### Delete unneeded files
-Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from intermediate processes (Fastp1, Clumpify, and Fastq Screen; steps 0, 2, and 5). Keep files from fq_fp1_clmparray_fp2 and fq_fp1_clmparray_fp2_fqscrn_repaired for now.
+Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from intermediate processes (Fastp1, Clumpify, and Fastq Screen; steps 0, 2, and 5). Keep files from fq_fp1_clmp_fp2 and fq_fp1_clmp_fp2_fqscrn_repaired for now.
 
 It is a good idea to keep track of the files you are deleting
 
