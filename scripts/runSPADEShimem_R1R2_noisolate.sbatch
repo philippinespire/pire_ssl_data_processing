@@ -21,7 +21,7 @@ SPECIESID=$2
 LIBRARY=$3
 DATATYPE=$4
 GENSIZE=$5
-PROJDIR=$6
+PROJDIR=$(echo $6 | sed 's/\/$//')
 FQDIR=$(echo $7 | sed 's/\/$//')
 
 # Get the Library code
