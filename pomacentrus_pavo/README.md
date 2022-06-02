@@ -107,13 +107,23 @@ http://genomescope.org/analysis.php?code=W0J7SeTkKMz35DhMtrAM
 
 ~782M
 
+stat	|min	|max	|average	
+------	|------	|------	|------	
+Heterozygosity	|1.2034%	|1.21234%	|1.20787%	
+Genome Haploid Length	|747,146,143 bp	|748,154,376 bp	|747,650,260 bp	
+Model Fit	|95.9552%	|97.162%	|96.5586 %	
+
 Genomescope v2 results:
 
 http://genomescope.org/genomescope2.0/analysis.php?code=aqJsqhKkeyMtnuYSrxSL
 
 ~748M
 
-add Jellyfish results
+stat	|min	|max	|average	
+------	|------	|------	|------	
+Heterozygosity	|1.19383 %	|1.2075 %	|1.2007 %	
+Genome Haploid Length	|781,630,399 bp	|782,635,299 bp	|782132849 bp	
+Model Fit	|86.0907 %	|96.5185 %	|91.3046 %	
 
 ## Step 8. Assemble the genome using SPAdes
 
