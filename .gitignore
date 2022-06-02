@@ -41,3 +41,10 @@ probes_ann*
 pire_*_processing/
 augustus_config_dir/
 *busco_c*/
+
+# Allow these files to sync
+!*[Dd]ecode.tsv
+!multiqc_general_stats.txt
+!multiqc_fastqc.txt
+!mqc_fastp_filtered_reads_plot_1.txt
+!multiqc_fastq_screen.txt
