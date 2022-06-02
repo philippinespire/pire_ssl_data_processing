@@ -113,3 +113,57 @@ http://genomescope.org/genomescope2.0/analysis.php?code=aqJsqhKkeyMtnuYSrxSL
 
 ~748M
 
+add Jellyfish results
+
+## Step 8. Assemble the genome using SPAdes
+
+Edited the runSPAdes script (I was running from a different directory and it was expecting me to run from the species directory I think).
+
+Ran comibinations on Turing  using the following:
+
+```
+sbatch runSPADEShimem_R1R2_noisolate.sbatch "breid" "Ppa" "1" "decontam" "748000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "fq_fp1_clmp_fp2_fqscrn_repaired"
+
+sbatch runSPADEShimem_R1R2_noisolate.sbatch "breid" "Ppa" "2" "decontam" "748000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "fq_fp1_clmp_fp2_fqscrn_repaired"
+
+sbatch runSPADEShimem_R1R2_noisolate.sbatch "breid" "Ppa" "3" "decontam" "748000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "fq_fp1_clmp_fp2_fqscrn_repaired"
+
+sbatch runSPADEShimem_R1R2_noisolate.sbatch "breid" "Ppa" "all_3libs" "decontam" "748000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "fq_fp1_clmp_fp2_fqscrn_repaired"
+
+sbatch runSPADEShimem_R1R2_noisolate.sbatch "breid" "Ppa" "1" "contam" "748000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "fq_fp1_clmp_fp2"
+
+sbatch runSPADEShimem_R1R2_noisolate.sbatch "breid" "Ppa" "2" "contam" "748000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "fq_fp1_clmp_fp2"
+
+sbatch runSPADEShimem_R1R2_noisolate.sbatch "breid" "Ppa" "3" "contam" "748000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "fq_fp1_clmp_fp2"
+
+sbatch runSPADEShimem_R1R2_noisolate.sbatch "breid" "Ppa" "all_3libs" "contam" "748000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "fq_fp1_clmp_fp2"
+```
+
+Ran BUSCO using the following scripts:
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-A_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-A_contam_R1R2_noIsolate" "scaffolds"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-A_decontam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-A_decontam_R1R2_noIsolate" "scaffolds"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-B_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-B_contam_R1R2_noIsolate" "scaffolds"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-B_decontam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-B_decontam_R1R2_noIsolate" "scaffolds"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-C_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-C_contam_R1R2_noIsolate" "scaffolds"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-C_decontam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_Ppa-CPnd-C_decontam_R1R2_noIsolate" "scaffolds"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_allLibs_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_allLibs_contam_R1R2_noIsolate" "scaffolds"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_allLibs_decontam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_allLibs_decontam_R1R2_noIsolate" "scaffolds"
+```
+
+Table goes here: 
