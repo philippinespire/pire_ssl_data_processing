@@ -89,7 +89,7 @@ sbatch runREPAIR.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pom
 
 ## Proportion of reads lost
 
--> add tables when I can push!
+Executed read_calculator_ssl.sh to generate the [percent read loss](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/pomacentrus_pavo/preprocess_read_change/readLoss_table.tsv) and [percent reads remaining](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/pomacentrus_pavo/preprocess_read_change/readsRemaining_table.tsv) tables
 
 retained ~ 59.4-64.6% of reads
 
@@ -176,4 +176,27 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo" "SPAdes_allLibs_decontam_R1R2_noIsolate" "scaffolds"
 ```
 
-Table goes here: 
+QUAST + BUSCO outputs:
+
+| Species | Library    | DataType | SCAFIG    | covcutoff | genome scope v. | No. of contigs | Largest contig | Total length | % Genome size completeness | N50   | L50   | Ns per 100 kbp | BUSCO single copy |
+| ------- | ---------- | -------- | --------- | --------- | --------------- | -------------- | -------------- | ------------ | -------------------------- | ----- | ----- | -------------- | ----------------- |
+| Ppa     | Ppa-CPnd-A | contam   | contigs   | off       | 2               | 85987          | 220339         | 574892803    | 0.768573266                | 7270  | 22131 | 0              | 33.20%            |
+| Ppa     | Ppa-CPnd-A | decontam | contigs   | off       | 2               | 86314          | 167369         | 633073709    | 0.846355226                | 8387  | 21264 | 0              | 36.30%            |
+| Ppa     | Ppa-CPnd-B | contam   | contigs   | off       | 2               | 51328          | 396078         | 776417466    | 1.037991265                | 24616 | 8200  | 0              | 67.30%            |
+| Ppa     | Ppa-CPnd-B | decontam | contigs   | off       | 2               | 56561          | 259206         | 752121288    | 1.005509743                | 20205 | 10258 | 0              | 65.20%            |
+| Ppa     | Ppa-CPnd-C | contam   | contigs   | off       | 2               | 83823          | 196085         | 687031522    | 0.91849134                 | 9902  | 19299 | 0              | 41.20%            |
+| Ppa     | Ppa-CPnd-C | decontam | contigs   | off       | 2               | 63299          | 211566         | 760151846    | 1.016245783                | 17293 | 11908 | 0              | 61.30%            |
+| Ppa     | allLibs    | contam   | contigs   | off       | 2               | 76931          | 411169         | 510079556    | 0.68192454                 | 7114  | 40053 | 0              | 27.10%            |
+| Ppa     | allLibs    | decontam | contigs   | off       | 2               | 79932          | 136603         | 526298487    | 0.703607603                | 7122  | 39524 | 0              | 27.70%            |
+| Ppa     | Ppa-CPnd-A | contam   | scaffolds | off       | 2               | 78050          | 225206         | 654682731    | 0.875244293                | 10206 | 17105 | 696.03         | 43.20%            |
+| Ppa     | Ppa-CPnd-A | decontam | scaffolds | off       | 2               | 75252          | 205029         | 698628125    | 0.93399482                 | 11844 | 15906 | 567.48         | 47.40%            |
+| Ppa     | Ppa-CPnd-B | contam   | scaffolds | off       | 2               | 50256          | 396078         | 778765731    | 1.041130656                | 25611 | 7864  | 15.77          | 68.00%            |
+| Ppa     | Ppa-CPnd-B | decontam | scaffolds | off       | 2               | 53606          | 297238         | 756964735    | 1.01198494                 | 22188 | 9202  | 21.08          | 66.50%            |
+| Ppa     | Ppa-CPnd-C | contam   | scaffolds | off       | 2               | 71970          | 206581         | 733138963    | 0.980132303                | 13563 | 14704 | 443.38         | 50.90%            |
+| Ppa     | Ppa-CPnd-C | decontam | scaffolds | off       | 2               | 58879          | 227231         | 768016435    | 1.02675994                 | 19762 | 10465 | 70.28          | 64.10%            |
+| Ppa     | allLibs    | contam   | scaffolds | off       | 2               | 65683          | 560907         | 622383722    | 0.832063799                | 12625 | 12169 | 1064.71        | 40.50%            |
+| Ppa     | allLibs    | decontam | scaffolds | off       | 2               | 68583          | 204492         | 632629902    | 0.845761901                | 12048 | 13662 | 974.22         | 40.50%            |
+
+Scaffolds better than contigs; contam better than decontam overall. Assemblies from Ppa-CPnd-B library generally look like they are the best for most metrics - higest BUSCO, highest N50, lowest L50, genome size close too expected (slightly larger!). allLibs contam assemblies do have the largest contig but are worse for other metrics.
+
+Verdict - best assembly overall is  Ppa-CPnd-B_contam_scaffolds. If we do probe development for this species might want to use decontam just so we are not making probes for potential contaminants. 
