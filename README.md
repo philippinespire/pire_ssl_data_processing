@@ -43,7 +43,7 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Corythoichthys_haematopterus | On ODU HPC | 24 | John/Brendan? | |
 |Stethojulis_interrupta | On ODU HPC | 23 |John/Brendan? | |
 |Ostorhinchus_chrysopomus | On ODU HPC | 27 | Eric | |
-|Pomacentrus_pavo | On ODU HPC | 25 | John/Brendan? | |
+|Pomacentrus_pavo | On ODU HPC | 25 | John/Brendan? | Genome assembly complete |
 |Lethrinus_variegatus | On ODU HPC | 21 | Jordan/Chris | probe development pipeline in progress |
 |Hypoatherina_temminckii | On ODU HPC | 9/10 | John/Brendan? | Remake probes with correct genome |
 |Encrasicholina_pseudoheteroloba | On ODU HPC | 30 | John/Brendan? | Check individual ID |
