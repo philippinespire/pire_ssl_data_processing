@@ -73,7 +73,9 @@ version    |stat    |min    |max
 Genome stats for Par (fp2b) from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
 - [v1.0 link](http://genomescope.org/analysis.php?code=I9puLlREIec3rYyYvB6G)
 - [v2.0 link](http://genomescope.org/genomescope2.0/analysis.php?code=LxzqHbceNr3VM8DPraVU)
-- v1.0 will be used going forward for assembly since it has better model fit
+- v1.0 was originaly used for assembly since it had a better mean average model fit.
+- Looking at the Genomescope results again, the two results are very different. The v2.0 result is likely more accurate here. Note that the second higher peak (homozygous kmers) aligns with the second vertical dotted line in the plot (2x coverage) - this is what you would expect for a diploid genome. For v1 this peak is between the 3rd and 4th lines - this could possibly indicate a polyploid genome but the more likely reason is that the model fit was off for some reason. Also note that the peak to the left (heterozygous kmers) is almost as high as the peak to the right, suggesting high heterozgosity - v2.0 estimates heterozygosity on the high range of species we have assembled so far, while v1 estimates low heterozygosity. Take the "Model Fit" values reported by Genomescope with a grain of salt. Model fits from v2 might be more variable simply because v2 is exploring a wider range of parameters. As such, max might be a better metric than average fit.
+- Going forward, we should use the smaller v2 estimate (584 Mbp).
 
 version    |stat    |min    |max
 ------  |------ |------ |------
