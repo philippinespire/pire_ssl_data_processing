@@ -37,16 +37,16 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 
 |Species | Data availability | CSSL priority | Analysis lead | Analysis status / notes |
 | --- | --- | --- | --- | --- |
+|Lethrinus_variegatus | On ODU HPC | 21 | Jordan/Chris | probe development pipeline in progress |
 |Periophthalmus_argentilineatus | On ODU HPC | 12 | Keenan/Chris | probe development pipeline in progress |
+|Pomacentrus_pavo | On ODU HPC | 25 | John/Brendan? | Genome assembly complete |
 |Sphaeramia_nematoptera | On ODU HPC | 20 | Jem | Step 1 SPAdes Assembly as of 5/3 |
 |Pomacentrus_brachialis | On ODU HPC | 26 | Jem/Kyra | Step 1 Spades Assembly as of 5/3 |
-|Corythoichthys_haematopterus | On ODU HPC | 24 | John/Brendan? | |
-|Stethojulis_interrupta | On ODU HPC | 23 |John/Brendan? | |
-|Ostorhinchus_chrysopomus | On ODU HPC | 27 | Eric | |
-|Pomacentrus_pavo | On ODU HPC | 25 | John/Brendan? | Genome assembly complete |
-|Lethrinus_variegatus | On ODU HPC | 21 | Jordan/Chris | probe development pipeline in progress |
+|Corythoichthys_haematopterus | On ODU HPC | 24 | John/Brendan? | 1st round QC done, potential REU project |
+|Stethojulis_interrupta | On ODU HPC | 23 |John/Brendan? | 1st round QC done, potential REU project |
+|Encrasicholina_pseudoheteroloba | On ODU HPC | 30 | John/Brendan? | QC + fqscreen done, potential REU project. Check individual ID |
+|Ostorhinchus_chrysopomus | On ODU HPC | 27 | Eric | Potential REU project|
 |Hypoatherina_temminckii | On ODU HPC | 9/10 | John/Brendan? | Remake probes with correct genome |
-|Encrasicholina_pseudoheteroloba | On ODU HPC | 30 | John/Brendan? | Check individual ID |
 |Ambassis_buruensis | Library prep ongoing | n/a | not assigned | |
 |Tylosurus_crocodilus | Needs extraction | 35 | not assigned | |
 |Sphaeramia_orbicularis | Needs extraction | 36 | not assigned | |
