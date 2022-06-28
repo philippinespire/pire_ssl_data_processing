@@ -812,3 +812,29 @@ mv *out ../logs
 I informed Dr. Garcia the pipeline for probe creation for *H. miniatus* was complete.
 I pushed all changes to GitHub.
 
+***
+
+# Clean up
+
+I cleaned up the *Halichoeres miniatus* directories as follows.
+
+```sh
+cd /home/ilope002/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/
+cp -R fq_fp1_clmparray_fp2/ /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/
+cp -R fq_fp1_clmparray_fp2_fqscrn_repaired/ /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_HmC0451B_decontam_R1R2-noIsolate/
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_HmC0451B_contam_R1R2-noIsolate/
+cp SPAdes_HmC451B_decontam_R1R2_noIsolate/*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_HmC0451B_decontam_R1R2-noIsolate/
+cp SPAdes_HmC451B_contam_R1R2_noIsolate/*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus/SPAdes_HmC0451B_contam_R1R2-noIsolate/
+```
+
+The clean up instructions are not quite clear.  While the instructions do say delete the files from step such and such, the steps themselves do not identify outtput.  This output would only be known to someone intimately familiar with the scripts.  I recommend updating the README or the scripts so that intermediate files for deletiong are easily identified.
+I ran the following command:
+
+```sh
+cd ../
+cp -R halichoeres_miniatus/ /home/e1garcia/shotgun_PIRE/Ivans_pire_ssl
+```
+
+
+
