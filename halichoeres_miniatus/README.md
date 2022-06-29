@@ -1,7 +1,7 @@
 # *Halichoeres miniatus*
 ***
 
-The purpose of this repository is to provide replicable steps for de novo genome assembly of *H. miniatus* as outlined by Dr. Eric Garcia in the [PIRE Shotgun Data Processing and Analysis Page](https://github.com/philippinespire/pire_ssl_data_processing) of the [PhilippinesPIRE](https://github.com/philippinespire) repository.  All scripts and software used are explained on the PIRE Shotgun repository.  All bioinformatic work was performed on the Old Dominion University High Performance Computing Cluster.
+The purpose of this repository is to provide replicable steps for de novo genome assembly of *H. miniatus* as outlined by Dr. Eric Garcia in the [PIRE Shotgun Data Processing and Analysis Page](https://github.com/philippinespire/pire_ssl_data_processing) of the [PhilippinesPIRE](https://github.com/philippinespire) repository.  All scripts and software used are explained on the PIRE Shotgun repository.  All bioinformatic work was performed on the Old Dominion University High Performance Computing Cluster.  The log and worked performed here was completed by Ivan Lopez, MS, of Old Dominion University.
 
 The documents in this repository are written in [Markdown](https://www.markdownguide.org/basic-syntax/#links).
 
