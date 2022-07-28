@@ -249,3 +249,21 @@ Execute runBUCSO.sh on the contigs and scaffolds files for each assembly
 #runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
 # do not use trailing / in paths. Example using contigs:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate" "contigs"
+
+
+---
+
+# Sphaeramia nematoptera: [Low coverage whole genome sequencing](https://github.com/philippinespire/pire_lcwgs_data_processing) 
+
+---
+
+Jordan Rodriguez
+
+---
+
+This species was ran through the [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) pipeline by Jem Baldisimo. An outline of her efforts can be found above. Below is the roadmap for pushing *Sphaeramia nematoptera* through the [LCWGS pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing).
+
+---
+
+To run Sne through the LCWGS pipeline, I started with locating the fltrd/repaired fq.gz files that had gone through the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) pipeline, and I picked up at step 3. of the [LCWGS](https://github.com/philippinespire/pire_lcwgs_data_processing) pipeline titled "Get your reference genome".
+
