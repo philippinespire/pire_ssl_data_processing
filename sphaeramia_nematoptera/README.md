@@ -252,7 +252,9 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 ```
 
 ---
-
+---
+---
+ 
 # Sphaeramia nematoptera: [Low coverage whole genome sequencing](https://github.com/philippinespire/pire_lcwgs_data_processing) 
 
 ---
