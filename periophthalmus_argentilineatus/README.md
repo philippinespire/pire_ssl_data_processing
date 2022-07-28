@@ -93,3 +93,5 @@ runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://githu
 - Library 2 ran second
 - Library 3 ran third
 - All 3 libraries ran together last
+
+072822 - Brendan Reid running BUSCO on the Par assemblies to find the best for use in PSMC
