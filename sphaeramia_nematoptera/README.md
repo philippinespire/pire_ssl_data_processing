@@ -249,7 +249,7 @@ Execute runBUCSO.sh on the contigs and scaffolds files for each assembly
 #runBUSCO.sh <species dir> <SPAdes dir> <contigs | scaffolds>
 # do not use trailing / in paths. Example using contigs:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "SPAdes_decontam_R1R2_noIsolate" "contigs"
-
+```
 
 ---
 
