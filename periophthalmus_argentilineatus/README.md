@@ -95,3 +95,5 @@ runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://githu
 - All 3 libraries ran together last
 
 072822 - Brendan Reid running BUSCO on the Par assemblies to find the best for use in PSMC
+
+Running SPAdes for contaminated assembly (using fq_fp1_clmparray_fp2b data) - library 1
