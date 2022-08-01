@@ -252,6 +252,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 ```
 
 ---
+8/1/22: Brendan Reid taking over assembly, running 1/2/3/allLibs decontam assemblies
 ---
 ---
  
