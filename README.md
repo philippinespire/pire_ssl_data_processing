@@ -281,6 +281,24 @@ Then, check the number of libraries you have and run a job combining all librari
 
 ---
 
+#### SPAdes **continue** option
+
+Did your assembly failed after it was running correctly? Sometimes the assembly process will quit after sometime of running most likely due to lack of memory. One of the most useful options of SPAdes is the `continue` flag which basically recognizes where your assembly left off and restarts the process in the same spot again saving you hours or days of work. This will only help you if SPAdes was already running successfully. So if your assembly failed withing minutes, there is probably a probblem with the run and **continue** will just fail too. Check the out files first. If it failed after severl hours or days, continue might be your best friend here. 
+
+The option is already built in within the [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch) script. To run, first move inside the directory of the assembly that failed and then execute the same command but changing the specified library for "continue".
+
+In the above example, I would have changed the "1" for "continue":
+```
+cd SPAdes_assembly_that_failed
+
+#Execute
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "decontam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
+
+Check that **continue** is working by watching that your jobs is running and checking that SPAdes is writing more output into your out file.
+
+---
+
 #### 3. Review Info on Assembly Quality from Quast Output
 
 `QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and for each of your assemblies note the: 
