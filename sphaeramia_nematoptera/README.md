@@ -254,8 +254,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 ---
 8/1/22: Brendan Reid taking over assembly, running 1/2/3/allLibs decontam assemblies
 ---
-9/13/22: Jem Baldisimo taking over probe development
-Best decontam assembly to be used for probe development
+9/13/22: Jem Baldisimo taking over probe development. Best decontam assembly done by B. Reid to be used for probe development
 ---
  
 # Sphaeramia nematoptera: [Low coverage whole genome sequencing](https://github.com/philippinespire/pire_lcwgs_data_processing) 
