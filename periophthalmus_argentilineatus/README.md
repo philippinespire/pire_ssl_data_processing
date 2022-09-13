@@ -99,3 +99,58 @@ runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://githu
 Running SPAdes for contaminated assembly (using fq_fp1_clmparray_fp2b data) - library 1/A
 
 Par-CPas-A_contam looks like the best assembly!
+
+091322 - Brendan Reid resuming probe development. Use best decontam assembly (the "A" assembly, but folder is named SPAdes_Par-CPas_decontam_R1R2_noIsolate).
+
+## C. Probe design
+
+### 10. Identifying regions for probe development.
+
+Make a directory for probe design in periophthalmus_argentilineatus, copy assembly fasta and needed scripts.
+
+```
+mkdir probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+cp SPAdes_Par-CPas_decontam_R1R2_noIsolate/scaffolds.fasta probe_design
+```
+
+Modify the probe scripts to work in Eric's dir (add `export SINGULARITY_BIND=/home/e1garcia`).
+
+Move to probe design folder and rename the assembly.
+
+```
+cd probe_design
+mv scaffolds.fasta Par_scaffolds_CPas-A_decontam_R1R2_noIsolate.fasta
+```
+
+Execute the first script.
+
+```
+sbatch WGprobe_annotation.sb "Par_scaffolds_CPas-A_decontam_R1R2_noIsolate.fasta"
+```
+
+Execute the second script.
+
+```
+sbatch WGprobe_bedcreation.sb "Par_scaffolds_CPas-A_decontam_R1R2_noIsolate.fasta"
+```
+
+Check upper limit.
+
+11. Closest relatives with available genome.
+
+Plenty of genomes in Oxudercidae (P. magnuspinnatus is the most complete).
+
+```
+1. Periophthalmus magnuspinnatus
+https://www.ncbi.nlm.nih.gov/genome/35290
+2. Periophthalmus modestus
+https://www.ncbi.nlm.nih.gov/genome/104952
+3. Periophthalmodon schlosseri
+https://www.ncbi.nlm.nih.gov/genome/35291
+4. Scartelaos histophorus
+https://www.ncbi.nlm.nih.gov/genome/13887
+5. Boleophthalmus pectinirostris
+https://www.ncbi.nlm.nih.gov/genome/11967
+```
