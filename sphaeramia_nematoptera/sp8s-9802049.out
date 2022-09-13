@@ -1,0 +1,149 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r1.fq.gz	--pe1-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r2.fq.gz	--pe2-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r1.fq.gz	--pe2-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r2.fq.gz	--pe3-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r1.fq.gz	--pe3-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/breid	--cov-cutoff	off	-o	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.9
+  OS: Linux-4.4.302-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two
+
+Output dir: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+    Library number: 2, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+    Library number: 3, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77, 99]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /scratch-lustre/breid
+  Threads: 32
+  Memory limit (in Gb): 750
+
+
+======= SPAdes pipeline started. Log can be found here: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/spades.log
+
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r2.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r2.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r2.fq.gz: max reads length: 150
+
+Reads length: 150
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /opt/conda/bin/spades-hammer /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/corrected/configs/config.info
+
+  0:00:00.000     1M / 12M   INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.048     1M / 12M   INFO    General                 (main.cpp                  :  76)   Loading config from /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/corrected/configs/config.info
+  0:00:00.061     1M / 12M   INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 32
+  0:00:00.065     1M / 12M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 750 Gb
+  0:00:00.068     1M / 12M   INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.072     1M / 12M   INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.076     1M / 12M   INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.080     1M / 12M   INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.089     1M / 12M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 16 files using 32 threads. This might take a while.
+  0:00:00.094     1M / 12M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 50000
+  0:00:00.101     1M / 12M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 7.8125 Gb
+  0:00:00.105     1M / 12M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 4194304
+  0:00:00.489    19G / 19G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r1.fq.gz
+  0:01:08.717    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 7643747 reads
+  0:02:12.587    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 14966009 reads
+  0:03:20.525    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 22701448 reads
+  0:04:24.582    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 30045901 reads
+  0:05:29.510    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 37461989 reads
+  0:06:35.199    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 45024137 reads
+  0:07:41.397    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 52621964 reads
+  0:08:44.540    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 59893369 reads
+  0:09:49.920    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 67416220 reads
+  0:10:57.250    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 75113963 reads
+  0:11:59.588    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 82400695 reads
+  0:13:04.123    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 89917620 reads
+  0:16:42.249    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r2.fq.gz
+  0:20:53.763    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 138265394 reads
+  0:37:38.824    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r1.fq.gz
+  0:44:04.631    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 275350929 reads
+  0:56:19.320    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r2.fq.gz
+  1:19:47.259    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r1.fq.gz
+  1:26:27.938    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 540340715 reads
+  1:34:02.171    19G / 31G   ERROR   General                 (kmer_splitter.hpp         : 150)   I/O error! Incomplete write! Reason: No space left on device. Error code: 28
+
+
+== Error ==  system call for: "['/opt/conda/bin/spades-hammer', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/corrected/configs/config.info']" finished abnormally, OS return value: 28
+
+In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+or report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.
+
+SPAdes log can be found here: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/spades.log
+
+Thank you for using SPAdes!
+
+Running QUAST Now
+
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.tsv': No such file or directory

@@ -1,0 +1,276 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+
+======= SPAdes pipeline continued. Log can be found here: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/spades.log
+
+Restored from Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r1.fq.gz	--pe1-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r2.fq.gz	--pe2-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r1.fq.gz	--pe2-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r2.fq.gz	--pe3-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r1.fq.gz	--pe3-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/breid	--cov-cutoff	off	-o	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate
+
+Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r1.fq.gz	--pe1-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r2.fq.gz	--pe2-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r1.fq.gz	--pe2-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r2.fq.gz	--pe3-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r1.fq.gz	--pe3-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/breid	--cov-cutoff	off	-o	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.9
+  OS: Linux-4.4.302-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two
+
+Output dir: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+    Library number: 2, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+    Library number: 3, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77, 99]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /scratch-lustre/breid
+  Threads: 32
+  Memory limit (in Gb): 750
+
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3F_L3_clmp.fp2_r2.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex1-3G_L3_clmp.fp2_r2.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/fq_fp1_clmparray_fp2/Sne-CTaw_051_Ex13H_L3_clmp.fp2_r2.fq.gz: max reads length: 150
+
+Reads length: 150
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+===== Skipping Read error correction (already processed)
+===== Skipping corrected reads compression (already processed)
+
+===== Read error correction finished. 
+
+
+===== Assembling started. 
+
+===== Skipping K21 (already processed)
+===== Skipping K33 (already processed)
+===== Skipping K55 (already processed)
+===== Skipping K77 (already processed)
+
+===== K99 started. 
+
+
+== Running: /opt/conda/bin/spades-core /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/K99/configs/config.info
+
+  0:00:00.000     1M / 12M   INFO    General                 (main.cpp                  :  99)   Loaded config from /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/K99/configs/config.info
+  0:00:00.043     1M / 12M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 750 Gb
+  0:00:00.049     1M / 12M   INFO    General                 (main.cpp                  : 107)   Starting SPAdes, built from N/A, git revision N/A
+  0:00:00.055     1M / 12M   INFO    General                 (main.cpp                  : 108)   Maximum k-mer length: 128
+  0:00:00.057     1M / 12M   INFO    General                 (main.cpp                  : 109)   Assembling dataset (/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/dataset.info) with K=99
+  0:00:00.062     1M / 12M   INFO    General                 (main.cpp                  : 110)   Maximum # of threads to use (adjusted due to OMP capabilities): 32
+  0:00:00.066     1M / 12M   INFO    General                 (pipeline.cpp              : 212)   SPAdes started
+  0:00:00.070     1M / 12M   INFO    General                 (pipeline.cpp              : 225)   Starting from stage: last
+  0:00:00.077     1M / 12M   INFO    General                 (pipeline.cpp              : 231)   Two-step repeat resolution disabled
+  0:00:00.085     1M / 12M   INFO   GraphCore                (graph_core.hpp            : 672)   Graph created, vertex min_id: 3, edge min_id: 3
+  0:00:00.090     1M / 12M   INFO   GraphCore                (graph_core.hpp            : 673)   Vertex size: 48, edge size: 40
+  0:00:00.095     1M / 12M   INFO    General                 (edge_index.hpp            : 113)   Size of edge index entries: 12/8
+  0:00:00.100     1M / 12M   INFO    General                 (pipeline.cpp              : 242)   Will need read mapping, kmer mapper will be attached
+  0:00:00.105     1M / 12M   WARN   StageManager             (stage.cpp                 : 158)   No saved checkpoint
+  0:00:00.107     1M / 12M   INFO   StageManager             (stage.cpp                 : 185)   STAGE == Binary Read Conversion (id: read_conversion)
+  0:00:00.118     1M / 12M   INFO    General                 (read_converter.cpp        :  72)   Converting reads to binary format for library #0 (takes a while)
+  0:00:00.122     1M / 12M   INFO    General                 (read_converter.cpp        :  73)   Converting paired reads
+  0:00:00.746    68M / 103M  INFO    General                 (binary_converter.cpp      :  96)   16384 reads processed
+  0:00:00.767    73M / 111M  INFO    General                 (binary_converter.cpp      :  96)   32768 reads processed
+  0:00:00.806    83M / 131M  INFO    General                 (binary_converter.cpp      :  96)   65536 reads processed
+  0:00:01.103    72M / 175M  INFO    General                 (binary_converter.cpp      :  96)   131072 reads processed
+  0:00:01.877    82M / 225M  INFO    General                 (binary_converter.cpp      :  96)   262144 reads processed
+  0:00:02.899    70M / 300M  INFO    General                 (binary_converter.cpp      :  96)   524288 reads processed
+  0:00:04.768    78M / 368M  INFO    General                 (binary_converter.cpp      :  96)   1048576 reads processed
+  0:00:08.645    92M / 484M  INFO    General                 (binary_converter.cpp      :  96)   2097152 reads processed
+  0:00:16.665    92M / 554M  INFO    General                 (binary_converter.cpp      :  96)   4194304 reads processed
+  0:00:32.112    90M / 632M  INFO    General                 (binary_converter.cpp      :  96)   8388608 reads processed
+  0:01:09.391    86M / 678M  INFO    General                 (binary_converter.cpp      :  96)   16777216 reads processed
+  0:02:18.969    80M / 782M  INFO    General                 (binary_converter.cpp      :  96)   33554432 reads processed
+  0:04:51.994    66M / 798M  INFO    General                 (binary_converter.cpp      :  96)   67108864 reads processed
+  0:08:26.680    63M / 952M  INFO    General                 (binary_converter.cpp      : 111)   115101461 reads written
+  0:08:26.683    41M / 952M  INFO    General                 (read_converter.cpp        :  81)   Converting single reads
+  0:08:26.715    71M / 952M  INFO    General                 (binary_converter.cpp      : 111)   3042 reads written
+  0:08:26.717    61M / 952M  INFO    General                 (read_converter.cpp        :  87)   Converting merged reads
+  0:08:26.724    71M / 952M  INFO    General                 (binary_converter.cpp      : 111)   0 reads written
+  0:08:27.948     1M / 952M  INFO    General                 (read_converter.cpp        :  72)   Converting reads to binary format for library #1 (takes a while)
+  0:08:27.951     1M / 952M  INFO    General                 (read_converter.cpp        :  73)   Converting paired reads
+  0:08:28.561    68M / 952M  INFO    General                 (binary_converter.cpp      :  96)   16384 reads processed
+  0:08:28.579    73M / 952M  INFO    General                 (binary_converter.cpp      :  96)   32768 reads processed
+  0:08:28.615    83M / 952M  INFO    General                 (binary_converter.cpp      :  96)   65536 reads processed
+  0:08:28.932    73M / 952M  INFO    General                 (binary_converter.cpp      :  96)   131072 reads processed
+  0:08:29.374    82M / 952M  INFO    General                 (binary_converter.cpp      :  96)   262144 reads processed
+  0:08:30.266    70M / 952M  INFO    General                 (binary_converter.cpp      :  96)   524288 reads processed
+  0:08:31.987    78M / 952M  INFO    General                 (binary_converter.cpp      :  96)   1048576 reads processed
+  0:08:35.851    93M / 953M  INFO    General                 (binary_converter.cpp      :  96)   2097152 reads processed
+  0:08:43.012    92M / 953M  INFO    General                 (binary_converter.cpp      :  96)   4194304 reads processed
+  0:08:58.074    90M / 985M  INFO    General                 (binary_converter.cpp      :  96)   8388608 reads processed
+  0:09:35.413    87M / 1026M INFO    General                 (binary_converter.cpp      :  96)   16777216 reads processed
+  0:10:47.759    80M / 1143M INFO    General                 (binary_converter.cpp      :  96)   33554432 reads processed
+  0:13:19.712    66M / 1154M INFO    General                 (binary_converter.cpp      :  96)   67108864 reads processed
+  0:18:06.761    63M / 1202M INFO    General                 (binary_converter.cpp      : 111)   131924285 reads written
+  0:18:06.763    41M / 1202M INFO    General                 (read_converter.cpp        :  81)   Converting single reads
+  0:18:06.814    71M / 1202M INFO    General                 (binary_converter.cpp      : 111)   3191 reads written
+  0:18:06.817    61M / 1202M INFO    General                 (read_converter.cpp        :  87)   Converting merged reads
+  0:18:06.824    71M / 1202M INFO    General                 (binary_converter.cpp      : 111)   0 reads written
+  0:18:12.040     1M / 1202M INFO    General                 (read_converter.cpp        :  72)   Converting reads to binary format for library #2 (takes a while)
+  0:18:12.043     1M / 1202M INFO    General                 (read_converter.cpp        :  73)   Converting paired reads
+  0:18:12.671    68M / 1202M INFO    General                 (binary_converter.cpp      :  96)   16384 reads processed
+  0:18:12.689    73M / 1202M INFO    General                 (binary_converter.cpp      :  96)   32768 reads processed
+  0:18:12.725    83M / 1202M INFO    General                 (binary_converter.cpp      :  96)   65536 reads processed
+  0:18:13.037    73M / 1202M INFO    General                 (binary_converter.cpp      :  96)   131072 reads processed
+  0:18:13.497    82M / 1202M INFO    General                 (binary_converter.cpp      :  96)   262144 reads processed
+  0:18:14.408    71M / 1202M INFO    General                 (binary_converter.cpp      :  96)   524288 reads processed
+  0:18:16.367    78M / 1202M INFO    General                 (binary_converter.cpp      :  96)   1048576 reads processed
+  0:18:20.474    93M / 1202M INFO    General                 (binary_converter.cpp      :  96)   2097152 reads processed
+  0:18:27.891    92M / 1202M INFO    General                 (binary_converter.cpp      :  96)   4194304 reads processed
+  0:18:43.166    90M / 1202M INFO    General                 (binary_converter.cpp      :  96)   8388608 reads processed
+  0:19:27.370    87M / 1202M INFO    General                 (binary_converter.cpp      :  96)   16777216 reads processed
+  0:20:40.384    80M / 1202M INFO    General                 (binary_converter.cpp      :  96)   33554432 reads processed
+  0:23:07.708    66M / 1202M INFO    General                 (binary_converter.cpp      :  96)   67108864 reads processed
+  0:26:15.530    64M / 1202M INFO    General                 (binary_converter.cpp      : 111)   110768163 reads written
+  0:26:15.533    42M / 1202M INFO    General                 (read_converter.cpp        :  81)   Converting single reads
+  0:26:15.579    72M / 1202M INFO    General                 (binary_converter.cpp      : 111)   3263 reads written
+  0:26:15.581    62M / 1202M INFO    General                 (read_converter.cpp        :  87)   Converting merged reads
+  0:26:15.591    72M / 1202M INFO    General                 (binary_converter.cpp      : 111)   0 reads written
+  0:26:20.749     1M / 1202M INFO   StageManager             (stage.cpp                 : 185)   STAGE == de Bruijn graph construction (id: construction)
+  0:26:20.780     1M / 1202M INFO    General                 (construction.cpp          : 118)   Contigs from previous K will be used: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/K77/simplified_contigs
+  0:26:24.348     4M / 1202M INFO    General                 (construction.cpp          : 153)   Max read length 150
+  0:26:24.350     4M / 1202M INFO    General                 (construction.cpp          : 159)   Average read length 149.736
+  0:26:24.355     4M / 1202M INFO    General                 (stage.cpp                 : 117)   PROCEDURE == k+1-mer counting (id: construction:kpomer_counting)
+  0:26:24.359     4M / 1202M INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 320 files using 32 threads. This might take a while.
+  0:26:24.364     4M / 1202M INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 50000
+  0:26:24.370     4M / 1202M INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 7.81247 Gb
+  0:26:24.375     4M / 1202M INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 52428
+  0:26:52.961    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 19915527 reads
+  0:27:11.310    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 39453522 reads
+  0:27:29.481    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 59026006 reads
+  0:27:48.375    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 78883705 reads
+  0:28:07.359    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 98784181 reads
+  0:28:26.270    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 118751540 reads
+  0:28:44.663    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 138334596 reads
+  0:29:03.433    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 158132445 reads
+  0:29:22.016    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 177873923 reads
+  0:29:40.663    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 197767711 reads
+  0:29:59.330    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 217693451 reads
+  0:30:17.826    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 237752420 reads
+  0:30:36.502    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 257811271 reads
+  0:30:55.271    21G / 24G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 277557717 reads
+  0:35:13.232    21G / 25G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 551542142 reads
+  0:43:32.331    21G / 25G   INFO    General                 (kmer_splitters.hpp        : 125)   Processed 1081504626 reads
+  0:50:38.539     5M / 25G   INFO    General                 (kmer_splitters.hpp        : 131)   Used 1441246466 reads
+  0:50:38.634     5M / 25G   INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  1:03:26.993     5M / 31G   INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 3982649076 kmers in total.
+  1:03:27.005     4M / 31G   INFO    General                 (stage.cpp                 : 117)   PROCEDURE == Extension index construction (id: construction:extension_index_construction)
+  1:03:27.077     4M / 31G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 438)   Building kmer index
+  1:03:27.084     4M / 31G   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 320 files using 32 threads. This might take a while.
+  1:03:27.091     4M / 31G   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 50000
+  1:03:27.108     4M / 31G   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 7.81247 Gb
+  1:03:27.115     4M / 31G   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 52428
+  1:03:40.259    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 3958556 kmers
+  1:03:41.131    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 7925334 kmers
+  1:03:42.046    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 11987806 kmers
+  1:03:42.864    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 16142526 kmers
+  1:03:43.706    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 20374091 kmers
+  1:03:44.602    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 24647512 kmers
+  1:03:45.581    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 29036160 kmers
+  1:03:46.524    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 33380382 kmers
+  1:03:47.422    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 37916229 kmers
+  1:03:48.233    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 42309652 kmers
+  1:03:49.172    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 46799370 kmers
+  1:03:50.010    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 51120031 kmers
+  1:03:50.876    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 54978278 kmers
+  1:03:51.764    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 58739019 kmers
+  1:03:52.680    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 63225241 kmers
+  1:03:53.659    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 68083886 kmers
+  1:03:54.521    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 72763699 kmers
+  1:04:06.652    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 135972049 kmers
+  1:04:31.282    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 270350125 kmers
+  1:05:22.771    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 538812927 kmers
+  1:07:34.842    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 1076830445 kmers
+  1:11:45.918    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 194)   Processed 2151929132 kmers
+  1:19:02.138    21G / 31G   INFO    General                 (kmer_splitters.hpp        : 199)   Used 3982796916 kmers.
+  1:19:02.165     5M / 31G   INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  1:23:06.472     5M / 31G   INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 3998003677 kmers in total.
+  1:23:06.484     5M / 31G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  1:29:39.002  2853M / 31G   INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 3998003677 kmers, 2887845496 bytes occupied (5.77857 bits per kmer).
+  1:29:39.022  2853M / 31G   INFO    General                 (kmer_index_builder.hpp    : 169)   Merging final buckets.
+  1:41:32.340  5794M / 31G   INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build: 100)   Building k-mer extensions from k+1-mers
+
+
+== Error ==  system call for: "['/opt/conda/bin/spades-core', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/K99/configs/config.info']" finished abnormally, OS return value: -11
+
+======= SPAdes pipeline finished abnormally and WITH WARNINGS!
+
+=== Error correction and assembling warnings:
+ * 0:00:00.105     1M / 12M   WARN   StageManager             (stage.cpp                 : 158)   No saved checkpoint
+======= Warnings saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/warnings.log
+
+=== ERRORs:
+ * system call for: "['/opt/conda/bin/spades-core', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/K99/configs/config.info']" finished abnormally, OS return value: -11
+
+In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+or report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.
+
+SPAdes log can be found here: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/spades.log
+
+Thank you for using SPAdes!
+
+Running QUAST Now
+
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.tsv': No such file or directory
