@@ -7,3 +7,52 @@ INFO:	Downloading information on latest versions of BUSCO data...
 INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
 INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
 INFO:	Running 1 job(s) on metaeuk, starting at 07/28/2022 16:30:26
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 07/28/2022 16:45:09
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	728 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2184 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3276 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 07/28/2022 16:46:23
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 1541 job(s) on hmmsearch, starting at 07/28/2022 17:19:59
+INFO:	[hmmsearch]	155 of 1541 task(s) completed
+INFO:	[hmmsearch]	309 of 1541 task(s) completed
+INFO:	[hmmsearch]	463 of 1541 task(s) completed
+INFO:	[hmmsearch]	617 of 1541 task(s) completed
+INFO:	[hmmsearch]	771 of 1541 task(s) completed
+INFO:	[hmmsearch]	925 of 1541 task(s) completed
+INFO:	[hmmsearch]	1079 of 1541 task(s) completed
+INFO:	[hmmsearch]	1233 of 1541 task(s) completed
+INFO:	[hmmsearch]	1387 of 1541 task(s) completed
+INFO:	[hmmsearch]	1541 of 1541 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:58.4%[S:57.6%,D:0.8%],F:11.6%,M:30.0%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:58.4%[S:57.6%,D:0.8%],F:11.6%,M:30.0%,n:3640   |
+	|2127	Complete BUSCOs (C)                       |
+	|2098	Complete and single-copy BUSCOs (S)       |
+	|29	Complete and duplicated BUSCOs (D)        |
+	|422	Fragmented BUSCOs (F)                     |
+	|1091	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 3132 seconds
+INFO:	Results written in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/busco_contigs_results-SPAdes_Par-CPas-B_decontam_R1R2_noIsolate
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+

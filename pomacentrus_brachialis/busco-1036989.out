@@ -7,3 +7,51 @@ INFO:	Downloading information on latest versions of BUSCO data...
 INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
 INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
 INFO:	Running 1 job(s) on metaeuk, starting at 08/03/2022 13:09:14
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 08/03/2022 13:27:45
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	728 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2184 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3276 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 08/03/2022 13:29:05
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 2264 job(s) on hmmsearch, starting at 08/03/2022 14:16:05
+INFO:	[hmmsearch]	227 of 2264 task(s) completed
+INFO:	[hmmsearch]	453 of 2264 task(s) completed
+INFO:	[hmmsearch]	680 of 2264 task(s) completed
+INFO:	[hmmsearch]	906 of 2264 task(s) completed
+INFO:	[hmmsearch]	1133 of 2264 task(s) completed
+INFO:	[hmmsearch]	1359 of 2264 task(s) completed
+INFO:	[hmmsearch]	1585 of 2264 task(s) completed
+INFO:	[hmmsearch]	1812 of 2264 task(s) completed
+INFO:	[hmmsearch]	2038 of 2264 task(s) completed
+INFO:	[hmmsearch]	2264 of 2264 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:38.4%[S:37.7%,D:0.7%],F:17.0%,M:44.6%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:38.4%[S:37.7%,D:0.7%],F:17.0%,M:44.6%,n:3640   |
+	|1398	Complete BUSCOs (C)                       |
+	|1374	Complete and single-copy BUSCOs (S)       |
+	|24	Complete and duplicated BUSCOs (D)        |
+	|620	Fragmented BUSCOs (F)                     |
+	|1622	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 4179 seconds
+INFO:	Results written in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_brachialis/busco_contigs_results-SPAdes_Pba-CTat-B_decontam_R1R2_noIsolate
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
