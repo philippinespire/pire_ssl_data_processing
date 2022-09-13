@@ -1,0 +1,31 @@
+/home/aethr001/.bash_profile: line 5: /home/aethr001/.turing_bash_profile: No such file or directory
+ls: cannot access /*1.fq.gz: No such file or directory
+ls: cannot access /*2.fq.gz: No such file or directory
+ls: cannot access /*1.fq.gz: No such file or directory
+ls: cannot access /*2.fq.gz: No such file or directory
+ls: cannot access /*1.fq.gz: No such file or directory
+ls: cannot access /*2.fq.gz: No such file or directory
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+SPAdes genome assembler v3.15.2
+
+Usage: spades.py [options] -o <output_dir>
+spades.py: error: argument --pe1-1: expected 1 argument
+
+Running QUAST Now
+
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Abby_Ethridge/stethojulis_interrupta/SPAdes_allLibs_decontam_R1R2_noIsolate/contigs.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Abby_Ethridge/stethojulis_interrupta/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Abby_Ethridge/stethojulis_interrupta/SPAdes_allLibs_decontam_R1R2_noIsolate/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Abby_Ethridge/stethojulis_interrupta/SPAdes_allLibs_decontam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.tsv': No such file or directory

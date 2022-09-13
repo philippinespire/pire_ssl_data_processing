@@ -1,0 +1,5 @@
+
+gzip: fq_fp2_clmp_fp2_fqscrn_repaired/*.fq.gz: No such file or directory
+terminate called after throwing an instance of 'jellyfish::dumper_t<jellyfish::large_hash::array<jellyfish::mer_dna_ns::mer_base_static<unsigned long, 0>, unsigned long, atomic::gcc, allocators::mmap> >::ErrorWriting'
+  what():  'fq_fp2_clmp_fp2_fqscrn_repaired/Sin_all_reads.jf': Can't open file for writingNo such file or directory
+/var/spool/slurmd/job764735/slurm_script: line 26: 16131 Aborted                 crun jellyfish count -C -m 21 -s 1000000000 -t 32 <(zcat ${INDIR}/*.fq.gz) -o ${INDIR}/${SPECIES_ID}_all_reads.jf

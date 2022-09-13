@@ -1,0 +1,43 @@
+
+java -ea -Xmx160665m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sin-CPnd_001_Ex1-1G_L4_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	169147617 reads 		25349433453 bases.
+Result:                 	169147617 reads (100.00%) 	25349433453 bases (100.00%)
+Pairs:                  	163194102 reads (96.48%) 	24457245773 bases (96.48%)
+Singletons:             	5953515 reads (3.52%) 	892187680 bases (3.52%)
+
+Time:                         	571.480 seconds.
+Reads Processed:        169m 	295.98k reads/sec
+Bases Processed:      25349m 	44.36m bases/sec
+java -ea -Xmx160665m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sin-CPnd_001_Ex1-2F_L4_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	172967965 reads 		25918675338 bases.
+Result:                 	172967965 reads (100.00%) 	25918675338 bases (100.00%)
+Pairs:                  	167334576 reads (96.74%) 	25074510006 bases (96.74%)
+Singletons:             	5633389 reads (3.26%) 	844165332 bases (3.26%)
+
+Time:                         	602.723 seconds.
+Reads Processed:        172m 	286.98k reads/sec
+Bases Processed:      25918m 	43.00m bases/sec
+java -ea -Xmx160665m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sin-CPnd_001_Ex1-3E_L4_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	194019054 reads 		29072582553 bases.
+Result:                 	194019054 reads (100.00%) 	29072582553 bases (100.00%)
+Pairs:                  	187878820 reads (96.84%) 	28152435141 bases (96.83%)
+Singletons:             	6140234 reads (3.16%) 	920147412 bases (3.17%)
+
+Time:                         	645.742 seconds.
+Reads Processed:        194m 	300.46k reads/sec
+Bases Processed:      29072m 	45.02m bases/sec

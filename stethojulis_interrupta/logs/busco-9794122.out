@@ -1,0 +1,16 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+
+The following have been reloaded with a version change:
+  1) git/2.12.1 => git/2.25                     3) python/3.5.2 => python/3.6
+  2) parallel/20161222 => parallel/20190322
+
+INFO:	***** Start a BUSCO v5.0.0 analysis, current time: 07/25/2022 12:44:07 *****
+INFO:	Configuring BUSCO with local environment
+INFO:	Mode is genome
+ERROR:	A run with the name /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Abby_Ethridge/stethojulis_interrupta/busco_scaffolds_results-SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate already exists...
+	If you are sure you wish to overwrite existing files, please use the -f (force) option
+ERROR:	BUSCO analysis failed !
+ERROR:	Check the logs, read the user guide (https://busco.ezlab.org/busco_userguide.html), and check the BUSCO issue board on https://gitlab.com/ezlab/busco/issues
