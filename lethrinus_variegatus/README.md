@@ -216,3 +216,59 @@ I referenced the metric importance table in the `pire_ssl_data_processing` repo 
 *note: if you are still undecided on which is the best assembly, post the best candidates on the species slack channel and ask for opinions
 
 Current step: I am trying to get BUSCO to run for Lva-CPnd-C on the contigs, then I will determine best assembly :)
+
+091322 - Brendan Reid taking over for probe development. Note - it looks like single-copy BUSCO and genome size completeness were switched in the above table - revise later. Based on BUSCO and QUAST allLibs is the best decontam assembly - will use this for probe development.
+
+## C. Probe design
+
+### 10. Identifying regions for probe development
+
+Making directory for probe design in lethrinus_variegatus and copying scripts/best assembly.
+
+```
+mkdir probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+cp SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta probe_design
+```
+
+Move to probe design directory and rename assembly.
+
+```
+cd probe_design
+mv scaffolds.fasta Lva_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta
+```
+
+Execute the first script.
+
+```
+sbatch WGprobe_annotation.sb "Lva_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+```
+
+Execute the second script.
+
+```
+sbatch WGprobe_bedcreation.sb "Lva_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+```
+
+Check the upper limit.
+
+Move out files into logs dir.
+
+### 11. Closest relatives with available genomes.
+
+No genomes in Lethrinidae, but 5 in Spariformes (all in Sparidae: Diplodus sargus, Spondyliosoma cantharus, Sparus aurata, Acanthopagrus latus, Pagrus major). Based on Betancur phylogeny Lethrinidae is sister to Sparidae, so all are equally close relatives to Lva. Sparus aurata and Acanthopagrus latus look like they are chromosome-level while others are drafts, so would prefer to use those.
+
+```
+1. Sparus aurata
+https://www.ncbi.nlm.nih.gov/genome/11609
+2. Acanthopagrus latus
+https://www.ncbi.nlm.nih.gov/genome/8551
+3. Diplodus sargus
+https://www.ncbi.nlm.nih.gov/genome/92100
+4. Spondyliosoma cantharus
+https://www.ncbi.nlm.nih.gov/genome/69439
+5. Pagrus major
+https://www.ncbi.nlm.nih.gov/genome/7176
+```
+
