@@ -294,7 +294,7 @@ mv *.fasta.masked *.fasta.out.gff *.augustus.gff *bed closest* files_for_ArborSc
 Message for Eric / Slack.
 
 ```
-Probe Design Files Reads
+Probe Design Files Ready
 
 A total of 68912 regions have been identified from 28007 scaffolds. The longest scaffold is 257232
 
