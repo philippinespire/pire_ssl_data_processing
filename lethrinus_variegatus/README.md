@@ -251,9 +251,19 @@ Execute the second script.
 sbatch WGprobe_bedcreation.sb "Lva_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
 ```
 
-Check the upper limit.
+Check the upper limit / BED output. Looks good.
+
+```
+The longest scaffold is 257232
+The upper limit used in loop is 247500
+A total of 68912 regions have been identified from 28007 scaffolds
+```
 
 Move out files into logs dir.
+
+```
+mv *out ../logs
+```
 
 ### 11. Closest relatives with available genomes.
 
@@ -272,3 +282,30 @@ https://www.ncbi.nlm.nih.gov/genome/69439
 https://www.ncbi.nlm.nih.gov/genome/7176
 ```
 
+## Files to Send
+
+Making directory with files for Arbor.
+
+```
+mkdir files_for_ArborSci
+mv *.fasta.masked *.fasta.out.gff *.augustus.gff *bed closest* files_for_ArborSci
+```
+
+Message for Eric / Slack.
+
+```
+Probe Design Files Reads
+
+A total of 68912 regions have been identified from 28007 scaffolds. The longest scaffold is 257232
+
+Files for Arbor Bio:
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/probe_design/files_for_ArborSci
+
+Lva_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.augustus.gff
+Lva_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.masked
+Lva_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.out.gff
+Lva_scaffolds_allLibs_decontam_R1R2_noIsolate_great10000_per10000_all.bed
+closest_relative_genomes_Lethrinus_variegatus.txt
+```
+
+Still need to back up to RC / clean up lethrinus_variegatus folder.
