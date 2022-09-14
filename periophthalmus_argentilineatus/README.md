@@ -136,7 +136,14 @@ Execute the second script.
 sbatch WGprobe_bedcreation.sb "Par_scaffolds_CPas-A_decontam_R1R2_noIsolate.fasta"
 ```
 
-Check upper limit.
+Check upper limit - looks good (longest scaffold = 189908, upper limit = 187500).
+
+Par folder didn't have a "logs" subdirectory, so making one and moving logs there.
+
+```
+mkdir ../logs
+mv *out ../logs
+```
 
 11. Closest relatives with available genome.
 
@@ -154,3 +161,31 @@ https://www.ncbi.nlm.nih.gov/genome/13887
 5. Boleophthalmus pectinirostris
 https://www.ncbi.nlm.nih.gov/genome/11967
 ```
+
+## Files to Send
+
+Making subdirectory within probe design containing the files to send to Arbor.
+
+```
+mkdir files_for_ArborSci
+mv *.fasta.masked *.fasta.out.gff *.augustus.gff *bed closest* files_for_ArborSci
+```
+
+Message to Slack / Eric:
+
+```
+Probe Design Files Ready
+
+A total of 30947 regions have been identified from 17256 scaffolds. The longest scaffold is 189908. 
+
+Files for Arbor Bio:
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/probe_design/files_for_ArborSci
+
+Par_scaffolds_CPas-A_decontam_R1R2_noIsolate.fasta.augustus.gff
+Par_scaffolds_CPas-A_decontam_R1R2_noIsolate.fasta.masked
+Par_scaffolds_CPas-A_decontam_R1R2_noIsolate.fasta.out.gff
+Par_scaffolds_CPas-A_decontam_R1R2_noIsolate_great10000_per10000_all.bed
+closest_relative_genomes_periophthalmus_argentilineatus.txt
+```
+
+Still need to back up to RC / clean up periophthalmus_argentilineatus folder.
