@@ -37,19 +37,20 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 
 |Species | Data availability | CSSL priority | Analysis lead | Analysis status / notes |
 | --- | --- | --- | --- | --- |
-|Lethrinus_variegatus | On ODU HPC | 21 | Jordan/Chris | probe development pipeline in progress |
-|Periophthalmus_argentilineatus | On ODU HPC | 12 | Keenan/Chris | probe development pipeline in progress |
-|Pomacentrus_pavo | On ODU HPC | 25 | John/Brendan? | Genome assembly complete |
-|Sphaeramia_nematoptera | On ODU HPC | 20 | Jem | Step 1 SPAdes Assembly as of 5/3 |
-|Pomacentrus_brachialis | On ODU HPC | 26 | Jem/Kyra | Step 1 Spades Assembly as of 5/3 |
-|Corythoichthys_haematopterus | On ODU HPC | 24 | John/Brendan? | 1st round QC done, potential REU project |
-|Stethojulis_interrupta | On ODU HPC | 23 |John/Brendan? | 1st round QC done, potential REU project |
-|Encrasicholina_pseudoheteroloba | On ODU HPC | 30 | John/Brendan? | QC + fqscreen done, potential REU project. Check individual ID |
-|Ostorhinchus_chrysopomus | On ODU HPC | 27 | Eric | Potential REU project|
-|Hypoatherina_temminckii | On ODU HPC | 9/10 | John/Brendan? | Remake probes with correct genome |
-|Ambassis_buruensis | Library prep ongoing | n/a | not assigned | |
-|Tylosurus_crocodilus | Needs extraction | 35 | not assigned | |
-|Sphaeramia_orbicularis | Needs extraction | 36 | not assigned | |
+|Lethrinus_variegatus | On ODU HPC | 19 | Jordan/Chris/Brendan | probe dev complete |
+|Periophthalmus_argentilineatus | On ODU HPC | 17 | Keenan/Chris/Brendan | probe dev complete |
+|Pomacentrus_pavo | On ODU HPC | 23 | Brendan | Assembly complete, John assigned to probe dev |
+|Sphaeramia_nematoptera | On ODU HPC | 18 | Jem | Assembly complete, Jem assigned to probe dev |
+|Pomacentrus_brachialis | On ODU HPC | 24 | Jem/Kyra | Assembly complete, Jem assigned to probe dev |
+|Corythoichthys_haematopterus | On ODU HPC | 25 | Allison/John | Allison completed assembly for REU project; John assigned to probe dev |
+|Stethojulis_interrupta | On ODU HPC | 26 |Abby/John | Abby completed assembly for REU project; John assigned to probe dev  |
+|Ostorhinchus_chrysopomus | On ODU HPC | 28 | Eryka/Eric | Eryka completed assembly for REU project; Eric assigned to probe dev  |
+|Hypoatherina_temminckii | On ODU HPC | 16 | Jem | Jem re-designing probes with correct genome |
+|Ambassis_buruensis | On ODU HPC | 22 | John | Need to do assembly for probe development ASAP |
+|Sphyraena obtusata | On ODU HPC | 20 | Brendan| Need to do assembly for probe development ASAP |
+|Sphaeramia_orbicularis | Needs extraction | 39 | Eric | Probe development planned using published reference |
+|Tylosurus_crocodilus | Needs extraction | n/a | n/a | Not currently on priority list |
+|Encrasicholina_pseudoheteroloba | On ODU HPC | n/a | n/a | Sequencing data weird - dropping from priority list  |
 
 ---
 
