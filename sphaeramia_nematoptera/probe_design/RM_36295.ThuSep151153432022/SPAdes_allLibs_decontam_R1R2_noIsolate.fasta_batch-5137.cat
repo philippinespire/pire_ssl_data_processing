@@ -1,0 +1,984 @@
+16 5.20 0.00 0.00 NODE_12963_length_13814_cov_18.796063 576 595 (13219) (AC)n#Simple_repeat 1 20 (0) m_b5137s252i28
+
+  NODE_12963_le        576 ACACACACACACACACAGAC 595
+                                            v  
+  (AC)n#Simple_          1 ACACACACACACACACACAC 20
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/1)
+Gap_init rate = 0.00 (0 / 19), avg. gap size = 0.0 (0 / 0)
+
+13 13.24 0.00 0.00 NODE_12963_length_13814_cov_18.796063 3703 3727 (10087) (CAGA)n#Simple_repeat 1 25 (0) m_b5137s252i29
+
+  NODE_12963_le       3703 CACACAAACAGACAGACAGACAAAC 3727
+                             v   i               i  
+  (CAGA)n#Simpl          1 CAGACAGACAGACAGACAGACAGAC 25
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (2/1)
+Gap_init rate = 0.00 (0 / 24), avg. gap size = 0.0 (0 / 0)
+
+16 0.00 0.00 0.00 NODE_12963_length_13814_cov_18.796063 5390 5407 (8407) (T)n#Simple_repeat 1 18 (0) m_b5137s252i30
+
+  NODE_12963_le       5390 TTTTTTTTTTTTTTTTTT 5407
+                                             
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTT 18
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 17), avg. gap size = 0.0 (0 / 0)
+
+225 19.15 0.00 0.00 NODE_12963_length_13814_cov_18.796063 6124 6170 (7644) C CR1-24_DR#LINE/L2 (8) 2239 2193 m_b5137s001i0
+
+  NODE_12963_le       6124 TTTATTTAACCAGGTAAGTTATTTGAAAATGGATTCTCATTTTTAAT 6170
+                                              i v    i  ivii         vi   
+C CR1-24_DR#LIN       2239 TTTATTTAACCAGGTAAGTCAATTGAGAACCAGTTCTCATTTACAAT 2193
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 22.63
+Transitions / transversions = 2.00 (6/3)
+Gap_init rate = 0.00 (0 / 46), avg. gap size = 0.0 (0 / 0)
+
+1068 16.17 4.60 6.84 NODE_12963_length_13814_cov_18.796063 6432 6670 (7144) DIRS-1E-LTR_DR#LTR/Ngaro 190 423 (267) m_b5137s001i1
+
+  NODE_12963_le       6432 TAGATTAA-CCAATTAACCGGGCGACACGGTGGTGCAGTGGTTAGCACTC 6480
+                                   -   i--i  v     i        iv              v
+  DIRS-1E-LTR_D        190 TAGATTAATCCAG--GACAGGGCGGCACGGTGGCTCAGTGGTTAGCACTG 237
+
+  NODE_12963_le       6481 ATGCCTCACAGCAAGAAGGTCCTGGGTTCGA-TTCCAAC---ACCAGTTG 6526
+                           vi                   viv       - i  ii ---i       
+  DIRS-1E-LTR_D        238 TCGCCTCACAGCAAGAAGGTCGCTGGTTCGAGTCCCGGCTGGGCCAGTTG 287
+
+  NODE_12963_le       6527 ACGGGGGGTGGGACCTTTCTGTGTGGAGTTTGCATGTTCTCCCCGTGTCT 6576
+                           i  ------------                                 ii
+  DIRS-1E-LTR_D        288 GCG------------TTTCTGTGTGGAGTTTGCATGTTCTCCCCGTGTTC 325
+
+  NODE_12963_le       6577 GCGTGGGTTCTCTCCAGGTACTCCAGCTTCCTCCCACCATCCAAAGACAT 6626
+                                    ii    i   i    i i    ?     vi           
+  DIRS-1E-LTR_D        326 GCGTGGGTTTCCTCCGGGTGCTCCGGTTTCCNCCCACAGTCCAAAGACAT 375
+
+  NODE_12963_le       6627 GCACTGATAGGTTAATTG-----GTTAAATTGCCGATAG-GTGTGAATGT 6670
+                             iv -      v     -----ii       v  -i  -  i   i   
+  DIRS-1E-LTR_D        376 GCGGT-ATAGGTGAATTGAATAAACTAAATTGGCG-CAGTGTATGAGTGT 423
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 15.47
+Transitions / transversions = 2.60 (26/10)
+Gap_init rate = 0.09 (21 / 238), avg. gap size = 1.29 (27 / 21)
+
+1093 13.93 3.37 3.37 NODE_12963_length_13814_cov_18.796063 6441 6648 (7166) SINE_TE#SINE/tRNA-V 6 213 (64) m_b5137s001i2
+
+  NODE_12963_le       6441 CAATTAACCGGGCGACACGGTGGTGCAGTGGTTAGCACTCATGCCTCACA 6490
+                                  i-     i        iv              vvi        
+  SINE_TE#SINE/          6 CAATTAAT-GGGCGGCACGGTGGCTCAGTGGTTAGCACTGTCGCCTCACA 54
+
+  NODE_12963_le       6491 GCAAGAAGGTCCTGGGTTCGATTCCAACACCAGTTGACGGGGGGTGGGAC 6540
+                                       i             ---  ---i i v   ?vv ? i 
+  SINE_TE#SINE/         55 GCAAGAAGGTCCCGGGTTCGATTCCA---CC---CGGCTGGGNCAGNGGC 98
+
+  NODE_12963_le       6541 CTTTCTGTGTGGAGTTTGCATGTTCTCCCCGTGTCTGCGTGGGTTCTCTC 6590
+                           v                                 ii         ii   
+  SINE_TE#SINE/         99 GTTTCTGTGTGGAGTTTGCATGTTCTCCCCGTGTTCGCGTGGGTTTCCTC 148
+
+  NODE_12963_le       6591 CAGGTACTCCAGCTTCCTCCCACCATCCAAAGACATGC---ACTGA---- 6633
+                            i   i    i i    ?     vi             ---?   i----
+  SINE_TE#SINE/        149 CGGGTGCTCCGGTTTCCNCCCACAGTCCAAAGACATGCGGTNCTGGGGAT 198
+
+  NODE_12963_le       6634 TAGGTTAATTGGTTA 6648
+                                v      v  
+  SINE_TE#SINE/        199 TAGGTGAATTGGGTA 213
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 12.52
+Transitions / transversions = 1.80 (18/10)
+Gap_init rate = 0.04 (9 / 207), avg. gap size = 1.56 (14 / 9)
+
+880 21.72 2.66 5.47 NODE_12963_length_13814_cov_18.796063 6459 6721 (7093) C Mariner-N2_DR#DNA/TcMar (2287) 1679 1424 m_b5137s001i3
+
+  NODE_12963_le       6459 GGTGGTGCAGTGGTTAGCACTCATGCCTCACAGCAAGAAGGTCCTGGGTT 6508
+                                i       v    i  vvi                   viv    
+C Mariner-N2_DR       1679 GGTGGCGCAGTGGGTAGCGCTGTCGCCTCACAGCAAGAAGGTCGCTGGTT 1630
+
+  NODE_12963_le       6509 CGATTCCAACACCAGTTGACGGGGGGTGGGACCTTTCTGTGTGGAGTTTG 6558
+                              vi i----- i i  --  vvi  v  - v                 
+C Mariner-N2_DR       1629 CGAGCCT-----CGGCTG--GGTCAGTTGG-CGTTTCTGTGTGGAGTTTG 1588
+
+  NODE_12963_le       6559 CATGTTCTCCCCGTGTCTGCGTGGGTTCTCTCCAGGTACTCCAGCTTCCT 6608
+                                        i  ii         ii    i   i    i i   --
+C Mariner-N2_DR       1587 CATGTTCTCCCCGCGTTCGCGTGGGTTTCCTCCGGGTGCTCCGGTTTC-- 1540
+
+  NODE_12963_le       6609 CCCACCA-TCCAAAGACATGCACTGATAGGTTAATTG-----GTTAAATT 6652
+                                v -             i? - i    v     ----- i      
+C Mariner-N2_DR       1539 CCCACAAGTCCAAAGACATGCGNT-ACAGGTGAATTGGGTAAGCTAAATT 1491
+
+  NODE_12963_le       6653 GCCGATAG-GTGTGAATGTGAGAGTGAGTGTTTGTCTCTATATGTTCAGC 6701
+                            i vi   -  i   i    v v    i  vv   v v iv     i-- 
+C Mariner-N2_DR       1490 GTCCGTAGTGTATGAGTGTGTGTGTGAATGAGTGTGTATGGATGTTT--C 1443
+
+  NODE_12963_le       6702 CCTGCGATGAACTGGCGACT 6721
+                             v i ?  iii -   i  
+C Mariner-N2_DR       1442 CCAGTGNTGGGTT-GCGGCT 1424
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 21.04
+Transitions / transversions = 1.57 (33/21)
+Gap_init rate = 0.06 (17 / 262), avg. gap size = 1.24 (21 / 17)
+
+338 22.63 1.53 5.56 NODE_12963_length_13814_cov_18.796063 6696 6826 (6988) C EnSpm-9_DR#DNA/CMC-EnSpm (2194) 6426 6301 m_b5137s001i4
+
+  NODE_12963_le       6696 TTCAGCCCTGCGATGAACTGGCGACTTGTCCAGGGTGTACCCCGCCTTCA 6745
+                            i i    ?  i  ii         i         ? v    i   iiiv
+C EnSpm-9_DR#DN       6426 TCCGGCCCNGCAATAGACTGGCGACCTGTCCAGGGNGAACCCTGCCCCTT 6377
+
+  NODE_12963_le       6746 CCCCT-ATGTA-GCTGGGGTAGGCTCCAAGCGACCCCCGTGACCCTAGTG 6793
+                            v   -  iv -   ?  v -    -     --i? i ?      v i -
+C EnSpm-9_DR#DN       6376 CGCCTGATAAATGCTNGGTT-GGCT-CAAGC--TNCTCNTGACCCAAAT- 6332
+
+  NODE_12963_le       6794 AGGATAAAGCGGGTTCAGAAAATGAATGAACAA 6826
+                           -         -i ivv       ii   i i  
+C EnSpm-9_DR#DN       6331 -GGATAAAGC-AGCAAAGAAAATAGATGGATAA 6301
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 28.18
+Transitions / transversions = 2.50 (20/8)
+Gap_init rate = 0.07 (9 / 130), avg. gap size = 1.00 (9 / 9)
+
+399 20.63 12.36 4.71 NODE_12963_length_13814_cov_18.796063 6810 6987 (6827) C DNAX-23_DR#DNA (2333) 9468 9278 m_b5137s001i5
+
+  NODE_12963_le       6810 AGAAAATGAATGAAC-AATTAAC---CTTAGTCTTTGG-ATG----GTGG 6850
+                                         i-   v   ---   vv v v   -   ----    
+C DNAX-23_DR#DN       9468 AGAAAATGAATGAATGAATGAACGTTCTTTCTGTGTGGNATGTCTTGTGG 9419
+
+  NODE_12963_le       6851 GAGGAATCTGTAGTACCTAGACAGAACCCATGCAGACATG---GGGAGAA 6897
+                            -    v i v  i   ii  ---      i  ii   i ---       
+C DNAX-23_DR#DN       9418 G-GGAAACCGGAGCACCCGGA---AACCCACGCGAACACGNNAGGGAGAA 9373
+
+  NODE_12963_le       6898 CATCCAGACTAAACACAGAAAGGTT-CCTGGT---GTTGGAA----TCGA 6939
+                              v  -   vv         v ii-v   ii--- ii  i ----    
+C DNAX-23_DR#DN       9372 CATGCA-ACTCCACACAGAAACGCCAACTGACCCAGCCGGGACCCGTCGA 9324
+
+  NODE_12963_le       6940 CCTCAA-GACTTTCTTGCTGTGAGACGACAGTGCTAT-CCACTGCACCGC 6987
+                            --  i-   i              --  v     ii-    i  i?   
+C DNAX-23_DR#DN       9323 C--CAGCGACCTTCTTGCTGTGAGA--ACTGTGCTGCGCCACCGCGNCGC 9278
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 18.04
+Transitions / transversions = 1.69 (22/13)
+Gap_init rate = 0.11 (19 / 177), avg. gap size = 1.63 (31 / 19)
+
+744 22.44 4.49 0.00 NODE_12963_length_13814_cov_18.796063 6836 6991 (6823) C SINE_TE#SINE/tRNA-V (95) 182 20 m_b5137s001i6
+
+  NODE_12963_le       6836 GTCTTTGGATGGTGGGAGGAATCTGTAGTACCTAGACAGAACCCATGCAG 6885
+                                    iv     ?    v i v  i   ii  vii      i  ii
+C SINE_TE#SINE/        182 GTCTTTGGACTGTGGGNGGAAACCGGAGCACCCGGAGGAAACCCACGCGA 133
+
+  NODE_12963_le       6886 ACATGGGGAGAACATCCAGACTAAACACAGAAAGGTTCCTGGT------- 6928
+                              i           v  i   vv         v ii?   ?i-------
+C SINE_TE#SINE/        132 ACACGGGGAGAACATGCAAACTCCACACAGAAACGCCNCTGNCCCAGCCG 83
+
+  NODE_12963_le       6929 GTTGGAATCGACCTCAAGACTTTCTTGCTGTGAGACGACAGTGCTATCCA 6978
+                            v         v i ii   i             i           v   
+C SINE_TE#SINE/         82 GGTGGAATCGAACCCGGGACCTTCTTGCTGTGAGGCGACAGTGCTAACCA 33
+
+  NODE_12963_le       6979 CTGCACCGCTGTG 6991
+                              vi  i i   
+C SINE_TE#SINE/         32 CTGAGCCACCGTG 20
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 21.77
+Transitions / transversions = 1.92 (23/12)
+Gap_init rate = 0.01 (1 / 155), avg. gap size = 7.00 (7 / 1)
+
+18 14.91 0.00 0.00 NODE_12963_length_13814_cov_18.796063 8104 8133 (5681) (T)n#Simple_repeat 1 30 (0) m_b5137s252i31
+
+  NODE_12963_le       8104 TTGTTGTTTTTTTTTTGTTTTGTTTTTTTT 8133
+                             v  v          v    v        
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT 30
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/4)
+Gap_init rate = 0.00 (0 / 29), avg. gap size = 0.0 (0 / 0)
+
+19 0.00 0.00 0.00 NODE_12963_length_13814_cov_18.796063 8608 8628 (5186) (A)n#Simple_repeat 1 21 (0) m_b5137s252i32
+
+  NODE_12963_le       8608 AAAAAAAAAAAAAAAAAAAAA 8628
+                                                
+  (A)n#Simple_r          1 AAAAAAAAAAAAAAAAAAAAA 21
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 20), avg. gap size = 0.0 (0 / 0)
+
+17 0.00 0.00 0.00 NODE_12963_length_13814_cov_18.796063 12327 12345 (1469) (T)n#Simple_repeat 1 19 (0) m_b5137s252i33
+
+  NODE_12963_le      12327 TTTTTTTTTTTTTTTTTTT 12345
+                                              
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTT 19
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 18), avg. gap size = 0.0 (0 / 0)
+
+14 0.00 4.76 0.00 NODE_12964_length_13814_cov_15.174553 1129 1149 (12638) (TAC)n#Simple_repeat 1 22 (0) m_b5137s252i21
+
+  NODE_12964_le       1129 TAC-ACTACTACTACTACTACT 1149
+                              -                  
+  (TAC)n#Simple          1 TACTACTACTACTACTACTACT 22
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.05 (1 / 20), avg. gap size = 1.00 (1 / 1)
+
+249 30.08 0.88 0.88 NODE_12964_length_13814_cov_15.174553 1735 1848 (11939) C DNA8-6_DR#DNA/hAT-Ac (89) 975 862 m_b5137s001i7
+
+  NODE_12964_le       1735 TTAACCCATACAGACCCAAACCACCACCACCGACCAGAACCATCCACTGA 1784
+                                  v  v     v i  vi  i  vv  i i i  vi vvi i  v
+C DNA8-6_DR#DNA        975 TTAACCCTTAAAGACCGAGACAGCCGCCCGCGGCTAAAAATAAGTATTGC 926
+
+  NODE_12964_le       1785 TCTAAACTGTTTAATACTTGTTGATCCAGTAATCCGATCAATAC-ATGGA 1833
+                              v  v         vi v       iv i       iv    -  vv 
+C DNA8-6_DR#DNA        925 TCTTAAATGTTTAATAACTTTTGATCCGCTGATCCGATTCATACAATTCA 876
+
+  NODE_12964_le       1834 AATAATTGGTGTAAA 1848
+                             -i     ii    
+C DNA8-6_DR#DNA        875 AA-GATTGGCATAAA 862
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 36.02
+Transitions / transversions = 0.89 (16/18)
+Gap_init rate = 0.02 (2 / 113), avg. gap size = 1.00 (2 / 2)
+
+285 31.95 2.87 2.87 NODE_12964_length_13814_cov_15.174553 2703 2876 (10911) C DNA8-6_DR#DNA/hAT-Ac (133) 931 758 m_b5137s001i8
+
+  NODE_12964_le       2703 TACTGATCTAAACTGTTTAACACCTGTTGATCTATTAATCCTATCAGTAC 2752
+                             i  v   v  v       i v  v      iii i    v  ivi   
+C DNA8-6_DR#DNA        931 TATTGCTCTTAAATGTTTAATAACTTTTGATCCGCTGATCCGATTCATAC 882
+
+  NODE_12964_le       2753 ATGTCAATAATTGGTGTCAAATACAGTTCTTCATCTTTTCA-TGGT-CAT 2800
+                            vv    vi     ii v  iv v  vvii   v    i  -  v -i  
+C DNA8-6_DR#DNA        881 AATTCAAAGATTGGCATAAAGAAGAGAATCTCAGCTTTCCAGTGCTGTAT 832
+
+  NODE_12964_le       2801 CAGATATGACCATATTTG--GACATTCAGAGGCTCCGTAGTTACCATGGA 2848
+                             v   ----- i   i --   v             v i i viii  v
+C DNA8-6_DR#DNA        831 CACATA-----ACATTCGCGGACTTTCAGAGGCTCCGGAATCAGTGCGGT 787
+
+  NODE_12964_le       2849 AACACCGTCACCCTCT-ACAACATTGATT 2876
+                           v  ii i   v?v i -     ii     
+C DNA8-6_DR#DNA        786 TACGTCATCAANATTTGACAACGCTGATT 758
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 37.76
+Transitions / transversions = 1.16 (29/25)
+Gap_init rate = 0.05 (9 / 173), avg. gap size = 1.11 (10 / 9)
+
+21 0.00 0.00 0.00 NODE_12964_length_13814_cov_15.174553 6339 6361 (7426) (T)n#Simple_repeat 1 23 (0) m_b5137s252i22
+
+  NODE_12964_le       6339 TTTTTTTTTTTTTTTTTTTTTTT 6361
+                                                  
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTTTTTT 23
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 22), avg. gap size = 0.0 (0 / 0)
+
+30 0.00 0.00 0.00 NODE_12964_length_13814_cov_15.174553 6583 6610 (7204) (ATA)n#Simple_repeat 1 28 (0) c_b5137s251i2
+
+  NODE_12964_le       6583 ATAATAATAATAATAATAATAATAATAA 6610
+                                                       
+  (ATA)n#Simple          1 ATAATAATAATAATAATAATAATAATAA 28
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 27), avg. gap size = 0.0 (0 / 0)
+
+608 13.25 1.30 1.96 NODE_12964_length_13814_cov_15.174553 6629 6782 (7032) C hAT-N26_DR#DNA/hAT-Ac (0) 1459 1307 m_b5137s001i9
+
+  NODE_12964_le       6629 CAAGGTTATAATAGTTTTGGATTTTTCATTATAGTTTAGTTT-TATTTAG 6677
+                                                          -iv        -     v 
+C hAT-N26_DR#DN       1459 CAAGGTTATAATAGTTTTGGATTTTTCATTA-GTTTTAGTTTCTATTTCG 1411
+
+  NODE_12964_le       6678 TTTTGACTTTTTTTCCTCAAATTTAGTTGGTTTTAATTCATTTTTAGAG- 6726
+                                       v ii       i    i         - v        -
+C hAT-N26_DR#DN       1410 TTTTGACTTTTTGTTTTCAAATTCAGTTAGTTTTAATT-AGTTTTAGAGG 1362
+
+  NODE_12964_le       6727 CAGGTTTGCTAGTTTTTATTAGTTTTCATTTTTTTCTACATACTTAGTTC 6776
+                              i   i                 ii  v    vvv i- i       i
+C hAT-N26_DR#DN       1361 CAGATTTACTAGTTTTTATTAGTTTCTATATTTTGAAAT-TGCTTAGTTT 1313
+
+  NODE_12964_le       6777 TAGTTT 6782
+                                 
+C hAT-N26_DR#DN       1312 TAGTTT 1307
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 14.71
+Transitions / transversions = 1.50 (12/8)
+Gap_init rate = 0.03 (5 / 153), avg. gap size = 1.00 (5 / 5)
+
+649 20.88 1.08 1.63 NODE_12964_length_13814_cov_15.174553 6925 7109 (6705) C hAT-N26_DR#DNA/hAT-Ac (1241) 218 35 m_b5137s001i10
+
+  NODE_12964_le       6925 GATTTTGTATCAATCCGACATTGACAAAGACGAAAACGAAGGGAATTTTA 6974
+                               v     i  vi--     v                   iii    v
+C hAT-N26_DR#DN        218 GATTATGTATTAAAT--ACATTTACAAAGACGAAAACGAAGGAGGTTTTT 171
+
+  NODE_12964_le       6975 TCCATAATTTGTATCCGTTTTAGTTAGTTTTGTAAACACACAATACAGTT 7024
+                           v i       vvi iv    i             vii             
+C hAT-N26_DR#DN        170 GCTATAATTTTAGTTAGTTTCAGTTAGTTTTGTATGTACACAATACAGTT 121
+
+  NODE_12964_le       7025 TCAGTTAGTTATCGTTTTTTTCTTTTAATTATAGTTTTTA--TTTATCTC 7072
+                                     v v        ivvvv  i v v       --     i  
+C hAT-N26_DR#DN        120 TCAGTTAGTTCTAGTTTTTTTTAAAAAACTCTCGTTTTTATTTTTATTTC 71
+
+  NODE_12964_le       7073 AGTCACCGAAAATGTTTTTACAATTCTAGTTTTTGTT 7109
+                              i v   v   vv      -   i       i   
+C hAT-N26_DR#DN         70 AGTTAACGACAATTATTTTAC-ATTTTAGTTTTCGTT 35
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 23.85
+Transitions / transversions = 0.81 (17/21)
+Gap_init rate = 0.02 (4 / 184), avg. gap size = 1.25 (5 / 4)
+
+440 21.54 20.00 1.54 NODE_12964_length_13814_cov_15.174553 8048 8212 (5602) Harbinger3_DR#DNA/PIF-Harbinger 1 195 (3404) m_b5137s001i11
+
+  NODE_12964_le       8048 GGGCCTCATGTATAAAGCGC-GTGTACGC-CAAAAACCCTT--------- 8086
+                                        v  -   - i      -       ii v---------
+  Harbinger3_DR          1 GGGCCTCATGTATCAA-CGCTGCGTACGCACAAAAACTTTGCGTACGCCA 49
+
+  NODE_12964_le       8087 --TTTCACACTCA----------CATTCAGATGTATAAAGAATGAAATTA 8124
+                           --      i    ---------- i  ii   v  iv  vi       v 
+  Harbinger3_DR         50 GGTTTCACGCTCANNNNCGNNCGCGTTTGGATTTACTAACGATGAAATGA 99
+
+  NODE_12964_le       8125 CCGTGGAAAAGTGCGGTCCTCCACGCCAAGTCCATAGCTGGTGTACGCAT 8174
+                           v    ii  v     v vv          v i   iv    i      ii
+  Harbinger3_DR        100 ACGTGAGAATGTGCGTTGGTCCACGCCAACTTCATGTCTGGCGTACGCGC 149
+
+  NODE_12964_le       8175 GTTTTTAGTGT-------TTTTGAA---CCATTGGCAACACTTAGAGG 8212
+                           i   i v    -------    -- ---        i  v i      
+  Harbinger3_DR        150 ATTTCTTGTGTGTGTTTGTTTT--ATTTCCATTGGCGACTCCTAGAGG 195
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 20.29
+Transitions / transversions = 1.33 (20/15)
+Gap_init rate = 0.06 (10 / 164), avg. gap size = 3.60 (36 / 10)
+
+338 24.39 2.44 0.00 NODE_12964_length_13814_cov_15.174553 9405 9486 (4328) C hAT-N140_DR#DNA/hAT-Ac (1013) 84 1 m_b5137s001i12
+
+  NODE_12964_le       9405 ACAGTATTG--TGATATATCGTATTGTGATTGTAATATTGTGATTTGTAT 9452
+                              i    v--        i    i    iivvvi   i     v     
+C hAT-N140_DR#D         84 ACAATATTTATTGATATATTGTATCGTGACCCATGTATCGTGATATGTAT 35
+
+  NODE_12964_le       9453 CGTATCGCCAGATTCTTGCCAATACACACTCCTA 9486
+                            i     iv  iii              vi    
+C hAT-N140_DR#D         34 CATATCGTGAGGCCCTTGCCAATACACAGCCCTA 1
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 26.88
+Transitions / transversions = 1.86 (13/7)
+Gap_init rate = 0.01 (1 / 81), avg. gap size = 2.00 (2 / 1)
+
+264 18.00 0.00 0.00 NODE_12964_length_13814_cov_15.174553 9667 9716 (4098) C DNA-5-8E_DR#DNA/hAT-hAT5 (0) 482 433 m_b5137s001i13
+
+  NODE_12964_le       9667 CAGGGTTTCTGCAGGTATCAACAAATCTAATTTAATGCTTTTGAATGCCA 9716
+                                           v   v   i  v       vi     v  vi   
+C DNA-5-8E_DR#D        482 CAGGGTTTCTGCAGGTTTCACCAAGTCAAATTTAAGACTTTTTAAGACCA 433
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 20.58
+Transitions / transversions = 0.50 (3/6)
+Gap_init rate = 0.00 (0 / 49), avg. gap size = 0.0 (0 / 0)
+
+289 28.32 0.88 0.00 NODE_12964_length_13814_cov_15.174553 10091 10203 (3611) C DNA-5-3_DR#DNA/hAT-hAT5 (419) 114 1 m_b5137s001i14
+
+  NODE_12964_le      10091 TTTAATGCCTCTGGACATCGAATTTAATGCTTTTTAATGCCATTTAAGG- 10139
+                                 i   ivvi v  v v      vi         i iv       -
+C DNA-5-3_DR#DN        114 TTTAATACCTTGCAAAATAGCATTTAAGACTTTTTAATACTTTTTAAGGG 65
+
+  NODE_12964_le      10140 CCTTAATTGACACAAAATGTATTTAATGACTTTTAATGCTTTTTAATGAC 10189
+                                 v vv v v ?  vv     vii         i        viv 
+C DNA-5-3_DR#DN         64 CCTTAAATTTCTCTANATTGATTTATCAACTTTTAATACTTTTTAAGACC 15
+
+  NODE_12964_le      10190 GCACAGAAACTCTG 10203
+                           v i i  v  i   
+C DNA-5-3_DR#DN         14 CCGCGGACACCCTG 1
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 33.43
+Transitions / transversions = 0.68 (13/19)
+Gap_init rate = 0.01 (1 / 112), avg. gap size = 1.00 (1 / 1)
+
+305 24.44 1.11 0.00 NODE_12964_length_13814_cov_15.174553 10114 10203 (3611) C DNA-5-7_DR#DNA/hAT-hAT5 (583) 91 1 m_b5137s001i15
+
+  NODE_12964_le      10114 TTAATGCTTTTTAATGCCATTTAAGG-CCTTAATTGACACAAAATGTATT 10162
+                               vi         i  v       -        vv v  v   vv   
+C DNA-5-7_DR#DN         91 TTAAGACTTTTTAATACCTTTTAAGGGCCTTAATTTTCTCATAATTGATT 42
+
+  NODE_12964_le      10163 TAATGACTTTTAATGCTTTTTAATGACGCACAGAAACTCTG 10203
+                             vii         i        viv v i i  v  i   
+C DNA-5-7_DR#DN         41 TATCAACTTTTAATACTTTTTAAGACCCCGCGGACACCCTG 1
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 26.68
+Transitions / transversions = 0.69 (9/13)
+Gap_init rate = 0.01 (1 / 89), avg. gap size = 1.00 (1 / 1)
+
+253 16.69 3.90 6.67 NODE_12964_length_13814_cov_15.174553 10482 10558 (3256) DNA-2-30B_DR#DNA 197 271 (146) m_b5137s001i16
+
+  NODE_12964_le      10482 TCTTATTTCAA---GAAATCTTAACAAGATAATTTTCACTTGTTCCATAG 10528
+                                iv    ---    ----        v     -i   iii    v 
+  DNA-2-30B_DR#        197 TCTTACGTCAAAAGGAAA----AACAAGATTATTTT-GCTTACCCCATTG 241
+
+  NODE_12964_le      10529 GCAGATTTTTTTGCTTGAATTAAGCAAAAA 10558
+                                  v         vv     v     
+  DNA-2-30B_DR#        242 GCAGATTATTTTGCTTGTTTTAAGGAAAAA 271
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 17.26
+Transitions / transversions = 0.71 (5/7)
+Gap_init rate = 0.08 (6 / 76), avg. gap size = 1.33 (8 / 6)
+
+263 18.00 0.00 0.00 NODE_12964_length_13814_cov_15.174553 11040 11089 (2725) C DNA-5-8E_DR#DNA/hAT-hAT5 (0) 482 433 m_b5137s001i17
+
+  NODE_12964_le      11040 CAGGGTTTCTGCAGGTATCAGCAAATCTAATTTAATGCTTTTGAATGCCA 11089
+                                           v   v   i  v       vi     v  vi   
+C DNA-5-8E_DR#D        482 CAGGGTTTCTGCAGGTTTCACCAAGTCAAATTTAAGACTTTTTAAGACCA 433
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 20.58
+Transitions / transversions = 0.50 (3/6)
+Gap_init rate = 0.00 (0 / 49), avg. gap size = 0.0 (0 / 0)
+
+19 18.39 0.00 0.00 NODE_12964_length_13814_cov_15.174553 11463 11501 (2313) (GGA)n#Simple_repeat 1 39 (0) m_b5137s252i23
+
+  NODE_12964_le      11463 GGAGGAGGAGGGAGAGGAAGAAGAGGAGGAGGGAGAGGA 11501
+                                      ii     i  i          ii     
+  (GGA)n#Simple          1 GGAGGAGGAGGAGGAGGAGGAGGAGGAGGAGGAGGAGGA 39
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (6/0)
+Gap_init rate = 0.00 (0 / 38), avg. gap size = 0.0 (0 / 0)
+
+23 22.34 1.41 2.86 NODE_12964_length_13814_cov_15.174553 12324 12394 (1420) (AACA)n#Simple_repeat 1 70 (0) m_b5137s252i24
+
+  NODE_12964_le      12324 AACACACAAACACACAAACAAACAAACACGCACACGAATACACAAAGCAA 12373
+                               v       v               vi  v  i  i v     -   
+  (AACA)n#Simpl          1 AACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAACAAA-CAA 49
+
+  NODE_12964_le      12374 AGCGATCACA-ATACAAACTAA 12394
+                            - i v  v - v      v  
+  (AACA)n#Simpl         50 A-CAAACAAACAAACAAACAAA 70
+
+Matrix = Unknown
+Transitions / transversions = 0.44 (4/9)
+Gap_init rate = 0.04 (3 / 70), avg. gap size = 1.00 (3 / 3)
+
+17 3.96 7.69 0.00 NODE_12964_length_13814_cov_15.174553 13164 13189 (625) (AT)n#Simple_repeat 1 28 (0) m_b5137s252i25
+
+  NODE_12964_le      13164 ATAT-TATAAATA-ATATATATATATAT 13189
+                               -    v   -              
+  (AT)n#Simple_          1 ATATATATATATATATATATATATATAT 28
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/1)
+Gap_init rate = 0.08 (2 / 25), avg. gap size = 1.00 (2 / 2)
+
+18 38.53 0.00 1.04 NODE_12964_length_13814_cov_15.174553 13222 13318 (496) (ATAC)n#Simple_repeat 1 96 (0) m_b5137s252i26
+
+  NODE_12964_le      13222 ATATATGTATTCATTCACACACACCCTCATTCATCCATATACACATACAT 13271
+                              i  ii  v   v  i   i  viv   v   v    i i        
+  (ATAC)n#Simpl          1 ATACATACATACATACATACATACATACATACATACATACATACATACAT 50
+
+  NODE_12964_le      13272 CCGTTTCTACATATACCCGTAACATACAAGTACACATACACACATAC 13318
+                           v i viv      i iv i -       vii i       i      
+  (ATAC)n#Simpl         51 ACATACATACATACATACAT-ACATACATACATACATACATACATAC 96
+
+Matrix = Unknown
+Transitions / transversions = 1.55 (17/11)
+Gap_init rate = 0.01 (1 / 96), avg. gap size = 1.00 (1 / 1)
+
+23 13.42 0.00 0.00 NODE_12964_length_13814_cov_15.174553 13676 13716 (98) (GTCT)n#Simple_repeat 1 41 (0) m_b5137s252i27
+
+  NODE_12964_le      13676 GTTTGTCTGTCCGTCTGTCTGTCTGTCTTTCTGTCCGTGTG 13716
+                             i        i                v      i  v  
+  (GTCT)n#Simpl          1 GTCTGTCTGTCTGTCTGTCTGTCTGTCTGTCTGTCTGTCTG 41
+
+Matrix = Unknown
+Transitions / transversions = 1.50 (3/2)
+Gap_init rate = 0.00 (0 / 40), avg. gap size = 0.0 (0 / 0)
+
+12 11.26 6.90 0.00 NODE_12965_length_13813_cov_20.598512 1 29 (13784) (ATG)n#Simple_repeat 1 31 (0) m_b5137s252i13
+
+  NODE_12965_le          1 ATGATGATGATGATG-TCA-GAACATGATGA 29
+                                          - v -  vv       
+  (ATG)n#Simple          1 ATGATGATGATGATGATGATGATGATGATGA 31
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/3)
+Gap_init rate = 0.07 (2 / 28), avg. gap size = 1.00 (2 / 2)
+
+17 17.29 5.13 0.00 NODE_12965_length_13813_cov_20.598512 899 937 (12876) (TG)n#Simple_repeat 1 41 (0) m_b5137s252i14
+
+  NODE_12965_le        899 TGT-TGTGTGTCTGCGTCTGTGTGTATGCTTGTGTGT-TGT 937
+                              -       v  i  v       i  iv       -   
+  (TG)n#Simple_          1 TGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGT 41
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (3/3)
+Gap_init rate = 0.05 (2 / 38), avg. gap size = 1.00 (2 / 2)
+
+408 28.77 13.73 1.53 NODE_12965_length_13813_cov_20.598512 4445 4677 (9136) C HarbingerN4_DR#DNA/PIF-Harbinger (0) 860 600 m_b5137s001i18
+
+  NODE_12965_le       4445 GGGTGTATTCACACCTACTTCTTTTGGTTAGTTAAAAATGGACCAGAGTT 4494
+                                iv         i i iv   i   v v vi  vi v  i      
+C HarbingerN4_D        860 GGGTGCTTTCACACCTGCCTTATTTAGTTCGATTGAATCGCACTAGAGTT 811
+
+  NODE_12965_le       4495 TGTTTCCCCAGAAAGTCCGGCCTTTTTTT---TAGGTGTGAATACAAACA 4541
+                           i    i   vvvvi  v   --  iv   ---i     ?    i  ivv 
+C HarbingerN4_D        810 CGTTTTCCCTCTTGGTGCGG--TTCGTTTGGGCAGGTGNGAATGCAGCAA 763
+
+  NODE_12965_le       4542 TGCGAACTCTGATT------------CGAATCAAACAAGTG------GAC 4573
+                            -  v    -  v ------------  i i    ?   i ------   
+C HarbingerN4_D        762 T-CGTACTC-GAGTGCGCACCAAAAGCGGACCAAANAAGCGTACCGAGAC 715
+
+  NODE_12965_le       4574 T---------AGGTGGTCTCAGTCTGCTTCCAAATGGACTCTGGGCTGGT 4614
+                           i---------          i  vi    i    i i  i    ivi   
+C HarbingerN4_D        714 CTGCTTGAAGAGGTGGTCTCGGTACGCTTTCAAACGAACCCTGGAGCGGT 665
+
+  NODE_12965_le       4615 TCACTTCTGGTGTGAATATAA-CTGGCCTCAAGCTGAAACAAAC-CAATG 4662
+                             ii  v     v      i - i ?v  v  i v ivv   v -   vi
+C HarbingerN4_D        664 TCGTTTGTGGTGAGAATATGATCCGNACTAAAACAGGTCCAACCGCAAAA 615
+
+  NODE_12965_le       4663 AACCATGCGCCTTTT 4677
+                            iivv          
+C HarbingerN4_D        614 AGTACTGCGCCTTTT 600
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 30.95
+Transitions / transversions = 1.20 (36/30)
+Gap_init rate = 0.04 (10 / 232), avg. gap size = 3.60 (36 / 10)
+
+17 2.94 11.43 0.00 NODE_12965_length_13813_cov_20.598512 5861 5895 (7918) (TTTTTGA)n#Simple_repeat 1 39 (0) m_b5137s252i15
+
+  NODE_12965_le       5861 TTTTTGATTTTTGA--TTTG-TCTTT-ATTTTTGATTTT 5895
+                                         --    - i   -            
+  (TTTTTGA)n#Si          1 TTTTTGATTTTTGATTTTTGATTTTTGATTTTTGATTTT 39
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/0)
+Gap_init rate = 0.09 (3 / 34), avg. gap size = 1.33 (4 / 3)
+
+14 27.64 1.92 0.00 NODE_12965_length_13813_cov_20.598512 5862 5913 (7900) (TTTTGC)n#Simple_repeat 1 53 (0) m_b5137s252i16
+
+  NODE_12965_le       5862 TTTTGATTTTTGATTTGTCTTTATTTTTGATTTTGC-ACTCCTTTTGCTT 5910
+                                v    vvv    ii   ii     v      -vi v         
+  (TTTTGC)n#Sim          1 TTTTGCTTTTGCTTTTGCTTTTGCTTTTGCTTTTGCTTTTGCTTTTGCTT 50
+
+  NODE_12965_le       5911 TTG 5913
+                              
+  (TTTTGC)n#Sim         51 TTG 53
+
+Matrix = Unknown
+Transitions / transversions = 0.71 (5/7)
+Gap_init rate = 0.02 (1 / 51), avg. gap size = 1.00 (1 / 1)
+
+507 12.07 0.00 3.61 NODE_12965_length_13813_cov_20.598512 7423 7508 (6305) Rex1-26_DRe#LINE/Rex-Babar 3284 3366 (24) m_b5137s001i19
+
+  NODE_12965_le       7423 TGTGGACAGCAAAGCAAGATTTTCATTGTACAGGGAAGCCTGTTTCTTTA 7472
+                                  i      i    v                 i v      i   
+  Rex1-26_DRe#L       3284 TGTGGACGGCAAAGTAAGAATTTCATTGTACAGGGAAACGTGTTTCCTTA 3333
+
+  NODE_12965_le       7473 CTGTACACATGACAATAAATGCTCTGAATCTTGAAT 7508
+                               i              iiv -    --      
+  Rex1-26_DRe#L       3334 CTGTGCACATGACAATAAACAGT-TGAA--TTGAAT 3366
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 11.99
+Transitions / transversions = 2.33 (7/3)
+Gap_init rate = 0.04 (3 / 85), avg. gap size = 1.00 (3 / 3)
+
+20 13.82 4.00 1.96 NODE_12965_length_13813_cov_20.598512 9480 9529 (4284) (CTAATTG)n#Simple_repeat 1 51 (0) m_b5137s252i17
+
+  NODE_12965_le       9480 CTAATGTGCTAAGTGCTAA-TGCTAATTGCTAA-TGGTAAGGTCTAATGG 9527
+                                -      v      -             -  v   vvv     v 
+  (CTAATTG)n#Si          1 CTAAT-TGCTAATTGCTAATTGCTAATTGCTAATTGCTAATTGCTAATTG 49
+
+  NODE_12965_le       9528 CT 9529
+                             
+  (CTAATTG)n#Si         50 CT 51
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/6)
+Gap_init rate = 0.06 (3 / 49), avg. gap size = 1.00 (3 / 3)
+
+11 11.13 6.90 0.00 NODE_12965_length_13813_cov_20.598512 10020 10048 (3765) (ATCTAT)n#Simple_repeat 1 31 (0) m_b5137s252i18
+
+  NODE_12965_le      10020 ATCTATATTTATAT-T-TATATATAGCTATA 10048
+                                   i     - -   v    v     
+  (ATCTAT)n#Sim          1 ATCTATATCTATATCTATATCTATATCTATA 31
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (1/2)
+Gap_init rate = 0.07 (2 / 28), avg. gap size = 1.00 (2 / 2)
+
+262 15.25 5.00 1.61 NODE_12965_length_13813_cov_20.598512 10774 10833 (2980) L2-16_DRe#LINE/Rex-Babar 4223 4284 (5) m_b5137s001i20
+
+  NODE_12965_le      10774 GCGCTTTGAGTATGCATTCATA---GAAAAGCACTATATAAATCTAATCC 10820
+                                      -     vi  i---      ii     i    vv   ?i
+  L2-16_DRe#LIN       4223 GCGCTTTGAGT-TGCATGTATGTNGGAAAAGTGCTATACAAATAAAATNT 4271
+
+  NODE_12965_le      10821 ATTATTATTATTA 10833
+                                        
+  L2-16_DRe#LIN       4272 ATTATTATTATTA 4284
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 17.69
+Transitions / transversions = 2.00 (6/3)
+Gap_init rate = 0.03 (2 / 59), avg. gap size = 2.00 (4 / 2)
+
+270 15.53 1.67 3.39 NODE_12965_length_13813_cov_20.598512 11309 11368 (2445) REX1-2_DR#LINE/Rex-Babar 3303 3361 (1) m_b5137s001i21
+
+  NODE_12965_le      11309 AACCAAAGCCAAATTCCTTGTATGTGCTCA-CATACTTGGCCAATAAAGC 11357
+                            i     i -           i    ivv -  i      -       i 
+  REX1-2_DR#LIN       3303 AGCCAAAAC-AAATTCCTTGTGTGTGTGAAGCACACTTGG-CAATAAAAC 3350
+
+  NODE_12965_le      11358 AGATTCTGATT 11368
+                           v          
+  REX1-2_DR#LIN       3351 TGATTCTGATT 3361
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 17.69
+Transitions / transversions = 2.00 (6/3)
+Gap_init rate = 0.05 (3 / 59), avg. gap size = 1.00 (3 / 3)
+
+311 14.30 0.00 1.79 NODE_12965_length_13813_cov_20.598512 11318 11374 (2439) REX1-5_DR#LINE/Rex-Babar 2602 2657 (2) m_b5137s001i22
+
+  NODE_12965_le      11318 CAAATTCCTTGTATGTGCTCACATACTTGGCCAATAAAGCAGATTCTGAT 11367
+                                    i       ivv      i   -         vvv       
+  REX1-5_DR#LIN       2602 CAAATTCCTCGTATGTGTGAACATACCTGG-CAATAAAGCTCTTTCTGAT 2650
+
+  NODE_12965_le      11368 TCTGATT 11374
+                                  
+  REX1-5_DR#LIN       2651 TCTGATT 2657
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 13.89
+Transitions / transversions = 0.60 (3/5)
+Gap_init rate = 0.02 (1 / 56), avg. gap size = 1.00 (1 / 1)
+
+17 0.00 0.00 0.00 NODE_12965_length_13813_cov_20.598512 11844 11862 (1951) (A)n#Simple_repeat 1 19 (0) m_b5137s252i19
+
+  NODE_12965_le      11844 AAAAAAAAAAAAAAAAAAA 11862
+                                              
+  (A)n#Simple_r          1 AAAAAAAAAAAAAAAAAAA 19
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 18), avg. gap size = 0.0 (0 / 0)
+
+19 8.13 0.00 0.00 NODE_12965_length_13813_cov_20.598512 12178 12203 (1610) (TC)n#Simple_repeat 1 26 (0) m_b5137s252i20
+
+  NODE_12965_le      12178 TCTCTCTCTCTCTCATTCTCTCTCTC 12203
+                                         vi          
+  (TC)n#Simple_          1 TCTCTCTCTCTCTCTCTCTCTCTCTC 26
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/1)
+Gap_init rate = 0.00 (0 / 25), avg. gap size = 0.0 (0 / 0)
+
+376 15.18 1.09 6.90 NODE_12965_length_13813_cov_20.598512 13475 13566 (247) hAT-N21B_DR#DNA/hAT-Ac 1 87 (1214) m_b5137s001i23
+
+  NODE_12965_le      13475 TAGGGCTGTGCAATTAATCGAAATTCAATTACGATTTCGATTATTACACG 13524
+                                                  v  -----           v vi viv
+  hAT-N21B_DR#D          1 TAGGGCTGTGCAATTAATCGAAAATC-----CGATTTCGATTTTGGCTTC 45
+
+  NODE_12965_le      13525 CAACGATTAC-AAAAATTATGTAATCGAGAAAAAACAATTATT 13566
+                           i        i-     ii  -         v   ? i      
+  hAT-N21B_DR#D         46 TAACGATTATGAAAAACCAT-TAATCGAGATAAANCGATTATT 87
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 15.85
+Transitions / transversions = 1.17 (7/6)
+Gap_init rate = 0.08 (7 / 91), avg. gap size = 1.00 (7 / 7)
+
+17 15.60 0.00 0.00 NODE_12966_length_13813_cov_19.019980 9793 9821 (3992) (T)n#Simple_repeat 1 29 (0) m_b5137s252i8
+
+  NODE_12966_le       9793 TTTTTTTTTTTTTTTTTCTCTTTATCTTT 9821
+                                            i i   v i   
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTTTTTTTTTTTT 29
+
+Matrix = Unknown
+Transitions / transversions = 3.00 (3/1)
+Gap_init rate = 0.00 (0 / 28), avg. gap size = 0.0 (0 / 0)
+
+16 5.27 0.00 0.00 NODE_12966_length_13813_cov_19.019980 11515 11534 (2279) (T)n#Simple_repeat 1 20 (0) m_b5137s252i9
+
+  NODE_12966_le      11515 TTTTTTTTTTTTTTTTTCTT 11534
+                                            i  
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTTT 20
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/0)
+Gap_init rate = 0.00 (0 / 19), avg. gap size = 0.0 (0 / 0)
+
+17 12.13 2.63 2.63 NODE_12966_length_13813_cov_19.019980 11647 11684 (2129) (TGTTT)n#Simple_repeat 1 38 (0) m_b5137s252i10
+
+  NODE_12966_le      11647 TGTTTTGTTTTGTTTT-TTTTCTGTGGATTTGTTTGTGT 11684
+                                           -    v v v v       -   
+  (TGTTT)n#Simp          1 TGTTTTGTTTTGTTTTGTTTTGTTTTGTTTTGTTT-TGT 38
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/4)
+Gap_init rate = 0.05 (2 / 37), avg. gap size = 1.00 (2 / 2)
+
+17 18.53 0.00 0.00 NODE_12966_length_13813_cov_19.019980 12102 12132 (1681) (T)n#Simple_repeat 1 31 (0) m_b5137s252i11
+
+  NODE_12966_le      12102 TTTGTTTTTTGTTTTGTTTTGTTTTTTTGTT 12132
+                              v      v    v    v       v  
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT 31
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.00 (0 / 30), avg. gap size = 0.0 (0 / 0)
+
+16 5.27 0.00 0.00 NODE_12966_length_13813_cov_19.019980 12439 12458 (1355) (T)n#Simple_repeat 1 20 (0) m_b5137s252i12
+
+  NODE_12966_le      12439 TTTTTTTTTTTTTTTCTTTT 12458
+                                          i    
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTTT 20
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/0)
+Gap_init rate = 0.00 (0 / 19), avg. gap size = 0.0 (0 / 0)
+
+252 17.24 1.72 0.00 NODE_12966_length_13813_cov_19.019980 13065 13122 (691) LOOPERN6_DR#DNA/Kolobok-T2 264 322 (1029) m_b5137s001i24
+
+  NODE_12966_le      13065 TAATT-TCTTTCTGCATAAATCTCTTAAACCACTTCAGCTCTGCTCAAAA 13113
+                                - i   i           v    v v  i    ii   v      
+  LOOPERN6_DR#D        264 TAATTNTTTTTTTGCATAAATCTGTTAATCAACCTCAGTCCTGATCAAAA 313
+
+  NODE_12966_le      13114 CTACCAAAT 13122
+                               i    
+  LOOPERN6_DR#D        314 CTACTAAAT 322
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 19.85
+Transitions / transversions = 1.50 (6/4)
+Gap_init rate = 0.02 (1 / 57), avg. gap size = 1.00 (1 / 1)
+
+358 22.45 1.00 2.02 NODE_12966_length_13813_cov_19.019980 13706 13805 (8) C Tc1-5_DR#DNA/TcMar-Tc1 (0) 1234 1136 m_b5137s001i25
+
+  NODE_12966_le      13706 CAGGGGTTGGACAAAATAATGGAAACACCTTAAAAAAGTCAACAA-AATA 13754
+                                         viv  iv     i   vivvvv  v v    -   v
+C Tc1-5_DR#DNA/       1234 CAGGGGTTGGACAATGAAACTGAAACGCCTGGTTTTAGACCACAATAATT 1185
+
+  NODE_12966_le      13755 TAATTTAATATGGTGTAGGTCCGCCTTTTGCGGCAATTACAGCCTCAATT 13804
+                           i --   i           v  v           v v      v      
+C Tc1-5_DR#DNA/       1184 CA--TTAGTATGGTGTAGGGCCTCCTTTTGCGGCCAATACAGCATCAATT 1137
+
+  NODE_12966_le      13805 C 13805
+                            
+C Tc1-5_DR#DNA/       1136 C 1136
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 25.44
+Transitions / transversions = 0.38 (6/16)
+Gap_init rate = 0.03 (3 / 99), avg. gap size = 1.00 (3 / 3)
+
+31 0.00 0.00 0.00 NODE_12967_length_13813_cov_17.463760 4 30 (13783) (CA)n#Simple_repeat 1 27 (0) c_b5137s251i0
+
+  NODE_12967_le          4 CACACACACACACACACACACACACAC 30
+                                                      
+  (CA)n#Simple_          1 CACACACACACACACACACACACACAC 27
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 26), avg. gap size = 0.0 (0 / 0)
+
+16 10.03 0.00 0.00 NODE_12967_length_13813_cov_17.463760 1281 1302 (12482) (T)n#Simple_repeat 1 22 (0) m_b5137s252i0
+
+  NODE_12967_le       1281 TTTTCTTTTTTCTTTTTTTTTT 1302
+                               i      i          
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTTTTT 22
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (2/0)
+Gap_init rate = 0.00 (0 / 21), avg. gap size = 0.0 (0 / 0)
+
+257 28.01 6.36 2.63 NODE_12967_length_13813_cov_17.463760 1638 1747 (12037) KibiDr2#LINE/L1-Tx1 4710 4823 (577) m_b5137s001i26
+
+  NODE_12967_le       1638 TTCTCTCGAAGGATGCTGT----CACTGTAGAAGCCACCCGTTGAGAAAC 1683
+                              i i i    v     v---- v     v  i  v   i    i   v
+  KibiDr2#LINE/       4710 TTCCCCCAAAGGTTGCTGGAGGACCCTGTACAAACCTCCCATTGAAAAAA 4759
+
+  NODE_12967_le       1684 GAATGACTG---ACCTCCAGTGGAGGACTGCACATGAGCCTGTAGTTATG 1730
+                            --- v   ---    i          iv ii    ivvivi   ii ii
+  KibiDr2#LINE/       4760 G---GTCTGGAGACCTTCAGTGGAGGATAGTGCATGGTATAATAGCCACA 4806
+
+  NODE_12967_le       1731 GAGAGACACAGAGCACA 1747
+                           i v              
+  KibiDr2#LINE/       4807 AACAGACACAGAGCACA 4823
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 36.11
+Transitions / transversions = 1.50 (18/12)
+Gap_init rate = 0.05 (5 / 109), avg. gap size = 2.00 (10 / 5)
+
+231 29.22 3.76 2.22 NODE_12967_length_13813_cov_17.463760 1660 1792 (11992) Tx1-25_DR#LINE/L1-Tx1 4819 4953 (489) m_b5137s001i27
+
+  NODE_12967_le       1660 TGTAGAAGCCACCCGTTGAGAAACGAATGACTGACCTCCAGTGGAGGACT 1709
+                               v  i ?v  i  ?          ivi ?  i  v          i?
+  Tx1-25_DR#LIN       4819 TGTATAAACNCCCTGTNGAGAAACGAACTGCNGATCTACAGTGGAGGATN 4868
+
+  NODE_12967_le       1710 GCACATGAGCCTGTAGTTATGGAGAGACACAGAGCACAGCTGGA-CTAGA 1758
+                           iiv  i i v ii   i  i i v      ivi     v  ii - i  v
+  Tx1-25_DR#LIN       4869 ATTCACGGGGCCATAGCTACGAACAGACACGTGGCACACCTAAATCCAGC 4918
+
+  NODE_12967_le       1759 GTTCTGGGGAGGGGAG----GGTTCTGGGAGGGTGGGG 1792
+                            v ---   v   v  ----    i  v  ? iv  i 
+  Tx1-25_DR#LIN       4919 GGT---GGGTGGGCAGTGTTGGTTTTGTGANGAGGGAG 4953
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 36.28
+Transitions / transversions = 1.53 (23/15)
+Gap_init rate = 0.04 (5 / 132), avg. gap size = 1.60 (8 / 5)
+
+30 3.45 0.00 0.00 NODE_12967_length_13813_cov_17.463760 2331 2360 (11453) (AC)n#Simple_repeat 1 30 (0) c_b5137s251i1
+
+  NODE_12967_le       2331 ACACACACACACACACACACACATACACAC 2360
+                                                  i      
+  (AC)n#Simple_          1 ACACACACACACACACACACACACACACAC 30
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/0)
+Gap_init rate = 0.00 (0 / 29), avg. gap size = 0.0 (0 / 0)
+
+477 23.08 7.14 7.14 NODE_12967_length_13813_cov_17.463760 5718 5871 (7942) HARBINGERN2B_DR#DNA/PIF-Harbinger 646 799 (0) m_b5137s001i28
+
+  NODE_12967_le       5718 AACCGAGCTGAGACCACCTCTTCCAAACGGTCTCAGCTCCGTTGTTTTGT 5767
+                             i     i           v i  ii  i    i vi vi        v
+  HARBINGERN2B_        646 AATCGAGCCGAGACCACCTCATTCAGGCGATCTCGGACCGATTGTTTTGG 695
+
+  NODE_12967_le       5768 TCTGGAATGGAGCGTGATTACTGCTTTCACATATGCCCAATCGAACCG-- 5815
+                           ivi   viv     i    i   vv            v  -       --
+  HARBINGERN2B_        696 CGCGGATCCGAGCGCGATTGCTGGATTCACATATGCCAAA-CGAACCGCG 744
+
+  NODE_12967_le       5816 ------AGGCAA---AGACTTGTTCCGGAACAACGGCTCCAATTGATCCA 5856
+                           ------i     ---    vv      i     -------  ---i  i 
+  HARBINGERN2B_        745 CTAACTGGGCAAACGAGACAGGTTCCGAAACAA-------AA---GTCTA 784
+
+  NODE_12967_le       5857 AGTGTGAAAATACCC 5871
+                           i        ii    
+  HARBINGERN2B_        785 GGTGTGAAAGCACCC 799
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 23.49
+Transitions / transversions = 1.75 (21/12)
+Gap_init rate = 0.09 (14 / 153), avg. gap size = 1.57 (22 / 14)
+
+290 24.07 9.39 5.88 NODE_12967_length_13813_cov_17.463760 6087 6267 (7546) C hAT-N26_DR#DNA/hAT-Ac (1272) 187 1 m_b5137s001i29
+
+  NODE_12967_le       6087 AAATAAAGGTAATTTCT-CTATAATTTTAGTTCATTTTAGTTGGTTTTGT 6135
+                              ii    vii   i -              vi   i    i       
+C hAT-N26_DR#DN        187 AAACGAAGGAGGTTTTTGCTATAATTTTAGTTAGTTTCAGTTAGTTTTGT 138
+
+  NODE_12967_le       6136 AAACTCACAATACAGTTCCACTTA---TTAGATGTATTTGTAAGG-TCTC 6181
+                            viiv            i  v   ---i   v v v   iv  ii-    
+C hAT-N26_DR#DN        137 ATGTACACAATACAGTTTCAGTTAGTTCTAGTTTTTTTTAAAAAACTCTC 88
+
+  NODE_12967_le       6182 ATTTAGATTTTTCCTATGTTTTTACTTCAGTTCACA--------TTTACA 6223
+                           i   --- -------- i      i       v  i--------      
+C hAT-N26_DR#DN         87 GTTT---T--------TATTTTTATTTCAGTTAACGACAATTATTTTACA 49
+
+  NODE_12967_le       6224 -CATAATTTTCATTACTTCATCACTTTCCCTTAAC---AATAACCTTG 6267
+                           -iv  i     i  vi   i ivv   i v     ---          
+C hAT-N26_DR#DN         48 TTTTAGTTTTCGTTTTTTCGTTCGTTTTCGTTAACTATAATAACCTTG 1
+
+Matrix = 20p37g.matrix
+Kimura (with divCpGMod) = 25.63
+Transitions / transversions = 1.73 (26/15)
+Gap_init rate = 0.09 (17 / 180), avg. gap size = 1.65 (28 / 17)
+
+16 0.00 0.00 0.00 NODE_12967_length_13813_cov_17.463760 7283 7300 (6513) (G)n#Simple_repeat 1 18 (0) m_b5137s252i1
+
+  NODE_12967_le       7283 GGGGGGGGGGGGGGGGGG 7300
+                                             
+  (G)n#Simple_r          1 GGGGGGGGGGGGGGGGGG 18
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 17), avg. gap size = 0.0 (0 / 0)
+
+22 8.33 2.44 2.44 NODE_12967_length_13813_cov_17.463760 7645 7685 (6128) (CTTCTC)n#Simple_repeat 1 41 (0) m_b5137s252i2
+
+  NODE_12967_le       7645 CTTCTCC-TCTATCTTCTCCTTCTCCTCCTCCTTCTCTTTCT 7685
+                                  -   -i              i         i    
+  (CTTCTC)n#Sim          1 CTTCTCCTTCT-CCTTCTCCTTCTCCTTCTCCTTCTCCTTCT 41
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (3/0)
+Gap_init rate = 0.05 (2 / 40), avg. gap size = 1.00 (2 / 2)
+
+18 20.28 3.33 3.33 NODE_12967_length_13813_cov_17.463760 7903 7962 (5851) (GTTT)n#Simple_repeat 1 60 (0) m_b5137s252i3
+
+  NODE_12967_le       7903 GTTTGTTT-TTTATTAATTT-AGTGTTAGCTTTAGTTGTTGTTTTTGTTT 7950
+                                   -   i  vi   -vv    v -   iv     - v       
+  (GTTT)n#Simpl          1 GTTTGTTTGTTTGTTTGTTTGTTTGTTTG-TTTGTTTGTT-TGTTTGTTT 48
+
+  NODE_12967_le       7951 GTTTGTTTTTTT 7962
+                                   v   
+  (GTTT)n#Simpl         49 GTTTGTTTGTTT 60
+
+Matrix = Unknown
+Transitions / transversions = 0.43 (3/7)
+Gap_init rate = 0.07 (4 / 59), avg. gap size = 1.00 (4 / 4)
+
+15 18.60 1.52 9.84 NODE_12967_length_13813_cov_17.463760 7904 7969 (5844) (TTTA)n#Simple_repeat 1 61 (0) m_b5137s252i4
+
+  NODE_12967_le       7904 TTTGTTT-TTTATTAATTTAGTGTTAGCTTTAGTTGTTGTTTTTGTTTGT 7952
+                              i   -      v     - -   --    v  i  - v   i   i 
+  (TTTA)n#Simpl          1 TTTATTTATTTATTTATTTA-T-TTA--TTTATTTATT-TATTTATTTAT 45
+
+  NODE_12967_le       7953 TTGTTTTTTTTATTTAT 7969
+                             -v   v         
+  (TTTA)n#Simpl         46 TT-ATTTATTTATTTAT 61
+
+Matrix = Unknown
+Transitions / transversions = 0.80 (4/5)
+Gap_init rate = 0.11 (7 / 65), avg. gap size = 1.00 (7 / 7)
+
+18 23.75 4.69 0.00 NODE_12967_length_13813_cov_17.463760 7904 7967 (5846) (TTTGTT)n#Simple_repeat 1 67 (0) m_b5137s252i5
+
+  NODE_12967_le       7904 TTTG-TTTT-TTATTAATTTAGTGTTAGCTTTAGTTGTTGTTTTTGTTTG 7951
+                               -    -  v  iv   v  v  v i   v   v            v
+  (TTTGTT)n#Sim          1 TTTGTTTTTGTTTTTGTTTTTGTTTTTGTTTTTGTTTTTGTTTTTGTTTT 50
+
+  NODE_12967_le       7952 T-TTGTTTTTTTTATTT 7967
+                            -  v  v     i   
+  (TTTGTT)n#Sim         51 TGTTTTTGTTTTTGTTT 67
+
+Matrix = Unknown
+Transitions / transversions = 0.30 (3/10)
+Gap_init rate = 0.05 (3 / 63), avg. gap size = 1.00 (3 / 3)
+
+15 5.48 0.00 0.00 NODE_12967_length_13813_cov_17.463760 9492 9510 (4303) (A)n#Simple_repeat 1 19 (0) m_b5137s252i6
+
+  NODE_12967_le       9492 AAAAAAAAACAAAAAAAAA 9510
+                                    v         
+  (A)n#Simple_r          1 AAAAAAAAAAAAAAAAAAA 19
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/1)
+Gap_init rate = 0.00 (0 / 18), avg. gap size = 0.0 (0 / 0)
+
+19 31.10 0.00 0.00 NODE_12967_length_13813_cov_17.463760 11926 11984 (1829) (TT)n#Simple_repeat 1 59 (0) m_b5137s252i7
+
+  NODE_12967_le      11926 TTTTTCTTGTATTTTTTTTTTTTTTTTTACATATACTTCTTGGGTTTTTT 11975
+                                i  v v                 viv v vi  i  vvv      
+  (TT)n#Simple_          1 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT 50
+
+  NODE_12967_le      11976 AGTTTTTTT 11984
+                           vv       
+  (TT)n#Simple_         51 TTTTTTTTT 59
+
+Matrix = Unknown
+Transitions / transversions = 0.36 (4/11)
+Gap_init rate = 0.00 (0 / 58), avg. gap size = 0.0 (0 / 0)
+
