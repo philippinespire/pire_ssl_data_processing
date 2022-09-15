@@ -10,6 +10,8 @@ enable_lmod
 module load container_env
 module load pophyrad
 
+export SINGULARITY_BIND=/home/e1garcia
+
 BASENAME=$(ls $1 | sed 's/\..*//')
 
 #pull out first 5,000 bp (filtering for those over 10,000 NOT 7,500 bp)
