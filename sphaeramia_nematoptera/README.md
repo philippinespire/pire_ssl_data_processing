@@ -253,6 +253,18 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 
 ---
 8/1/22: Brendan Reid taking over assembly, running 1/2/3/allLibs decontam assemblies
+
+Scaffold assembly summaries:
+
+| Species | Library | DataType | SCAFIG    | covcutoff | genomescope v. | # contigs | Largest contig | Total length | Est length | % Genome size completeness | N50   | L50   | BUSCO single copy |
+|---------|---------|----------|-----------|-----------|----------------|-----------|----------------|--------------|------------|----------------------------|-------|-------|-------------------|
+| Sne     | Ctaw-A  | decontam | scaffolds | off       | 2              | 99907     | 140168         | 803923447    | 965000000  | 0.833081292                | 9731  | 22969 | 58%               |
+| Sne     | Ctaw-B  | decontam | scaffolds | off       | 2              | 100579    | 124630         | 805679160    | 965000000  | 0.834900684                | 9638  | 23340 | 56.90%            |
+| Sne     | Ctaw-C  | decontam | scaffolds | off       | 2              | 96967     | 122898         | 780324776    | 965000000  | 0.808626711                | 9760  | 22606 | 54.30%            |
+| Sne     | allLibs | decontam | scaffolds | off       | 2              | 99297     | 155721         | 817890798    | 965000000  | 0.847555231                | 10060 | 22244 | 58%               |
+
+allLibs looks slightly better than the others. I attempted to run SPAdes on allLibs_contam but didn't successfully complete - since we don't need contam for probe development though the best usable assembly would be allLibs. 
+
 ---
 9/13/22: Jem Baldisimo taking over probe development. Best decontam assembly done by B. Reid to be used for probe development
 ---
