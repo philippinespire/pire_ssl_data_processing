@@ -19,7 +19,7 @@ crun RepeatMasker -species zebrafish -e rmblast -parallel $SLURM_CPUS_PER_TASK -
 #NOTE: make sure augustus_config_dir is accessible
 module load busco/5.0.0
 
-crun augustus --progress=true --strand=both --species=zebrafish --AUGUSTUS_CONFIG_PATH=/home/r3clark/PIRE/WG_baits/augustus_config_dir *.fasta.masked > $1.augustus.gff
+crun augustus --progress=true --strand=both --species=zebrafish --AUGUSTUS_CONFIG_PATH=/home/e1garcia/augustus_config_dir *.fasta.masked > $1.augustus.gff
 
 #create fasta index file (serves as template for .bed file & gives length of scaffolds)
 module load samtools
