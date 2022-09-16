@@ -106,6 +106,8 @@ Par-CPas-A_contam looks like the best assembly!
 
 ### 10. Identifying regions for probe development.
 
+Original attempt failed - had to modify the sbatch scripts to work properly with Augustus config file in Eric's directory. Working now!
+
 Make a directory for probe design in periophthalmus_argentilineatus, copy assembly fasta and needed scripts.
 
 ```
