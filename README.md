@@ -457,7 +457,7 @@ cp SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta probe_design
 
 Rename the assembly to reflect the species and parameters used. Format to follows:
 
-<3-letter species code>_scaffolds_<usedLibrary>_<cotam|decontam>_R1R2_noIsolate_<other treatments, if any>.fasta
+(3-letter species code)_"scaffolds"_(usedLibrary)_(cotam|decontam)_"R1R2"_"noIsolate"_(other treatments, if any).fasta
 
 To get this info, I usually copy and paste the parameter info from the busco directory:
 ```sh
