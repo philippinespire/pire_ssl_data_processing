@@ -223,6 +223,8 @@ Current step: I am trying to get BUSCO to run for Lva-CPnd-C on the contigs, the
 
 ### 10. Identifying regions for probe development
 
+Original attempt failed - had to modify the sbatch scripts to work properly with Augustus config file in Eric's directory. Working now!
+
 Making directory for probe design in lethrinus_variegatus and copying scripts/best assembly.
 
 ```
