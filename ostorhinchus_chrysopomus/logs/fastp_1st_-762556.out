@@ -1,0 +1,144 @@
+
+mkdir: cannot create directory ‘fq_fp1’: File exists
+mkdir: cannot create directory ‘fq_fp1/failed’: File exists
+Read1 before filtering:
+total reads: 131517356
+total bases: 19727603400
+Q20 bases: 19109797379(96.8683%)
+Q30 bases: 18354292081(93.0386%)
+
+Read2 before filtering:
+total reads: 131517356
+total bases: 19727603400
+Q20 bases: 18866941798(95.6373%)
+Q30 bases: 17803380294(90.246%)
+
+Read1 after filtering:
+total reads: 128484354
+total bases: 18360129930
+Q20 bases: 17990573485(97.9872%)
+Q30 bases: 17361015587(94.5582%)
+
+Read2 aftering filtering:
+total reads: 128484354
+total bases: 18355435825
+Q20 bases: 17811544112(97.0369%)
+Q30 bases: 16886142362(91.9953%)
+
+Filtering result:
+reads passed filter: 256968708
+reads failed due to low quality: 5438862
+reads failed due to too many N: 22668
+reads failed due to too short: 495922
+reads failed due to low complexity: 108552
+reads with adapter trimmed: 35382438
+bases trimmed due to adapters: 1656478141
+reads with polyX in 3' end: 3214198
+bases trimmed in polyX tail: 45894410
+
+Duplication rate: 18.4332%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Och_CTum_001_Ex1-2C_L4_fastp.json
+HTML report: fq_fp1/Och_CTum_001_Ex1-2C_L4_fastp.html
+
+fastp --in1 fq_raw_shotgun/Och_CTum_001_Ex1-2C_L4_1.fq.gz --in2 fq_raw_shotgun/Och_CTum_001_Ex1-2C_L4_2.fq.gz --out1 fq_fp1/Och_CTum_001_Ex1-2C_L4_r1.fq.gz --out2 fq_fp1/Och_CTum_001_Ex1-2C_L4_r2.fq.gz --unpaired1 fq_fp1/failed/Och_CTum_001_Ex1-2C_L4_unprd.fq.gz --unpaired2 fq_fp1/failed/Och_CTum_001_Ex1-2C_L4_unprd.fq.gz --failed_out fq_fp1/failed/Och_CTum_001_Ex1-2C_L4_fail.fq.gz -h fq_fp1/Och_CTum_001_Ex1-2C_L4_fastp.html -j fq_fp1/Och_CTum_001_Ex1-2C_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 2600 seconds
+Read1 before filtering:
+total reads: 153698803
+total bases: 23054820450
+Q20 bases: 22351337901(96.9487%)
+Q30 bases: 21502820734(93.2682%)
+
+Read2 before filtering:
+total reads: 153698803
+total bases: 23054820450
+Q20 bases: 22070355907(95.7299%)
+Q30 bases: 20847549303(90.426%)
+
+Read1 after filtering:
+total reads: 150259428
+total bases: 21731928096
+Q20 bases: 21312487824(98.0699%)
+Q30 bases: 20587596302(94.7343%)
+
+Read2 aftering filtering:
+total reads: 150259428
+total bases: 21724383424
+Q20 bases: 21097789890(97.1157%)
+Q30 bases: 20021437387(92.1611%)
+
+Filtering result:
+reads passed filter: 300518856
+reads failed due to low quality: 6041354
+reads failed due to too many N: 27694
+reads failed due to too short: 655984
+reads failed due to low complexity: 153718
+reads with adapter trimmed: 29849995
+bases trimmed due to adapters: 1454064651
+reads with polyX in 3' end: 3620835
+bases trimmed in polyX tail: 51409906
+
+Duplication rate: 20.1308%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Och_CTum_001_Ex1-1D_L4_fastp.json
+HTML report: fq_fp1/Och_CTum_001_Ex1-1D_L4_fastp.html
+
+fastp --in1 fq_raw_shotgun/Och_CTum_001_Ex1-1D_L4_1.fq.gz --in2 fq_raw_shotgun/Och_CTum_001_Ex1-1D_L4_2.fq.gz --out1 fq_fp1/Och_CTum_001_Ex1-1D_L4_r1.fq.gz --out2 fq_fp1/Och_CTum_001_Ex1-1D_L4_r2.fq.gz --unpaired1 fq_fp1/failed/Och_CTum_001_Ex1-1D_L4_unprd.fq.gz --unpaired2 fq_fp1/failed/Och_CTum_001_Ex1-1D_L4_unprd.fq.gz --failed_out fq_fp1/failed/Och_CTum_001_Ex1-1D_L4_fail.fq.gz -h fq_fp1/Och_CTum_001_Ex1-1D_L4_fastp.html -j fq_fp1/Och_CTum_001_Ex1-1D_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 3051 seconds
+Read1 before filtering:
+total reads: 256339679
+total bases: 38450951850
+Q20 bases: 37317649716(97.0526%)
+Q30 bases: 35897422046(93.359%)
+
+Read2 before filtering:
+total reads: 256339679
+total bases: 38450951850
+Q20 bases: 36937465539(96.0639%)
+Q30 bases: 35096394489(91.2757%)
+
+Read1 after filtering:
+total reads: 251052542
+total bases: 36413411908
+Q20 bases: 35698759331(98.0374%)
+Q30 bases: 34475477047(94.678%)
+
+Read2 aftering filtering:
+total reads: 251052542
+total bases: 36405731089
+Q20 bases: 35458796942(97.3989%)
+Q30 bases: 33836549426(92.9429%)
+
+Filtering result:
+reads passed filter: 502105084
+reads failed due to low quality: 9313276
+reads failed due to too many N: 45038
+reads failed due to too short: 1051016
+reads failed due to low complexity: 164944
+reads with adapter trimmed: 45368685
+bases trimmed due to adapters: 2250464417
+reads with polyX in 3' end: 5806962
+bases trimmed in polyX tail: 83093973
+
+Duplication rate: 24.3593%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1/Och_CTum_001_Ex1-3B_L4_fastp.json
+HTML report: fq_fp1/Och_CTum_001_Ex1-3B_L4_fastp.html
+
+fastp --in1 fq_raw_shotgun/Och_CTum_001_Ex1-3B_L4_1.fq.gz --in2 fq_raw_shotgun/Och_CTum_001_Ex1-3B_L4_2.fq.gz --out1 fq_fp1/Och_CTum_001_Ex1-3B_L4_r1.fq.gz --out2 fq_fp1/Och_CTum_001_Ex1-3B_L4_r2.fq.gz --unpaired1 fq_fp1/failed/Och_CTum_001_Ex1-3B_L4_unprd.fq.gz --unpaired2 fq_fp1/failed/Och_CTum_001_Ex1-3B_L4_unprd.fq.gz --failed_out fq_fp1/failed/Och_CTum_001_Ex1-3B_L4_fail.fq.gz -h fq_fp1/Och_CTum_001_Ex1-3B_L4_fastp.html -j fq_fp1/Och_CTum_001_Ex1-3B_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 5367 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

@@ -1,0 +1,29 @@
+This script is optimize to for up to 3 libraries and can run individual or 2- 3 libraries together
+Please enter which library(s) to process. Options: all_2libs | all_3libs | 1 | 2 | 3 
+
+Please enter DATATYPE. Options:  contam | decontam |contam_covAUTO | decontam_covAUTO 
+This script is optimize to for up to 3 libraries and can run individual or 2-3 libraries together
+Please enter which library(s) to process. Options: all_2libs | all_3libs | 1 | 2 | 3 
+
+
+Running QUAST Now
+
+ERROR! QUAST does not support non-ASCII characters in path.
+You have specified /home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus/“/home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus”/quast_contigs_report as an output path.
+Please, use a different directory.
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! QUAST does not support non-ASCII characters in path.
+You have specified /home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus/“/home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus”/quast_scaffolds_report as an output path.
+Please, use a different directory.
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+cp: cannot stat `“/home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus”//quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `“/home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus”//quast_scaffolds_report/transposed_report.tsv': No such file or directory
+/var/spool/slurmd/job9798894/slurm_script: line 156: /resource_usage_m.tsv: Permission denied
+/var/spool/slurmd/job9798894/slurm_script: line 158: /resource_usage_g.tsv: Permission denied
+/var/spool/slurmd/job9798894/slurm_script: line 160: /resource_usage_k.tsv: Permission denied

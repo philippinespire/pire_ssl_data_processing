@@ -1,0 +1,61 @@
+INFO:	***** Start a BUSCO v5.0.0 analysis, current time: 08/02/2022 18:23:17 *****
+INFO:	Configuring BUSCO with local environment
+INFO:	Mode is genome
+INFO:	Input file is /home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus/SPAdes_Och-C_decontam_R1R2_noIsolate/scaffolds.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
+INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
+INFO:	Running 1 job(s) on metaeuk, starting at 08/02/2022 18:23:29
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 08/02/2022 18:41:03
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	728 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2184 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3276 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 08/02/2022 19:00:36
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 1197 job(s) on hmmsearch, starting at 08/02/2022 19:37:30
+INFO:	[hmmsearch]	120 of 1197 task(s) completed
+INFO:	[hmmsearch]	240 of 1197 task(s) completed
+INFO:	[hmmsearch]	360 of 1197 task(s) completed
+INFO:	[hmmsearch]	479 of 1197 task(s) completed
+INFO:	[hmmsearch]	599 of 1197 task(s) completed
+INFO:	[hmmsearch]	719 of 1197 task(s) completed
+INFO:	[hmmsearch]	838 of 1197 task(s) completed
+INFO:	[hmmsearch]	958 of 1197 task(s) completed
+INFO:	[hmmsearch]	1078 of 1197 task(s) completed
+INFO:	[hmmsearch]	1197 of 1197 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+CRITICAL:	Unhandled exception occurred:
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/busco/run_BUSCO.py", line 366, in run_BUSCO
+    busco_run.run_analysis()
+  File "/opt/conda/lib/python3.7/site-packages/busco/BuscoRunner.py", line 72, in run_analysis
+    self.analysis.run_analysis()
+  File "/opt/conda/lib/python3.7/site-packages/busco/analysis/GenomeAnalysis.py", line 390, in run_analysis
+    busco_ids=incomplete_buscos,
+  File "/opt/conda/lib/python3.7/site-packages/busco/BuscoLogger.py", line 65, in wrapped_func
+    self.retval = func(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/busco/analysis/BuscoAnalysis.py", line 128, in run_hmmer
+    self.validate_output()
+  File "/opt/conda/lib/python3.7/site-packages/busco/analysis/GenomeAnalysis.py", line 443, in validate_output
+    inds_to_remove = self.handle_overlaps(overlaps, df)
+  File "/opt/conda/lib/python3.7/site-packages/busco/analysis/GenomeAnalysis.py", line 608, in handle_overlaps
+    bad_inds = self.handle_diff_busco_overlap(overlap_inds, df)
+  File "/opt/conda/lib/python3.7/site-packages/busco/analysis/GenomeAnalysis.py", line 638, in handle_diff_busco_overlap
+    hmmer_result2, busco_match2
+  File "/opt/conda/lib/python3.7/site-packages/busco/busco_tools/hmmer.py", line 280, in parse_hmmer_output
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus/busco_scaffolds_results-SPAdes_Och-C_decontam_R1R2_noIsolate/run_actinopterygii_odb10/hmmer_output/initial_run_results/99342at7898.out'
+
+
+cp: cannot stat `busco_*_results-SPAdes_Och-C_decontam_R1R2_noIsolate/short*': No such file or directory

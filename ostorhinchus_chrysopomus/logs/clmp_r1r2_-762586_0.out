@@ -1,0 +1,29 @@
+
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 1541923
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 40960
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 767745
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+Och_CTum_001_Ex1-1D_L4_
+java -ea -Xmx180g -Xms180g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=fq_fp1/Och_CTum_001_Ex1-1D_L4_r1.fq.gz in2=fq_fp1/Och_CTum_001_Ex1-1D_L4_r2.fq.gz out=fq_fp1_clmp/Och_CTum_001_Ex1-1D_L4_clmp.r1.fq.gz out2=fq_fp1_clmp/Och_CTum_001_Ex1-1D_L4_clmp.r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scratch/emoli004 dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx180g
+Executing clump.Clumpify [in=fq_fp1/Och_CTum_001_Ex1-1D_L4_r1.fq.gz, in2=fq_fp1/Och_CTum_001_Ex1-1D_L4_r2.fq.gz, out=fq_fp1_clmp/Och_CTum_001_Ex1-1D_L4_clmp.r1.fq.gz, out2=fq_fp1_clmp/Och_CTum_001_Ex1-1D_L4_clmp.r2.fq.gz, groups=14514, overwrite=t, usetmpdir=t, tmpdir=/scratch/emoli004, dedupe=t, addcount=t, subs=2, containment=t, consensus=f, -Xmx180g]
+Version 38.90
+
+Executing clump.KmerSplit [in1=fq_fp1/Och_CTum_001_Ex1-1D_L4_r1.fq.gz, in2=fq_fp1/Och_CTum_001_Ex1-1D_L4_r2.fq.gz, out=/scratch/emoli004/Och_CTum_001_Ex1-1D_L4_clmp.r1_clumpify_p1_temp%_5d5f8ecde3730e81.fq.gz, out2=, groups=14514, ecco=false, addname=f, shortname=f, unpair=false, repair=f, namesort=f, ow=true, dedupe=t, consensus=f]
+
+Reset INTERLEAVED to false because paired input files were specified.
+Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+Made a comparator with k=31, seed=1, border=1, hashes=4

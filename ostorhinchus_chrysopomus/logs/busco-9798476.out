@@ -1,0 +1,38 @@
+INFO:	***** Start a BUSCO v5.0.0 analysis, current time: 08/02/2022 18:23:08 *****
+INFO:	Configuring BUSCO with local environment
+INFO:	Mode is genome
+INFO:	Input file is /home/e1garcia/shotgun_PIRE/REUs/2022_REU/erykamolino/ostorhinchus_chrysopomus/SPAdes_Och-C_decontam_R1R2_noIsolate/contigs.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
+INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
+INFO:	Running 1 job(s) on metaeuk, starting at 08/02/2022 18:23:20
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 08/02/2022 18:40:48
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	728 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2184 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3276 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 08/02/2022 19:00:23
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 1398 job(s) on hmmsearch, starting at 08/02/2022 19:38:19
+INFO:	[hmmsearch]	140 of 1398 task(s) completed
+INFO:	[hmmsearch]	280 of 1398 task(s) completed
+INFO:	[hmmsearch]	420 of 1398 task(s) completed
+INFO:	[hmmsearch]	560 of 1398 task(s) completed
+INFO:	[hmmsearch]	700 of 1398 task(s) completed
+INFO:	[hmmsearch]	839 of 1398 task(s) completed
+INFO:	[hmmsearch]	979 of 1398 task(s) completed
+INFO:	[hmmsearch]	1119 of 1398 task(s) completed
+INFO:	[hmmsearch]	1259 of 1398 task(s) completed
+INFO:	[hmmsearch]	1398 of 1398 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+slurmstepd: error: *** JOB 9798476 ON coreV3-23-004 CANCELLED AT 2022-08-02T19:43:34 ***
