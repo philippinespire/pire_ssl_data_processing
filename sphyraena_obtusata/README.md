@@ -64,7 +64,7 @@ Ran checkClumpify_EG.R, Clumpify worked successfully!
 
 ## Second fastp trim
 
-sbatch /home/e1garcia/shotgun_pire/pire_fq_gz_processing/runFASTP_2_ssl.sbatch /home/e1garcia/shotgun_pire/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp /home/e1garcia/shotgun_pire/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2
 
 
 
