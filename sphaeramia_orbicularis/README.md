@@ -29,11 +29,19 @@ Removing "unplaced_scaffolds"
 cat GCA_902148855.1_fSphaOr1.1_genomic.fna | sed '/>CABF/Q' > GCA_902148855.1_fSphaOr1.1_genomic_chrmOnly.fna
 ```
 
+
 Execute the first script
 ```sh
 #WGprobe_annotation.sb <assembly name> 
 sbatch WGprobe_annotation.sb GCA_902148855.1_fSphaOr1.1_genomic_chrmOnly.fna
 Submitted batch job 1113662
+```
+
+Script failed bc it is specifically looking for the ".fasta" extension. Renaming reference and re-running
+```
+mv  GCA_902148855.1_fSphaOr1.1_genomic_chrmOnly.fna GCA_902148855.1_fSphaOr1.1_genomic_chrmOnly.fasta
+sbatch WGprobe_annotation.sb GCA_902148855.1_fSphaOr1.1_genomic_chrmOnly.fasta
+Submitted batch job 1113712
 ```
 
 Execute the second script

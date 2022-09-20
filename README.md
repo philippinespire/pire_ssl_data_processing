@@ -462,6 +462,8 @@ Rename the assembly to reflect the species and parameters used. Format to follow
 Example: Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta
 
 
+NOTE: Make sure to use the .fasta extension as the script will be looking for this!
+
 To get this info, I usually copy and paste the parameter info from the busco directory:
 ```sh
 # list the busco dirs

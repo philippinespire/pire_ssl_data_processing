@@ -442,21 +442,36 @@ mkdir probe_design
 cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/WGprobe_annotation.sb probe_design
 cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/WGprobe_bedcreation.sb probe_design
 cp /home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/salarias_fasciatus/SPAdes_Sfa-CBas-B_decontam_R1R2_noIsolate/scaffolds.fasta probe_design
-# list the busco dirs
-ls -d busco_*
-# identify the busco dir of best assembly, copy the treatments (starting with the library)
-# Example,the busco dir for the best assembly for Sgr is `busco_contigs_results-SPAdes_Sfa-CBas-B_decontam_R1R2_noIsolate`
-# I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_" 
-cd probe_design
-mv scaffolds.fasta Sgr_scaffolds_B_decontam_R1R2_noIsolate.fasta
+```
 
-mv scaffolds.fasta Ppa_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta
+Eric is taking over from this point
+
+I recopied scripts and assembly to make sure I had the latest versions and the correct assembly. Using best assembly= decontaminated allLibs
+```
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+cp SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta probe_design
+mv probe_design/scaffolds.fasta probe_design/Och_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta
+```
+
+Unloaded perl module by placing `unset PERL5LIB` after loading modules:
+```
+#!/bin/bash
+
+#SBATCH -c 40
+#SBATCH --job-name=probes_ann
+#SBATCH --output=probes_ann-%j.out
+
+enable_lmod
+module load container_env/0.1
+module load repeatmasker/4.1.0
+unset PERL5LIB
 ```
 
 Execute the first script
 ```sh
 #WGprobe_annotation.sb <assembly name> 
-sbatch WGprobe_annotation.sb "Sgr_scaffolds_B_decontam_R1R2_noIsolate.fasta"
+sbatch WGprobe_annotation.sb "Och_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
 ```
 
 Execute the second script
