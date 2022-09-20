@@ -1,0 +1,142 @@
+
+Read1 before filtering:
+total reads: 36707197
+total bases: 5506079550
+Q20 bases: 5246696214(95.2891%)
+Q30 bases: 4979370880(90.4341%)
+
+Read2 before filtering:
+total reads: 36707197
+total bases: 5506079550
+Q20 bases: 5069061344(92.063%)
+Q30 bases: 4646651532(84.3913%)
+
+Read1 after filtering:
+total reads: 34272484
+total bases: 4945919622
+Q20 bases: 4799302678(97.0356%)
+Q30 bases: 4581976688(92.6416%)
+
+Read2 aftering filtering:
+total reads: 34272484
+total bases: 4940770861
+Q20 bases: 4691995412(94.9648%)
+Q30 bases: 4338166542(87.8034%)
+
+Filtering result:
+reads passed filter: 68544968
+reads failed due to low quality: 4189678
+reads failed due to too many N: 1312
+reads failed due to too short: 596696
+reads failed due to low complexity: 81740
+reads with adapter trimmed: 7793274
+bases trimmed due to adapters: 348967751
+reads with polyX in 3' end: 1188986
+bases trimmed in polyX tail: 18473948
+
+Duplication rate: 20.2017%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9H-ssl_L2_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9H-ssl_L2_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq/Sob-CKal_018_Ex2-9H-ssl_L2_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq/Sob-CKal_018_Ex2-9H-ssl_L2_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9H-ssl_L2_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9H-ssl_L2_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/failed/Sob-CKal_018_Ex2-9H-ssl_L2_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/failed/Sob-CKal_018_Ex2-9H-ssl_L2_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/failed/Sob-CKal_018_Ex2-9H-ssl_L2_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9H-ssl_L2_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9H-ssl_L2_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 677 seconds
+Read1 before filtering:
+total reads: 38719427
+total bases: 5807914050
+Q20 bases: 5525412079(95.1359%)
+Q30 bases: 5246164977(90.3279%)
+
+Read2 before filtering:
+total reads: 38719427
+total bases: 5807914050
+Q20 bases: 5368567575(92.4354%)
+Q30 bases: 4944088251(85.1267%)
+
+Read1 after filtering:
+total reads: 36206501
+total bases: 5133363279
+Q20 bases: 4982803260(97.067%)
+Q30 bases: 4761790234(92.7616%)
+
+Read2 aftering filtering:
+total reads: 36206501
+total bases: 5129286539
+Q20 bases: 4893429787(95.4018%)
+Q30 bases: 4548170622(88.6706%)
+
+Filtering result:
+reads passed filter: 72413002
+reads failed due to low quality: 4447708
+reads failed due to too many N: 1276
+reads failed due to too short: 477622
+reads failed due to low complexity: 99246
+reads with adapter trimmed: 11956600
+bases trimmed due to adapters: 537802891
+reads with polyX in 3' end: 1298912
+bases trimmed in polyX tail: 20819165
+
+Duplication rate: 19.334%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9F-ssl_L2_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9F-ssl_L2_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq/Sob-CKal_018_Ex2-9F-ssl_L2_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq/Sob-CKal_018_Ex2-9F-ssl_L2_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9F-ssl_L2_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9F-ssl_L2_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/failed/Sob-CKal_018_Ex2-9F-ssl_L2_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/failed/Sob-CKal_018_Ex2-9F-ssl_L2_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/failed/Sob-CKal_018_Ex2-9F-ssl_L2_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9F-ssl_L2_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9F-ssl_L2_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 723 seconds
+Read1 before filtering:
+total reads: 42448019
+total bases: 6367202850
+Q20 bases: 6098284255(95.7765%)
+Q30 bases: 5801071878(91.1086%)
+
+Read2 before filtering:
+total reads: 42448019
+total bases: 6367202850
+Q20 bases: 5889861462(92.5031%)
+Q30 bases: 5414300290(85.0342%)
+
+Read1 after filtering:
+total reads: 39839010
+total bases: 5774342939
+Q20 bases: 5614309021(97.2285%)
+Q30 bases: 5367226439(92.9496%)
+
+Read2 aftering filtering:
+total reads: 39839010
+total bases: 5766325894
+Q20 bases: 5491078806(95.2266%)
+Q30 bases: 5090013989(88.2714%)
+
+Filtering result:
+reads passed filter: 79678020
+reads failed due to low quality: 4475106
+reads failed due to too many N: 1348
+reads failed due to too short: 635528
+reads failed due to low complexity: 106036
+reads with adapter trimmed: 9774527
+bases trimmed due to adapters: 373826136
+reads with polyX in 3' end: 1202118
+bases trimmed in polyX tail: 19156909
+
+Duplication rate: 21.0421%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9G-ssl_L2_fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9G-ssl_L2_fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq/Sob-CKal_018_Ex2-9G-ssl_L2_1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq/Sob-CKal_018_Ex2-9G-ssl_L2_2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9G-ssl_L2_r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9G-ssl_L2_r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/failed/Sob-CKal_018_Ex2-9G-ssl_L2_unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/failed/Sob-CKal_018_Ex2-9G-ssl_L2_unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/failed/Sob-CKal_018_Ex2-9G-ssl_L2_fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9G-ssl_L2_fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1/Sob-CKal_018_Ex2-9G-ssl_L2_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 797 seconds
+[WARNING]         multiqc : MultiQC Version v1.13 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

@@ -1,4 +1,4 @@
-## Sphyraena obstusata SSL pipeline
+## Sphyraena obtusata SSL pipeline
 ### 0. Rename the raw fq.gz files an make a copy on /RC
 
 Renaming files based on decode file.
@@ -29,4 +29,19 @@ mv *.fq.gz shotgun_raw_fq
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq" "fq.gz"
+```
+
+First fastQC overview/potential issues:
+* 36.7 - 42.4 million sequence pairs per library
+* % duplication 19.8% - 23.2% (likely will be reduced after clumpify
+* Sequence quality looks good (>30 on average)
+* Motif evident in first 10 bp
+* GC content 47-48%, slightly non-normal distribution ("bump" around 65-70% - bacterial contam?)
+* N content and sequence length distributions good
+* flagged for overrepresented sequences + adapter content
+
+### 2. 1st fastp / trim
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1
 ```
