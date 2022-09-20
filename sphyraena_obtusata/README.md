@@ -45,3 +45,26 @@ First fastQC overview/potential issues:
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1
 ```
+
+Results:
+* 19.3 - 21% duplication
+* GC content ~46.4% (lower)
+* ~94% passing filter
+* 10.6 - 15.4% adapter (Sob-CKal_018_Ex2-9F-ssl_L2_fastp higher than others)
+* ~65 million to 80 million read pairs (maybe a little low compared to other species? but OK for assembly?)
+* motif still present, otherwise no big red flags
+
+### 3. Remove duplicates - run CLUMPIFY
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp /scratch/breid 20
+```
+
+Ran checkClumpify_EG.R, Clumpify worked successfully!
+
+## Second fastp trim
+
+sbatch /home/e1garcia/shotgun_pire/pire_fq_gz_processing/runFASTP_2_ssl.sbatch /home/e1garcia/shotgun_pire/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp /home/e1garcia/shotgun_pire/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2
+
+
+
