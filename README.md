@@ -49,6 +49,7 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Ambassis_buruensis | On ODU HPC | 22 | John | Need to do assembly for probe development ASAP |
 |Sphyraena obtusata | On ODU HPC | 20 | Brendan| fq.gz processing in progress |
 |Sphaeramia_orbicularis | Needs extraction | 39 | Eric | Probe development planned using published reference |
+|Lutjanus fulviflamma | Needs extraction | ?? | ?? | For UP Mindanao |
 |Tylosurus_crocodilus | Needs extraction | n/a | n/a | Not currently on priority list |
 |Encrasicholina_pseudoheteroloba | On ODU HPC | n/a | n/a | Sequencing data weird - dropping from priority list  |
 
