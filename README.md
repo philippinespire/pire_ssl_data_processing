@@ -40,7 +40,7 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Lethrinus_variegatus | On ODU HPC | 19 | Jordan/Chris/Brendan | probe dev complete |
 |Periophthalmus_argentilineatus | On ODU HPC | 17 | Keenan/Chris/Brendan | probe dev complete |
 |Pomacentrus_pavo | On ODU HPC | 23 | Brendan | Assembly complete, John assigned to probe dev |
-|Sphaeramia_nematoptera | On ODU HPC | 18 | Jem | Probe dev't complete |
+|Sphaeramia_nematoptera | On ODU HPC | 18 | Jem | Probe dev't - 2st script running |
 |Pomacentrus_brachialis | On ODU HPC | 24 | Jem/Kyra | Probe dev't complete |
 |Corythoichthys_haematopterus | On ODU HPC | 25 | Allison/John | Allison completed assembly for REU project; John assigned to probe dev |
 |Stethojulis_interrupta | On ODU HPC | 26 |Abby/John | Abby completed assembly for REU project; John assigned to probe dev  |
