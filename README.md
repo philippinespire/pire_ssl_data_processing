@@ -44,10 +44,10 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Pomacentrus_brachialis | On ODU HPC | 24 | Jem/Kyra | Probe dev't complete |
 |Corythoichthys_haematopterus | On ODU HPC | 25 | Allison/John | Allison completed assembly for REU project; John assigned to probe dev |
 |Stethojulis_interrupta | On ODU HPC | 26 |Abby/John | Abby completed assembly for REU project; John assigned to probe dev  |
-|Ostorhinchus_chrysopomus | On ODU HPC | 28 | Eryka/Eric | Eryka completed assembly for REU project; Eric assigned to probe dev  |
-|Hypoatherina_temminckii | On ODU HPC | 16 | Eric | Eric re-designing probes with correct genome |
+|Ostorhinchus_chrysopomus | On ODU HPC | 28 | Eryka/Eric | Eryka completed assembly for REU project; Eric completed probe development  |
+|Hypoatherina_temminckii | On ODU HPC | 16 | Eric | Probe development complete |
 |Ambassis_buruensis | On ODU HPC | 22 | John | Need to do assembly for probe development ASAP |
-|Sphyraena obtusata | On ODU HPC | 20 | Brendan| Need to do assembly for probe development ASAP |
+|Sphyraena obtusata | On ODU HPC | 20 | Brendan| fq.gz processing in progress |
 |Sphaeramia_orbicularis | Needs extraction | 39 | Eric | Probe development planned using published reference |
 |Tylosurus_crocodilus | Needs extraction | n/a | n/a | Not currently on priority list |
 |Encrasicholina_pseudoheteroloba | On ODU HPC | n/a | n/a | Sequencing data weird - dropping from priority list  |
