@@ -63,8 +63,24 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 Ran checkClumpify_EG.R, Clumpify worked successfully!
 
 ## Second fastp trim
-
+```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2
+```
 
+Looks good!
+* duplication way down (~5.5-6%)
+* GC content similar among libs (~46%)
+* 74.7-78.7% passing filter
+* % adapter very low (≤0.3%)
 
+## 5. Decontaminate
 
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2_fqscrn 20 
+```
+
+One file failed (Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_r2.fq.gz) - re-running with just this file.
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2_fqscrn 1 Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_r2.fq.gz
+```
