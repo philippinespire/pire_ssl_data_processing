@@ -40,15 +40,16 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Lethrinus_variegatus | On ODU HPC | 19 | Jordan/Chris/Brendan | probe dev complete |
 |Periophthalmus_argentilineatus | On ODU HPC | 17 | Keenan/Chris/Brendan | probe dev complete |
 |Pomacentrus_pavo | On ODU HPC | 23 | Brendan | Assembly complete, John assigned to probe dev |
-|Sphaeramia_nematoptera | On ODU HPC | 18 | Jem | Probe dev't complete |
+|Sphaeramia_nematoptera | On ODU HPC | 18 | Jem | Probe dev't - 2st script running |
 |Pomacentrus_brachialis | On ODU HPC | 24 | Jem/Kyra | Probe dev't complete |
 |Corythoichthys_haematopterus | On ODU HPC | 25 | Allison/John | Allison completed assembly for REU project; John assigned to probe dev |
 |Stethojulis_interrupta | On ODU HPC | 26 |Abby/John | Abby completed assembly for REU project; John assigned to probe dev  |
-|Ostorhinchus_chrysopomus | On ODU HPC | 28 | Eryka/Eric | Eryka completed assembly for REU project; Eric assigned to probe dev  |
-|Hypoatherina_temminckii | On ODU HPC | 16 | Eric | Eric re-designing probes with correct genome |
+|Ostorhinchus_chrysopomus | On ODU HPC | 28 | Eryka/Eric | Eryka completed assembly for REU project; Eric completed probe development  |
+|Hypoatherina_temminckii | On ODU HPC | 16 | Eric | Probe development complete |
 |Ambassis_buruensis | On ODU HPC | 22 | John | Need to do assembly for probe development ASAP |
-|Sphyraena obtusata | On ODU HPC | 20 | Brendan| Need to do assembly for probe development ASAP |
+|Sphyraena obtusata | On ODU HPC | 20 | Brendan| fq.gz processing in progress |
 |Sphaeramia_orbicularis | Needs extraction | 39 | Eric | Probe development planned using published reference |
+|Lutjanus fulviflamma | Needs extraction | ?? | ?? | For UP Mindanao |
 |Tylosurus_crocodilus | Needs extraction | n/a | n/a | Not currently on priority list |
 |Encrasicholina_pseudoheteroloba | On ODU HPC | n/a | n/a | Sequencing data weird - dropping from priority list  |
 
