@@ -119,3 +119,20 @@ Calculate % reads lost.
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata"
 ```
+
+## ASSEMBLY
+
+### 1. Genome properties
+
+Related species:
+
+Sphyraena obtusata c-value = 0.54. From Hardie and Hebert 2003/2004
+
+Other Sphyraena species range from c = 0.66 to 1.2, though, based on genomesize.com.
+
+Running jellyfish
+```
+#sbatch runJellyfish.sbatch <Species 3-letter ID> <indir>
+#run from sphyraena_obtusata
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sob" "fq_fp1_clmp_fp2_fqscrn_repaired"
+```
