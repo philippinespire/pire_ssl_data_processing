@@ -62,7 +62,7 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 
 Ran checkClumpify_EG.R, Clumpify worked successfully!
 
-## Second fastp trim
+### 4. Second fastp trim
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2
 ```
@@ -81,7 +81,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch /
 
 Number of lines in fp1_clmp_fp2b is _not_ identical to q_fp1_clmp_fp2! So possibly something went wrong with the original fp2, or fastp just does not behave reproducibly?
 
-## 5. Decontaminate
+### 5. Decontaminate
 
 ```
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2_fqscrn 20 
@@ -99,7 +99,9 @@ Run `runMULTIQC.sbatch`.
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastqc_screen_report
 ```
 
-## 6. Repair
+The .html does not provide much info. Based on the table though we mostly have "no hit" sequences (~92%)... hits for the other categories are <7%.
+
+### 6. Repair
 
 Re-pair reads.
 ```
@@ -113,3 +115,7 @@ cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2_fqscrn_repaired" "fq.gz" 
 ```
 
+Calculate % reads lost.
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata"
+```

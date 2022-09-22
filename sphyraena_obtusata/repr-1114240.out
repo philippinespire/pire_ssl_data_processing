@@ -1,0 +1,43 @@
+
+java -ea -Xmx161265m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sob-CKal_018_Ex2-9H-ssl_L2_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	41300808 reads 		6186377061 bases.
+Result:                 	41300808 reads (100.00%) 	6186377061 bases (100.00%)
+Pairs:                  	39247242 reads (95.03%) 	5878784099 bases (95.03%)
+Singletons:             	2053566 reads (4.97%) 	307592962 bases (4.97%)
+
+Time:                         	167.793 seconds.
+Reads Processed:      41300k 	246.14k reads/sec
+Bases Processed:       6186m 	36.87m bases/sec
+java -ea -Xmx161265m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sob-CKal_018_Ex2-9F-ssl_L2_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	41725287 reads 		6248668195 bases.
+Result:                 	41725287 reads (100.00%) 	6248668195 bases (100.00%)
+Pairs:                  	39703332 reads (95.15%) 	5945834623 bases (95.15%)
+Singletons:             	2021955 reads (4.85%) 	302833572 bases (4.85%)
+
+Time:                         	169.674 seconds.
+Reads Processed:      41725k 	245.91k reads/sec
+Bases Processed:       6248m 	36.83m bases/sec
+java -ea -Xmx161265m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_repaired/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_repaired/orphans/Sob-CKal_018_Ex2-9G-ssl_L2_clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	48148441 reads 		7210847207 bases.
+Result:                 	48148441 reads (100.00%) 	7210847207 bases (100.00%)
+Pairs:                  	45809038 reads (95.14%) 	6860435100 bases (95.14%)
+Singletons:             	2339403 reads (4.86%) 	350412107 bases (4.86%)
+
+Time:                         	191.294 seconds.
+Reads Processed:      48148k 	251.70k reads/sec
+Bases Processed:       7210m 	37.70m bases/sec
