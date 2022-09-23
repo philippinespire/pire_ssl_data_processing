@@ -1,0 +1,23 @@
+INFO:busco.run_BUSCO	***** Start a BUSCO v5.0.0 analysis, current time: 07/19/2022 10:17:54 *****
+DEBUG:busco.ConfigManager	Getting config file
+INFO:busco.ConfigManager	Configuring BUSCO with local environment
+INFO:busco.BuscoConfig	Mode is genome
+ERROR:busco.run_BUSCO	A run with the name /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/busco_contigs_results-SPAdes_allLibs_decontam_R1R2_noIsolate already exists...
+	If you are sure you wish to overwrite existing files, please use the -f (force) option
+DEBUG:busco.run_BUSCO	A run with the name /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/busco_contigs_results-SPAdes_allLibs_decontam_R1R2_noIsolate already exists...
+	If you are sure you wish to overwrite existing files, please use the -f (force) option
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/busco/run_BUSCO.py", line 329, in run_BUSCO
+    config_manager.load_busco_config(sys.argv)
+  File "/opt/conda/lib/python3.7/site-packages/busco/BuscoLogger.py", line 65, in wrapped_func
+    self.retval = func(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/busco/ConfigManager.py", line 59, in load_busco_config
+    self.config.validate()
+  File "/opt/conda/lib/python3.7/site-packages/busco/BuscoConfig.py", line 381, in validate
+    self._check_no_previous_run()
+  File "/opt/conda/lib/python3.7/site-packages/busco/BuscoConfig.py", line 600, in _check_no_previous_run
+    "please use the -f (force) option".format(self.main_out)
+SystemExit: A run with the name /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/busco_contigs_results-SPAdes_allLibs_decontam_R1R2_noIsolate already exists...
+	If you are sure you wish to overwrite existing files, please use the -f (force) option
+ERROR:busco.run_BUSCO	BUSCO analysis failed !
+ERROR:busco.run_BUSCO	Check the logs, read the user guide (https://busco.ezlab.org/busco_userguide.html), and check the BUSCO issue board on https://gitlab.com/ezlab/busco/issues

@@ -1,0 +1,105 @@
+/home/afink007/.bash_profile: line 5: /home/afink007/.turing_bash_profile: No such file or directory
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+
+The following have been reloaded with a version change:
+  1) git/2.12.1 => git/2.25                     3) python/3.5.2 => python/3.6
+  2) parallel/20161222 => parallel/20190322
+
+ls: cannot access /home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/fq_fp1_clmp_fp2_fqscrn_repaired/*1.fq.gz: No such file or directory
+mkdir: cannot create directory `/home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate': No such file or directory
+mkdir: cannot create directory `/home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate/quast_contigs_report': No such file or directory
+mkdir: cannot create directory `/home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate/quast_scaffolds_report': No such file or directory
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz	--pe1-2	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/afink	--cov-cutoff	off	-o	/home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.9
+  OS: Linux-4.4.302-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two
+
+Output dir: /home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77, 99]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /scratch-lustre/afink
+  Threads: 32
+  Memory limit (in Gb): 750
+
+
+======= SPAdes pipeline started. Log can be found here: /home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate/spades.log
+
+[Errno 13] Permission denied: '/scratch-lustre/afink'
+Traceback (most recent call last):
+  File "/opt/conda/bin/spades.py", line 602, in main
+    bin_home, ext_python_modules_home, python_modules_home)
+  File "/opt/conda/bin/spades.py", line 538, in build_pipeline
+    ext_python_modules_home, python_modules_home)
+  File "/opt/conda/share/spades/spades_pipeline/stages/spades_stage.py", line 395, in add_to_pipeline
+    dataset_data, log, bin_home, ext_python_modules_home, python_modules_home))
+  File "/opt/conda/share/spades/spades_pipeline/stages/spades_stage.py", line 283, in __init__
+    self.generate_cfg(cfg, self.output_files)
+  File "/opt/conda/share/spades/spades_pipeline/stages/spades_stage.py", line 373, in generate_cfg
+    self.cfg.tmp_dir = support.get_tmp_dir(prefix="spades_")
+  File "/opt/conda/share/spades/spades_pipeline/support.py", line 500, in get_tmp_dir
+    os.makedirs(base_dir)
+  File "/opt/conda/lib/python3.7/os.py", line 223, in makedirs
+    mkdir(name, mode)
+PermissionError: [Errno 13] Permission denied: '/scratch-lustre/afink'
+
+
+== Error ==  exception caught: <class 'PermissionError'>
+
+In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+or report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.
+
+SPAdes log can be found here: /home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate/spades.log
+
+Thank you for using SPAdes!
+
+Running QUAST Now
+
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate/contigs.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate/scaffolds.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/2022_PIRE_omics_workshop/Allison/SPAdes__decontam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.tsv': No such file or directory
+/var/spool/slurmd/job9785029/slurm_script: line 156: SPAdes__decontam_R1R2_noIsolate/resource_usage_m.tsv: No such file or directory
+/var/spool/slurmd/job9785029/slurm_script: line 158: SPAdes__decontam_R1R2_noIsolate/resource_usage_g.tsv: No such file or directory
+/var/spool/slurmd/job9785029/slurm_script: line 160: SPAdes__decontam_R1R2_noIsolate/resource_usage_k.tsv: No such file or directory

@@ -1,0 +1,54 @@
+slurmstepd: error: Unable to create TMPDIR [/scrath/afink007]: No such file or directory
+slurmstepd: error: Setting TMPDIR to /tmp
+
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 1541924
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 40960
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 767745
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+Cha-CPnd_001_Ex1-1H_L4_
+java -ea -Xmx180g -Xms180g -cp /opt/conda/opt/bbmap-38.90-3/current/ clump.Clumpify in=fq_fp1/Cha-CPnd_001_Ex1-1H_L4_r1.fq.gz in2=fq_fp1/Cha-CPnd_001_Ex1-1H_L4_r2.fq.gz out=fq_fp1_clmp/Cha-CPnd_001_Ex1-1H_L4_clmp.r1.fq.gz out2=fq_fp1_clmp/Cha-CPnd_001_Ex1-1H_L4_clmp.r2.fq.gz groups=14514 overwrite=t usetmpdir=t tmpdir=/scrath/afink007 dedupe=t addcount=t subs=2 containment=t consensus=f -Xmx180g
+Executing clump.Clumpify [in=fq_fp1/Cha-CPnd_001_Ex1-1H_L4_r1.fq.gz, in2=fq_fp1/Cha-CPnd_001_Ex1-1H_L4_r2.fq.gz, out=fq_fp1_clmp/Cha-CPnd_001_Ex1-1H_L4_clmp.r1.fq.gz, out2=fq_fp1_clmp/Cha-CPnd_001_Ex1-1H_L4_clmp.r2.fq.gz, groups=14514, overwrite=t, usetmpdir=t, tmpdir=/scrath/afink007, dedupe=t, addcount=t, subs=2, containment=t, consensus=f, -Xmx180g]
+Version 38.90
+
+Executing clump.KmerSplit [in1=fq_fp1/Cha-CPnd_001_Ex1-1H_L4_r1.fq.gz, in2=fq_fp1/Cha-CPnd_001_Ex1-1H_L4_r2.fq.gz, out=/scrath/afink007/Cha-CPnd_001_Ex1-1H_L4_clmp.r1_clumpify_p1_temp%_628b2e6fe3ca5ebb.fq.gz, out2=, groups=14514, ecco=false, addname=f, shortname=f, unpair=false, repair=f, namesort=f, ow=true, dedupe=t, consensus=f]
+
+Reset INTERLEAVED to false because paired input files were specified.
+Set INTERLEAVED to false
+Input is being processed as paired
+Writing interleaved.
+Warning - could not create directory /scrath/afink007
+Exception in thread "main" java.lang.RuntimeException: java.io.FileNotFoundException: /scrath/afink007/Cha-CPnd_001_Ex1-1H_L4_clmp.r1_clumpify_p1_temp0_628b2e6fe3ca5ebb.fq.gz (No such file or directory)
+	at fileIO.ReadWrite.getRawOutputStream(ReadWrite.java:437)
+	at fileIO.ReadWrite.getGZipOutputStream(ReadWrite.java:539)
+	at fileIO.ReadWrite.getOutputStream(ReadWrite.java:382)
+	at fileIO.ReadWrite.getOutputStream(ReadWrite.java:344)
+	at stream.ReadStreamWriter.<init>(ReadStreamWriter.java:71)
+	at stream.ReadStreamByteWriter.<init>(ReadStreamByteWriter.java:18)
+	at stream.ConcurrentGenericReadOutputStream.<init>(ConcurrentGenericReadOutputStream.java:38)
+	at stream.ConcurrentReadOutputStream.getStream(ConcurrentReadOutputStream.java:71)
+	at stream.ConcurrentReadOutputStream.getStream(ConcurrentReadOutputStream.java:35)
+	at clump.KmerSplit.process(KmerSplit.java:301)
+	at clump.KmerSplit.main(KmerSplit.java:52)
+	at clump.Clumpify.runOnePass_v2(Clumpify.java:403)
+	at clump.Clumpify.process(Clumpify.java:275)
+	at clump.Clumpify.main(Clumpify.java:47)
+Caused by: java.io.FileNotFoundException: /scrath/afink007/Cha-CPnd_001_Ex1-1H_L4_clmp.r1_clumpify_p1_temp0_628b2e6fe3ca5ebb.fq.gz (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:158)
+	at fileIO.ReadWrite.getRawOutputStream(ReadWrite.java:435)
+	... 13 more
+slurmstepd: error: *** JOB 762593 ON e3-w6420b-10 CANCELLED AT 2022-07-12T04:34:09 ***

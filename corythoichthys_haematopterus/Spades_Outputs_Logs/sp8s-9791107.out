@@ -1,0 +1,93 @@
+/home/afink007/.bash_profile: line 5: /home/afink007/.turing_bash_profile: No such file or directory
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+
+The following have been reloaded with a version change:
+  1) git/2.12.1 => git/2.25                     3) python/3.5.2 => python/3.6
+  2) parallel/20161222 => parallel/20190322
+
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz	--pe1-2	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/afink007	--cov-cutoff	off	-o	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_Cha-CPnd-A_decontam_R1R2_noIsolate	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.9
+  OS: Linux-4.4.302-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two
+
+Output dir: /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_Cha-CPnd-A_decontam_R1R2_noIsolate
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77, 99]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /scratch-lustre/afink007
+  Threads: 32
+  Memory limit (in Gb): 750
+
+
+======= SPAdes pipeline started. Log can be found here: /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_Cha-CPnd-A_decontam_R1R2_noIsolate/spades.log
+
+/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz: max reads length: 150
+
+Reads length: 150
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /opt/conda/bin/spades-hammer /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_Cha-CPnd-A_decontam_R1R2_noIsolate/corrected/configs/config.info
+
+  0:00:00.000     1M / 12M   INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.064     1M / 12M   INFO    General                 (main.cpp                  :  76)   Loading config from /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_Cha-CPnd-A_decontam_R1R2_noIsolate/corrected/configs/config.info
+  0:00:00.077     1M / 12M   INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 32
+  0:00:00.079     1M / 12M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 750 Gb
+  0:00:00.083     1M / 12M   INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.088     1M / 12M   INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.094     1M / 12M   INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.098     1M / 12M   INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.106     1M / 12M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 16 files using 32 threads. This might take a while.
+  0:00:00.122     1M / 12M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 50000
+  0:00:00.140     1M / 12M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 7.8125 Gb
+  0:00:00.146     1M / 12M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 4194304
+  0:00:00.531    19G / 19G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz
+  0:01:15.232    19G / 30G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 7551856 reads
+slurmstepd: error: *** JOB 9791107 ON coreV2-23-himem-003 CANCELLED AT 2022-07-19T11:02:57 ***

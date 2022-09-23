@@ -1,0 +1,31 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+
+The following have been reloaded with a version change:
+  1) git/2.12.1 => git/2.25                     3) python/3.5.2 => python/3.6
+  2) parallel/20161222 => parallel/20190322
+
+ls: cannot access //*1.fq.gz: No such file or directory
+mkdir: cannot create directory `/SPAdes__decontam_R1R2_noIsolate': Permission denied
+mkdir: cannot create directory `/SPAdes__decontam_R1R2_noIsolate/quast_contigs_report': No such file or directory
+mkdir: cannot create directory `/SPAdes__decontam_R1R2_noIsolate/quast_scaffolds_report': No such file or directory
+ls: cannot access /*1.fq.gz: No such file or directory
+ls: cannot access /*2.fq.gz: No such file or directory
+SPAdes genome assembler v3.15.2
+
+Usage: spades.py [options] -o <output_dir>
+spades.py: error: argument --pe1-1: expected 1 argument
+
+Running QUAST Now
+
+Usage: quast.py [options]
+
+quast.py: error: option --est-ref-size: invalid integer value: '-s'
+Usage: quast.py [options]
+
+quast.py: error: option --est-ref-size: invalid integer value: '-s'
+mkdir: cannot create directory `/quast-reports': Permission denied
+cp: cannot stat `/SPAdes__decontam_R1R2_noIsolate/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `/SPAdes__decontam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.tsv': No such file or directory

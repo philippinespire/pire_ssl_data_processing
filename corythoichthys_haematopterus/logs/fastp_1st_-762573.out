@@ -1,0 +1,142 @@
+
+Read1 before filtering:
+total reads: 110026355
+total bases: 16503953250
+Q20 bases: 16017611592(97.0532%)
+Q30 bases: 15384805802(93.2189%)
+
+Read2 before filtering:
+total reads: 110026355
+total bases: 16503953250
+Q20 bases: 15771856281(95.5641%)
+Q30 bases: 14861052100(90.0454%)
+
+Read1 after filtering:
+total reads: 107818663
+total bases: 15818259582
+Q20 bases: 15505614684(98.0235%)
+Q30 bases: 14946215048(94.4871%)
+
+Read2 aftering filtering:
+total reads: 107818663
+total bases: 15813567755
+Q20 bases: 15335955278(96.9797%)
+Q30 bases: 14513610802(91.7795%)
+
+Filtering result:
+reads passed filter: 215637326
+reads failed due to low quality: 3922154
+reads failed due to too many N: 19548
+reads failed due to too short: 343644
+reads failed due to low complexity: 130038
+reads with adapter trimmed: 12187216
+bases trimmed due to adapters: 660294638
+reads with polyX in 3' end: 2563654
+bases trimmed in polyX tail: 37137227
+
+Duplication rate: 71.0132%
+
+Insert size peak (evaluated by paired-end reads): 212
+
+JSON report: fq_fp1/Cha-CPnd_001_Ex1-1H_L4_fastp.json
+HTML report: fq_fp1/Cha-CPnd_001_Ex1-1H_L4_fastp.html
+
+fastp --in1 shotgun_raw_fq/Cha-CPnd_001_Ex1-1H_L4_1.fq.gz --in2 shotgun_raw_fq/Cha-CPnd_001_Ex1-1H_L4_2.fq.gz --out1 fq_fp1/Cha-CPnd_001_Ex1-1H_L4_r1.fq.gz --out2 fq_fp1/Cha-CPnd_001_Ex1-1H_L4_r2.fq.gz --unpaired1 fq_fp1/failed/Cha-CPnd_001_Ex1-1H_L4_unprd.fq.gz --unpaired2 fq_fp1/failed/Cha-CPnd_001_Ex1-1H_L4_unprd.fq.gz --failed_out fq_fp1/failed/Cha-CPnd_001_Ex1-1H_L4_fail.fq.gz -h fq_fp1/Cha-CPnd_001_Ex1-1H_L4_fastp.html -j fq_fp1/Cha-CPnd_001_Ex1-1H_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 2163 seconds
+Read1 before filtering:
+total reads: 114914567
+total bases: 17237185050
+Q20 bases: 16738544399(97.1072%)
+Q30 bases: 16063315923(93.1899%)
+
+Read2 before filtering:
+total reads: 114914567
+total bases: 17237185050
+Q20 bases: 16450446685(95.4358%)
+Q30 bases: 15464361620(89.7151%)
+
+Read1 after filtering:
+total reads: 112400904
+total bases: 16478293304
+Q20 bases: 16149680520(98.0058%)
+Q30 bases: 15552430338(94.3813%)
+
+Read2 aftering filtering:
+total reads: 112400904
+total bases: 16473638188
+Q20 bases: 15958485604(96.8729%)
+Q30 bases: 15069698871(91.4777%)
+
+Filtering result:
+reads passed filter: 224801808
+reads failed due to low quality: 4442980
+reads failed due to too many N: 20106
+reads failed due to too short: 377520
+reads failed due to low complexity: 186720
+reads with adapter trimmed: 13755688
+bases trimmed due to adapters: 720710254
+reads with polyX in 3' end: 2764211
+bases trimmed in polyX tail: 40017771
+
+Duplication rate: 74.9396%
+
+Insert size peak (evaluated by paired-end reads): 212
+
+JSON report: fq_fp1/Cha-CPnd_001_Ex1-2G_L4_fastp.json
+HTML report: fq_fp1/Cha-CPnd_001_Ex1-2G_L4_fastp.html
+
+fastp --in1 shotgun_raw_fq/Cha-CPnd_001_Ex1-2G_L4_1.fq.gz --in2 shotgun_raw_fq/Cha-CPnd_001_Ex1-2G_L4_2.fq.gz --out1 fq_fp1/Cha-CPnd_001_Ex1-2G_L4_r1.fq.gz --out2 fq_fp1/Cha-CPnd_001_Ex1-2G_L4_r2.fq.gz --unpaired1 fq_fp1/failed/Cha-CPnd_001_Ex1-2G_L4_unprd.fq.gz --unpaired2 fq_fp1/failed/Cha-CPnd_001_Ex1-2G_L4_unprd.fq.gz --failed_out fq_fp1/failed/Cha-CPnd_001_Ex1-2G_L4_fail.fq.gz -h fq_fp1/Cha-CPnd_001_Ex1-2G_L4_fastp.html -j fq_fp1/Cha-CPnd_001_Ex1-2G_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 2326 seconds
+Read1 before filtering:
+total reads: 136428786
+total bases: 20464317900
+Q20 bases: 19855772903(97.0263%)
+Q30 bases: 19083610501(93.2531%)
+
+Read2 before filtering:
+total reads: 136428786
+total bases: 20464317900
+Q20 bases: 19471895188(95.1505%)
+Q30 bases: 18307520325(89.4607%)
+
+Read1 after filtering:
+total reads: 131917778
+total bases: 19383686144
+Q20 bases: 19009094222(98.0675%)
+Q30 bases: 18334401670(94.5868%)
+
+Read2 aftering filtering:
+total reads: 131917778
+total bases: 19376195618
+Q20 bases: 18790660758(96.9781%)
+Q30 bases: 17768808027(91.7043%)
+
+Filtering result:
+reads passed filter: 263835556
+reads failed due to low quality: 8201300
+reads failed due to too many N: 24074
+reads failed due to too short: 440246
+reads failed due to low complexity: 356396
+reads with adapter trimmed: 15937934
+bases trimmed due to adapters: 815849360
+reads with polyX in 3' end: 3461971
+bases trimmed in polyX tail: 49307125
+
+Duplication rate: 76.2585%
+
+Insert size peak (evaluated by paired-end reads): 212
+
+JSON report: fq_fp1/Cha-CPnd_001_Ex1-1A_L4_fastp.json
+HTML report: fq_fp1/Cha-CPnd_001_Ex1-1A_L4_fastp.html
+
+fastp --in1 shotgun_raw_fq/Cha-CPnd_001_Ex1-1A_L4_1.fq.gz --in2 shotgun_raw_fq/Cha-CPnd_001_Ex1-1A_L4_2.fq.gz --out1 fq_fp1/Cha-CPnd_001_Ex1-1A_L4_r1.fq.gz --out2 fq_fp1/Cha-CPnd_001_Ex1-1A_L4_r2.fq.gz --unpaired1 fq_fp1/failed/Cha-CPnd_001_Ex1-1A_L4_unprd.fq.gz --unpaired2 fq_fp1/failed/Cha-CPnd_001_Ex1-1A_L4_unprd.fq.gz --failed_out fq_fp1/failed/Cha-CPnd_001_Ex1-1A_L4_fail.fq.gz -h fq_fp1/Cha-CPnd_001_Ex1-1A_L4_fastp.html -j fq_fp1/Cha-CPnd_001_Ex1-1A_L4_fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 2805 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

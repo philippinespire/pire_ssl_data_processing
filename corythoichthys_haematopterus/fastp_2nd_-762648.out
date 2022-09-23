@@ -1,0 +1,157 @@
+
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 40110336
+total bases: 5843154075
+Q20 bases: 5614912680(96.0939%)
+Q30 bases: 5329960817(91.2172%)
+
+Read2 before filtering:
+total reads: 40110336
+total bases: 5842473637
+Q20 bases: 5511916005(94.3422%)
+Q30 bases: 5114921617(87.5472%)
+
+Read1 after filtering:
+total reads: 31309372
+total bases: 4690453503
+Q20 bases: 4583428953(97.7182%)
+Q30 bases: 4388801496(93.5688%)
+
+Read2 aftering filtering:
+total reads: 31309372
+total bases: 4689728761
+Q20 bases: 4516876075(96.3142%)
+Q30 bases: 4227727808(90.1487%)
+
+Filtering result:
+reads passed filter: 62618744
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 17601928
+reads with adapter trimmed: 490234
+bases trimmed due to adapters: 19775599
+reads corrected by overlap analysis: 5559891
+bases corrected by overlap analysis: 12024452
+
+Duplication rate: 31.0369%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-2G_L4_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-2G_L4_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Cha-CPnd_001_Ex1-2G_L4_clmp.r1.fq.gz --in2 fq_fp1_clmp/Cha-CPnd_001_Ex1-2G_L4_clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-2G_L4_clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-2G_L4_clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 558 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 42607828
+total bases: 6224478451
+Q20 bases: 6001210794(96.4131%)
+Q30 bases: 5719232476(91.8829%)
+
+Read2 before filtering:
+total reads: 42607828
+total bases: 6223548705
+Q20 bases: 5901564064(94.8263%)
+Q30 bases: 5502902182(88.4206%)
+
+Read1 after filtering:
+total reads: 34125683
+total bases: 5113155332
+Q20 bases: 5009236112(97.9676%)
+Q30 bases: 4814806960(94.1651%)
+
+Read2 aftering filtering:
+total reads: 34125683
+total bases: 5112445837
+Q20 bases: 4943879208(96.7028%)
+Q30 bases: 4648871642(90.9324%)
+
+Filtering result:
+reads passed filter: 68251366
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 16964290
+reads with adapter trimmed: 508136
+bases trimmed due to adapters: 20483331
+reads corrected by overlap analysis: 5646844
+bases corrected by overlap analysis: 12403280
+
+Duplication rate: 26.5722%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1H_L4_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1H_L4_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Cha-CPnd_001_Ex1-1H_L4_clmp.r1.fq.gz --in2 fq_fp1_clmp/Cha-CPnd_001_Ex1-1H_L4_clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1H_L4_clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1H_L4_clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 571 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 45129462
+total bases: 6596403538
+Q20 bases: 6336557090(96.0608%)
+Q30 bases: 6019676275(91.2569%)
+
+Read2 before filtering:
+total reads: 45129462
+total bases: 6593814159
+Q20 bases: 6219865578(94.3288%)
+Q30 bases: 5773243167(87.5554%)
+
+Read1 after filtering:
+total reads: 35504290
+total bases: 5319362836
+Q20 bases: 5199342553(97.7437%)
+Q30 bases: 4984055241(93.6965%)
+
+Read2 aftering filtering:
+total reads: 35504290
+total bases: 5318547029
+Q20 bases: 5124516885(96.3518%)
+Q30 bases: 4798688257(90.2255%)
+
+Filtering result:
+reads passed filter: 71008580
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 19250344
+reads with adapter trimmed: 558468
+bases trimmed due to adapters: 23776725
+reads corrected by overlap analysis: 6122518
+bases corrected by overlap analysis: 13564100
+
+Duplication rate: 31.1212%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1A_L4_clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1A_L4_clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Cha-CPnd_001_Ex1-1A_L4_clmp.r1.fq.gz --in2 fq_fp1_clmp/Cha-CPnd_001_Ex1-1A_L4_clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1A_L4_clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Cha-CPnd_001_Ex1-1A_L4_clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 621 seconds
+[WARNING]         multiqc : MultiQC Version v1.12 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : fq_fp1_clmp_fp2/2nd_fastp_report.html
+[INFO   ]         multiqc : Data        : fq_fp1_clmp_fp2/2nd_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete

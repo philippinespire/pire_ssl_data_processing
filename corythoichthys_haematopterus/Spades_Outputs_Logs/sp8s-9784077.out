@@ -1,0 +1,141 @@
+/home/afink007/.bash_profile: line 5: /home/afink007/.turing_bash_profile: No such file or directory
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz	--pe1-2	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz	--pe2-1	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R1.fq.gz	--pe2-2	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R2.fq.gz	--pe3-1	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R1.fq.gz	--pe3-2	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/afink007	--cov-cutoff	off	-o	/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.9
+  OS: Linux-4.4.302-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two
+
+Output dir: /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+    Library number: 2, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+    Library number: 3, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77, 99]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /scratch-lustre/afink007
+  Threads: 32
+  Memory limit (in Gb): 750
+
+
+======= SPAdes pipeline started. Log can be found here: /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/spades.log
+
+/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R2.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R1.fq.gz: max reads length: 150
+/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R2.fq.gz: max reads length: 150
+
+Reads length: 150
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /opt/conda/bin/spades-hammer /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/corrected/configs/config.info
+
+  0:00:00.000     1M / 12M   INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.012     1M / 12M   INFO    General                 (main.cpp                  :  76)   Loading config from /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/corrected/configs/config.info
+  0:00:00.033     1M / 12M   INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 32
+  0:00:00.043     1M / 12M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 750 Gb
+  0:00:00.048     1M / 12M   INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.053     1M / 12M   INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.057     1M / 12M   INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.061     1M / 12M   INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.066     1M / 12M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 16 files using 32 threads. This might take a while.
+  0:00:00.072     1M / 12M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 50000
+  0:00:00.080     1M / 12M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 7.8125 Gb
+  0:00:00.083     1M / 12M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 4194304
+  0:00:00.314    19G / 19G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz
+  0:00:56.960    19G / 30G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 7509185 reads
+  0:01:55.198    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 15153241 reads
+  0:02:53.474    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 22847399 reads
+  0:03:52.656    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 30678303 reads
+  0:04:05.031    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 32225762 reads
+  0:04:05.034    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz
+  0:05:03.990    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 39822450 reads
+  0:06:06.742    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 47634865 reads
+  0:07:08.511    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 55321068 reads
+  0:08:11.272    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 63091079 reads
+  0:08:23.023    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 64451524 reads
+  0:08:23.029    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R1.fq.gz
+  0:09:18.874    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 72061767 reads
+  0:10:17.014    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 79835249 reads
+  0:12:18.560    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R2.fq.gz
+  0:16:31.265    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R1.fq.gz
+  0:17:28.489    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 134778782 reads
+  0:20:11.962    19G / 32G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R2.fq.gz
+  0:24:04.005    19G / 32G   INFO   K-mer Splitting          (kmer_data.cpp             : 112)   Total 185474198 reads processed
+  0:24:04.013     1M / 32G   INFO    General                 (kmer_index_builder.hpp    : 249)   Starting k-mer counting.
+  0:26:04.296     1M / 115G  INFO    General                 (kmer_index_builder.hpp    : 260)   K-mer counting done. There are 4857070304 kmers in total.
+  0:26:04.301     1M / 115G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 395)   Building perfect hash indices
+  0:29:40.099  3493M / 115G  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 431)   Index built. Total 4857070304 kmers, 3508099888 bytes occupied (5.77813 bits per kmer).
+  0:29:40.103  3493M / 115G  INFO   K-mer Counting           (kmer_data.cpp             : 354)   Arranging kmers in hash map order
+  0:32:22.723    76G / 115G  INFO    General                 (main.cpp                  : 148)   Clustering Hamming graph.
+  1:04:12.514    76G / 115G  INFO    General                 (main.cpp                  : 155)   Extracting clusters:
+  1:04:12.514    76G / 115G  INFO    General                 (concurrent_dsu.cpp        :  18)   Connecting to root
+  1:04:18.465    76G / 115G  INFO    General                 (concurrent_dsu.cpp        :  34)   Calculating counts
+  1:24:27.082   144G / 145G  INFO    General                 (concurrent_dsu.cpp        :  63)   Writing down entries
+  2:18:02.016    76G / 196G  INFO    General                 (main.cpp                  : 167)   Clustering done. Total clusters: 2273575093
+  2:18:02.124    40G / 196G  INFO   K-mer Counting           (kmer_data.cpp             : 371)   Collecting K-mer information, this takes a while.
+  2:18:40.156   149G / 196G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R1.fq.gz
+  2:21:24.311   149G / 196G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1A_L4_clmp.fp2_repr.R2.fq.gz
+  2:24:12.970   149G / 196G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R1.fq.gz
+  2:26:51.111   149G / 196G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-1H_L4_clmp.fp2_repr.R2.fq.gz
+  2:29:33.993   149G / 196G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R1.fq.gz
+  2:32:02.603   149G / 196G  INFO   K-mer Counting           (kmer_data.cpp             : 377)   Processing /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allison/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired/Cha-CPnd_001_Ex1-2G_L4_clmp.fp2_repr.R2.fq.gz
+  2:34:35.365   149G / 196G  INFO   K-mer Counting           (kmer_data.cpp             : 384)   Collection done, postprocessing.
+  2:34:53.963   149G / 196G  INFO   K-mer Counting           (kmer_data.cpp             : 397)   There are 4857070304 kmers in total. Among them 2834880820 (58.3661%) are singletons.
+  2:34:53.963   149G / 196G  INFO    General                 (main.cpp                  : 173)   Subclustering Hamming graph
+slurmstepd: error: *** JOB 9784077 ON coreV4-21-himem-002 CANCELLED AT 2022-07-14T02:10:22 ***
