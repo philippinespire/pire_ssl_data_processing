@@ -477,7 +477,8 @@ sbatch WGprobe_annotation.sb "Och_scaffolds_allLibs_decontam_R1R2_noIsolate.fast
 Execute the second script
 ```sh
 #WGprobe_annotation.sb <assembly base name> 
-sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_B_decontam_R1R2_noIsolate.fasta"
+sbatch WGprobe_bedcreation.sb Och_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta
+Submitted batch job 1113940
 ```
 
 The longest scaffold is 105644
