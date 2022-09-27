@@ -136,3 +136,27 @@ Running jellyfish
 #run from sphyraena_obtusata
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sob" "fq_fp1_clmp_fp2_fqscrn_repaired"
 ```
+
+Genomescope results:
+-Genomescope v1 [result](http://qb.cshl.edu/genomescope/analysis.php?code=IwlrceOZN3AyM0YPXldP)
+-Genomescope v2 [result](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=Z3FMY2e1lF4gkqUP4rgB)
+-Both seem to fit well, but are also predicting a smaller than expected genome size (<300 Mb) and very high heterozygosity (>8%). Possible red flag - although Sob did have a lower c-value than other Sphyraenids? I am going to proceed to SPAdes assembly and see how things work. This might be a candidate for assessing polyploidy too since heterozygosity is so high.
+
+version | stat | min | max
+-------| ----- | ----- | ------
+1 | Heterosygosity | 10.2% | 8.37% | 12.1%
+2 | Heterosygosity | 8.74% | 8.6% | 8.88%
+1 | Haploid length | 267,412,154 | 232,657,782 | 233,401,684
+2 | Haploid length | 278,504,501 | 277,286,020 | 278,504,501
+1 | Model fit | NA | 98.03% | 98.55%
+2 | Model fit | NA | 90.78% | 98.1 %
+
+### 2. Genome properties
+
+runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) on fq_fp1_clmparray_fp2b_fqscrn_repaired using 1.093 Bbp as size estimate
+
+Try allLibs first.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Sob" "all" "decontam" "280000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "fq_fp1_clmp_fp2_fqscrn_repaired"
+```
