@@ -151,12 +151,38 @@ version | stat | min | max
 1 | Model fit | NA | 98.03% | 98.55%
 2 | Model fit | NA | 90.78% | 98.1 %
 
-### 2. Genome properties
+### 2. Assembly
 
-runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) on fq_fp1_clmparray_fp2b_fqscrn_repaired using 1.093 Bbp as size estimate
+runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) on fq_fp1_clmparray_fp2b_fqscrn_repaired using 280 Mbp as size estimate
 
 Try allLibs first.
 
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Sob" "all" "decontam" "280000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "fq_fp1_clmp_fp2_fqscrn_repaired"
+```
+
+Followed by individual libraries:
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Sob" "1" "decontam" "280000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "fq_fp1_clmp_fp2_fqscrn_repaired"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Sob" "2" "decontam" "280000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "fq_fp1_clmp_fp2_fqscrn_repaired"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Sob" "3" "decontam" "280000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "fq_fp1_clmp_fp2_fqscrn_repaired"
+```
+
+SPAdes completed successfully for allLibs + library C but failed for libraries A+B, with a "too many erroneous k-mers" warning. Not sure if anyone else has encountered this - could be related to very high heterozygosity + somewhat lower than average # of reads/library for this species. For the successful allLibs assembly length is at least in the right ballpark and higher than the Genomescope estimate (~434Mb).
+
+## 3. QUAST
+
+The assemblies that worked seem to be decent - allLibs has longest scaffold 201016, N50 24215, total size 434625263.
+
+## 4. BUSCO
+
+Running BUSCO on successful assemblies.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_allLibs_decontam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_allLibs_decontam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_Sob-CKal-C_decontam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_Sob-CKal-C_decontam_R1R2_noIsolate" "scaffolds"
 ```
