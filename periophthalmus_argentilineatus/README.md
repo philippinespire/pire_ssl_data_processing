@@ -190,4 +190,33 @@ Par_scaffolds_CPas-A_decontam_R1R2_noIsolate_great10000_per10000_all.bed
 closest_relative_genomes_periophthalmus_argentilineatus.txt
 ```
 
-Still need to back up to RC / clean up periophthalmus_argentilineatus folder.
+## Cleaning up directory / backing up files
+
+Documenting directory sizes/files.
+
+```
+du -h | sort -rh > Par_ssl_beforeDeleting_IntermFiles
+```
+
+Making copies of important files.
+
+```
+# check for copy of raw files
+ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/fq
+
+## no raw backup there yet - making directory and copying from the RC backup.
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/fq
+cp /RC/tmp/sysadma_recover_files_may_27_2022_2_56_pm/pire_ssl_data_processing_Recovered_05272022/periophthalmus_argentilineatus/fq_raw_shotgun/*_1.fq.gz /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/fq
+cp /RC/tmp/sysadma_recover_files_may_27_2022_2_56_pm/pire_ssl_data_processing_Recovered_05272022/periophthalmus_argentilineatus/fq_raw_shotgun/*_2.fq.gz /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/fq
+
+# make copy of contaminated and decontaminated files - using fp2b/trimmed data since this was used for assembly
+cp -R /RC/tmp/sysadma_recover_files_may_27_2022_2_56_pm/pire_ssl_data_processing_Recovered_05272022/periophthalmus_argentilineatus/fq_fp1_clmparray_fp2b /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/
+cp -R /RC/tmp/sysadma_recover_files_may_27_2022_2_56_pm/pire_ssl_data_processing_Recovered_05272022/periophthalmus_argentilineatus/fq_fp1_clmparray_fp2b_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/               
+
+# make a copy of fasta files for best assembly (CPas-A for Par)
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/SPAdes_Par-CPas-A_contam_R1R2_noIsolate
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/SPAdes_Par-CPas-A_decontam_R1R2_noIsolate
+cp SPAdes_Par-CPas-A_contam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/SPAdes_Par-CPas-A_contam_R1R2_noIsolate
+cp SPAdes_Par-CPas_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/SPAdes_Par-CPas-A_decontam_R1R2_noIsolate
+```
