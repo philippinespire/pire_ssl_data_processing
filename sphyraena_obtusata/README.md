@@ -186,3 +186,12 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_Sob-CKal-C_decontam_R1R2_noIsolate" "contigs"
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_Sob-CKal-C_decontam_R1R2_noIsolate" "scaffolds"
 ```
+
+QUAST + BUSCO results:
+
+| Species | Library | DataType | SCAFIG    | covcutoff | genomescope v. | \# contigs | Largest contig | Total length | Estimated reference length | N50   | L50   | \# N's per 100 kbp | BUSCO single copy |
+| ------- | ------- | -------- | --------- | --------- | -------------- | ---------- | -------------- | ------------ | -------------------------- | ----- | ----- | ------------------ | ----------------- |
+| Sob     | CKal-C  | decontam | contigs   | off       | 2              | 41958      | 93110          | 364758673    | 280000000                  | 10891 | 10047 | 0                  | 65.30%            |
+| Sob     | allLibs | decontam | contigs   | off       | 2              | 31061      | 180634         | 431987988    | 280000000                  | 22437 | 5408  | 0                  | 80.00%            |
+| Sob     | CKal-C  | decontam | scaffolds | off       | 2              | 40738      | 93110          | 371366462    | 280000000                  | 11606 | 9493  | 15.65              | 67.20%            |
+| Sob     | allLibs | decontam | scaffolds | off       | 2              | 29803      | 201016         | 434625263    | 280000000                  | 24215 | 5031  | 8.51               | 81.00%            |
