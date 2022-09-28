@@ -310,4 +310,47 @@ Lva_scaffolds_allLibs_decontam_R1R2_noIsolate_great10000_per10000_all.bed
 closest_relative_genomes_Lethrinus_variegatus.txt
 ```
 
-Still need to back up to RC / clean up lethrinus_variegatus folder.
+## Cleaning up directory + backing up data
+
+Documenting sizes of directories + files.
+
+```
+du -h | sort -rh > Lva_ssl_beforeDeleting_IntermFiles
+```
+
+Check for copy of raw files and back up contam/decontam files.
+
+```
+# check for copy of raw files
+ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq
+
+# there was no backup of raw files in current pire_ssl but they are in the recovered files folder on RC- copying these to the correct RC backup
+cp -R /RC/tmp/sysadma_recover_files_may_27_2022_2_56_pm/pire_ssl_data_processing_Recovered_05272022/lethrinus_variegatus/fq_raw_shotgun /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/
+
+# make copy of contaminated and decontaminated files - also in RC recovered folder. Using the trimmed files (fp2b) since these were used for assembly
+cp -R /RC/tmp/sysadma_recover_files_may_27_2022_2_56_pm/pire_ssl_data_processing_Recovered_05272022/lethrinus_variegatus/fq_fp1_clmp_fp2b /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/
+cp -R /RC/tmp/sysadma_recover_files_may_27_2022_2_56_pm/pire_ssl_data_processing_Recovered_05272022/lethrinus_variegatus/fq_fp1_clmp_fp2b_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/
+
+# make a copy of fasta files for best decontam assembly (allLibs for Lva)
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_decontam_R1R2_noIsolate
+cp SPAdes_allLibs_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_decontam_R1R2_noIsolate
+```
+
+At this point I am going to run a contam allLibs assembly just so we have it for Lva. Copying trimmed contam files back to the ssl directory.
+
+```
+cp -R /RC/tmp/sysadma_recover_files_may_27_2022_2_56_pm/pire_ssl_data_processing_Recovered_05272022/lethrinus_variegatus/fq_fp1_clmp_fp2b /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus
+```
+
+Running contam assembly (on Turing).
+
+```
+sbatch /home/e1garcia/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Lva" "all" "contam" "901000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus" "fq_fp1_clmp_fp2b"
+```
+
+Backing up contam files + assembly.
+
+```
+
+```
+
