@@ -172,11 +172,16 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 SPAdes completed successfully for allLibs + library C but failed for libraries A+B, with a "too many erroneous k-mers" warning. Not sure if anyone else has encountered this - could be related to very high heterozygosity + somewhat lower than average # of reads/library for this species. For the successful allLibs assembly length is at least in the right ballpark and higher than the Genomescope estimate (~434Mb).
 
-## 3. QUAST
+Running contam version of allLibs.
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Sob" "all" "contam" "280000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "fq_fp1_clmp_fp2"
+```
+
+### 3. QUAST
 
 The assemblies that worked seem to be decent - allLibs has longest scaffold 201016, N50 24215, total size 434625263.
 
-## 4. BUSCO
+### 4. BUSCO
 
 Running BUSCO on successful assemblies.
 
@@ -195,3 +200,25 @@ QUAST + BUSCO results:
 | Sob     | allLibs | decontam | contigs   | off       | 2              | 31061      | 180634         | 431987988    | 280000000                  | 22437 | 5408  | 0                  | 80.00%            |
 | Sob     | CKal-C  | decontam | scaffolds | off       | 2              | 40738      | 93110          | 371366462    | 280000000                  | 11606 | 9493  | 15.65              | 67.20%            |
 | Sob     | allLibs | decontam | scaffolds | off       | 2              | 29803      | 201016         | 434625263    | 280000000                  | 24215 | 5031  | 8.51               | 81.00%            |
+
+allLibs is a substantial improvement over CKal-C. I am moving forward with allLibs_decontam for probe development.
+
+## C. Probe development
+
+Setting up.
+
+```
+mkdir probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+cp SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta probe_design
+cd probe_design
+mv scaffolds.fasta Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta
+```
+
+Execute the first script.
+
+```
+sbatch WGprobe_annotation.sb "Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+```
+
