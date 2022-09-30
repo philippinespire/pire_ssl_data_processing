@@ -200,8 +200,10 @@ QUAST + BUSCO results:
 | Sob     | allLibs | decontam | contigs   | off       | 2              | 31061      | 180634         | 431987988    | 280000000                  | 22437 | 5408  | 0                  | 80.00%            |
 | Sob     | CKal-C  | decontam | scaffolds | off       | 2              | 40738      | 93110          | 371366462    | 280000000                  | 11606 | 9493  | 15.65              | 67.20%            |
 | Sob     | allLibs | decontam | scaffolds | off       | 2              | 29803      | 201016         | 434625263    | 280000000                  | 24215 | 5031  | 8.51               | 81.00%            |
+| Sob     | allLibs | contam | contigs | off       | 2              | 19645      | 473359         | 485868572    | 280000000                  | 59992 | 2196  | 0.00               | 90.00%            |
+| Sob     | allLibs | contam | scaffolds | off       | 2              | 19205      | 473359         | 486474762    | 280000000                  | 62835 | 2118  | 4.66               | 90.40%            |
 
-allLibs is a substantial improvement over CKal-C. I am moving forward with allLibs_decontam for probe development.
+allLibs is a substantial improvement over CKal-C. contam is also a fairly big improvement over decontam! However, I am moving forward with allLibs_decontam for probe development.
 
 ## C. Probe development
 
@@ -222,3 +224,6 @@ Execute the first script.
 sbatch WGprobe_annotation.sb "Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
 ```
 
+```
+sbatch WGprobe_bedcreation.sb "Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+```
