@@ -636,23 +636,13 @@ Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from inter
 
 It is a good idea to keep track of the files you are deleting
 
-An easy way to do this is to list files to be deleted, copy the info and paste it into log file tracking the files you are deleting
+An easy way to do this is to list files of your *raw* directory and direct to a new file, then append the ls of the other two directories to the same log file:
 ```sh
-ls -l fq/*fq.gz
-# copy from the line of the command to the last file and paste it while creating the log file 
-nano deleted_files_log
-# paste
-/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq/
--rwxr-x--- 1 e1garcia carpenter  15G Aug  2 12:12 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
--rwxr-x--- 1 e1garcia carpenter  16G Aug  2 12:30 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_2.fq.gz
--rwxr-x--- 1 e1garcia carpenter  13G Aug  2 12:45 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_1.fq.gz
--rwxr-x--- 1 e1garcia carpenter  14G Aug  2 13:01 SgC0072C_CKDL210013395-1a-AK9146-7UDI286_HF33GDSX2_L4_2.fq.gz
--rwxr-x--- 1 e1garcia carpenter  16G Aug  2 13:19 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_1.fq.gz
--rwxr-x--- 1 e1garcia carpenter  17G Aug  2 13:36 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_2.fq.gz
+ls -ltrh *raw*/*fq.gz > deleted_files_log
+ls -ltrh *fp1/*fq.gz >> deleted_files_log
+ls -ltrh *clmp/*fq.gz >> deleted_files_log
+ls -ltrh *fqscrn/*fq.gz >> deleted_files_log
 ```
-
-Append the info of the rest of files to be deleted into the same file. At the end you'll have something similar to the Sgr [deleted_files_log]() 
-
 
 Finally, document the new size of your directories
 
