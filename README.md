@@ -632,16 +632,35 @@ cp SPAdes_SgC0072C_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab
 ```
 
 ### Delete unneeded files
-Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from intermediate processes (Fastp1, Clumpify, and Fastq Screen; steps 0, 2, and 5). Keep files from fq_fp1_clmp_fp2 and fq_fp1_clmp_fp2_fqscrn_repaired for now.
+Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from intermediate processes (Fastp1, Clumpify, and Fastq Screen; steps 0, 2, and 5). Thus:
+
+Keep files from:
+* fq_fp1_clmp_fp2  
+* fq_fp1_clmp_fp2_fqscrn_repaired
+
+Delete fq.gz files from:
+* shotgun_raw_fq
+* fq_fp1
+* fq_fp1_clmp
+* fq_fp1_clmp_fp2_fqscrn
 
 It is a good idea to keep track of the files you are deleting
 
 An easy way to do this is to list files of your *raw* directory and direct to a new file, then append the ls of the other two directories to the same log file:
 ```sh
+# create log file before removing
 ls -ltrh *raw*/*fq.gz > deleted_files_log
 ls -ltrh *fp1/*fq.gz >> deleted_files_log
 ls -ltrh *clmp/*fq.gz >> deleted_files_log
 ls -ltrh *fqscrn/*fq.gz >> deleted_files_log
+```
+
+Removing files
+```
+rm *raw*/*fq.gz
+rm *fp1/*fq.gz
+rm *clmp/*fq.gz
+rm *fqscrn/*fq.gz
 ```
 
 Finally, document the new size of your directories
