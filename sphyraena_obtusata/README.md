@@ -190,6 +190,8 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_allLibs_decontam_R1R2_noIsolate" "scaffolds"
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_Sob-CKal-C_decontam_R1R2_noIsolate" "contigs"
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_Sob-CKal-C_decontam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_allLibs_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "SPAdes_allLibs_contam_R1R2_noIsolate" "scaffolds"
 ```
 
 QUAST + BUSCO results:
@@ -202,6 +204,8 @@ QUAST + BUSCO results:
 | Sob     | allLibs | decontam | scaffolds | off       | 2              | 29803      | 201016         | 434625263    | 280000000                  | 24215 | 5031  | 8.51               | 81.00%            |
 
 allLibs is a substantial improvement over CKal-C. I am moving forward with allLibs_decontam for probe development.
+
+
 
 ## C. Probe development
 
