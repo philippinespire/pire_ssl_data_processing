@@ -207,7 +207,14 @@ QUAST + BUSCO results:
 
 allLibs is a substantial improvement over CKal-C. contam is also a fairly big improvement over decontam! However, I am moving forward with allLibs_decontam for probe development.
 
+To check assembly I am BLAST-ing five of the single-copy BUSCO sequences to see if they hit relatives of Sob.
+NODE_2529_length_34939_cov_9.600574:6701-24519: top hits = Xiphias gladius / Toxotes jaculatrix
+NODE_1245_length_48332_cov_8.951631:24573-30109: top hits = Xiphias gladius / Lates calcarifer
+NODE_2401_length_35850_cov_12.339291:10652-34777: top hits = Toxotes jaculatrix / Caranx melampygus
+NODE_7575_length_17308_cov_10.329304:14068-16920: top hits = Sander lucioperca/ Perca fluviatalis
+NODE_4107_length_26878_cov_10.366294:897-2285: top hits = Lates calcarifer / Toxotes jaculatrix
 
+Top hits tend to be related species based on published phylogeny (esp Xiphias + Jaculatrix should be sister groups). Note coverage (9-12x) is lower than expected based on Genomescope. Contigs >100Kbp seem to be in this range too.
 
 ## C. Probe development
 
@@ -230,4 +237,87 @@ sbatch WGprobe_annotation.sb "Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fast
 
 ```
 sbatch WGprobe_bedcreation.sb "Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+```
+
+Check upper limit.
+
+```
+cat BEDprobes-1121350.out 
+
+The longest scaffold is 201016
+The upper limit used in loop is 197500
+A total of 30906 regions have been identified from 12970 scaffolds
+```
+
+Move log files to logs directory.
+
+```
+mv *.out ../logs
+```
+
+### Closest relatives
+
+No genomes for any species in Sphyraenidae. Looks like Sphyraenidae was considered part of Istiophoriformes but is now considered sister to a group containing other Istiophorids and some additional groups (incl. Toxotidae) based on Betancur et al. 2017. This makes sense given best Blast hits were often to Xiphias or Toxotes.
+
+Five close(ish) relatives - prioritizing chromosome-level assemblies.
+
+Istiophoriformes-
+Xipihas glaudius 
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_016859285.1/
+Istiophorus platypterus 
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCA_016859345.1/
+
+Toxotidae-
+Toxotes jaculatrix 
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_017976425.1/
+
+Carangiformes-
+Trachurus trachurus
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCA_905171665.2/
+
+Pleuronectiformes-
+Hippoglossus hippoglossus
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_009819705.1/
+
+Creating file.
+
+```
+vi closest_relative_genomes_Sphyraena_obtusata.txt
+
+1. Xipihas glaudius 
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_016859285.1/
+2. Istiophorus platypterus 
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCA_016859345.1/
+3. Toxotes jaculatrix 
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_017976425.1/
+4. Trachurus trachurus
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCA_905171665.2/
+5. Hippoglossus hippoglossus
+https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_009819705.1/
+```
+
+Folder of files for Arbor.
+```
+mkdir files_for_ArborSci
+mv *.fasta.masked *.fasta.out.gff *.augustus.gff *bed closest* files_for_ArborSci
+```
+
+Message for Eric:
+
+```
+Probe design files ready.
+
+A total of 30906 regions have been identified from 12970 scaffolds
+
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/probe_design/files_for_ArborSci
+
+Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.augustus.gff
+Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.masked
+Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.out.gff
+Sob_scaffolds_allLibs_decontam_R1R2_noIsolate_great10000_per10000_all.bed
+closest_relative_genomes_Sphyraena_obtusata.txt
+```
+
+
+
 ```
