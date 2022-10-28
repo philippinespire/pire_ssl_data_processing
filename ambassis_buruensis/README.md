@@ -51,3 +51,17 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.ba
 
 Run checkClumpify_EG.R when finished.
 
+```
+cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R .
+salloc #because R is interactive and takes a decent amount of memory, we want to grab an interactive node to run this
+enable_lmod
+module load container_env mapdamage2
+crun R < checkClumpify_EG.R --no-save
+```
+
+Clumpify Successfully worked on all samples!
+
+### 4. Second trim.
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp_fp2
+```
