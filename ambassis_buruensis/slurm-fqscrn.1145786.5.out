@@ -1,0 +1,47 @@
+
+INDIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp_fp2
+OUTDIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp_fp2_fqscrn
+CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf
+PATTERN=*.fq.gz
+PARALLELISM=
+THREADS=40
+SUBSET=0
+FILTER=000000000000
+INFILES:
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp_fp2/Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz
+
+Fri Oct 28 13:08:20 EDT 2022 RUNNING FASTQ_SCREEN TO FILTER FQ FILES AND GENERATE REPORTS, NO SUBSETTING
+Using fastq_screen v0.14.0
+Reading configuration from '/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf'
+Adding database Human
+Adding database Ecoli
+Adding database PhiX
+Adding database Contamnts_Adaptrs
+Adding database Vectors
+Adding database Bacteria_24k
+Adding database Protists_1k
+Adding database Viruses
+Adding database Fungi_RefSeq_release
+Adding database Coral
+Adding database Bird
+Adding database Plant
+Using 40 threads for searches
+Option --subset set to 0: processing all reads in FASTQ files
+Processing Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz
+Not making data subset
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Human
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Ecoli
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against PhiX
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Contamnts_Adaptrs
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Vectors
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Bacteria_24k
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Protists_1k
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Viruses
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Fungi_RefSeq_release
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Coral
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Bird
+Searching Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.fq.gz_temp_subset.fastq against Plant
+Filtering Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.tagged.fastq.gz
+Filtering files with filter '000000000000'
+Filtering Abu-CPnd_051_Ex1-9E-ssl.clmp.fp2_r2.tagged.fastq.gz
+Processing complete
