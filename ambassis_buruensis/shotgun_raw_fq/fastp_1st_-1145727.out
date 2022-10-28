@@ -1,0 +1,142 @@
+
+Read1 before filtering:
+total reads: 31959035
+total bases: 4793855250
+Q20 bases: 4619900999(96.3713%)
+Q30 bases: 4418195647(92.1637%)
+
+Read2 before filtering:
+total reads: 31959035
+total bases: 4793855250
+Q20 bases: 4505934971(93.994%)
+Q30 bases: 4170561109(86.9981%)
+
+Read1 after filtering:
+total reads: 30753957
+total bases: 4451619362
+Q20 bases: 4351325025(97.747%)
+Q30 bases: 4180750482(93.9153%)
+
+Read2 aftering filtering:
+total reads: 30753957
+total bases: 4448970527
+Q20 bases: 4272517707(96.0339%)
+Q30 bases: 3977818473(89.4099%)
+
+Filtering result:
+reads passed filter: 61507914
+reads failed due to low quality: 2071246
+reads failed due to too many N: 1140
+reads failed due to too short: 290252
+reads failed due to low complexity: 47518
+reads with adapter trimmed: 6150746
+bases trimmed due to adapters: 301353497
+reads with polyX in 3' end: 749315
+bases trimmed in polyX tail: 11352334
+
+Duplication rate: 20.6501%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9C-ssl.fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9C-ssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/Abu-CPnd_051_Ex1-9C-ssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/Abu-CPnd_051_Ex1-9C-ssl.2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9C-ssl.r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9C-ssl.r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/failed/Abu-CPnd_051_Ex1-9C-ssl.unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/failed/Abu-CPnd_051_Ex1-9C-ssl.unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/failed/Abu-CPnd_051_Ex1-9C-ssl.fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9C-ssl.fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9C-ssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 601 seconds
+Read1 before filtering:
+total reads: 46897886
+total bases: 7034682900
+Q20 bases: 6776037654(96.3233%)
+Q30 bases: 6476814961(92.0698%)
+
+Read2 before filtering:
+total reads: 46897886
+total bases: 7034682900
+Q20 bases: 6611562885(93.9852%)
+Q30 bases: 6132730733(87.1785%)
+
+Read1 after filtering:
+total reads: 44856486
+total bases: 6486302687
+Q20 bases: 6338578605(97.7225%)
+Q30 bases: 6087871306(93.8573%)
+
+Read2 aftering filtering:
+total reads: 44856486
+total bases: 6483301428
+Q20 bases: 6232982541(96.139%)
+Q30 bases: 5816302272(89.712%)
+
+Filtering result:
+reads passed filter: 89712972
+reads failed due to low quality: 3206220
+reads failed due to too many N: 1790
+reads failed due to too short: 779846
+reads failed due to low complexity: 94944
+reads with adapter trimmed: 9454964
+bases trimmed due to adapters: 454632993
+reads with polyX in 3' end: 1141547
+bases trimmed in polyX tail: 18069095
+
+Duplication rate: 21.5429%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9E-ssl.fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9E-ssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/Abu-CPnd_051_Ex1-9E-ssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/Abu-CPnd_051_Ex1-9E-ssl.2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9E-ssl.r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9E-ssl.r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/failed/Abu-CPnd_051_Ex1-9E-ssl.unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/failed/Abu-CPnd_051_Ex1-9E-ssl.unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/failed/Abu-CPnd_051_Ex1-9E-ssl.fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9E-ssl.fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9E-ssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 906 seconds
+Read1 before filtering:
+total reads: 56275326
+total bases: 8441298900
+Q20 bases: 8139603143(96.426%)
+Q30 bases: 7786963314(92.2484%)
+
+Read2 before filtering:
+total reads: 56275326
+total bases: 8441298900
+Q20 bases: 7953060753(94.2161%)
+Q30 bases: 7381036362(87.4396%)
+
+Read1 after filtering:
+total reads: 54223365
+total bases: 7843596939
+Q20 bases: 7668046441(97.7619%)
+Q30 bases: 7369246663(93.9524%)
+
+Read2 aftering filtering:
+total reads: 54223365
+total bases: 7838105404
+Q20 bases: 7540844347(96.2075%)
+Q30 bases: 7040634232(89.8257%)
+
+Filtering result:
+reads passed filter: 108446730
+reads failed due to low quality: 3435280
+reads failed due to too many N: 1958
+reads failed due to too short: 545548
+reads failed due to low complexity: 121136
+reads with adapter trimmed: 11238449
+bases trimmed due to adapters: 542095701
+reads with polyX in 3' end: 1326292
+bases trimmed in polyX tail: 20259572
+
+Duplication rate: 20.1358%
+
+Insert size peak (evaluated by paired-end reads): 0
+
+JSON report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9D-ssl.fastp.json
+HTML report: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9D-ssl.fastp.html
+
+fastp --in1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/Abu-CPnd_051_Ex1-9D-ssl.1.fq.gz --in2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/Abu-CPnd_051_Ex1-9D-ssl.2.fq.gz --out1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9D-ssl.r1.fq.gz --out2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9D-ssl.r2.fq.gz --unpaired1 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/failed/Abu-CPnd_051_Ex1-9D-ssl.unprd.fq.gz --unpaired2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/failed/Abu-CPnd_051_Ex1-9D-ssl.unprd.fq.gz --failed_out /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/failed/Abu-CPnd_051_Ex1-9D-ssl.fail.fq.gz -h /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9D-ssl.fastp.html -j /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1/Abu-CPnd_051_Ex1-9D-ssl.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 1107 seconds
+[WARNING]         multiqc : MultiQC Version v1.13 now available!
+[INFO   ]         multiqc : This is MultiQC v1.9
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching   : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1
+[INFO   ]           fastp : Found 3 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : ../fq_fp1/1st_fastp_report.html
+[INFO   ]         multiqc : Data        : ../fq_fp1/1st_fastp_report_data
+[INFO   ]         multiqc : MultiQC complete
