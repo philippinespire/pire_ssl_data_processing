@@ -25,3 +25,19 @@ cp *.fq.gz /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/a
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq" "fq.gz"
 ```
+
+First fastQC overview:
+* 32 - 56.3 million sequence pairs per library
+* % duplication 20.3% - 24.4% (likely will be reduced after clumpify
+* Sequence quality looks good (>30 on average)
+* Motif evident in first 10 bp
+* GC content 43%, slightly non-normal distribution ("bump" around 65-70% - bacterial contam?)
+* N content and sequence length distributions good
+* no red flags!
+
+### 2. 2. 1st fastp / trim
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/shotgun_raw_fq /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1
+```
+
