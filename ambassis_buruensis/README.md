@@ -65,3 +65,15 @@ Clumpify Successfully worked on all samples!
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp_fp2
 ```
+
+Results:
+* duplication <5%
+* GC content down slightly (42%)
+* >80% passed filter, mostly for length. Still 42M - 75M read pairs.
+* very low adapter content (0.2%)
+
+### 5. Decontaminate
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp_fp2 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp_fp2_fqscrn 20 
+```
