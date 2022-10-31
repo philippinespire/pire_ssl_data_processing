@@ -91,20 +91,64 @@ Re-run MultiQC.
 
 ```
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp_fp2_fqscrn_repaired
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2_fqscrn_repaired" "fq.gz" 
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq_fp1_clmp_fp2_fqscrn_repaired" "fq.gz" 
 ```
 
-Calculate reads lost.
+18.9-33.4 M read pairs retained - low duplication, stable GC content ~41%.
+
+Calculate reads lost. Need to edit the read_calculator script to remove "array" from folder names.
 
 ```
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis"
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/read_calculator_ssl.sh .
+vi read_calculator_ssl.sh
+sbatch read_calculator_ssl.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis"
 ```
+
+Most reads lost in clumpify + 2nd trim. ~60% of reads remained for all libraries.
 
 ## GENOME ASSEMBLY
 
 ### 1. Genome properties.
 
+Related species:
+
+Ambassis elongatus c-value = 0.56. From Hardie and Hebert 2004.
+
 Run Jellyfish.
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Abu" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
+
+Genomescope results:
+-Genomescope v1 [result](http://qb.cshl.edu/genomescope/analysis.php?code=f02v4LzpVhHzg2Rx38CZ)
+-Genomescope v2 [result](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=6f5djAcXk7w94nybWnD1)
+-Both seem to fit well. Similar values, all reasonable - slightly larger genome size and lower heterozygosity for estimates from v2. Use 457M (v2 estimate) for genome size!
+
+version | stat | min | max
+-------| ----- | ----- | ------
+1 | Heterosygosity | 0.823% | 0.817% | 0.829%
+2 | Heterosygosity | 0.785% | 0.771% | 0.798%
+1 | Haploid length | 438,652,102 | 438,324,664 | 438,979,540
+2 | Haploid length | 456,636,665 | 456,078,394 | 457,194,935
+1 | Model fit | NA | 97.2881% | 98.5199%
+2 | Model fit | NA | 87.994% | 98.2931 %
+
+
+### 2. Assembly
+
+runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) on fq_fp1_clmparray_fp2b_fqscrn_repaired using 280 Mbp as size estimate
+
+Try allLibs first.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Abu" "all" "decontam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis" "fq_fp1_clmp_fp2_fqscrn_repaired"
+```
+
+Followed by individual libraries:
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Abu" "1" "decontam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "fq_fp1_clmp_fp2_fqscrn_repaired"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Abu" "2" "decontam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "fq_fp1_clmp_fp2_fqscrn_repaired"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Abu" "3" "decontam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata" "fq_fp1_clmp_fp2_fqscrn_repaired"
 ```
