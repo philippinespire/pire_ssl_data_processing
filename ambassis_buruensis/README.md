@@ -136,7 +136,7 @@ version | stat | min | max
 
 ### 2. Assembly
 
-runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) on fq_fp1_clmparray_fp2b_fqscrn_repaired using 280 Mbp as size estimate
+runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) on fq_fp1_clmparray_fp2b_fqscrn_repaired using 457 Mbp as size estimate
 
 Try allLibs first.
 
