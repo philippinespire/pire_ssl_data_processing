@@ -155,6 +155,8 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ### 3. QUAST
 
+allLibs_scaffolds slightly better than B_scaffolds, but similar in terms of N50/completeness/largest scaffold.
+
 ### 4. BUSCO
 
 Running BUSCO
@@ -168,4 +170,33 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis" "SPAdes_Abu-CPnd-B_decontam_R1R2_noIsolate" "scaffolds"
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis" "SPAdes_Abu-CPnd-C_decontam_R1R2_noIsolate" "contigs"
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis" "SPAdes_Abu-CPnd-C_decontam_R1R2_noIsolate" "scaffolds"
+```
+
+B_scaffolds slightly better than allLibs_scaffolds.
+
+Going with B as we are prioritizing BUSCO!
+
+## C. Probe development!
+
+Setting up.
+
+```
+mkdir probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+cp SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta probe_design
+cd probe_design
+mv scaffolds.fasta Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta
+```
+
+Execute the first script.
+
+```
+sbatch WGprobe_annotation.sb "Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+```
+
+Execute the second script.
+
+```
+sbatch WGprobe_bedcreation.sb "Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
 ```
