@@ -184,19 +184,19 @@ Setting up.
 mkdir probe_design
 cp ../scripts/WGprobe_annotation.sb probe_design
 cp ../scripts/WGprobe_bedcreation.sb probe_design
-cp SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta probe_design
+cp SPAdes_Abu-CPnd-B_decontam_R1R2_noIsolate/scaffolds.fasta probe_design
 cd probe_design
-mv scaffolds.fasta Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta
+mv scaffolds.fasta Abu_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta
 ```
 
 Execute the first script.
 
 ```
-sbatch WGprobe_annotation.sb "Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+sbatch WGprobe_annotation.sb "Abu_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta"
 ```
 
 Execute the second script.
 
 ```
-sbatch WGprobe_bedcreation.sb "Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+sbatch WGprobe_bedcreation.sb "Abu_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta"
 ```
