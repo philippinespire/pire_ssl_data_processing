@@ -174,7 +174,12 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 
 B_scaffolds slightly better than allLibs_scaffolds.
 
-Going with B as we are prioritizing BUSCO!
+Going with B for probe development and contam assembly as we are prioritizing BUSCO!
+
+Contam assembly for B:
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Abu" "2" "contam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis" "fq_fp1_clmp_fp2"
+```
 
 ## C. Probe development!
 
@@ -199,4 +204,67 @@ Execute the second script.
 
 ```
 sbatch WGprobe_bedcreation.sb "Abu_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta"
+```
+
+Check upper limit.
+
+```
+cat BEDprobes-1153270.out
+
+The longest scaffold is 186760
+The upper limit used in loop is 177500
+A total of 25655 regions have been identified from 12481 scaffolds
+```
+
+Move log files to logs directory.
+
+### Closest relatives
+
+One species in Ambassidae with a genome = [Parambassis ranga](https://www.ncbi.nlm.nih.gov/genome/76088)
+
+Ambassidae is sister to a number of other percomorph clades, so taking a sampling of those as more distantly related relatives.
+
+Pomacentridae = [Dascyllus trimaculatus](https://www.ncbi.nlm.nih.gov/genome/116835)
+Embiotocidae = [Embiotoca jacksoni](https://www.ncbi.nlm.nih.gov/genome/43884)
+Mugilidae = [Mugil cephalus](https://www.ncbi.nlm.nih.gov/genome/7162)
+Gobiesocidae = [Gouania willdenowi](https://www.ncbi.nlm.nih.gov/genome/76090)
+
+Creating file.
+
+```
+vi closest_relative_genomes_Ambassis_buruensis.txt
+
+1. Parambassis ranga
+https://www.ncbi.nlm.nih.gov/genome/76088
+2. Dascyllus trimaculatus
+https://www.ncbi.nlm.nih.gov/genome/116835
+3. Embiotoca jacksoni
+https://www.ncbi.nlm.nih.gov/genome/43884
+4. Mugil cephalus
+https://www.ncbi.nlm.nih.gov/genome/7162
+5. Gouania willdenowi
+https://www.ncbi.nlm.nih.gov/genome/76090
+```
+
+Folder of files for Arbor.
+
+```
+mkdir files_for_ArborSci
+mv *.fasta.masked *.fasta.out.gff *.augustus.gff *bed closest* files_for_ArborSci
+```
+
+Message for Eric:
+
+```
+Probe design files ready.
+
+A total of 25655 regions have been identified from 12481 scaffolds
+
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/probe_design/files_for_ArborSci/
+
+Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.augustus.gff
+Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.masked
+Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.out.gff
+Sob_scaffolds_allLibs_decontam_R1R2_noIsolate_great10000_per10000_all.bed
+closest_relative_genomes_Sphyraena_obtusata.txt
 ```
