@@ -180,6 +180,28 @@ Contam assembly for B:
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Abu" "2" "contam" "457000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis" "fq_fp1_clmp_fp2"
 ```
+Busco for contam assembly:
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis" "SPAdes_Abu-CPnd-B_contam_R1R2_noIsolate" "contigs"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis" "SPAdes_Abu-CPnd-B_contam_R1R2_noIsolate" "scaffolds"
+```
+
+Final assembly table:
+
+| Species | Library | Data Type | SCAFIG    | covcutoff | genomescope v. | # contigs | Largest contig | Total length | Estimated reference length | N50   | L50  | # N's per 100 kbp | BUSCO complete single copy % |
+|---------|---------|-----------|-----------|-----------|----------------|-----------|----------------|--------------|----------------------------|-------|------|-------------------|------------------------------|
+| Abu     | CPnd-B  | contam    | contigs   | off       | 2              | 19071     | 514517         | 425129420    | 457000000                  | 53057 | 2158 | 0                 | 84.9                         |
+| Abu     | CPnd-B  | contam    | scaffolds | off       | 2              | 18751     | 514517         | 425495853    | 457000000                  | 54943 | 2084 | 3.2               | 85.1                         |
+| Abu     | CPnd-A  | decontam  | contigs   | off       | 2              | 37424     | 101948         | 352037590    | 457000000                  | 12163 | 8512 | 0                 | 71.1                         |
+| Abu     | CPnd-A  | decontam  | scaffolds | off       | 2              | 36887     | 106444         | 354204660    | 457000000                  | 12499 | 8285 | 8.4               | 71.6                         |
+| Abu     | CPnd-B  | decontam  | contigs   | off       | 2              | 31166     | 186760         | 385231391    | 457000000                  | 18371 | 5929 | 0                 | 77.2                         |
+| Abu     | CPnd-B  | decontam  | scaffolds | off       | 2              | 30373     | 186760         | 387111354    | 457000000                  | 19137 | 5682 | 7.68              | 77.7                         |
+| Abu     | CPnd-C  | decontam  | contigs   | off       | 2              | 33661     | 135417         | 373748205    | 457000000                  | 15570 | 6940 | 0                 | 74.8                         |
+| Abu     | CPnd-C  | decontam  | scaffolds | off       | 2              | 32928     | 135417         | 375687409    | 457000000                  | 16223 | 6676 | 7.83              | 75.3                         |
+| Abu     | allLibs | decontam  | contigs   | off       | 2              | 39712     | 101403         | 376042053    | 457000000                  | 12204 | 9034 | 0                 | 66.5                         |
+| Abu     | allLibs | decontam  | scaffolds | off       | 2              | 28354     | 213921         | 395577898    | 457000000                  | 22182 | 5066 | 481.22            | 77                           |
+
+Notably, the contam assemblies were quite a bit better than decontam.
 
 ## C. Probe development!
 
