@@ -199,4 +199,32 @@ QUAST + BUSCO outputs:
 
 Scaffolds better than contigs; contam better than decontam overall. Assemblies from Ppa-CPnd-B library generally look like they are the best for most metrics - higest BUSCO, highest N50, lowest L50, genome size close too expected (slightly larger!). allLibs contam assemblies do have the largest contig but are worse for other metrics.
 
-Verdict - best assembly overall is  Ppa-CPnd-B_contam_scaffolds. If we do probe development for this species might want to use decontam just so we are not making probes for potential contaminants. 
+Verdict - best assembly overall is Ppa-CPnd-B_contam_scaffolds. For doing probe design use Ppa-CPnd-B_decontam_scaffolds just so we are not making probes for potential contaminants.
+
+## Probe design
+
+Setting up.
+
+```
+mkdir probe_design
+cp ../scripts/WGprobe_annotation.sb probe_design
+cp ../scripts/WGprobe_bedcreation.sb probe_design
+cp SPAdes_Ppa-CPnd-B_decontam_R1R2_noIsolate/scaffolds.fasta probe_design
+cd probe_design
+mv scaffolds.fasta Ppa_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta
+```
+
+Execute the first script.
+
+```
+sbatch WGprobe_annotation.sb "Ppa_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta"
+```
+
+Execute the second script.
+
+```
+sbatch WGprobe_bedcreation.sb "Ppa_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta"
+```
+
+Check upper limit.
+
