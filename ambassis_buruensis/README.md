@@ -203,6 +203,26 @@ Final assembly table:
 
 Notably, the contam assemblies were quite a bit better than decontam.
 
+### Extracting mitochondrial genome
+
+Copy scripts from the denovo repo - modifying so it should work better with SSL directory structure/naming.
+
+```
+cp /home/e1garcia/shotgun_PIRE/denovo_genome_assembly/mitofinder/run_mitofinder.sbatch .
+mv run_mitofinder.sbatch run_mitofinder_ssl.sbatch 
+vi run_mitofinder_ssl.sbatch 
+```
+
+Test run sbatch with arguments for SSL directory, species code, assembly, and family. 
+
+```
+sbatch run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis  Abu SPAdes_Abu-CPnd-B_contam_R1R2_noIsolate Atherinidae
+```
+
+Successfully ran - 1 full-length mtgenome contig + one with only one gene (probably NUMT).
+
+BLAST did not return particularly close hits - closest is a filefish (82.7% match). Check against Kent's Atherindae COI sequences.
+
 ## C. Probe development!
 
 Setting up.
