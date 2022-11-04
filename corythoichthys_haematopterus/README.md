@@ -173,6 +173,47 @@ rsync afink007@wahab.hpc.odu.edu:/home/e1garcia/shotgun_PIRE/REUs/2022_REU/Allis
 	***CHA DONE IN TERMINAL***
 	
 	
+## **C. Probe Design - Regions for Probe Development**
 
+Species directory copied over to Eric's dir - doing probe design from there.
+
+```sh
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus
+
+mkdir probe_design
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/WGprobe_annotation.sb probe_design
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/WGprobe_bedcreation.sb probe_design
+cp SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta probe_design #copy best assembly
+ 
+ # I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_" 
+cd probe_design
+mv scaffolds.fasta Cha_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta
+```
+
+Execute the first script
+```sh
+#WGprobe_annotation.sb <assembly name> 
+sbatch WGprobe_annotation.sb "Cha_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+```
+
+Execute the second script
+```sh
+#WGprobe_annotation.sb <assembly base name> 
+sbatch WGprobe_bedcreation.sb "Cha_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
+```
+
+The longest scaffold is XX
+
+The upper limit used in loop is XX
+
+A total of XX regions have been identified from XX scaffolds
+
+
+Move out files to logs
+```sh
+mv *out ../logs
+```
+
+## Step 12. Fetching genomes for closest relatives
 
 
