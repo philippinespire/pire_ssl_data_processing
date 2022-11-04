@@ -388,6 +388,8 @@ Sin  |C  |decontam       |contgs       |off       |2       |  67590  |  130976  
 Sin  |C  |decontam       |scaffolds       |off       |2    |  69302  |  158888  |  401718557  |  60%  |  5936  |  20361  | 613 |  38%
 Sin  |allLibs  |decontam       |contigs       |off       |2    |  63103  |  135104  |  307932117  |  46% |  4743  |  21357  |  0  |  25%
 Sin  |allLibs  |decontam       |scaffolds       |off       |2   |  66165  |  207211  |  372871799  |  55%  |  5629  |  19212  |  762  |  32%
+Sin | A | contam | contigs | off | 2 | 69146 | 150657 | 583952407 | 87% | 10298 | 15714 | 0 | 62.1%
+Sin | A | contam | scaffolds | off | 2 | 66368 | 156256 | 594609150 | 88% | 11279 | 14293 | 0 | 64.3%
 
 ## Step 5. Identify Best Assembly
 
@@ -415,28 +417,23 @@ cd /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Abby_Ethridge/stethojulis_interrupt
 mkdir probe_design
 cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/WGprobe_annotation.sb probe_design
 cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/WGprobe_bedcreation.sb probe_design
-cp SPAdes_SgC0072C_contam_R1R2_noIsolate/scaffolds.fasta probe_design #copy best assembly
+cp SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate/scaffolds.fasta probe_design #copy best assembly
  
-# list the busco dirs
-ls -d busco_*
-# identify the busco dir of best assembly, copy the treatments (starting with the library)
-# Example,the busco dir for the best assembly for Sgr is `busco_scaffolds_results-SPAdes_SgC0072C_contam_R1R2_noIsolate`
-
  # I then provide the species 3-letter code, scaffolds, and copy and paste the parameters from the busco dir after "SPAdes_" 
 cd probe_design
-mv scaffolds.fasta Sgr_scaffolds_B_contam_R1R2_noIsolate.fasta
+mv scaffolds.fasta Sin_scaffolds_CPndA_decontam_R1R2_noIsolate.fasta
 ```
 
 Execute the first script
 ```sh
 #WGprobe_annotation.sb <assembly name> 
-sbatch WGprobe_annotation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate.fasta"
+sbatch WGprobe_annotation.sb "Sin_scaffolds_CPndA_decontam_R1R2_noIsolate.fasta"
 ```
 
 Execute the second script
 ```sh
 #WGprobe_annotation.sb <assembly base name> 
-sbatch WGprobe_bedcreation.sb "Sgr_scaffolds_SgC0072C_contam_R1R2_noIsolate"
+sbatch WGprobe_bedcreation.sb "Sin_scaffolds_CPndA_decontam_R1R2_noIsolate.fasta"
 ```
 
 The longest scaffold is XX
@@ -446,22 +443,10 @@ The upper limit used in loop is XX
 A total of XX regions have been identified from XX scaffolds
 
 
-Moved out files to logs
+Move out files to logs
 ```sh
 mv *out ../logs
 ```
 
 ## Step 12. Fetching genomes for closest relatives
 
-```sh
-nano closest_relative_genomes_your_species.txt
-
-Closest genomes:
-1. Salarias fascistus - https://www.ncbi.nlm.nih.gov/genome/7248
-2. Parablennius parvicornis - https://www.ncbi.nlm.nih.gov/genome/69445
-3. Petroscirtes breviceps - https://www.ncbi.nlm.nih.gov/genome/7247
-4. Ecsenius bicolor - https://www.ncbi.nlm.nih.gov/genome/41373
-5. Gouania willdenowi - https://www.ncbi.nlm.nih.gov/genome/76090
-
-Used Betancour et al. 2017 (All Blenniiformes)
-```
