@@ -409,10 +409,10 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ## **C. Probe Design - Regions for Probe Development**
 
-From the species directory: made probe directory, renamed assembly, and copied scripts.
+Species directory copied over to Eric's dir - doing probe design from there.
 
 ```sh
-cd /home/e1garcia/shotgun_PIRE/REUs/2022_REU/Abby_Ethridge/stethojulis_interrupta
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta
 
 mkdir probe_design
 cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/WGprobe_annotation.sb probe_design
