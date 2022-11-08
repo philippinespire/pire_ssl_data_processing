@@ -450,3 +450,41 @@ mv *out ../logs
 
 ## Step 12. Fetching genomes for closest relatives
 
+Thanks John Whalen!
+
+```
+Closest relative genome
+1. Thalassoma bifasciatum
+https://www.ncbi.nlm.nih.gov/genome/83707
+2. Cheilinus undulatus
+https://www.ncbi.nlm.nih.gov/genome/9358
+3.- Notolabrus celidotus
+https://www.ncbi.nlm.nih.gov/assembly/GCF_009762535.1/
+4.- Labrus bergylta
+https://www.ncbi.nlm.nih.gov/assembly/GCF_900080235.1/
+5.- Symphodus melops
+https://www.ncbi.nlm.nih.gov/assembly/GCA_002819105.1/
+```
+
+## Files to send
+
+```
+mv *.fasta.masked *.fasta.out.gff *.augustus.gff *bed closest* files_for_ArborSci
+```
+
+Message for Eric and Slack.
+
+```
+Probe Design Files Ready
+
+A total of 28546 regions have been identified from 17211 scaffolds
+
+Files for Arbor Bio:
+
+Sin_scaffolds_CPndA_decontam_R1R2_noIsolate.fasta.augustus.gff
+Sin_scaffolds_CPndA_decontam_R1R2_noIsolate.fasta.masked
+Sin_scaffolds_CPndA_decontam_R1R2_noIsolate.fasta.out.gff
+Sin_scaffolds_CPndA_decontam_R1R2_noIsolate_great10000_per10000_all.bed
+closest_relative_genomes_Stethojulis_interrupta.txt
+```
+
