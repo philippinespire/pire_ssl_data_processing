@@ -214,6 +214,18 @@ Move out files to logs
 mv *out ../logs
 ```
 
+## Check Genbank genome
+
+A genome for Cha was recently uploaded to [Genbank](https://www.ncbi.nlm.nih.gov/assembly/GCA_025762715.1/#/st).
+
+Uploaded to Wahab: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank. Renamed to `scaffolds.fasta`.
+
+Running BUSCO on Genbank genome.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus" "Cha_Genbank" "scaffolds"
+```
+
 ## Step 12. Fetching genomes for closest relatives
 
 
