@@ -241,3 +241,42 @@ mv *.out ../logs/
 ```
 
 ### Fetching close relatives
+
+Thanks John Whalen!
+
+```
+Closest relative genomes based on Tang et al. 2021
+1. Amphiprion percula
+https://www.ncbi.nlm.nih.gov/genome/31712
+2. Amphiprion ocellaris
+https://www.ncbi.nlm.nih.gov/genome/8181
+3. Acanthochromis polyacanthus
+https://www.ncbi.nlm.nih.gov/genome/54316
+4. Dascyllus trimaculatus
+https://www.ncbi.nlm.nih.gov/genome/116835
+5. Chromis chromis
+https://www.ncbi.nlm.nih.gov/genome/69447
+```
+
+## Files to send
+
+```
+mv *.fasta.masked *.fasta.out.gff *.augustus.gff *bed closest* files_for_ArborSci
+```
+
+Message for Eric + Slack
+
+```
+Probe Design Files Ready
+
+A total of 52772 regions have been identified from 23192 scaffolds
+
+Files for Arbor Bio:
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/probe_design/files_for_ArborSci/
+
+Ppa_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta.augustus.gff
+Ppa_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta.masked
+Ppa_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta.out.gff
+Ppa_scaffolds_CPnd-B_decontam_R1R2_noIsolate_great10000_per10000_all.bed
+closest_relative_genomes_Pomacentrus_pavo.txt
+```
