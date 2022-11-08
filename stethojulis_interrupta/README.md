@@ -480,6 +480,7 @@ Probe Design Files Ready
 A total of 28546 regions have been identified from 17211 scaffolds
 
 Files for Arbor Bio:
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta/probe_design/files_for_ArborSci/
 
 Sin_scaffolds_CPndA_decontam_R1R2_noIsolate.fasta.augustus.gff
 Sin_scaffolds_CPndA_decontam_R1R2_noIsolate.fasta.masked
