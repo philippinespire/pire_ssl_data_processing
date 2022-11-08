@@ -233,3 +233,11 @@ The longest scaffold is 297238
 The upper limit used in loop is 287500
 A total of 52772 regions have been identified from 23192 scaffolds
 ```
+
+Move outfiles to logs.
+
+```
+mv *.out ../logs/
+```
+
+### Fetching close relatives
