@@ -202,11 +202,11 @@ Execute the second script
 sbatch WGprobe_bedcreation.sb "Cha_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta"
 ```
 
-The longest scaffold is XX
+The longest scaffold is 282571
 
-The upper limit used in loop is XX
+The upper limit used in loop is 277500
 
-A total of XX regions have been identified from XX scaffolds
+A total of 3317 regions have been identified from 2424 scaffolds
 
 
 Move out files to logs
