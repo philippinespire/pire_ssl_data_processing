@@ -427,6 +427,18 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ---
 
+### Identifying mitochondrial genome with Mitofinder
+
+One of the contigs in your assembled genome will probably be the mitochondrial genome (sequenced at high depth). Identifying this contig can be useful for confirming species identity.
+
+You can run Mitofinder on the best contam assembly to find and annotate the mitochondrial genome. Use the following script, substituting particulars for your species in the arguments:
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch [assembly dir] [species code] [SPAdes directory] [family]
+
+Check the outputs - the complete mitochondrial genome should have 15 genes and very high depth of coverage (you may have some pseudo-mitochondrial genes or genomes with fewer genes). For species identification, find the COX1 sequence and run a [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome) search. If there are no close matches it may be helpful to try [BOLD}(https://www.boldsystems.org/) or private sequence repositories.
+
+---
+
 ### C. PROBE DESIGN
 
 In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
