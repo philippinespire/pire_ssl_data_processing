@@ -195,6 +195,8 @@ closest_relative_genomes_periophthalmus_argentilineatus.txt
 Documenting directory sizes/files.
 
 ```
+du -sh
+274G	.
 du -h | sort -rh > Par_ssl_beforeDeleting_IntermFiles
 ```
 
@@ -220,3 +222,36 @@ mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periop
 cp SPAdes_Par-CPas-A_contam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/SPAdes_Par-CPas-A_contam_R1R2_noIsolate
 cp SPAdes_Par-CPas_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus/SPAdes_Par-CPas-A_decontam_R1R2_noIsolate
 ```
+
+Delete unneeded files. Make a log of deletions first.
+
+```
+# create log file before removing
+ls -ltrh *raw*/*fq.gz > deleted_files_log
+ls -ltrh *fp1/*fq.gz >> deleted_files_log
+ls -ltrh *clmp/*fq.gz >> deleted_files_log
+ls -ltrh *fqscrn/*fq.gz >> deleted_files_log
+#remove unneeded files
+rm *raw*/*fq.gz
+rm *fp1/*fq.gz
+rm *clmp/*fq.gz
+rm *fqscrn/*fq.gz
+```
+
+Document size after deleting files.
+
+```
+du -sh
+224G	.
+du -h | sort -rh > Abu_ssl_afterDeleting_IntermFiles
+```
+
+Move log files into logs.
+
+```
+mv Par_ssl* logs
+mv deleted_files_log logs
+```
+
+Done!
+
