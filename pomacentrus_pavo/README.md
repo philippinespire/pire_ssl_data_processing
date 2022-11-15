@@ -280,3 +280,64 @@ Ppa_scaffolds_CPnd-B_decontam_R1R2_noIsolate.fasta.out.gff
 Ppa_scaffolds_CPnd-B_decontam_R1R2_noIsolate_great10000_per10000_all.bed
 closest_relative_genomes_Pomacentrus_pavo.txt
 ```
+
+## Cleaning up
+
+Before cleaning up:
+```
+du -sh
+#692G	.
+du -h | sort -rh > Ppa_ssl_beforeDeleting_IntermFiles
+```
+
+Making copies of important files.
+
+```
+# check for copy of raw files
+ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/
+# does not exist - make a folder!
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/
+# copy raw files
+cp -r /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/shotgun_raw_fq /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/
+# copy contaminated and decontaminated files
+cp -r /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/
+cp -r /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/fq_fp1_clmp_fp2_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/
+# make a copy of fasta files for best assembly (CPnd-B for Par)
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/SPAdes_Ppa-CPnd-B_contam_R1R2_noIsolate /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/SPAdes_Ppa-CPnd-B_decontam_R1R2_noIsolate /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo/
+```
+
+
+Delete unneeded files. Make a log of deletions first.
+
+```
+ls # create log file before removing
+ls -ltrh *raw*/*fq.gz > deleted_files_log
+ls -ltrh *fp1/*fq.gz >> deleted_files_log
+ls -ltrh *clmp/*fq.gz >> deleted_files_log
+ls -ltrh *fqscrn/*fastq.gz >> deleted_files_log
+#remove unneeded files
+rm *raw*/*fq.gz
+rm *fp1/*fq.gz
+rm *clmp/*fq.gz
+rm *fqscrn/*fastq.gz
+```
+
+Document size after deleting files.
+
+```
+du -sh
+#366G	.
+du -h | sort -rh > Ppa_ssl_afterDeleting_IntermFiles
+```
+
+Move log files into logs.
+
+```
+mv Ppa_ssl* logs
+mv deleted_files_log logs
+```
+
+Done!
+
+
