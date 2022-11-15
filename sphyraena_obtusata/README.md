@@ -317,7 +317,58 @@ Sob_scaffolds_allLibs_decontam_R1R2_noIsolate.fasta.out.gff
 Sob_scaffolds_allLibs_decontam_R1R2_noIsolate_great10000_per10000_all.bed
 closest_relative_genomes_Sphyraena_obtusata.txt
 ```
+## Cleaning & backing up
 
+Before cleaning up:
+```
+du -sh
+#172G	.
+du -h | sort -rh > Sob_ssl_beforeDeleting_IntermFiles
+```
 
+Making copies of important files.
 
 ```
+# check for copy of raw files
+ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/
+# exists!
+
+# make copy of contaminated and decontaminated files
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/fq_fp1_clmp_fp2_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata
+
+# make a copy of fasta files for best assembly (allLibs for Sob)
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/SPAdes_allLibs_contam_R1R2_noIsolate /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata/SPAdes_allLibs_decontam_R1R2_noIsolate /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata
+```
+Delete unneeded files. Make a log of deletions first.
+
+```
+# create log file before removing
+ls -ltrh *raw*/*fq.gz > deleted_files_log
+ls -ltrh *fp1/*fq.gz >> deleted_files_log
+ls -ltrh *clmp/*fq.gz >> deleted_files_log
+ls -ltrh *fqscrn/*fastq.gz >> deleted_files_log
+#remove unneeded files
+rm *raw*/*fq.gz
+rm *fp1/*fq.gz
+rm *clmp/*fq.gz
+rm *fqscrn/*fastq.gz
+```
+
+Document size after deleting files.
+
+```
+du -sh
+#91G	.
+du -h | sort -rh > Sob_ssl_afterDeleting_IntermFiles
+```
+
+Move log files into logs.
+
+```
+mv Sob_ssl* logs
+mv deleted_files_log logs
+```
+
+Done!
