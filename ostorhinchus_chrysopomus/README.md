@@ -507,3 +507,60 @@ Order based on Mabuchi et al. (2014) Zootaxa and Betancur et al. (2017) BMC Evol
 5. Periopthalmus modestus - https://www.ncbi.nlm.nih.gov/genome/104952
 6. Lythrypnus dalli - https://www.ncbi.nlm.nih.gov/genome/88493
 ```
+
+## Cleaning up and making a backup of important files.
+
+Before cleaning up:
+```
+du -sh
+#648G	.
+du -h | sort -rh > Och_ssl_beforeDeleting_IntermFiles
+```
+
+Make a copy of important files.
+
+```
+# check for copy of raw files
+ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus/
+#does not exist! make folder
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus/
+
+#copy raw files
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus/fq_raw_shotgun /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus
+
+# make copy of contaminated and decontaminated files
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus/fq_fp1_clmp_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus/fq_fp1_clmp_fp2_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus
+```
+
+Delete unneeded files. Make a log of deletions first.
+
+```
+# create log file before removing
+ls -ltrh *raw*/*fq.gz > deleted_files_log
+ls -ltrh *fp1/*fq.gz >> deleted_files_log
+ls -ltrh *clmp/*fq.gz >> deleted_files_log
+ls -ltrh *fqscrn/*fastq.gz >> deleted_files_log
+#remove unneeded files
+rm *raw*/*fq.gz
+rm *fp1/*fq.gz
+rm *clmp/*fq.gz
+rm *fqscrn/*fastq.gz
+```
+
+Document size after deleting files.
+
+```
+du -sh
+#312G	.
+du -h | sort -rh > Och_ssl_afterDeleting_IntermFiles
+```
+
+Move log files into logs.
+
+```
+mv Och_ssl* logs
+mv deleted_files_log logs
+```
+
+Done!
