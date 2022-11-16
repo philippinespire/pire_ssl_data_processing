@@ -496,17 +496,14 @@ mv *out ../logs
 ## Step 12. Fetching genomes for closest relatives
 
 ```sh
-nano closest_relative_genomes_salarias_fasciatus.txt
+Closest relative  species for Ostorhinchus chrysopomus
 
-Closest genomes:
-1. Salarias fascistus - https://www.ncbi.nlm.nih.gov/genome/7248
-2. Parablennius parvicornis - https://www.ncbi.nlm.nih.gov/genome/69445
-3. Petroscirtes breviceps - https://www.ncbi.nlm.nih.gov/genome/7247
-4. Ecsenius bicolor - https://www.ncbi.nlm.nih.gov/genome/41373
-5. Gouania willdenowi - https://www.ncbi.nlm.nih.gov/genome/76090
+Order based on Mabuchi et al. (2014) Zootaxa and Betancur et al. (2017) BMC Evolultionary Biology
 
-Used Betancour et al. 2017 (All Blenniiformes)
-
----
-
-**NOTE:** Sfa has a genome available in GenBank. 
+1. Siphamia tubifer - https://www.ncbi.nlm.nih.gov/genome/107164
+2. Sphaeramia orbicularis - https://www.ncbi.nlm.nih.gov/genome/82499
+3. Perccottus glenii - https://www.ncbi.nlm.nih.gov/genome/16797
+4. Periopthalmus magnuspinnatus - https://www.ncbi.nlm.nih.gov/genome/35290
+5. Periopthalmus modestus - https://www.ncbi.nlm.nih.gov/genome/104952
+6. Lythrypnus dalli - https://www.ncbi.nlm.nih.gov/genome/88493
+```
