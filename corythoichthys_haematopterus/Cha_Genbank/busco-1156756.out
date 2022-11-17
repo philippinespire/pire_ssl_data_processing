@@ -1,0 +1,56 @@
+
+INFO:	***** Start a BUSCO v5.0.0 analysis, current time: 11/08/2022 18:35:19 *****
+INFO:	Configuring BUSCO with local environment
+INFO:	Mode is genome
+INFO:	Input file is /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank/scaffolds.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
+INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
+INFO:	Running 1 job(s) on metaeuk, starting at 11/08/2022 18:35:26
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 11/08/2022 18:42:32
+INFO:	[hmmsearch]	364 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2184 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3276 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 11/08/2022 18:43:44
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 2284 job(s) on hmmsearch, starting at 11/08/2022 19:01:09
+INFO:	[hmmsearch]	229 of 2284 task(s) completed
+INFO:	[hmmsearch]	457 of 2284 task(s) completed
+INFO:	[hmmsearch]	686 of 2284 task(s) completed
+INFO:	[hmmsearch]	914 of 2284 task(s) completed
+INFO:	[hmmsearch]	1143 of 2284 task(s) completed
+INFO:	[hmmsearch]	1599 of 2284 task(s) completed
+INFO:	[hmmsearch]	1599 of 2284 task(s) completed
+INFO:	[hmmsearch]	2056 of 2284 task(s) completed
+INFO:	[hmmsearch]	2284 of 2284 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:37.9%[S:37.4%,D:0.5%],F:10.9%,M:51.2%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:37.9%[S:37.4%,D:0.5%],F:10.9%,M:51.2%,n:3640   |
+	|1379	Complete BUSCOs (C)                       |
+	|1362	Complete and single-copy BUSCOs (S)       |
+	|17	Complete and duplicated BUSCOs (D)        |
+	|396	Fragmented BUSCOs (F)                     |
+	|1865	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 1649 seconds
+INFO:	Results written in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank/busco_scaffolds_results-Cha_Genbank
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
