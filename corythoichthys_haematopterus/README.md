@@ -229,3 +229,18 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 ## Step 12. Fetching genomes for closest relatives
 
 
+```
+vi closest_relative_genomes_Corythoichthys_haematopterus.txt
+##
+Closest relative genomes determined by Stiller et al 2022
+1. Corycoichthys haematopterus
+https://www.ncbi.nlm.nih.gov/genome/119380
+2. Phyllopteryx taeniolatus
+https://www.ncbi.nlm.nih.gov/genome/105941
+3. Phycodurus eques
+https://www.ncbi.nlm.nih.gov/genome/33345
+4. Syngnathoides biaculeatus
+https://www.ncbi.nlm.nih.gov/genome/67123
+5. Syngnathus acus
+https://www.ncbi.nlm.nih.gov/genome/80070
+```
