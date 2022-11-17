@@ -226,6 +226,22 @@ Running BUSCO on Genbank genome.
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus" "Cha_Genbank" "scaffolds"
 ```
 
+Updated table with stats from Genbank genome.
+
+| Species | Library | DataType | SCAFIG    | covcutoff | #contigs | largest\_contig | total\_length | %sizecompleteness | N50      | L50     | Ns\_per\_100kbp | BUSCO\_singlecopy |
+| ------- | ------- | -------- | --------- | --------- | -------- | --------------- | ------------- | ----------------- | -------- | ------- | --------------- | ----------------- |
+| Cha     | allLibs | decontam | contigs   | off       | 74819    | 282571          | 364837995     | 41.16             | 4799     | 25780   | 0               | 798 (21.9%)             |
+| Cha     | allLibs | decontam | scaffolds | off       | 76635    | 282571          | 378208088     | 41.15             | 4860     | 26123   | 51.41           | 811 (22.3%)              |
+| Cha     | CPnd-A  | decontam | contgs    | off       | 8516     | 116066          | 45376391      | 46.86             | 4852     | 2278    | 0               | 406 (11.2%)              |
+| Cha     | CPnd-A  | decontam | scaffolds | off       | 9451     | 198527          | 198527        | 46.76             | 4773     | 2534    | 104.89          | 421 (11.6%)              |
+| Cha     | CPnd-B  | decontam | contgs    | off       | 12295    | 176474          | 56786073      | 45.54             | 4260     | 4145    | 0               | 479 (13.2%)              |
+| Cha     | CPnd-B  | decontam | scaffolds | off       | 14138    | 269079          | 65369174      | 45.28             | 4268     | 4762    | 150.71          | 491 (13.5%)              |
+| Cha     | CPnd-C  | decontam | contgs    | off       | 6572     | 153476          | 36962939      | 46.19             | 5041     | 1498    | 0               | 369 (10.1%)              |
+| Cha     | CPnd-C  | decontam | scaffolds | off       | 7408     | 182426          | 40835802      | 45.98             | 4851     | 1756    | 84.64           | 389 (10.7%)              |
+| Cha     | Genbank | na       | scaffols  | na        | 2294     | 27959818        | 412410352     | 46.54        | 18969435 | 10      | 20399.51        | 1379 (37.9%)              |
+
+Somewhat confusing results - Genbank assembly looks highly contiguous but extremely high N content (20%!), so maybe inflated by joining scaffolds without much evidence? Also despite better-looking stats BUSCO score is still not great. Similar genome size completeness so perhaps our genome size estimate should be closer to the Genomescope estimate (but then again, see low BUSCO score suggesting we are missing quite a bit).
+
 ## Step 12. Fetching genomes for closest relatives
 
 
@@ -244,3 +260,65 @@ https://www.ncbi.nlm.nih.gov/genome/67123
 5. Syngnathus acus
 https://www.ncbi.nlm.nih.gov/genome/80070
 ```
+
+Holding off on probes now (11/17/22) so no decision as to which genome to use. But repo can be cleaned. 
+
+## Cleaning up + backing up important files.
+
+
+Before cleaning up:
+```
+du -sh
+#178G	.
+du -h | sort -rh > Cha_ssl_beforeDeleting_IntermFiles
+```
+
+Making copies of important files.
+
+```
+# check for copy of raw files
+ls /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/
+# does not exist - make a folder!
+mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/
+# copy raw data
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/shotgun_raw_fq /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus
+# make copy of contaminated and decontaminated files
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/fq_fp1_clmp_fp2 /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/fq_fp1_clmp_fp2_fqscrn_repaired /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus
+
+# make a copy of fasta files for best assembly (allLibs for Cha)
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/SPAdes_allLibs_contam_R1R2_noIsolate /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus
+cp -R /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus
+```
+
+Delete unneeded files. Make a log of deletions first.
+
+```
+# create log file before removing
+ls -ltrh *raw*/*fq.gz > deleted_files_log
+ls -ltrh *fp1/*fq.gz >> deleted_files_log
+ls -ltrh *clmp/*fq.gz >> deleted_files_log
+#note - clumpify folder is missing!
+ls -ltrh *fqscrn/*fastq.gz >> deleted_files_log
+#remove unneeded files
+rm *raw*/*fq.gz
+rm *fp1/*fq.gz
+rm *fqscrn/*fastq.gz
+```
+
+Document size after deleting files.
+
+```
+du -sh
+#172G	.
+du -h | sort -rh > Cha_ssl_afterDeleting_IntermFiles
+```
+
+Move log files into logs.
+
+```
+mv Cha_ssl* logs
+mv deleted_files_log logs
+```
+
+Done!
