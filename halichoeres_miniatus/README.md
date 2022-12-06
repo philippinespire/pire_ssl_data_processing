@@ -130,6 +130,16 @@ Model Fit |87.7119%  |99.3197%
 
 I will use 632000000 as the genome size estimate.
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 632000000
+C-value other sources 1n:  not_found
+GenBank chromosome-scale genome size 1n: not_found
+
+---
+
 ## Step 8. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
 
 I ran SPAdes on contaminated libraries and assesed them with QUAST and Busco
