@@ -133,6 +133,21 @@ version | stat | min | max
 1 | Model fit | NA | 97.2881% | 98.5199%
 2 | Model fit | NA | 87.994% | 98.2931 %
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 457000000
+
+C-value from genomesize.com 1n: 0.56
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources:
+1. Hardie, D.C. and P.D.N. Hebert (2004). Genome-size evolution in fishes. Canadian Journal of Fisheries and Aquatic Sciences 61: 1636-1646. (from genomesize.com)
+---
 
 ### 2. Assembly
 
