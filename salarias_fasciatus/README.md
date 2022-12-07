@@ -247,11 +247,26 @@ Genome Haploid Length v2.0|634,000,000 bp    |635,000,000 bp
 Model Fit   v1.0|90.9818%       |92.2968%       |91.6393%
 Model Fit   v2.0|80.1744%       |93.4121%       |86.79325%
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 635000000
+
+C-value from genomesize.com 1n: 0.83
+
+GenBank chromosome-scale genome size 1n: 846091000
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. Hardie, D.C. and P.D.N. Hebert (2004). Genome-size evolution in fishes. Canadian Journal of Fisheries and Aquatic Sciences 61: 1636-1646. (from genomesize.com)
+2. Major patterns of higher teleostean phylogenies: a new perspective based on 100 complete mitochondrial DNA sequences. Miya M, et al. Mol Phylogenet Evol 2003 Jan (from GenBank)
 
 ---
 ## Step 8. Assemble the genome using SPAdes
 
-Assembling contamþinated data produced better results for nDNA and decontaminated was better for mtDNA.
+Assembling contamÃ¾inated data produced better results for nDNA and decontaminated was better for mtDNA.
 
 Thus, run one assembly using your contaminated data and one with the decontaminated files.
 
