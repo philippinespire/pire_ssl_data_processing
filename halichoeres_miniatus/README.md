@@ -136,9 +136,13 @@ I will use 632000000 as the genome size estimate.
 
 Jellyfish genome size 1n: 632000000
 
-C-value other sources 1n:  not_found
+C-value from genomesize.com 1n: not_found
 
 GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Other sources: not_found
 
 ---
 
