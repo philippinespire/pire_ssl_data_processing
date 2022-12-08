@@ -86,6 +86,23 @@ version    |stat    |min    |max
 1  |Model Fit       |93.555%       |95.6701%
 2  |Model Fit       |82.1948%       |94.844%
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 1093732992
+
+C-value from genomesize.com 1n: not_found
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. 
+
+---
+
 ## Step 6 Genome Assembly
 
 runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) on fq_fp1_clmparray_fp2b_fqscrn_repaired using 1.093 Bbp as size estimate
