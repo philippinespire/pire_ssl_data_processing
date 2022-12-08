@@ -125,6 +125,23 @@ Heterozygosity	|1.19383 %	|1.2075 %	|1.2007 %
 Genome Haploid Length	|781,630,399 bp	|782,635,299 bp	|782132849 bp	
 Model Fit	|86.0907 %	|96.5185 %	|91.3046 %	
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 748000000
+
+C-value from genomesize.com 1n: 0.68-1.03 (for Pomacentrus auriventris - Pomacentrus chrysurus)
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. Hardie, D.C. and P.D.N. Hebert (2004). Genome-size evolution in fishes. Canadian Journal of Fisheries and Aquatic Sciences 61: 1636-1646. (from genomesize.com)
+
+---
+
 ## Step 8. Assemble the genome using SPAdes
 
 Edited the runSPAdes script (I was running from a different directory and it was expecting me to run from the species directory I think).
