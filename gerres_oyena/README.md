@@ -213,6 +213,23 @@ Model Fit       |91.4567%       |97.4279%       |94.4423 %
 
 There is a 3.14% difference in the average genome haploid length between GenomeScope v1.0 and GenomeScope v2.0
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 533000000
+
+C-value from genomesize.com 1n: 0.61-0.70
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. Hardie, D.C. and P.D.N. Hebert (2003). The nucleotypic effects of cellular DNA content in cartilaginous and ray-finned fishes. Genome 46: 683-706. and Ojima, Y. and K. Yamamoto (1990). Cellular DNA contents of fishes determined by flow cytometry. La Kromosomo II 57: 1871-1888. (from genomesize.com)
+
+---
+
 ## Step 8. Assemble the genome using SPAdes
 Ran runSPADEShimem_R1R2_noisolate.sbatch
 ```sh
