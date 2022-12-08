@@ -248,7 +248,7 @@ Somewhat confusing results - Genbank assembly looks highly contiguous but extrem
 
 Jellyfish genome size 1n: 342000000
 
-C-value from genomesize.com 1n: 1.34
+C-value from genomesize.com 1n: 1.34 (for Corythoichthys intestinalis)
 
 GenBank chromosome-scale genome size 1n: 852583000
 
