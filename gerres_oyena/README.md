@@ -219,7 +219,7 @@ There is a 3.14% difference in the average genome haploid length between GenomeS
 
 Jellyfish genome size 1n: 533000000
 
-C-value from genomesize.com 1n: 0.61-0.70
+C-value from genomesize.com 1n: 0.61-0.70 (for Gerres subfasciatus	- Gerres oblongus)
 
 GenBank chromosome-scale genome size 1n: not_found
 
