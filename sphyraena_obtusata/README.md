@@ -151,6 +151,23 @@ version | stat | min | max
 1 | Model fit | NA | 98.03% | 98.55%
 2 | Model fit | NA | 90.78% | 98.1 %
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 280000000
+
+C-value from genomesize.com 1n: 0.54
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. Hardie, D.C. and P.D.N. Hebert (2003). The nucleotypic effects of cellular DNA content in cartilaginous and ray-finned fishes. Genome 46: 683-706. (from genomesize.com)
+
+---
+
 ### 2. Assembly
 
 runSPADEShimem_R1R2_noisolate.sbatch in [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) on fq_fp1_clmparray_fp2b_fqscrn_repaired using 280 Mbp as size estimate
