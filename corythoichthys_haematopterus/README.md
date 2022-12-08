@@ -242,6 +242,22 @@ Updated table with stats from Genbank genome.
 
 Somewhat confusing results - Genbank assembly looks highly contiguous but extremely high N content (20%!), so maybe inflated by joining scaffolds without much evidence? Also despite better-looking stats BUSCO score is still not great. Similar genome size completeness so perhaps our genome size estimate should be closer to the Genomescope estimate (but then again, see low BUSCO score suggesting we are missing quite a bit).
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 342000000
+
+C-value from genomesize.com 1n: 1.34
+
+GenBank chromosome-scale genome size 1n: 852583000
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. Hardie, D.C. and P.D.N. Hebert (2003). The nucleotypic effects of cellular DNA content in cartilaginous and ray-finned fishes. Genome 46: 683-706. (from genomesize.com)
+
+---
 ## Step 12. Fetching genomes for closest relatives
 
 
