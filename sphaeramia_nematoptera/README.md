@@ -210,6 +210,23 @@ version    |stat    |min    |max
 
 Values for heterozygosity for both Genome scope 1.0 & 2.0 are similar. The Haploid length is different, but I chose to go with vales for Genomescope 2.0 although results are very similar because there are more species in the Apogonidae family with 0.9 and 1.0 Mbp size. I am moving forward with rounding up the max Haploid length from GenomeScope 2.0, which is 965,000,000
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 965000000
+
+C-value from genomesize.com 1n: not_found
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. 
+
+---
+
 ### Step 2 Assembly w/ SPAdes
 
 Assemble Genome using SPAdes
