@@ -218,6 +218,21 @@ QUAST stat table has also been updated to include the genome scope version and "
 
 ---
 
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 694000000
+
+C-value from genomesize.com 1n: not_found
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. 
+
+---
+
 ## Step 8. Assemble the genome using [SPAdes](https://github.com/ablab/spades#sec3.2)
 
 In our previous tests, contaminated data has produced the best assemblies for nDNA but decontaminated assemblies were better for mtDNA. The effect of using merged files remains unclear
