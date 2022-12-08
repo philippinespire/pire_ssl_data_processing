@@ -256,6 +256,7 @@ Genome size from other sources 1n: not_found
 
 Sources: 
 1. Hardie, D.C. and P.D.N. Hebert (2003). The nucleotypic effects of cellular DNA content in cartilaginous and ray-finned fishes. Genome 46: 683-706. (from genomesize.com)
+2. Weinstein, B. et al. (2022). The complete genome sequence of Corythoichthys haematopterus, the Messmate Pipefish. (unpublished) (from GenBank).
 
 ---
 ## Step 12. Fetching genomes for closest relatives
