@@ -259,6 +259,22 @@ GenomeScope v1 showed potential issues as the unique sequence line did not track
 
 **Using 457,000,000 as genome size for QUAST**
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 457000000
+
+C-value from genomesize.com 1n: 0.76
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. Ojima, Y. and K. Yamamoto (1990). Cellular DNA contents of fishes determined by flow cytometry. La Kromosomo II 57: 1871-1888. (from genomesize.com)
+
+---
 
 ## Step 8. Assemble the genome using SPAdes
 
