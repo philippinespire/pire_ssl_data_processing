@@ -243,6 +243,21 @@ Model Fit v1.0      |95.7689%       |97.9334%
 Model Fit v2.0      |76.5797%       |97.9609%      
 
 ---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 848000000
+
+C-value from genomesize.com 1n: not_found
+
+GenBank chromosome-scale genome size 1n: 1333860000 bp
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. Shao, F. (2022). Chromosome-level genome assembly of the striped eel catfish (Plotosus lineatus). (unpublished) (from GenBank)
+
+---
 ## Step 8. Assemble the genome using SPAdes
 
 Assembling contaminated data produced better results for nDNA and decontaminated was better for mtDNA.
