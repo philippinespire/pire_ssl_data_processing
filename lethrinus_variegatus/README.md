@@ -150,6 +150,24 @@ Links to reports:
 
 I chose GenomeScope v2.0 due to the higher model fit percentage. Genome size estimate can be rounded to 901,000,000bp.
 
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 901000000
+
+C-value from genomesize.com 1n: 1.11-1.44 (for Lethrinus microdon - Lethrinus xanthochilus)
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. Hardie, D.C. and P.D.N. Hebert (2004). Genome-size evolution in fishes. Canadian Journal of Fisheries and Aquatic Sciences 61: 1636-1646. (from genomesize.com)
+2. Hartley, S.E. (1990). Variation in cellular DNA content in Arctic charr, Salvelinus alpinus (L.). Journal of Fish Biology 37: 189-190. (from genomesize.com)
+
+---
+
 ### 2. Assembling the Genome with SPAdes
 
 ```bash
