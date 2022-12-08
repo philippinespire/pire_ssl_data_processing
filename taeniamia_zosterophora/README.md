@@ -234,6 +234,22 @@ Genome Haploid Length v1.0   |817,498,230 bp    |818,019,292 bp
 Genome Haploid Length v2.0   |882,851,069 bp    |884,000,000 bp
 Model Fit v1.0      |97.6439%       |99.4735%     
 Model Fit v2.0      |82.422%       |99.3423%    
+
+---
+
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 884000000
+
+C-value from genomesize.com 1n: not_found
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. 
+
 ---
 
 ## Step 8. Assemble the genome using SPAdes
