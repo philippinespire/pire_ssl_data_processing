@@ -137,7 +137,7 @@ Go with v1 result (~1,145,000,000) because better model fit?
 
 Jellyfish genome size 1n: 1149000000
 
-C-value from genomesize.com 1n: 1.44-1.90
+C-value from genomesize.com 1n: 1.44-1.90 (for Engraulis japonica - Engraulis mordax / Anchoa delicatissima)
 
 GenBank chromosome-scale genome size 1n: not_found
 
