@@ -144,4 +144,5 @@ GenBank chromosome-scale genome size 1n: not_found
 Genome size from other sources 1n: not_found
 
 Sources: 
-1. Ojima, Y. and K. Yamamoto (1990). Cellular DNA contents of fishes determined by flow cytometry. La Kromosomo II 57: 1871-1888. and Hinegardner, R. (1968). Evolution of cellular DNA content in teleost fishes. American Naturalist 102: 517-523. (from genomesize.com) (note: these values were taken from the previous section and is from the family Engraulidae)
+1. Ojima, Y. and K. Yamamoto (1990). Cellular DNA contents of fishes determined by flow cytometry. La Kromosomo II 57: 1871-1888. (from genomesize.com)
+2. Hinegardner, R. (1968). Evolution of cellular DNA content in teleost fishes. American Naturalist 102: 517-523. (from genomesize.com)
