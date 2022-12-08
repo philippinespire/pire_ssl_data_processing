@@ -139,7 +139,7 @@ version | stat | min | max
 
 Jellyfish genome size 1n: 457000000
 
-C-value from genomesize.com 1n: 0.56
+C-value from genomesize.com 1n: 0.56 (for Ambassis elongatus)
 
 GenBank chromosome-scale genome size 1n: not_found
 
