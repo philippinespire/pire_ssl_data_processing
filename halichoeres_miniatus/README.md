@@ -136,13 +136,14 @@ I will use 632000000 as the genome size estimate.
 
 Jellyfish genome size 1n: 632000000
 
-C-value from genomesize.com 1n: not_found
+C-value from genomesize.com 1n: 0.66-0.93 (for Halichoeres biocellatus - Halichoeres poecilopterus)
 
 GenBank chromosome-scale genome size 1n: not_found
 
 Genome size from other sources 1n: not_found
 
-Other sources: not_found
+Sources:
+1. Hardie, D.C. and P.D.N. Hebert (2003). The nucleotypic effects of cellular DNA content in cartilaginous and ray-finned fishes. Genome 46: 683-706. and Ojima, Y. and K. Yamamoto (1990). Cellular DNA contents of fishes determined by flow cytometry. La Kromosomo II 57: 1871-1888. (from genomesize.com)
 
 ---
 
