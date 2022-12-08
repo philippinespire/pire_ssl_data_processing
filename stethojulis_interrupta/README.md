@@ -293,6 +293,21 @@ Model Fit   v2.0|83.09%       |98.08%       |XX%
 
 ---
 
+### Genome Size (1n bp)
+
+Jellyfish genome size 1n: 675000000
+
+C-value from genomesize.com 1n: not_found
+
+GenBank chromosome-scale genome size 1n: not_found
+
+Genome size from other sources 1n: not_found
+
+Sources: 
+1. 
+
+---
+
 ## Step 2. Assemble the Genome Using [SPAdes](https://github.com/ablab/spades#sec3.2)
 
 Executed [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch) for each library and for all the libraries combined.
