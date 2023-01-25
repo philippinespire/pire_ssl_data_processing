@@ -42,15 +42,19 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Pomacentrus_pavo | On ODU HPC | 23 | Brendan | Assembly complete, John assigned to probe dev |
 |Sphaeramia_nematoptera | On ODU HPC | 18 | Jem | Probe dev't complete |
 |Pomacentrus_brachialis | On ODU HPC | 24 | Jem/Kyra | Probe dev't complete |
-|Corythoichthys_haematopterus | On ODU HPC | 25 | Allison/John | Allison completed assembly for REU project; John assigned to probe dev |
-|Stethojulis_interrupta | On ODU HPC | 26 |Abby/John | Abby completed assembly for REU project; John assigned to probe dev  |
-|Ostorhinchus_chrysopomus | On ODU HPC | 28 | Eryka/Eric | Eryka completed assembly for REU project; Eric completed probe development  |
+|Corythoichthys_haematopterus | On ODU HPC | 25 | Allison/John | Probe dev't complete - also have a Genbank genome |
+|Stethojulis_interrupta | On ODU HPC | 26 |Abby/John | Probe dev't complete  |
+|Ostorhinchus_chrysopomus | On ODU HPC | 28 | Eryka/Eric | Probe dev't complete  |
 |Hypoatherina_temminckii | On ODU HPC | 16 | Eric | Probe development complete |
-|Ambassis_buruensis | On ODU HPC | 22 | John | Need to do assembly for probe development ASAP |
-|Sphyraena obtusata | On ODU HPC | 20 | Brendan| fq.gz processing in progress |
+|Ambassis_buruensis | On ODU HPC | 22 | John | Probe dev't complete |
+|Sphyraena obtusata | On ODU HPC | 20 | Brendan| Probe dev't complete |
 |Sphaeramia_orbicularis | Needs extraction | 39 | Eric | Probe development planned using published reference |
+|Dascyllus aruanus | On ODU HPC | 30 | Jem | Data on HPC |
+|Parupeneus barberinus | On ODU HPC | not on list | Jem | Data on HPC |
+|Pseduanthias squamipinnus | On ODU HPC | 37 | Jem | Data on HPC |
+|Tylosurus_crocodilus | On ODU HPC | not on list | Brendan | Data on HPC |
+|Gerres macracanthus | On ODU HPC | 36 | ?? | Data on HPC |
 |Lutjanus fulviflamma | Needs extraction | ?? | ?? | For UP Mindanao |
-|Tylosurus_crocodilus | Needs extraction | n/a | n/a | Not currently on priority list |
 |Encrasicholina_pseudoheteroloba | On ODU HPC | n/a | n/a | Sequencing data weird - dropping from priority list  |
 
 ---
