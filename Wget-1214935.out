@@ -1,0 +1,23 @@
+--2023-01-25 17:25:51--  https://gridftp.tamucc.edu/genomics/20230123_PIRE-Gma-ssl//tamucc_files.txt
+Resolving gridftp.tamucc.edu (gridftp.tamucc.edu)... 64.71.87.21
+Connecting to gridftp.tamucc.edu (gridftp.tamucc.edu)|64.71.87.21|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 364 [text/plain]
+Saving to: ‘gerres_macracanthus/tamucc_files.txt’
+
+     0K                                                       100% 16.4M=0s
+
+2023-01-25 17:25:51 (16.4 MB/s) - ‘gerres_macracanthus/tamucc_files.txt’ saved [364/364]
+
+--2023-01-25 17:25:52--  https://gridftp.tamucc.edu/genomics/20230123_PIRE-Gma-ssl//Gma_ProbeDevelopmentLibraries_SequenceNameDecode.tsv
+Resolving gridftp.tamucc.edu (gridftp.tamucc.edu)... 64.71.87.21
+Connecting to gridftp.tamucc.edu (gridftp.tamucc.edu)|64.71.87.21|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 148 [text/tab-separated-values]
+Saving to: ‘gerres_macracanthus/Gma_ProbeDevelopmentLibraries_SequenceNameDecode.tsv’
+
+     0K                                                       100% 3.66M=0s
+
+2023-01-25 17:25:52 (3.66 MB/s) - ‘gerres_macracanthus/Gma_ProbeDevelopmentLibraries_SequenceNameDecode.tsv’ saved [148/148]
+
+slurmstepd: error: *** JOB 1214935 ON e2-w6420b-07 CANCELLED AT 2023-01-25T17:26:21 ***

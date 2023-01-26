@@ -1,0 +1,147 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+
+
+== Warning ==  output dir is not empty! Please, clean output directory before run.
+
+
+
+
+== Warning ==  No assembly mode was specified! If you intend to assemble high-coverage multi-cell/isolate data, use '--isolate' option.
+
+
+Command line: /opt/conda/bin/spades.py	-k	21,33,55,77,99	--pe1-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r1.fq.gz	--pe1-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r2.fq.gz	--pe2-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r1.fq.gz	--pe2-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r2.fq.gz	--pe3-1	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.fp2_r1.fq.gz	--pe3-2	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.fp2_r2.fq.gz	--threads	32	--memory	750	--tmp-dir	/scratch-lustre/breid	--cov-cutoff	off	-o	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate	
+
+System information:
+  SPAdes version: 3.15.2
+  Python version: 3.7.9
+  OS: Linux-4.4.302-1.el6_10.x86_64-x86_64-with-fedora-32-Thirty_Two
+
+Output dir: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+    Library number: 2, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+    Library number: 3, library type: paired-end
+      orientation: fr
+      left reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.fp2_r1.fq.gz']
+      right reads: ['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.fp2_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77, 99]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /scratch-lustre/breid
+  Threads: 32
+  Memory limit (in Gb): 750
+
+
+======= SPAdes pipeline started. Log can be found here: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate/spades.log
+
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r1.fq.gz: max reads length: 136
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r2.fq.gz: max reads length: 136
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r1.fq.gz: max reads length: 136
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r2.fq.gz: max reads length: 136
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.fp2_r1.fq.gz: max reads length: 136
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006H_L3_clmp.fp2_r2.fq.gz: max reads length: 136
+
+Reads length: 136
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /opt/conda/bin/spades-hammer /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate/corrected/configs/config.info
+
+  0:00:00.000     1M / 12M   INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.031     1M / 12M   INFO    General                 (main.cpp                  :  76)   Loading config from /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate/corrected/configs/config.info
+  0:00:00.044     1M / 12M   INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 32
+  0:00:00.058     1M / 12M   INFO    General                 (memory_limit.cpp          :  48)   Memory limit set to 750 Gb
+  0:00:00.062     1M / 12M   INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.071     1M / 12M   INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.075     1M / 12M   INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.079     1M / 12M   INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.088     1M / 12M   INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 16 files using 32 threads. This might take a while.
+  0:00:00.091     1M / 12M   INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 50000
+  0:00:00.099     1M / 12M   INFO    General                 (kmer_splitter.hpp         :  93)   Memory available for splitting buffers: 7.8125 Gb
+  0:00:00.103     1M / 12M   INFO    General                 (kmer_splitter.hpp         : 101)   Using cell size of 4194304
+  0:00:00.462    19G / 19G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r1.fq.gz
+  0:01:18.443    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 8577217 reads
+  0:02:35.080    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 17156855 reads
+  0:03:51.291    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 25745391 reads
+  0:05:05.013    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 34182433 reads
+  0:06:20.971    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 42877427 reads
+  0:07:34.851    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 51389455 reads
+  0:08:48.884    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 59656826 reads
+  0:10:04.454    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 68099238 reads
+  0:11:20.268    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 76647000 reads
+  0:12:34.238    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 84877181 reads
+  0:13:01.128    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 87863194 reads
+  0:13:01.135    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006A_L3_clmp.fp2_r2.fq.gz
+  0:14:43.382    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 96610636 reads
+  0:22:51.428    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 139339126 reads
+  0:29:54.278    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r1.fq.gz
+  0:43:18.829    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             : 107)   Processed 276404924 reads
+  0:55:14.291    19G / 31G   INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_fp1_clmp_fp2b/Lva-CPnd_006G_L3_clmp.fp2_r2.fq.gz
+  0:58:00.420    19G / 31G   ERROR   General                 (kmer_splitter.hpp         : 150)   I/O error! Incomplete write! Reason: No space left on device. Error code: 28
+
+
+== Error ==  system call for: "['/opt/conda/bin/spades-hammer', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate/corrected/configs/config.info']" finished abnormally, OS return value: 28
+
+In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+or report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.
+
+SPAdes log can be found here: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate/spades.log
+
+Thank you for using SPAdes!
+
+Running QUAST Now
+
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.tsv': No such file or directory
