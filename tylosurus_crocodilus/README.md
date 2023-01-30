@@ -27,10 +27,11 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/
 ```
 
 First fastQC overview:
-* XX-XX million sequence pairs per library
-* % duplication XX% - XX% (likely will be reduced after clumpify
-* Sequence quality looks good (>XX on average)
-* Motif evident in first XX bp
-* GC content XX%, slightly non-normal distribution
-* N content and sequence length distributions good?
-* no red flags?
+* 5.2-6 million sequence pairs per library - low for SSL?
+* % duplication 19% - 20% (likely will be reduced after clumpify
+* Sequence quality looks good (>35 mostly)
+* Motif evident in first 9 bp
+* GC content 45%
+* N content and sequence length distributions good
+* flagged for adapter content
+
