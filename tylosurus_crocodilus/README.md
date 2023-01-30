@@ -35,3 +35,10 @@ First fastQC overview:
 * N content and sequence length distributions good
 * flagged for adapter content
 
+### 2. 2. 1st fastp / trim
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/tylosurus_crocodilus/shotgun_raw_fq /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/tylosurus_crocodilus/fq_fp1
+```
+
+>96% of reads passed filter.
