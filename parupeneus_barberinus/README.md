@@ -18,17 +18,15 @@ Files output to and results reported in multiqc_report_fq.gz.html in Multi_FASTQ
 ```sh
 sbatch ../pire_fq_gz_processing/Multi_FASTQC.sh "fq.gz" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus/shotgun_raw_fq"
 ```
-[Report](xxx)
+[Report](xxx) CURRENTLY RUNNING
 
-Potential issues: ENTER:
+Potential issues: ENTER VALUES HERE 
 
-* duplication - low to moderate
-* 27.4% - 29.0%
-* gc content:
-* 40-41%
-* sequence quality good
-* high adapter content - all 6 samples failed, cumulative % is 12.6-15.8%
-* lots of sequences for all libraries, 190 - 229.M
+* duplication - low to moderate % - %
+* gc content:%
+* sequence quality 
+* adapter content: 
+* sequences for all libraries, M
 
 ===============
 
