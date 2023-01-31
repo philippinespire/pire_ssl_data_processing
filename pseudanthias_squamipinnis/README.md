@@ -24,7 +24,7 @@ Potential issues:
 
 * duplication - moderate 36.7-43.8%
 * gc content - normal, 42%
-* number of reads - 50.6-66.0
+* number of reads - 50.6-66.0 M
 
 ===============
 ## Step 2 FASTP - 1st trim
