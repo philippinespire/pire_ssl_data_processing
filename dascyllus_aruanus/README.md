@@ -33,12 +33,31 @@ Potential issues:
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch shotgun_raw_fq fq_fp1
 ``
 
-[Report](....) Running 1/31
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1/1st_fastp_report.html)
 
-Potential issues:ENTER VALUES
-* % duplication - moderate 24.1-26.1%
-* gc content - reasonable ~39.3-39.8% more variable in pos 1-11 than in 11-150
-* passing filter - very good ~97.9-98.1%
-* % adapter - moderate 16.7-20.3%%
-*number of reads - good ~372-449M
+Potential issues:
+* % duplication - moderate 33.8-35.9%
+* gc content - reasonable 43.3-4% more variable in pos 1-15 than in 15-150
+* passing filter - very good ~95.7-96.7%
+* % adapter - low 4-5.6%
+*number of reads - ~125-150 M
+
+===============
+## Step 3 Remove duplicates through Clumpify - RUNNING
+
+runCLUMPIFY_r1r2_array.bash in https://github.com/philippinespire/pire_fq_gz_processing was run on fq.gz files
+
+```sh
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/jbald004 20
+```
+
+Checked whether clumpify was successful by navigating to the output folder and excecuting
+
+```sh
+enable_lmod
+module load container_env mapdamage2
+crun R < /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+```
+
+Clumpify was successful??
 
