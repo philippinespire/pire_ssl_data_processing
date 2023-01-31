@@ -25,3 +25,13 @@ cp *.fq.gz /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/g
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/gerres_macracanthus/shotgun_raw_fq" "fq.gz"
 ```
+
+Results:
+* Lots of sequences (51.3 - 63.7M)
+* Duplication high (50% - 64%)
+* Quality good (mostly >35)
+* GC content 44-45%; 4 of the libraries flagged, maybe a bit of contam?
+* motif in first 9 bases
+* mostly flagged for duplication but we might have enough seqs that it doesn't matter...
+
+### 2. 1st FastP
