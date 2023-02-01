@@ -56,8 +56,41 @@ Checked whether clumpify was successful by navigating to the output folder and e
 ```sh
 enable_lmod
 module load container_env mapdamage2
-crun R < /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+crun R < /home/e1garcia/shotgun_PIRE/pire_fq_qz_processing/checkClumpify_EG.R --no-save
 ```
 
-Clumpify was successful??
+Clumpify was successful!
+
+Generated metadata on deduplicated FASTQ files:
+
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+```
+
+===============
+## Step 4 FASTP 2nd trim - RUNNING THIS PART
+
+To assemble genome using this data, runFASTP_2_ssl.sbatch was used
+
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/runFASTP_$
+```
+
+[Report] (https://github.com/philippinespire/pire_ssl_data_processing/blob/main/sphaeramia_nematoptera/fq_fp1_clmp$
+
+Potential issues:
+
+% duplication - good
+5.4-6.2%
+gc content - reasonable
+~39.1-39.6%
+passing filter - fair
+76-77.6%
+% adapter - good
+0.2-0.3%
+number of reads - good
+221-263M
+
+===============
+
 
