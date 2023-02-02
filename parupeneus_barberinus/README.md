@@ -67,16 +67,17 @@ Generated metadata on deduplicated FASTQ files:
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
+
 ===============
 ## Step 4 FASTP 2nd trim - RUNNING THIS PART
 
 To assemble genome using this data, runFASTP_2_ssl.sbatch was used
 
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/runFASTP_$
+sbatch ../../pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report] (https://github.com/philippinespire/pire_ssl_data_processing/blob/main/sphaeramia_nematoptera/fq_fp1_clmp$
+[Report] (
 
 Potential issues:
 

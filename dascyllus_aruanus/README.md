@@ -43,7 +43,7 @@ Potential issues:
 *number of reads - ~125-150 M
 
 ===============
-## Step 3 Remove duplicates through Clumpify - RUNNING
+## Step 3 Remove duplicates through Clumpify
 
 runCLUMPIFY_r1r2_array.bash in https://github.com/philippinespire/pire_fq_gz_processing was run on fq.gz files
 
@@ -56,8 +56,44 @@ Checked whether clumpify was successful by navigating to the output folder and e
 ```sh
 enable_lmod
 module load container_env mapdamage2
-crun R < /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+crun R < /home/e1garcia/shotgun_PIRE//pire_fq_qz_processing/checkClumpify_EG.R --no-save
 ```
 
-Clumpify was successful??
+Clumpify was successful!
+
+Generated metadata on deduplicated FASTQ files:
+
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+```
+Potential issues:
+
+* duplication - moderate, 9.8-11.4%
+* gc content - normal, 43%
+* number of sequences - 46.4 - 54.4 M
+===============               
+## Step 4 FASTP 2nd trim - RUNNING THIS PART
+
+To assemble genome using this data, runFASTP_2_ssl.sbatch was used
+
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/runFASTP_$
+```
+
+[Report] (https://github.com/philippinespire/pire_ssl_data_processing/blob/main/sphaeramia_nematoptera/fq_fp1_clmp$
+
+Potential issues:
+
+% duplication - good
+5.4-6.2%
+gc content - reasonable
+~39.1-39.6%
+passing filter - fair
+76-77.6%
+% adapter - good
+0.2-0.3%
+number of reads - good
+221-263M
+
+===============
 
