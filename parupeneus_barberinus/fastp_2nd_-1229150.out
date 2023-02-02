@@ -49,3 +49,77 @@ HTML report: fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.r1r2_fastp.html
 
 fastp --in1 fq_fp1_clmp/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.r1.fq.gz --in2 fq_fp1_clmp/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
 fastp v0.20.1, time used: 355 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 42169743
+total bases: 6200264678
+Q20 bases: 6053382968(97.631%)
+Q30 bases: 5780264337(93.2261%)
+
+Read2 before filtering:
+total reads: 42169743
+total bases: 6197542491
+Q20 bases: 5835769816(94.1626%)
+Q30 bases: 5325775074(85.9337%)
+
+Read1 after filtering:
+total reads: 36091664
+total bases: 5408317352
+Q20 bases: 5321517615(98.3951%)
+Q30 bases: 5104361450(94.3798%)
+
+Read2 aftering filtering:
+total reads: 36091664
+total bases: 5405554744
+Q20 bases: 5163370232(95.5197%)
+Q30 bases: 4740680099(87.7002%)
+
+Filtering result:
+reads passed filter: 72183328
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 12156158
+reads with adapter trimmed: 109226
+bases trimmed due to adapters: 2618785
+reads corrected by overlap analysis: 2395259
+bases corrected by overlap analysis: 4622955
+
+Duplication rate: 10.9428%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.r1.fq.gz --in2 fq_fp1_clmp/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 555 seconds
+
+  /// MultiQC 🔍 | v1.13
+
+[2023-02-01 19:11:06,575] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2023-02-01 19:11:06,576] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --filename 2nd_fastp_report --outdir fq_fp1_clmp_fp2 fq_fp1_clmp_fp2
+[2023-02-01 19:11:07,208] multiqc                                            [WARNING]  MultiQC Version v1.14 now available!
+[2023-02-01 19:11:07,208] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus
+[2023-02-01 19:11:07,208] multiqc                                            [DEBUG  ]  Template    : default
+[2023-02-01 19:11:07,208] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2023-02-01 19:11:07,209] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2023-02-01 19:11:07,209] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpcp5cg_66
+[2023-02-01 19:11:07,360] multiqc                                            [INFO   ]  Search path : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus/fq_fp1_clmp_fp2
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 12/12  
+[2023-02-01 19:11:07,688] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 12] // [skipped_no_match: 10] // [skipped_ignore_pattern: 8]
+[2023-02-01 19:11:08,129] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-02-01 19:11:08,131] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-02-01 19:11:08,132] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2023-02-01 19:11:08,145] multiqc.modules.fastp.fastp                        [INFO   ]  Found 2 reports
+[2023-02-01 19:11:25,872] multiqc                                            [INFO   ]  Compressing plot data
+[2023-02-01 19:11:26,035] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2/2nd_fastp_report.html
+[2023-02-01 19:11:26,035] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2/2nd_fastp_report_data
+[2023-02-01 19:11:26,035] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpcp5cg_66/multiqc_data' to 'fq_fp1_clmp_fp2/2nd_fastp_report_data'
+[2023-02-01 19:11:26,102] multiqc                                            [INFO   ]  Plots       : fq_fp1_clmp_fp2/2nd_fastp_report_plots
+[2023-02-01 19:11:26,102] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpcp5cg_66/multiqc_plots' to 'fq_fp1_clmp_fp2/2nd_fastp_report_plots'
+[2023-02-01 19:11:26,336] multiqc                                            [INFO   ]  MultiQC complete

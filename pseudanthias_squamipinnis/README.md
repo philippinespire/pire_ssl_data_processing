@@ -66,7 +66,7 @@ Generated metadata on deduplicated FASTQ files:
 ```sh
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
-[Report] ()
+[Report] (https://github.com/philippinespire/pire_ssl_data_processing/blob/main/pseudanthias_squamipinnis/fq_fp1_clmp/fqc_clmp_report.html)
 Potential issues:
 
 * duplication - moderate, 10.9-12.1%
