@@ -78,23 +78,18 @@ Potential issues:
 To assemble genome using this data, runFASTP_2_ssl.sbatch was used
 
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/
+sbatch ../../pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report] (https://github.com/philippinespire/pire_ssl_data_processing/blob/main/sphaeramia_nematoptera/fq_fp1_clmp$
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/pseudanthias_squamipinnis/fq_fp1_clmp_fp2/2nd_fastp_report.html)
 
 Potential issues:
 
-% duplication - good
-5.4-6.2%
-gc content - reasonable
-~39.1-39.6%
-passing filter - fair
-76-77.6%
-% adapter - good
-0.2-0.3%
-number of reads - good
-221-263M
+* % duplication - good, 12.3-13.8%
+* gc content - reasonable, 41.4-41.5%
+* passing filter - fair, 85-86.8%
+* % adapter - good, 0.1%
+* number of reads - good, 60-75.5 M
 
 ===============
 

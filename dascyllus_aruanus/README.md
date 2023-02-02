@@ -71,29 +71,25 @@ Potential issues:
 * duplication - moderate, 9.8-11.4%
 * gc content - normal, 43%
 * number of sequences - 46.4 - 54.4 M
+
 ===============               
-## Step 4 FASTP 2nd trim - RUNNING THIS PART
+## Step 4 FASTP 2nd trim
 
 To assemble genome using this data, runFASTP_2_ssl.sbatch was used
 
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/runFASTP_$
+sbatch ../../pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report] (https://github.com/philippinespire/pire_ssl_data_processing/blob/main/sphaeramia_nematoptera/fq_fp1_clmp$
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2/2nd_fastp_report.html)
 
 Potential issues:
 
-% duplication - good
-5.4-6.2%
-gc content - reasonable
-~39.1-39.6%
-passing filter - fair
-76-77.6%
-% adapter - good
-0.2-0.3%
-number of reads - good
-221-263M
+% duplication - good, 11.0-12.3%
+gc content - reasonable, 43.2-43.3%
+passing filter - good, 90-91.5%
+% adapter - good, 0.1%
+number of reads - good, 83-99M
 
 ===============
 

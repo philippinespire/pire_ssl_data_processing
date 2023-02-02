@@ -67,7 +67,7 @@ Generated metadata on deduplicated FASTQ files:
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
-(Report) [https://github.com/philippinespire/pire_ssl_data_processing/blob/main/parupeneus_barberinus/fq_fp1_clmp/fqc_clmp_report.html]
+(Report)[https://github.com/philippinespire/pire_ssl_data_processing/blob/main/parupeneus_barberinus/fq_fp1_clmp/fqc_clmp_report.html]
 Potential issues:
 
 * duplication - moderate, 7-10.4%
@@ -75,7 +75,7 @@ Potential issues:
 * number of sequences - 27.8 - 42.2 M
 
 ===============
-## Step 4 FASTP 2nd trim - RUNNING THIS PART
+## Step 4 FASTP 2nd trim
 
 To assemble genome using this data, runFASTP_2_ssl.sbatch was used
 
@@ -83,20 +83,15 @@ To assemble genome using this data, runFASTP_2_ssl.sbatch was used
 sbatch ../../pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report] ()
+[Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/parupeneus_barberinus/fq_fp1_clmp_fp2/2nd_fastp_report.html)
 
 Potential issues:
 
-% duplication - good
-5.4-6.2%
-gc content - reasonable
-~39.1-39.6%
-passing filter - fair
-76-77.6%
-% adapter - good
-0.2-0.3%
-number of reads - good
-221-263M
+* % duplication - good, 6.7-10.9%
+* gc content - reasonable, 47.7-48.2%
+* passing filter - fair, 83.2-85.6%
+* % adapter - good, 0.1-0.2%
+* number of reads - fair, 46-72M
 
 ===============
 
