@@ -85,11 +85,11 @@ sbatch ../../pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmp fq_fp1_clmp
 
 Potential issues:
 
-% duplication - good, 11.0-12.3%
-gc content - reasonable, 43.2-43.3%
-passing filter - good, 90-91.5%
-% adapter - good, 0.1%
-number of reads - good, 83-99M
+* % duplication - good, 11.0-12.3%
+* gc content - reasonable, 43.2-43.3%
+* passing filter - good, 90-91.5%
+* % adapter - good, 0.1%
+* number of reads - good, 83-99M
 
 ===============
 
