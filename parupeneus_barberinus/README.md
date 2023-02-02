@@ -67,6 +67,12 @@ Generated metadata on deduplicated FASTQ files:
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 ```
 
+(Report) [https://github.com/philippinespire/pire_ssl_data_processing/blob/main/parupeneus_barberinus/fq_fp1_clmp/fqc_clmp_report.html]
+Potential issues:
+
+* duplication - moderate, 7-10.4%
+* gc content - normal, 47-48%
+* number of sequences - 27.8 - 42.2 M
 
 ===============
 ## Step 4 FASTP 2nd trim - RUNNING THIS PART
@@ -77,7 +83,7 @@ To assemble genome using this data, runFASTP_2_ssl.sbatch was used
 sbatch ../../pire_fq_gz_processing/runFASTP_2_ssl.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
 ```
 
-[Report] (
+[Report] ()
 
 Potential issues:
 

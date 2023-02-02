@@ -78,7 +78,7 @@ Potential issues:
 To assemble genome using this data, runFASTP_2_ssl.sbatch was used
 
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/runFASTP_$
+sbatch /home/e1garcia/shotgun_PIRE/
 ```
 
 [Report] (https://github.com/philippinespire/pire_ssl_data_processing/blob/main/sphaeramia_nematoptera/fq_fp1_clmp$
