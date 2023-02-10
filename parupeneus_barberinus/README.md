@@ -94,5 +94,64 @@ Potential issues:
 * number of reads - fair, 46-72M
 
 ===============
+===============
+## Step 5 Decontaminate files FQSCRN
 
+Ran on Wahab and used 6 nodes since there were 6 files
+
+```sh
+#navigate to species dir
+bash /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/runFQSCRN_6.$
+```
+
+Checked output for errors
+
+```sh
+# Fastqc Screen generates 5 files (*tagged.fastq.gz, *tagged_filter.fastq.gz, *screen.txt, *screen.png, *screen.htm$
+#check that all 5 files were created for each file: 
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l
+# for each, you should have the same number as the number of input files
+
+#You should also check for errors in the *out files:
+# this will return any out files that had a problem
+
+#do all out files at once
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+
+# or check individuals files <replace JOBID with your actual job ID>
+grep 'error' slurm-fqscrn.JOBID*out
+grep 'No reads in' slurm-fqscrn.JOBID*out
+```
+
+No files failed so I proceeded to the next step.
+
+```
+sbatch ../../pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+```
+
+Potential issues:
+* one hit, one genome, no ID: 93.57-93.88%
+* no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - very low, <0.8%
+
+====================
+## STEP 6 Execute runREPAIR.sbatch
+
+```
+sbatch ../../pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 40
+```
+
+Once the job finished, I ran MultiQC
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_$
+```
+
+Potential issues:
+* % duplication -
+* GC content -
+* number of reads -
 
