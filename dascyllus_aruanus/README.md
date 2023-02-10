@@ -93,3 +93,63 @@ Potential issues:
 
 ===============
 
+## Step 5 Decontaminate files FQSCRN
+
+Ran on Wahab and used 6 nodes since there were 6 files
+
+```sh
+#navigate to species dir
+bash /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_$
+```
+
+Checked output for errors
+
+```sh
+# Fastqc Screen generates 5 files (*tagged.fastq.gz, *tagged_filter.fastq.gz, *screen.txt, *screen.png, *screen.html) for each input fq.gz file
+#check that all 5 files were created for each file: 
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l
+# for each, you should have the same number as the number of input files
+
+#You should also check for errors in the *out files:
+# this will return any out files that had a problem
+
+#do all out files at once
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+
+# or check individuals files <replace JOBID with your actual job ID>
+grep 'error' slurm-fqscrn.JOBID*out
+grep 'No reads in' slurm-fqscrn.JOBID*out
+```
+
+Dar-CJol_003-Ex1-8A-ssl-1-1.clmp.fp2_r2.fq.gz didn’t work 8a, so I did:
+```
+bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 1 Dar-CJol_003-Ex1-8A-ssl-1-1.clmp.fp2_r2.fq.gz
+```
+
+After this, I checked again & it all worked! So I proceeded to run MultiQC
+
+```
+sbatch ../../pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+```
+
+Potential issues:
+* one hit, one genome, no ID-
+  * Alb: xx%, Contemp: XX%
+* no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) -
+  * Alb: xx%, Contemp: xx%
+
+
+============================
+## STEP 6 runREPAIR.sbatch
+
+```sh
+sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
+```
+
+
+
