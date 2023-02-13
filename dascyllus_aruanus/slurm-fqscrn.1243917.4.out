@@ -1,0 +1,13 @@
+
+INDIR=fq_fp1_clmp_fp2
+OUTDIR=fq_fp1_clmp_fp2_fqscrn
+CONFFILE=/home/e1garcia/shotgun_PIRE/fastq_screen/indexed_databases/runFQSCRN_6_nofish.conf
+PATTERN=*.fq.gz
+PARALLELISM=
+THREADS=40
+SUBSET=0
+FILTER=000000000000
+INFILES:
+fq_fp1_clmp_fp2/Dar-CJol_003-Ex1-9A-ssl-1-1.clmp.fp2_r1.fq.gz
+
+Thu Feb 9 23:12:51 EST 2023 RUNNING FASTQ_SCREEN TO FILTER FQ FILES AND GENERATE REPORTS, NO SUBSETTING

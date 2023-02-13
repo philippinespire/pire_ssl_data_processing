@@ -73,7 +73,7 @@ Potential issues:
 * gc content - normal, 41%
 * number of sequences - 34.7 - 44.5 M
 ===============               
-## Step 4 FASTP 2nd trim - RUNNING THIS PART
+## Step 4 FASTP 2nd trim
 
 To assemble genome using this data, runFASTP_2_ssl.sbatch was used
 
@@ -98,7 +98,7 @@ Ran on Wahab and used 6 nodes since there were 6 files
 
 ```sh
 #navigate to species dir
-bash /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_$
+bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
 
 Checked output for errors
