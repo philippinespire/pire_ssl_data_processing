@@ -132,8 +132,8 @@ sbatch ../../pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fast
 ```
 
 Potential issues:
-* one hit, one genome, no ID- 94.82-95.84%
-* no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - very low, <0.5%
+* one hit, one genome, no ID- %
+* no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - %
 
 ====================
 ## STEP 6 Execute runREPAIR.sbatch
