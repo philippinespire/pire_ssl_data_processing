@@ -499,5 +499,6 @@ Based on Betancur 2017, Lavoue et al 2007, Bloom and Egan 2018
 
 ## Mitofinder
 
+```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/herklotsichthys_quadrimaculatus Hqu SPAdes_allLibs_contam_R1R2_noIsolate Clupeidae
-
+```
