@@ -371,5 +371,5 @@ Backing up contam files + assembly.
 ### Mitofinder
 
 ```
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus Lva SPAdes_allLibs_contam_R1R2_noIsolate Lethrinus
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus Lva SPAdes_allLibs_contam_R1R2_noIsolate Lethrinidae
 ```
