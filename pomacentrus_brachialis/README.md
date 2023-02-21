@@ -265,3 +265,8 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 
 8/4/22 A/B/C and A contam have been run. A contam is the best, slightly smaller largest contig than A decontam but higher N50 and BUSCO. Will use this for PSMC
 
+### MitoFinder
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_brachialis Pba SPAdes_Pba-CTat-A_decontam_R1R2_noIsolate Pomacentridae
+```
