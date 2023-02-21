@@ -264,7 +264,8 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 8/1/22 Brendan Reid taking over - running allLibs assembly on Turing
 
 8/4/22 A/B/C and A contam have been run. A contam is the best, slightly smaller largest contig than A decontam but higher N50 and BUSCO. Will use this for PSMC
-
+```
+  
 ### MitoFinder
 
 ```
