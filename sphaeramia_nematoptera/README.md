@@ -300,3 +300,8 @@ This species was ran through the [pire_ssl_data_processing](https://github.com/p
 
 To run Sne through the LCWGS pipeline, I started with locating the fltrd/repaired fq.gz files that had gone through the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) pipeline, and I picked up at step 3. of the [LCWGS](https://github.com/philippinespire/pire_lcwgs_data_processing) pipeline titled "Get your reference genome".
 
+### MitoFinder
+ 
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera Sne SPAdes_allLibs_decontam_R1R2_noIsolate Apogonidae
+```
