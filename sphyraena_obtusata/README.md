@@ -389,3 +389,9 @@ mv deleted_files_log logs
 ```
 
 Done!
+
+### MitoFinder
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata Sob SPAdes_allLibs_decontam_R1R2_noIsolate Sphyraenidae
+```
