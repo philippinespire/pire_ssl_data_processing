@@ -424,5 +424,5 @@ following Betancur et al. 2017 and Lavoué_etal_2007 (see the Spratelloides deli
 ### MitoFinder
 
 ```
-/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis Sgr SPAdes_SgC0072C_contam_R1R2_noIsolate Clupeidae
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis Sgr SPAdes_SgC0072C_contam_R1R2_noIsolate Clupeidae
 ```
