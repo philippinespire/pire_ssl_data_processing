@@ -450,3 +450,9 @@ nano closest_relative_genomes_taeniamia_zosterophora.txt
 ```
 
 following Betancur et al. 2017
+
+### MitoFinder
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus Pli SPAdes_allLibs_contam_R1R2_noIsolate Plotosidae
+```
