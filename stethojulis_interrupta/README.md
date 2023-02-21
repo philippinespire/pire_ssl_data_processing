@@ -561,3 +561,9 @@ mv deleted_files_log logs
 ```
 
 Done!
+
+### MitoFinder
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta Sin SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate Labridae
+```
