@@ -420,3 +420,9 @@ https://www.ncbi.nlm.nih.gov/genome/7889
 ```
 
 following Betancur et al. 2017 and Lavoué_etal_2007 (see the Spratelloides delicatulus slack channel for papers) 
+
+### MitoFinder
+
+```
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis Sgr SPAdes_SgC0072C_contam_R1R2_noIsolate Clupeidae
+```
