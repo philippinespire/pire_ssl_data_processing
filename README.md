@@ -174,7 +174,7 @@ bash ../../runGIT.bash "README of raw data"
 #### 2. Initial processing
 
 Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo, then return here
-* This includes running FASTQC, FASTP1, CLUMPLIFY, FASTP2, FASTQ SCREEN, and file repair scripts from the pre-processing repo
+* This includes running FASTQC, FASTP1, CLUMPIFY, FASTP2, FASTQ SCREEN, and file repair scripts from the pre-processing repo
 ___
 
 ### B. GENOME ASSEMBLY
