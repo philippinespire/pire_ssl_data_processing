@@ -147,6 +147,8 @@ Once the job finished, I ran MultiQC
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
 ```
 
+MultiQC [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/pseudanthias_squamipinnis/fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html)
+
 Potential issues:
 * % duplication - 9.3-10.5%
 * GC content - 40-41%
