@@ -149,7 +149,8 @@ Potential issues:
 sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
 
-The multiqc report is made after the 
+The multiqc [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html) here.
+
 Potential issues:
 * % duplication - 8.7-9.8%
 * GC content - 42-43%
