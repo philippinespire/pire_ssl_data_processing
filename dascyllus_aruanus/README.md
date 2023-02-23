@@ -138,10 +138,8 @@ sbatch ../../pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fast
 ```
 
 Potential issues:
-* one hit, one genome, no ID-
-  * Alb: xx%, Contemp: XX%
-* no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) -
-  * Alb: xx%, Contemp: xx%
+* one hit, one genome, no ID: 97.05-97.26%%
+* no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - 0-1.88%
 
 
 ============================
@@ -151,5 +149,16 @@ Potential issues:
 sbatch runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_repaired 40
 ```
 
+The multiqc report is made after the 
+Potential issues:
+* % duplication - 8.7-9.8%
+* GC content - 42-43%
+* number of reads - 39.9-47.5 M
 
+=============================
+## STEP 7 Clean up
 
+Moved any .out files to logs directory
+``sh
+mv *.out logs/
+```
