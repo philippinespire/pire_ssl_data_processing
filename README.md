@@ -183,11 +183,11 @@ ___
 
 #### 1. **Genome Properties**
 
-##### 1a. Fetch the genome properties for your species
+##### 1a. Fetch the genome properties for your species from existing literature
 * From the literature or other sources
 	* [genomesize.com](https://www.genomesize.com/)
 	* search the literature
-* Estimate properties with `jellyfish` and `genomescope`
+* After searching, estimate properties with `jellyfish` and `genomescope`
 	* More details [here](https://github.com/philippinespire/denovo_genome_assembly/blob/main/jellyfish/JellyfishGenomescope_procedure.md)
 
 ##### 1b. **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runJellyfish.sbatch) using decontaminated files**
