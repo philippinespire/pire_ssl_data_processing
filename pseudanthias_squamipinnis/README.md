@@ -148,7 +148,17 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_f
 ```
 
 Potential issues:
-* % duplication -
-* GC content -
-* number of reads -
+* % duplication - 9.3-10.5%
+* GC content - 40-41%
+* number of reads - 27.7-35.1 M
+
+=============================
+## STEP 7 Clean up        
+
+Moved any .out files to logs directory
+``sh
+mv *.out logs/
+```
+=============================
+
  
