@@ -149,6 +149,7 @@ Once the job finished, I ran MultiQC
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_$
 ```
+MultiQC [Report](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/parupeneus_barberinus/fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html)
 
 Potential issues:
 * % duplication - 6.1-8.7%
