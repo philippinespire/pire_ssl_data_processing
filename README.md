@@ -182,6 +182,7 @@ ___
 ---
 
 #### 1. **Genome Properties**
+In this step, we look for genome size in related literature as a reference, but ultimately use Jellyfish and Genomescope to estimate genome size from our SSL data. We will use Jellyfish and GenomeScope results even if there is an available estimate as these 2 provide a more precise estimates than older methods and provide an estimate of heterozygosity.  Jellyfish estimates are also used to be more consistent across species assembled in the project and to get around potential cases where published individuals or even PIRE species may have been morphologically mis-identified.
 
 ##### 1a. Fetch the genome properties for your species from existing literature
 * From the literature or other sources
