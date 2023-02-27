@@ -163,3 +163,66 @@ Moved any .out files to logs directory
 ``sh
 mv *.out logs/
 ```
+=============================
+## Genome Assembly
+## STEP 8 Genome Properties
+
+The [genome.size](https://www.genomesize.com/) showed 2 estimates of C value for Dascyllus aruanus. I chose the C-value provided by the two Hardie papers because these were more recent, used a few other outgroup species and listed D. aruanus specifically. Citations of both are here:
+* Hardie, D.C. and P.D.N. Hebert (2003). The nucleotypic effects of cellular DNA content in cartilaginous and ray-finned fishes. Genome 46: 683-706.
+* Hardie, D.C. and P.D.N. Hebert (2004). Genome-size evolution in fishes. Canadian Journal of Fisheries and Aquatic Sciences 61: 1636-1646.
+
+C-value for D. aruanus based on [genomesize.com](genomesize.com) is  0.87 pg
+
+Then I estimated genome properties using jellyfish:
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Dar" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
+Resulting histogram files from Jellyfish were uploaded to GenomeScope 1.0 and Genomescope 2.0.                    
+
+Results for GenomeScope are here for [v1.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev1_Dar.pdf) and [v2.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev2_Dar.pdf)
+```
+Genome stats for Dar from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
+
+Reports are here for [v1.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev1_Dar.pdf) and [v2.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev2_Dar.pdf)
+
+version    |stat    |min    |max
+------  |------ |------ |------
+1  |Heterozygosity  |2.12%       |2.14%
+2  |Heterozygosity  |2.08%       |2.14%
+1  |Genome Haploid Length   |733,431,964 bp |735,359,939 bp
+2  |Genome Haploid Length   |776,256,569 bp |781,687,328 bp
+1  |Model Fit       |98.09%       |99.58%
+2  |Model Fit       |84.45%       |99.55%
+
+=============================
+## STEP 9 Assembling the genome using SPADES
+NEXT STEP:
+Executed runSPADEShimem_R1R2_noisolate.sbatch on Turing
+```sh
+#1st library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "1" "decontam" "782000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus" "fq_fp1_clmp_fp2_fqscrn_rprd"
+
+#2nd library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "2" "decontam" "782000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus" "fq_fp1_clmp_fp2_fqscrn_rprd"
+
+#3rd library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "3" "decontam" "782000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus" "fq_fp1_clmp_fp2_fqscrn_rprd"
+
+#all 3 libs
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "all_3libs" "decontam" "782000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus" "fq_fp1_clmp_fp2_fqscrn_rprd"
+
+```
+Job IDs:
+```
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          10454748     himem     Sp8s jbald004  R       0:04      1 coreV4-21-himem-003
+          10454747     himem     Sp8s jbald004  R       0:11      1 coreV4-21-himem-002
+          10454746     himem     Sp8s jbald004  R       0:19      1 coreV2-23-himem-004
+          10454745     himem     Sp8s jbald004  R       0:28      1 coreV2-23-himem-003
+ 
+```
+
+Libraries for each assembly:
+A	7A
+B	8A
+C	9A

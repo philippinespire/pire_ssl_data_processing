@@ -174,17 +174,19 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish
 ```
 
 Resulting histogram files from Jellyfish were uploaded to GenomeScope 1.0 and Genomescope 2.0.                    
+
+Reports are here for GenomeScope [v1.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/parupeneus_barberinus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev1_Pbb.pdf) and [v2.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/parupeneus_barberinus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev2_Pbb.pdf)
 ```
-Genome stats for Sgr from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
+Genome stats for Pbb from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
 
 version    |stat    |min    |max
 ------  |------ |------ |------
-1  |Heterozygosity  |%       |%
-2  |Heterozygosity  |%       |%
-1  |Genome Haploid Length   | bp |bp
-2  |Genome Haploid Length   | bp |bp
-1  |Model Fit       |%       |%
-2  |Model Fit       |2%       |%
+1  |Heterozygosity  |2.36%       |2.46%
+2  |Heterozygosity  |2.37%       |2.64%
+1  |Genome Haploid Length   |475,159,090 bp |482,007,373 bp
+2  |Genome Haploid Length   |493,648,332 bp |514,541,162 bp
+1  |Model Fit       |98.21%       |99.73%
+2  |Model Fit       |83.12%       |99.47%
 
 
 =============================
@@ -192,6 +194,26 @@ version    |stat    |min    |max
 NEXT STEP:
 Executed runSPADEShimem_R1R2_noisolate.sbatch on Turing
 ```sh
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "contam" "all" "8700.....
+#1st library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Pbb” "1" "decontam" "515000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus” "fq_fp1_clmp_fp2_fqscrn_rprd"
+
+#2nd library
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Pbb” "1" "decontam" "515000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus” "fq_fp1_clmp_fp2_fqscrn_rprd"
+
+#all 2 libs
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Pbb” “all_2libs” "decontam" "515000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus” "fq_fp1_clmp_fp2_fqscrn_rprd"
+
 ```
+
+Job IDs:
+```
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          10454752     himem     Sp8s jbald004 PD       0:00      1 (Priority)
+          10454753     himem     Sp8s jbald004 PD       0:00      1 (Priority)
+          10454754     himem     Sp8s jbald004 PD       0:00      1 (Priority)
+```
+
+Libraries for each assembly:
+A	1A
+B	3A
 
