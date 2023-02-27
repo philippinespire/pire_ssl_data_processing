@@ -1,4 +1,4 @@
-All  sequence sets are from individual xxxxxx
+oAll  sequence sets are from individual xxxxxx
 
 ===============
 
@@ -162,5 +162,34 @@ Moved any .out files to logs directory
 mv *.out logs/
 ```
 =============================
+## Genome Assembly
+## STEP 8 Genome Properties
 
- 
+There were no genomesize.com estimates for Pseudanthias squamipinnis so these genome properties were estimated using jelyfish and genomescope.
+
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Psq" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
+
+Resulting histogram files from Jellyfish were uploaded to GenomeScope 1.0 and Genomescope 2.0.
+```
+Genome stats for Sgr from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
+
+version    |stat    |min    |max
+------  |------ |------ |------
+1  |Heterozygosity  |%       |%
+2  |Heterozygosity  |%       |%
+1  |Genome Haploid Length   | bp |bp
+2  |Genome Haploid Length   | bp |bp
+1  |Model Fit       |%       |%
+2  |Model Fit       |2%       |%
+
+
+=============================
+## STEP 9 Assembling the genome using SPADES
+NEXT STEP:
+Executed runSPADEShimem_R1R2_noisolate.sbatch on Turing
+```sh
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "contam" "all" "8700$
+```
+

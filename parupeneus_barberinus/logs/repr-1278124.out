@@ -1,0 +1,30 @@
+
+mkdir: cannot create directory ‘fq_fp1_clmp_fp2_fqscrn_rprd’: File exists
+java -ea -Xmx160907m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_rprd/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_rprd/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_rprd/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_rprd/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Pbb-CGal_008-Ex1-1A-ssl-1-1.clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	43365312 reads 		6495860471 bases.
+Result:                 	43365312 reads (100.00%) 	6495860471 bases (100.00%)
+Pairs:                  	41632876 reads (96.01%) 	6236320826 bases (96.00%)
+Singletons:             	1732436 reads (3.99%) 	259539645 bases (4.00%)
+
+Time:                         	119.272 seconds.
+Reads Processed:      43365k 	363.58k reads/sec
+Bases Processed:       6495m 	54.46m bases/sec
+java -ea -Xmx160907m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_rprd/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_rprd/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_repr.orph.fq repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_rprd/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_rprd/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Pbb-CGal_008-Ex1-3A-ssl-1-1.clmp.fp2_repr.orph.fq, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	67625406 reads 		10131270169 bases.
+Result:                 	67625406 reads (100.00%) 	10131270169 bases (100.00%)
+Pairs:                  	64916440 reads (95.99%) 	9725414103 bases (95.99%)
+Singletons:             	2708966 reads (4.01%) 	405856066 bases (4.01%)
+
+Time:                         	180.175 seconds.
+Reads Processed:      67625k 	375.33k reads/sec
+Bases Processed:      10131m 	56.23m bases/sec
