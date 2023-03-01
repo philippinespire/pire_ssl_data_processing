@@ -193,22 +193,21 @@ NEXT STEP:
 Executed runSPADEShimem_R1R2_noisolate.sbatch on Turing
 ```sh
 #1st library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Psq” "1" "decontam" "725000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis” "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Psq" "1" "decontam" "725000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis” "fq_fp1_clmp_fp2_fqscrn_rprd"
 
 #2nd library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Psq” “2” "decontam" "725000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis” "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Psq" "2" "decontam" "725000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis" "fq_fp1_clmp_fp2_fqscrn_rprd"
 
 #all 2 libs
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Psq” “all_2libs” "decontam" "725000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis” "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Psq" “all_2libs" "decontam" "725000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
 
 Job IDs:
 ```
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-          10454749     himem     Sp8s jbald004 PD       0:00      1 (Resources)
-          10454750     himem     Sp8s jbald004 PD       0:00      1 (Priority)
-          10454751     himem     Sp8s jbald004 PD       0:00      1 (Priority)
-```
+          10455552     himem     Sp8s jbald004  R       0:03      1 coreV4-21-himem-002
+          10455551     himem     Sp8s jbald004  R       0:12      1 coreV2-23-himem-004
+          10455549     himem     Sp8s jbald004  R       0:28      1 coreV2-23-himem-003
 
 Libraries for each assembly:
 A	4A
