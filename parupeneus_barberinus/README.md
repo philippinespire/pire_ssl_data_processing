@@ -208,9 +208,9 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 Job IDs:
 ```
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-          10454752     himem     Sp8s jbald004 PD       0:00      1 (Priority)
-          10454753     himem     Sp8s jbald004 PD       0:00      1 (Priority)
-          10454754     himem     Sp8s jbald004 PD       0:00      1 (Priority)
+          10455560     himem     Sp8s jbald004 PD       0:00      1 (Resources)
+          10455561     himem     Sp8s jbald004 PD       0:00      1 (Priority)
+          10455559     himem     Sp8s jbald004  R       0:22      1 coreV4-21-himem-003
 ```
 
 Libraries for each assembly:
