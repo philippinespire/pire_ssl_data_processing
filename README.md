@@ -49,9 +49,9 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Ambassis_buruensis | On ODU HPC | 22 | John | Probe dev't complete |
 |Sphyraena obtusata | On ODU HPC | 20 | Brendan| Probe dev't complete |
 |Sphaeramia_orbicularis | Needs extraction | 39 | Eric | Probe development planned using published reference |
-|Dascyllus aruanus | On ODU HPC | 30 | Jem | Genome Assembly - Spades|
-|Parupeneus barberinus | On ODU HPC | not on list | Jem | Genome Assembly - Spades|
-|Pseudanthias squamipinnis | On ODU HPC | 37 | Jem | Genome Assembly - Spades|
+|Dascyllus aruanus | On ODU HPC | 30 | Jem | Genome Assembly - BUSCO|
+|Parupeneus barberinus | On ODU HPC | not on list | Jem | Genome Assembly - BUSCO|
+|Pseudanthias squamipinnis | On ODU HPC | 37 | Jem | Genome Assembly - BUSCO|
 |Tylosurus_crocodilus | On ODU HPC | not on list | Brendan | Data on HPC |
 |Gerres macracanthus | On ODU HPC | 36 | ?? | Data on HPC |
 |Lutjanus fulviflamma | Needs extraction | ?? | ?? | For UP Mindanao |
