@@ -221,8 +221,32 @@ Job IDs:
           10454745     himem     Sp8s jbald004  R       0:28      1 coreV2-23-himem-003
  
 ```
-
 Libraries for each assembly:
 A	7A
 B	8A
 C	9A
+
+Quast & BUSCO Scores are as follows:
+``
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
+Dar  |Dar-CJol-A  |decontam       |contigs       |off       |2       |78766  |73498       |626581216       |41.06%       |9455       |20068       |0.00       |54.8%
+Dar  |Dar-CJol-A  |decontam       |scaffolds       |off       |2       |77742  |87229       |631623247       |41.05%       |9755       |19509       |10.30       |55.6%
+
+Dar  |Dar-CJol-B  |decontam       |contigs       |off       |2       |77882  |99877       |645190608       |41.01%       |10030       |19156       |0.00       |57.1%
+Dar  |Dar-CJol-B  |decontam       |scaffolds       |off       |2       |76890  |99877       |649177190       |41.01%       |10322       |18640       |9.12       |57.8%
+
+Dar  |Dar-CJol-C  |decontam       |contigs       |off       |2       |72129  |126737       |667894582       |40.97%       |11762       |16600       |0.00        |62.4%
+Dar  |Dar-CJol-C  |decontam       |scaffolds       |off       |2       |71022  |126737       |671296441       |40.97%       |12119       |16083       |9.58       |62.9%
+
+Dar  |all_3libs  |decontam       |contigs       |off       |2       |76146  |125988       |454159430       |40.75%       |6088       |20911       |0.00       |33.7%
+Dar  |all_3libs  |decontam       |scaffolds       |off       |2       |74736  |125988       |527468322       |40.80%       |7901       |18104       |690.87       |42.3%
+```
+
+The best library was Dar-CJol-C so I assembled a genome with contaminated files:
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "3" "contam" "782000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus"
+```
+
+
+
