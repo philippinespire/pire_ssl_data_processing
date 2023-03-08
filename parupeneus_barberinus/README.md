@@ -198,7 +198,7 @@ Executed runSPADEShimem_R1R2_noisolate.sbatch on Turing
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Pbb” "1" "decontam" "515000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus” "fq_fp1_clmp_fp2_fqscrn_rprd"
 
 #2nd library
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Pbb” "1" "decontam" "515000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus” "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Pbb” "2" "decontam" "515000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus” "fq_fp1_clmp_fp2_fqscrn_rprd"
 
 #all 2 libs
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" “Pbb” “all_2libs” "decontam" "515000000” "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus” "fq_fp1_clmp_fp2_fqscrn_rprd"
@@ -209,7 +209,7 @@ Job IDs:
 ```
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
           10455560     himem     Sp8s jbald004 PD       0:00      1 (Resources)
-          10455561     himem     Sp8s jbald004 PD       0:00      1 (Priority)
+          10457199     himem     Sp8s jbald004 PD       0:00      1 (Priority)
           10455559     himem     Sp8s jbald004  R       0:22      1 coreV4-21-himem-003
 ```
 
@@ -217,3 +217,21 @@ Libraries for each assembly:
 A	1A
 B	3A
 
+QUAST & BUSCO Results:
+```
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
+Pbb  |Pbb-CGal-A  |decontam       |contigs       |off       |2       |47451 |32823       |226253942       |46.43%       |4753       |16999       |0.00       |32.6%
+Pbb  |Pbb-CGal-A  |decontam       |scaffolds       |off       |2       |48533 |32823       |234028647       |46.41%       |4813       |17238       |28.21       |33.3%
+
+Pbb  |Pbb-CGal-B  |decontam       |contigs       |off       |2       |65150 |80987       |386376190       |45.39%       |6264       |19999       |0.00       |49.0%
+Pbb  |Pbb-CGal-B  |decontam       |scaffolds       |off       |2       |65407 |80987       |397441158       |45.39%       |6474       |19715       |36.79       |50.7%
+
+Pbb  |Pbb-allLibs  |decontam       |contigs       |off       |2       |66124 |92752       |479993197       |45.18%       |8302       |17761       |0.00       |58.0%
+Pbb  |Pbb-allLibs  |decontam       |scaffolds       |off       |2       |65592 |92752       |486262446       |45.19%       |8554       |17380       |15.76       |59.0%
+```
+
+Best library was Pbb-allLibs scaffodlds, so I assembled a genome using the contaminated files:
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pbb" "all_2libs" "contam" "515000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus"
+```
