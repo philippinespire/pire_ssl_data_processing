@@ -16,3 +16,46 @@ INFO:	Running 3640 job(s) on hmmsearch, starting at 02/28/2023 22:10:47
 INFO:	[hmmsearch]	364 of 3640 task(s) completed
 INFO:	[hmmsearch]	728 of 3640 task(s) completed
 INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	2184 of 3640 task(s) completed
+INFO:	[hmmsearch]	2548 of 3640 task(s) completed
+INFO:	[hmmsearch]	2912 of 3640 task(s) completed
+INFO:	[hmmsearch]	3276 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 02/28/2023 22:33:25
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 1672 job(s) on hmmsearch, starting at 02/28/2023 23:04:33
+INFO:	[hmmsearch]	168 of 1672 task(s) completed
+INFO:	[hmmsearch]	335 of 1672 task(s) completed
+INFO:	[hmmsearch]	335 of 1672 task(s) completed
+INFO:	[hmmsearch]	502 of 1672 task(s) completed
+INFO:	[hmmsearch]	669 of 1672 task(s) completed
+INFO:	[hmmsearch]	836 of 1672 task(s) completed
+INFO:	[hmmsearch]	1004 of 1672 task(s) completed
+INFO:	[hmmsearch]	1171 of 1672 task(s) completed
+INFO:	[hmmsearch]	1338 of 1672 task(s) completed
+INFO:	[hmmsearch]	1505 of 1672 task(s) completed
+INFO:	[hmmsearch]	1672 of 1672 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:54.8%[S:54.3%,D:0.5%],F:16.5%,M:28.7%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:54.8%[S:54.3%,D:0.5%],F:16.5%,M:28.7%,n:3640   |
+	|1993	Complete BUSCOs (C)                       |
+	|1975	Complete and single-copy BUSCOs (S)       |
+	|18	Complete and duplicated BUSCOs (D)        |
+	|602	Fragmented BUSCOs (F)                     |
+	|1045	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 4606 seconds
+INFO:	Results written in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus/busco_contigs_results-SPAdes_Dar-CJol-A_decontam_R1R2_noIsolate
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
