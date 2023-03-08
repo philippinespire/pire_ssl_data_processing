@@ -208,8 +208,26 @@ Job IDs:
           10455552     himem     Sp8s jbald004  R       0:03      1 coreV4-21-himem-002
           10455551     himem     Sp8s jbald004  R       0:12      1 coreV2-23-himem-004
           10455549     himem     Sp8s jbald004  R       0:28      1 coreV2-23-himem-003
-
+```
 Libraries for each assembly:
 A	4A
 B	5A
+
+QUAST & BUSCO Results:
+```
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
+Psq  |Psq-CGal-A  |decontam       |contigs       |off       |2       |70116 |48777       |367238718       |40.51%       |5364       |23653       |0.00       |32.8%
+Psq  |Psq-CGal-A  |decontam       |scaffolds       |off       |2       |71157 |48777       |378822073       |40.49%       |5472       |23731       |28.69       |33.6%
+
+Psq  |Psq-CGal-B  |decontam       |contigs       |off       |2       |78084 |66290        |482999389       |40.25%       |6686       |23697       |0.00       |41.2%
+Psq  |Psq-CGal-B  |decontam       |scaffolds       |off       |2       |78091 |66290       |489835339       |40.25%       |6811       |23459       |12.99       |41.8x%
+
+Psq  |Psq_allLibs  |decontam       |contigs       |off       |2       |70062 |116609       |631892852       |39.84%       |9658       |16716       |0.00       |61.1%
+Psq  |Psq_allLibs  |decontam       |scaffolds       |off       |2       |69128 |116609       |635727946       |39.85%       |11536       |16341       |16.18       |61.7%
+```
+The best assembly was Psq_allLibs scaffolds, so I assembled a genome using contaminated files:
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Psq" "all_2libs" "contam" "725000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis"
+```
 

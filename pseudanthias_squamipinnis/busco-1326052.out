@@ -1,0 +1,53 @@
+
+INFO:	***** Start a BUSCO v5.0.0 analysis, current time: 03/05/2023 18:06:30 *****
+INFO:	Configuring BUSCO with local environment
+INFO:	Mode is genome
+INFO:	Input file is /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis/SPAdes_Psq-CGal-B_decontam_R1R2_noIsolate/scaffolds.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Using local lineages directory /home/e1garcia/shotgun_PIRE/abyss/busco_downloads/lineages/actinopterygii_odb10
+INFO:	Running BUSCO using lineage dataset actinopterygii_odb10 (eukaryota, 2021-02-19)
+INFO:	Running 1 job(s) on metaeuk, starting at 03/05/2023 18:06:41
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 3640 job(s) on hmmsearch, starting at 03/05/2023 18:20:44
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1092 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1456 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	1820 of 3640 task(s) completed
+INFO:	[hmmsearch]	3276 of 3640 task(s) completed
+INFO:	[hmmsearch]	3640 of 3640 task(s) completed
+INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
+INFO:	Running 1 job(s) on metaeuk, starting at 03/05/2023 18:22:16
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 2146 job(s) on hmmsearch, starting at 03/05/2023 18:57:26
+INFO:	[hmmsearch]	215 of 2146 task(s) completed
+INFO:	[hmmsearch]	430 of 2146 task(s) completed
+INFO:	[hmmsearch]	859 of 2146 task(s) completed
+INFO:	[hmmsearch]	1073 of 2146 task(s) completed
+INFO:	[hmmsearch]	1288 of 2146 task(s) completed
+INFO:	[hmmsearch]	1717 of 2146 task(s) completed
+INFO:	[hmmsearch]	1932 of 2146 task(s) completed
+INFO:	[hmmsearch]	2146 of 2146 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:41.8%[S:41.3%,D:0.5%],F:17.8%,M:40.4%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:41.8%[S:41.3%,D:0.5%],F:17.8%,M:40.4%,n:3640   |
+	|1521	Complete BUSCOs (C)                       |
+	|1503	Complete and single-copy BUSCOs (S)       |
+	|18	Complete and duplicated BUSCOs (D)        |
+	|649	Fragmented BUSCOs (F)                     |
+	|1470	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 3143 seconds
+INFO:	Results written in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis/busco_scaffolds_results-SPAdes_Psq-CGal-B_decontam_R1R2_noIsolate
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
