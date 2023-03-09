@@ -210,21 +210,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 #all 3 libs
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "all_3libs" "decontam" "782000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus" "fq_fp1_clmp_fp2_fqscrn_rprd"
-
 ```
-Job IDs:
-```
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-          10454748     himem     Sp8s jbald004  R       0:04      1 coreV4-21-himem-003
-          10454747     himem     Sp8s jbald004  R       0:11      1 coreV4-21-himem-002
-          10454746     himem     Sp8s jbald004  R       0:19      1 coreV2-23-himem-004
-          10454745     himem     Sp8s jbald004  R       0:28      1 coreV2-23-himem-003
- 
-```
-Libraries for each assembly:
-A	7A
-B	8A
-C	9A
 
 Quast & BUSCO Scores are as follows:
 ```
@@ -245,7 +231,7 @@ Dar  |all_3libs  |decontam       |scaffolds       |off       |2       |74736  |1
 
 The best library was Dar-CJol-C so I assembled a genome with contaminated files:
 ```
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "3" "contam" "782000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Dar" "3" "contam" "782000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus" "fq_fp1_clmp_fp2"
 ```
 
 
