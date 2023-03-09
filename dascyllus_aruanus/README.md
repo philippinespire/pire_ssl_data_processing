@@ -227,7 +227,7 @@ B	8A
 C	9A
 
 Quast & BUSCO Scores are as follows:
-``
+```
 Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
 Dar  |Dar-CJol-A  |decontam       |contigs       |off       |2       |78766  |73498       |626581216       |41.06%       |9455       |20068       |0.00       |54.8%
