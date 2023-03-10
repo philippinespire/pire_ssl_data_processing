@@ -228,9 +228,8 @@ Dar  |Dar-CJol-C  |decontam       |scaffolds       |off       |2       |71022  |
 Dar  |all_3libs  |decontam       |contigs       |off       |2       |76146  |125988       |454159430       |40.75%       |6088       |20911       |0.00       |33.7%
 Dar  |all_3libs  |decontam       |scaffolds       |off       |2       |74736  |125988       |527468322       |40.80%       |7901       |18104       |690.87       |42.3%
 
-Dar  |Dar-CJol-C  |contam       |contigs       |off       |2       |64013  |185103       |700058345       |40.99%       |15054       |12919       |0.00       |xx%
-Dar  |Dar-CJol-C  |contam       |scaffolds       |off       |2       |63490  |185103       |701614529       |40.99%       |15320       |12689     |5.85       |xx%
-
+Dar  |Dar-CJol-C  |contam       |contigs       |off       |2       |64013  |185103       |700058345       |40.99%       |15054       |12919       |0.00       |66.7%
+Dar  |Dar-CJol-C  |contam       |scaffolds       |off       |2       |63490  |185103       |701614529       |40.99%       |15320       |12689     |5.85       |67.0%
 
 ```
 
@@ -240,4 +239,15 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 ```
 
 
+=============================
+## STEP 10 Mitofinder
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus Dar SPAdes_Dar-CJol-C_contam_R1R2_noIsolate Pomacentridae
+```
 
+=============================
+## STEP 11 Clean-up
+
+```
+du -h | sort -rh > Dar_ssl_beforeDeleteting_IntrmFiles
+```
