@@ -20,7 +20,7 @@ mkdir ${SSL_DIR}/mitofinder
 
 NAME=${SPECIES}_${ASSEMBLY}_${FAMILY}
 
-cp /home/breid/denovo_genome_assembly/mitofinder/mitofinder_refpanel/${FAMILY}.gb ${SSL_DIR}/mitofinder
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/mitofinder_refpanel/${FAMILY}.gb ${SSL_DIR}/mitofinder
 
 cp ${SSL_DIR}/${ASSEMBLY}/scaffolds.fasta ${SSL_DIR}/mitofinder
 
