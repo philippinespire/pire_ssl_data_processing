@@ -440,6 +440,13 @@ You can run Mitofinder on the best contam assembly to find and annotate the mito
 
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch [assembly dir] [species code] [SPAdes directory] [family]
 
+Note that if you are assembling a genome for a species from a family that we have not run through SSL yet, you may have to add a mitochondrion from that family to the reference panel. An example for Parupeneus (Mullidae):
+
+* Go to [NCBI](https://www.ncbi.nlm.nih.gov/genbank/) and search for full mitochondrial genome sequences from your species' family. For "Mullidae mitochondrion" there are multiple hits, you can just click on the first (Parupeneus indicus - close enough!) to go to the sequence record.
+* Download to your local computer - in the upper right part of the screen click on "Send to", then click "Complete Record", for Choose Destination click "File", and then make sure the format "Genbank" is chosen, then click on "Create file".
+* This will download to your computer as a file called "sequence.gb" - rename with the correct family ("Mullidae.gb").
+* 
+
 Check the outputs - the complete mitochondrial genome should have 15 genes and very high depth of coverage (you may have some pseudo-mitochondrial genes or genomes with fewer genes). For species identification, find the COX1 sequence and run a [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome) search. If there are no close matches it may be helpful to try [BOLD}(https://www.boldsystems.org/) or private sequence repositories.
 
 ---
