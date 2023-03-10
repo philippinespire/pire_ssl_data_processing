@@ -226,8 +226,8 @@ Psq  |Psq-CGal-B  |decontam       |scaffolds       |off       |2       |78091 |6
 Psq  |Psq_allLibs  |decontam       |contigs       |off       |2       |70062 |116609       |631892852       |39.84%       |9658       |16716       |0.00       |61.1%
 Psq  |Psq_allLibs  |decontam       |scaffolds       |off       |2       |69128 |116609       |635727946       |39.85%       |11536       |16341       |16.18       |61.7%
 
-Psq  |Psq_allLibs  |decontam       |contigs       |off       |2       |66253 |175301       |684370756       |40.15%       |13699       |13833       |0.00       |%
-Psq  |Psq_allLibs  |decontam       |scaffolds       |off       |2       |65477 |178454       |687593236       |40.17%       |13959       |13622       |23.46       |%
+Psq  |Psq_allLibs  |contam       |contigs       |off       |2       |66253 |175301       |684370756       |40.15%       |13699       |13833       |0.00       |66.2%
+Psq  |Psq_allLibs  |contam       |scaffolds       |off       |2       |65477 |178454       |687593236       |40.17%       |13959       |13622       |23.46       |66.4%
 
 ```
 The best assembly was Psq_allLibs scaffolds, so I assembled a genome using contaminated files:
