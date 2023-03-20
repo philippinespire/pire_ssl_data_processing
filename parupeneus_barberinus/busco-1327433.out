@@ -24,3 +24,35 @@ INFO:	[hmmsearch]	3276 of 3640 task(s) completed
 INFO:	[hmmsearch]	3640 of 3640 task(s) completed
 INFO:	Extracting missing and fragmented buscos from the file refseq_db.faa...
 INFO:	Running 1 job(s) on metaeuk, starting at 03/09/2023 19:56:47
+INFO:	[metaeuk]	1 of 1 task(s) completed
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 1273 job(s) on hmmsearch, starting at 03/09/2023 20:27:16
+INFO:	[hmmsearch]	128 of 1273 task(s) completed
+INFO:	[hmmsearch]	255 of 1273 task(s) completed
+INFO:	[hmmsearch]	382 of 1273 task(s) completed
+INFO:	[hmmsearch]	510 of 1273 task(s) completed
+INFO:	[hmmsearch]	764 of 1273 task(s) completed
+INFO:	[hmmsearch]	892 of 1273 task(s) completed
+INFO:	[hmmsearch]	1019 of 1273 task(s) completed
+INFO:	[hmmsearch]	1146 of 1273 task(s) completed
+INFO:	[hmmsearch]	1273 of 1273 task(s) completed
+INFO:	Validating exons and removing overlapping matches
+INFO:	Results:	C:66.4%[S:65.2%,D:1.2%],F:12.8%,M:20.8%,n:3640	   
+
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset actinopterygii_odb10        |
+	--------------------------------------------------
+	|C:66.4%[S:65.2%,D:1.2%],F:12.8%,M:20.8%,n:3640   |
+	|2416	Complete BUSCOs (C)                       |
+	|2373	Complete and single-copy BUSCOs (S)       |
+	|43	Complete and duplicated BUSCOs (D)        |
+	|466	Fragmented BUSCOs (F)                     |
+	|758	Missing BUSCOs (M)                        |
+	|3640	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 2789 seconds
+INFO:	Results written in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus/busco_scaffolds_results-SPAdes_allLibs_contam_R1R2_noIsolate
+INFO:	For assistance with interpreting the results, please consult the userguide: https://busco.ezlab.org/busco_userguide.html
+
