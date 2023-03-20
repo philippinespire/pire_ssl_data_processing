@@ -1,0 +1,30 @@
+
+The following have been reloaded with a version change:
+  1) slurm/20.11.5 => slurm/21.08
+
+ls: cannot access /*1.fq.gz: No such file or directory
+ls: cannot access /*2.fq.gz: No such file or directory
+ls: cannot access /*1.fq.gz: No such file or directory
+ls: cannot access /*2.fq.gz: No such file or directory
+SPAdes genome assembler v3.15.2
+
+Usage: spades.py [options] -o <output_dir>
+spades.py: error: argument --pe1-1: expected 1 argument
+
+Running QUAST Now
+
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus/SPAdes_allLibs_contam_R1R2_noIsolate/contigs.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+ERROR! File not found (contigs): /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus/SPAdes_allLibs_contam_R1R2_noIsolate/scaffolds.fasta
+
+In case you have troubles running QUAST, you can write to quast.support@cab.spbu.ru
+or report an issue on our GitHub repository https://github.com/ablab/quast/issues
+Please provide us with quast.log file from the output directory.
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_contigs_report/transposed_report.tsv': No such file or directory
+cp: cannot stat `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus/SPAdes_allLibs_contam_R1R2_noIsolate/quast_scaffolds_report/transposed_report.tsv': No such file or directory
+/var/spool/slurmd/job10457377/slurm_script: line 166: SPAdes_allLibs_contam_R1R2_noIsolate/resource_usage_m.tsv: No such file or directory
+/var/spool/slurmd/job10457377/slurm_script: line 168: SPAdes_allLibs_contam_R1R2_noIsolate/resource_usage_g.tsv: No such file or directory
+/var/spool/slurmd/job10457377/slurm_script: line 170: SPAdes_allLibs_contam_R1R2_noIsolate/resource_usage_k.tsv: No such file or directory
