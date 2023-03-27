@@ -244,10 +244,10 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus Dar SPAdes_Dar-CJol-C_contam_R1R2_noIsolate Pomacentridae
 ```
+After running Mitofinder, I found that therewere a few contigs that had COX I matching to Dascyllus aruanus, and other species (percent identity between 88 to 97%), which can be a sign of contamination. However, when blasted on the BOLD database, the final assembly matches with Dascyllus aruanus.
 
 =============================
 ## STEP 11 Clean-up
 
-```
-du -h | sort -rh > Dar_ssl_beforeDeleteting_IntrmFiles
-```
+Did clean up based on the ssl instructions!
+
