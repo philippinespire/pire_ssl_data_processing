@@ -234,4 +234,16 @@ The best assembly was Psq_allLibs scaffolds, so I assembled a genome using conta
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Psq" "all_2libs" "contam" "725000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis"
 ```
+=============================
+## STEP 10 Mitofinder
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis Psq SPAdes_allLibs_contam_R1R2_noIsolate Anthiadidae
+```
+After running Mitofinder, I blasted the *genesNT.fasta file on NCBI and found 95.62% match with Pseudanthias squamipinnis.
+
+=============================
+## STEP 11 Clean-up
+
+Did clean up based on the ssl instructions!
+
 
