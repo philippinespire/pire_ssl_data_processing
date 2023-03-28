@@ -230,8 +230,8 @@ Pbb  |Pbb-CGal-B  |decontam       |scaffolds       |off       |2       |65407 |8
 Pbb  |Pbb-allLibs  |decontam       |contigs       |off       |2       |66124 |92752       |479993197       |45.18%       |8302       |17761       |0.00       |58.0%
 Pbb  |Pbb-allLibs  |decontam       |scaffolds       |off       |2       |65592 |92752       |486262446       |45.19%       |8554       |17380       |15.76       |59.0%
 
-Pbb  |Pbb-allLibs  |contam       |contigs       |off       |2       |61649 |97674       |551848622       |45.26%       |11097       |14728       |0.00       |66.7%
-Pbb  |Pbb-allLibs  |contam       |scaffolds       |off       |2       |61027 |97674       |553956727       |45.26%       |11337       |14444       |6.05       |67.0%
+Pbb  |Pbb-allLibs  |contam       |contigs       |off       |2       |61649 |97674       |551848622       |45.26%       |11097       |14728       |0.00       |66.2%
+Pbb  |Pbb-allLibs  |contam       |scaffolds       |off       |2       |61027 |97674       |553956727       |45.26%       |11337       |14444       |6.05       |66.4%
 
 
 ```
@@ -240,3 +240,15 @@ Best library was Pbb-allLibs scaffolds, so I assembled a genome using the contam
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pbb" "all_2libs" "contam" "515000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus" "fq_fp1_clmp_fp2"
 ```
+
+=============================
+## STEP 10 Mitofinder
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus Pbb SPAdes_allLibs_contam_R1R2_noIsolate Mullidae
+```
+After running Mitofinder, blasting the COXI gave 99.81% ID to Parupeneus barberinus mtDNA.
+
+=============================
+## STEP 11 Clean-up
+
+Did clean up based on the ssl instructions!
