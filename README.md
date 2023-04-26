@@ -138,29 +138,47 @@ ___
 
 **Directories**
 
-Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`
+Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq` if they don't already exits
 
 ```sh
 cd pire_ssl_data_processing
-mkdir spratelloides_gracilis 
-mkdir spratelloides_gracilis/logs
-mkdir spratelloides_gracilis/shotgun_raw_fq
+mkdir <your_species> 
+mkdir <your_species>/logs
+mkdir <your_species>/shotgun_raw_fq
 ```
 
 **Data**
 
-Transfer your raw data into `shotgun_raw_fq`. Your data might be avaliable in the RC, in which case c
-*(can take several hours)*
+Data files are sent first to TAMUCC. Therer are two ways to get these data into ODU. 
+	
+	1. **Copy or transfer data to ODU by scp or other protocol** *(can take several hours)*
+
 ```sh
-cp <source of files> spratelloides_gracilis/shotgun_raw_fq  # scp | cp | mv
+scp <source of files> <your_species>/shotgun_raw_fq  # scp | cp | mv
+```	
+	
+This was the original way we were using to tranfer data from the begining of the project till 2023, when we switched to downloading data with wget insted. So, if you are looking for data originated before 2023, these are likely already transferred to the species directory within SSL or in the RC (the deep freezer). Check if you already have directories for your species in the SSL and if this has the sub-direcotry `shotgun_raw_fq` with your raw data in it. Alternatively, your data might had been transferred to RC. Check if there is any data for your species there.
 
+```sh
+cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
+ls
+```
+**Note: The RC migh only be available in the login node. So, if you already did `salloc` into a computing node and can't access the RC, type `exit` to go back to the login node and try again.**
 
+	2. **Download data from TAMUCC Grid to ODU with gridDownloader.sh** 
+
+After 2023, TAMUCC started placing data files in the "Grid" so they could be downloaded in parallel (making the tranfer of data MUCH FASTER). So, if your data is recently new and it is not at ODU yet, it is probably really for you at the Grid. 
+
+Instructions on using `gridDownloader.sh` can be found at the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo under "1. Download your data from the TAMUCC grid"
+
+**Check your Data!!!***
+	
 Check your raw files: given that we use paired-end sequencing, you should have one pair of files (1 forward and 1 reverse) per library. This  means that you should have the same number of foward (1.fq.gz or f.fq.gz) and reverse sequence files (2.fq.gz or r.fq.gz).
- If you don't have equal numbers for foward and reverse files, check with whoever provided the data to make sure there was no issues while transferring.
+If you don't have equal numbers for foward and reverse files, check with whoever provided the data to make sure there was no issues while transferring.
 
 You will likely get 2 or 3 libraries (4 or 6 files total). Sgr example:
 ```sh
-ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq
+ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
 
 -rwxrwx--- 1 e1garcia carpenter         248 Jul 27 12:37 README
 -rwxrwx--- 1 e1garcia carpenter 15652747635 Jul 22 17:19 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
@@ -171,28 +189,28 @@ ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracili
 -rwxrwx--- 1 e1garcia carpenter 17698149145 Jul 22 17:54 SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_2.fq.gz
 ```
 
-Make a copy of your raw files in the longterm carpenter RC dir **ONLY** if one doesn't exits already (if you copied your data from the RC, a long-term copy already exists)
+**Make a copy of your raw data in the RC**
+	
+Now that you have your data, make a copy of your raw files in the longterm carpenter RC dir **ONLY** if one doesn't exits already (if you copied your data from the RC, a long-term copy already exists)
 ```sh
 cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
 mkdir <species_name>
-mkdir <species_name>/fq
-cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<species_name>/fq
+mkdir <species_name>/shotgun_raw_fq
+cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<species_name>/shotgun_raw_fq
 ```
-*The RC drive is only available from the login node (you won't find it after getting a working node, i.e. `salloc`)*
+*The RC drive might only be available from the login node (you won't find it after getting a working node, i.e. `salloc`). If you already `salloc` and can't find the RC, type `exit` and try again*
 
-
-Now create a `README` in the `fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out from which individual(s) these sequence files came from.
-
+**Create a README**
+	
+Now create a `README` in the `shotgun_raw_fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out from which individual(s) these sequence files came from.
 
 This information is usually provied by Sharon Magnuson in species [slack](https://app.slack.com/client/TMJJ06SH0/CMPKY5C81/thread/CQ9GAAYGY-1627263374.002300) channel
 
 ```sh
-cd spratelloides_gracilis/fq
+# Sgr Example:
+cd spratelloides_gracilis/shotgun_raw_fq
 nano README.md
-```
-
-Example:
-```sh
+***
 RC to e1garcia
 scp <source of files> /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq
 
