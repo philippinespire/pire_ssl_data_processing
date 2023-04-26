@@ -130,7 +130,7 @@ ___
 <details><summary>A. PRE-PRECESSING SEQUENCES</summary>
 <p>	
 	
-### A. PRE-PRECESSING SEQUENCES
+### PRE-PRECESSING SEQUENCES
 
 ---
 
@@ -214,7 +214,7 @@ ___
 <details><summary>B. GENOME ASSEMBLY</summary>
 <p>
 	
-### B. GENOME ASSEMBLY
+### GENOME ASSEMBLY
 
 ---
 
@@ -435,7 +435,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ---
 
-#### 9. Update the main assembly stats table with your species
+#### 8. Update the main assembly stats table with your species
 
 Add a new record for your species/assembly to the [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
 
@@ -452,7 +452,7 @@ Next, you need to determine the best assembly to use the decontaminated data. Go
 
 --- 
 
-#### **10. Evaluate then either go back to step B2 or  move onto next step**
+#### **9. Evaluate then either go back to step B2 or  move onto next step**
 
 Assuming you have completed step 9, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species (for example, you can check the ["best assembly table"](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv).
 If BUSCO values are too low, it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO")
@@ -469,7 +469,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ---
 
-### Identifying mitochondrial genome with Mitofinder
+#### 10. Identifying mitochondrial genome with Mitofinder
 
 One of the contigs in your assembled genome will probably be the mitochondrial genome (sequenced at high depth). Identifying this contig can be useful for confirming species identity.
 
@@ -495,7 +495,7 @@ ___
 <details><summary>C. PROBE DESIGN</summary>
 <p>
 	
-### C. PROBE DESIGN
+### PROBE DESIGN
 
 In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
 
@@ -508,7 +508,7 @@ Among other output, you will create the following 4 files:
 This instructions have been modified from Rene's [de novo assembly probe repo](https://github.com/philippinespire/denovo_genome_assembly/tree/main/WGprobe_creation) 
 to best fit this repo
 
-#### 10 Identifying regions for probe development 
+#### 1 Identifying regions for probe development 
 
 From your species directory, make a new dir for the probe design
 ```sh
@@ -589,7 +589,7 @@ Move out files into your species logs dir
 mv *out ../logs
 ```
 
-#### 11 Closest relatives with available genomes
+#### 2 Closest relatives with available genomes
 
 The last thing to do is to create a text file with links to available genomes from the 5 most closely-related species.
 
@@ -622,7 +622,7 @@ https://www.ncbi.nlm.nih.gov/genome/2646
 https://www.ncbi.nlm.nih.gov/genome/7889
 ```
 
-## Files to Send
+### 3 Files to Send
 
 Share the following files with Arbor Bio to aid in probe creation:
 
@@ -683,7 +683,7 @@ du -h | sort -rh > <yourspecies>_ssl_beforeDeleting_IntermFiles
 # Sgr example Sgr_ssl_beforeDeleting_IntermFiles
 ```
 
-### Make a copy of important files 
+#### 1 Make a copy of important files 
 Before deleting files, make a copy of important files in the RC (only available in the login node):
 
 1. raw sequence files (this should had been done already but check again)
@@ -707,7 +707,7 @@ cp SPAdes_SgC0072C_contam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_n
 cp SPAdes_SgC0072C_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/SPAdes_SgC0072C_decontam_R1R2_noIsolate
 ```
 
-### Delete unneeded files
+#### 2 Delete unneeded files
 Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from intermediate processes (Fastp1, Clumpify, and Fastq Screen; steps 0, 2, and 5). Thus:
 
 Keep files from:
