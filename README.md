@@ -29,9 +29,11 @@ If you are working on an SSL analysis project (or if you wish to claim a project
 |Gerres macracanthus | On ODU HPC | 36 | ?? | Data on HPC |
 |Lutjanus fulviflamma | Needs extraction | ?? | ?? | For UP Mindanao |
 |Encrasicholina_pseudoheteroloba | On ODU HPC | n/a | n/a | Sequencing data weird - dropping from priority list  |
-|Spratelloides delicatulus | On ODU HPC | ?? | Eric | Tranferring data | originally a RAD species | 
+|Spratelloides delicatulus | On ODU HPC | ?? | Eric | Originally a RAD species | 
 
 ---
+
+## Getting Started
 
 <details><summary>Before You Start, Read This</summary>
 <p>
@@ -125,9 +127,6 @@ ___
 
 ## Data Processing Roadmap
 
-___
-
-
 <details><summary>A. PRE-PRECESSING SEQUENCES</summary>
 <p>	
 	
@@ -201,12 +200,20 @@ bash ../../runGIT.bash "README of raw data"
 
 ---
 
+
 #### 2. Initial processing
 
 Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo, then return here
 * This includes running FASTQC, FASTP1, CLUMPIFY, FASTP2, FASTQ SCREEN, and file repair scripts from the pre-processing repo
+	
+</p>
+</details>
+
 ___
 
+<details><summary>B. GENOME ASSEMBLY</summary>
+<p>
+	
 ### B. GENOME ASSEMBLY
 
 ---
@@ -479,8 +486,15 @@ Note that if you are assembling a genome for a species from a family that we hav
 
 Check the outputs - the complete mitochondrial genome should have 15 genes and very high depth of coverage (you may have some pseudo-mitochondrial genes or genomes with fewer genes). For species identification, find the COX1 sequence and run a [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome) search. If there are no close matches it may be helpful to try [BOLD}(https://www.boldsystems.org/) or private sequence repositories.
 
----
 
+</p>
+</details>
+
+___
+
+<details><summary>C. PROBE DESIGN</summary>
+<p>
+	
 ### C. PROBE DESIGN
 
 In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
@@ -648,6 +662,14 @@ Eric will then share these with Arbor BioSciences.
 
 ---
 
+</p>
+</details>
+
+___
+
+<details><summary>D. CLEANNING UP</summary>
+<p>
+	
 ## Cleaning Up
 
 The SSL pipeline creates multiple copies of your data in the form of intermediate files. Assuming that you have finished the pipeline
@@ -733,3 +755,5 @@ mv Sgr_ssl* logs
 mv deleted_files_log logs
 ```
 
+</p>
+</details>
