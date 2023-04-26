@@ -26,6 +26,7 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Gerres macracanthus | On ODU HPC | 36 | ?? | Data on HPC |
 |Lutjanus fulviflamma | Needs extraction | ?? | ?? | For UP Mindanao |
 |Encrasicholina_pseudoheteroloba | On ODU HPC | n/a | n/a | Sequencing data weird - dropping from priority list  |
+|Spratelloides delicatulus | On ODU HPC | ?? | Eric | Tranferring data | originally a RAD species | 
 
 ---
 
@@ -113,11 +114,12 @@ git add -u .
 git commit -m "update deletions"
 git push -u origin main
 ```
+
 ___
 
 ## Data Processing Roadmap
 
----
+___
 
 </p>
 </details>
