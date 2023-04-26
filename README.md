@@ -136,6 +136,25 @@ ___
 
 #### 1. Set up directories and data
 
+**Directories**
+
+Create your `species dir` and and subdirs `logs` and `shotgun_raw_fq`
+
+```sh
+cd pire_ssl_data_processing
+mkdir spratelloides_gracilis 
+mkdir spratelloides_gracilis/logs
+mkdir spratelloides_gracilis/shotgun_raw_fq
+```
+
+**Data**
+
+Transfer your raw data into `shotgun_raw_fq`. Your data might be avaliable in the RC, in which case c
+*(can take several hours)*
+```sh
+cp <source of files> spratelloides_gracilis/shotgun_raw_fq  # scp | cp | mv
+
+
 Check your raw files: given that we use paired-end sequencing, you should have one pair of files (1 forward and 1 reverse) per library. This  means that you should have the same number of foward (1.fq.gz or f.fq.gz) and reverse sequence files (2.fq.gz or r.fq.gz).
  If you don't have equal numbers for foward and reverse files, check with whoever provided the data to make sure there was no issues while transferring.
 
@@ -161,16 +180,6 @@ cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_pr
 ```
 *The RC drive is only available from the login node (you won't find it after getting a working node, i.e. `salloc`)*
 
-Create your `species dir` and and subdirs `logs` and `fq`. Transfer your raw data into `fq`  (your data will most likely be avaliable in the RC)
-*(can take several hours)*
-
-```sh
-cd pire_ssl_data_processing
-mkdir spratelloides_gracilis 
-mkdir spratelloides_gracilis/logs
-mkdir spratelloides_gracilis/fq
-cp <source of files> spratelloides_gracilis/fq  # scp | cp | mv
-```
 
 Now create a `README` in the `fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out from which individual(s) these sequence files came from.
 
