@@ -1,9 +1,12 @@
 # SHOTGUN DATA PROCESSING & ANALYSIS
 
 This repo contains instructions to process data from  Shotgun Sequencing Libraries - SSL. 
+
 ---
 
-A list of ongoing SSL projects can be found below. If you are working on an SSL analysis project (or if you wish to claim a project), please indicate so in the table. When data are available, priority should go to species that are higher on the CSSL priority list which will need probes in the near future.
+A list of ongoing SSL projects can be found below. 
+
+If you are working on an SSL analysis project (or if you wish to claim a project), please indicate so in the table. When data are available, priority should go to species that are higher on the CSSL priority list which will need probes in the near future.
 
 |Species | Data availability | CSSL priority | Analysis lead | Analysis status / notes |
 | --- | --- | --- | --- | --- |
@@ -120,9 +123,6 @@ ___
 ## Data Processing Roadmap
 
 ___
-
-</p>
-</details>
 
 
 <details><summary>A. PRE-PRECESSING SEQUENCES</summary>
