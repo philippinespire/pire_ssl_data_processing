@@ -1,37 +1,7 @@
 # SHOTGUN DATA PROCESSING & ANALYSIS
 
+This repo contains instructions to process data from  Shotgun Sequencing Libraries - SSL. 
 ---
-
-The purpose of this repo is to document the processing and analysis of `Shotgun Sequencing Libraries - SSL data` for probe development which then will be processed according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing). 
- Both SSL and CSSL pipelines use scripts from the [Pre-Processing PIRE Data](https://github.com/philippinespire/pire_fq_gz_processing) repo at the beginning of files processing. 
-
-Each species will get it's own directory within this repo.  Try to avoing putting dirs inside dirs inside dirs. 
-
-The Sgr dir will serve as the example to follow in terms of both directory structure and documentation of progress in `README.md`.
-
-If this is your first time working on wahab/turing or want to check out some tips see the [Working on ODU's HPC repo](https://github.com/philippinespire/denovo_genome_assembly/tree/main/working_in_Turing-Wahab)
-
-Contact Dr. Eric Garcia for questions or if you are having issues running scripts (e1garcia@odu.edu)
-
----
-
-## Use Git/GitHub to Track Progress
-
-To process a species, begin by cloning this repo to your working dir. I recommend setting up a `shotgun_PIRE` sub-dir in your home dir if you have not done something similar already
-
-Example: `/home/youruserID/shotgun_PIRE/`
-
-Clone this repo
-```
-cd ~ 	# this will take you to your home dir
-cd shotgun_PIRE
-git clone https://github.com/philippinespire/pire_ssl_data_processing.git
-```
-
-The data will be processed and analyzed in the repo.  There is a `.gitignore` file that lists files and directories to be ignored by git.  It includes large files that git cannot handle (fq.gz, bam, etc) and other repos that might be downloaded into this repo. 
-For example, the BUSCO outdir contains several large files that will cause problems for git so `busco_*/` occurs in  `.gitignore` so that it is not uploaded to github in this repo.
-
-Because large data files will not be saved to github, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermedate files produced by fastp, clumpify, fastq_screen.
 
 A list of ongoing SSL projects can be found below. If you are working on an SSL analysis project (or if you wish to claim a project), please indicate so in the table. When data are available, priority should go to species that are higher on the CSSL priority list which will need probes in the near future.
 
@@ -56,6 +26,52 @@ A list of ongoing SSL projects can be found below. If you are working on an SSL 
 |Gerres macracanthus | On ODU HPC | 36 | ?? | Data on HPC |
 |Lutjanus fulviflamma | Needs extraction | ?? | ?? | For UP Mindanao |
 |Encrasicholina_pseudoheteroloba | On ODU HPC | n/a | n/a | Sequencing data weird - dropping from priority list  |
+
+---
+
+<details><summary>Before You Start, Read This</summary>
+<p>
+
+## Before You Start, Read This
+The purpose of this repo is to document the processing and analysis of `Shotgun Sequencing Libraries - SSL data` for probe development which then will be processed according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) or the [Low Coverage Whole Genome Sequencing - lcWGS repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+
+SSL, CSSL and lcWGS pipelines use scripts from the [Pre-Processing PIRE Data](https://github.com/philippinespire/pire_fq_gz_processing) repo at the beginning of files processing. 
+
+Each species will get it's own directory within this repo.  Try to avoing putting dirs inside dirs inside dirs. 
+
+The Sgr dir will serve as the example to follow in terms of both directory structure and documentation of progress in `README.md`.
+
+If this is your first time working on wahab/turing or want to check out some tips see the [Working on ODU's HPC repo](https://github.com/philippinespire/denovo_genome_assembly/tree/main/working_in_Turing-Wahab)
+
+Contact Dr. Eric Garcia for questions or if you are having issues running scripts (e1garcia@odu.edu)
+
+---
+
+</p>
+</details>
+
+
+<details><summary>Clonning and Maintaining Repo with Git</summary>
+<p>
+
+	
+## Use Git/GitHub to Track Progress and Clone the SSL repo
+
+To process a species, begin by cloning this repo to your working dir. I recommend setting up a `shotgun_PIRE` sub-dir in your home dir if you have not done something similar already
+
+Example: `/home/youruserID/shotgun_PIRE/`
+
+Clone this repo
+```
+cd ~ 	# this will take you to your home dir
+cd shotgun_PIRE
+git clone https://github.com/philippinespire/pire_ssl_data_processing.git
+```
+
+The data will be processed and analyzed in the repo.  There is a `.gitignore` file that lists files and directories to be ignored by git.  It includes large files that git cannot handle (fq.gz, bam, etc) and other repos that might be downloaded into this repo. 
+For example, the BUSCO outdir contains several large files that will cause problems for git so `busco_*/` occurs in  `.gitignore` so that it is not uploaded to github in this repo.
+
+Because large data files will not be saved to github, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermedate files produced by fastp, clumpify, fastq_screen. This can also be accomplished in the cleanning step at the end of this repo.
 
 ---
 
@@ -101,6 +117,15 @@ ___
 
 ## Data Processing Roadmap
 
+---
+
+</p>
+</details>
+
+
+<details><summary>A. PRE-PRECESSING SEQUENCES</summary>
+<p>	
+	
 ### A. PRE-PRECESSING SEQUENCES
 
 ---
