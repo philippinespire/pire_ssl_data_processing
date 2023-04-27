@@ -138,7 +138,7 @@ ___
 
 **Directories**
 
-Create your `species dir` and subdirs `logs` and `shotgun_raw_fq` if they don't already exit
+Create your `species dir` and subdirs `logs` and `fq_raw` if they don't already exit
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing
@@ -146,7 +146,7 @@ mkdir <your_species>
 mkdir <your_species>/logs
 mkdir <your_species>/fq_raw
 ```
-*Note: Most species will have "shotgun_raw_fq" instead of "fq_raw" as this was the origial way we were naming the initial raw directory. Since then, we changed into fq_raw to be consistent with the other repos of the PPP-Pipeline.*
+*Note: Most species will have "fq_raw" instead of "fq_raw" as this was the origial way we were naming the initial raw directory. Since then, we changed into fq_raw to be consistent with the other repos of the PPP-Pipeline.*
 	
 **Species README**
 
@@ -172,10 +172,10 @@ Data files are sent first to TAMUCC. There are two ways to get these data into O
 1. Copy or transfer data to ODU by scp or other protocol *(can take several hours)*
 
 ```sh
-scp <source of files> <your_species>/shotgun_raw_fq  # scp | cp | mv
+scp <source of files> <your_species>/fq_raw  # scp | cp | mv
 ```	
 	
-This was the original way we were using to transfer data from the beginning of the project till 2023, when we switched to downloading data with wget instead. So, if you are looking for data originated before 2023, these are likely already transferred to the species directory within SSL or in the RC (the deep freezer). Check if you already have directories for your species in the SSL and if this has the sub-directory `shotgun_raw_fq` with your raw data in it. Alternatively, your data might had been transferred to RC. Check if there is any data for your species there.
+This was the original way we were using to transfer data from the beginning of the project till 2023, when we switched to downloading data with wget instead. So, if you are looking for data originated before 2023, these are likely already transferred to the species directory within SSL or in the RC (the deep freezer). Check if you already have directories for your species in the SSL and if this has the sub-directory `fq_raw` with your raw data in it. Alternatively, your data might had been transferred to RC. Check if there is any data for your species there.
 
 ```sh
 cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
@@ -196,7 +196,7 @@ If you don't have equal numbers for forward and reverse files, check with whoeve
 
 You will likely get 2 or 3 libraries (4 or 6 files total). Sgr example:
 ```sh
-ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/shotgun_raw_fq
+ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis/fq_raw
 
 -rwxrwx--- 1 e1garcia carpenter         248 Jul 27 12:37 README
 -rwxrwx--- 1 e1garcia carpenter 15652747635 Jul 22 17:19 SgC0072B_CKDL210013395-1a-5UDI294-AK7096_HF33GDSX2_L4_1.fq.gz
@@ -221,11 +221,11 @@ ls
 
 # if no, make one for your species
 mkdir <your_species>
-mkdir <your_species>/shotgun_raw_fq
+mkdir <your_species>/fq_raw
 
 #now copy your files in parallel
 module load parallel
-ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<your_species>/shotgun_raw_fq/* | parallel --no-notice -kj 8 cp {} . &
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<your_species>/fq_raw/* | parallel --no-notice -kj 8 cp {} . &
 ```
  
 Putting the `&` at the end, sends the job to the background. Use `jobs` to see it
@@ -243,13 +243,13 @@ fg
 
 **Create a README for your download**
 	
-Now create a `README` in the `shotgun_raw_fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out from which individual(s) these sequence files came from.
+Now create a `README` in the `fq_raw` dir with the full path to the original copies of the raw files and necessary decoding info to find out from which individual(s) these sequence files came from.
 
 This information is usually provided by Sharon Magnuson in species [slack](https://app.slack.com/client/TMJJ06SH0/CMPKY5C81/thread/CQ9GAAYGY-1627263374.002300) channel
 
 ```sh
 # Sgr Example:
-cd spratelloides_gracilis/shotgun_raw_fq
+cd spratelloides_gracilis/fq_raw
 nano README.md
 ***
 RC to e1garcia
@@ -782,7 +782,7 @@ Keep files from:
 * fq_fp1_clmp_fp2_fqscrn_repaired
 
 Delete fq.gz files from:
-* shotgun_raw_fq
+* fq_raw
 * fq_fp1
 * fq_fp1_clmp
 * fq_fp1_clmp_fp2_fqscrn
