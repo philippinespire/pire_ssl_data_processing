@@ -35,11 +35,13 @@ If you are working on an SSL analysis project (or if you wish to claim a project
 
 ## Getting Started
 
-<details><summary>Before You Start, Read This</summary>
+<details><summary>Overview. Before You Start, Read This</summary>
 <p>
 
-## Before You Start, Read This
-The purpose of this repo is to document the processing and analysis of `Shotgun Sequencing Libraries - SSL data` for probe development which then will be processed according to the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) or the [Low Coverage Whole Genome Sequencing - lcWGS repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+## Overview. Before You Start, Read This
+The purpose of this repo ("the SSL repo") is to document the processing and analysis of all `Shotgun Sequencing Libraries - SSL data`.  All work is performed for the [Philippines PIRE Project - PPP](https://github.com/philippinespire), [NSF Award #1743711](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1743711).
+	
+The two main objectives of `the SSL repo` is to generate a *de novo* genome assembly using `SPAdes`, and to use this assembly to design regions for probe development which themselves will be used to "capture" targeted regions from all populations. The SSL assembles can then be used as a reference in the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) or the [Low Coverage Whole Genome Sequencing - lcWGS repo](https://github.com/philippinespire/pire_lcwgs_data_processing). If you will be using only lcWGS data for your species, you can skip the probe design, section C, but do not skip the cleanning up, section, D.
 
 SSL, CSSL and lcWGS pipelines use scripts from the [Pre-Processing PIRE Data](https://github.com/philippinespire/pire_fq_gz_processing) repo at the beginning of files processing. 
 
@@ -190,15 +192,38 @@ ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracili
 **Make a copy of your raw data in the RC**
 	
 Now that you have your data, make a copy of your raw files in the long-term carpenter RC dir **ONLY** if one doesn't exits already (if you copied your data from the RC, a long-term copy already exists)
-```sh
-cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
-mkdir <species_name>
-mkdir <species_name>/shotgun_raw_fq
-cp <source of files> /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<species_name>/shotgun_raw_fq
-```
-*The RC drive might only be available from the login node (you won't find it after getting a working node, i.e. `salloc`). If you already `salloc` and can't find the RC, type `exit` and try again*
 
-**Create a README**
+*The RC drive might only be available from the login node (you won't find it after getting a working node, i.e. `salloc`). If you already `salloc` and can't find the RC, type `exit` and try again*
+```sh
+# go to the carpenter RC
+cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
+
+# check that your species does not have a directory already:
+ls
+
+# if no, make one for your species
+mkdir <your_species>
+mkdir <your_species>/shotgun_raw_fq
+
+#now copy your files in parallel
+module load parallel
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<your_species>/shotgun_raw_fq/* | parallel --no-notice -kj 8 cp {} . &
+```
+ 
+Putting the `&` at the end, sends the job to the background. Use `jobs` to see it
+```
+# check that your job is working with
+jobs
+
+# if you need to cancel (i.e. your ls was wrong). Use fg to go to the foreground
+fg
+
+# Now you should blinking indicating that the jobs is happenning. To cancel press together the control key and c 
+# you can send the job to the background again with "bg"
+#bg
+```
+
+**Create a README for your download**
 	
 Now create a `README` in the `shotgun_raw_fq` dir with the full path to the original copies of the raw files and necessary decoding info to find out from which individual(s) these sequence files came from.
 
