@@ -134,18 +134,35 @@ ___
 	
 ### PRE-PROCESSING SEQUENCES
 
-#### 1. Set up directories and data
+#### 1. Set up directories, READMEs, and data
 
 **Directories**
 
 Create your `species dir` and subdirs `logs` and `shotgun_raw_fq` if they don't already exit
 
 ```sh
-cd pire_ssl_data_processing
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing
 mkdir <your_species> 
 mkdir <your_species>/logs
 mkdir <your_species>/shotgun_raw_fq
 ```
+
+**Species README**
+
+Create a README for your species, place it inside your main species directory (/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<your_species>/), and document **ALL work done** in it (starting with setting up your directories, above). 
+
+You can use the:
+
+* [species_README_example.md](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/species_README_example.md) as a template and just change/fill in info for your species. This follows the current SSL setup.
+
+If you'd like to use the `species_README_example.md`
+```
+cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/species_README_example.md /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<your_species>/
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<your_species>/
+rm species_README_example.md README.md
+```
+
+* or you can copy a README from another species that has already been processed and replace the information pertaining to your species. 
 
 **Data**
 
