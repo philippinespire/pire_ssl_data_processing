@@ -149,7 +149,7 @@ mkdir <your_species>/shotgun_raw_fq
 
 Data files are sent first to TAMUCC. There are two ways to get these data into ODU. 
 	
-1. Copy or transfer data to ODU by scp or other protocol** *(can take several hours)
+1. Copy or transfer data to ODU by scp or other protocol *(can take several hours)*
 
 ```sh
 scp <source of files> <your_species>/shotgun_raw_fq  # scp | cp | mv
