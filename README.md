@@ -35,7 +35,7 @@ If you are working on an SSL analysis project (or if you wish to claim a project
 
 ## Getting Started
 
-<details><summary>Before You Start, Read This</summary>
+<details><summary>Overview. Before You Start, Read This</summary>
 <p>
 
 ## Overview. Before You Start, Read This
