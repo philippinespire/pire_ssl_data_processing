@@ -104,8 +104,8 @@ You will need to enter your git credentials multiple times each time you run thi
 
 If you should be met with a conflict screen, you are in the `vim` editor.  You can look up instructions on how to interface with it. I typically do the following:
 
-* hit escape key twice
-* type the following
+* press the "control key" together with "c"
+* then type the following
   `:quit!`
  
 If you had to delete files for whatever reason, 
