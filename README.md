@@ -213,7 +213,7 @@ Putting the `&` at the end, sends the job to the background. Use `jobs` to see i
 # check that your job is working with
 jobs
 
-# if you need to cancel (i.e. your ls was wrong). use fg to go to the forground
+# if you need to cancel (i.e. your ls was wrong). Use fg to go to the foreground
 fg
 
 # Now you should blinking indicating that the jobs is happenning. To cancel press together the control key and c 
