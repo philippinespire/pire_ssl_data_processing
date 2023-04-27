@@ -144,9 +144,10 @@ Create your `species dir` and subdirs `logs` and `shotgun_raw_fq` if they don't 
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing
 mkdir <your_species> 
 mkdir <your_species>/logs
-mkdir <your_species>/shotgun_raw_fq
+mkdir <your_species>/fq_raw
 ```
-
+*Note: Most species will have "shotgun_raw_fq" instead of "fq_raw" as this was the origial way we were naming the initial raw directory. Since then, we changed into fq_raw to be consistent with the other repos of the PPP-Pipeline.*
+	
 **Species README**
 
 Create a README for your species, place it inside your main species directory (/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<your_species>/), and document **ALL work done** in it (starting with setting up your directories, above). 
