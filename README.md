@@ -165,7 +165,7 @@ ls
 
 2. Download data from TAMUCC Grid to ODU with `gridDownloader.sh`
 
-After 2023, TAMUCC started placing data files in the "Grid" so they could be downloaded in parallel (making the transfer of data MUCH FASTER). So, if your data is recently new and it is not at ODU yet, it is probably really for you at the Grid. 
+After 2023, TAMUCC started placing data files in the "Grid" so they could be downloaded in parallel (making the transfer of data MUCH FASTER). So, if your data is recently new and it is not at ODU yet, it is probably ready for you at the Grid. 
 
 Instructions on using `gridDownloader.sh` can be found at the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo under "1. Download your data from the TAMUCC grid"
 
