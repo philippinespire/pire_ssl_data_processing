@@ -48,7 +48,7 @@ ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulu
 
 ### 2. Initial processing
 
-Following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo to run FASTQC, FASTP1, CLUMPIFY, FASTP2, FASTQ SCREEN, and file repair scripts
+Now following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo to run FASTQC, FASTP1, CLUMPIFY, FASTP2, FASTQ SCREEN, and file repair scripts
 
 
 ```
@@ -87,3 +87,41 @@ bash ../../../pire_fq_gz_processing/renameFQGZ.bash Sde_SSL_SequenceNameDecode_f
 y
 y
 ```
+
+### FASTQC
+
+Running FASTQC on raw files (Multiple hours).
+```
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"  
+```
+
+I pushed the results and view the MultiQC in  [html git preview page](https://htmlpreview.github.io/)
+
+Potential issues:  
+  * % duplication - 
+	* Alb: XX%, Contemp: XX%
+  * GC content - 
+	* Alb: XX%, Contemp: XX%
+  * number of reads - 
+	* Alb: XX mil, Contemp: XX mil
+
+
+### FASTP1
+
+Running the first Trim
+```
+sbatch ../../pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+```
+
+Potential issues:  
+  * % duplication - 
+    * Alb: XX%, Contemp: XX%
+  * GC content -
+    * Alb: XX%, Contemp: XX%
+  * passing filter - 
+    * Alb: XX%, Contemp: XX%
+  * % adapter - 
+    * Alb: XX%, Contemp: XX%
+  * number of reads - 
+    * Alb: XX mil, Contemp: XX mil
