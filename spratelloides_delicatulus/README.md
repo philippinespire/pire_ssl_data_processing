@@ -22,7 +22,7 @@ Bioinformatic work was performed by *Eric* in the Old Dominion University High P
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing
 mkdir spratelloides_delicatulus 
 mkdir spratelloides_delicatulus/logs
-mkdir spratelloides_delicatulus/shotgun_raw_fq
+mkdir spratelloides_delicatulus/fq_raw
 ```
 
 **Data**
@@ -30,11 +30,12 @@ mkdir spratelloides_delicatulus/shotgun_raw_fq
 SSL data files were downloaded using gridDownloader.sh
 
 ```
-cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/shotgun_raw_fq
-sbatch gridDownloader.sh . <link_to_files>
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_raw
+sbatch gridDownloader.sh . https://gridftp.tamucc.edu/genomics/20230425_PIRE-Sde-ssl
 ```
 
-All 3 library sets are from the same individual: <individual>
+All 3 library sets are from the same individual: Sde-CMat_061_Ex1
+
 
 **Make a copy of your raw data in the RC**
 
@@ -42,7 +43,7 @@ I made a copy of the raw files in the RC
 ```
 cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
 module load parallel
-ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/shotgun_raw_fq/* | parallel --no-notice -kj 8 cp {} . &
+ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_raw/* | parallel --no-notice -kj 8 cp {} . &
 ```
 
 ### 2. Initial processing
@@ -50,3 +51,39 @@ ls /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulu
 Following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo to run FASTQC, FASTP1, CLUMPIFY, FASTP2, FASTQ SCREEN, and file repair scripts
 
 
+```
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/
+mkdir fq_raw fq_fp1 fq_fp1_clmp fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd
+```
+
+Modified the `Sde_SSL_SequenceNameDecode.tsv` file from:
+```
+Sequence_Name   Extraction_ID
+SdC0106107A     Sde-C01_061-Ex1-7A-ssl-1-1
+SdC0106108A     Sde-C01_061-Ex1-8A-ssl-1-1
+SdC0106109A     Sde-C01_061-Ex1-9A-ssl-1-1
+```
+new name: Sde_SSL_SequenceNameDecode_original_deprecated.tsv
+
+
+to:
+```
+Sequence_Name   Extraction_ID
+SdC0106107A     Sde-CMat_061-Ex1-7A-ssl
+SdC0106108A     Sde-CMat_061-Ex1-8A-ssl
+SdC0106109A     Sde-CMat_061-Ex1-9A-ssl
+```
+new name: Sde_SSL_SequenceNameDecode_fixed.tsv
+
+Running a dry run for renaming files
+```
+cd fq_raw
+bash ../../../pire_fq_gz_processing/renameFQGZ.bash Sde_SSL_SequenceNameDecode_fixed.tsv
+```
+
+Everything looks good so renaming for real
+```
+bash ../../../pire_fq_gz_processing/renameFQGZ.bash Sde_SSL_SequenceNameDecode_fixed.tsv rename
+y
+y
+```
