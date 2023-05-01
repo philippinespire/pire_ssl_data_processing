@@ -88,7 +88,7 @@ y
 y
 ```
 
-### FASTQC
+#### FASTQC
 
 Running FASTQC on raw files (Multiple hours).
 ```
@@ -111,7 +111,7 @@ Overrepresented sequences. Probably duplication
 
 Everything else looks good.
 
-### FASTP1
+#### FASTP1
 
 Running the first Trim
 ```
@@ -131,7 +131,7 @@ Highlights:
 	* 2 libs around 90M and one around 220M (this is forward and reverse files together)
 
 
-### Clumpify
+#### Clumpify
 
 Running Clumpify
 ```
@@ -212,7 +212,7 @@ Highlights:
 
 Adapter content is now good (Green). 
 
-### FASTP2
+#### FASTP2
 
 Running Fastp2
 ```
@@ -234,10 +234,118 @@ Potential issues:
 
 Everything looks good. However, we did lose a lot of read. Good to step to go back if we need to gain more reads.
 
-### FASTQ SCREEN
+#### FASTQ SCREEN
 
 Runnig Fastq Screen
 ```
 bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
 ```
+
+That ran successfully.
+
+Running MultiQC on screened files
+```
+sbatch ../../pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+```
+
+That worked too
+
+* No hits. This is what we want:
+	92-94% of all reads
+* Multiple hits, Multiple genomes (any potential contaminators: bacteria, virus, human, etc)
+	1-6% depending on contaminant
+
+
+#### REPAIR
+
+Movng on. Running Repair
+```
+sbatch ../../pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 40
+```
+
+Running MultiQC on re-paired reads
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+```
+
+Highlights:
+* % duplication -
+	* 4-6% (interesting that MultiQC still reports duplication)
+* GC content -
+	* 42% , good
+* number of reads -
+	* 2 sets of files around 10-11M and one set around 30M
+
+We lost a lot of reads in fastp2.
+
+#### Cleanning up 
+
+outs to logs
+```
+mv *out logs
+```
+
+---
+
+## B. GENOME ASSEMBLY
+
+### 1. Genome Properties
+
+*Spratelloides delicatulus* is not in [genomesize.com](https://www.genomesize.com/) database but other confamilials have about 1000 Mb
+
+
+**Estimating genome size, heterozygosity, and other characteristics using Jellyfish and Genomescope**
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sde" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
+
+
+Genome stats for Sde from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions:
+
+Unfortunately, using default settings, the model in Genomescope v1 did not converge at all (see report [here](http://qb.cshl.edu/genomescope/analysis.php?code=vVHSvYopX21GHjsmJ8X3)
+and in v2 the fit is really low, heterozygocity is too high, and length very shor (see report [here](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=b8QuAj0Vg8vOuScJL9ii)).
+
+version    |stat    |min    |max
+------  |------ |------ |------
+2  |Heterozygosity  |0%       |40.128%
+2  |Genome Haploid Length   |286,019,856 bp |292,883,627 bp
+2  |Model Fit       |50.48%       |83.06%
+
+I won't trust these values
+
+
+From genomesize.com the average across 18 confamilials is about 1000 Mbp, so I will be using this number downstream but will see if concatenating files make jellyfish work (see below)
+
+Brendan recommends concatenating libraries if the model fails to converge so I am giving it a try.
+
+UPDATE: even with concatenated files the GenomeScope v1 model did not converge. The v2 still gave weird values. I did try incresing the kmer size and noticed that max heterozygosity decreased with higher kmers. 
+
+Either way, I don't trust the results still. Deleting the concat files and dir and keeping the 1bp arbitrary genome estimate 
+
+```
+mkdir concat_re-pairedFiles_forJelly
+cat fq_fp1_clmp_fp2_fqscrn_rprd/*R1*gz > concat_re-pairedFiles_forJelly/Sde-CMat_061-Ex1-CONCAT-7-8-9A-ssl.clmp.fp2_repr.R1.fq.gz &
+cat fq_fp1_clmp_fp2_fqscrn_rprd/*R2*gz > concat_re-pairedFiles_forJelly/Sde-CMat_061-Ex1-CONCAT-7-8-9A-ssl.clmp.fp2_repr.R2.fq.gz &
+```
+Using concat libs in Jellyfish
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sde-3libs" "concat_re-pairedFiles_forJelly"
+```
+
+### 2. Genome Assembly with SPAdes
+
+goint to Turing
+```
+ssh username@turing.hpc.odu.edu
+```
+
+Running SPAdes in each library independently and all3-together , using decontaminated files and genome size of 1,000,000,000 bp.
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sde" "1" "decontam" "1000000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus" "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sde" "2" "decontam" "1000000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus" "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sde" "3" "decontam" "1000000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus" "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sde" "all_3libs" "decontam" "1000000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
+
+There were only 2 himem nodes open so running lib 1 and all_3libs first. Lib 2 and 3 are pending
 
