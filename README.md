@@ -283,7 +283,7 @@ After this step you should `salloc` into a computing node eveytime you will be w
 
 ### B. GENOME ASSEMBLY
 	
-<details><summary>1. **Genome Properties**</summary>
+<details><summary>1. Genome Properties</summary>
 <p>
 
 In this step, we look for genome size in related literature as a reference, but ultimately use Jellyfish and Genomescope to estimate genome size from our SSL data. We will use Jellyfish and GenomeScope results even if there is an available estimate as these 2 provide a more precise estimates than older methods and provide an estimate of heterozygosity.  Jellyfish estimates are also used for consistency across species assembled in the PIRE Project and to get around potential cases where published individuals or even PIRE species may have been morphologically misidentified.
@@ -486,7 +486,7 @@ Sgr  |SgC0072C  |decontam       |scaffolds       |off     |2       |69932  |1037
 </p>
 </details>
 
-<details><summary>6. **Determine the best assembly**</summary>
+<details><summary>6. Determine the best assembly</summary>
 <p>
 
 We assess quality across multiple metrics since we don't use a golden rule/metric for determining the best assembly. 
@@ -536,7 +536,7 @@ Next, you need to determine the best assembly to use the decontaminated data. Go
 </p>
 </details>
 
-<details><summary>**9. Evaluate then either go back to step B2 or  move onto next step**</summary>
+<details><summary>9. Evaluate then either go back to step B2 or  move onto next step</summary>
 <p>
 
 Assuming you have completed step 9, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species (for example, you can check the ["best assembly table"](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv).
