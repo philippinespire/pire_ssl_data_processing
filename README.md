@@ -129,12 +129,10 @@ ___
 
 ## Data Processing Roadmap
 
-<details><summary>A. PRE-PROCESSING SEQUENCES</summary>
-<p>	
-	
-### PRE-PROCESSING SEQUENCES
+### A. PRE-PROCESSING SEQUENCES
 
-#### 1. Set up directories, READMEs, and data
+<details><summary>1. Set up directories, READMEs, and data</summary>
+<p>
 
 **Directories**
 
@@ -268,8 +266,8 @@ bash ../../runGIT.bash "README of raw data"
 
 ---
 
-
-#### 2. Initial processing
+<details><summary>2. Initial processing</summary>
+<p>
 
 Complete the pre-processing of your files following the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repo, then return here
 * This includes running FASTQC, FASTP1, CLUMPIFY, FASTP2, FASTQ SCREEN, and file repair scripts from the pre-processing repo
@@ -279,15 +277,13 @@ After this step you should `salloc` into a computing node eveytime you will be w
 </p>
 </details>
 
-
-<details><summary>B. GENOME ASSEMBLY</summary>
-<p>
-	
-### GENOME ASSEMBLY
-
 ---
 
-#### 1. **Genome Properties**
+### B. GENOME ASSEMBLY
+	
+<details><summary>1. **Genome Properties**</summary>
+<p>
+
 In this step, we look for genome size in related literature as a reference, but ultimately use Jellyfish and Genomescope to estimate genome size from our SSL data. We will use Jellyfish and GenomeScope results even if there is an available estimate as these 2 provide a more precise estimates than older methods and provide an estimate of heterozygosity.  Jellyfish estimates are also used for consistency across species assembled in the PIRE Project and to get around potential cases where published individuals or even PIRE species may have been morphologically misidentified.
 
 ##### 1a. Fetch the genome properties for your species from existing literature
@@ -342,7 +338,8 @@ Note the source and genome size (if you found one already available) or the Geno
 
 ---
 
-#### 2. Assemble the Genomes with SPAdes
+<details><summary>2. Assemble the Genomes with SPAdes</summary>
+<p>
 
 Congrats! You are now ready to assemble the genome of your species!
 
@@ -412,7 +409,8 @@ Check that `continue` is working by watching that your jobs is running and check
 
 ---
 
-#### 3. Review Info on Assembly Quality from Quast Output
+<details><summary>3. Review Info on Assembly Quality from Quast Output</summary>
+<p>
 
 `QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and for each of your assemblies note the: 
 1. Number of contigs in assembly (this is the last contig column in quast report with the name "# contigs")
@@ -431,7 +429,8 @@ Enter your stats in the table below
 
 ---
 
-#### 4. Run BUSCO
+<details><summary>4. Run BUSCO</summary>
+<p>
 
 Those are basic assembly statistics but we still need to run BUSCO to know how many expected (i.e. highly conserved) genes were recovered by the assembly. 
 
@@ -449,7 +448,8 @@ Repeat the command using scaffolds.
 
 ---
 
-#### 5. Fill in this table with your QUAST and BUSCO values in your species README. 
+<details><summary>5. Fill in this table with your QUAST and BUSCO values in your species README</summary>
+<p>
 
 Few notes:
 
@@ -477,7 +477,8 @@ Sgr  |SgC0072C  |decontam       |scaffolds       |off     |2       |69932  |1037
 
 ---
 
-#### 6. **Determine the best assembly**
+<details><summary>6. **Determine the best assembly**</summary>
+<p>
 
 We assess quality across multiple metrics since we don't use a golden rule/metric for determining the best assembly. 
 Often, it is clear that single library is relatively better than the others as it would have better results across metrics. Yet, sometimes this is not so clear as different assemblies might be better in different metrics. Use the following table to help you decide:
@@ -494,7 +495,8 @@ If you are still undecided on which is the best assembly, post the best candidat
 
 ---
 
-#### 7. Assemble contaminated data for best library 
+<details><summary>7. Assemble contaminated data for best library</summary>
+<p>
 
 ```bash
 #runSPADEShimem_R1R2_noisolate.sbatch <your user ID> <3-letter species ID> <library: all_2libs | all_3libs | 1 | 2 | 3> <contam | decontam> <genome size in bp> <species dir>
@@ -504,7 +506,8 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ---
 
-#### 8. Update the main assembly stats table with your species
+<details><summary>8. Update the main assembly stats table with your species</summary>
+<p>
 
 Add a new record for your species/assembly to the [best_ssl_assembly_per_sp.tsv](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv) file
 
@@ -521,7 +524,8 @@ Next, you need to determine the best assembly to use the decontaminated data. Go
 
 --- 
 
-#### **9. Evaluate then either go back to step B2 or  move onto next step**
+<details><summary>**9. Evaluate then either go back to step B2 or  move onto next step**</summary>
+<p>
 
 Assuming you have completed step 9, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species (for example, you can check the ["best assembly table"](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv).
 If BUSCO values are too low, it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO")
@@ -538,7 +542,8 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 ---
 
-#### 10. Identifying mitochondrial genome with Mitofinder
+<details><summary>10. Identifying mitochondrial genome with Mitofinder</summary>
+<p>
 
 One of the contigs in your assembled genome will probably be the mitochondrial genome (sequenced at high depth). Identifying this contig can be useful for confirming species identity.
 
@@ -559,11 +564,14 @@ Check the outputs - the complete mitochondrial genome should have 15 genes and v
 </p>
 </details>
 
-
-<details><summary>C. PROBE DESIGN</summary>
-<p>
+---
 	
-### PROBE DESIGN
+### C. PROBE DESIGN
+
+<details><summary>1. Identifying regions for probe development</summary>
+<p>
+
+**Summary:**
 
 In this section you will identify contigs and regions within contigs to be used as candidate regions to develop the probes from.
 
@@ -576,7 +584,7 @@ Among other output, you will create the following 4 files:
 This instructions have been modified from Rene's [de novo assembly probe repo](https://github.com/philippinespire/denovo_genome_assembly/tree/main/WGprobe_creation) 
 to best fit this repo
 
-#### 1 Identifying regions for probe development 
+**1. Identifying regions for probe development**
 
 From your species directory, make a new dir for the probe design
 ```sh
@@ -657,7 +665,8 @@ Move out files into your species logs dir
 mv *out ../logs
 ```
 
-#### 2 Closest relatives with available genomes
+<details><summary>2. Closest relatives with available genomes</summary>
+<p>
 
 The last thing to do is to create a text file with links to available genomes from the 5 most closely-related species.
 
@@ -690,7 +699,8 @@ https://www.ncbi.nlm.nih.gov/genome/2646
 https://www.ncbi.nlm.nih.gov/genome/7889
 ```
 
-### 3 Files to Send
+<details><summary>3. Files to Send</summary>
+<p>
 
 Share the following files with Arbor Bio to aid in probe creation:
 
@@ -734,15 +744,19 @@ Eric will then share these with Arbor BioSciences.
 </details>
 
 
-<details><summary>D. CLEANING UP</summary>
+### D. CLEANING UP
+
+<details><summary>1. Make a copy of important files</summary>
 <p>
 	
-## Cleaning Up
+**Summary:**
 
 The SSL pipeline creates multiple copies of your data in the form of intermediate files. Assuming that you have finished the pipeline
  (have checked your files and send probe info to Arbor Bio), it is now time to do some cleaning up
 
-Document the size of directories and files before cleaning up and save this to a file name <your species 3-letter ID>_ssl_beforeDeleting_IntermFiles 
+**1. Make a copy of important files**
+
+First, document the size of directories and files before cleaning up and save this to a file name <your species 3-letter ID>_ssl_beforeDeleting_IntermFiles 
 
 From your species dir:
 ```sh
@@ -750,8 +764,7 @@ du -h | sort -rh > <yourspecies>_ssl_beforeDeleting_IntermFiles
 # Sgr example Sgr_ssl_beforeDeleting_IntermFiles
 ```
 
-#### 1 Make a copy of important files 
-Before deleting files, make a copy of important files in the RC (only available in the login node):
+Then, make a copy of important files in the RC (usually only available in the login node):
 
 1. raw sequence files (this should had been done already but check again)
 2. "contaminated" files (fq_fp1_clmp_fp2)
@@ -774,7 +787,9 @@ cp SPAdes_SgC0072C_contam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_n
 cp SPAdes_SgC0072C_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/SPAdes_SgC0072C_decontam_R1R2_noIsolate
 ```
 
-#### 2 Delete unneeded files
+<details><summary>2. Delete unneeded files</summary>
+<p>
+
 Delete raw sequence files and other sequence files (fq.gz | fastq.gz) from intermediate processes (Fastp1, Clumpify, and Fastq Screen; steps 0, 2, and 5). Thus:
 
 Keep files from:
