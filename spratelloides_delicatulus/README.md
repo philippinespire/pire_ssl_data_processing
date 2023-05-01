@@ -96,16 +96,20 @@ cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulu
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"  
 ```
 
-I pushed the results and view the MultiQC in  [html git preview page](https://htmlpreview.github.io/)
+Highlights:
+* % duplication -
+	* 13-16% (not too bad)
+* GC content -
+        * 44-45% (seems ok)
+* number of reads -
+        * 2 sets of files around 45M and one set around 1130M
 
-Potential issues:  
-  * % duplication - 
-	* Alb: XX%, Contemp: XX%
-  * GC content - 
-	* Alb: XX%, Contemp: XX%
-  * number of reads - 
-	* Alb: XX mil, Contemp: XX mil
+Potential issues:
 
+Adapter content seems high. I believe this has happenned before. 
+Overrepresented sequences. Probably duplication
+
+Everything else looks good.
 
 ### FASTP1
 
@@ -114,14 +118,126 @@ Running the first Trim
 sbatch ../../pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
 ```
 
-Potential issues:  
-  * % duplication - 
-    * Alb: XX%, Contemp: XX%
-  * GC content -
-    * Alb: XX%, Contemp: XX%
-  * passing filter - 
-    * Alb: XX%, Contemp: XX%
-  * % adapter - 
-    * Alb: XX%, Contemp: XX%
-  * number of reads - 
-    * Alb: XX mil, Contemp: XX mil
+Highlights:  
+* % duplication - 
+	* 9-10% (not too bad)
+* GC content - 
+	* 43-44% (seems ok)
+* Adapter content
+	* 30-34% (seems high)
+* percent of reads passing filters
+	*87-88% (seems ok)
+* number of reads - 
+	* 2 libs around 90M and one around 220M (this is forward and reverse files together)
+
+
+### Clumpify
+
+Running Clumpify
+```
+bash ../../pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/e1garcia 20
+```
+
+Running MultiQC on Clumpify
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+```
+
+Checking that clmpy worked
+```
+enable_lmod
+module load container_env mapdamage2
+crun R < ../../pire_fq_gz_processing/checkClumpify_EG.R --no-save
+```
+
+Had an issue with some libs and then with tidyverse. I am trying to reinstalling tidyverse but I am getting a new error
+```
+crun R
+install.packages("tidyverse")
+mirror 74
+```
+error:
+```
+In file included from caches.h:7:0,
+                 from caches.cpp:1:
+ft_cache.h:9:10: fatal error: ft2build.h: No such file or directory
+ #include <ft2build.h>
+          ^~~~~~~~~~~~
+compilation terminated.
+
+make: *** [/opt/mapdamage2/lib/R/etc/Makeconf:175: caches.o] Error 1
+ERROR: compilation failed for package ‘systemfonts’
+* removing ‘/home/e1garcia/R/x86_64-conda_cos6-linux-gnu-library/4.0/systemfonts’
+ERROR: dependency ‘systemfonts’ is not available for package ‘textshaping’
+* removing ‘/home/e1garcia/R/x86_64-conda_cos6-linux-gnu-library/4.0/textshaping’
+ERROR: dependencies ‘systemfonts’, ‘textshaping’ are not available for package ‘ragg’
+* removing ‘/home/e1garcia/R/x86_64-conda_cos6-linux-gnu-library/4.0/ragg’
+ERROR: dependency ‘ragg’ is not available for package ‘tidyverse’
+* removing ‘/home/e1garcia/R/x86_64-conda_cos6-linux-gnu-library/4.0/tidyverse’
+
+The downloaded source packages are in
+‘/tmp/RtmpjKtJda/downloaded_packages’
+
+Warning messages:
+1: In doTryCatch(return(expr), name, parentenv, handler) :
+  unable to load shared object '/opt/mapdamage2/lib/R/modules//R_X11.so':
+  libXt.so.6: cannot open shared object file: No such file or directory
+2: In install.packages("tidyverse") :
+  installation of package ‘systemfonts’ had non-zero exit status
+3: In install.packages("tidyverse") :
+  installation of package ‘textshaping’ had non-zero exit status
+4: In install.packages("tidyverse") :
+  installation of package ‘ragg’ had non-zero exit status
+5: In install.packages("tidyverse") :
+  installation of package ‘tidyverse’ had non-zero exit status
+> sudo apt install libtiff-dev
+Error: unexpected symbol in "sudo apt"
+```
+
+I don't think I can install libraries in the hpc so I contacted Min.
+
+Running MultiQC on clmpy files
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+```
+
+
+Highlights:
+* % duplication -
+	* 7-9% (not too bad)
+* GC content -
+        * 43-44% (seems ok)
+* number of reads -
+        * 2 sets of files around 35M and one set around 90M
+
+Adapter content is now good (Green). 
+
+### FASTP2
+
+Running Fastp2
+```
+sbatch ../../pire_fq_gz_processing/runFASTP_2_<ssl or cssl>.sbatch fq_fp1_clmp fq_fp1_clmp_fp2
+```
+
+Potential issues:
+* % duplication -
+	* down to ~5%
+* GC content -
+	* 42-43%
+* passing filter -
+	* 32-34% (lost a lot of reads)
+* % adapter -
+	* 0.6% (nice and low)
+* number of reads -
+	* 2 libs around 70M and one around 180M
+
+
+Everything looks good. However, we did lose a lot of read. Good to step to go back if we need to gain more reads.
+
+### FASTQ SCREEN
+
+Runnig Fastq Screen
+```
+bash ../../pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 20
+```
+
