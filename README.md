@@ -264,7 +264,9 @@ bash ../../runGIT.bash "README of raw data"
 
 ***You are ready to start processing files***
 
----
+
+</p>
+</details>
 
 <details><summary>2. Initial processing</summary>
 <p>
@@ -336,7 +338,8 @@ Most of the time v1-2 perform very similar. However, sometimes the two reports g
 
 Note the source and genome size (if you found one already available) or the Genome Scope version and rounded genome size estimate (if you had to run jellyfish) in your species README. You will use this info later
 
----
+</p>
+</details>
 
 <details><summary>2. Assemble the Genomes with SPAdes</summary>
 <p>
@@ -409,6 +412,9 @@ Check that `continue` is working by watching that your jobs is running and check
 
 ---
 
+</p>
+</details>
+
 <details><summary>3. Review Info on Assembly Quality from Quast Output</summary>
 <p>
 
@@ -427,7 +433,8 @@ cat quast-reports/quast-report_scaffolds_Sgr_spades_contam_R1R2_21-99_isolate-of
 
 Enter your stats in the table below
 
----
+</p>
+</details>
 
 <details><summary>4. Run BUSCO</summary>
 <p>
@@ -446,7 +453,8 @@ Repeat the command using scaffolds.
 
 `runBUSCO.sh` will generate a new dir per run. Look for the `short_summary.txt` file and note the percentage of `Complete and single-copy BUSCOs (S)` genes
 
----
+</p>
+</details>
 
 <details><summary>5. Fill in this table with your QUAST and BUSCO values in your species README</summary>
 <p>
@@ -475,7 +483,8 @@ Sgr  |SgC0072C  |decontam       |contgs       |off       |2       |69371  |10372
 Sgr  |SgC0072C  |decontam       |scaffolds       |off     |2       |69932  |103720       |406306057       |47.6%       |6080      |21004       |42.77   |33.2%
 ```
 
----
+</p>
+</details>
 
 <details><summary>6. **Determine the best assembly**</summary>
 <p>
@@ -493,7 +502,8 @@ Importance    |Metric    |Direction    |Description
  
 If you are still undecided on which is the best assembly, post the best candidates on the species slack channel and ask for opinions
 
----
+</p>
+</details>
 
 <details><summary>7. Assemble contaminated data for best library</summary>
 <p>
@@ -504,7 +514,8 @@ If you are still undecided on which is the best assembly, post the best candidat
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
----
+</p>
+</details>
 
 <details><summary>8. Update the main assembly stats table with your species</summary>
 <p>
@@ -522,7 +533,8 @@ nano ../best_ssl_assembly_per_sp.tsv
 
 Next, you need to determine the best assembly to use the decontaminated data. Go on and complete step 9 (below) and come back here after.
 
---- 
+</p>
+</details>
 
 <details><summary>**9. Evaluate then either go back to step B2 or  move onto next step**</summary>
 <p>
@@ -540,7 +552,8 @@ Finally, run one more assembly using the decontaminated data from the same libra
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "3" "decontam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
----
+</p>
+</details>
 
 <details><summary>10. Identifying mitochondrial genome with Mitofinder</summary>
 <p>
@@ -665,6 +678,9 @@ Move out files into your species logs dir
 mv *out ../logs
 ```
 
+</p>
+</details>
+
 <details><summary>2. Closest relatives with available genomes</summary>
 <p>
 
@@ -698,6 +714,9 @@ https://www.ncbi.nlm.nih.gov/genome/2646
 5.- Denticeps clupeoides
 https://www.ncbi.nlm.nih.gov/genome/7889
 ```
+
+</p>
+</details>
 
 <details><summary>3. Files to Send</summary>
 <p>
@@ -786,6 +805,9 @@ mkdir /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your 
 cp SPAdes_SgC0072C_contam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/SPAdes_SgC0072C_contam_R1R2_noIsolate
 cp SPAdes_SgC0072C_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/<your species>/SPAdes_SgC0072C_decontam_R1R2_noIsolate
 ```
+
+</p>
+</details>
 
 <details><summary>2. Delete unneeded files</summary>
 <p>
