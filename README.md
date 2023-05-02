@@ -144,6 +144,7 @@ mkdir <your_species>
 mkdir <your_species>/logs
 mkdir <your_species>/fq_raw
 ```
+
 *Note: Most species will have "fq_raw" instead of "fq_raw" as this was the origial way we were naming the initial raw directory. Since then, we changed into fq_raw to be consistent with the other repos of the PPP-Pipeline.*
 	
 **Species README**
@@ -293,9 +294,8 @@ In this step, we look for genome size in related literature as a reference, but 
 	* [genomesize.com](https://www.genomesize.com/)
 	* search the literature
 * After searching, estimate properties with `jellyfish` and `genomescope`
-	* More details [here](https://github.com/philippinespire/denovo_genome_assembly/blob/main/jellyfish/JellyfishGenomescope_procedure.md)
 
-##### 1b. **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runJellyfish.sbatch) using decontaminated files**
+##### 1b. **Execute [runJellyfish.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runJellyfish.sbatch) using decontaminated, re-paired files**
 ```sh
 #sbatch runJellyfish.sbatch <Species 3-letter ID> <indir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmp_fp2_fqscrn_rprd"
@@ -308,10 +308,18 @@ Jellyfish will create a histogram file (.hito) with kmer frequencies.
 * For version 1, Adjust the read length to that of in the Fastp2 trimming, 140 (unless you had to modify this in Fastp2)
 * Leave all other parameters with default settings for both versions. 
 * Submit (takes only few minutes)
+
+**Ispect the GenomeScope plots**
+Most of the time v1-2 perform very similar. However, sometimes the two reports give contrasting values such as very different genome sizes or unrealistic estimates of heterozygosity. For example:
+* In Sob, the [Sob_GenScp_v1](http://qb.cshl.edu/genomescope/analysis.php?code=zQRfOkSqbDYAGYJrs7Ee) report estimates a genome of 532 Mbp and 0.965 for H. On the other hand,  [Sob_GenScp_v2](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=5vZKBtdSgiAyFvzIusxT) reports a genome size of 259 Mbp (which is small for a fish) and it actually fails to estimate heterozygosity. Thus, version 1 was used for Sob. 
+* In Hte, the [Hte_GenScp_v1](http://qb.cshl.edu/genomescope/analysis.php?code=tHzBW2RjBK00gQMUSfl4) appears to have no red flags with a genome size of 846 Mbp and 0.49 for H but inspecting the first graph, you can see that the "unique sequence" line behaves differently from the others. In contrast, [Hte_GenScp_v2](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=8eVzhAQ8zSenObScLMGC) restores a tight relationship between lines with no red flags in estimates either (H=2.1, GenSize= 457 Mbp)
+
+Read Brendan's tips for interpreting the plots [here](https://github.com/philippinespire/denovo_genome_assembly/blob/main/jellyfish/JellyfishGenomescope_procedure.md) (number 2 in that page) and then assess your own plots.
+
  
 ##### 1d. **Complete the following table in your Species README. You can copy and paste this table straight into your README (no need to enclose it with quotes, i.e. a code block) and just substitute values.**
 ```sh
-Genome stats for Sgr from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
+Genome stats for <your_species> from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
 
 version    |stat    |min    |max
 ------  |------ |------ |------
@@ -330,13 +338,11 @@ Provide a link to both reports in your README. See other species READMEs for exa
 
 If values in your table are relative similar for v1 and v2 and you found no red flags in reports, then use v2 estimates.
 
-** Please use the "Genome Haploid Length" max value rounded up or down to the nearest million.** In the above example, this number is 853706410 for v2. Thus, 854000000 will be used in following steps
+**Please use the "Genome Haploid Length" max value rounded up or down to the nearest million.** In the above example, this number is 853706410 for v2. Thus, 854000000 will be used in following steps
 
-Most of the time v1-2 perform very similar. However, sometimes the two reports give contrasting values such as very different genome sizes or unrealistic estimates of heterozygosity. For example:
-* In Sob, the [Sob_GenScp_v1](http://qb.cshl.edu/genomescope/analysis.php?code=zQRfOkSqbDYAGYJrs7Ee) report estimates a genome of 532 Mbp and 0.965 for H. On the other hand,  [Sob_GenScp_v2](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=5vZKBtdSgiAyFvzIusxT) reports a genome size of 259 Mbp (which is small for a fish) and it actually fails to estimate heterozygosity. Thus, version 1 was used for Sob. 
-* In Hte, the [Hte_GenScp_v1](http://qb.cshl.edu/genomescope/analysis.php?code=tHzBW2RjBK00gQMUSfl4) appears to have no red flags with a genome size of 846 Mbp and 0.49 for H but inspecting the first graph, you can see that the "unique sequence" line behaves differently from the others. In contrast, [Hte_GenScp_v2](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=8eVzhAQ8zSenObScLMGC) restores a tight relationship between lines with no red flags in estimates either (H=2.1, GenSize= 457 Mbp)
-
-Note the source and genome size (if you found one already available) or the Genome Scope version and rounded genome size estimate (if you had to run jellyfish) in your species README. You will use this info later
+**Note in your README the following:**
+1. The source (genomesize.com, Jellyfish adn GenomeScope version, or some publication, etc) and
+2. Genome size (if you used Jellyfish, note the GenomeScope version and round up or down the genome size estimate to the nearest million bp. You will use this info later
 
 </p>
 </details>
@@ -350,7 +356,8 @@ After de novo assembler comparisons, we decided to move forward using SPADES (is
 For the most part, we obtained better assemblies using single libraries (a library consists of one forward *r1.fq.gz and reverse file *r2.fq.gz) but in few instances using all the libraries was better.
 In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmp_fp2` dir)  produced better results for mtDNA (mt = mitochondrial) and decontaminated (i.e. files in the `fq_fp1_clmp_fp2_fqscrn_repaired` dir) was better for nDNA (n=nuclear). 
 
-Thus, use the contaminated files to run one assembly for each of your libraries independently and then one combining all.
+Thus, use the decontaminated files to run one assembly for each of your libraries independently and then one combining all. Then, you will assess which of these worked the best (with BUSCO and QUAST) and run one more assembly for the best assembly but wit the contaminated files. 
+
 2a. **You need to be in `turing.hpc.odu.edu` for this step.** SPAdes requires high memory nodes (only avail in Turing)
 
 ```bash
@@ -757,11 +764,10 @@ Eric will then share these with Arbor BioSciences.
 
 #### **Contrats! You have finished the ssl processing pipeline. Go ahead, give yourself a pat on the back!**
 
----
-
 </p>
 </details>
 
+---
 
 ### D. CLEANING UP
 

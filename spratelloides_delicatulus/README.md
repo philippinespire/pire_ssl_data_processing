@@ -347,5 +347,13 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sde" "all_3libs" "decontam" "1000000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
 
-There were only 2 himem nodes open so running lib 1 and all_3libs first. Lib 2 and 3 are pending
+Every run was successful
 
+| Assembly | Library |
+|--- | --- |
+| A | Sde-CMat_061-Ex1-7A-ssl |
+| B | Sde-CMat_061-Ex1-8A-ssl |
+| C | Sde-CMat_061-Ex1-9A-ssl |
+| allLibs | all 3 above |
+
+QUAST was ran together with SPAdes.
