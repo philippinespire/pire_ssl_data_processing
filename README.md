@@ -768,7 +768,7 @@ Eric will then share these with Arbor BioSciences.
 </details>
 
 
----
+___
 
 ### D. CLEANING UP
 
@@ -815,8 +815,6 @@ cp SPAdes_SgC0072C_decontam_R1R2_noIsolate/[cs]*.fasta /RC/group/rc_carpenterlab
 
 </p>
 </details>
-
----
 
 
 <details><summary>2. Delete unneeded files</summary>
