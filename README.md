@@ -773,6 +773,8 @@ Eric will then share these with Arbor BioSciences.
 
 ### D. CLEANING UP
 
+---
+
 <details><summary>1. Make a copy of important files</summary>
 <p>
 	
