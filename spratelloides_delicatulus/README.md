@@ -357,3 +357,20 @@ Every run was successful
 | allLibs | all 3 above |
 
 QUAST was ran together with SPAdes.
+
+
+Running Busco
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus" "SPAdes_Sde-CMat-A_decontam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus" "SPAdes_Sde-CMat-B_decontam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus" "SPAdes_Sde-CMat-C_decontam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus" "SPAdes_allLibs_decontam_R1R2_noIsolate" "scaffolds"
+```
+
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    | contigs >5000    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
+Sde  |7A  |decontam       |scaffolds    |off       |na       |0  |24466       |30150206       |30.1%       |4138       |2568       |14.89   |29.2%
+Sde  |8A  |decontam       |scaffolds       |off       |na       |0  |48093      |280020878       |28.8%       |5111       |18521       |3.2   |31.3%
+Sde  |9A  |decontam       |scaffolds       |off       |na      |0  |22963       |18478859       |0.2%       |4666       |1431       |14.99  |14.99%
+Sde  |allLibs  |decontam       |contigs       |off       |na       |2  |85042       |347842987       |34.8%       |5471       |20780       |4.44       |29.9%
+Sde  |    |contam         |scaffolds       |off       |na       |  |105644       |536156621       |62.8%       |6686      |24304       |14.73   |38.4%
