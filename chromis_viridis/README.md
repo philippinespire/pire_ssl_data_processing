@@ -51,6 +51,6 @@ Summary:
 ### Run first trim
 
 ```
-sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1 
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1 
 ```
 
