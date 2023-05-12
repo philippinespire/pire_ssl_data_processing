@@ -87,6 +87,10 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2_ssl.sbatch f
 ```
 
 Summary:
-*
+* duplication 5% or less
+* adapter content <2%
+* decent # of reads filtered for length but still >60M per library
 
-### 
+### Decontaminate
+
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 3
