@@ -40,3 +40,17 @@ cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
 ```
 
+Summary:
+
+* 55.9 - 63.8 M seqs / library
+* Duplication fairly low (10.3% - 15.5%)
+* GC content stable across libraries at 41%
+* Quality looks good
+* High adapter content, hopefully will be fixed in trim
+
+### Run first trim
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1 
+```
+
