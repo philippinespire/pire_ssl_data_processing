@@ -1,0 +1,175 @@
+
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 52634311
+total bases: 7324938074
+Q20 bases: 7165801369(97.8275%)
+Q30 bases: 6898528395(94.1787%)
+
+Read2 before filtering:
+total reads: 52634311
+total bases: 7315527688
+Q20 bases: 6897629375(94.2875%)
+Q30 bases: 6367068328(87.035%)
+
+Read1 after filtering:
+total reads: 33374786
+total bases: 4994555656
+Q20 bases: 4947287216(99.0536%)
+Q30 bases: 4830617289(96.7177%)
+
+Read2 aftering filtering:
+total reads: 33374786
+total bases: 4991499438
+Q20 bases: 4871494297(97.5958%)
+Q30 bases: 4629568864(92.7491%)
+
+Filtering result:
+reads passed filter: 66749572
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 38519050
+reads with adapter trimmed: 1871172
+bases trimmed due to adapters: 3706884
+reads corrected by overlap analysis: 4486780
+bases corrected by overlap analysis: 6460161
+
+Duplication rate: 3.52984%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.r1.fq.gz --in2 fq_fp1_clmp/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1B-ssl-1-1.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 595 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 46930835
+total bases: 6706372677
+Q20 bases: 6551037840(97.6838%)
+Q30 bases: 6292134203(93.8232%)
+
+Read2 before filtering:
+total reads: 46930835
+total bases: 6696740283
+Q20 bases: 6272041870(93.6581%)
+Q30 bases: 5741175787(85.7309%)
+
+Read1 after filtering:
+total reads: 31767003
+total bases: 4756418902
+Q20 bases: 4710055161(99.0252%)
+Q30 bases: 4597007068(96.6485%)
+
+Read2 aftering filtering:
+total reads: 31767003
+total bases: 4753171967
+Q20 bases: 4630237565(97.4136%)
+Q30 bases: 4387295667(92.3025%)
+
+Filtering result:
+reads passed filter: 63534006
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 30327664
+reads with adapter trimmed: 1042090
+bases trimmed due to adapters: 2884214
+reads corrected by overlap analysis: 2837644
+bases corrected by overlap analysis: 4272816
+
+Duplication rate: 5.11642%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.r1.fq.gz --in2 fq_fp1_clmp/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1C-ssl-1-1.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 619 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 54029123
+total bases: 7580764472
+Q20 bases: 7411407305(97.766%)
+Q30 bases: 7127692323(94.0234%)
+
+Read2 before filtering:
+total reads: 54029123
+total bases: 7570497860
+Q20 bases: 7117328565(94.014%)
+Q30 bases: 6545100937(86.4554%)
+
+Read1 after filtering:
+total reads: 34836667
+total bases: 5214418141
+Q20 bases: 5164379013(99.0404%)
+Q30 bases: 5041141452(96.677%)
+
+Read2 aftering filtering:
+total reads: 34836667
+total bases: 5211041924
+Q20 bases: 5080607529(97.497%)
+Q30 bases: 4819797445(92.492%)
+
+Filtering result:
+reads passed filter: 69673334
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 38384912
+reads with adapter trimmed: 1694636
+bases trimmed due to adapters: 3639993
+reads corrected by overlap analysis: 4153614
+bases corrected by overlap analysis: 6044813
+
+Duplication rate: 3.87372%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.r1.fq.gz --in2 fq_fp1_clmp/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Cvi-CPal_079-Ex1-1A-ssl-1-1.clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 681 seconds
+
+  /// MultiQC 🔍 | v1.13
+
+[2023-05-12 14:34:39,575] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2023-05-12 14:34:39,577] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2023-05-12 14:34:39,577] multiqc                                            [DEBUG  ]  New config: {'max_table_rows': 3000}
+[2023-05-12 14:34:39,577] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename 2nd_fastp_report --outdir fq_fp1_clmp_fp2 fq_fp1_clmp_fp2
+[2023-05-12 14:34:39,819] multiqc                                            [WARNING]  MultiQC Version v1.14 now available!
+[2023-05-12 14:34:39,819] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis
+[2023-05-12 14:34:39,819] multiqc                                            [DEBUG  ]  Template    : default
+[2023-05-12 14:34:39,819] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2023-05-12 14:34:39,820] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2023-05-12 14:34:39,820] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpvl_teop_
+[2023-05-12 14:34:39,966] multiqc                                            [INFO   ]  Search path : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis/fq_fp1_clmp_fp2
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 18/18  
+[2023-05-12 14:34:40,454] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 18] // [skipped_no_match: 15] // [skipped_ignore_pattern: 12]
+[2023-05-12 14:34:41,030] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-05-12 14:34:41,032] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-05-12 14:34:41,032] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2023-05-12 14:34:41,050] multiqc.modules.fastp.fastp                        [INFO   ]  Found 3 reports
+[2023-05-12 14:34:59,147] multiqc                                            [INFO   ]  Compressing plot data
+[2023-05-12 14:34:59,387] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2/2nd_fastp_report.html
+[2023-05-12 14:34:59,387] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2/2nd_fastp_report_data
+[2023-05-12 14:34:59,387] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpvl_teop_/multiqc_data' to 'fq_fp1_clmp_fp2/2nd_fastp_report_data'
+[2023-05-12 14:34:59,465] multiqc                                            [INFO   ]  Plots       : fq_fp1_clmp_fp2/2nd_fastp_report_plots
+[2023-05-12 14:34:59,465] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpvl_teop_/multiqc_plots' to 'fq_fp1_clmp_fp2/2nd_fastp_report_plots'
+[2023-05-12 14:34:59,718] multiqc                                            [INFO   ]  MultiQC complete
