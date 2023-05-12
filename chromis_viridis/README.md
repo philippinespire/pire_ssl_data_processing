@@ -54,3 +54,10 @@ Summary:
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1 
 ```
 
+~95% of reads passed filter, % adapter down to 14-23%
+
+### Run Clumpify
+
+```
+bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/breid 3
+```
