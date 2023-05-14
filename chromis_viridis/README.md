@@ -93,4 +93,28 @@ Summary:
 
 ### Decontaminate
 
+Run fqscreen.
+
+```
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash fq_fp1_clmp_fp2 fq_fp1_clmp_fp2_fqscrn 3
+```
+
+Check output.
+
+```
+ls fq_fp1_clmp_fp2_fqscrn/*tagged.fastq.gz | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*tagged_filter.fastq.gz | wc -l 
+ls fq_fp1_clmp_fp2_fqscrn/*screen.txt | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.png | wc -l
+ls fq_fp1_clmp_fp2_fqscrn/*screen.html | wc -l
+grep 'error' slurm-fqscrn.*out
+grep 'No reads in' slurm-fqscrn.*out
+grep 'error' slurm-fqscrn.JOBID*out
+grep 'No reads in' slurm-fqscrn.JOBID*out
+```
+
+Run multiQC again.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+```
