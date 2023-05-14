@@ -118,3 +118,13 @@ Run multiQC again.
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
 ```
+
+Vast majority (~98%) one hit one genome / no hit, small number of protist/human/fungi hits.
+
+### Run re-pair
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 6
+```
+
+###
