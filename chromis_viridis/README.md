@@ -133,7 +133,11 @@ MultiQC.
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
 ```
 
-Summary:
+Summary: final QC looks good!
+* <5% duplication
+* 40% GC
+* 30.7 - 33.7 M seqs/ library
+* no red flags
 
 ### Clean up
 
