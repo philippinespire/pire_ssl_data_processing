@@ -127,4 +127,29 @@ Vast majority (~98%) one hit one genome / no hit, small number of protist/human/
 sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 6
 ```
 
-###
+MultiQC.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+```
+
+Summary:
+
+### Clean up
+
+```
+mv *.out logs
+```
+
+### Genome properties
+
+Genomesize.com estimate: Chromis viridis c-value = 0.93
+
+NCBI Chromis chromis assembly size: 834,429,411
+
+Run Jellyfish k-mer count.
+
+```
+#sbatch runJellyfish.sbatch <Species 3-letter ID> <indir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Cvi" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
