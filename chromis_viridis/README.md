@@ -157,3 +157,32 @@ Run Jellyfish k-mer count.
 #sbatch runJellyfish.sbatch <Species 3-letter ID> <indir>
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Cvi" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
+
+Genomescope v1 [result](http://genomescope.org/analysis.php?code=jl3dfLRRl4YgSqTx4w1t)
+Genomescope v2 [result](http://genomescope.org/genomescope2.0/analysis.php?code=OD2lxlaVfynmxQbzvRT0)
+
+GenomeScope estimates (all look reasonable, good model fit):
+
+```
+version    |stat    |min    |max
+------  |------ |------ |------
+1  |Heterozygosity  |1.37513%        |1.37886% 
+2  |Heterozygosity  |1.40601%        |1.44311%
+1  |Genome Haploid Length   |740,904,905 bp |741,346,357 bp 
+2  |Genome Haploid Length   |775,328,245 bp |776,489,822 bp 
+1  |Model Fit       |98.0426%       |99.5204%
+2  |Model Fit       |86.0532%      |98.9842%
+```
+
+Use 776 Mbp (v2 estimate) moving forward.
+
+### Assemble with SPAdes
+
+On Turing:
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Cvi" "1" "decontam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Cvi" "2" "decontam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Cvi" "3" "decontam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Cvi" "all_3libs" "decontam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
