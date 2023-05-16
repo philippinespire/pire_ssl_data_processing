@@ -186,3 +186,11 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Cvi" "3" "decontam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Cvi" "all_3libs" "decontam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
+
+Cvi-CPal-A scaffolds looks best (fill in table later).
+
+Running contam version:
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Cvi" "1" "contam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
