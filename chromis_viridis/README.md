@@ -217,12 +217,17 @@ SPAdes failed for some reason - trying with continue option:
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Cvi" "continue" "contam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
 
-Continue script worked - note however that QUAST did not run properly afterwards. Run BUSCO and QUAST.
+Continue script worked - note however that QUAST did not run properly afterwards. Run BUSCO and QUAST. runQUASTonly script did not work so I am just running manually on a node.
 
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-A_contam_R1R2_noIsolate" "scaffolds"
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-A_contam_R1R2_noIsolate" "contigs"
 
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runQUASTonly.sbatch "breid" "Cvi" "1" "contam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis"
+cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis/SPAdes_Cvi-CPal-A_contam_R1R2_noIsolate
 
+salloc
+enable_lmod
+module load container_env pire_genome_assembly/2021.03.25
+crun quast.py scaffolds.fasta -o Cvi-CPal-A_contam_scaffolds_QUAST --est-ref-size 776000000 -s --eukaryote --large
+crun quast.py contigs.fasta -o Cvi-CPal-A_contam_contigs_QUAST --est-ref-size 776000000 -s --eukaryote --large
 ```
