@@ -187,6 +187,22 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Cvi" "all_3libs" "decontam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
 
+Run BUSCO.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-A_decontam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-A_decontam_R1R2_noIsolate" "contigs"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-B_decontam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-B_decontam_R1R2_noIsolate" "contigs"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-C_decontam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-C_decontam_R1R2_noIsolate" "contigs"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_allLibs_decontam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_allLibs_decontam_R1R2_noIsolate" "contigs"
+```
+
 Cvi-CPal-A scaffolds looks best (fill in table later).
 
 Running contam version:
@@ -199,4 +215,14 @@ SPAdes failed for some reason - trying with continue option:
 
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "breid" "Cvi" "continue" "contam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "fq_fp1_clmp_fp2_fqscrn_rprd"
+```
+
+Continue script worked - note however that QUAST did not run properly afterwards. Run BUSCO and QUAST.
+
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-A_contam_R1R2_noIsolate" "scaffolds"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis" "SPAdes_Cvi-CPal-A_contam_R1R2_noIsolate" "contigs"
+
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runQUASTonly.sbatch "breid" "Cvi" "1" "contam" "776000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis"
+
 ```
