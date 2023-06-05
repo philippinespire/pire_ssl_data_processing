@@ -369,7 +369,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 
 **Assembly Results**
 
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    | contigs >5000    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    | contigs >50000    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
 Sde  |7A  |decontam       |scaffolds    |off       |na       |0  |24466       |30150206       |30.1%       |4138       |2568       |14.89   |5.8.%
 Sde  |8A  |decontam       |scaffolds       |off       |na       |0  |48093      |280020878       |28.8%       |5111       |18521       |3.2   |27.7%
