@@ -476,7 +476,7 @@ Few notes:
 * **For BUSCO, only report the "Complete and single-copy BUSCOs (S)"
 
 ```sh
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |contigs >50,000bp    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
 Sgr  |allLibs  |contam       |contigs       |off       |1       |2253577  |309779       |489995603       |70.5%       |5515       |28571       |0       |29.9%
 Sgr  |allLibs  |contam       |scaffolds       |off       |1       |2237565  |309779       |517068774       |74.5%       |5806       |28041       |147.59       |29.9%
@@ -546,15 +546,23 @@ Next, you need to determine the best assembly to use the decontaminated data. Go
 <details><summary>9. Evaluate then either go back to step B2 or  move onto next step</summary>
 <p>
 
-Assuming you have completed step 9, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species (for example, you can check the ["best assembly table"](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv).
-If BUSCO values are too low, it might be worth trying the `covcutoff auto` (by changing the datatype variable from "contam" to "contam_covAUTO")
+Assuming you have completed step 8, you now know what library(ies) produced the best assembly. Compare your BUSCO values with that other species (for example, you can check the ["best assembly table"](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/best_ssl_assembly_per_sp.tsv).
+If BUSCO values are too low, it might be worth trying the `covcutoff auto` (by changing the datatype variable from "decontam" to "decontam_covAUTO")
 
 Example:
 ```bash
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "contam_covAUTO" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "1" "decontam_covAUTO" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
 
-Finally, run one more assembly using the decontaminated data from the same library(or all together) that produced the best assembly (with or without the covcutoff flag). Sgr example:
+</p>
+</details>
+
+<details><summary>10. Re-run the best assembly with contaminated files</summary>
+<p>
+
+Assemblies made with contaminated files have shown better results when searching for mitochondrial DNA (Step 11)
+
+Run one more assembly using the decontaminated data from the same library(or all together) that produced the best assembly (with or without the covcutoff flag). Sgr example:
 ```bash
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "3" "decontam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis"
 ```
@@ -562,7 +570,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 </p>
 </details>
 
-<details><summary>10. Identifying mitochondrial genome with Mitofinder</summary>
+<details><summary>11. Identifying mitochondrial genome with Mitofinder</summary>
 <p>
 
 One of the contigs in your assembled genome will probably be the mitochondrial genome (sequenced at high depth). Identifying this contig can be useful for confirming species identity.

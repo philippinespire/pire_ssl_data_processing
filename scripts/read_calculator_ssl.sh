@@ -28,7 +28,7 @@ else
 fi
 
 # Create and move to preprocess_read_change directory
-mkdir ${SPDIR}/preprocess_read_change
+mkdir -p ${SPDIR}/preprocess_read_change
 cd ${SPDIR}/preprocess_read_change
 
 ## Create temporary files with read counts
