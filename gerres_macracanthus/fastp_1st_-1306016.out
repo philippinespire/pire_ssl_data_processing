@@ -1,0 +1,162 @@
+
+mkdir: cannot create directory ‘fq_fp1’: File exists
+mkdir: cannot create directory ‘fq_fp1/failed’: File exists
+Read1 before filtering:
+total reads: 51262707
+total bases: 7689406050
+Q20 bases: 7520249738(97.8001%)
+Q30 bases: 7201705144(93.6575%)
+
+Read2 before filtering:
+total reads: 51262707
+total bases: 7689406050
+Q20 bases: 7276424299(94.6292%)
+Q30 bases: 6689382045(86.9948%)
+
+Read1 after filtering:
+total reads: 50482500
+total bases: 7529897809
+Q20 bases: 7394271519(98.1988%)
+Q30 bases: 7091964369(94.1841%)
+
+Read2 aftering filtering:
+total reads: 50482500
+total bases: 7526252369
+Q20 bases: 7182886115(95.4378%)
+Q30 bases: 6618589750(87.94%)
+
+Filtering result:
+reads passed filter: 100965000
+reads failed due to low quality: 1459782
+reads failed due to too many N: 23872
+reads failed due to too short: 55672
+reads failed due to low complexity: 21088
+reads with adapter trimmed: 1308986
+bases trimmed due to adapters: 72372618
+reads with polyX in 3' end: 770764
+bases trimmed in polyX tail: 9848885
+
+Duplication rate: 54.1353%
+
+Insert size peak (evaluated by paired-end reads): 162
+
+JSON report: fq_fp1/Gma-CRag_001-Ex1-11C-ssl-1-1.fastp.json
+HTML report: fq_fp1/Gma-CRag_001-Ex1-11C-ssl-1-1.fastp.html
+
+fastp --in1 fq_raw/Gma-CRag_001-Ex1-11C-ssl-1-1.1.fq.gz --in2 fq_raw/Gma-CRag_001-Ex1-11C-ssl-1-1.2.fq.gz --out1 fq_fp1/Gma-CRag_001-Ex1-11C-ssl-1-1.r1.fq.gz --out2 fq_fp1/Gma-CRag_001-Ex1-11C-ssl-1-1.r2.fq.gz --unpaired1 fq_fp1/failed/Gma-CRag_001-Ex1-11C-ssl-1-1.unprd.fq.gz --unpaired2 fq_fp1/failed/Gma-CRag_001-Ex1-11C-ssl-1-1.unprd.fq.gz --failed_out fq_fp1/failed/Gma-CRag_001-Ex1-11C-ssl-1-1.fail.fq.gz -h fq_fp1/Gma-CRag_001-Ex1-11C-ssl-1-1.fastp.html -j fq_fp1/Gma-CRag_001-Ex1-11C-ssl-1-1.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 934 seconds
+Read1 before filtering:
+total reads: 51906663
+total bases: 7785999450
+Q20 bases: 7602403350(97.642%)
+Q30 bases: 7273379339(93.4161%)
+
+Read2 before filtering:
+total reads: 51906663
+total bases: 7785999450
+Q20 bases: 7315214010(93.9534%)
+Q30 bases: 6689395411(85.9157%)
+
+Read1 after filtering:
+total reads: 50860323
+total bases: 7565934699
+Q20 bases: 7426811049(98.1612%)
+Q30 bases: 7119561162(94.1002%)
+
+Read2 aftering filtering:
+total reads: 50860323
+total bases: 7562222418
+Q20 bases: 7186210577(95.0278%)
+Q30 bases: 6590773568(87.1539%)
+
+Filtering result:
+reads passed filter: 101720646
+reads failed due to low quality: 1978906
+reads failed due to too many N: 24322
+reads failed due to too short: 71856
+reads failed due to low complexity: 17596
+reads with adapter trimmed: 2095592
+bases trimmed due to adapters: 116236877
+reads with polyX in 3' end: 846414
+bases trimmed in polyX tail: 10587682
+
+Duplication rate: 53.0255%
+
+Insert size peak (evaluated by paired-end reads): 162
+
+JSON report: fq_fp1/Gma-CRag_001-Ex1-12B-ssl-1-1.fastp.json
+HTML report: fq_fp1/Gma-CRag_001-Ex1-12B-ssl-1-1.fastp.html
+
+fastp --in1 fq_raw/Gma-CRag_001-Ex1-12B-ssl-1-1.1.fq.gz --in2 fq_raw/Gma-CRag_001-Ex1-12B-ssl-1-1.2.fq.gz --out1 fq_fp1/Gma-CRag_001-Ex1-12B-ssl-1-1.r1.fq.gz --out2 fq_fp1/Gma-CRag_001-Ex1-12B-ssl-1-1.r2.fq.gz --unpaired1 fq_fp1/failed/Gma-CRag_001-Ex1-12B-ssl-1-1.unprd.fq.gz --unpaired2 fq_fp1/failed/Gma-CRag_001-Ex1-12B-ssl-1-1.unprd.fq.gz --failed_out fq_fp1/failed/Gma-CRag_001-Ex1-12B-ssl-1-1.fail.fq.gz -h fq_fp1/Gma-CRag_001-Ex1-12B-ssl-1-1.fastp.html -j fq_fp1/Gma-CRag_001-Ex1-12B-ssl-1-1.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 943 seconds
+Read1 before filtering:
+total reads: 63665702
+total bases: 9549855300
+Q20 bases: 9337692692(97.7784%)
+Q30 bases: 8947127540(93.6886%)
+
+Read2 before filtering:
+total reads: 63665702
+total bases: 9549855300
+Q20 bases: 9062227543(94.8939%)
+Q30 bases: 8365446075(87.5976%)
+
+Read1 after filtering:
+total reads: 62700775
+total bases: 9330501271
+Q20 bases: 9164596988(98.2219%)
+Q30 bases: 8795514538(94.2663%)
+
+Read2 aftering filtering:
+total reads: 62700775
+total bases: 9325727065
+Q20 bases: 8929463951(95.7509%)
+Q30 bases: 8262572077(88.5998%)
+
+Filtering result:
+reads passed filter: 125401550
+reads failed due to low quality: 1801516
+reads failed due to too many N: 29510
+reads failed due to too short: 76806
+reads failed due to low complexity: 22022
+reads with adapter trimmed: 2451118
+bases trimmed due to adapters: 136577470
+reads with polyX in 3' end: 1005556
+bases trimmed in polyX tail: 12702008
+
+Duplication rate: 62.2271%
+
+Insert size peak (evaluated by paired-end reads): 162
+
+JSON report: fq_fp1/Gma-CRag_001-Ex1-13A-ssl-1-1.fastp.json
+HTML report: fq_fp1/Gma-CRag_001-Ex1-13A-ssl-1-1.fastp.html
+
+fastp --in1 fq_raw/Gma-CRag_001-Ex1-13A-ssl-1-1.1.fq.gz --in2 fq_raw/Gma-CRag_001-Ex1-13A-ssl-1-1.2.fq.gz --out1 fq_fp1/Gma-CRag_001-Ex1-13A-ssl-1-1.r1.fq.gz --out2 fq_fp1/Gma-CRag_001-Ex1-13A-ssl-1-1.r2.fq.gz --unpaired1 fq_fp1/failed/Gma-CRag_001-Ex1-13A-ssl-1-1.unprd.fq.gz --unpaired2 fq_fp1/failed/Gma-CRag_001-Ex1-13A-ssl-1-1.unprd.fq.gz --failed_out fq_fp1/failed/Gma-CRag_001-Ex1-13A-ssl-1-1.fail.fq.gz -h fq_fp1/Gma-CRag_001-Ex1-13A-ssl-1-1.fastp.html -j fq_fp1/Gma-CRag_001-Ex1-13A-ssl-1-1.fastp.json --qualified_quality_phred 20 --unqualified_percent_limit 40 --length_required 33 --low_complexity_filter --complexity_threshold 30 --detect_adapter_for_pe --adapter_sequence=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA --adapter_sequence_r2=AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT --cut_tail --cut_tail_window_size 1 --cut_tail_mean_quality 20 --trim_poly_g --poly_g_min_len 10 --trim_poly_x --report_title First Trim 4 De Novo 
+fastp v0.20.1, time used: 1146 seconds
+
+  /// MultiQC 🔍 | v1.13
+
+[2023-03-02 13:35:31,048] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2023-03-02 13:35:31,050] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2023-03-02 13:35:31,050] multiqc                                            [DEBUG  ]  New config: {'max_table_rows': 3000}
+[2023-03-02 13:35:31,050] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename 1st_fastp_report --outdir fq_fp1 fq_fp1
+[2023-03-02 13:35:31,652] multiqc                                            [WARNING]  MultiQC Version v1.14 now available!
+[2023-03-02 13:35:31,652] multiqc                                            [DEBUG  ]  Working dir : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/gerres_macracanthus
+[2023-03-02 13:35:31,652] multiqc                                            [DEBUG  ]  Template    : default
+[2023-03-02 13:35:31,652] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2023-03-02 13:35:31,652] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2023-03-02 13:35:31,652] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpohx0q019
+[2023-03-02 13:35:31,801] multiqc                                            [INFO   ]  Search path : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/gerres_macracanthus/fq_fp1
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 18/18  
+[2023-03-02 13:35:32,291] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 18] // [skipped_no_match: 15] // [skipped_ignore_pattern: 12]
+[2023-03-02 13:35:32,757] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-03-02 13:35:32,759] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2023-03-02 13:35:32,760] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2023-03-02 13:35:32,777] multiqc.modules.fastp.fastp                        [INFO   ]  Found 3 reports
+[2023-03-02 13:35:50,801] multiqc                                            [INFO   ]  Compressing plot data
+[2023-03-02 13:35:51,044] multiqc                                            [INFO   ]  Report      : fq_fp1/1st_fastp_report.html
+[2023-03-02 13:35:51,044] multiqc                                            [INFO   ]  Data        : fq_fp1/1st_fastp_report_data
+[2023-03-02 13:35:51,044] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpohx0q019/multiqc_data' to 'fq_fp1/1st_fastp_report_data'
+[2023-03-02 13:35:51,123] multiqc                                            [INFO   ]  Plots       : fq_fp1/1st_fastp_report_plots
+[2023-03-02 13:35:51,123] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpohx0q019/multiqc_plots' to 'fq_fp1/1st_fastp_report_plots'
+[2023-03-02 13:35:51,375] multiqc                                            [INFO   ]  MultiQC complete
