@@ -1,0 +1,140 @@
+
+
+Command line: /opt/mitofinder/mitofinder -j Pli_SPAdes_PlC0351E_contam_R1R2_noIsolate_Plotosidae -a scaffolds.fasta -r Plotosidae.gb -o 2
+
+Now running MitoFinder ...
+
+Start time : 2023-03-14 17:15:38
+
+Job name = Pli_SPAdes_PlC0351E_contam_R1R2_noIsolate_Plotosidae
+
+Creating Output directory : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/mitofinder/Pli_SPAdes_PlC0351E_contam_R1R2_noIsolate_Plotosidae
+All results will be written here
+
+Program folders:
+MEGAHIT = /opt/mitofinder/megahit/
+MetaSPAdes folder = /opt/mitofinder/metaspades/bin/
+IDBA-UD folder = /opt/mitofinder/idba/bin/
+Blast folder = /opt/mitofinder/blast/bin/
+ARWEN folder = /opt/mitofinder/arwen/
+MiTFi folder = /opt/mitofinder/mitfi/
+tRNAscan-SE folder = /opt/mitofinder/trnascanSE/tRNAscan-SE-2.0/
+
+
+Formatting database for mitochondrial contigs identification...
+Running mitochondrial contigs identification step...
+
+MitoFinder found 8 contigs matching provided mitochondrial reference(s)
+Did not check for circularization
+
+
+Creating summary statistics for mtDNA contig 1
+
+Annotating mtDNA contig 1
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 2
+
+Annotating mtDNA contig 2
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 3
+
+Annotating mtDNA contig 3
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 4
+
+Annotating mtDNA contig 4
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 5
+
+Annotating mtDNA contig 5
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 6
+
+Annotating mtDNA contig 6
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 7
+
+Annotating mtDNA contig 7
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 8
+
+Annotating mtDNA contig 8
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+Creating GFF and fasta files.
+
+Note: 
+5 genes were found in mtDNA_contig_1
+11 genes were found in mtDNA_contig_2
+0 gene was found in mtDNA_contig_3
+2 genes were found in mtDNA_contig_4
+0 gene was found in mtDNA_contig_5
+0 gene was found in mtDNA_contig_6
+1 gene was found in mtDNA_contig_7
+0 gene was found in mtDNA_contig_8
+
+WARNING: CYTB has been found more than once (2) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: rrnS has been found more than once (2) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ND4L has been found more than once (2) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ND6 has been found more than once (2) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+## Final sequence saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus/mitofinder/Pli_SPAdes_PlC0351E_contam_R1R2_noIsolate_Plotosidae/Pli_SPAdes_PlC0351E_contam_R1R2_noIsolate_Plotosidae_MitoFinder_mitfi_Final_Results/
+
+/!\ WARNING /!\ 4 genes were found more than once suggesting either fragmentation, NUMT annotations, or potential contamination of your sequencing data.
+Different contigs may be part of different organisms thus "Pli_SPAdes_PlC0351E_contam_R1R2_noIsolate_Plotosidae_final_genes_NT.fasta" and "Pli_SPAdes_PlC0351E_contam_R1R2_noIsolate_Plotosidae_final_genes_AA.fasta" could be erroneous.
+We recommend to check contigs and associated genes separately.
+
+Total wall-clock time used by MitoFinder = 0:12:23.612626
