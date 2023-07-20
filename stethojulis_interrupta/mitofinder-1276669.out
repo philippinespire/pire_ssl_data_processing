@@ -1,0 +1,162 @@
+
+
+Command line: /opt/mitofinder/mitofinder -j Sin_SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_Labridae -a scaffolds.fasta -r Labridae.gb -o 2
+
+Now running MitoFinder ...
+
+Start time : 2023-02-21 14:18:09
+
+Job name = Sin_SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_Labridae
+
+Creating Output directory : /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta/mitofinder/Sin_SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_Labridae
+All results will be written here
+
+Program folders:
+MEGAHIT = /opt/mitofinder/megahit/
+MetaSPAdes folder = /opt/mitofinder/metaspades/bin/
+IDBA-UD folder = /opt/mitofinder/idba/bin/
+Blast folder = /opt/mitofinder/blast/bin/
+ARWEN folder = /opt/mitofinder/arwen/
+MiTFi folder = /opt/mitofinder/mitfi/
+tRNAscan-SE folder = /opt/mitofinder/trnascanSE/tRNAscan-SE-2.0/
+
+
+Formatting database for mitochondrial contigs identification...
+Running mitochondrial contigs identification step...
+
+MitoFinder found 7 contigs matching provided mitochondrial reference(s)
+Did not check for circularization
+
+
+Creating summary statistics for mtDNA contig 1
+
+Annotating mtDNA contig 1
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 2
+
+Annotating mtDNA contig 2
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 3
+
+Annotating mtDNA contig 3
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 4
+
+Annotating mtDNA contig 4
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 5
+
+Annotating mtDNA contig 5
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 6
+
+Annotating mtDNA contig 6
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+
+Creating summary statistics for mtDNA contig 7
+
+Annotating mtDNA contig 7
+
+tRNA annotation with MitFi run well.
+
+Annotation completed
+
+
+Creating GFF and fasta files.
+
+Note: 
+15 genes were found in mtDNA_contig_1
+15 genes were found in mtDNA_contig_2
+14 genes were found in mtDNA_contig_3
+15 genes were found in mtDNA_contig_4
+13 genes were found in mtDNA_contig_5
+14 genes were found in mtDNA_contig_6
+1 gene was found in mtDNA_contig_7
+
+WARNING: ATP8 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: COX2 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: COX3 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: CYTB has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: COX1 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ATP6 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: rrnL has been found more than once (3) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: rrnS has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ND4L has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ND1 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ND3 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ND2 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ND5 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ND4 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+WARNING: ND6 has been found more than once (6) in the different mitochondrial contigs.
+MitoFinder selected the longest sequence as the final sequence.
+
+## Final sequence saved to /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta/mitofinder/Sin_SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_Labridae/Sin_SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_Labridae_MitoFinder_mitfi_Final_Results/
+
+/!\ WARNING /!\ 15 genes were found more than once suggesting either fragmentation, NUMT annotations, or potential contamination of your sequencing data.
+Different contigs may be part of different organisms thus "Sin_SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_Labridae_final_genes_NT.fasta" and "Sin_SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_Labridae_final_genes_AA.fasta" could be erroneous.
+We recommend to check contigs and associated genes separately.
+
+Total wall-clock time used by MitoFinder = 0:25:32.924695
