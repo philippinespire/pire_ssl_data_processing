@@ -369,12 +369,77 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh 
 
 **Assembly Results**
 
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    | contigs >50000    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+MINLEN |Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    | BUSCO Single Copy | contigs >50000    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp   
 ------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
-Sde  |7A  |decontam       |scaffolds    |off       |na       |0  |24466       |30150206       |30.1%       |4138       |2568       |14.89   |5.8.%
-Sde  |8A  |decontam       |scaffolds       |off       |na       |0  |48093      |280020878       |28.8%       |5111       |18521       |3.2   |27.7%
-Sde  |9A  |decontam       |scaffolds       |off       |na      |0  |22963       |18478859       |0.2%       |4666       |1431       |14.99  |4.7%
-Sde  |allLibs  |decontam       |contigs       |off       |na       |2  |85042       |347842987       |34.8%       |5471       |20780       |4.44       |32.1%
-Sde  |    |contam         |scaffolds       |off       |na       |  |105644       |536156621       |62.8%       |6686      |24304       |14.73   |%
+140 |Sde  |7A  |decontam       |scaffolds    |off       |na       | 5.8% |0  | 24466       |30150206       |30.1%       |4138       |2568       |14.89
+140 |Sde  |8A  |decontam       |scaffolds       |off       |na       | 27.7% | 0 | 48093      |280020878       |28.8%       |5111       |18521       |3.2
+140 |Sde  |9A  |decontam       |scaffolds       |off       |na      | 4.7% | 0 | 22963       |18478859       |0.2%       |4666       |1431       |14.99
+140 |Sde  |allLibs  |decontam       |scaffolds       |off       |na       | 32.1% | 2 | 85042       |347842987       |34.8%       |5471       |20780       |4.44
+140 |Sde  |    |contam         |scaffolds       |off       |na       |% | 0 | 105644       |536156621       |62.8%       |6686      |24304       |14.73
+100 |Sde  |8A  |decontam       |scaffolds       |off       |na       | 35.1.7% | 4 |148834      |380518335       |45.8%       |5913       |20462       |6.57
+100 |Sde  |allLibs  |decontam       |scaffolds       |off       |na       | 35.6% | 8 | 79798       |430676003       |51.9%       |6020       |22404       |12.67
+80 |Sde  |8A  |decontam       |scaffolds       |off       |na       | 35.9% | 2 |137756      |388908883       |46.9%       |5916       |20792       |6.02
+80 |Sde  |allLibs  |decontam       |scaffolds       |off       |na       | 36.2% | 6 | 79797       |441403536       |53.2%       |6094       |22613       |14.27
+50 |Sde  |8A  |decontam       |scaffolds       |off       |na       | 35.7% | 4 |137466      |395146084       |47.6%       |5938       |21009       |5.74
+50 |Sde  |allLibs  |decontam       |scaffolds       |off       |na      | 36.7.1% | 9 | 79872       |449343306       |54.1%       |6136       |22799       |14.22
+
 
 In general, assemblies are very poor. The best assembly, the allLibs, reaches only 32.1% of BUSCO. Will continue with this one.
+
+**UPDATE July 2023** Rerunning SPAdes. I noticed I was losing a lot of read in fp2 bc of MINLEN=140, I am going back and relaxing to 100, 80 and 50.
+
+### Reding the Assembly
+
+The last assembly is not so hot. I reviewed the steps and noticed that I am loosing ~60% of the reads in fp2 because of the 140bp minimum length filter. I am going back and relax this filter to see if I can get a better assembly.
+
+Previously MINLENN=140
+
+* Repeating fp2 with MINLEN of 100, 80 and 50
+* will repeat every step after fp2 for each of the more relaxed MINLENs
+
+**Fp2**
+
+* MINLEN=100, has approx. doubled the number of reads passing fp2 from ~35% to ~65% :)
+* MINLEN=80, has increased the number of reads passing fp2 from ~35% to ~76%,, maybe will have a buch of contam
+* MINLEN=50, has approx. tripled the number of reads passing fp2 from ~35% to ~92%,, mmm maybe will have a buch of contam
+
+**FQScreen**
+As I decreased MINLEN the amount of contam removed by FQScreen increased, but in theory it eliminated. Will have to check this.
+
+80 still running
+
+**Jelly**
+
+witht the MINLEN=100, [jelly v1](http://qb.cshl.edu/genomescope/analysis.php?code=mSgaLXRcK1nlProygnf7) looks better. 
+The lines are a good fit and model fit is better for the min and max values.
+ Here the [v2 report](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=A9MZd9rDusOa6Dwkm2YF) for comparisons
+
+MINLEN=80, interesting.... it failed to converge or looks bad. Makes sense. [v1 report](http://qb.cshl.edu/genomescope/analysis.php?code=KuvBMuMWY6XWxKQbgZFH), 
+ [v2 report](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=tt65rYoaqhnrBFsNPM9W) 
+
+MINLEN=50, doesn't seem to have red flags. In fact, at least v1 gave the same results as with MINLEN=100 [v1 report](http://qb.cshl.edu/genomescope/analysis.php?code=yiEg0tUkaFRFWYvch4BO)
+ [v2 report](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=aEzTcF5Dse3Pr8akKoGS)
+
+
+
+MINLEN | version    |stat    |min    |max
+----| ------  |------ |------ |------
+100 |1  |Heterozygosity  |1.77%       |1.79%
+100 |1  |Genome Haploid Length   |828,005,456 bp |830,227,327 bp
+100 |1  |Model Fit       |96.49%       |99.55%
+----| ------  |------ |------ |------
+80 |2  |Heterozygosity  |0%       |27.21%
+80 |2  |Genome Haploid Length   |231,869,610 bp |237,408,799 bp
+80 |2  |Model Fit       |42.7%       |75.3%
+----| ------  |------ |------ |------
+50 |1  |Heterozygosity  |1.74%       |1.75%
+50 |1  |Genome Haploid Length   |843,598,424 bp |845,430,053 bp
+50 |1  |Model Fit       |96.47%       |99.54%
+
+
+For MINLEN=100, I will use v1, genome L= 830,000,000
+
+
+**Assembly**
+
+
