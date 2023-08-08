@@ -1,0 +1,78 @@
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy bedtools module, please load a up to date module
+instead:
+  
+    module load container_env bedtools
+  
+  Please run bedtools command with "crun.bedtools" prepend to it, for example:
+  
+    crun.bedtools bedtools
+  
+  Otherwise you will get "command not found" error. 
+Options: Namespace(fasta='/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta', fastq=['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R1.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R2.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R1.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R2.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R1.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R2.fq.gz'], identity=0.51, iters=2, joins=5, limit=0.2, linkratio=0.7, log=<open file '<stderr>', mode 'w' at 0x7f487f2811e0>, longreads=[], mapq=10, mem=16, minLength=200, nocleaning=True, nogapclosing=True, norearrangements=False, noreduction=True, noscaffolding=True, outdir='redundans_fp2min140', overlap=0.8, reference='', resume=False, threads=4, tmp='/tmp', usebwa=False, verbose=True)
+
+##################################################
+[Mon Aug  7 19:14:03 2023] Reduction...
+#file name	genome size	contigs	heterozygous size	[%]	heterozygous contigs	[%]	identity [%]	possible joins	homozygous size	[%]	homozygous contigs	[%]
+redundans_fp2min140/contigs.fa	877847510	578958	71907564	8.19	159157	27.49	90.462	0	805939946	91.81	419801	72.51
+
+##################################################
+[Mon Aug  7 19:55:57 2023] Estimating parameters of libraries...
+ Aligning 161187989 mates per library...
+Insert size statistics				Mates orientation stats
+FastQ files	read length	median	mean	stdev	FF	FR	RF	RR
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R1.fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R2.fq.gz	149	217	220.76	119.96	1	9971	26	2
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R1.fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R2.fq.gz	149	221	212.98	103.05	0	9979	19	2
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R1.fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R2.fq.gz	149	203	211.71	119.97	1	9972	26	1
+
+##################################################
+[Mon Aug  7 19:57:23 2023] Scaffolding...
+ iteration 1.1: redundans_fp2min140/contigs.reduced.fa	419801	805939946	42.669	232590	705135524	3246	877	70200	79798
+   No pairs were aligned!
+    No pairs were aligned!
+   No pairs were aligned!
+    No pairs were aligned!
+   No pairs were aligned!
+    No pairs were aligned!
+ iteration 1.2: redundans_fp2min140/_sspace.1.1.fa	419801	805939946	42.669	232590	705135524	3246	877	70200	79798
+   No pairs were aligned!
+    No pairs were aligned!
+   No pairs were aligned!
+    No pairs were aligned!
+   No pairs were aligned!
+    No pairs were aligned!
+
+##################################################
+[Mon Aug  7 20:46:59 2023] Gap closing...
+ iteration 1.1: redundans_fp2min140/scaffolds.fa	419801	805939946	42.669	232590	705135524	3246	877	70200	79798
+
+##################################################
+[Mon Aug  7 21:59:26 2023] Final reduction...
+#file name	genome size	contigs	heterozygous size	[%]	heterozygous contigs	[%]	identity [%]	possible joins	homozygous size	[%]	homozygous contigs	[%]
+redundans_fp2min140/scaffolds.filled.fa	805946364	419801	481714	0.06	587	0.14	78.306	0	805464650	99.94	419214	99.86
+
+##################################################
+[Mon Aug  7 22:34:43 2023] Reporting statistics...
+#fname	contigs	bases	GC [%]	contigs >1kb	bases in contigs >1kb	N50	N90	Ns	longest
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta	578958	877847510	42.631	249758	730242867	2922	667	71870	79798
+redundans_fp2min140/contigs.fa	578958	877847510	42.631	249758	730242867	2922	667	71870	79798
+redundans_fp2min140/contigs.reduced.fa	419801	805939946	42.669	232590	705135524	3246	877	70200	79798
+redundans_fp2min140/_sspace.1.1.fa	419801	805939946	42.669	232590	705135524	3246	877	70200	79798
+redundans_fp2min140/_sspace.1.2.fa	419801	805939946	42.669	232590	705135524	3246	877	70200	79798
+redundans_fp2min140/scaffolds.fa	419801	805939946	42.669	232590	705135524	3246	877	70200	79798
+redundans_fp2min140/_gapcloser.1.1.fa	419801	805946364	42.669	232589	705142034	3246	877	20514	79798
+redundans_fp2min140/scaffolds.filled.fa	419801	805946364	42.669	232589	705142034	3246	877	20514	79798
+redundans_fp2min140/scaffolds.reduced.fa	419214	805464650	42.669	232433	704862246	3248	877	20479	79798
+
+##################################################
+[Mon Aug  7 22:36:05 2023] Cleaning-up...
+#Time elapsed: 3:24:58.392386

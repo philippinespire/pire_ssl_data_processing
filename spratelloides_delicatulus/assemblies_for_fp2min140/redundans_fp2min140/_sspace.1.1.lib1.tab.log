@@ -1,0 +1,42 @@
+Welcome to SNAP version 1.0beta.23.
+
+Hash table slack 0.300000
+Loading FASTA file 'redundans_fp2min140/contigs.reduced.fa' into memory...7s
+Saving genome...10s
+Computing bias table.
+Bias computation: 100000000 / 1015840946
+Bias computation: 200000000 / 1015840946
+Bias computation: 300000000 / 1015840946
+Bias computation: 400000000 / 1015840946
+Bias computation: 500000000 / 1015840946
+Bias computation: 600000000 / 1015840946
+Bias computation: 700000000 / 1015840946
+Bias computation: 800000000 / 1015840946
+Bias computation: 900000000 / 1015840946
+Bias computation: 1000000000 / 1015840946
+Computed bias table in 2s
+Allocating memory for hash tables...9s
+Building hash tables.
+Indexing 100000000 / 1015840946
+Indexing 200000000 / 1015840946
+Indexing 300000000 / 1015840946
+Indexing 400000000 / 1015840946
+Indexing 500000000 / 1015840946
+Indexing 600000000 / 1015840946
+Indexing 700000000 / 1015840946
+Indexing 800000000 / 1015840946
+Indexing 900000000 / 1015840946
+Indexing 1000000000 / 1015840946
+26731744(2%) seeds occur more than once, total of 102528809(10%) genome locations are not unique, 209610697(20%) bad seeds, 0 both complements used 8396500 no string
+Hash table build took 142s
+Building overflow table.
+Overflow table build and hash table save took 67s
+Saving overflow table...5s
+Index build and save took 241s (4215107 bases/s)
+Welcome to SNAP version 1.0beta.23.
+
+Loading index from directory... Read incorrect amount for GenomeIndexHash file, 7488139376 != 5157888000
+Index load failed, aborting.
+Aligning.
+GzipDataReader: inflate failed with -2
+SNAP exited with exit code 1 from line 1659 of file SNAPLib/DataReader.cpp
