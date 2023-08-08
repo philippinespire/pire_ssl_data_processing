@@ -386,9 +386,9 @@ In general, assemblies are very poor. The best assembly, the allLibs, reaches on
 
 **UPDATE July 2023** Rerunning SPAdes. I noticed I was losing a lot of read in fp2 bc of MINLEN=140, I am going back and relaxing to 100, 80 and 50.
 
-### Reding the Assembly
+### Re-doing the Assembly
 
-The last assembly is not so hot. I reviewed the steps and noticed that I am loosing ~60% of the reads in fp2 because of the 140bp minimum length filter. I am going back and relax this filter to see if I can get a better assembly.
+The last assembly was not so hot. I reviewed the steps and noticed that I am loosing ~60% of the reads in fp2 because of the 140bp minimum length filter. I am going back and relax this filter to see if I can get a better assembly.
 
 Previously MINLENN=140
 
@@ -438,6 +438,35 @@ MINLEN | version    |stat    |min    |max
 For MINLEN=100, I will use v1, genome L= 830,000,000
 
 
-**Assembly**
+**Organizng Assemblies**
+
+To avoid confusion, I have created subdir for each assembly using a different mininum read length (MINLEN) in fp2 
+```
+assemblies_for_fp2min140
+assemblies_for_fp2min100
+assemblies_for_fp2min80
+assemblies_for_fp2min50
+```
+### Redundans
+
+I have moved forward to run redundans on the allLibs fp2_min140 (i.e. one of the original assemblies).
+
+I created a dir for this, copied a script to run redundans in the scaffold.fasta (redundans.sb) and then ran BUSCO and QUAST in the reduced.fa
+```
+mkdir assemblies_for_fp2min140/redundans_fp2min140
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min140" "redundans_fp2min140" "scaffolds"
+# once redundans is done, I ran BUSCO and QUAST
+cd assemblies_for_fp2min140
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min140" "redundans_fp2min140" "scaffolds"
+sbatch runQUAST.sh redundans_fp2min140/scaffolds.fasta
+```
+I initially `mv scaffold.reduced.fa scaffolds.fasta` so I wouldn't have to modify the scripts.
+I have reinstate the normal name ``mv scaffolds.fasta scaffold.reduced.fa`
 
 
+**BUSCO and QUAST Resulsts**
+
+MINLEN |Library    | BUSCO Single Copy | contigs >50000    |Largest contig    |Total length    |% Genome size completeness (830000000)    |N50    |L50    |Ns per 100 kbp   
+-------| ------  |------  |------ |------ |------ |------  |------ |------ |------
+140 (before Redundans) | allLibs| 32.1% | 2 | 85042       |347842987       |49.1       |5471       |20780       |4.44
+140 (after Redundans) | allLibs| 34%| 8 |79798 |428076144| 51.6%| 6040| 22193| 2.7
