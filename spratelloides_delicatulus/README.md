@@ -382,7 +382,6 @@ MINLEN |Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome sco
 50 |Sde  |8A  |decontam       |scaffolds       |off       |na       | 35.7% | 4 |137466      |395146084       |47.6%       |5938       |21009       |5.74
 50 |Sde  |allLibs  |decontam       |scaffolds       |off       |na      | 36.7.1% | 9 | 79872       |449343306       |54.1%       |6136       |22799       |14.22
 
-
 In general, assemblies are very poor. The best assembly, the allLibs, reaches only 32.1% of BUSCO. Will continue with this one.
 
 **UPDATE July 2023** Rerunning SPAdes. I noticed I was losing a lot of read in fp2 bc of MINLEN=140, I am going back and relaxing to 100, 80 and 50.
