@@ -375,7 +375,8 @@ MINLEN |Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome sco
 140 |Sde  |8A  |decontam       |scaffolds       |off       |na       | 27.7% | 0 | 48093      |280020878       |28.8%       |5111       |18521       |3.2
 140 |Sde  |9A  |decontam       |scaffolds       |off       |na      | 4.7% | 0 | 22963       |18478859       |0.2%       |4666       |1431       |14.99
 140 |Sde  |allLibs  |decontam       |scaffolds       |off       |na       | 32.1% | 2 | 85042       |347842987       |34.8%       |5471       |20780       |4.44
-140 |Sde  |    |contam         |scaffolds       |off       |na       |% | 0 | 105644       |536156621       |62.8%       |6686      |24304       |14.73
+
+
 100 |Sde  |8A  |decontam       |scaffolds       |off       |na       | 35.1.7% | 4 |148834      |380518335       |45.8%       |5913       |20462       |6.57
 100 |Sde  |allLibs  |decontam       |scaffolds       |off       |na       | 35.6% | 8 | 79798       |430676003       |51.9%       |6020       |22404       |12.67
 80 |Sde  |8A  |decontam       |scaffolds       |off       |na       | 35.9% | 2 |137756      |388908883       |46.9%       |5916       |20792       |6.02
