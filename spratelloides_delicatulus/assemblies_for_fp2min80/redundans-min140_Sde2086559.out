@@ -1,0 +1,87 @@
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy bedtools module, please load a up to date module
+instead:
+  
+    module load container_env bedtools
+  
+  Please run bedtools command with "crun.bedtools" prepend to it, for example:
+  
+    crun.bedtools bedtools
+  
+  Otherwise you will get "command not found" error. 
+Options: Namespace(fasta='/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta', fastq=['/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R1.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R2.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R1.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R2.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R1.fq.gz', '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R2.fq.gz'], identity=0.51, iters=2, joins=5, limit=0.2, linkratio=0.7, log=<open file '<stderr>', mode 'w' at 0x7f5bc748a1e0>, longreads=[], mapq=10, mem=16, minLength=200, nocleaning=True, nogapclosing=True, norearrangements=False, noreduction=True, noscaffolding=True, outdir='redundans_fp2min80', overlap=0.8, reference='', resume=False, threads=4, tmp='/tmp', usebwa=False, verbose=True)
+
+##################################################
+[Tue Aug  8 19:11:53 2023] Reduction...
+#file name	genome size	contigs	heterozygous size	[%]	heterozygous contigs	[%]	identity [%]	possible joins	homozygous size	[%]	homozygous contigs	[%]
+redundans_fp2min80/contigs.fa	890842346	575040	75770956	8.51	157608	27.41	90.587	0	815071390	91.49	417432	72.59
+
+##################################################
+[Tue Aug  8 19:54:58 2023] Estimating parameters of libraries...
+ Aligning 163014278 mates per library...
+Insert size statistics				Mates orientation stats
+FastQ files	read length	median	mean	stdev	FF	FR	RF	RR
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R1.fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R2.fq.gz	133	155	186.42	128.82	1	9981	16	2
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R1.fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R2.fq.gz	134	185	190.33	113.66	5	9982	10	3
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R1.fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R2.fq.gz	133	147	177.04	124.11	1	9992	7	0
+[WARNING] Highly variable insert size (177 +- 124.11) in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R1.fq.gz - /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R2.fq.gz!
+[WARNING] Highly variable insert size (186 +- 128.82) in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R1.fq.gz - /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R2.fq.gz!
+
+##################################################
+[Tue Aug  8 19:56:23 2023] Scaffolding...
+ iteration 1.1: redundans_fp2min80/contigs.reduced.fa	417432	815071390	42.711	233509	715663859	3308	890	75283	79797
+   No pairs were aligned!
+    No pairs were aligned!
+   No pairs were aligned!
+    No pairs were aligned!
+   No pairs were aligned!
+    No pairs were aligned!
+ iteration 1.2: redundans_fp2min80/_sspace.1.1.fa	417432	815071390	42.711	233509	715663859	3308	890	75283	79797
+   No pairs were aligned!
+    No pairs were aligned!
+   No pairs were aligned!
+    No pairs were aligned!
+   No pairs were aligned!
+    No pairs were aligned!
+Insert size statistics				Mates orientation stats
+FastQ files	read length	median	mean	stdev	FF	FR	RF	RR
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R1.fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R2.fq.gz	133	155	186.42	128.82	1	9981	16	2
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R1.fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-8A-ssl.clmp.fp2_repr.R2.fq.gz	134	185	190.33	113.66	5	9982	10	3
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R1.fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R2.fq.gz	133	147	177.04	124.11	1	9992	7	0
+[WARNING] Highly variable insert size (177 +- 124.11) in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R1.fq.gz - /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-9A-ssl.clmp.fp2_repr.R2.fq.gz!
+[WARNING] Highly variable insert size (186 +- 128.82) in /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R1.fq.gz - /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061-Ex1-7A-ssl.clmp.fp2_repr.R2.fq.gz!
+
+##################################################
+[Tue Aug  8 20:46:22 2023] Gap closing...
+ iteration 1.1: redundans_fp2min80/scaffolds.fa	417432	815071390	42.711	233509	715663859	3308	890	75283	79797
+
+##################################################
+[Tue Aug  8 22:51:58 2023] Final reduction...
+#file name	genome size	contigs	heterozygous size	[%]	heterozygous contigs	[%]	identity [%]	possible joins	homozygous size	[%]	homozygous contigs	[%]
+redundans_fp2min80/scaffolds.filled.fa	815078423	417432	497646	0.06	599	0.14	79.700	0	814580777	99.94	416833	99.86
+
+##################################################
+[Tue Aug  8 23:28:27 2023] Reporting statistics...
+#fname	contigs	bases	GC [%]	contigs >1kb	bases in contigs >1kb	N50	N90	Ns	longest
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta	575040	890842346	42.675	253371	744640822	2961	693	76853	79797
+redundans_fp2min80/contigs.fa	575040	890842346	42.675	253371	744640822	2961	693	76853	79797
+redundans_fp2min80/contigs.reduced.fa	417432	815071390	42.711	233509	715663859	3308	890	75283	79797
+redundans_fp2min80/_sspace.1.1.fa	417432	815071390	42.711	233509	715663859	3308	890	75283	79797
+redundans_fp2min80/_sspace.1.2.fa	417432	815071390	42.711	233509	715663859	3308	890	75283	79797
+redundans_fp2min80/scaffolds.fa	417432	815071390	42.711	233509	715663859	3308	890	75283	79797
+redundans_fp2min80/_gapcloser.1.1.fa	417432	815078423	42.711	233508	715670514	3308	890	15460	79797
+redundans_fp2min80/scaffolds.filled.fa	417432	815078423	42.711	233508	715670514	3308	890	15460	79797
+redundans_fp2min80/scaffolds.reduced.fa	416833	814580777	42.711	233341	715378460	3310	891	15460	79797
+
+##################################################
+[Tue Aug  8 23:30:00 2023] Cleaning-up...
+#Time elapsed: 4:21:09.057465

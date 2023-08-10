@@ -454,7 +454,7 @@ I have moved forward to run redundans on the allLibs fp2_min140 (i.e. one of the
 I created a dir for this, copied a script to run redundans in the scaffold.fasta (redundans.sb) and then ran BUSCO and QUAST in the reduced.fa
 ```
 mkdir assemblies_for_fp2min140/redundans_fp2min140
-sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min140" "redundans_fp2min140" "scaffolds"
+sbatch redundans.sb "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/Sde-CMat_061*.R*gz" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta" "redundans_fp2min140"
 # once redundans is done, I ran BUSCO and QUAST
 cd assemblies_for_fp2min140
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min140" "redundans_fp2min140" "scaffolds"
@@ -463,6 +463,10 @@ sbatch runQUAST.sh redundans_fp2min140/scaffolds.fasta
 I initially `mv scaffold.reduced.fa scaffolds.fasta` so I wouldn't have to modify the scripts.
 I have reinstate the normal name ``mv scaffolds.fasta scaffold.reduced.fa`
 
+***repeating the above for assemblies_for_fp2min80***
+```
+sbatch redundans.sb "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/fq_fp1_clmp_fp2min80_fqscrn_rprd/Sde-CMat_061*.R*gz" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta" "redundans_fp2min80"
+```
 
 **BUSCO and QUAST Resulsts**
 
