@@ -473,4 +473,6 @@ sbatch redundans.sb "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sprate
 MINLEN |Library    | BUSCO Single Copy | contigs >50000    |Largest contig    |Total length    |% Genome size completeness (830000000)    |N50    |L50    |Ns per 100 kbp   
 -------| ------  |------  |------ |------ |------ |------  |------ |------ |------
 140 (before Redundans) | allLibs| 32.1% | 2 | 85042       |347842987       |49.1       |5471       |20780       |4.44
-140 (after Redundans) | allLibs| 34%| 8 |79798 |428076144| 51.6%| 6040| 22193| 2.7
+140 (after Redundans) | allLibs| 34%| 8 |79798 |428076144| 51.6%| 6040| 22193| 2.78
+80 (before Redundans) | allLibs| 36.2% | 6 | 79797 |441403536	   |53.2       |6094	   |22613 |14.27
+80 (after Redundans) | allLibs| 36.2%  | 6 |79797 |438624818 | 52.8%| 6119 | 22389| 2.03
