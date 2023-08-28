@@ -1,0 +1,41 @@
+[bwa_index] Pack FASTA... 7.87 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=1649910294, availableWord=128093304
+[BWTIncConstructFromPacked] 10 iterations done. 99999990 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 199999990 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 299999990 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 399999990 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 499999990 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 599999990 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 699999990 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 799999990 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 899999990 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 999583222 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 1090965958 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 1172183190 characters processed.
+[BWTIncConstructFromPacked] 130 iterations done. 1244365254 characters processed.
+[BWTIncConstructFromPacked] 140 iterations done. 1308516822 characters processed.
+[BWTIncConstructFromPacked] 150 iterations done. 1365530902 characters processed.
+[BWTIncConstructFromPacked] 160 iterations done. 1416201142 characters processed.
+[BWTIncConstructFromPacked] 170 iterations done. 1461232982 characters processed.
+[BWTIncConstructFromPacked] 180 iterations done. 1501253334 characters processed.
+[BWTIncConstructFromPacked] 190 iterations done. 1536819510 characters processed.
+[BWTIncConstructFromPacked] 200 iterations done. 1568426806 characters processed.
+[BWTIncConstructFromPacked] 210 iterations done. 1596515414 characters processed.
+[BWTIncConstructFromPacked] 220 iterations done. 1621476582 characters processed.
+[BWTIncConstructFromPacked] 230 iterations done. 1643658150 characters processed.
+[bwt_gen] Finished constructing BWT in 234 iterations.
+[bwa_index] 794.83 seconds elapse.
+[bwa_index] Update BWT... 5.33 sec
+[bwa_index] Pack forward-only FASTA... 4.78 sec
+[bwa_index] Construct SA from BWT and Occ... 315.73 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa index scaffolds.fasta
+[main] Real time: 1179.015 sec; CPU: 1128.585 sec
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[E::main_mem] fail to open file `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min140_fqscrn_rprd/*_R1.fq.gz'.
+[main_samview] fail to read the header from "Sde_minlen140.aln-pe.sam".
+[E::hts_open_format] Failed to open file "Sde_minlen140.aln-pe.bam" : No such file or directory
+samtools sort: can't open "Sde_minlen140.aln-pe.bam": No such file or directory
+/var/spool/slurmd/job1982689/slurm_script: line 29: syntax error near unexpected token `<'
+/var/spool/slurmd/job1982689/slurm_script: line 29: `crun.samtools samtools view -f 0x2 -b ${SPCODE}.sort.bam > <speciescode>_redundans.sort.filt.bam'

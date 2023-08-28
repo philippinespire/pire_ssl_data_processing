@@ -1,0 +1,18 @@
+cp: -r not specified; omitting directory '/'
+
+Usage:   bwa index [options] <in.fasta>
+
+Options: -a STR    BWT construction algorithm: bwtsw, is or rb2 [auto]
+         -p STR    prefix of the index [same as fasta name]
+         -b INT    block size for the bwtsw algorithm (effective with -a bwtsw) [10000000]
+         -6        index files named as <in.fasta>.64.* instead of <in.fasta>.* 
+
+Warning: `-a bwtsw' does not work for short genomes, while `-a is' and
+         `-a div' do not work not for long genomes.
+
+[E::bwa_idx_load_from_disk] fail to locate the index files
+[main_samview] fail to read the header from ".aln-pe.sam".
+[E::hts_open_format] Failed to open file ".aln-pe.bam" : No such file or directory
+samtools sort: can't open ".aln-pe.bam": No such file or directory
+/var/spool/slurmd/job1982729/slurm_script: line 29: syntax error near unexpected token `<'
+/var/spool/slurmd/job1982729/slurm_script: line 29: `crun.samtools samtools view -f 0x2 -b ${SPCODE}.sort.bam > <speciescode>_redundans.sort.filt.bam'
