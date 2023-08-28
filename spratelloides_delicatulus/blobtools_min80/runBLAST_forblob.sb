@@ -1,0 +1,34 @@
+#!/bin/bash
+#SBATCH -c 32
+#SBATCH --job-name=blastforblob
+#SBATCH --output=blastforblob-%j.out
+
+export SINGULARITY_BIND=/home/e1garcia
+
+export BLASTDB=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
+
+QUERY=$1
+
+OUTBLOBDIR=$2
+
+/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn -db nt \
+	-query ${QUERY} \
+	-outfmt "6 qseqid staxids bitscore std" \
+	-max_target_seqs 10 \
+	-max_hsps 1 \
+	-evalue 1e-25 \
+	-num_threads 32 \
+	-out ${OUTBLOBDIR}/blastn_c32.out
+
+#cat ${QUERY} | \
+#	parallel --no-notice -j32 \
+#	--block 5k \
+#	--recstart '>' \
+#	--pipe /home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn \
+#	-query ${QUERY} \
+#	-outfmt "6 qseqid staxids bitscore std" \
+#	-max_target_seqs 10 \
+#	-max_hsps 1 \
+#	-evalue 1e-25 \
+#	-db nt \
+#	-query - > ${OUTBLOBDIR}/blastn_parallel.out

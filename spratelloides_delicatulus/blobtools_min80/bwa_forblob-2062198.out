@@ -1,0 +1,41 @@
+cat: '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min80_fqscrn_rprd/*R1.fq.gz': No such file or directory
+cat: '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min80_fqscrn_rprd/*R2.fq.gz': No such file or directory
+[bwa_index] Pack FASTA... 9.47 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=1781684692, availableWord=137365848
+[BWTIncConstructFromPacked] 10 iterations done. 99999988 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 199999988 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 299999988 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 399999988 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 499999988 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 599999988 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 699999988 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 799999988 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 899999988 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 999999988 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 1099999988 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 1194876884 characters processed.
+[BWTIncConstructFromPacked] 130 iterations done. 1279199700 characters processed.
+[BWTIncConstructFromPacked] 140 iterations done. 1354142036 characters processed.
+[BWTIncConstructFromPacked] 150 iterations done. 1420746964 characters processed.
+[BWTIncConstructFromPacked] 160 iterations done. 1479941572 characters processed.
+[BWTIncConstructFromPacked] 170 iterations done. 1532549876 characters processed.
+[BWTIncConstructFromPacked] 180 iterations done. 1579304260 characters processed.
+[BWTIncConstructFromPacked] 190 iterations done. 1620855636 characters processed.
+[BWTIncConstructFromPacked] 200 iterations done. 1657782580 characters processed.
+[BWTIncConstructFromPacked] 210 iterations done. 1690599348 characters processed.
+[BWTIncConstructFromPacked] 220 iterations done. 1719762932 characters processed.
+[BWTIncConstructFromPacked] 230 iterations done. 1745679572 characters processed.
+[BWTIncConstructFromPacked] 240 iterations done. 1768710308 characters processed.
+[bwt_gen] Finished constructing BWT in 247 iterations.
+[bwa_index] 901.57 seconds elapse.
+[bwa_index] Update BWT... 5.72 sec
+[bwa_index] Pack forward-only FASTA... 5.36 sec
+[bwa_index] Construct SA from BWT and Occ... 358.07 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa index scaffolds.fasta
+[main] Real time: 1339.291 sec; CPU: 1280.226 sec
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem scaffolds.fasta Sde_minlen80.R1.gz Sde_minlen80.R2.gz
+[main] Real time: 11.022 sec; CPU: 2.155 sec
