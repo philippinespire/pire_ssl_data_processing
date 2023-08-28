@@ -476,3 +476,21 @@ MINLEN |Library    | BUSCO Single Copy | contigs >50000    |Largest contig    |T
 140 (after Redundans) | allLibs| 34%| 8 |79798 |428076144| 51.6%| 6040| 22193| 2.78
 80 (before Redundans) | allLibs| 36.2% | 6 | 79797 |441403536	   |53.2       |6094	   |22613 |14.27
 80 (after Redundans) | allLibs| 36.2%  | 6 |79797 |438624818 | 52.8%| 6119 | 22389| 2.03
+
+### MitoFinder
+
+I ran MitoFinder on the fp2_min140 assembly
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min140 Sde SPAdes_allLibs_decontam_R1R2_noIsolate spratelloides_delicatulus
+```
+output can be reviewed in 
+`/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min140/mitofinder`
+
+**Results: NO SURPRISES, it is Sde**
+I blasted the whole COI from this file
+`/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min140/mitofinder/Sde_SPAdes_allLibs_decontam_R1R2_noIsolate_spratelloides_delicatulus/spratelloides_delicatulus.fasta`
+ 
+in **GenBank** and it matches 100% the complete mtGenome I used as a reference. Then I matches other Clupeids. I was curious why it didn't show other COI from S. delicatulus. The reason is because I was blasting ~1500bp so it was getting closer matches to whatever had the complete COI gene in genbank. When I blasted a ~500bp section, then I get all the Sde COI matches.
+
+in **BOLD** both whole and partial COI searches recovered Sde at the match
+
