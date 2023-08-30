@@ -775,6 +775,19 @@ Eric will then share these with Arbor BioSciences.
 </p>
 </details>
 
+___
+
+### E. Blobtools
+
+<details><summary> Run Blobtools </summary>
+<p>
+
+Before using your SSL genome for analyzing lcWGS data, it is probably a good idea to examine the genome for evidence of scaffolds with abnormally high or low GC content or depth of coverage. If there are a lot of these in your genome, you may want to filter them out as they might represent contamination. Blobtools can do this! 
+
+See the [Blobtools repo](https://github.com/philippinespire/pire_assembler_comparison/tree/main/Blobtools) in the assembler comparison directory for directions on how to run Blobtools on your best assembly.
+
+<p>
+</details>
 
 ___
 
