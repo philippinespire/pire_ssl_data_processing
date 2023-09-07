@@ -1,0 +1,10 @@
+#!/bin/bash -l
+
+#SBATCH --job-name=fqscrn_copy
+#SBATCH -o fqscrn_copy-%j.out 
+#SBATCH -p main 
+#SBATCH -n 1  
+#SBATCH -N 1  
+#SBATCH --cpus-per-task=40
+
+cp -r /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena/fq_raw_ssl /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena

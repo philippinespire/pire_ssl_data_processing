@@ -1,0 +1,36 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --job-name=bwa_forblob
+#SBATCH --output=bwa_forblob-%j.out
+
+module load container_env bwa samtools
+
+ASSEMBLYDIR=$1
+ASSEMBLYFILE=$2
+FQDIR=$3
+FQFORMAT=$4
+OUTBLOBDIR=$5
+SPCODE=$6
+
+R1s=${FQDIR}/*R1.${FQFORMAT}
+R2s=${FQDIR}/*R2.${FQFORMAT}
+
+export SINGULARITY_BIND=/home/e1garcia
+
+cd ${OUTBLOBDIR}
+
+cp ${ASSEMBLYDIR}/${ASSEMBLYFILE} .
+
+cat ${R1s} > ${SPCODE}.R1.gz
+
+cat ${R2s} > ${SPCODE}.R2.gz
+
+crun.bwa bwa index ${ASSEMBLYFILE}
+
+crun.bwa bwa mem ${ASSEMBLYFILE} ${SPCODE}.R1.gz ${SPCODE}.R2.gz > ${SPCODE}.aln-pe.sam
+
+crun.samtools samtools view -Sb -o ${SPCODE}.aln-pe.bam ${SPCODE}.aln-pe.sam
+
+crun.samtools samtools sort -o ${SPCODE}.sort.bam ${SPCODE}.aln-pe.bam
+
+crun.samtools samtools view -f 0x2 -b ${SPCODE}.sort.bam > ${SPCODE}.sort.filt.bam
