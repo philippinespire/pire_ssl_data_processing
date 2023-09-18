@@ -82,5 +82,6 @@ crun mitofinder --megahit \
 	-r $path2gb/$genbank_reference \
 	-o 2 \
 	-p $threads \
-	-m $ramPerThreads
+	-m $ramPerThreads \
+	--override
 
