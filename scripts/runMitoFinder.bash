@@ -2,7 +2,7 @@
 
 
 #bash ../../../shotgun_PIRE/pire_ssl_data_processing/scripts/runMitoFinder.bash inputFqGzPatterns.txt ../fqgz_processing/nowga_fq_fp1_clmp_fp2_fqscrn_rprd ../mitofinder/mitofinder_refpanel 7 32 480 himem
-
+#bash /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMitoFinder.bash inputFqGzPatterns.txt ../fqgz_processing/nowga_fq_fp1_clmp_fp2_fqscrn_rprd ../mitofinder/mitofinder_refpanel 11 40 320 main
 
 #FQPATTERN=*R1.fq.gz
 
