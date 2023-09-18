@@ -3,6 +3,7 @@
 #SBATCH --job-name=mitofinder
 #SBATCH -o mitofinder-%j.out
 #SBATCH --time=00:00:00
+#SBATCH --exclusive
 ##SBATCH -p main
 ##SBATCH --cpus-per-task=1
 
@@ -13,18 +14,20 @@ module load container_env mitofinder/1.4.1
 
 export SINGULARITY_BIND=/home/e1garcia
 
-fqPath=$1
-path2gb=$2
-threads=$3
-ramPerThreads=$4
-FQPATTERN=*R1.fq.gz
+fqPatternFile=$1
+fqPath=$2
+path2gb=$3
+threads=$4
+ramPerThreads=$5
+#FQPATTERN=*R1.fq.gz
 
 #mitofinder -j [seqid] -1 [left_reads.fastq.gz] -2 [right_reads.fastq.gz] -r [genbank_reference.gb] -o [genetic_code] -p [threads] -m [memory]
 
-all_samples=$(ls $fqPath/$FQPATTERN | \
-        cut -d "_" -f 9-13 | \
-        cut -d "-" -f 3-4)
-all_samples=($all_samples)
+#all_samples=$(ls $fqPath/$FQPATTERN | \
+#        cut -d "_" -f 9-13 | \
+#        cut -d "-" -f 3-4)
+#all_samples=($all_samples)
+all_samples=($(cat ${fqPatternFile}))
 
 sample_name=${all_samples[${SLURM_ARRAY_TASK_ID}]}
 
@@ -72,7 +75,7 @@ echo $threads
 echo $ramPerThreads
 echo "----------------"
 
-crun mitofinder --metaspades \
+crun mitofinder --megahit \
 	-j $sample_name \
 	-1 $fqPath/*$sample_name*R1.fq.gz \
 	-2 $fqPath/*$sample_name*R2.fq.gz \
