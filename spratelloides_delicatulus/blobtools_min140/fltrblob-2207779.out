@@ -1,0 +1,53 @@
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy bedtools module, please load a up to date module
+instead:
+  
+    module load container_env bedtools
+  
+  Please run bedtools command with "crun.bedtools" prepend to it, for example:
+  
+    crun.bedtools bedtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy samtools module, please load a up to date module
+instead:
+  
+    module load container_env samtools
+  
+  Please run samtools command with "crun.samtools" prepend to it, for example:
+  
+    crun.samtools samtools
+  
+  Otherwise you will get "command not found" error. 
+  You are loading a legacy bedtools module, please load a up to date module
+instead:
+  
+    module load container_env bedtools
+  
+  Please run bedtools command with "crun.bedtools" prepend to it, for example:
+  
+    crun.bedtools bedtools
+  
+  Otherwise you will get "command not found" error. 
+WARN: Skipping field 'Sde_minlen140_redundans.sort.filt_cov.json', not present in dataset
+WARN: Skipping field 'Sde_minlen140_redundans.sort.filt_cov.json', not present in dataset
+WARN: Skipping field 'bestsumorder_phylum.json', not present in dataset
+Traceback (most recent call last):
+  File "/opt/conda/bin/blobtools", line 8, in <module>
+    sys.exit(cli())
+  File "/opt/conda/lib/python3.8/site-packages/blobtools/blobtools.py", line 88, in cli
+    sys.exit(subcommand())
+  File "/opt/conda/lib/python3.8/site-packages/blobtools/lib/filter.py", line 459, in cli
+    main(args)
+  File "/opt/conda/lib/python3.8/site-packages/blobtools/lib/filter.py", line 293, in main
+    indices = [index for index, value in enumerate(identifiers.values)]
+AttributeError: 'bool' object has no attribute 'values'

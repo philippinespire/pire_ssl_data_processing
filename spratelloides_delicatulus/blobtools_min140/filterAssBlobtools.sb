@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --job-name=fltrblob
+#SBATCH --output=fltrblob-%j.out
+
+enable_lmod
+module load container_env/0.1
+module load busco/5.0.0
+module load container_env blobtoolkit
+
+
+crun blobtools filter \
+	--param Sde_minlen140_redundans.sort.filt_cov--Min=4 \
+	--param Sde_minlen140_redundans.sort.filt_cov--Max=100 \
+	--param bestsumorder_phylum--Keys=Mollusca,Annelida,Cnidaria,Arthropoda,Echinodermata,Nematoda,Chlorophyta,Pseudomonadota,Platyhelminthes,Bacteroidota,Uroviricota,Actinomycetota \
+	--param bestsumorder_class--Keys=Aves,Mammalia,Cladistia,Chordata-undef,Insecta,Amphibia,Chondrichthyes,Lepidosauria,Hyperoartia,Myxini,Leptocardii,Gastropoda,Demospongiae \
+	--output /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/blobtools_min140/Sde_min140_blobplot/Sde_filtercov_keepChordatanohit_blobplot \
+	--fasta /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/blobtools_min140/scaffolds.fasta \
+        /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/blobtools_min140/Sde_min140_blobplot/
+
+#Sde_filtercov_keepChordatanohit_blobplot \
+

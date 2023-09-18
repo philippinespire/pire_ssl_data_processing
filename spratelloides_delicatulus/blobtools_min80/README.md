@@ -30,3 +30,5 @@ Run BWA:
 ```
 sbatch runBWA_forblob.sb /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min80/SPAdes_allLibs_decontam_R1R2_noIsolate scaffolds.fasta /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/fq_fp1_clmp_fp2min80_fqscrn_rprd fq.gz /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/blobtools_min80 Sde_minlen80
 ```
+
+Reran BWA bc I didn't have re-paired fq files for minlen80 yet.	Ran repair then	reran BWA here (same command as	above) 

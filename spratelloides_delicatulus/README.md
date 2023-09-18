@@ -494,3 +494,14 @@ in **GenBank** and it matches 100% the complete mtGenome I used as a reference. 
 
 in **BOLD** both whole and partial COI searches recovered Sde at the match
 
+
+---
+
+**Running BUSCO in assemblies_for_fp2min140 contam**
+
+I wanted to compare the results of Blobtools using the decontaminated and contaminated refs. 
+For this, I need to go back and run BUSCO in the contam.
+```
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBUSCO.sh "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/assemblies_for_fp2min140" "SPAdes_allLibs_contam_R1R2_noIsolate" "scaffolds"
+```
+---
