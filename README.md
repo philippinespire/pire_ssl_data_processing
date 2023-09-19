@@ -668,6 +668,15 @@ grep -A1 "@" */*Final_Results/*contig_*_genes_NT.fasta | \
 
 ```
 
+Now we can blast the fasta file
+
+```bash
+bash # only run this line if you aren't alread in bash
+
+
+
+```
+
 ---
 
 <p>
