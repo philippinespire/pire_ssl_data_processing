@@ -11,14 +11,13 @@ enable_lmod
 module load container_env mitofinder/1.4.1 
 export SINGULARITY_BIND=/home/e1garcia
 
-SSL_DIR=$1
-ASSEMBLY=$2
-mtGENOMES=$3
-seqID=$4
-outDIR=$5
+ASSEMBLY=$1
+mtGENOMES=$2
+seqID=$3
+outDIR=$4
 
-mkdir ${SSL_DIR}/$outDIR
+mkdir $outDIR
 
-cd ${SSL_DIR}/$outDIR
+cd $outDIR
 
 crun mitofinder -j $seqID -a $ASSEMBLY -r $mtGENOMES -o 2
