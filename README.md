@@ -660,7 +660,7 @@ cd $outDIR
 
 grep -A1 "@" */*Final_Results/*contig_*_genes_NT.fasta | \
 	sed -e "s/\-\-//" -e "s/^.*>/>/" \
-	-e "s/^NoWGA.*contig/contig/" \
+	-e "s/^N*o*WGA.*contig/contig/" \
 	-e "s/_genes_NT.fasta\-/\n/" \
 	-e "s/\ncontig/contig/" | \
 	awk '{if(substr($0,1,1)==">") {getline x; if(x!="") print $0 "_" x} else if($0!="") {print $0}}' > \
