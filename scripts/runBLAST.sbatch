@@ -25,4 +25,4 @@ $blastnPATH -db nt \
 	-max_hsps 1 \
 	-evalue 1e-25 \
 	-num_threads 40 \
-	-out /scratch/breid/Lle_seqs/contam/Lle_all_contam_dipbub20/results/blobtools/$outFILE
+	-out $outFILE
