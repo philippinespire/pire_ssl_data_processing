@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -c 40
-#SBATCH --job-name=blast_assemblyname
-#SBATCH --output=blast_assemblyname-%j.out
+#SBATCH --job-name=blastn
+#SBATCH --output=blastn-%j.out
 
 #blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
 blastdbPATH=$1
