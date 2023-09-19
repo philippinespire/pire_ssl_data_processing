@@ -40,7 +40,7 @@ SCRIPTPATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 #all_samples=(${all_samples})
 all_samples=($(cat ${fqPatternFile}))
 
-sbatch --array=0-$((${#all_samples[@]}-1))%${nodes} -p $queue -c ${threads} ${SCRIPTPATH}/runMitoFinder_Roy.sbatch ${fqPatternFile} ${fqPath} ${path2gb} ${threads} ${ramPerThreads}
+sbatch --array=0-$((${#all_samples[@]}-1))%${nodes} -p $queue -c ${threads} ${SCRIPTPATH}/runMitoFinder_roy.sbatch ${fqPatternFile} ${fqPath} ${path2gb} ${threads} ${ramPerThreads}
 
 #for sample in ${all_samples[@]}; do
 #    sbatch -p $queue -c ${threads} ${SCRIPTPATH}/runMitoFinder.sbatch ${sample} ${fqPath} ${path2gb} ${threads} ${ramPerThread}
