@@ -676,10 +676,11 @@ bash # only run this line if you aren't alread in bash
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBLAST.sbatch
 blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
 blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
+taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
 queryFASTA=successful_genes_NT.fasta
 outFILE=successful_genes_NT.blastn
 
-sbatch $SCRIPT $blastdbPATH $blastnPATH $queryFASTA $outFILE
+sbatch $SCRIPT $blastdbPATH $blastnPATH $taskNAME $queryFASTA $outFILE
 ```
 
 ---
