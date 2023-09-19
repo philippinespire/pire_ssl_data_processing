@@ -4,3 +4,30 @@ cat: '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/fq
 [bwa_index] Construct BWT for the packed sequence...
 [BWTIncCreate] textLength=953529480, availableWord=79093692
 [BWTIncConstructFromPacked] 10 iterations done. 99999992 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 199999992 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 299683672 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 391430136 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 472970616 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 545440040 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 609847000 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 667088072 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 717960040 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 763171192 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 803350936 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 839058776 characters processed.
+[BWTIncConstructFromPacked] 130 iterations done. 870791976 characters processed.
+[BWTIncConstructFromPacked] 140 iterations done. 898992472 characters processed.
+[BWTIncConstructFromPacked] 150 iterations done. 924053128 characters processed.
+[BWTIncConstructFromPacked] 160 iterations done. 946323064 characters processed.
+[bwt_gen] Finished constructing BWT in 164 iterations.
+[bwa_index] 479.58 seconds elapse.
+[bwa_index] Update BWT... 3.58 sec
+[bwa_index] Pack forward-only FASTA... 2.76 sec
+[bwa_index] Construct SA from BWT and Occ... 210.93 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa index scaffolds.fasta
+[main] Real time: 728.351 sec; CPU: 701.299 sec
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem scaffolds.fasta Abu.R1.gz Abu.R2.gz
+[main] Real time: 3.655 sec; CPU: 0.948 sec
