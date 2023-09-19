@@ -594,7 +594,7 @@ Check the outputs - the complete mitochondrial genome should have 15 genes and v
 
 ---
 	
-### C. Mitochondrial Genome Assembly
+### C. Mitochondrial Genome Annotation, Assembly
 
 <details><summary>1. Annotate Mitochondrial DNA from Assembly </summary>
 <p>
@@ -609,7 +609,7 @@ SSL_DIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>
 ASSEMBLY=${SSL_DIR}/<NameOfAssemblyDir>/scaffolds.fasta
 mtGENOMES=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/mitofinder_refpanel/<MtGenomeFile>.gb 
 seqID=<Species>_<NameOfAssemblyDir>_<mtGenomeFile>
-outDIR=mitofinder_annotate
+outDIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>/mitofinder_annotate
 
 sbatch $SCRIPT $SSL_DIR $ASSEMBLY $mtGENOMES $seqID $outDIR
 ```
@@ -627,14 +627,15 @@ If the assembly is not yielding the mitochondrial DNA, you can use mitofinder de
 ```bash
 bash # only run this line if you aren't alread in bash
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMitoFinder.bash
-inFqGzPatternFile=inputFqGzPatterns.txt
-fqGzDIR=../fq_fp1_clmp_fp2_fqscrn_rprd
+inFqGzPatternFile=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>/inputFqGzPatterns.txt
+fqGzDIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>/fq_fp1_clmp_fp2_fqscrn_rprd
+outDIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>/mitofinder
 refMtGenomeFile=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/mitofinder_refpanel/<NameOfMtGenome>.gb
 simultaneousJOBS=10
 threadsPerJOB=40
 ramPerJOB=320
 QUEUE=main  #or himem
-bash  $SCRIPT $inFqGzPatternFile $fqGzDIR $refMtGenomeFile $simultaneousJOBS $threadsPerJOB $ramPerJOB $QUEUE
+bash  $SCRIPT $inFqGzPatternFile $fqGzDIR $outDIR $refMtGenomeFile $simultaneousJOBS $threadsPerJOB $ramPerJOB $QUEUE
 ```
 
 ---
