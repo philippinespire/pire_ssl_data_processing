@@ -777,6 +777,61 @@ Eric will then share these with Arbor BioSciences.
 
 ___
 
+### D. Mitochondrial Genome Assembly
+
+<details><summary>1. Annotate Mitochondrial DNA from Assembly </summary>
+<p>
+
+You can use mitofinder to annotate the mitochondrial contigs in the assembly you created above
+
+```bash
+
+```
+
+---
+
+<p>
+</details>
+
+<details><summary>2. Assemble Mitochondrial DNA </summary>
+<p>
+
+If the assembly is not yielding the mitochondrial DNA, you can use mitofinder de novo assemble it using `runMitofinder.bash`.
+
+```bash
+
+```
+
+---
+
+<p>
+</details>
+
+<details><summary>3. Blast mtDNA Genes </summary>
+<p>
+
+You should identify the taxon associated with you annotated mtDNA contigs. 
+
+First, make a fasta:
+
+```bash
+grep -A1 "@" */*Final_Results/*contig_*_genes_NT.fasta | \
+	sed -e "s/\-\-//" -e "s/^.*>/>/" \
+	-e "s/^NoWGA.*contig/contig/" \
+	-e "s/_genes_NT.fasta\-/\n/" \
+	-e "s/\ncontig/contig/" | \
+	awk '{if(substr($0,1,1)==">") {getline x; if(x!="") print $0 "_" x} else if($0!="") {print $0}}' | \
+	less
+
+```
+
+---
+
+<p>
+</details>
+
+___
+
 ### E. Blobtools
 
 <details><summary> Run Blobtools to generate visual summaries </summary>
@@ -860,64 +915,10 @@ mv Goy_scaffolds_GyC0881E_contam_R1R2_noIsolate.filtered.fasta Goy_scaffolds_fil
 <p>
 </details>
 
-___
-
-E. Mitochondrial Genome Assembly
-
-<details><summary>1. Annotate Mitochondrial DNA from Assembly </summary>
-<p>
-
-You can use mitofinder to annotate the mitochondrial contigs in the assembly you created above
-
-```bash
-
-```
 
 ---
 
-<p>
-</details>
-
-<details><summary>2. Assemble Mitochondrial DNA </summary>
-<p>
-
-If the assembly is not yielding the mitochondrial DNA, you can use mitofinder de novo assemble it using `runMitofinder.bash`.
-
-```bash
-
-```
-
----
-
-<p>
-</details>
-
-<details><summary>3. Blast mtDNA Genes </summary>
-<p>
-
-You should identify the taxon associated with you annotated mtDNA contigs. 
-
-First, make a fasta:
-
-```bash
-grep -A1 "@" */*Final_Results/*contig_*_genes_NT.fasta | \
-	sed -e "s/\-\-//" -e "s/^.*>/>/" \
-	-e "s/^NoWGA.*contig/contig/" \
-	-e "s/_genes_NT.fasta\-/\n/" \
-	-e "s/\ncontig/contig/" | \
-	awk '{if(substr($0,1,1)==">") {getline x; if(x!="") print $0 "_" x} else if($0!="") {print $0}}' | \
-	less
-
-```
-
----
-
-<p>
-</details>
-
----
-
-### G. CLEANING UP
+### F. CLEANING UP
 
 <details><summary>1. Make a copy of important files</summary>
 <p>
