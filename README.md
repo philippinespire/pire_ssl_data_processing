@@ -793,13 +793,22 @@ You can use mitofinder to annotate the mitochondrial contigs in the assembly you
 <p>
 </details>
 
-<details><summary>2. Assemble Mitochondrial DNA </summary>
+<details><summary>2. Assemble & Annotate Mitochondrial DNA </summary>
 <p>
 
 If the assembly is not yielding the mitochondrial DNA, you can use mitofinder de novo assemble it using `runMitofinder.bash`.
 
 ```bash
-
+bash # only run this line if you aren't alread in bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMitoFinder.bash
+inFqGzPatternFile=inputFqGzPatterns.txt
+fqGzDIR=../fq_fp1_clmp_fp2_fqscrn_rprd
+refMtGenomeFile=/home/e1garcia/shotgun_PIRE/mtGenomes/<NameOfGenome>.fasta
+simultaneousJOBS=11
+threadsPerJOB=40
+ramPerJOB=320
+QUEUE=main  #or himem
+bash  $SCRIPT $inFqGzPatternFile $fqGzDIR $refMtGenomeFile $simultaneousJOBS $threadsPerJOB $ramPerJOB $QUEUE
 ```
 
 ---
