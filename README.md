@@ -594,16 +594,24 @@ Check the outputs - the complete mitochondrial genome should have 15 genes and v
 
 ---
 	
-
 ### C. Mitochondrial Genome Assembly
 
 <details><summary>1. Annotate Mitochondrial DNA from Assembly </summary>
 <p>
 
-You can use mitofinder to annotate the mitochondrial contigs in the assembly you created above
+You can use `run_mitofinder_ssl.sbatch` to annotate the mitochondrial contigs in the assembly you created above
 
 ```bash
+bash # only run this line if you aren't alread in bash
 
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch
+SSL_DIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>
+ASSEMBLY=${SSL_DIR}/<NameOfAssemblyDir>/scaffolds.fasta
+mtGENOMES=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/mitofinder_refpanel/<MtGenomeFile>.gb 
+seqID=<Species>_<NameOfAssemblyDir>_<mtGenomeFile>
+outDIR=mitofinder_annotate
+
+sbatch $SCRIPT $SSL_DIR $ASSEMBLY $mtGENOMES $seqID $outDIR
 ```
 
 ---
@@ -621,8 +629,8 @@ bash # only run this line if you aren't alread in bash
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMitoFinder.bash
 inFqGzPatternFile=inputFqGzPatterns.txt
 fqGzDIR=../fq_fp1_clmp_fp2_fqscrn_rprd
-refMtGenomeFile=/home/e1garcia/shotgun_PIRE/mtGenomes/<NameOfGenome>.fasta
-simultaneousJOBS=11
+refMtGenomeFile=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/mitofinder_refpanel/<NameOfMtGenome>.gb
+simultaneousJOBS=10
 threadsPerJOB=40
 ramPerJOB=320
 QUEUE=main  #or himem
