@@ -673,8 +673,13 @@ Now we can blast the fasta file
 ```bash
 bash # only run this line if you aren't alread in bash
 
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBLAST.sbatch
+blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
+blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
+queryFASTA=successful_genes_NT.fasta
+outFILE=successful_genes_NT.blastn
 
-
+sbatch $SCRIPT $blastdbPATH $blastnPATH $queryFASTA $outFILE
 ```
 
 ---
