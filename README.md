@@ -609,9 +609,9 @@ SSL_DIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>
 ASSEMBLY=${SSL_DIR}/<NameOfAssemblyDir>/scaffolds.fasta
 mtGENOMES=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/mitofinder_refpanel/<MtGenomeFile>.gb 
 seqID=<Species>_<NameOfAssemblyDir>_<mtGenomeFile>
-outDIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>/mitofinder_annotate
+outDIR=${SSL_DIR}/mitofinder_annotate
 
-sbatch $SCRIPT $SSL_DIR $ASSEMBLY $mtGENOMES $seqID $outDIR
+sbatch $SCRIPT $ASSEMBLY $mtGENOMES $seqID $outDIR
 ```
 
 ---
