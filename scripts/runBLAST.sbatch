@@ -16,8 +16,11 @@ taskNAME=$3
 # queryFASTA=successful_genes_NT.fasta
 queryFASTA=$4
 
- #outFILE=successful_genes_NT.blastn
+# outFILE=successful_genes_NT.blastn
 outFILE=$5
+
+# outCOLS="6 qseqid staxids sscinames sskingdoms saccver pident qcovs length mismatch gapopen qstart qend sstart send evalue bitscore"
+outCOLS=$6
 
 export SINGULARITY_BIND=/home/e1garcia
 export BLASTDB=$blastdbPATH
@@ -25,8 +28,8 @@ export BLASTDB=$blastdbPATH
 $blastnPATH -db nt \
 	-task $taskNAME
 	-query $queryFASTA \
-	-outfmt "6 qseqid staxids bitscore std" \
-	-max_target_seqs 10 \
+	-outfmt "$outCOLS" \
+	-max_target_seqs 1000 \
 	-max_hsps 1 \
 	-evalue 1e-25 \
 	-num_threads 40 \
