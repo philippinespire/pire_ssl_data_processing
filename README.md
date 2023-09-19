@@ -626,6 +626,7 @@ If the assembly is not yielding the mitochondrial DNA, you can use mitofinder de
 
 ```bash
 bash # only run this line if you aren't alread in bash
+
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runMitoFinder.bash
 inFqGzPatternFile=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>/inputFqGzPatterns.txt
 fqGzDIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>/fq_fp1_clmp_fp2_fqscrn_rprd
@@ -635,6 +636,7 @@ simultaneousJOBS=10
 threadsPerJOB=40
 ramPerJOB=320
 QUEUE=main  #or himem
+
 bash  $SCRIPT $inFqGzPatternFile $fqGzDIR $outDIR $refMtGenomeFile $simultaneousJOBS $threadsPerJOB $ramPerJOB $QUEUE
 ```
 
@@ -651,13 +653,18 @@ You should identify the taxon associated with you annotated mtDNA contigs.
 First, make a fasta:
 
 ```bash
+bash # only run this line if you aren't alread in bash
+
+outDIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>/mitofinder
+cd $outDIR
+
 grep -A1 "@" */*Final_Results/*contig_*_genes_NT.fasta | \
 	sed -e "s/\-\-//" -e "s/^.*>/>/" \
 	-e "s/^NoWGA.*contig/contig/" \
 	-e "s/_genes_NT.fasta\-/\n/" \
 	-e "s/\ncontig/contig/" | \
-	awk '{if(substr($0,1,1)==">") {getline x; if(x!="") print $0 "_" x} else if($0!="") {print $0}}' | \
-	less
+	awk '{if(substr($0,1,1)==">") {getline x; if(x!="") print $0 "_" x} else if($0!="") {print $0}}' > \
+	successful_genes_NT.fasta
 
 ```
 
