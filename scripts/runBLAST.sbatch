@@ -32,7 +32,7 @@ echo outCOLS: $outCOLS
 export SINGULARITY_BIND=/home/e1garcia
 export BLASTDB=$blastdbPATH
 
-$blastnPATH -db nt \
+$blastnPATH -db $blastdbPATH \
 	-task $taskNAME
 	-query $queryFASTA \
 	-outfmt "$outCOLS" \
