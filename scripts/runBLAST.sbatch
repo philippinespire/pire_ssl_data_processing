@@ -27,15 +27,15 @@ echo blastnPATH: $blastnPATH
 echo taskNAME: $taskNAME
 echo queryFASTA: $queryFASTA
 echo outFILE: $outFILE
-echo outCOLS: $outCOLS
+echo outCOLS: ${outCOLS[@]}
 
 export SINGULARITY_BIND=/home/e1garcia
 export BLASTDB=$blastdbPATH
 
-$blastnPATH -db $blastdbPATH \
-	-task $taskNAME
+$blastnPATH -db nt \
+	-task $taskNAME \
 	-query $queryFASTA \
-	-outfmt "$outCOLS" \
+	-outfmt "${outCOLS[@]}" \
 	-max_target_seqs 1000 \
 	-max_hsps 1 \
 	-evalue 1e-25 \
