@@ -9,7 +9,7 @@ fqPatternFile=$1
 fqPath=$2
 
 # input the mitochondial reference genome fasta file path
-#path2gb=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/mtGenomes/<NameOfFile>.fasta
+#path2gb=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/mtGenomes/<NameOfFile>.gb
 path2gb=$3
 
 #Pass in the maximum number of nodes to use at once
