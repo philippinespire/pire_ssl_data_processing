@@ -22,6 +22,13 @@ outFILE=$5
 # outCOLS="6 qseqid staxids sscinames sskingdoms saccver pident qcovs length mismatch gapopen qstart qend sstart send evalue bitscore"
 outCOLS=$6
 
+echo blastdbPATH: $blastdbPATH
+echo blastnPATH: $blastnPATH
+echo taskNAME: $taskNAME
+echo queryFASTA: $queryFASTA
+echo outFILE: $outFILE
+echo outCOLS: $outCOLS
+
 export SINGULARITY_BIND=/home/e1garcia
 export BLASTDB=$blastdbPATH
 
