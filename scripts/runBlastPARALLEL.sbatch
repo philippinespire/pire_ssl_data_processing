@@ -22,7 +22,8 @@ export BLASTDB=$blastdbPATH
 
 # Step 1: Split the fasta file into individual sequence files
 mkdir -p split_fasta
-awk '/^>/{if(NR>1){close(f)}; f="split_fasta/sequence_"NR".fasta";}{print > f}' $queryFASTA
+# awk '/^>/{if(NR>1){close(f)}; f="split_fasta/sequence_"NR".fasta";}{print > f}' $queryFASTA
+awk '/^>/{if(NR>1){close(f)}; split($0,a," "); gsub(">","",a[1]); f="split_fasta/"a[1]".fasta";}{print > f}' $queryFASTA
 
 # Step 2: Use GNU parallel to run blast on each sequence separately
 mkdir -p split_output
