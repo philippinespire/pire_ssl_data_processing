@@ -726,7 +726,9 @@ less -S $outFILE
 And we can hone in on the high confidence taxonmy calls while removing duplicate taxa for a given library and contig
 
 ```bash
-awk -F'\t' -v OFS='\t' '$5 > 95 && !seen[$1, $3, $8]++ {print $1, $3, $7, $8}' $outFILE | less -S
+awk -F'\t' -v OFS='\t' '$5 > 95 && !seen[$1, $3, $8]++ {print $1, $3, $7, $8, $5}' $outFILE > successful_genes_NT-segmented_best_summary.tsv
+
+less -S successful_genes_NT-segmented_best_summary.tsv
 ```
 
 ---
