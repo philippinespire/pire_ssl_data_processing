@@ -732,6 +732,17 @@ awk -F'\t' -v OFS='\t' '$5 > 95 && !seen[$1, $3, $8]++ {print $1, $3, $7, $8, $5
 less -S successful_genes_NT-segmented_best_summary.tsv
 ```
 
+Now lets harvest basic information on the contigs so we can evaluate prevalence and quality.
+
+First we will make a tidy file with all contigs returned by mitofinder with mtDNA genes
+
+```bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/tidyContigINFO.bash
+inPATH="*/*Final_Results/*infos"
+
+bash tidyContigINFO3.bash "$inPATH" > successful_genes_contig_info.tsv
+```
+
 ---
 
 <p>
