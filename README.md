@@ -658,7 +658,7 @@ bash # only run this line if you aren't alread in bash
 outDIR=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/<NameOfSpeciesDir>/mitofinder
 cd $outDIR
 
-grep -A1 "@" */*Final_Results/*contig_*_genes_NT.fasta | \
+grep -A1 "@" */*Final_Results/*contig_*genes_NT.fasta | \
 	sed -e "s/\-\-//" -e "s/^.*>/>/" \
 	-e "s/^N*o*WGA.*contig/contig/" \
 	-e "s/_genes_NT.fasta\-/\n/" \
