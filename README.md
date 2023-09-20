@@ -677,8 +677,24 @@ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBLAST.sba
 blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
 blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
 taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
-queryFASTA=successful_genes_NT.fasta
+queryFASTA=successful_genes_NT.segments.fasta
 outFILE=successful_genes_NT.blastn
+outCOLS='6 qseqid pident qcovs sskingdoms sscinames staxids saccver length mismatch gapopen qstart qend sstart send evalue bitscore'
+
+sbatch $SCRIPT $blastdbPATH $blastnPATH $taskNAME $queryFASTA $outFILE "$outCOLS"
+```
+
+this does the same as above, but uses gnu parallel to run 5 blasts with 8 threads each
+
+```bash
+bash # only run this line if you aren't alread in bash
+
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBlastPARALLEL.sbatch
+blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
+blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
+taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
+queryFASTA=successful_genes_NT.segments.fasta
+outFILE=successful_genes_NT-segments_parallel.blastn
 outCOLS='6 qseqid pident qcovs sskingdoms sscinames staxids saccver length mismatch gapopen qstart qend sstart send evalue bitscore'
 
 sbatch $SCRIPT $blastdbPATH $blastnPATH $taskNAME $queryFASTA $outFILE "$outCOLS"
