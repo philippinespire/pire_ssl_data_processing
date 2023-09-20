@@ -663,7 +663,8 @@ grep -A1 "@" */*Final_Results/*contig_*genes_NT.fasta | \
 	-e "s/^N*o*WGA.*contig/contig/" \
 	-e "s/_genes_NT.fasta\-/\n/" \
 	-e "s/\ncontig/contig/" | \
-	awk '{if(substr($0,1,1)==">") {getline x; if(x!="") print $0 "_" x} else if($0!="") {print $0}}' > \
+	awk '{if(substr($0,1,1)==">") {getline x; if(x!="") print $0 "_" x} else if($0!="") {print $0}}' | \
+	sed -e "s/contig$/contig_0/" > \
 	successful_genes_NT.fasta
 
 ```
