@@ -15,5 +15,5 @@ END {
         print line[i];
     }
 }' $inFILE | \
-sed -e 's/_contig/\tcontig/' -e 's/\(contig_[1-9][0-9]*\)_/\1\t/' -e 's/@/\t/' | \
+sed -e 's/_contig/\tcontig/' -e 's/\(contig_[0-9][0-9]*\)_/\1\t/' -e 's/@/\t/' | \
 sort -k1,1 -k3,3 -k2,2 -k4,4n
