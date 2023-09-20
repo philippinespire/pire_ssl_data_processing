@@ -27,7 +27,7 @@ awk '/^>/{if(NR>1){close(f)}; split($0,a," "); gsub(">","",a[1]); f="split_fasta
 
 # Step 2: Use GNU parallel to run blast on each sequence separately
 mkdir -p split_output
-parallel -j 5 "$blastnPATH -db nt -task $taskNAME -query {} -outfmt ${outCOLS[@]} -max_target_seqs 1000 -max_hsps 1 -evalue 1e-25 -num_threads 8 -out split_output/{#}.out" ::: split_fasta/*.fasta
+parallel -j 5 "$blastnPATH -db nt -task $taskNAME -query {} -outfmt \"${outCOLS[@]}\" -max_target_seqs 1000 -max_hsps 1 -evalue 1e-25 -num_threads 8 -out split_output/{#}.out" ::: split_fasta/*.fasta
 
 # Step 3: Concatenate the output files together
 cat split_output/*.out > $outFILE
