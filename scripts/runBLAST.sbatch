@@ -36,7 +36,7 @@ $blastnPATH -db nt \
 	-task $taskNAME \
 	-query $queryFASTA \
 	-outfmt "${outCOLS[@]}" \
-	-max_target_seqs 1000 \
+	-max_target_seqs 100 \
 	-max_hsps 1 \
 	-evalue 1e-25 \
 	-num_threads 40 \
