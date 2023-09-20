@@ -723,6 +723,12 @@ bash $SCRIPT $inFILE > $outFILE
 less -S $outFILE
 ```
 
+And we can hone in on the high confidence taxonmy calls while removing duplicate taxa for a given library and contig
+
+```bash
+awk '$5 > 95 && !seen[$1, $3, $8]++' $outFILE | less -S
+```
+
 ---
 
 <p>
