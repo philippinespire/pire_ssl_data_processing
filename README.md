@@ -679,7 +679,7 @@ blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-bla
 taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
 queryFASTA=successful_genes_NT.fasta
 outFILE=successful_genes_NT.blastn
-outCOLS="6 qseqid staxids sscinames sskingdoms saccver pident qcovs length mismatch gapopen qstart qend sstart send evalue bitscore"
+outCOLS="6 qseqid pident qcovs sskingdoms sscinames staxids saccver length mismatch gapopen qstart qend sstart send evalue bitscore"
 
 sbatch $SCRIPT $blastdbPATH $blastnPATH $taskNAME $queryFASTA $outFILE $outCOLS
 ```
