@@ -741,6 +741,8 @@ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/tidyContigIN
 inPATH="*/*Final_Results/*infos"
 
 bash $SCRIPT "$inPATH" > successful_genes_contig_info.tsv
+
+less -S successful_genes_contig_info.tsv
 ```
 
 ---
