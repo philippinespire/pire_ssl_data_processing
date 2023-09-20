@@ -668,7 +668,17 @@ grep -A1 "@" */*Final_Results/*contig_*_genes_NT.fasta | \
 
 ```
 
-Now we can blast the fasta file
+Next, we can break the sequences in the fasta into smaller segments that will return the best taxonomic matches
+
+There are many more short than long sequences in GenBank, and a long query sequence will return matches to much less common long GenBank sequences.
+
+```bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/segmentFASTA.bash
+inFILE=successful_genes_NT.fasta
+bash $SCRIPT $inFILE > successful_genes_NT-segmented.fasta
+```
+
+Now we can blast the segmented fasta file
 
 ```bash
 bash # only run this line if you aren't alread in bash
@@ -677,7 +687,7 @@ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBLAST.sba
 blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
 blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
 taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
-queryFASTA=successful_genes_NT.segments.fasta
+queryFASTA=successful_genes_NT-segmented.fasta
 outFILE=successful_genes_NT.blastn
 outCOLS='6 qseqid pident qcovs sskingdoms sscinames staxids saccver length mismatch gapopen qstart qend sstart send evalue bitscore'
 
@@ -693,7 +703,7 @@ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBlastPARA
 blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
 blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
 taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
-queryFASTA=successful_genes_NT.segments.fasta
+queryFASTA=successful_genes_NT-segmented.fasta
 outFILE=successful_genes_NT-segments_parallel.blastn
 outCOLS='6 qseqid pident qcovs sskingdoms sscinames staxids saccver length mismatch gapopen qstart qend sstart send evalue bitscore'
 
