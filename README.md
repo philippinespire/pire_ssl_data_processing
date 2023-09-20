@@ -688,7 +688,7 @@ blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
 blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
 taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
 queryFASTA=successful_genes_NT-segmented.fasta
-outFILE=successful_genes_NT.blastn
+outFILE=successful_genes_NT-segmented.blastn
 outCOLS='6 qseqid pident qcovs sskingdoms sscinames staxids saccver length mismatch gapopen qstart qend sstart send evalue bitscore'
 
 sbatch $SCRIPT $blastdbPATH $blastnPATH $taskNAME $queryFASTA $outFILE "$outCOLS"
@@ -704,10 +704,23 @@ blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
 blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
 taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
 queryFASTA=successful_genes_NT-segmented.fasta
-outFILE=successful_genes_NT-segments_parallel.blastn
+outFILE=successful_genes_NT-segmented.blastn
 outCOLS='6 qseqid pident qcovs sskingdoms sscinames staxids saccver length mismatch gapopen qstart qend sstart send evalue bitscore'
 
 sbatch $SCRIPT $blastdbPATH $blastnPATH $taskNAME $queryFASTA $outFILE "$outCOLS"
+```
+
+Once blast is done, we can filter the blastn file for the best hit on each segment of each gene on each contig
+
+```bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/getBestHits.bash
+inFILE=successful_genes_NT-segmented.blastn
+outFILE=successful_genes_NT-segmented_best.blastn
+
+bash $SCRIPT $inFILE > $outFILE
+
+# review the results
+less -S $outFILE
 ```
 
 ---
