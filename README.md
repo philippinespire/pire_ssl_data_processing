@@ -740,7 +740,7 @@ First we will make a tidy file with all contigs returned by mitofinder with mtDN
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/tidyContigINFO.bash
 inPATH="*/*Final_Results/*infos"
 
-bash tidyContigINFO3.bash "$inPATH" > successful_genes_contig_info.tsv
+bash $SCRIPT "$inPATH" > successful_genes_contig_info.tsv
 ```
 
 ---
