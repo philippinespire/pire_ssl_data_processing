@@ -33,5 +33,5 @@ parallel -j 40 "$blastnPATH -db nt -task $taskNAME -query {} -outfmt '$outCOLS' 
 cat split_output/*.out > $outFILE
 
 # Step 4: Cleanup - remove the split fasta files and split output files
-rm -r split_fasta
-rm -r split_output
+#rm -r split_fasta
+#rm -r split_output
