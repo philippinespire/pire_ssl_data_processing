@@ -777,7 +777,7 @@ column -t -s $'\t' $outFILE | less -S
 Now we can join the `contig_info_cov` file to the `segmented_best_summary` file.  We will do a left join and keep all rows in `segmented_best_summary` and will add the columns from `contig_info_cov` to give us more information with which to evaluate the taxonic hits.
 
 ```bash
-SCRIPT=SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/joinBestSummary_ContigInfoCov.bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/joinBestSummary_ContigInfoCov.bash
 leftFILE=successful_genes_NT-segmented_best_summary.tsv
 rightFILE=successful_genes_contig_info_cov.tsv
 outFILE=successful_genes_NT-segmented_best_summary_cov.tsv
