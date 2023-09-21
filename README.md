@@ -721,7 +721,7 @@ outFILE=successful_genes_NT-segmented_best.blastn
 bash $SCRIPT $inFILE > $outFILE
 
 # review the results
-less -S $outFILE
+column -t -s $'\t' $outFILE | less -S
 ```
 
 And we can hone in on the high confidence taxonmy calls while removing duplicate taxa for a given library and contig
@@ -733,7 +733,7 @@ outFILE=successful_genes_NT-segmented_best_summary.tsv
 echo -e "Treatment\tContig_Number\tKingdom\tSpecies\tpident" > $outFILE
 awk -F'\t' -v OFS='\t' '$5 > 95 && !seen[$1, $3, $8]++ {print $1, $3, $7, $8, $5}' $inFILE >> $outFILE
 
-less -S successful_genes_NT-segmented_best_summary.tsv
+column -t -s $'\t' $outFILE | less -S
 ```
 
 Now lets harvest basic information on the contigs so we can evaluate prevalence and quality.
@@ -743,10 +743,11 @@ First we will make a tidy file with all contigs returned by mitofinder with mtDN
 ```bash
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/tidyContigINFO.bash
 inPATH="*/*Final_Results/*infos"
+outFILE=successful_genes_contig_info.tsv
 
-bash $SCRIPT "$inPATH" > successful_genes_contig_info.tsv
+bash $SCRIPT "$inPATH" > $outFILE
 
-less -S successful_genes_contig_info.tsv
+column -t -s $'\t' $outFILE | less -S
 ```
 
 Next, we will query the depth from the mitofinder output.  Note the megahit uses a parameter called "multi" which is related to depth, but not actually depth.  Here we will use multi in place of depth for megahit.  For spades, we will use the cov value from the contig name.
@@ -758,7 +759,7 @@ outFILE=successful_genes_contig_info_cov.tsv
 
 bash $SCRIPT $inFILE $outFILE
 
-less -S $outFILE
+column -t -s $'\t' $outFILE | less -S
 ```
 
 And here is the parallel version of the `getContigCoverage` script
@@ -770,7 +771,7 @@ outFILE=successful_genes_contig_info_cov.tsv
 
 sbatch $SCRIPT $inFILE $outFILE
 
-less -S $outFILE
+column -t -s $'\t' $outFILE | less -S
 ```
 
 Now we can join the `contig_info_cov` file to the `segmented_best_summary` file.  We will do a left join and keep all rows in `segmented_best_summary` and will add the columns from `contig_info_cov` to give us more information with which to evaluate the taxonic hits.
@@ -783,7 +784,7 @@ outFILE=successful_genes_NT-segmented_best_summary_cov.tsv
 
 bash $SCRIPT $leftFILE $rightFILE $outFILE
 
-less -S $outFILE
+column -t -s $'\t' $outFILE | less -S
 ```
 
 
