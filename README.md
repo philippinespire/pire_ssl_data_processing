@@ -755,6 +755,16 @@ outFILE=successful_genes_contig_info_cov.tsv
 bash $SCRIPT $inFILE $outFILE
 ```
 
+And here is the parallel version of the `getContigCoverage` script
+
+```bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/getContigCoverage.sbatch
+inFILE=successful_genes_contig_info.tsv
+outFILE=successful_genes_contig_info_cov.tsv
+
+bash $SCRIPT $inFILE $outFILE
+```
+
 ---
 
 <p>
