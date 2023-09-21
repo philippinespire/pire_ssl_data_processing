@@ -764,7 +764,7 @@ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/getContigCov
 inFILE=successful_genes_contig_info.tsv
 outFILE=successful_genes_contig_info_cov.tsv
 
-bash $SCRIPT $inFILE $outFILE
+sbatch $SCRIPT $inFILE $outFILE
 
 less -S $outFILE
 ```
