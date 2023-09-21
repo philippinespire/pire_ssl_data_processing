@@ -745,6 +745,16 @@ bash $SCRIPT "$inPATH" > successful_genes_contig_info.tsv
 less -S successful_genes_contig_info.tsv
 ```
 
+Next, we will query the depth from the mitofinder output.  Note the megahit uses a parameter called "multi" which is related to depth, but not actually depth.  Here we will use multi in place of depth for megahit.  For spades, we will use the cov value from the contig name.
+
+```bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/getContigCoverage.bash
+inFILE=successful_genes_contig_info.tsv
+outFILE=successful_genes_contig_info_cov.tsv
+
+bash $SCRIPT $inFILE $outFILE
+```
+
 ---
 
 <p>
