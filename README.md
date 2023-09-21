@@ -753,6 +753,8 @@ inFILE=successful_genes_contig_info.tsv
 outFILE=successful_genes_contig_info_cov.tsv
 
 bash $SCRIPT $inFILE $outFILE
+
+less -S $outFILE
 ```
 
 And here is the parallel version of the `getContigCoverage` script
@@ -763,6 +765,8 @@ inFILE=successful_genes_contig_info.tsv
 outFILE=successful_genes_contig_info_cov.tsv
 
 bash $SCRIPT $inFILE $outFILE
+
+less -S $outFILE
 ```
 
 ---
