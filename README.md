@@ -570,8 +570,33 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 </p>
 </details>
 
-<details><summary>11. Identifying mitochondrial genome with Mitofinder</summary>
+<details><summary>11. Remove haplotigs and close gaps with Redundans</summary>
 <p>
+
+Now you are ready to remove haplotigs and close gaps from your best decontaminated assembly.
+
+Redundans deconstructs your assembly and builds it again with an algorith that removes haplotigs and closes gaps in scaffolds. 
+ The resulting assembly might be smaller but less fragmented.
+If you run BUSCO and QUAST again (you should do this after the Blobtools step), 
+ you will notice that some metrics might have change and you are likely to see a step deceline in the number of Ns in your assembly 
+(last metric given by QUAST)
+
+You will need:
+* A regex that locates all the fq.gz sequence files used in the actual assembly
+* The best decomtaminated assembly
+* An out dir that reflects the library used in the assembly
+ 
+Make sure to use " " in your arguments if your regex includes a wildcard *
+```
+cd <species dir>
+# runRedundans.sh <fq.gz regex> <assembly file> <out dir>
+sbatch ../scripts/runRedundans.sh "fq_fp1_clmp_fqscrn_rprd/Sgr-SgC0072C*.R*gz" "SPAdes_SgC0072C_decontam_R1R2_noIsolate/scaffolds.fasta" "redundans_SgC0072C"
+```
+
+Once redundans is done, you will see a `scaffolds.reduced.fa` file in your our dir. This is your new assembly. 
+
+
+**Identifying mitochondrial genome with Mitofinder**
 
 One of the contigs in your assembled genome will probably be the mitochondrial genome (sequenced at high depth). Identifying this contig can be useful for confirming species identity.
 
