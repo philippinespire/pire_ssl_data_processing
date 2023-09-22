@@ -14,17 +14,16 @@ NR > 1 {
         seq = seq $i
     }
     len = length(seq)
-    for (i=0; i<len; i+=100) {
-        remaining = len - i
-        if (remaining < 200) {
-            break
+    i = 0
+    while (i < len) {
+        subseq_len = (len - i > 300) ? 300 : len - i
+        if (len - i - subseq_len < 200 && len - i - subseq_len > 0) {
+            subseq_len = len - i
         }
-        subseq_len = (remaining > 300) ? 300 : remaining
         subseq = substr(seq, i+1, subseq_len)
         printf(">%s_%d-%d\n%s\n", header, i+1, i+subseq_len, subseq)
-        if (subseq_len < 300) {
-            break
-        }
+        i += 100  # Move 100 bp downstream for the next tile
     }
 }
 ' $inFILE
+
