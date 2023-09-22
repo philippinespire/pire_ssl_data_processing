@@ -640,6 +640,17 @@ QUEUE=main  #or himem
 bash  $SCRIPT $inFqGzPatternFile $fqGzDIR $outDIR $refMtGenomeFile $simultaneousJOBS $threadsPerJOB $ramPerJOB $QUEUE
 ```
 
+When done, run the following script to make files listing the libraries that yielded mtDNA contigs and those that did not
+
+```bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/getSuccessesFailures.bash
+MitoFinderDIR=$outDIR
+
+bash $SCRIPT $MitoFinderDIR
+
+less -S failted_mitofinder.txt
+```
+
 ---
 
 <p>
