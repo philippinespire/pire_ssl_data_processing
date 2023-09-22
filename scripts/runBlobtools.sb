@@ -3,16 +3,10 @@
 #SBATCH --job-name=blob
 #SBATCH --output=blob-%j.out
 
-enable_lmod
-module load container_env/0.1
-module load busco/5.0.0
-module load container_env blobtoolkit
-
-export SINGULARITY_BIND=/home/e1garcia
-
-# This script runs Blobtools to analyze stats about your assembly.
+# This script runs Blobtools to analyze the quality of your assembly.
 # You need to runBLAST and runBWA before running this script
-# The output of this script can be use to visualize stats and filter contamination from assembly (i.e. with filter script).
+# The output of this script can be used to visualize stats and filter contamination from assembly (i.e. with filter script).
+
 # Execute:
 # sbatch runBlobtools.sb <blobDIR> <plotDIR> <ASSEM> <filtBAM> <BUSCOdir>
 
@@ -20,11 +14,18 @@ export SINGULARITY_BIND=/home/e1garcia
 # cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus/blobtools_min140_contam
 # sbatch runBlobtools.sb . Sde_min140_contam_blobplot scaffolds.contam.fasta Sde_minlen140_contam.sort.filt.bam ../assemblies_for_fp2min140/busco_scaffolds_results-SPAdes_allLibs_contam_R1R2_noIsolate
 
-blobDIR=$1
-plotDIR=$2
-ASSEM=$3
-filtBAM=$4
-BUSCOdir=$5
+enable_lmod
+module load container_env/0.1
+module load busco/5.0.0
+module load container_env blobtoolkit
+
+export SINGULARITY_BIND=/home/e1garcia
+
+blobDIR=$1	# directory were BLAST and BWA were previously ran
+plotDIR=$2	# ourdir
+ASSEM=$3	# assembly file
+filtBAM=$4	# filt.bam files previously created by BWA
+BUSCOdir=$5	# BUSCO dir with results for your assembly
 
 # Make sure dirs don't have trailing slashes
 if [[ blobDIR="." ]]
