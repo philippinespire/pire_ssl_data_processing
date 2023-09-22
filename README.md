@@ -917,7 +917,7 @@ From your species directory, make a new dir for the probe design
 mkdir probe_design
 ```
 
-Copy necessary scripts and the best assembly (i.e. scaffolds.fasta from contaminated data of best assembly) into the probe_design dir (you had already selected the best assembly previously to run the decontaminated data) 
+Copy necessary scripts and the best assembly (scaffolds.fasta) into the probe_design dir (you had already selected the best assembly previously)
 
 Example:
 ```sh
