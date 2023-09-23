@@ -11,25 +11,36 @@ ls -lhtr $MitoFinderDIR | \
         grep -v "mitofinder_refpanel" | \
         grep -v "logs" | \
         sort > \
-        $MitoFinderDIR/all_mitofinder.txt
+        $MitoFinderDIR/all_mitofinder_libs.txt
 
 find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep -H "MitoFinder.*found.*contig" {} \; | \
         tr ":" "\t" | \
         sort -k1,1 > \
-        $MitoFinderDIR/log_summary_mitofinder.tsv
+        $MitoFinderDIR/results_summary_mitofinder.tsv
 
-#ls -lhtr $MitoFinderDIR/*/*.scafSeq | \
-#        cut -d "/" -f 2 | \
-#        sed -e 's/  / /g' | \
-#        cut -d " " -f 9 | \
-#        sort > $MitoFinderDIR/successful_mitofinder.txt
+cat $MitoFinderDIR/results_summary_mitofinder.tsv | \
+        grep "MitoFinder di[dt] not" | \
+        sed 's/_MitoFinder\.log.*$//' | \
+        sed 's/^.*\///g' > \
+        $MitoFinderDIR/noMTDNAfound_mitofinder_libs.txt
+
+cat $MitoFinderDIR/results_summary_mitofinder.tsv | \
+        grep "MitoFinder found" | \
+        sed 's/_MitoFinder\.log.*$//' | \
+        sed 's/^.*\///g' > \
+        $MitoFinderDIR/MTDNAfound_mitofinder_libs.txt
 
 ls $MitoFinderDIR/*/*Final_Results/*_contig_*genes_NT.fasta | \
         sed 's/^[^/]*\///' | \
         sed 's/\/.*//' | \
         uniq > \
-        $MitoFinderDIR/successful_mitofinder.txt
+        $MitoFinderDIR/successfulFASTA_mitofinder_libs.txt
 
-comm -23 $MitoFinderDIR/all_mitofinder.txt $MitoFinderDIR/successful_mitofinder.txt > \
-        $MitoFinderDIR/failed_mitofinder.txt
+comm -23 $MitoFinderDIR/all_mitofinder_libs.txt $MitoFinderDIR/successfulFASTA_mitofinder_libs.txt > \
+        $MitoFinderDIR/failedFASTA_mitofinder_libs.txt
+
+comm -23 $MitoFinderDIR/all_mitofinder_libs.txt \
+        <(cat $MitoFinderDIR/noMTDNAfound_mitofinder_libs.txt \
+              $MitoFinderDIR/MTDNAfound_mitofinder_libs.txt) > \
+        $MitoFinderDIR/RunInterrupted_mitofinder_libs.txt
 
