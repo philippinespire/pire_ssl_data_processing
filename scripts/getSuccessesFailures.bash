@@ -11,40 +11,40 @@ ls -lhtr $MitoFinderDIR | \
         grep -v "mitofinder_refpanel" | \
         grep -v "logs" | \
         sort > \
-        $MitoFinderDIR/all_mitofinder_libs.txt
+        $MitoFinderDIR/mitofinder_libs_all.txt
 
 find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep -H "MitoFinder.*found.*contig" {} \; | \
         tr ":" "\t" | \
         sort -k1,1 > \
-        $MitoFinderDIR/results_summary_mitofinder.tsv
+        $MitoFinderDIR/mitofinder_results_summary.tsv
 
-cat $MitoFinderDIR/results_summary_mitofinder.tsv | \
+cat $MitoFinderDIR/mitofinder_results_summary.tsv | \
         grep "MitoFinder di[dt] not" | \
         sed 's/_MitoFinder\.log.*$//' | \
         sed 's/^.*\///g' | \
         sort > \
-        $MitoFinderDIR/noMTDNAfound_mitofinder_libs.txt
+        $MitoFinderDIR/mitofinder_libs_NoMTDNAfound.txt
 
-cat $MitoFinderDIR/results_summary_mitofinder.tsv | \
+cat $MitoFinderDIR/mitofinder_results_summary.tsv | \
         grep "MitoFinder found" | \
         sed 's/_MitoFinder\.log.*$//' | \
         sed 's/^.*\///g' | \
         sort > \
-        $MitoFinderDIR/MTDNAfound_mitofinder_libs.txt
+        $MitoFinderDIR/mitofinder_libs_MTDNAfound.txt
 
 ls $MitoFinderDIR/*/*Final_Results/*_contig_*genes_NT.fasta | \
         sed 's/^[^/]*\///' | \
         sed 's/\/.*//' | \
         uniq | \
         sort > \
-        $MitoFinderDIR/successfulFASTA_mitofinder_libs.txt
+        $MitoFinderDIR/mitofinder_libs_successfulFASTA.txt
 
-comm -23 $MitoFinderDIR/all_mitofinder_libs.txt $MitoFinderDIR/successfulFASTA_mitofinder_libs.txt > \
-        $MitoFinderDIR/failedFASTA_mitofinder_libs.txt
+comm -23 $MitoFinderDIR/mitofinder_libs_all.txt $MitoFinderDIR/mitofinder_libs_successfulFASTA.txt > \
+        $MitoFinderDIR/mitofinder_libs_failedFASTA.txt
 
 comm -23 $MitoFinderDIR/all_mitofinder_libs.txt \
-        <(cat $MitoFinderDIR/noMTDNAfound_mitofinder_libs.txt \
-              $MitoFinderDIR/MTDNAfound_mitofinder_libs.txt | \
+        <(cat $MitoFinderDIR/mitofinder_libs_NoMTDNAfound.txt \
+              $MitoFinderDIR/mitofinder_libs_MTDNAfound.txt | \
               sort) > \
-        $MitoFinderDIR/RunInterrupted_mitofinder_libs.txt
+        $MitoFinderDIR/mitofinder_libs_RunInterrupted.txt
 
