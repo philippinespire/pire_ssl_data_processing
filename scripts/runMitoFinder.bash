@@ -29,6 +29,10 @@ ramPerThreads=$7
 # suggested values: main   or   himem
 queue=$8
 
+assembler=$9 # --megahit or --metaspades
+maxcontigsize=${10}
+minqcov=${11}
+
 SCRIPTPATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 #all_samples=(${all_samples})
@@ -38,4 +42,4 @@ mkdir $outDIR
 cp $fqPatternFile $outDIR
 cd $outDIR
 
-sbatch --array=0-$((${#all_samples[@]}-1))%${nodes} -p $queue -c ${threads} ${SCRIPTPATH}/runMitoFinder.sbatch ${fqPatternFile} ${fqPath} ${path2gb} ${threads} ${ramPerThreads}
+sbatch --array=0-$((${#all_samples[@]}-1))%${nodes} -p $queue -c ${threads} ${SCRIPTPATH}/runMitoFinder.sbatch ${fqPatternFile} ${fqPath} ${path2gb} ${threads} ${ramPerThreads} ${assembler} ${maxcontigsize} ${minqcov}
