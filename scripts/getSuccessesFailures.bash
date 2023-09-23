@@ -42,7 +42,7 @@ ls $MitoFinderDIR/*/*Final_Results/*_contig_*genes_NT.fasta | \
 comm -23 $MitoFinderDIR/mitofinder_libs_all.txt $MitoFinderDIR/mitofinder_libs_successfulFASTA.txt > \
         $MitoFinderDIR/mitofinder_libs_failedFASTA.txt
 
-comm -23 $MitoFinderDIR/all_mitofinder_libs.txt \
+comm -23 $MitoFinderDIR/mitofinder_libs_all.txt \
         <(cat $MitoFinderDIR/mitofinder_libs_NoMTDNAfound.txt \
               $MitoFinderDIR/mitofinder_libs_MTDNAfound.txt | \
               sort) > \
