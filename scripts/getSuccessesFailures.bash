@@ -4,6 +4,11 @@
 
 MitoFinderDIR=$1
 
+find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep -H "MitoFinder.*found.*contig" {} \; | \
+        tr ":" "\t" | \
+        sort -k1,1 > \
+        $MitoFinderDIR/mitofinder_results_summary.tsv
+        
 ls -lhtr $MitoFinderDIR | \
         grep "^d" | \
         sed -e 's/  / /g' | \
@@ -12,11 +17,6 @@ ls -lhtr $MitoFinderDIR | \
         grep -v "logs" | \
         sort > \
         $MitoFinderDIR/mitofinder_libs_all.txt
-
-find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep -H "MitoFinder.*found.*contig" {} \; | \
-        tr ":" "\t" | \
-        sort -k1,1 > \
-        $MitoFinderDIR/mitofinder_results_summary.tsv
 
 cat $MitoFinderDIR/mitofinder_results_summary.tsv | \
         grep "MitoFinder di[dt] not" | \
