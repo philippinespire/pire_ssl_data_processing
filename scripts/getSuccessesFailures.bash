@@ -10,7 +10,12 @@ ls -lhtr $MitoFinderDIR | \
         cut -d " " -f 9 | \
         grep -v "mitofinder_refpanel" | \
         grep -v "logs" | \
-        sort > $MitoFinderDIR/all_mitofinder.txt
+        sort > \
+        $MitoFinderDIR/all_mitofinder.txt
+
+find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep -H "MitoFinder.*found.*contig" {} \; | \
+        tr ":" "\t" > \
+        $MitoFinderDIR/log_summary_mitofinder.tsv
 
 #ls -lhtr $MitoFinderDIR/*/*.scafSeq | \
 #        cut -d "/" -f 2 | \
@@ -24,5 +29,6 @@ ls $MitoFinderDIR/*/*Final_Results/*_contig_*genes_NT.fasta | \
         uniq > \
         $MitoFinderDIR/successful_mitofinder.txt
 
-comm -23 $MitoFinderDIR/all_mitofinder.txt $MitoFinderDIR/successful_mitofinder.txt > $MitoFinderDIR/failed_mitofinder.txt
+comm -23 $MitoFinderDIR/all_mitofinder.txt $MitoFinderDIR/successful_mitofinder.txt > \
+        $MitoFinderDIR/failed_mitofinder.txt
 
