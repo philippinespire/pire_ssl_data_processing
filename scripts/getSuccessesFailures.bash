@@ -14,7 +14,8 @@ ls -lhtr $MitoFinderDIR | \
         $MitoFinderDIR/all_mitofinder.txt
 
 find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep -H "MitoFinder.*found.*contig" {} \; | \
-        tr ":" "\t" > \
+        tr ":" "\t" | \
+        sort -k1,1 > \
         $MitoFinderDIR/log_summary_mitofinder.tsv
 
 #ls -lhtr $MitoFinderDIR/*/*.scafSeq | \
