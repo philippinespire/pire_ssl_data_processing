@@ -661,8 +661,11 @@ simultaneousJOBS=10
 threadsPerJOB=40
 ramPerJOB=320
 QUEUE=main  #or himem
+assembler="--megahit"  # "--metaspades"
+maxcontigsize=25000
+minqcov=33
 
-bash  $SCRIPT $inFqGzPatternFile $fqGzDIR $outDIR $refMtGenomeFile $simultaneousJOBS $threadsPerJOB $ramPerJOB $QUEUE
+bash  $SCRIPT $inFqGzPatternFile $fqGzDIR $outDIR $refMtGenomeFile $simultaneousJOBS $threadsPerJOB $ramPerJOB $QUEUE $assembler $maxcontigsize $minqcov
 ```
 
 When done, run the following script to make files listing the libraries that yielded mtDNA contigs and those that did not
