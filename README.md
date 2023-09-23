@@ -767,7 +767,11 @@ inFILE=$outFILE
 outFILE=successful_genes_NT-segmented_best_summary.tsv
 
 echo -e "Treatment\tContig_Number\tKingdom\tSpecies\tpident" > $outFILE
-awk -F'\t' -v OFS='\t' '$5 > 95 && !seen[$1, $3, $8]++ {print $1, $3, $7, $8, $5}' $inFILE >> $outFILE
+awk -F'\t' -v OFS='\t' '$5 > 95 && !seen[$1, $3, $8]++ {print $1, $3, $7, $8, $5, $6}' $inFILE >> $outFILE
+
+# alternative, qcov must be greater than 33 pct, then keep the highest pident for each contig in each library
+echo -e "Treatment\tContig_Number\tKingdom\tSpecies\tpident\tqcov\tgene" > $outFILE
+awk -F'\t' -v OFS='\t' '$6 > 33 { key=$1 OFS $3; if (!(key in max) || $5 > max[key]) { max[key]=$5; line[key]=$1 OFS $3 OFS $7 OFS $8 OFS $5 OFS $6 OFS $2 } } END { for (key in line) print line[key] }' $inFILE | sort -k1,1 -k2,2 >> $outFILE
 
 column -t -s $'\t' $outFILE | less -S
 ```
