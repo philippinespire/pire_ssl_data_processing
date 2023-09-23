@@ -19,6 +19,7 @@ ls -lhtr $MitoFinderDIR | \
 #        sort > $MitoFinderDIR/successful_mitofinder.txt
 
 ls $MitoFinderDIR/*/*Final_Results/*_contig_*genes_NT.fasta | \
+        sed 's/^[^/]*\///' | \
         sed 's/\/.*//' | \
         uniq > \
         $MitoFinderDIR/successful_mitofinder.txt
