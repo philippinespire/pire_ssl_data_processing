@@ -1,34 +1,72 @@
 #!/bin/bash
 
-# this script takes sequences in a fasta file and makes shorter sequences tiled across the larger sequence
-# tiles are between 200 and 300 bp and a new tile starts every 100 bp
+# Check if the input file is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 input.fasta"
+    exit 1
+fi
 
-inFILE=$1
+input_file="$1"
 
 awk '
-BEGIN { RS = ">" ; FS = "\n" ; ORS = "" }
-NR > 1 {
-    header = $1
-    seq = ""
-    for (i=2; i<=NF; i++) {
-        seq = seq $i
+# Function to process each sequence
+function process_sequence(seq_name, sequence) {
+    len = length(sequence)
+
+    if (len < 300) {
+        print ">" seq_name "_1-" len
+        print sequence
+        return
     }
-    len = length(seq)
-    i = 0
-    while (i < len) {
-        if (len - i < 200) {
-            subseq_len = len - i
-        } else {
-            subseq_len = 300
-            if (len - i - 300 < 200 && len - i - 300 > 0) {
-                subseq_len = len - i - 100
-            }
-        }
-        subseq = substr(seq, i+1, subseq_len)
-        printf(">%s_%d-%d\n%s\n", header, i+1, i+subseq_len, subseq)
-        i += (subseq_len == len - i) ? subseq_len : 100  # Move 100 bp downstream for the next tile, unless it's the last tile
+
+    last_start = 1
+
+    for(start = 1; start + 299 <= len; start += 50) {
+        end = start + 299
+        print ">" seq_name "_" start "-" end
+        print substr(sequence, start, 300)
+	last_start = start
+    }
+
+    if (end < len) {
+	final_start = last_start + 50
+#	if (final_start + 299 > len) {
+#		final_start = len - 299
+#	}
+	final_end = len
+	print ">" seq_name "_" final_start "-" final_end
+	print substr(sequence, final_start, final_end - final_start + 1)
     }
 }
-' $inFILE
 
+# Main script starts here
+BEGIN {
+    sequence = ""
+    seq_name = ""
+}
 
+# If the line starts with ">", it"s a sequence identifier
+/^>/ {
+    # Process the previous sequence if any
+    if(seq_name != "") {
+        process_sequence(seq_name, sequence)
+    }
+
+    # Reset sequence and name for the next sequence
+    seq_name = substr($0, 2)
+    sequence = ""
+    next
+}
+
+# If we reach this point, the line is part of a sequence
+{
+    sequence = sequence $0
+}
+
+# Process the last sequence
+END {
+    if(seq_name != "") {
+        process_sequence(seq_name, sequence)
+    }
+}
+' "$input_file"
