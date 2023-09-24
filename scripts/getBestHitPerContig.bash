@@ -21,7 +21,7 @@ awk -F'\t' '{
         # Check for unique species
         if (index(species[key], $8) == 0) {
             species[key] = species[key] ";" $8;
-            line[key] = $1 "\t" $3 "\t" $7 "\t" species[key] "\t" $5 "\t" $6 "\t" $18 "\t" $19 "\t" $5;
+            line[key] = $1 "\t" $3 "\t" $7 "\t" species[key] "\t" $5 "\t" $6 "\t" $18 "\t" $19 "\t" $2;
         }
     }
 }
