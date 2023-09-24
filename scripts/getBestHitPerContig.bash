@@ -4,6 +4,9 @@
 # Priority: lowest E-value -> highest Bit Score -> highest Percent Identity
 
 inFILE=$1
+outFILE=$2
+
+echo -e "Treatment\tContig_Number\tKingdom\tSpecies\tpident\tqcov\tevalue\tbitscore\tgene" > $outFILE
 
 awk -F'\t' '{
     key = $1 "\t" $3;
@@ -18,4 +21,6 @@ END {
     for (i in line) {
         print line[i];
     }
-}' $inFILE | sort -k1,1 -k2,2n
+}' $inFILE | \
+sort -k1,1 -k2,2n >> \
+$outFILE
