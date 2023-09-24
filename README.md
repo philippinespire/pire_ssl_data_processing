@@ -718,15 +718,15 @@ grep -A1 "@" */*Final_Results/*contig_*genes_NT.fasta | \
 
 Next, we can break the sequences in the fasta into smaller segments that will return the best taxonomic matches
 
-There are many more short than long sequences in GenBank, and a long query sequence will return matches to much less common long GenBank sequences.
+There are many more short than long sequences in GenBank, and a long query sequence will return matches to much less common long GenBank sequences. The `tileFASTA.bash` script breaks each mtDNA gene into 300bp tiled sequences that begin every 50bp.  The last tile is between 250 and 300 bp long.  If this creates too many sequences to blast you could replace the `tileFASTA.bash` script with the `segmentFASTA.bash` script which produces nonoverlapping sequence segments. However, the tiled sequences should yield the strongest blast hits.
 
 ```bash
-SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/segmentFASTA.bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/tileFASTA.bash
 inFILE=successful_genes_NT.fasta
-bash $SCRIPT $inFILE > successful_genes_NT-segmented.fasta
+bash $SCRIPT $inFILE > successful_genes_NT-tiled.fasta
 ```
 
-Now we can blast the segmented fasta file
+Now we can blast the tiled fasta file
 
 ```bash
 bash # only run this line if you aren't alread in bash
@@ -735,8 +735,8 @@ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBLAST.sba
 blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
 blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
 taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
-queryFASTA=successful_genes_NT-segmented.fasta
-outFILE=successful_genes_NT-segmented.blastn
+queryFASTA=successful_genes_NT-tiled.fasta
+outFILE=successful_genes_NT-tiled.blastn
 outCOLS='6 qseqid pident qcovs sskingdoms sscinames staxids saccver length mismatch gapopen qstart qend sstart send evalue bitscore'
 
 sbatch $SCRIPT $blastdbPATH $blastnPATH $taskNAME $queryFASTA $outFILE "$outCOLS"
@@ -751,8 +751,8 @@ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runBlastPARA
 blastdbPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/nt
 blastnPATH=/home/e1garcia/shotgun_PIRE/denovo_genome_assembly/Blobtools/ncbi-blast-2.11.0+/bin/blastn
 taskNAME=megablast # https://www.ncbi.nlm.nih.gov/books/NBK569839/#usrman_BLAST_feat.Tasks
-queryFASTA=successful_genes_NT-segmented.fasta
-outFILE=successful_genes_NT-segmented.blastn
+queryFASTA=successful_genes_NT-tiled.fasta
+outFILE=successful_genes_NT-tiled.blastn
 outCOLS='6 qseqid pident qcovs sskingdoms sscinames staxids saccver length mismatch gapopen qstart qend sstart send evalue bitscore'
 
 sbatch $SCRIPT $blastdbPATH $blastnPATH $taskNAME $queryFASTA $outFILE "$outCOLS"
@@ -762,8 +762,8 @@ Once blast is done, we can filter the blastn file for the best hit on each segme
 
 ```bash
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/getBestHits.bash
-inFILE=successful_genes_NT-segmented.blastn
-outFILE=successful_genes_NT-segmented_best.blastn
+inFILE=successful_genes_NT-tiled.blastn
+outFILE=successful_genes_NT-tiled_best.blastn
 
 bash $SCRIPT $inFILE > $outFILE
 
@@ -775,7 +775,7 @@ And we can hone in on the high confidence taxonmy calls while removing duplicate
 
 ```bash
 inFILE=$outFILE
-outFILE=successful_genes_NT-segmented_best_summary.tsv
+outFILE=successful_genes_NT-tiled_best_summary.tsv
 
 echo -e "Treatment\tContig_Number\tKingdom\tSpecies\tpident" > $outFILE
 awk -F'\t' -v OFS='\t' '$5 > 95 && !seen[$1, $3, $8]++ {print $1, $3, $7, $8, $5, $6}' $inFILE >> $outFILE
@@ -825,13 +825,13 @@ sbatch $SCRIPT $inFILE $outFILE
 column -t -s $'\t' $outFILE | less -S
 ```
 
-Now we can join the `contig_info_cov` file to the `segmented_best_summary` file.  We will do a left join and keep all rows in `segmented_best_summary` and will add the columns from `contig_info_cov` to give us more information with which to evaluate the taxonic hits.
+Now we can join the `contig_info_cov` file to the `tiled_best_summary` file.  We will do a left join and keep all rows in `tiled_best_summary` and will add the columns from `contig_info_cov` to give us more information with which to evaluate the taxonic hits.
 
 ```bash
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/joinBestSummary_ContigInfoCov.bash
-leftFILE=successful_genes_NT-segmented_best_summary.tsv
+leftFILE=successful_genes_NT-tiled_best_summary.tsv
 rightFILE=successful_genes_contig_info_cov.tsv
-outFILE=successful_genes_NT-segmented_best_summary_cov.tsv
+outFILE=successful_genes_NT-tiled_best_summary_cov.tsv
 
 bash $SCRIPT $leftFILE $rightFILE $outFILE
 
