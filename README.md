@@ -758,7 +758,7 @@ outCOLS='6 qseqid pident qcovs sskingdoms sscinames staxids saccver length misma
 sbatch $SCRIPT $blastdbPATH $blastnPATH $taskNAME $queryFASTA $outFILE "$outCOLS"
 ```
 
-Once blast is done, we can filter the blastn file for the best hit on each segment of each gene on each contig
+Once blast is done, we can filter the blastn file for the best hit on each segment of each gene on each contig.  As of now, the best hit is defined as that with the highest pident. 
 
 ```bash
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/getBestHits.bash
@@ -771,18 +771,14 @@ bash $SCRIPT $inFILE > $outFILE
 column -t -s $'\t' $outFILE | less -S
 ```
 
-And we can hone in on the high confidence taxonmy calls while removing duplicate taxa for a given library and contig
+And we can hone in on the high confidence taxonmy calls while removing duplicate taxa for a given library and contig. The same prioritization is used as `getBestHits.bash`, this yields just the top hit across all genes on one mtDNA contig.
 
 ```bash
+SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/getBestHitPerContig.bash
 inFILE=$outFILE
 outFILE=successful_genes_NT-tiled_best_summary.tsv
 
-echo -e "Treatment\tContig_Number\tKingdom\tSpecies\tpident" > $outFILE
-awk -F'\t' -v OFS='\t' '$5 > 95 && !seen[$1, $3, $8]++ {print $1, $3, $7, $8, $5, $6}' $inFILE >> $outFILE
-
-# alternative, qcov must be greater than 33 pct, then keep the highest pident for each contig in each library
-echo -e "Treatment\tContig_Number\tKingdom\tSpecies\tpident\tqcov\tgene" > $outFILE
-awk -F'\t' -v OFS='\t' '$6 > 33 { key=$1 OFS $3; if (!(key in max) || $5 > max[key]) { max[key]=$5; line[key]=$1 OFS $3 OFS $7 OFS $8 OFS $5 OFS $6 OFS $2 } } END { for (key in line) print line[key] }' $inFILE | sort -k1,1 -k2,2 >> $outFILE
+bash $SCRIPT $inFILE $outFILE
 
 column -t -s $'\t' $outFILE | less -S
 ```
