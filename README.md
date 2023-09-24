@@ -676,7 +676,7 @@ MitoFinderDIR=$outDIR
 
 bash $SCRIPT $MitoFinderDIR
 
-less -S failted_mitofinder.txt
+less -S mitofinder_results_summary.tsv
 ```
 
 The script above will help you determine which libraries had mtDNA genomes identified by mitofinder and which did not.  You can use this output to troubleshoot and identify libraries that need to be run again. If you do have to rerun a library, you may want to adjust the `assembler` or `maxcontigsize`. Mitofinder is set up to overwrite previous results if the same library is run again, so you can rerun the stragglers in the same dir if you wish, but you will have to update the `inFqGzPatternFile` variable so that you don't rerun libraries that worked.
