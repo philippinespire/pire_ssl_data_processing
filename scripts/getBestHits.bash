@@ -5,6 +5,7 @@
 
 inFILE=$1
 
+grep -vi "environmental" $inFILE | \
 awk -F'\t' '{
     if (!($1 in evalue) || $15 < evalue[$1] || ($15 == evalue[$1] && ($16 > bitscore[$1] || ($16 == bitscore[$1] && $2 > pident[$1])))) {
         evalue[$1] = $15;
@@ -17,6 +18,6 @@ END {
     for (i in line) {
         print line[i];
     }
-}' $inFILE | \
+}' | \
 sed -e 's/_contig/\tcontig/' -e 's/\(contig_[0-9][0-9]*\)_/\1\t/' -e 's/@/\t/' | \
 sort -k1,1 -k3,3 -k2,2 -k4,4n
