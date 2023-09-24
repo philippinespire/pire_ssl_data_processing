@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# this script retains 1 row per query seq, the row with the highest pident
+# This script retains 1 row per query seq.
+# Priority: lowest E-value -> highest Bit Score -> highest Percent Identity
 
 inFILE=$1
 
 awk -F'\t' '{
-    if (!($1 in max) || $2 > max[$1]) {
-        max[$1] = $2;
+    if (!($1 in evalue) || $15 < evalue[$1] || ($15 == evalue[$1] && ($16 > bitscore[$1] || ($16 == bitscore[$1] && $2 > pident[$1])))) {
+        evalue[$1] = $15;
+        bitscore[$1] = $16;
+        pident[$1] = $2;
         line[$1] = $0;
     }
 }
