@@ -4,9 +4,13 @@
 
 MitoFinderDIR=$1
 
-find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep -H "MitoFinder.*found.*contig" {} \; | \
-        tr ":" "\t" | \
-        sort -k1,1 > \
+paste <(find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep "^Command line" {} \; | \
+        sed 's/^Command.*\-\-megahit/megahit/' | \
+        sed 's/^Command.*\-\-metaspades/metaspades/' | \
+        sed 's/ \-j.*$//g') \
+      <(find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep -H "MitoFinder.*found.*contig" {} \; | \
+        tr ":" "\t") | \
+      sort -k2,2 > \
         $MitoFinderDIR/mitofinder_results_summary.tsv
         
 ls -lhtr $MitoFinderDIR | \
