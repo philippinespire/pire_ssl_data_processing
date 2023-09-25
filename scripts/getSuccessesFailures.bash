@@ -8,6 +8,8 @@ paste <(find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep "^Comma
         sed 's/^Command.*\-\-megahit/megahit/' | \
         sed 's/^Command.*\-\-metaspades/metaspades/' | \
         sed 's/ \-j.*$//g') \
+      <(find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep "^Job name" {} \; | \
+        sed 's/^Job name = //') \
       <(find "$MitoFinderDIR" -type f -name "*MitoFinder.log" -exec grep -H "MitoFinder.*found.*contig" {} \; | \
         tr ":" "\t") | \
       sort -k2,2 > \
