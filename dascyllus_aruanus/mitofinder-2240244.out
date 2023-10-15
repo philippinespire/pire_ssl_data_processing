@@ -1,0 +1,8 @@
+mkdir: cannot create directory ‘/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus/SPAdes_Dar-CJol-C_contam_R1R2_noIsolate/scaffolds.fasta/mitofinder’: Not a directory
+cp: failed to access '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus/SPAdes_Dar-CJol-C_contam_R1R2_noIsolate/scaffolds.fasta/mitofinder': Not a directory
+cp: failed to access '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus/SPAdes_Dar-CJol-C_contam_R1R2_noIsolate/scaffolds.fasta/mitofinder': Not a directory
+/var/spool/slurmd/job2240244/slurm_script: line 27: cd: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus/SPAdes_Dar-CJol-C_contam_R1R2_noIsolate/scaffolds.fasta/mitofinder: Not a directory
+Traceback (most recent call last):
+  File "/opt/mitofinder/mitofinder", line 168, in <module>
+    logfile=open(Logfile,"w")
+IOError: [Errno 2] No such file or directory: '/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/mitofinder_refpanel/Pomacentridae.gb_Dar_SPAdes_Dar-CJol-C_contam_R1R2_noIsolate_Pomacentridae_/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus/mitofinder_annotate_MitoFinder.log'
