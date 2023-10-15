@@ -840,6 +840,18 @@ column -t -s $'\t' $outFILE | less -S
 <p>
 </details>
 
+<details><summary> Visualize Taxonomic Assignments </summary>
+<p>
+
+You should visualize the taxonomic assignments.  I don't have a universal script for this, but there is a script that I used to visualize the mtDNA from Roy's WGA test data that should be easily modified.
+
+[successful_genes_NT-tiled_best_summary.R](scripts/successful_genes_NT-tiled_best_summary.R)
+
+---
+
+<p>
+</details>
+
 ___
 
 ### D. Blobtools
