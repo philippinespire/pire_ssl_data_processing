@@ -14,7 +14,7 @@ This repo contains instructions to process short-read data from Shotgun Sequenci
 ---
 ## Current Projects
 
-<details><summary>Overview. A list of ongoing SSL projects can be found here</summary>
+<details><summary>A list of ongoing SSL projects can be found here</summary>
 <p>
 
 If you are working on an SSL analysis project (or if you wish to claim a project), please indicate so in the table. When data are available, priority should go to species that are higher on the CSSL priority list which will need probes in the near future.
