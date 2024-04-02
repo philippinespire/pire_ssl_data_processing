@@ -1,10 +1,20 @@
 # SHOTGUN DATA PROCESSING & ANALYSIS
 
-This repo contains instructions to process data from Shotgun Sequencing Libraries - SSL. 
+This repo contains instructions to process short-read data (ilummina 150 PE) from Shotgun Sequencing Libraries - SSL. 
+
+Use this repo to generate:
+
+* Nuclear Genome Assemblies
+* Mitochondrial Genome Assemblies
+* Quality Assessment of Assemblies
+* Vizualization of Assemblies
+* Informed design of capture probes
 
 ---
+## Current Projects
 
-A list of ongoing SSL projects can be found below. 
+<details><summary>Overview. A list of ongoing SSL projects can be found here</summary>
+<p>
 
 If you are working on an SSL analysis project (or if you wish to claim a project), please indicate so in the table. When data are available, priority should go to species that are higher on the CSSL priority list which will need probes in the near future.
 
@@ -32,6 +42,10 @@ If you are working on an SSL analysis project (or if you wish to claim a project
 |Spratelloides delicatulus | On ODU HPC | ?? | Eric | Originally a RAD species | 
 
 ---
+
+</p>
+</details>
+
 
 ## Getting Started
 
