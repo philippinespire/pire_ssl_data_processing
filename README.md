@@ -1,14 +1,15 @@
 # SHOTGUN DATA PROCESSING & ANALYSIS
 
-This repo contains instructions to process short-read data (ilummina 150 PE) from Shotgun Sequencing Libraries - SSL. 
+This repo contains instructions to process short-read data from Shotgun Sequencing Libraries - SSL. 
+* ilummina 150 PE
 
-Use this repo to generate:
+**Use this repo to generate:**
 
 * Nuclear Genome Assemblies
 * Mitochondrial Genome Assemblies
 * Quality Assessment of Assemblies
 * Vizualization of Assemblies
-* Informed design of capture probes
+* Informed Design of Capture Probes
 
 ---
 ## Current Projects
@@ -46,6 +47,7 @@ If you are working on an SSL analysis project (or if you wish to claim a project
 </p>
 </details>
 
+---
 
 ## Getting Started
 
