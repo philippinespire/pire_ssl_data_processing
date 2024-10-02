@@ -1,6 +1,6 @@
 # SHOTGUN DATA PROCESSING & ANALYSIS
 
-This repo contains instructions to process **short-read** data from Shotgun Sequencing Libraries (SSL) and generate ***de novo*** assemblies which can then be used in downstream analyses such as, among others, designing Capture Probes
+This repo contains instructions to process **short-read** data from Shotgun Sequencing Libraries (SSL) and generate *de novo* assemblies which can then be used in downstream analyses such as, among others, designing Capture Probes
 
 **Data**
 * Short-reads, ilummina 150 PE
