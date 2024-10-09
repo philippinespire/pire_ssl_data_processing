@@ -3,14 +3,14 @@
 This repo contains instructions to process **short-read** data from Shotgun Sequencing Libraries (SSL) and generate *de novo* assemblies which can then be used in downstream analyses such as, among others, designing Capture Probes
 
 **Data**
-* Short-reads, ilummina 150 PE
+* Short-reads, illumina 150 PE
 
 **Use this repo to generate:**
 
 * Nuclear Genome Assemblies
 * Mitochondrial Genome Assemblies
 * Quality Assessment of Assemblies
-* Vizualization of Assemblies
+* Visualization of Assemblies
 * Informed Design of Capture Probes
 
 ---
@@ -23,15 +23,15 @@ If you are working on an SSL analysis project (or if you wish to claim a project
 
 |Species | Data availability | CSSL priority | Analysis lead | Analysis status / notes |
 | --- | --- | --- | --- | --- |
-|Lethrinus_variegatus | On ODU HPC | 19 | Jordan/Chris/Brendan | probe dev complete |
-|Periophthalmus_argentilineatus | On ODU HPC | 17 | Keenan/Chris/Brendan | probe dev complete |
-|Pomacentrus_pavo | On ODU HPC | 23 | Brendan | Assembly complete, John assigned to probe dev |
+|Lethrinus_variegatus | On ODU HPC | 19 | Jordan/Chris/Brendan | Probe dev't complete |
+|Periophthalmus_argentilineatus | On ODU HPC | 17 | Keenan/Chris/Brendan | Probe dev't complete |
+|Pomacentrus_pavo | On ODU HPC | 23 | Brendan | Assembly complete, John assigned to Probe dev't |
 |Sphaeramia_nematoptera | On ODU HPC | 18 | Jem | Probe dev't complete |
 |Pomacentrus_brachialis | On ODU HPC | 24 | Jem/Kyra | Probe dev't complete |
-|Corythoichthys_haematopterus | On ODU HPC | 25 | Allison/John | Probe dev't complete - also have a Genbank genome |
+|Corythoichthys_haematopterus | On ODU HPC | 25 | Allison/John | Probe dev't complete - also have a GenBank genome |
 |Stethojulis_interrupta | On ODU HPC | 26 |Abby/John | Probe dev't complete  |
 |Ostorhinchus_chrysopomus | On ODU HPC | 28 | Eryka/Eric | Probe dev't complete  |
-|Hypoatherina_temminckii | On ODU HPC | 16 | Eric | Probe development complete |
+|Hypoatherina_temminckii | On ODU HPC | 16 | Eric | Probe dev't complete |
 |Ambassis_buruensis | On ODU HPC | 22 | John | Probe dev't complete |
 |Sphyraena obtusata | On ODU HPC | 20 | Brendan| Probe dev't complete |
 |Sphaeramia_orbicularis | Needs extraction | 39 | Eric | Probe development planned using published reference |
@@ -59,11 +59,11 @@ If you are working on an SSL analysis project (or if you wish to claim a project
 ## Overview. Before You Start, Read This
 The purpose of this repo ("the SSL repo") is to document the processing and analysis of all `Shotgun Sequencing Libraries - SSL data`.  All work is performed for the [Philippines PIRE Project - PPP](https://github.com/philippinespire), [NSF Award #1743711](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1743711).
 	
-The two main objectives of `the SSL repo` is to generate a *de novo* genome assembly using `SPAdes`, and to use this assembly to design regions for probe development which themselves will be used to "capture" targeted regions from all populations. The SSL assembles can then be used as a reference in the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) or the [Low Coverage Whole Genome Sequencing - lcWGS repo](https://github.com/philippinespire/pire_lcwgs_data_processing). If you will be using only lcWGS data for your species, you can skip the probe design, section C, but do not skip the cleanning up, section, D.
+The two main objectives of `the SSL repo` are to generate a *de novo* genome assembly using `SPAdes`, and to use this assembly to design regions for probe development which themselves will be used to "capture" targeted regions from all populations. The SSL assemblies can then be used as a reference in the [Capture Shotgun Sequencing Libraries- CSSL repo](https://github.com/philippinespire/pire_cssl_data_processing) or the [Low Coverage Whole Genome Sequencing - lcWGS repo](https://github.com/philippinespire/pire_lcwgs_data_processing). If you will be using only lcWGS data for your species, you can skip the probe design, section C, but do not skip the cleaning up, section, D.
 
 SSL, CSSL and lcWGS pipelines use scripts from the [Pre-Processing PIRE Data](https://github.com/philippinespire/pire_fq_gz_processing) repo at the beginning of files processing. 
 
-Each species will get it's own directory within this repo.  Try to avoid putting dirs inside dirs inside dirs. 
+Each species will get its own directory within this repo.  Try to avoid putting directories inside directories inside directories. 
 
 The Sgr dir will serve as the example to follow in terms of both directory structure and documentation of progress in `README.md`.
 
@@ -97,7 +97,7 @@ git clone https://github.com/philippinespire/pire_ssl_data_processing.git
 The data will be processed and analyzed in the repo.  There is a `.gitignore` file that lists files and directories to be ignored by git.  It includes large files that git cannot handle (fq.gz, bam, etc) and other repos that might be downloaded into this repo. 
 For example, the BUSCO outdir contains several large files that will cause problems for git so `busco_*/` occurs in  `.gitignore` so that it is not uploaded to github in this repo.
 
-Because large data files will not be saved to github, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that make it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermediate files produced by fastp, clumpify, fastq_screen. This can also be accomplished in the cleaning step at the end of this repo.
+Because large data files will not be saved to github, they will reside in an individual's copy of the repo or somewhere on the HPC. You should provide paths (absolute/full paths are probably best) or info that makes it clear where the files reside. Most of these large intermediate files should be deleted once it is confirmed that they worked. For example, we don't ultimately need the intermediate files produced by fastp, clumpify, fastq_screen. This can also be accomplished in the cleaning step at the end of this repo.
 
 ---
 
@@ -105,7 +105,7 @@ Because large data files will not be saved to github, they will reside in an ind
 
 You must pull down the latest version of the repo every time you sit down to work and push the changes you made every time you walk away from the terminal.  The following order of operations when you sync the repo will minimize problems.
 
-From your species directory, execute these commands manually or run the `runGit.sh` script (see bellow) 
+From your species directory, execute these commands manually or run the `runGit.sh` script (see below) 
 ```
 git pull
 git add --all
@@ -129,7 +129,7 @@ If you should be met with a conflict screen, you are in the `vim` editor.  You c
 If you had to delete files for whatever reason, 
 these deletions occurred in your local directory but these files will remain in the git memory if they had already entered the system.
 
-If you are in this situation, run these git commands manually, AFTER running the runGIT.bash as describe above.
+If you are in this situation, run these git commands manually, AFTER running the runGIT.bash as described above.
 
 `add -u` will stage your deleted files, then you can commit and push
 
@@ -154,7 +154,7 @@ ___
 
 **Directories**
 
-Create your `species dir` and subdirs `logs` and `fq_raw` if they don't already exit
+Create your `species dir` and sub-directories `logs` and `fq_raw` if they don't already exist
 
 ```sh
 cd /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing
@@ -163,7 +163,7 @@ mkdir <your_species>/logs
 mkdir <your_species>/fq_raw
 ```
 
-*Note: Most species will have "fq_raw" instead of "fq_raw" as this was the origial way we were naming the initial raw directory. Since then, we changed into fq_raw to be consistent with the other repos of the PPP-Pipeline.*
+*Note: Most species will have "fq_raw" instead of "fq_raw" as this was the original way we were naming the initial raw directory. Since then, we changed it to fq_raw to be consistent with the other repos of the PPP-Pipeline.*
 	
 **Species README**
 
@@ -192,7 +192,7 @@ Data files are sent first to TAMUCC. There are two ways to get these data into O
 scp <source of files> <your_species>/fq_raw  # scp | cp | mv
 ```	
 	
-This was the original way we were using to transfer data from the beginning of the project till 2023, when we switched to downloading data with wget instead. So, if you are looking for data originated before 2023, these are likely already transferred to the species directory within SSL or in the RC (the deep freezer). Check if you already have directories for your species in the SSL and if this has the sub-directory `fq_raw` with your raw data in it. Alternatively, your data might had been transferred to RC. Check if there is any data for your species there.
+This was the original way we were using to transfer data from the beginning of the project until 2023, when we switched to downloading data with wget instead. So, if you are looking for data originating before 2023, these are likely already transferred to the species directory within SSL or in the RC (the deep freezer). Check if you already have directories for your species in the SSL and if this has the sub-directory `fq_raw` with your raw data in it. Alternatively, your data might have been transferred to RC. Check if there is any data for your species there.
 
 ```sh
 cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/
@@ -209,7 +209,7 @@ Instructions on using `gridDownloader.sh` can be found at the [pire_fq_gz_proces
 **Check your Data!!!**
 	
 Check your raw files: given that we use paired-end sequencing, you should have one pair of files (1 forward and 1 reverse) per library. This  means that you should have the same number of forward (1.fq.gz or f.fq.gz) and reverse sequence files (2.fq.gz or r.fq.gz).
-If you don't have equal numbers for forward and reverse files, check with whoever provided the data to make sure there was no issues while transferring.
+If you don't have equal numbers for forward and reverse files, check with whoever provided the data to make sure there were no issues while transferring.
 
 You will likely get 2 or 3 libraries (4 or 6 files total). Sgr example:
 ```sh
@@ -226,7 +226,7 @@ ls -l /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracili
 
 **Make a copy of your raw data in the RC**
 	
-Now that you have your data, make a copy of your raw files in the long-term carpenter RC dir **ONLY** if one doesn't exits already (if you copied your data from the RC, a long-term copy already exists)
+Now that you have your data, make a copy of your raw files in the long-term carpenter RC dir **ONLY** if one doesn't exist already (if you copied your data from the RC, a long-term copy already exists)
 
 *The RC drive might only be available from the login node (you won't find it after getting a working node, i.e. `salloc`). If you already `salloc` and can't find the RC, type `exit` and try again*
 ```sh
@@ -275,7 +275,7 @@ scp <source of files> /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sprat
 All 3 library sets are from the same individual: Sgr-CMvi_007_Ex1
 ```
 
-*I like to update my git repo regularly, especially before and after lengthy steps. This keeps a nice record of the commits and prevents loss of data/effor. Feel free to repeat this at any step*
+*I like to update my git repo regularly, especially before and after lengthy steps. This keeps a nice record of the commits and prevents loss of data/effort. Feel free to repeat this at any step*
 
 ```sh
 bash ../../runGIT.bash "README of raw data"
@@ -305,7 +305,7 @@ After this step you should `salloc` into a computing node eveytime you will be w
 <details><summary>1. Genome Properties</summary>
 <p>
 
-In this step, we look for genome size in related literature as a reference, but ultimately use Jellyfish and Genomescope to estimate genome size from our SSL data. We will use Jellyfish and GenomeScope results even if there is an available estimate as these 2 provide a more precise estimates than older methods and provide an estimate of heterozygosity.  Jellyfish estimates are also used for consistency across species assembled in the PIRE Project and to get around potential cases where published individuals or even PIRE species may have been morphologically misidentified.
+In this step, we look for genome size in related literature as a reference, but ultimately use Jellyfish and Genomescope to estimate genome size from our SSL data. We will use Jellyfish and GenomeScope results even if there is an available estimate as these two provide a more precise estimates than older methods and provide an estimate of heterozygosity.  Jellyfish estimates are also used for consistency across species assembled in the PIRE Project and to get around potential cases where published individuals or even PIRE species may have been morphologically misidentified.
 
 ##### 1a. Fetch the genome properties for your species from existing literature
 * From the literature or other sources
@@ -319,15 +319,15 @@ In this step, we look for genome size in related literature as a reference, but 
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Sgr" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
 
-Jellyfish will create a histogram file (.hito) with kmer frequencies. 
+Jellyfish will create a histogram file (.histo) with kmer frequencies. 
 
 ##### 1c. ** Download this file into your local computer and upload it in [GenomeScope v1.0](http://qb.cshl.edu/genomescope/) and [Genomescope v2.0](http://qb.cshl.edu/genomescope/genomescope2.0/)**
 * Add a proper description to both of your runs. Example "Sgr_fq_fp1_clmp_fp2_fqscrn_rprd_jfsh"
-* For version 1, Adjust the read length to that of in the Fastp2 trimming, 140 (unless you had to modify this in Fastp2)
+* For version 1, adjust the read length to that of in the Fastp2 trimming, 140 (unless you had to modify this in Fastp2)
 * Leave all other parameters with default settings for both versions. 
-* Submit (takes only few minutes)
+* Submit (takes only a few minutes)
 
-**Ispect the GenomeScope plots**
+**Inspect the GenomeScope plots**
 Most of the time v1-2 perform very similar. However, sometimes the two reports give contrasting values such as very different genome sizes or unrealistic estimates of heterozygosity. For example:
 * In Sob, the [Sob_GenScp_v1](http://qb.cshl.edu/genomescope/analysis.php?code=zQRfOkSqbDYAGYJrs7Ee) report estimates a genome of 532 Mbp and 0.965 for H. On the other hand,  [Sob_GenScp_v2](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=5vZKBtdSgiAyFvzIusxT) reports a genome size of 259 Mbp (which is small for a fish) and it actually fails to estimate heterozygosity. Thus, version 1 was used for Sob. 
 * In Hte, the [Hte_GenScp_v1](http://qb.cshl.edu/genomescope/analysis.php?code=tHzBW2RjBK00gQMUSfl4) appears to have no red flags with a genome size of 846 Mbp and 0.49 for H but inspecting the first graph, you can see that the "unique sequence" line behaves differently from the others. In contrast, [Hte_GenScp_v2](http://qb.cshl.edu/genomescope/genomescope2.0/analysis.php?code=8eVzhAQ8zSenObScLMGC) restores a tight relationship between lines with no red flags in estimates either (H=2.1, GenSize= 457 Mbp)
@@ -351,7 +351,7 @@ version    |stat    |min    |max
 Provide a link to both reports in your README. See other species READMEs for examples.
 
 ##### 1e. **Inspect your table and reports for red flags and choose a genome scope version.**
-* In your table, check the heterozygosity (values around 1% are common) and check for good model fit (>90%) in the max values (sometimes the min value might have a low fit but th$
+* In your table, check the heterozygosity (values around 1% are common) and check for good model fit (>90%) in the max values (sometimes the min value might have a low fit but the max value still high)
 * In your reports, check for a tight relationship between the "observed", "full model" and "unique sequences" lines in the first graph.
 
 If values in your table are relative similar for v1 and v2 and you found no red flags in reports, then use v2 estimates.
@@ -359,7 +359,7 @@ If values in your table are relative similar for v1 and v2 and you found no red 
 **Please use the "Genome Haploid Length" max value rounded up or down to the nearest million.** In the above example, this number is 853706410 for v2. Thus, 854000000 will be used in following steps
 
 **Note in your README the following:**
-1. The source (genomesize.com, Jellyfish adn GenomeScope version, or some publication, etc) and
+1. The source (genomesize.com, Jellyfish and GenomeScope version, or some publication, etc) and
 2. Genome size (if you used Jellyfish, note the GenomeScope version and round up or down the genome size estimate to the nearest million bp. You will use this info later
 
 </p>
@@ -374,9 +374,9 @@ After de novo assembler comparisons, we decided to move forward using SPADES (is
 For the most part, we obtained better assemblies using single libraries (a library consists of one forward *r1.fq.gz and reverse file *r2.fq.gz) but in few instances using all the libraries was better.
 In addition, we also noted that assembling contaminated data (i.e. files in the `fq_fp1_clmp_fp2` dir)  produced better results for mtDNA (mt = mitochondrial) and decontaminated (i.e. files in the `fq_fp1_clmp_fp2_fqscrn_repaired` dir) was better for nDNA (n=nuclear). 
 
-Thus, use the decontaminated files to run one assembly for each of your libraries independently and then one combining all. Then, you will assess which of these worked the best (with BUSCO and QUAST) and run one more assembly for the best assembly but wit the contaminated files. 
+Thus, use the decontaminated files to run one assembly for each of your libraries independently and then one combining all. Then, you will assess which of these worked the best (with BUSCO and QUAST) and run one more assembly for the best assembly but with the contaminated files. 
 
-2a. **You need to be in `turing.hpc.odu.edu` for this step.** SPAdes requires high memory nodes (only avail in Turing)
+2a. **You need to be in `turing.hpc.odu.edu` for this step.** SPAdes requires high memory nodes (only available in Turing)
 
 ```bash
 #from wahab.hpc.odu.edu
@@ -401,7 +401,7 @@ SgC0072D_CKDL210013395-1a-AK5577-AK7533_HF33GDSX2_L4_2.fq.gz
 Yet, every now and then one library can fail and you might end up with only 2 sets of files. 
 Thus, the following SPAdes script is optimized to run the first 3 libraries independently and 2 or 3 libraries together for your "all" assembly.
 . 
-Note: If your species has 4 or more libraries, you will need to modify the script to run the 4th,5th,.. library and so on (you'll only need to add the necessary libraries to the SPAdes command)
+Note: If your species has 4 or more libraries, you will need to modify the script to run the 4th,5th, ..th library and so on (you'll only need to add the necessary libraries to the SPAdes command)
 No changes necessary for running the first, second, third, or all the libraries together (if you have 2 or 3 libraries only).  
 
 **Use the decontaminated files to run one assembly for each of your libraries independently and then one combining all**
@@ -421,7 +421,7 @@ Then, check the number of libraries you have and run a job combining all librari
 
 #### SPAdes **continue** option
 
-Did your assembly failed after it was running correctly? Sometimes the assembly process will quit after sometime of running most likely due to lack of memory. One of the most useful options of SPAdes is the `continue` flag which basically recognizes where your assembly left off and restarts the process in the same spot again saving you hours or days of work. This will only help you if SPAdes was already running successfully. So if your assembly failed withing minutes, there is probably a problem with the run and `continue` will just fail too. Check the out files first. If it failed after several hours or days, continue might be your best friend here. 
+Did your assembly fail after it was running correctly? Sometimes the assembly process will quit after some time of running most likely due to lack of memory. One of the most useful options of SPAdes is the `continue` flag which basically recognizes where your assembly left off and restarts the process in the same spot again saving you hours or days of work. This will only help you if SPAdes was already running successfully. So if your assembly failed within minutes, there is probably a problem with the run and `continue` will just fail too. Check the out files first. If it failed after several hours or days, continue might be your best friend here. 
 
 I have already built in the continue option within the [runSPADEShimem_R1R2_noisolate.sbatch](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runSPADEShimem_R1R2_noisolate.sbatch) script. To run, first move inside the directory of the assembly that failed and then execute the same command but changing the specified library for "continue".
 
@@ -433,7 +433,7 @@ cd SPAdes_assembly_that_failed
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "e1garcia" "Sgr" "continue" "decontam" "854000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis" "fq_fp1_clmp_fp2_fqscrn_rprd"
 ```
 
-Check that `continue` is working by watching that your jobs is running and checking that SPAdes is writing more output into your out file.
+Check that `continue` is working by watching that your job is running and checking that SPAdes is writing more output into your out file.
 
 ---
 
@@ -443,7 +443,7 @@ Check that `continue` is working by watching that your jobs is running and check
 <details><summary>3. Review Info on Assembly Quality from Quast Output</summary>
 <p>
 
-`QUAST` was automatically ran by the SPAdes script. Look for the `quast_results` dir and for each of your assemblies note the: 
+`QUAST` was automatically run by the SPAdes script. Look for the `quast_results` dir and for each of your assemblies note the: 
 1. Number of contigs in assembly (this is the last contig column in quast report with the name "# contigs")
 2. the size of the largest contig
 3. total length of assembly
@@ -515,7 +515,7 @@ Sgr  |SgC0072C  |decontam       |scaffolds       |off     |2       |69932  |1037
 <p>
 
 We assess quality across multiple metrics since we don't use a golden rule/metric for determining the best assembly. 
-Often, it is clear that single library is relatively better than the others as it would have better results across metrics. Yet, sometimes this is not so clear as different assemblies might be better in different metrics. Use the following table to help you decide:
+Often, it is clear that a single library is relatively better than the others as it would have better results across metrics. Yet, sometimes this is not so clear as different assemblies might be better in different metrics. Use the following table to help you decide:
 
 Importance    |Metric    |Direction    |Description
 ------  |------  |------ |------ 
@@ -593,15 +593,15 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 
 Now you are ready to remove haplotigs and close gaps from your best decontaminated assembly.
 
-Redundans deconstructs your assembly and builds it again with an algorith that removes haplotigs and closes gaps in scaffolds. 
+Redundans deconstructs your assembly and builds it again with an algorithm that removes haplotigs and closes gaps in scaffolds. 
  The resulting assembly might be smaller but less fragmented.
 If you run BUSCO and QUAST again (you should do this after the Blobtools step), 
- you will notice that some metrics might have change and you are likely to see a step deceline in the number of Ns in your assembly 
+ you will notice that some metrics might have changed and you are likely to see a steep deceline in the number of Ns in your assembly 
 (last metric given by QUAST)
 
 You will need:
 * A regex that locates all the fq.gz sequence files used in the actual assembly
-* The best decomtaminated assembly
+* The best decontaminated assembly
 * An out dir that reflects the library used in the assembly
  
 Make sure to use " " in your arguments if your regex includes a wildcard *
@@ -611,23 +611,23 @@ cd <species dir>
 sbatch ../scripts/runRedundans.sh "fq_fp1_clmp_fqscrn_rprd/Sgr-SgC0072C*.R*gz" "SPAdes_SgC0072C_decontam_R1R2_noIsolate/scaffolds.fasta" "redundans_SgC0072C"
 ```
 
-Once redundans is done, you will see a `scaffolds.reduced.fa` file in your our dir. This is your new assembly. 
+Once redundans is done, you will see a `scaffolds.reduced.fa` file in your out dir. This is your new assembly. 
 
 
 **Identifying mitochondrial genome with Mitofinder**
 
 One of the contigs in your assembled genome will probably be the mitochondrial genome (sequenced at high depth). Identifying this contig can be useful for confirming species identity.
 
-You can run Mitofinder on the best contam assembly to find and annotate the mitochondrial genome. Use the following script, substituting particulars for your species in the arguments:
+You can run Mitofinder on the best contaminated assembly to find and annotate the mitochondrial genome. Use the following script, substituting particulars for your species in the arguments:
 
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch [assembly dir] [species code] [SPAdes directory] [family]
 
 Note that if you are assembling a genome for a species from a family that we have not run through SSL yet, you may have to add a mitochondrion from that family to the reference panel. An example for Parupeneus (Mullidae):
 
-* Go to [NCBI](https://www.ncbi.nlm.nih.gov/genbank/) and search for full mitochondrial genome sequences from your species' family. For "Mullidae mitochondrion" there are multiple hits, you can just click on the first (Parupeneus indicus - close enough!) to go to the sequence record.
-* Download to your local computer - in the upper right part of the screen click on "Send to", then click "Complete Record", for Choose Destination click "File", and then make sure the format "Genbank" is chosen, then click on "Create file".
+* Go to [NCBI](https://www.ncbi.nlm.nih.gov/GenBank/) and search for full mitochondrial genome sequences from your species' family. For "Mullidae mitochondrion" there are multiple hits, you can just click on the first (Parupeneus indicus - close enough!) to go to the sequence record.
+* Download to your local computer - in the upper right part of the screen click on "Send to", then click "Complete Record", for Choose Destination click "File", and then make sure the format "GenBank" is chosen, then click on "Create file".
 * This will download to your computer as a file called "sequence.gb" - rename with the correct family ("Mullidae.gb").
-* 
+  
 
 Check the outputs - the complete mitochondrial genome should have 15 genes and very high depth of coverage (you may have some pseudo-mitochondrial genes or genomes with fewer genes). For species identification, find the COX1 sequence and run a [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome) search. If there are no close matches it may be helpful to try [BOLD}(https://www.boldsystems.org/) or private sequence repositories.
 
@@ -713,7 +713,7 @@ The script above will help you determine which libraries had mtDNA genomes ident
 <details><summary>3. Blast mtDNA Genes </summary>
 <p>
 
-You should identify the taxon associated with you annotated mtDNA contigs. 
+You should identify the taxon associated with your annotated mtDNA contigs. 
 
 First, make a fasta:
 
@@ -789,7 +789,7 @@ bash $SCRIPT $inFILE > $outFILE
 column -t -s $'\t' $outFILE | less -S
 ```
 
-And we can hone in on the high confidence taxonmy calls while removing duplicate taxa for a given library and contig. The same prioritization is used as `getBestHits.bash`, this yields just the top hit across all genes on one mtDNA contig.
+And we can hone in on the high confidence taxonomy calls while removing duplicate taxa for a given library and contig. The same prioritization is used as `getBestHits.bash`, this yields just the top hit across all genes on one mtDNA contig.
 
 ```bash
 SCRIPT=/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/getBestHitPerContig.bash
@@ -881,7 +881,7 @@ Before using your SSL genome for analyzing lcWGS data, it is probably a good ide
 
 See the [Blobtools repo](https://github.com/philippinespire/pire_assembler_comparison/tree/main/Blobtools) in the assembler comparison directory for a primer on how to run Blobtools on your best assembly.
 
-Since BUSCO has already been run, you will only have to to run BLAST to get taxonomic hits for each scaffold and BWA (mapping the reads used to make your assembly to the final assembly) to get coverage for each scaffold.
+Since BUSCO has already been run, you will only have to run BLAST to get taxonomic hits for each scaffold and BWA (mapping the reads used to make your assembly to the final assembly) to get coverage for each scaffold.
 
 After running BWA and BLAST you can generate a blobplot for the unfiltered assembly. An example from Goy is below.
 
@@ -915,9 +915,9 @@ crun blobtools add \
 <details><summary> Filter your assembly using Blobtools </summary>
 <p>
 
-After you have made a basic blobplot, you can calculate or estimate the average depth of coverage. Usually this will be depth of coverage for the largest scaffolds. This can be used to set thresholds for filtering your assembly by depth. Generally, we want to keep scaffolds that have >1/3 the average depth and <2x the average depth.
+After you have made a basic blobplot, you can calculate or estimate the average depth of coverage. Usually this will be the depth of coverage for the largest scaffolds. This can be used to set thresholds for filtering your assembly by depth. Generally, we want to keep scaffolds that have >1/3 the average depth and <2x the average depth.
 
-Check the -tail of the bestsumorder_phylum.json file to find which non-Chordate contaminants are present. Add those as a comma-separated list to the --param bestsumorder_phylum--Keys= command. No GC filter, just keep Chordata + no-hit, name by hits kept.
+Check the tail of the bestsumorder_phylum.json file to find which non-Chordate contaminants are present. Add those as a comma-separated list to the --param bestsumorder_phylum--Keys= command. No GC filter, just keep Chordata + no-hit, name by hits kept.
 
 Here is an example for Goy:
 
@@ -973,7 +973,7 @@ Among other output, you will create the following 4 files:
 3. *_augustus.gff: The gff file created from gene prediction (identifies putative coding regions)
 4. *_per10000_all.bed: The bed file with target regions (1 set of 2 probes per target region).
 
-This instructions have been modified from Rene's [de novo assembly probe repo](https://github.com/philippinespire/denovo_genome_assembly/tree/main/WGprobe_creation) 
+These instructions have been modified from Rene's [de novo assembly probe repo](https://github.com/philippinespire/denovo_genome_assembly/tree/main/WGprobe_creation) 
 to best fit this repo
 
 **1. Identifying regions for probe development**
@@ -1003,7 +1003,7 @@ NOTE: Make sure to use the .fasta extension as the script will be looking for th
 
 To get this info, I usually copy and paste the parameter info from the busco directory:
 ```sh
-# list the busco dirs
+# list the busco directories
 ls -d busco_*
 # identify the busco dir of the best assembly, copy the treatments (starting with the library)
 # Example,the busco dir for the best assembly for Sgr is `busco_scaffolds_results-SPAdes_SgC0072C_contam_R1R2_noIsolate`
@@ -1068,7 +1068,7 @@ The last thing to do is to create a text file with links to available genomes fr
 Most likely there won't be genomes available for your targeted species or even genus thus, the easiest way to search is probably to start with the family.
 Go to the [NCBI Genome repository](https://www.ncbi.nlm.nih.gov/genome/) and search for the family of your species. If you get more than 5 genomes then search for the genus, but if  you don't, search higher classifications till you get them (i.e. order, class, etc)
 
-Once you get at least 5 genomes, you'll need to figure out the phylogenetic relationships to lists the genomes in order from closest to farthest. 
+Once you get at least 5 genomes, you'll need to figure out the phylogenetic relationships to list the genomes in order from closest to farthest. 
 
 Search for phylogenies specific to your group. 
 I have uploaded the phylogenies from Betancur et al. BMC Evolutionary Biology (2017) 17:162 for [fish phyla](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/Betancur2017_phyla.pdf)
@@ -1150,7 +1150,7 @@ ___
 **Summary:**
 
 The SSL pipeline creates multiple copies of your data in the form of intermediate files. Assuming that you have finished the pipeline
- (have checked your files and send probe info to Arbor Bio), it is now time to do some cleaning up
+ (have checked your files and sent probe info to Arbor Bio), it is now time to do some cleaning up
 
 **1. Make a copy of important files**
 
@@ -1164,7 +1164,7 @@ du -h | sort -rh > <yourspecies>_ssl_beforeDeleting_IntermFiles
 
 Then, make a copy of important files in the RC (usually only available in the login node):
 
-1. raw sequence files (this should had been done already but check again)
+1. raw sequence files (this should have been done already but check again)
 2. "contaminated" files (fq_fp1_clmp_fp2)
 3. "decontaminated" files (fq_fp1_clmp_fp2_fqscrn_repaired)
 4. best assembly (probably just the contigs.fasta and scaffolds.fasta for contam and decontam of best assembly)
