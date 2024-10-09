@@ -9,6 +9,7 @@ This repo contains instructions to process **short-read** data from Shotgun Sequ
 
 * Nuclear Genome Assemblies
 * Mitochondrial Genome Assemblies
+* Estimates of Genome Length and Heterozygosity Levels
 * Quality Assessment of Assemblies
 * Visualization of Assemblies
 * Informed Design of Capture Probes
