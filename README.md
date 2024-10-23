@@ -19,9 +19,9 @@ This repo contains instructions to process **short-read** data from Shotgun Sequ
 ---
 ## Software Versions
 
-* Version 1.0
+* Version 1.0.0
 
-The current release (v.1.0) has been tested in [Wahab and Turing](https://www.odu.edu/information-technology-services/research-computing/compute), the two main HPC clusters of [Old Dominion University](https://www.odu.edu),
+The current release (v1.0.0) has been tested in [Wahab and Turing](https://www.odu.edu/information-technology-services/research-computing/compute), the two main HPC clusters of [Old Dominion University](https://www.odu.edu)
 
 Whereas most of the analyses were performed using Standard Compute Nodes in Wahab, SPAdes assemblies were created using the High Memory Nodes in Turing.
 * [Wahab User Documentation](https://wiki.hpc.odu.edu/en/Cluster/Wahab)
