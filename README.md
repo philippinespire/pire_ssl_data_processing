@@ -17,8 +17,11 @@ This repo contains instructions to process **short-read** data from Shotgun Sequ
 * Informed Design of Capture Probes
 
 ---
+## Software Versions
 
-Current release (version 1) has been tested in the two main HPC clusters of [Old Dominion University](https://www.odu.edu),[Wahab and Turing](https://www.odu.edu/information-technology-services/research-computing/compute).
+* Version 1.0
+
+The current release (v.1.0) has been tested in [Wahab and Turing](https://www.odu.edu/information-technology-services/research-computing/compute), the two main HPC clusters of [Old Dominion University](https://www.odu.edu),
 
 Whereas most of the analyses were performed using Standard Compute Nodes in Wahab, SPAdes assemblies were created using the High Memory Nodes in Turing.
 * [Wahab User Documentation](https://wiki.hpc.odu.edu/en/Cluster/Wahab)
