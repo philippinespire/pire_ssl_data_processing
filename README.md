@@ -19,7 +19,7 @@ This repo contains instructions to process **short-read** data from Shotgun Sequ
 ---
 ## Software Versions
 
-* Version 1.0.0
+* Version 1.0.0  [![DOI](https://zenodo.org/badge/389689379.svg)](https://doi.org/10.5281/zenodo.13984547)
 
 The current release (v1.0.0) has been tested in [Wahab and Turing](https://www.odu.edu/information-technology-services/research-computing/compute), the two main HPC clusters of [Old Dominion University](https://www.odu.edu)
 
