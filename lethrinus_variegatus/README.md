@@ -6,6 +6,8 @@ Jordan Rodriguez
 
 ---
 
+<details><summary>A. Pre-processing Lva fq files for Shotgun Sequencing Libraries - SSL data</summary>
+
 ## A. Pre-processing Lva fq files for Shotgun Sequencing Libraries - SSL data
 
 ---
@@ -101,7 +103,7 @@ Files output to fq_fp1_clmparray_fp2b_fqscrn for trimmed and fq_fp1_clmparray_fp
 
 ---
 
-### Repair Files
+### 6. Repair Files
 ---
 
 I ran `runREPAIR.sbatch` in [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) 
@@ -114,6 +116,11 @@ sbatch ../pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_c
 Files output to fq_fp1_clmparray_fp2b_fqscrn_repaired for trimmed and fq_fp1_clmparray_fp2_fqscrn_repaired for untrimmed 
 
 ---
+
+</p>
+</details>
+
+<details><summary>B. Genome Assembly</summary>
 
 ## B. Genome Assembly
 
@@ -152,7 +159,7 @@ I chose GenomeScope v2.0 due to the higher model fit percentage. Genome size est
 
 ---
 
-### Genome Size (1n bp)
+### 2. Genome Size (1n bp)
 
 Jellyfish genome size 1n: 901000000
 
@@ -168,14 +175,14 @@ Sources:
 
 ---
 
-### 2. Assembling the Genome with SPAdes
+### 3. Assembling the Genome with SPAdes
 
 ```bash
 Done on User@turing.hpc.odu.edu
 sbatch /home/j1rodrig/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "j1rodrig" "Lva" "1" "decontam" "901000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus" "fq_fp1_clmp_fp2b_fqscrn_repaired"
 ```
 
-### 3. Reviewing Info on Assembly Quality from Quast Output
+### 4. Reviewing Info on Assembly Quality from Quast Output
 
 For each assembly, I viewed the quast results in `quast_results` and noted the following information: 
 
@@ -193,7 +200,7 @@ done on User@turing.hpc.odu.edu
 cat quast-reports/quast-report_contigs_Lva_spades_Lva-CPnd-B_decontam_R1R2_21-99_isolateoff-covoff.tsv | column -ts $'\t' | less -S
 ```
 
-### 4. Running BUSCO 
+### 5. Running BUSCO 
 
 I executed the [runBUSCO.sh](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/scripts/runBUSCO.sh) script on the `contigs` and `scaffolds` files for each assembly.
 
@@ -227,7 +234,7 @@ Lva  |allLibs  |decontam       |scaffolds       |off       |2       |50571  |257
 *note: For Quast, only report the row for the actual assembly (i.e. report "scaffolds" not "scaffolds_broken". 
 *note: For BUSCO, only report the "Complete and single-copy BUSCOs (S)"
 
-### 5. Determining the best assembly 
+### 6. Determining the best assembly 
 
 I referenced the metric importance table in the `pire_ssl_data_processing` repo to determine the best assembly for Lva.
 
@@ -237,9 +244,16 @@ Current step: I am trying to get BUSCO to run for Lva-CPnd-C on the contigs, the
 
 091322 - Brendan Reid taking over for probe development. Note - it looks like single-copy BUSCO and genome size completeness were switched in the above table - revise later. Based on BUSCO and QUAST allLibs is the best decontam assembly - will use this for probe development.
 
-## C. Probe design
+---
 
-### 10. Identifying regions for probe development
+</p>
+</details>
+
+<details><summary>C. Probe Design</summary>
+
+## C. Probe Design
+
+### 1. Identifying regions for probe development
 
 Original attempt failed - had to modify the sbatch scripts to work properly with Augustus config file in Eric's directory. Working now!
 
@@ -285,7 +299,7 @@ Move out files into logs dir.
 mv *out ../logs
 ```
 
-### 11. Closest relatives with available genomes.
+### 2. Closest relatives with available genomes.
 
 No genomes in Lethrinidae, but 5 in Spariformes (all in Sparidae: Diplodus sargus, Spondyliosoma cantharus, Sparus aurata, Acanthopagrus latus, Pagrus major). Based on Betancur phylogeny Lethrinidae is sister to Sparidae, so all are equally close relatives to Lva. Sparus aurata and Acanthopagrus latus look like they are chromosome-level while others are drafts, so would prefer to use those.
 
@@ -302,7 +316,7 @@ https://www.ncbi.nlm.nih.gov/genome/69439
 https://www.ncbi.nlm.nih.gov/genome/7176
 ```
 
-## Files to Send
+### 3. Files to Send
 
 Making directory with files for Arbor.
 
@@ -328,7 +342,14 @@ Lva_scaffolds_allLibs_decontam_R1R2_noIsolate_great10000_per10000_all.bed
 closest_relative_genomes_Lethrinus_variegatus.txt
 ```
 
-## Cleaning up directory + backing up data
+</p>
+</details>
+
+<details><summary>D. Cleaning Up</summary>
+
+## D. Cleaning Up 
+
+Cleaning up directory + backing up data
 
 Documenting sizes of directories + files.
 
@@ -368,8 +389,85 @@ sbatch /home/e1garcia/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noiso
 
 Backing up contam files + assembly.
 
-### Mitofinder
+</p>
+</details>
+
+<details><summary>E. MitoFinder</summary>
+
+## E. MitoFinder
 
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus Lva SPAdes_allLibs_decontam_R1R2_noIsolate Lethrinidae
 ```
+
+</p>
+</details>
+
+<details><summary>## F. Notes</summary>
+
+## F. Notes
+
+Unusual naming format for the SSL Lva files. It looks like the well ID and the individual ID were combined. It also looks like 
+the extraction ID is missing from the new file names (_Ex1_). The file names will not be corrected at this point (11/7/24).
+
+```
+cd /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus/fq_raw_shotgun/
+
+ls Lva*.fq.gz
+
+Lva-CPnd_006A_L3_1.fq.gz
+Lva-CPnd_006A_L3_2.fq.gz
+Lva-CPnd_006G_L3_1.fq.gz
+Lva-CPnd_006G_L3_2.fq.gz
+Lva-CPnd_006H_L3_1.fq.gz
+Lva-CPnd_006H_L3_2.fq.gz
+
+less Lva_ssl_decode.tsv
+
+Sequence_Name   Extraction_ID
+LvaC00610A      Lva-CPnd_006A
+LvaC0069G       Lva-CPnd_006G
+LvaC0069H       Lva-CPnd_006H
+
+less origFileNames.txt
+
+LvaC00610A_CKDL220006132-1a-AK6260-7UDI214_HK52YDSX3_L3_
+LvaC0069G_CKDL220006132-1a-AK6881-GC12_HK52YDSX3_L3_
+LvaC0069H_CKDL220006132-1a-AK6881-7UDI246_HK52YDSX3_L3_
+
+less newFileNames.txt
+
+Lva-CPnd_006A_L3_
+Lva-CPnd_006G_L3_
+Lva-CPnd_006H_L3_
+```
+Actual file names:
+
+Lva-CPnd_006A_L3_1.fq.gz
+
+Lva-CPnd_006A_L3_2.fq.gz
+
+Lva-CPnd_006G_L3_1.fq.gz
+
+Lva-CPnd_006G_L3_2.fq.gz
+
+Lva-CPnd_006H_L3_1.fq.gz
+
+Lva-CPnd_006H_L3_2.fq.gz
+
+Correct file name:
+
+Lva-CPnd_006_10A_L3_1.fq.gz
+
+Lva-CPnd_006_10A_L3_2.fq.gz
+
+Lva-CPnd_006_9G_L3_1.fq.gz
+
+Lva-CPnd_006_9G_L3_2.fq.gz
+
+Lva-CPnd_006_9H_L3_1.fq.gz
+
+Lva-CPnd_006_9H_L3_2.fq.gz
+
+</p>
+</details>
