@@ -403,7 +403,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofind
 </p>
 </details>
 
-<details><summary>## F. Notes</summary>
+<details><summary>F. Notes</summary>
 
 ## F. Notes
 
