@@ -2,15 +2,23 @@
 
 ---
 
+Short-read data from Shotgun Sequencing LIbraries (SSL) of *Lethrinus variegatus*.
+
+```
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus
+```
+
 Jordan Rodriguez
 
 ---
 
-<details><summary>A. Pre-processing Lva fq files for Shotgun Sequencing Libraries - SSL data</summary>
+<details><summary>A. Pre-processing</summary>
 
-## A. Pre-processing Lva fq files for Shotgun Sequencing Libraries - SSL data
+## A. Pre-processing
 
 ---
+
+Pre-processing Lva fq files for Shotgun Sequencing Libraries - SSL data
 
 Steps below followed preprocessing protocol on [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing)
 
