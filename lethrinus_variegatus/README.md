@@ -1,4 +1,4 @@
-# Lethrinus variegatus
+# *Lethrinus variegatus*
 
 ---
 
@@ -6,7 +6,7 @@ Jordan Rodriguez
 
 ---
 
-## Pre-processing Lva fq files for Shotgun Sequencing Libraries - SSL data
+## A. Pre-processing Lva fq files for Shotgun Sequencing Libraries - SSL data
 
 ---
 
