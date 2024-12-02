@@ -280,6 +280,61 @@ https://www.ncbi.nlm.nih.gov/genome/80070
 
 Holding off on probes now (11/17/22) so no decision as to which genome to use. But repo can be cleaned. 
 
+---
+## Step 13. Make 20k Reference Genome
+
+#### SSL Reference Genome (aka inhouse)
+Make a 20k reference genome from the best reference genome.
+
+Best reference genome:
+```
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta
+```
+Check file size:
+```
+du -sh /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta
+686M
+ls -lh /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta
+1.4G
+```
+Run the script *removesmalls.pl* with perl. Use absolute paths. 
+```
+perl /home/e1garcia/shotgun_PIRE/REUs/2022_REU/PSMC/scripts/removesmalls.pl 20000 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta > /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/reference.denovoSSL.Cha20k.fasta
+```
+Check file size:
+```
+du -sh /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/reference.denovoSSL.Cha20k.fasta
+6.2M
+ls -lh /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/SPAdes_allLibs_decontam_R1R2_noIsolate/reference.denovoSSL.Cha20k.fasta
+12M
+```
+
+#### GenBank Reference Genome
+
+Make a 20k reference genome from the GenBank reference genome. There's no information on the original file name!
+```
+/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank/scaffolds.fasta
+```
+Check file size:
+```
+du -sh /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank/scaffolds.fasta
+208M
+ls -lh /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank/scaffolds.fasta
+489M
+```
+Run the script *removesmalls.pl* with perl. Use absolute paths.
+```
+perl /home/e1garcia/shotgun_PIRE/REUs/2022_REU/PSMC/scripts/removesmalls.pl 20000 /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank/scaffolds.fasta > /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank/reference.genbank.Cha20k.fasta
+```
+Check file size:
+```
+du -sh /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank/reference.genbank.Cha20k.fasta
+164M
+ls -lh /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus/Cha_Genbank/reference.genbank.Cha20k.fasta
+381M
+```
+
+---
 ## Cleaning up + backing up important files.
 
 
