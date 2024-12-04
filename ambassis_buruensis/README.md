@@ -381,3 +381,29 @@ mv deleted_files_log logs
 ```
 
 Done!
+
+
+Manually created the `old_new_config.log` in `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/`
+```
+cat /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/newFileNames.txt
+Abu-CPnd_051_Ex1-9C-ssl.
+Abu-CPnd_051_Ex1-9D-ssl.
+Abu-CPnd_051_Ex1-9E-ssl.
+
+cat /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/origFileNames.txt
+AbC0205109C_CKDL220019624-1A_H7TTHDSX5_L2_
+AbC0205109D_CKDL220019624-1A_H7TTHDSX5_L2_
+AbC0205109E_CKDL220019624-1A_H7TTHDSX5_L2_
+```
+Make `old_new_config.log` file in `/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/`
+
+```
+nano /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis/shotgun_raw_fq/old_new_config.log
+
+AbC0205109C_CKDL220019624-1A_H7TTHDSX5_L2_1.fq.gz Abu-CPnd_051_Ex1-9C-ssl.1.fq.gz
+AbC0205109D_CKDL220019624-1A_H7TTHDSX5_L2_1.fq.gz Abu-CPnd_051_Ex1-9D-ssl.1.fq.gz
+AbC0205109E_CKDL220019624-1A_H7TTHDSX5_L2_1.fq.gz Abu-CPnd_051_Ex1-9E-ssl.1.fq.gz
+AbC0205109C_CKDL220019624-1A_H7TTHDSX5_L2_2.fq.gz Abu-CPnd_051_Ex1-9C-ssl.2.fq.gz
+AbC0205109D_CKDL220019624-1A_H7TTHDSX5_L2_2.fq.gz Abu-CPnd_051_Ex1-9D-ssl.2.fq.gz
+AbC0205109E_CKDL220019624-1A_H7TTHDSX5_L2_2.fq.gz Abu-CPnd_051_Ex1-9E-ssl.2.fq.gz
+```
