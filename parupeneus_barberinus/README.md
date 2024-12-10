@@ -183,18 +183,17 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish
 Resulting histogram files from Jellyfish were uploaded to GenomeScope 1.0 and Genomescope 2.0.                    
 
 Reports are here for GenomeScope [v1.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/parupeneus_barberinus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev1_Pbb.pdf) and [v2.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/parupeneus_barberinus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev2_Pbb.pdf)
-```
+
 Genome stats for Pbb from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
 
-version    |stat    |min    |max
-------  |------ |------ |------
-1  |Heterozygosity  |2.36%       |2.46%
-2  |Heterozygosity  |2.37%       |2.64%
-1  |Genome Haploid Length   |475,159,090 bp |482,007,373 bp
-2  |Genome Haploid Length   |493,648,332 bp |514,541,162 bp
-1  |Model Fit       |98.21%       |99.73%
-2  |Model Fit       |83.12%       |99.47%
-
+| version    |stat    |min    |max |
+| ------  |------ |------ |------|
+| 1  |Heterozygosity  |2.36%       |2.46% |
+| 2  |Heterozygosity  |2.37%       |2.64% |
+| 1  |Genome Haploid Length   |475,159,090 bp |482,007,373 bp |
+| 2  |Genome Haploid Length   |493,648,332 bp |514,541,162 bp |
+| 1  |Model Fit       |98.21%       |99.73% |
+| 2  |Model Fit       |83.12%       |99.47% |
 
 ----------
 
