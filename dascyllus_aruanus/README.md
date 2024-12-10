@@ -180,7 +180,7 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish
 Resulting histogram files from Jellyfish were uploaded to GenomeScope 1.0 and Genomescope 2.0.                    
 
 Results for GenomeScope are here for [v1.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev1_Dar.pdf) and [v2.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev2_Dar.pdf)
-```
+
 Genome stats for Dar from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
 
 Reports are here for [v1.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev1_Dar.pdf) and [v2.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev2_Dar.pdf)
