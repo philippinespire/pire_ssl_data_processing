@@ -163,7 +163,6 @@ Genomescope v2 [result](http://genomescope.org/genomescope2.0/analysis.php?code=
 
 GenomeScope estimates (all look reasonable, good model fit):
 
-```
 | version    | stat    | min    | max  |
 |------|------|------|------|
 | 1  | Heterozygosity  | 1.37513%        | 1.37886%  |
@@ -172,7 +171,6 @@ GenomeScope estimates (all look reasonable, good model fit):
 | 2  | Genome Haploid Length   | 775,328,245 bp | 776,489,822 bp  | 
 | 1  | Model Fit       | 98.0426%       | 99.5204%  |
 | 2  | Model Fit       | 86.0532%      | 98.9842%  |
-```
 
 Use 776 Mbp (v2 estimate) moving forward.
 
