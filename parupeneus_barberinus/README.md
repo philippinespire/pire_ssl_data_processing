@@ -225,23 +225,17 @@ A	1A
 B	3A
 
 QUAST & BUSCO Results:
-```
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
-------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
-Pbb  |Pbb-CGal-A  |decontam       |contigs       |off       |2       |47451 |32823       |226253942       |46.43%       |4753       |16999       |0.00       |32.6%
-Pbb  |Pbb-CGal-A  |decontam       |scaffolds       |off       |2       |48533 |32823       |234028647       |46.41%       |4813       |17238       |28.21       |33.3%
 
-Pbb  |Pbb-CGal-B  |decontam       |contigs       |off       |2       |65150 |80987       |386376190       |45.39%       |6264       |19999       |0.00       |49.0%
-Pbb  |Pbb-CGal-B  |decontam       |scaffolds       |off       |2       |65407 |80987       |397441158       |45.39%       |6474       |19715       |36.79       |50.7%
-
-Pbb  |Pbb-allLibs  |decontam       |contigs       |off       |2       |66124 |92752       |479993197       |45.18%       |8302       |17761       |0.00       |58.0%
-Pbb  |Pbb-allLibs  |decontam       |scaffolds       |off       |2       |65592 |92752       |486262446       |45.19%       |8554       |17380       |15.76       |59.0%
-
-Pbb  |Pbb-allLibs  |contam       |contigs       |off       |2       |61649 |97674       |551848622       |45.26%       |11097       |14728       |0.00       |66.2%
-Pbb  |Pbb-allLibs  |contam       |scaffolds       |off       |2       |61027 |97674       |553956727       |45.26%       |11337       |14444       |6.05       |66.4%
-
-
-```
+| Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy|
+| ------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ |
+|Pbb  |Pbb-CGal-A  |decontam       |contigs       |off       |2       |47451 |32823       |226253942       |46.43%       |4753       |16999       |0.00       |32.6%|
+|Pbb  |Pbb-CGal-A  |decontam       |scaffolds       |off       |2       |48533 |32823       |234028647       |46.41%       |4813       |17238       |28.21       |33.3%|
+|Pbb  |Pbb-CGal-B  |decontam       |contigs       |off       |2       |65150 |80987       |386376190       |45.39%       |6264       |19999       |0.00       |49.0%|
+|Pbb  |Pbb-CGal-B  |decontam       |scaffolds       |off       |2       |65407 |80987       |397441158       |45.39%       |6474       |19715       |36.79       |50.7%|
+|Pbb  |Pbb-allLibs  |decontam       |contigs       |off       |2       |66124 |92752       |479993197       |45.18%       |8302       |17761       |0.00       |58.0%|
+|Pbb  |Pbb-allLibs  |decontam       |scaffolds       |off       |2       |65592 |92752       |486262446       |45.19%       |8554       |17380       |15.76       |59.0%|
+|Pbb  |Pbb-allLibs  |contam       |contigs       |off       |2       |61649 |97674       |551848622       |45.26%       |11097       |14728       |0.00       |66.2%|
+|Pbb  |Pbb-allLibs  |contam       |scaffolds       |off       |2       |61027 |97674       |553956727       |45.26%       |11337       |14444       |6.05       |66.4%|
 
 Best library was Pbb-allLibs scaffolds, so I assembled a genome using the contaminated files:
 ```
