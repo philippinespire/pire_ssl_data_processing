@@ -185,14 +185,14 @@ Genome stats for Dar from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both ver
 
 Reports are here for [v1.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev1_Dar.pdf) and [v2.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/dascyllus_aruanus/fq_fp1_clmp_fp2_fqscrn_rprd/GenomeScopev2_Dar.pdf)
 
-version    |stat    |min    |max
-------  |------ |------ |------
-1  |Heterozygosity  |2.12%       |2.14%
-2  |Heterozygosity  |2.08%       |2.14%
-1  |Genome Haploid Length   |733,431,964 bp |735,359,939 bp
-2  |Genome Haploid Length   |776,256,569 bp |781,687,328 bp
-1  |Model Fit       |98.09%       |99.58%
-2  |Model Fit       |84.45%       |99.55%
+| version    | stat    | min    | max  |
+|------|------|------|------|
+| 1  | Heterozygosity  | 2.12%       |2.14%  |
+| 2  | Heterozygosity  | 2.08%       |2.14%  |
+| 1  | Genome Haploid Length   |733,431,964 bp |735,359,939 bp  |
+| 2  | Genome Haploid Length   |776,256,569 bp |781,687,328 bp  |
+| 1  | Model Fit       | 98.09%       |99.58%  |
+| 2  | Model Fit       | 84.45%       |99.55%  |
 
 =============================
 ## STEP 9 Assembling the genome using SPADES
@@ -213,25 +213,19 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShim
 ```
 
 Quast & BUSCO Scores are as follows:
-```
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
-------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
-Dar  |Dar-CJol-A  |decontam       |contigs       |off       |2       |78766  |73498       |626581216       |41.06%       |9455       |20068       |0.00       |54.8%
-Dar  |Dar-CJol-A  |decontam       |scaffolds       |off       |2       |77742  |87229       |631623247       |41.05%       |9755       |19509       |10.30       |55.6%
 
-Dar  |Dar-CJol-B  |decontam       |contigs       |off       |2       |77882  |99877       |645190608       |41.01%       |10030       |19156       |0.00       |57.1%
-Dar  |Dar-CJol-B  |decontam       |scaffolds       |off       |2       |76890  |99877       |649177190       |41.01%       |10322       |18640       |9.12       |57.8%
-
-Dar  |Dar-CJol-C  |decontam       |contigs       |off       |2       |72129  |126737       |667894582       |40.97%       |11762       |16600       |0.00        |62.4%
-Dar  |Dar-CJol-C  |decontam       |scaffolds       |off       |2       |71022  |126737       |671296441       |40.97%       |12119       |16083       |9.58       |62.9%
-
-Dar  |all_3libs  |decontam       |contigs       |off       |2       |76146  |125988       |454159430       |40.75%       |6088       |20911       |0.00       |33.7%
-Dar  |all_3libs  |decontam       |scaffolds       |off       |2       |74736  |125988       |527468322       |40.80%       |7901       |18104       |690.87       |42.3%
-
-Dar  |Dar-CJol-C  |contam       |contigs       |off       |2       |64013  |185103       |700058345       |40.99%       |15054       |12919       |0.00       |66.7%
-Dar  |Dar-CJol-C  |contam       |scaffolds       |off       |2       |63490  |185103       |701614529       |40.99%       |15320       |12689     |5.85       |67.0%
-
-```
+| Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy |
+|------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ |
+| Dar  |Dar-CJol-A  |decontam       |contigs       |off       |2       |78766  |73498       |626581216       |41.06%       |9455       |20068       |0.00       |54.8%  |
+| Dar  |Dar-CJol-A  |decontam       |scaffolds       |off       |2       |77742  |87229       |631623247       |41.05%       |9755       |19509       |10.30       |55.6%  | 
+| Dar  |Dar-CJol-B  |decontam       |contigs       |off       |2       |77882  |99877       |645190608       |41.01%       |10030       |19156       |0.00       |57.1% |
+| Dar  |Dar-CJol-B  |decontam       |scaffolds       |off       |2       |76890  |99877       |649177190       |41.01%       |10322       |18640       |9.12       |57.8% |
+| Dar  |Dar-CJol-C  |decontam       |contigs       |off       |2       |72129  |126737       |667894582       |40.97%       |11762       |16600       |0.00        |62.4% |
+| Dar  |Dar-CJol-C  |decontam       |scaffolds       |off       |2       |71022  |126737       |671296441       |40.97%       |12119       |16083       |9.58       |62.9% |
+| Dar  |all_3libs  |decontam       |contigs       |off       |2       |76146  |125988       |454159430       |40.75%       |6088       |20911       |0.00       |33.7% |
+| Dar  |all_3libs  |decontam       |scaffolds       |off       |2       |74736  |125988       |527468322       |40.80%       |7901       |18104       |690.87       |42.3% |
+| Dar  |Dar-CJol-C  |contam       |contigs       |off       |2       |64013  |185103       |700058345       |40.99%       |15054       |12919       |0.00       |66.7% |
+| Dar  |Dar-CJol-C  |contam       |scaffolds       |off       |2       |63490  |185103       |701614529       |40.99%       |15320       |12689     |5.85       |67.0% |
 
 The best library was Dar-CJol-C so I assembled a genome with contaminated files:
 ```
