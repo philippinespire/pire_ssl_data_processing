@@ -226,18 +226,16 @@ Repeat both commands for each SPAdes dir.
 
 Using the data from above, I made this table:
 
-```bash
-Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
-------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ 
-Lva  |Lva-CPnd-B  |decontam       |contigs       |off       |2       |81782  |205109       |842406872       |57.7%       |13481       |18196       |0       |93.5%
-Lva  |Lva-CPnd-C  |decontam       |contigs       |off       |2       |71611  |166815       |880930890       |%       |16921       |15664       |0       |97.8%
-Lva  |Lva-CPnd  |decontam       |contigs       |off       |2       |79048  |140523       |862567727       |63.0%       |14385       |18050       |0   |95.7%
-Lva  |allLibs  |decontam       |contigs       |off       |2       |84469  |183959       |831737405       |55.0%       |12642       |19055       |0   |92.3%
-Lva  |Lva-CPnd-B  |decontam       |scaffolds       |off       |2       |53255  |243289       |893236349       |73.1%       |25591       |10131       |536.62   |99.1%
-Lva  |Lva-CPnd-C  |decontam       |scaffolds       |off       |2       |58626  |200252       |899066362       |73.4%       |22598      |11820       |169.71   |99.8%
-Lva  |Lva-CPnd  |decontam       |scaffolds       |off       |2       |66925  |171724       |884881423       |68.0%       |18509      |14293       |185.93   |98.2%
-Lva  |allLibs  |decontam       |scaffolds       |off       |2       |50571  |257232       |892987832       |73.5%       |27568      |9390       |648.17   |99.1%
-```
+| Species    |Library    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy |
+|------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------ |
+|Lva  |Lva-CPnd-B  |decontam       |contigs       |off       |2       |81782  |205109       |842406872       |57.7%       |13481       |18196       |0       |93.5% |
+|Lva  |Lva-CPnd-C  |decontam       |contigs       |off       |2       |71611  |166815       |880930890       |%       |16921       |15664       |0       |97.8% |
+|Lva  |Lva-CPnd  |decontam       |contigs       |off       |2       |79048  |140523       |862567727       |63.0%       |14385       |18050       |0   |95.7% |
+|Lva  |allLibs  |decontam       |contigs       |off       |2       |84469  |183959       |831737405       |55.0%       |12642       |19055       |0   |92.3% |
+|Lva  |Lva-CPnd-B  |decontam       |scaffolds       |off       |2       |53255  |243289       |893236349       |73.1%       |25591       |10131       |536.62   |99.1% |
+|Lva  |Lva-CPnd-C  |decontam       |scaffolds       |off       |2       |58626  |200252       |899066362       |73.4%       |22598      |11820       |169.71   |99.8% |
+|Lva  |Lva-CPnd  |decontam       |scaffolds       |off       |2       |66925  |171724       |884881423       |68.0%       |18509      |14293       |185.93   |98.2% |
+|Lva  |allLibs  |decontam       |scaffolds       |off       |2       |50571  |257232       |892987832       |73.5%       |27568      |9390       |648.17   |99.1% |
 
 *note: For Quast, only report the row for the actual assembly (i.e. report "scaffolds" not "scaffolds_broken". 
 *note: For BUSCO, only report the "Complete and single-copy BUSCOs (S)"
