@@ -237,8 +237,8 @@ Using the data from above, I made this table:
 |Lva  |Lva-CPnd  |decontam       |scaffolds       |off       |2       |66925  |171724       |884881423       |68.0%       |18509      |14293       |185.93   |98.2% |
 |Lva  |allLibs  |decontam       |scaffolds       |off       |2       |50571  |257232       |892987832       |73.5%       |27568      |9390       |648.17   |99.1% |
 
-*note: For Quast, only report the row for the actual assembly (i.e. report "scaffolds" not "scaffolds_broken". 
-*note: For BUSCO, only report the "Complete and single-copy BUSCOs (S)"
+* note: For Quast, only report the row for the actual assembly (i.e. report "scaffolds" not "scaffolds_broken". 
+* note: For BUSCO, only report the "Complete and single-copy BUSCOs (S)".
 
 ### 6. Determining the best assembly 
 
