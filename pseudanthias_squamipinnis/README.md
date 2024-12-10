@@ -1,14 +1,16 @@
 oAll  sequence sets are from individual xxxxxx
 
-===============
+---------
 
-## Pseudanthias squamipinnis: SSL_assembly by Jem Baldisimo
+# *Pseudanthias squamipinnis*
+### SSL_assembly by Jem Baldisimo
 
 Steps below followed preprocessing protocol on https://github.com/philippinespire/pire_fq_gz_processing under guidance of Dr. Bird
 
 bash pire_fq_gz_processing/renameFQGZ.bash Psq-ProbeDevelopmentLibraries_SequenceNameDecode.tsv rename
 
-===============
+---------
+
 ## Step 1 FASTQC
 
 Multi_FASTQC.sh in https://github.com/philippinespire/pire_fq_gz_processing was run on all raw Dar data
@@ -26,7 +28,8 @@ Potential issues:
 * gc content - normal, 42%
 * number of reads - 50.6-66.0 M
 
-===============
+----------
+
 ## Step 2 FASTP - 1st trim
 
 ``sh
@@ -42,7 +45,8 @@ Potential issues:
 * % adapter - low 7.9-8.8%
 * number of reads - ~96.8-127 M
 
-===============
+----------
+
 ## Step 3 Remove duplicates through Clumpify
 
 runCLUMPIFY_r1r2_array.bash in https://github.com/philippinespire/pire_fq_gz_processing was run on fq.gz files
@@ -72,7 +76,9 @@ Potential issues:
 * duplication - moderate, 10.9-12.1%
 * gc content - normal, 41%
 * number of sequences - 34.7 - 44.5 M
-===============               
+
+----------
+
 ## Step 4 FASTP 2nd trim
 
 To assemble genome using this data, runFASTP_2_ssl.sbatch was used
@@ -91,7 +97,8 @@ Potential issues:
 * % adapter - good, 0.1%
 * number of reads - good, 60-75.5 M
 
-===============
+----------
+
 ## Step 5 Decontaminate files FQSCRN
 
 Ran on Wahab and used 6 nodes since there were 6 files
@@ -135,7 +142,8 @@ Potential issues:
 * one hit, one genome, no ID: 94.82-95.84%%
 * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - 0-2.94%
 
-====================
+-----------
+
 ## STEP 6 Execute runREPAIR.sbatch
 
 ```
@@ -154,14 +162,16 @@ Potential issues:
 * GC content - 40-41%
 * number of reads - 27.7-35.1 M
 
-=============================
+-----------
+
 ## STEP 7 Clean up        
 
 Moved any .out files to logs directory
 ``sh
 mv *.out logs/
 ```
-=============================
+-----------
+
 ## Genome Assembly
 ## STEP 8 Genome Properties
 
@@ -187,7 +197,8 @@ version    |stat    |min    |max
 2  |Model Fit       |79.72%       |99.18%
 
 
-=============================
+----------
+
 ## STEP 9 Assembling the genome using SPADES
 NEXT STEP:
 Executed runSPADEShimem_R1R2_noisolate.sbatch on Turing
@@ -234,14 +245,17 @@ The best assembly was Psq_allLibs scaffolds, so I assembled a genome using conta
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Psq" "all_2libs" "contam" "725000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis"
 ```
-=============================
+
+-----------
+
 ## STEP 10 Mitofinder
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis Psq SPAdes_allLibs_contam_R1R2_noIsolate Anthiadidae
 ```
 After running Mitofinder, I blasted the *genesNT.fasta file on NCBI and found 95.62% match with Pseudanthias squamipinnis.
 
-=============================
+-----------
+
 ## STEP 11 Clean-up
 
 Did clean up based on the ssl instructions!
