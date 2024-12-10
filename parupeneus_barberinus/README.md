@@ -1,14 +1,16 @@
 All three sequence sets are from individual xxxxxx
 
-===============
+----------
 
-## Parupeneus barberinus: SSL_assembly by Jem Baldisimo
+# *Parupeneus barberinus* 
+### SSL_assembly by Jem Baldisimo
 
 Steps below followed preprocessing protocol on https://github.com/philippinespire/pire_fq_gz_processing under guidance of Dr. Bird
 
 bash pire_fq_gz_processing/renameFQGZ.bash Pbb_ProbeDevelopmentLibraries_SequenceNameDecode.tsv rename
 
-===============
+---------
+
 ## Step 1 FASTQC
 
 Multi_FASTQC.sh in https://github.com/philippinespire/pire_fq_gz_processing was run on all raw Pbb data
@@ -26,7 +28,8 @@ Potential issues:
 * gc content: 48-50% 
 * number of sequences: 34.8-53.6 M
 
-===============
+---------
+
 ## Step 2 FASTP - 1st trim
 
 ``sh
@@ -42,7 +45,8 @@ Potential issues:
 * % adapter - low 7.6-12.1%
 * number of reads - ~63.7-101.6 M
 
-===============
+----------
+
 ## Step 3 Remove duplicates through Clumpify
 
 runCLUMPIFY_r1r2_array.bash in https://github.com/philippinespire/pire_fq_gz_processing was run on fq.gz files
@@ -74,7 +78,8 @@ Potential issues:
 * gc content - normal, 47-48%
 * number of sequences - 27.8 - 42.2 M
 
-===============
+---------
+
 ## Step 4 FASTP 2nd trim
 
 To assemble genome using this data, runFASTP_2_ssl.sbatch was used
@@ -93,8 +98,8 @@ Potential issues:
 * % adapter - good, 0.1-0.2%
 * number of reads - fair, 46-72M
 
-===============
-===============
+---------
+
 ## Step 5 Decontaminate files FQSCRN
 
 Ran on Wahab and used 6 nodes since there were 6 files
@@ -138,7 +143,8 @@ Potential issues:
 * one hit, one genome, no ID: 93.57-93.88%
 * no one hit, one genome to any potential contaminators (bacteria, virus, human, etc) - very low, <0.8%
 
-====================
+---------
+
 ## STEP 6 Execute runREPAIR.sbatch
 
 ```
@@ -156,14 +162,15 @@ Potential issues:
 * GC content - 47-48%
 * number of reads - 20.8-32.5 M
 
-=============================
+---------
+
 ## STEP 7 Clean up        
 
 Moved any .out files to logs directory
 ``sh
 mv *.out logs/
 ```
-=============================
+---------
 
 ## Genome Assembly
 ## STEP 8 Genome Properties
@@ -189,7 +196,8 @@ version    |stat    |min    |max
 2  |Model Fit       |83.12%       |99.47%
 
 
-=============================
+----------
+
 ## STEP 9 Assembling the genome using SPADES
 NEXT STEP:
 Executed runSPADEShimem_R1R2_noisolate.sbatch on Turing
@@ -241,14 +249,16 @@ Best library was Pbb-allLibs scaffolds, so I assembled a genome using the contam
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runSPADEShimem_R1R2_noisolate.sbatch "jbald004" "Pbb" "all_2libs" "contam" "515000000" "/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus" "fq_fp1_clmp_fp2"
 ```
 
-=============================
+----------
+
 ## STEP 10 Mitofinder
 ```
 sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/run_mitofinder_ssl.sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus Pbb SPAdes_allLibs_contam_R1R2_noIsolate Mullidae
 ```
 After running Mitofinder, blasting the COXI gave 99.81% ID to Parupeneus barberinus mtDNA.
 
-=============================
+----------
+
 ## STEP 11 Clean-up
 
 Did clean up based on the ssl instructions!
