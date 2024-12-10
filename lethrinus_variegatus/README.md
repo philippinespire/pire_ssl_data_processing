@@ -150,14 +150,14 @@ Files output to fq_fp1_clmp_fp2b_fqscrn_rprd_jfsh and fq_fp1_clmp_fp2_fqscrn_rpr
 
 Genome stats for Lva from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions:
 
-version    |stat    |min    |max
-------  |------ |------ |------
-1  |Heterozygosity  |0.596741%       |0.609334% 
-2  |Heterozygosity  |0.62143%       |0.635333%
-1  |Genome Haploid Length   |867,877,709 bp |869,278,859 bp
-2  |Genome Haploid Length   |899,850,172 bp |900,696,415 bp
-1  |Model Fit       |93.9719%       |94.8156%
-2  |Model Fit       |88.2079%      |95.4316%
+| version    |stat    |min    |max |
+| ------  |------ |------ |------|
+| 1  |Heterozygosity  |0.596741%       |0.609334% | 
+| 2  |Heterozygosity  |0.62143%       |0.635333% |
+| 1  |Genome Haploid Length   |867,877,709 bp |869,278,859 bp |
+| 2  |Genome Haploid Length   |899,850,172 bp |900,696,415 bp |
+| 1  |Model Fit       |93.9719%       |94.8156% |
+| 2  |Model Fit       |88.2079%      |95.4316% |
 
 Links to reports:
 [GenomeScopev1.0](http://qb.cshl.edu/genomescope/analysis.php?code=yxsG2k3Q7PEZzj0M1YdO)
