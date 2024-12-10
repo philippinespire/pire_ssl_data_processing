@@ -184,17 +184,16 @@ sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish
 Resulting histogram files from Jellyfish were uploaded to GenomeScope 1.0 and Genomescope 2.0.
 Reports are here for [v1.0](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/pseudanthias$
 
-```
 Genome stats for Psq from Jellyfish/GenomeScope v1.0 and v2.0, k=21 for both versions
 
-version    |stat    |min    |max
-------  |------ |------ |------
-1  |Heterozygosity  |2.73%       |2.84%
-2  |Heterozygosity  |2.20%       |3.54%
-1  |Genome Haploid Length   |645,720,680 bp |653,788,079 bp
-2  |Genome Haploid Length   |664,252,616 bp |724,828,529 bp
-1  |Model Fit       |97.87%       |99.54%
-2  |Model Fit       |79.72%       |99.18%
+| version    |stat    |min    |max|
+|------  |------ |------ |------|
+|1  |Heterozygosity  |2.73%       |2.84%|
+|2  |Heterozygosity  |2.20%       |3.54%|
+|1  |Genome Haploid Length   |645,720,680 bp |653,788,079 bp|
+|2  |Genome Haploid Length   |664,252,616 bp |724,828,529 bp|
+|1  |Model Fit       |97.87%       |99.54%|
+|2  |Model Fit       |79.72%       |99.18%|
 
 
 ----------
