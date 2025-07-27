@@ -125,4 +125,63 @@ Now, rename for real.
 ---
 </details>
 
+<details><summary>4. Check the quality of raw data (*)</summary>
 
+## 4. Check the quality of raw data (*)
+
+Execute `Multi_FASTQC.sh`:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
+Submitted batch job 4627394
+```
+
+### MultiQC output (fq_raw/fqc_raw_report.html):
+* About half of reads for CJol were duplicates
+* Reverse reads (r2) failing GC Content
+* Overrepresented sequences in forward reads (r1)
+
+```
+‣ % duplication - 
+    • CMvi: 18.0 - 18.8%
+    • CJol: 45.2 - 47.0%
+‣ GC content - 
+    • CMvi: 44 - 45%
+    • CJol: 50 - 53%
+‣ number of reads - 
+    • CMvi: 3.5 mil
+    • CJol: 34.7 - 34.8 mil
+```
+---
+</details>
+
+<details><summary>5. First trim (*)</summary>
+
+## 5. First trim (*)
+
+Run `runFASTP_1st_trim.sbatch`:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+Submitted batch job 4627397
+```
+### Review the FastQC output (fq_fp1/1st_fastp_report.html):
+* 
+
+```
+‣ % duplication - 
+    • CMvi: 
+    • CJol: 
+‣ GC content -
+    • CMvi: 
+    • CJol:
+‣ passing filter - 
+    • CMvi: 
+    • CJol:
+‣ % adapter - 
+    • CMvi: 
+    • CJol:
+‣ number of reads - 
+    • CMvi: 
+    • CJol:
+```
+---
+</details>
