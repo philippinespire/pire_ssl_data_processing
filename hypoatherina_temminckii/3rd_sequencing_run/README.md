@@ -212,8 +212,100 @@ Check if clumpify worked:
 [hpc-0373@d1-w6420a-16 3rd_sequencing_run]$ module load container_env R/4.3 
 [hpc-0373@d1-w6420a-16 3rd_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
 
-
+Clumpify Successfully worked on all samples
 
 [hpc-0373@d1-w6420a-16 3rd_sequencing_run]$ exit
 ```
 </details> 
+
+<details><summary>6c. Clean the scratch drive</summary>
+	
+### 6c. Clean the scratch drive
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0373 "*clumpify*temp*"
+Submitted batch job 4627407
+```
+
+Check:
+```
+ls /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/
+```
+Nothing printed, so its cleared.
+
+</details>
+
+<details><summary>6d. Generate metadata on deduplicated FASTQ files (*)</summary>
+
+### 6d. Generate metadata on deduplicated FASTQ files (*)
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+Submitted batch job 4627408
+```
+
+**Results** (fq_fp1_clmp/fqc_clmp_report.html): 
+* All passing Per Sequence GC Content
+* CJol.r2 warnings for overrepresented sequences
+* No samples found with any adapter contamination > 0.1%
+
+```
+‣ % duplication - 
+    • CMvi: 4.9 - 5.5%
+    • CJol: 10.5 - 12.3%
+‣ GC content - 
+    • CMvi: 41 - 42%
+    • CJol: 47%
+‣ length - 
+    • CMvi: 144 bp
+    • CJol: 133 bp
+‣ number of reads -
+    • CMvi: 2.9 mil
+    • CJol: 19.9 mil
+```
+</details>
+
+---
+</details>
+
+<details><summary>7. Second trim (*)</summary>
+
+## 7. Second trim (*)
+
+For SSL, set the Minimum Sequence Length to 140 bp. 
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 140
+Submitted batch job 4627411
+```
+Lets see how many reads are lost at this cutoff. 
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ cp ../../../pire_fq_gz_processing/read_length_counter.bash .
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash read_length_counter.bash -n 1000 fq_fp1 > fq_fp1/read_length_counts.tsv
+[hpc-0373@wahab-01 3rd_sequencing_run]$ awk '$2 >= 140 {sum += $3} END {print "Reads >=140bp:", sum}' fq_fp1/read_length_counts.tsv
+Reads >=140bp: 6430
+[hpc-0373@wahab-01 3rd_sequencing_run]$ awk '{sum += $3} END {print "Total reads:", sum}' fq_fp1/read_length_counts.tsv
+Total reads: 8000
+```
+About 80% of reads are retained.
+
+### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
+* 
+
+```
+‣ % duplication -
+    • CMvi: 
+    • CJol: 
+‣ GC content -
+    • CMvi: 
+    • CJol: 
+‣ passing filter -
+    • CMvi: 
+    • CJol: 
+‣ % adapter -
+    • CMvi: 
+    • CJol: 
+‣ number of reads -
+    • CMvi: 
+    • CJol: 
+```
+
+---
+</details>
