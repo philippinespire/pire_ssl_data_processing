@@ -1,1 +1,128 @@
-xxxx
+<img src="https://fishbase.mnhn.fr/images/species/Hytem_u1.jpg" alt="Hte" width="400"/>
+
+# *Hypoatherina temminckii* SSL Analysis 
+
+```
+/archive/carpenterlab/pire/pire_ssl_data_processing/hypoatherina_temminckii/3rd_sequencing_run/
+```
+
+Analysis of SSL data for *Hypoatherina temminckii* from Jolo Market (CJol) and Masinloc Public Market (CMvi). 
+
+One contemporary individual from each site has been sequenced to generate a better reference genome that would enable mapping success in the future.
+
+fq.gz processing done by Gianna Mazzei (July 2025).
+
+---
+	
+## fq.gz Pre-processing
+
+This portion follows the instructions on [this repo](https://github.com/philippinespire/pire_fq_gz_processing).
+
+→ (*) _denotes steps with MultiQC Report Analyses_
+<details><summary>0. Set-up</summary>
+
+## 0. Set-up
+
+Make a sequencing run directory to transfer the raw data to. The directory holding the data is called `3rd_sequencing_run`, so I'll maintain the same convention.
+```
+cd /archive/carpenterlab/pire/pire_ssl_data_processing/hypoatherina_temminckii
+
+[hpc-0373@wahab-01 hypoatherina_temminckii]$ mkdir 3rd_sequencing_run
+```
+---
+</details>
+
+<details><summary>1. Get raw data</summary>
+
+## 1. Get raw data
+
+```
+[hpc-0373@wahab-01 hypoatherina_temminckii]$ cp -r /archive/carpenterlab/pire/downloads/hypoatherina_temminckii/3rd_sequencing_run/* 3rd_sequencing_run/
+```
+
+---
+</details>
+
+<details><summary>2. Proofread the decode file</summary>
+
+## 2. Proofread the decode file
+
+```
+cd 3rd_sequencing_run/fq_raw/
+
+[hpc-0373@wahab-01 fq_raw]$ cat Hte_SSL_SequenceNameDecode.tsv 
+```
+Checked that I have sequencing data for all individuals in the decode file
+```
+[hpc-0373@wahab-01 fq_raw]$ ls *1.fq.gz | wc -l
+4
+[hpc-0373@wahab-01 fq_raw]$ ls *2.fq.gz | wc -l
+4
+```
+Number of lines (there's a line for header):
+```
+[hpc-0373@wahab-01 fq_raw]$ wc -l Hte_SSL_SequenceNameDecode.tsv 
+3 
+```
+There is an issue. Each individual was sequenced across two different lanes, and the decode file wants to rename both of these files with the same name, which would write over one of them. Typically, this is resolved with more complex methods, but since there are only a few files, I'll just manually alter the decode file.
+```
+[hpc-0373@wahab-01 fq_raw]$ ls -1
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L4_1.fq.gz
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L4_2.fq.gz
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L5_1.fq.gz
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L5_2.fq.gz
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L4_1.fq.gz
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L4_2.fq.gz
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L5_1.fq.gz
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L5_2.fq.gz
+
+[hpc-0373@wahab-01 fq_raw]$ cat Hte_SSL_SequenceNameDecode.tsv 
+Sequence_Name	Extraction_ID
+HtC0608702H	Hte-CJol_087-Ex1-2H-SSL-1-1
+HtC0200803H	Hte-CMvi_008-Ex1-3H-SSL-1-1
+
+[hpc-0373@wahab-01 fq_raw]$ nano Hte_SSL_SequenceNameDecode.tsv
+Sequence_Name	Extraction_ID
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L4	Hte-CMvi_008-Ex1-3H-SSL-1-1
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L5	Hte-CMvi_008-Ex1-3H-SSL-1-1
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L4	Hte-CJol_087-Ex1-2H-SSL-1-1
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L5	Hte-CJol_087-Ex1-2H-SSL-1-1
+```
+
+Now, I can move forward.
+
+---
+</details>
+
+<details><summary>3. Rename raw files</summary>
+
+## 3. Rename raw files
+
+First, perform a renaming dry run with the new decode file.
+
+Instead of `renameFQGZ.bash`, I will use the script `renameFQGZ_keeplane2.bash` to rename the files because the lane ID needs to be maintained between the original file name and the new file name. 
+```
+[hpc-0373@wahab-01 fq_raw]$ salloc
+[hpc-0373@d1-w6420a-03 fq_raw]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ_keeplane2.bash Hte_SSL_SequenceNameDecode.tsv
+preview of orig and new R1 file names...
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L4_1.fq.gz Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-1.fq.gz
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L5_1.fq.gz Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-1.fq.gz
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L4_1.fq.gz Hte-CJol_087-Ex1-2H-SSL-1-1-L4-1.fq.gz
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L5_1.fq.gz Hte-CJol_087-Ex1-2H-SSL-1-1-L5-1.fq.gz
+preview of orig and new R2 file names...
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L4_2.fq.gz Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-2.fq.gz
+HtC0200803H_CKDL250011451-1A_22W2WGLT4_L5_2.fq.gz Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-2.fq.gz
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L4_2.fq.gz Hte-CJol_087-Ex1-2H-SSL-1-1-L4-2.fq.gz
+HtC0608702H_CKDL250011451-1A_22W2WGLT4_L5_2.fq.gz Hte-CJol_087-Ex1-2H-SSL-1-1-L5-2.fq.gz
+```
+Looks good!
+
+Now, rename for real.
+```
+[hpc-0373@e3-w6420b-01 fq_raw]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ_keeplane2.bash Hte_SSL_SequenceNameDecode.tsv rename
+```
+
+---
+</details>
+
+
