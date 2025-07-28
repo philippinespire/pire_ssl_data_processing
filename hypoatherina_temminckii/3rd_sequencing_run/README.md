@@ -287,25 +287,109 @@ Total reads: 8000
 About 80% of reads are retained.
 
 ### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
-* 
+* Duplication went down
+* Many short reads were filtered out
+ 	* 16% (1 mil reads) from CMvi	
+	* 33% (13 mil reads) from CJol
 
 ```
 ‣ % duplication -
-    • CMvi: 
-    • CJol: 
+    • CMvi: 2.6%
+    • CJol: 7.0%
 ‣ GC content -
-    • CMvi: 
-    • CJol: 
+    • CMvi: 41.4%
+    • CJol: 46.4%
 ‣ passing filter -
-    • CMvi: 
-    • CJol: 
+    • CMvi: 84%
+    • CJol: 67%
 ‣ % adapter -
-    • CMvi: 
-    • CJol: 
+    • CMvi: 0.3%
+    • CJol: 0.4%
 ‣ number of reads -
-    • CMvi: 
-    • CJol: 
+    • CMvi: 4.9 mil
+    • CJol: 26.7 mil
 ```
 
 ---
 </details>
+
+<details><summary>8. Decontaminate files (*)</summary>
+
+## 8. Decontaminate files (*)
+
+<details><summary>8a. Run fastq_screen</summary>
+	
+### 8a. Run fastq_screen
+
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash
+[hpc-0373@wahab-01 3rd_sequencing_run]$ fqScrnPATH=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash
+[hpc-0373@wahab-01 3rd_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 3rd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 3rd_sequencing_run]$ nodes=20
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
+```
+JobID: 4627446
+
+</details>
+
+<details><summary>8b. Check for Errors</summary>
+	
+### 8b. Check for Errors
+
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash
+[hpc-0373@wahab-01 3rd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+Submitted batch job 
+```
+
+When complete check the $outdir/fqValidateReport.txt file
+```
+less -S $outdir/fqValidationReport.txt file
+```
+**Confirm files were succesfully completed:**
+
+Check that all 5 files were created for each fqgz file:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 3rd_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
+
+
+```
+For each, you should have the same number as the number of input files (number of fq.gz files):
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 3rd_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
+                                        ls $indir/*r2.fq.gz | wc -l
+
+```
+Check the `*out` files: (no results)
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ grep 'error' slurm-fqscrn.*out
+                                        grep 'No reads in' slurm-fqscrn.*out
+                                        grep 'FATAL' slurm-fqscrn.*out
+```
+Check for any unzipped files with the word temp, which means that the job didn't finish and needs to be rerun: 
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ ls $outdir/*temp*
+ls: cannot access '/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/*temp*': No such file or directory
+```
+
+
+
+---
+</details>
+
+
+
+
