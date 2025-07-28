@@ -1,0 +1,223 @@
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 2885259
+total bases: 414943652
+Q20 bases: 408707568(98.4971%)
+Q30 bases: 394470152(95.066%)
+
+Read2 before filtering:
+total reads: 2885259
+total bases: 414920989
+Q20 bases: 406346205(97.9334%)
+Q30 bases: 389714098(93.9249%)
+
+Read1 after filtering:
+total reads: 2434722
+total bases: 364848063
+Q20 bases: 362039034(99.2301%)
+Q30 bases: 352114623(96.5099%)
+
+Read2 aftering filtering:
+total reads: 2434722
+total bases: 364777761
+Q20 bases: 360598619(98.8543%)
+Q30 bases: 349044720(95.687%)
+
+Filtering result:
+reads passed filter: 4869444
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 901074
+reads with adapter trimmed: 17748
+bases trimmed due to adapters: 487254
+reads corrected by overlap analysis: 433514
+bases corrected by overlap analysis: 830858
+
+Duplication rate: 2.5323%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 63 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 2887613
+total bases: 415251146
+Q20 bases: 409002396(98.4952%)
+Q30 bases: 394748761(95.0627%)
+
+Read2 before filtering:
+total reads: 2887613
+total bases: 415222045
+Q20 bases: 406433061(97.8833%)
+Q30 bases: 389238395(93.7422%)
+
+Read1 after filtering:
+total reads: 2434519
+total bases: 364815987
+Q20 bases: 362038189(99.2386%)
+Q30 bases: 352140126(96.5254%)
+
+Read2 aftering filtering:
+total reads: 2434519
+total bases: 364744795
+Q20 bases: 360415819(98.8131%)
+Q30 bases: 348403412(95.5198%)
+
+Filtering result:
+reads passed filter: 4869038
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 906188
+reads with adapter trimmed: 18196
+bases trimmed due to adapters: 507131
+reads corrected by overlap analysis: 438119
+bases corrected by overlap analysis: 840115
+
+Duplication rate: 2.60519%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 64 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 19894341
+total bases: 2649816499
+Q20 bases: 2606847786(98.3784%)
+Q30 bases: 2517312412(94.9995%)
+
+Read2 before filtering:
+total reads: 19894341
+total bases: 2649169145
+Q20 bases: 2578153076(97.3193%)
+Q30 bases: 2453575646(92.6168%)
+
+Read1 after filtering:
+total reads: 13369566
+total bases: 2002286973
+Q20 bases: 1986769030(99.225%)
+Q30 bases: 1935870084(96.6829%)
+
+Read2 aftering filtering:
+total reads: 13369566
+total bases: 2001516948
+Q20 bases: 1974652731(98.6578%)
+Q30 bases: 1905059338(95.1808%)
+
+Filtering result:
+reads passed filter: 26739132
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 13049550
+reads with adapter trimmed: 155364
+bases trimmed due to adapters: 2409298
+reads corrected by overlap analysis: 2757831
+bases corrected by overlap analysis: 5042508
+
+Duplication rate: 6.82737%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 271 seconds
+Detecting adapter sequence for read1...
+No adapter detected for read1
+
+Detecting adapter sequence for read2...
+No adapter detected for read2
+
+Read1 before filtering:
+total reads: 19926714
+total bases: 2653602582
+Q20 bases: 2610914860(98.3913%)
+Q30 bases: 2521631548(95.0267%)
+
+Read2 before filtering:
+total reads: 19926714
+total bases: 2652997852
+Q20 bases: 2580685364(97.2743%)
+Q30 bases: 2453134416(92.4665%)
+
+Read1 after filtering:
+total reads: 13372823
+total bases: 2002757593
+Q20 bases: 1987474767(99.2369%)
+Q30 bases: 1936734976(96.7034%)
+
+Read2 aftering filtering:
+total reads: 13372823
+total bases: 2001986096
+Q20 bases: 1974430608(98.6236%)
+Q30 bases: 1902709833(95.0411%)
+
+Filtering result:
+reads passed filter: 26745646
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+reads failed due to too short: 13107782
+reads with adapter trimmed: 159244
+bases trimmed due to adapters: 2436138
+reads corrected by overlap analysis: 2793108
+bases corrected by overlap analysis: 5113099
+
+Duplication rate: 6.95456%
+
+Insert size peak (evaluated by paired-end reads): 150
+
+JSON report: fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.r1r2_fastp.json
+HTML report: fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.r1r2_fastp.html
+
+fastp --in1 fq_fp1_clmp/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.r1.fq.gz --in2 fq_fp1_clmp/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.r2.fq.gz --out1 fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_r1.fq.gz --out2 fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_r2.fq.gz --unpaired1 fq_fp1_clmp_fp2/failed/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_unprd.fq.gz --unpaired2 fq_fp1_clmp_fp2/failed/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_unprd.fq.gz --failed_out fq_fp1_clmp_fp2/failed/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_fail.fq.gz -h fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.r1r2_fastp.html -j fq_fp1_clmp_fp2/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.r1r2_fastp.json --detect_adapter_for_pe --trim_front1 0 --trim_front2 0 --length_required 140 --cut_front --cut_front_window_size 1 --cut_front_mean_quality 20 --cut_right --cut_right_window_size 10 --cut_right_mean_quality 20 --disable_trim_poly_g --correction --disable_quality_filtering --unqualified_percent_limit 40 --report_title Second Trim R1R2 
+fastp v0.20.1, time used: 279 seconds
+
+  /// MultiQC 🔍 | v1.13
+
+[2025-07-27 17:44:11,829] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2025-07-27 17:44:11,833] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2025-07-27 17:44:11,833] multiqc                                            [DEBUG  ]  New config: {'max_table_rows': 3000}
+[2025-07-27 17:44:11,833] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename 2nd_fastp_report --outdir fq_fp1_clmp_fp2 fq_fp1_clmp_fp2
+[2025-07-27 17:44:12,200] multiqc                                            [WARNING]  MultiQC Version v1.30 now available!
+[2025-07-27 17:44:12,200] multiqc                                            [DEBUG  ]  Working dir : /archive/carpenterlab/pire/pire_ssl_data_processing/hypoatherina_temminckii/3rd_sequencing_run
+[2025-07-27 17:44:12,200] multiqc                                            [DEBUG  ]  Template    : default
+[2025-07-27 17:44:12,200] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2025-07-27 17:44:12,201] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2025-07-27 17:44:12,202] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpc2myp7da
+[2025-07-27 17:44:12,418] multiqc                                            [INFO   ]  Search path : /archive/carpenterlab/pire/pire_ssl_data_processing/hypoatherina_temminckii/3rd_sequencing_run/fq_fp1_clmp_fp2
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 24/24  
+[2025-07-27 17:44:13,384] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 24] // [skipped_no_match: 20] // [skipped_ignore_pattern: 16]
+[2025-07-27 17:44:14,352] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2025-07-27 17:44:14,353] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2025-07-27 17:44:14,356] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2025-07-27 17:44:14,397] multiqc.modules.fastp.fastp                        [INFO   ]  Found 4 reports
+[2025-07-27 17:44:34,194] multiqc                                            [INFO   ]  Compressing plot data
+[2025-07-27 17:44:34,534] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2/2nd_fastp_report.html
+[2025-07-27 17:44:34,534] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2/2nd_fastp_report_data
+[2025-07-27 17:44:34,534] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpc2myp7da/multiqc_data' to 'fq_fp1_clmp_fp2/2nd_fastp_report_data'
+[2025-07-27 17:44:34,599] multiqc                                            [INFO   ]  Plots       : fq_fp1_clmp_fp2/2nd_fastp_report_plots
+[2025-07-27 17:44:34,599] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpc2myp7da/multiqc_plots' to 'fq_fp1_clmp_fp2/2nd_fastp_report_plots'
+[2025-07-27 17:44:34,909] multiqc                                            [INFO   ]  MultiQC complete
