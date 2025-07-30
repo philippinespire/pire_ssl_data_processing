@@ -341,7 +341,7 @@ JobID: 4627446
 [hpc-0373@wahab-01 3rd_sequencing_run]$ bash
 [hpc-0373@wahab-01 3rd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
 [hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
-Submitted batch job 
+Submitted batch job 4632231
 ```
 
 When complete check the $outdir/fqValidateReport.txt file
@@ -363,15 +363,24 @@ Check that all 5 files were created for each fqgz file:
 					ls $outdir/*r2_screen.png | wc -l
 					ls $outdir/*r1_screen.html | wc -l
 					ls $outdir/*r2_screen.html | wc -l
-
-
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
 ```
 For each, you should have the same number as the number of input files (number of fq.gz files):
 ```
 [hpc-0373@wahab-01 3rd_sequencing_run]$ indir=fq_fp1_clmp_fp2
 [hpc-0373@wahab-01 3rd_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
                                         ls $indir/*r2.fq.gz | wc -l
-
+4
+4
 ```
 Check the `*out` files: (no results)
 ```
@@ -385,11 +394,49 @@ Check for any unzipped files with the word temp, which means that the job didn't
 ls: cannot access '/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/*temp*': No such file or directory
 ```
 
-
+No errors!
 
 ---
 </details>
 
+<details><summary>8c. Move output files</summary>
 
+### 8c. Move output files
 
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ mkdir fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 3rd_sequencing_run]$ mv /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/* /archive/carpenterlab/pire/pire_ssl_data_processing/hypoatherina_temminckii/3rd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+```
+Check to see if `/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/` was cleared:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ ls /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+#nothing printed
+```
+---
+</details>
+
+<details><summary>8d. Run MultiQC (*)</summary>
+
+### 8d. Run MultiQC (*)
+
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+Submitted batch job 4632234
+```
+#### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html): 
+* 
+
+```
+‣ multiple genomes -
+    • CMvi: 
+    • CJol: 
+‣ no hits -
+    • CMvi: 
+    • CJol: 
+```
+</details>
+
+---
+
+</details>
 
