@@ -424,19 +424,81 @@ Check to see if `/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/` was cleared:
 Submitted batch job 4632234
 ```
 #### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html): 
-* 
+* No apparent sources of contamination
 
 ```
-‣ multiple genomes -
-    • CMvi: 
-    • CJol: 
 ‣ no hits -
-    • CMvi: 
-    • CJol: 
+    • CMvi: 97%
+    • CJol: 94%
 ```
 </details>
 
 ---
 
+</details>
+
+<details><summary>9. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)</summary>
+
+## 9. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)
+
+#### Execute `runREPAIR.sbatch`
+
+Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) and reverse (r2) reads so that the `*1.fq.gz` and `*2.fq.gz` files have reads in the same order
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
+Submitted batch job 4633991
+```
+#### Confirm that the paired end fq.gz files are complete and formatted correctly:
+
+Start by running the script:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ bash
+[hpc-0373@wahab-01 3rd_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch 
+                                        DIR=fq_fp1_clmp_fp2_fqscrn_rprd
+                                        fqPATTERN="*fq.gz"
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+Submitted batch job 4633992
+```
+
+Check the SLURM `.out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid:
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ cat valiate_FQ_-4633992.out
+PAIRED END FASTQ VALIDATION REPORT
+
+Directory: fq_fp1_clmp_fp2_fqscrn_rprd
+File Pattern: *fq.gz
+File extensions found: .R1.fq.gz .R2.fq.gz
+
+Number of paired end fq files evaluated: 4
+Number of paired end fq files validated: 4
+
+Errors Reported:
+```
+
+#### Run `Multi_FASTQC`
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+Submitted batch job 4634304
+```
+
+#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
+* 
+
+```
+‣ % duplication - 
+    • CMvi: 
+    • CJol: 
+‣ GC content -
+    • CMvi: 
+    • CJol: 
+‣ length -
+    • CMvi: 
+    • CJol: 
+‣ number of reads -
+    • CMvi: 
+    • CJol: 
+```
+
+---
 </details>
 
