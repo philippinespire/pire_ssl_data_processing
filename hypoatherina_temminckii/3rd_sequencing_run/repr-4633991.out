@@ -1,0 +1,56 @@
+java -ea -Xmx157282m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_repr.orph.fq overwrite=t repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Hte-CMvi_008-Ex1-3H-SSL-1-1-L4-clmp.fp2_repr.orph.fq, overwrite=t, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	4740237 reads 		710276715 bases.
+Result:                 	4740237 reads (100.00%) 	710276715 bases (100.00%)
+Pairs:                  	4685724 reads (98.85%) 	702109592 bases (98.85%)
+Singletons:             	54513 reads (1.15%) 	8167123 bases (1.15%)
+
+Time:                         	10.655 seconds.
+Reads Processed:       4740k 	444.90k reads/sec
+Bases Processed:        710m 	66.66m bases/sec
+java -ea -Xmx157282m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_repr.orph.fq overwrite=t repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Hte-CMvi_008-Ex1-3H-SSL-1-1-L5-clmp.fp2_repr.orph.fq, overwrite=t, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	4740425 reads 		710308427 bases.
+Result:                 	4740425 reads (100.00%) 	710308427 bases (100.00%)
+Pairs:                  	4685814 reads (98.85%) 	702126436 bases (98.85%)
+Singletons:             	54611 reads (1.15%) 	8181991 bases (1.15%)
+
+Time:                         	11.015 seconds.
+Reads Processed:       4740k 	430.37k reads/sec
+Bases Processed:        710m 	64.49m bases/sec
+java -ea -Xmx157282m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_repr.orph.fq overwrite=t repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Hte-CJol_087-Ex1-2H-SSL-1-1-L5-clmp.fp2_repr.orph.fq, overwrite=t, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	25051605 reads 		3751164829 bases.
+Result:                 	25051605 reads (100.00%) 	3751164829 bases (100.00%)
+Pairs:                  	24472290 reads (97.69%) 	3664387392 bases (97.69%)
+Singletons:             	579315 reads (2.31%) 	86777437 bases (2.31%)
+
+Time:                         	49.069 seconds.
+Reads Processed:      25051k 	510.54k reads/sec
+Bases Processed:       3751m 	76.45m bases/sec
+java -ea -Xmx157282m -cp /opt/conda/opt/bbmap-38.90-3/current/ jgi.SplitPairsAndSingles rp in1=fq_fp1_clmp_fp2_fqscrn/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_r1.tagged_filter.fastq.gz in2=fq_fp1_clmp_fp2_fqscrn/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_r2.tagged_filter.fastq.gz out1=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_repr.R1.fq.gz out2=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_repr.R2.fq.gz outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_repr.orph.fq overwrite=t repair
+Executing jgi.SplitPairsAndSingles [rp, in1=fq_fp1_clmp_fp2_fqscrn/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_r1.tagged_filter.fastq.gz, in2=fq_fp1_clmp_fp2_fqscrn/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_r2.tagged_filter.fastq.gz, out1=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_repr.R1.fq.gz, out2=fq_fp1_clmp_fp2_fqscrn_rprd/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_repr.R2.fq.gz, outs=fq_fp1_clmp_fp2_fqscrn_rprd/orphans/Hte-CJol_087-Ex1-2H-SSL-1-1-L4-clmp.fp2_repr.orph.fq, overwrite=t, repair]
+
+Set INTERLEAVED to false
+Started output stream.
+
+Input:                  	25050202 reads 		3750923711 bases.
+Result:                 	25050202 reads (100.00%) 	3750923711 bases (100.00%)
+Pairs:                  	24469738 reads (97.68%) 	3663973011 bases (97.68%)
+Singletons:             	580464 reads (2.32%) 	86950700 bases (2.32%)
+
+Time:                         	54.135 seconds.
+Reads Processed:      25050k 	462.74k reads/sec
+Bases Processed:       3750m 	69.29m bases/sec
