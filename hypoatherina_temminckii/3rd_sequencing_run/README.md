@@ -482,21 +482,37 @@ Submitted batch job 4634304
 ```
 
 #### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
-* 
+* Still some duplicate reads in CJol libraries
+* Per Sequence GC Content: All passing and peaks have normalized; Jol and Mvi have slightly different curves
+* All samples had less than 1% of reads made up of overrepresented sequences
+* No samples found with any adapter contamination > 0.1%
 
 ```
 ‣ % duplication - 
-    • CMvi: 
-    • CJol: 
+    • CMvi: 4.7%
+    • CJol: 10.9 - 13.4%
 ‣ GC content -
-    • CMvi: 
-    • CJol: 
+    • CMvi: 41%
+    • CJol: 45%
 ‣ length -
-    • CMvi: 
-    • CJol: 
+    • CMvi: 150 bp
+    • CJol: 150 bp
 ‣ number of reads -
-    • CMvi: 
-    • CJol: 
+    • CMvi: 2.3 mil
+    • CJol: 12.2 mil
+```
+
+---
+</details>
+
+<details><summary>10. Clean Up</summary>
+
+## 10. Clean Up
+
+Move any .out files into the logs dir
+```
+[hpc-0373@wahab-01 3rd_sequencing_run]$ mkdir logs
+[hpc-0373@wahab-01 3rd_sequencing_run]$ mv *out logs/
 ```
 
 ---
