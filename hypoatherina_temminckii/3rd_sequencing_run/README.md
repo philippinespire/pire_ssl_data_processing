@@ -502,3 +502,24 @@ Submitted batch job 4634304
 ---
 </details>
 
+
+## SSL pipeline
+
+Brendan taking over for genome assembly 8/29/25
+
+Before running assembly, splitting the reads from the two individuals sequenced out into separate dirs.
+
+```
+cd /archive/carpenterlab/pire/pire_ssl_data_processing/hypoatherina_temminckii/3rd_sequencing_run/
+mv fq_fp1_clmp_fp2_fqscrn_rprd fq_fp1_clmp_fp2_fqscrn_rprd_CJol
+mkdir fq_fp1_clmp_fp2_fqscrn_rprd_CMvi
+mv fq_fp1_clmp_fp2_fqscrn_rprd_CJol/*Mvi* fq_fp1_clmp_fp2_fqscrn_rprd_CMvi
+```
+
+Run Jellyfish.
+
+```
+#sbatch runJellyfish.sbatch <Species 3-letter ID> <indir>
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Hte" "fq_fp1_clmp_fp2_fqscrn_rprd_CJol"
+sbatch /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/scripts/runJellyfish.sbatch "Hte" "fq_fp1_clmp_fp2_fqscrn_rprd_CMvi"
+```
